@@ -1,0 +1,58 @@
+name: Quarterly pull
+
+on:
+  schedule:
+    # 06:00 UTC on 1 Jan/Apr/Jul/Oct: provisional run for the quarter just ended
+    - cron: "0 6 1 1,4,7,10 *"
+    # 06:00 UTC on 1 Feb/May/Aug/Nov: final run for the same quarter
+    - cron: "0 6 1 2,5,8,11 *"
+  workflow_dispatch:
+    inputs:
+      quarter:
+        description: "Quarter to pull, e.g. 2026Q4 (blank = most recent ended quarter)"
+        required: false
+      run:
+        description: "Run type"
+        type: choice
+        options: [dry-run, provisional, final]
+        default: dry-run
+      sources:
+        description: "Comma-separated sources"
+        required: false
+        default: "kev,cve"
+
+permissions:
+  contents: read
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install ".[dev]"
+
+      - name: Unit tests
+        run: pytest -q
+
+      - name: Pull
+        run: |
+          ARGS="--out data/raw"
+          if [ -n "${{ inputs.quarter }}" ]; then ARGS="$ARGS --quarter ${{ inputs.quarter }}"; fi
+          if [ -n "${{ inputs.run }}" ]; then ARGS="$ARGS --run ${{ inputs.run }}"; fi
+          if [ -n "${{ inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ inputs.sources }}"; fi
+          python -m snapshot.pull $ARGS
+
+      - name: Upload frozen bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshot-${{ github.run_id }}
+          path: data/raw
+          retention-days: 90

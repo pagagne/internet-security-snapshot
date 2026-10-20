@@ -2,7 +2,7 @@
 name = "internet-security-snapshot"
 version = "0.1.0"
 description = "Quarterly, pre-registered measurement of internet security status from free versioned data"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.12"
 license = { text = "MIT" }
 dependencies = [
   "duckdb>=1.1",
