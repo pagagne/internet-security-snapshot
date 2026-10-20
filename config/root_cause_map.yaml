@@ -1,6 +1,6 @@
 # Maps CWE IDs to root-cause classes (cohort tag, Section 7.3). Analysis only;
 # never used for selection. CWE source order: CVE record, Vulnrichment, NVD.
-version: 0.2-draft
+version: 1.0
 
 classes:
   memory_safety:

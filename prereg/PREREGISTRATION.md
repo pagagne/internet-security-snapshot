@@ -1,8 +1,8 @@
 # Pre-registration: Quarterly Internet Security Snapshot
 
-**Status:** DRAFT. To be frozen on OSF no later than 31 October 2026, 23:59 UTC.
+**Status:** FINAL. Submitted for registration on OSF, 20 October 2026. Not to be edited.
 **Author:** Paul (GitHub: PAGAGNE). Code and drafting assistance: Claude (Anthropic).
-**Version:** 0.2 (draft). Reframed from thesis-testing to monitoring.
+**Version:** 1.0 (git tag `prereg-v1.0`).
 
 Once frozen, this file is not edited. Any change is recorded in `prereg/DEVIATIONS.md`
 with a date and reason, and the frozen original stays in place.

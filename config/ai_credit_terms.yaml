@@ -2,7 +2,7 @@
 # Matching is case-insensitive on the credit "value" text in the CVE JSON 5 record.
 # Every match is checked by hand before it counts. Terms added after the
 # pre-registration freeze are logged in prereg/DEVIATIONS.md.
-version: 0.2-draft
+version: 1.0
 
 match:
   case_sensitive: false

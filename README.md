@@ -10,7 +10,7 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 1st of January, April, July and October; the final one follows a month later.
 
 - **Pre-registration:** [`prereg/PREREGISTRATION.md`](prereg/PREREGISTRATION.md)
-  (draft; frozen on OSF by 31 October 2026)
+  (v1.0, final; OSF registration link to be added)
 - **Deviations log:** [`prereg/DEVIATIONS.md`](prereg/DEVIATIONS.md)
 - **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml),
   [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
