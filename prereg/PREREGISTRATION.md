@@ -30,15 +30,15 @@ holds an expectation, it is recorded as a stated prediction that can turn out wr
 - Runs: an automated pull at 06:00 UTC on 1 January, 1 April, 1 July and 1 October
   covering the previous quarter (provisional), and a re-run one month later (final).
 - Pilot quarter: Q4 2026 (this plan is frozen after Q4 began). Its results are
-  published and labelled **pilot**.
+  published and labeled **pilot**.
 - First confirmatory quarter: Q1 2027 (provisional 1 April 2027, final 1 May 2027).
 - Dry run: 1 December 2026 on October–November 2026 data, unscored.
 
 ## 3. Tracking questions
 
-Each question has one primary measure. "Directional" questions are labelled
+Each question has one primary measure. "Directional" questions are labeled
 **Improving**, **Worsening** or **No clear direction** (Section 4). "Descriptive"
-questions are labelled **Rising**, **Falling** or **No clear direction**, with no
+questions are labeled **Rising**, **Falling** or **No clear direction**, with no
 judgment of good or bad.
 
 | ID | Question | Primary measure | Type | Better means | Author's stated prediction |
@@ -46,21 +46,21 @@ judgment of good or bad.
 | T1 | **The race (central).** Are defenders closing exposed vulnerabilities faster than attackers exploit them? | (a) Median days from T_patch to T_exploit across cohort CVEs (negative = exploited before a patch existed). (b) Share of cohort CVEs with a usable exposure series whose exposure halved before T_exploit. | Directional | (a) larger; (b) higher | None |
 | T2 | How fast do vulnerable systems disappear after a patch? | Median exposure half-life of cohort CVEs (I1) | Directional | Shorter | None |
 | T3 | How fast are newly disclosed flaws exploited? | (a) Median days from T0 to first exploitation for CVEs first exploited in the quarter; (b) share exploited on or before T0 | Directional | (a) longer; (b) lower | None |
-| T4 | How old are the flaws being exploited? | Share of CVE-labelled exploitation targeting CVEs older than 12 months (I4) | Descriptive | — | None |
+| T4 | How old are the flaws being exploited? | Share of CVE-labeled exploitation targeting CVEs older than 12 months (I4) | Descriptive | — | None |
 | T5 | Is discovery pressure rising? | Year-over-year growth in published CVE records (I5) | Descriptive | — | Rising |
-| T6 | Is visible harm rising or falling? | (a) Ransomware leak-site postings; (b) SEC 8-K Item 1.05 filings per 1,000 registrants (each labelled separately) | Directional | Lower | None |
+| T6 | Is visible harm rising or falling? | (a) Ransomware leak-site postings; (b) SEC 8-K Item 1.05 filings per 1,000 registrants (each labeled separately) | Directional | Lower | None |
 | T7 | How involved is AI in vulnerability discovery? | Share of CVEs published in the quarter whose credits name an AI tool (I8) | Descriptive | — | Rising |
 
-Secondary, always reported, never labelled: within the cohort, AI-credited versus other
+Secondary, always reported, never labeled: within the cohort, AI-credited versus other
 CVEs compared on CVSS, share allowing remote code execution, and T3 timing; T1 broken
 down by root-cause class (Section 7.3).
 
-## 4. Labelling rule
+## 4. Labeling rule
 
 1. Each quarter, the primary measure is compared with its **baseline**: the median of
    the four preceding quarters (Section 10). The comparison gives a direction: up,
    down, or unchanged (exactly equal).
-2. A question is labelled with a direction (**Improving / Worsening**, or **Rising /
+2. A question is labeled with a direction (**Improving / Worsening**, or **Rising /
    Falling**) when its measure has moved in the **same direction for two consecutive
    quarters**. Otherwise it is **No clear direction**.
 3. 90% bootstrap confidence intervals (2,000 resamples, clustered by CVE where the unit
@@ -73,9 +73,9 @@ down by root-cause class (Section 7.3).
 
 ## 5. Availability rules
 
-- **T3, T4, T5, T6, T7:** labelled from the start, using backfilled history.
-- **T1(a):** labelled from the start; it needs only dated events, not exposure data.
-- **T1(b), T2:** need Shadowserver exposure series. They are labelled only once at
+- **T3, T4, T5, T6, T7:** labeled from the start, using backfilled history.
+- **T1(a):** labeled from the start; it needs only dated events, not exposure data.
+- **T1(b), T2:** need Shadowserver exposure series. They are labeled only once at
   least five cohort CVEs (current plus retrospective baseline, Section 10) have a usable
   series. Until then they are reported with status **baseline building**.
 - **T4:** primary source is Shadowserver honeypot statistics; KEV additions by CVE age
@@ -148,20 +148,20 @@ within 7 days after T_patch and at least 30 days of subsequent data.
 | I1 | Exposure half-life: first day the 7-day mean vulnerable count falls below 50% of the first count on/after T_patch | First published count on/after T_patch |
 | I2 | Days from T0 to first observed exploitation | CVEs first exploited in the quarter (KEV additions plus cohort) |
 | I3 | Days from T_patch to T_exploit; race outcome (won, lost, open) | Cohort CVEs with T_patch; race outcome only for those with a usable series |
-| I4 | Share of CVE-labelled exploitation targeting CVEs > 12 months old | Shadowserver honeypot events with CVE labels in the quarter |
+| I4 | Share of CVE-labeled exploitation targeting CVEs > 12 months old | Shadowserver honeypot events with CVE labels in the quarter |
 | I5 | Year-over-year growth in published CVE records (rejected excluded) | Same quarter in prior years |
 | I6 | Agreement among CISA KEV, VulnCheck KEV and Shadowserver (Cohen's and Fleiss' kappa) and median lags | CVEs with any exploitation signal in the trailing two quarters |
 | I7 | (a) ransomware postings; (b) SEC 8-K Item 1.05 filings per 1,000 active registrants | (a) quarter totals, deduplicated; (b) active registrants |
 | I8 | Share of CVEs whose credits name an AI tool | (a) all CVEs published in the quarter; (b) those with any credit entry |
 
-I6 is a methods check, reported every quarter and never labelled. Context only, never
-labelled: Cloudflare Radar bot shares; monthly Microsoft fix count; EPSS distribution of
+I6 is a methods check, reported every quarter and never labeled. Context only, never
+labeled: Cloudflare Radar bot shares; monthly Microsoft fix count; EPSS distribution of
 the quarter's new CVEs.
 
 **AI-credit matching (I8, category d).** A CVE counts as AI-credited when an entry in
 its credits array matches a term in `config/ai_credit_terms.yaml`. Every match is
 checked by hand, and the term list is versioned; terms added after the freeze are
-logged as deviations and applied to past quarters only in a labelled sensitivity
+logged as deviations and applied to past quarters only in a labeled sensitivity
 analysis. Known limit: AI involvement that is not credited is invisible to this measure.
 
 ## 9. Analysis plan
@@ -185,12 +185,12 @@ from 2023; Shadowserver series as far back as published.
 
 **Retrospective cohort.** To give T1 and T2 a baseline from the start, the frozen
 selection rule (Section 7) is applied to Q4 2025 through Q3 2026, and those cohorts are
-followed with the same event definitions. They are labelled **retrospective** and used
+followed with the same event definitions. They are labeled **retrospective** and used
 only as baseline.
 
 ## 11. Validation
 
-Before the first labelled evaluation, the pipeline is run on five documented cases
+Before the first labeled evaluation, the pipeline is run on five documented cases
 (CVE-2024-3400; CVE-2025-3248; the two PaperCut flaws exploited by AI agents in 2026;
 the Zammad flaws from the DIVD breach). Reference dates are recorded in
 `prereg/ground_truth_reference.csv` before the run. Pass: for ≥ 4 of 5 cases, T_patch and
@@ -199,7 +199,7 @@ date is explained by free-source coverage.
 
 ## 12. Known limitations stated in advance
 
-- **Loose labelling rule.** Two quarters in the same direction is chosen to show
+- **Loose labeling rule.** Two quarters in the same direction is chosen to show
   movement quickly. It will sometimes label noise as a direction; confidence intervals
   are published so readers can judge.
 - **Exposure coverage.** Exposure data covers only CVEs Shadowserver chooses to track.
@@ -209,7 +209,7 @@ date is explained by free-source coverage.
   flaws, which free data cannot track.
 - **AI attribution.** I8 sees only credited AI discovery. Whether an attack was
   AI-driven cannot be measured from free data; that evidence is summarised separately
-  in the spec as proven or speculative and is not labelled.
+  in the spec as proven or speculative and is not labeled.
 - **Small samples.** At most twelve cohort CVEs a quarter.
 - **Conflict of interest.** Claude, made by Anthropic, writes the code and drafts the
   evaluations; Anthropic is named in the report this study grew from. Safeguards: this
