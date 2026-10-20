@@ -2,7 +2,7 @@
 # Matching is case-insensitive on the credit "value" text in the CVE JSON 5 record.
 # Every match is checked by hand before it counts. Terms added after the
 # pre-registration freeze are logged in prereg/DEVIATIONS.md.
-version: 1.0
+version: 1.1   # 1.1 (2026-10-20): frontier-lab models and lab names added; see prereg/DEVIATIONS.md
 
 match:
   case_sensitive: false
@@ -22,6 +22,38 @@ tool_names:
   - Xint
   - CodeMender
   - Naptime
+  # added in 1.1: models and AI security tools from other frontier labs
+  - ChatGPT            # OpenAI ("GPT" alone already listed)
+  - Sec-Gemini         # Google
+  - DeepMind           # Google DeepMind
+  - Llama              # Meta
+  - Meta AI
+  - Copilot            # Microsoft (incl. Security Copilot)
+  - Grok               # xAI
+  - Mistral            # Mistral AI
+  - Amazon Nova        # Amazon
+  - DeepSeek
+  - Qwen               # Alibaba
+  - Kimi               # Moonshot AI
+  - GLM                # Zhipu / Z.ai
+  - ERNIE              # Baidu
+  - Hunyuan            # Tencent
+  - Doubao             # ByteDance
+  # Other Chinese and Asian labs, including those known for distilled models
+  - MiniMax            # MiniMax (China)
+  - Baichuan           # Baichuan AI (China)
+  - StepFun            # StepFun (China)
+  - SenseNova          # SenseTime (China)
+  - SparkDesk          # iFlytek Spark (China)
+  - 01.AI              # 01.AI / Yi models (China)
+  - InternLM           # Shanghai AI Lab (China)
+  - HyperCLOVA         # Naver (South Korea)
+  - EXAONE             # LG AI Research (South Korea)
+  - Sakana AI          # Japan
+  - PLaMo              # Preferred Networks (Japan)
+  # Meta, in full
+  - Purple Llama       # Meta's security tooling (also matched by "Llama")
+  - CyberSecEval       # Meta's security benchmark/tooling
 
 generic_phrases:
   - AI agent
@@ -30,6 +62,21 @@ generic_phrases:
   - autonomous agent
   - large language model
   - LLM
+
+# Added in 1.1. Lab or company names. These often credit human researchers who work
+# at an AI lab (e.g. "Jane Doe of OpenAI"), so a lab-name match alone is never enough:
+# the hand check counts it only if the credit says an AI tool or agent did or shared in
+# the discovery (see docs/HAND_CHECK.md).
+lab_names:
+  - OpenAI
+  - Anthropic
+  - xAI
+  - Z.ai
+  - Moonshot AI
+  - Zhipu
+  - Meta Superintelligence
+  - Alibaba Qwen
+  - ByteDance Seed
 
 # Phrases that look like matches but are not AI credits (checked before counting).
 exclusions:

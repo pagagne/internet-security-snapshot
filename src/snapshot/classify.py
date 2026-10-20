@@ -16,7 +16,11 @@ from .util import load_config
 @lru_cache(maxsize=1)
 def _ai_terms():
     cfg = load_config("ai_credit_terms.yaml")
-    terms = list(cfg.get("tool_names", [])) + list(cfg.get("generic_phrases", []))
+    terms = (
+        list(cfg.get("tool_names", []))
+        + list(cfg.get("generic_phrases", []))
+        + list(cfg.get("lab_names", []))
+    )
     flags = 0 if cfg.get("match", {}).get("case_sensitive") else re.IGNORECASE
     whole = cfg.get("match", {}).get("whole_word", True)
     patterns = []
@@ -29,6 +33,18 @@ def _ai_terms():
         patterns.append((term, re.compile(body, flags)))
     exclusions = [re.compile(re.escape(x), flags) for x in cfg.get("exclusions", [])]
     return patterns, exclusions
+
+
+@lru_cache(maxsize=1)
+def lab_name_terms() -> frozenset[str]:
+    """Terms that name an AI lab rather than a tool; matches need stricter review."""
+    return frozenset(load_config("ai_credit_terms.yaml").get("lab_names", []))
+
+
+def lab_name_only(terms: list[str]) -> bool:
+    """True when every matched term is a lab name, i.e. no tool or AI phrase matched."""
+    labs = lab_name_terms()
+    return bool(terms) and all(t in labs for t in terms)
 
 
 def ai_credit_matches(credit_values: list[str]) -> list[str]:

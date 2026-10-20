@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from snapshot.classify import ai_credit_matches, product_category, root_cause_class
+from snapshot.classify import ai_credit_matches, lab_name_only, product_category, root_cause_class
 from snapshot.collect.cve import parse_record
 from snapshot.pull import infer_quarter, infer_run
 from snapshot.util import Quarter
@@ -50,13 +50,22 @@ def test_bad_quarter():
     [
         (["Google Big Sleep"], ["Big Sleep"]),
         (["Found by XBOW autonomous agent"], ["XBOW", "autonomous agent"]),
-        (["Jane Doe with Claude (Anthropic)"], ["Claude"]),
+        (["Jane Doe with Claude (Anthropic)"], ["Claude", "Anthropic"]),
         (["Claude Bernard"], []),                 # excluded personal name
         (["Nicky (@nicky-cc)"], []),
         (["Mythosphere Labs"], []),               # whole-word only
         (["reported via an LLM-assisted audit"], ["LLM"]),  # hyphen is a word boundary
-        (["GPT-5.4-Cyber (OpenAI)"], ["GPT"]),
+        (["GPT-5.4-Cyber (OpenAI)"], ["GPT", "OpenAI"]),
         (["LLM tooling by Acme"], ["LLM"]),
+        (["Found with ChatGPT"], ["ChatGPT"]),
+        (["Tsinghua University using GLM-5.1 from Z.ai"], ["GLM", "Z.ai"]),
+        (["Nicholas Carlini of Anthropic"], ["Anthropic"]),
+        (["Ivan Fratric of Google Project Zero"], []),
+        (["Microsoft Security Copilot"], ["Copilot"]),
+        (["Found with MiniMax-M3"], ["MiniMax"]),
+        (["LG EXAONE agent"], ["EXAONE"]),
+        (["Meta Llama 5 audit"], ["Llama"]),
+        (["metadata parser fuzzing"], []),
     ],
 )
 def test_ai_credit_matches(credits, expected):
@@ -108,3 +117,9 @@ def test_parse_rejected_record():
     row = parse_record(_load("CVE-2026-45219.json"))
     assert row["state"] == "REJECTED"
     assert row["cvss_base"] is None
+
+
+def test_lab_name_only():
+    assert lab_name_only(["Anthropic"]) is True
+    assert lab_name_only(["Claude", "Anthropic"]) is False
+    assert lab_name_only([]) is False
