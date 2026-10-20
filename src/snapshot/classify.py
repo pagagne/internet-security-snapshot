@@ -70,7 +70,7 @@ def ai_credit_matches(credit_values: list[str]) -> list[str]:
 _AI_SIGNAL = re.compile(
     r"(?<![A-Za-z0-9])(AI|agent|agents|agentic|LLM|model|automated|autonomous|"
     r"machine learning|neural|copilot|bot)(?![A-Za-z0-9])"
-    r"|(?<![A-Za-z0-9])[A-Z][A-Za-z]+-\d+(\.\d+)?(?![A-Za-z0-9])",  # e.g. "Foo-3.5"
+    r"|(?<![A-Za-z0-9])(?!CVE-|CWE-|GHSA-)[A-Z][A-Za-z]+-\d+(\.\d+)?(?![A-Za-z0-9])",  # e.g. "Foo-3.5", not CVE IDs
     re.IGNORECASE,
 )
 

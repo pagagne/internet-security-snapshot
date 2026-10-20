@@ -138,3 +138,4 @@ def test_unmatched_ai_signals():
     assert unmatched_ai_signals(["Jane Doe"]) == []
     assert unmatched_ai_signals(["Found by XBOW autonomous agent"]) == []  # already matched
     assert unmatched_ai_signals(["Zephyr-4.2 audit"]) == ["Zephyr-4.2 audit"]
+    assert unmatched_ai_signals(["CVE-2026-14970 reported to IBM by Onecons"]) == []
