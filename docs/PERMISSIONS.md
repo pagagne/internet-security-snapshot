@@ -9,7 +9,7 @@ logged in `prereg/DEVIATIONS.md`. Replies must arrive before the pilot evaluatio
 |---|---|---|---|---|---|---|
 | ransomware.live | 2026-10-20 | Support form ("Other") | Ticket #3425 | Aggregate posting counts only, credited; victim names dropped at capture; no raw data published | Awaiting reply | — |
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply | — |
-| Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (ticket acknowledged) | — |
+| Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow up by reply to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject if no answer by 20 Nov 2026 | — |
 
 ## Terms already accepted
 
