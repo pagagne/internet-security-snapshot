@@ -32,5 +32,6 @@ logged in `prereg/DEVIATIONS.md`. Replies must arrive before the pilot evaluatio
 
 ## Keys saved as GitHub repository secrets
 
-`RANSOMWARE_LIVE_KEY`, `NVD_API_KEY`, `VULNCHECK_TOKEN` (2026-10-20). Still to add:
-`CLOUDFLARE_TOKEN`.
+`RANSOMWARE_LIVE_KEY`, `NVD_API_KEY`, `VULNCHECK_TOKEN`, `CLOUDFLARE_TOKEN` (all added
+2026-10-20). The Cloudflare token is limited to Account → Radar → Read, with no IP filter
+and no expiry.
