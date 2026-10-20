@@ -10,7 +10,9 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 1st of January, April, July and October; the final one follows a month later.
 
 - **Pre-registration:** [`prereg/PREREGISTRATION.md`](prereg/PREREGISTRATION.md)
-  (v1.0, final; OSF registration link to be added)
+  (v1.0, tag `prereg-v1.0`), registered on OSF on 20 October 2026:
+  [doi.org/10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82)
+  (project: [osf.io/3smuq](https://osf.io/3smuq))
 - **Deviations log:** [`prereg/DEVIATIONS.md`](prereg/DEVIATIONS.md)
 - **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml),
   [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
@@ -20,7 +22,7 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 
 | Date | Milestone |
 |---|---|
-| 31 Oct 2026 | Pre-registration frozen on OSF |
+| 20 Oct 2026 | Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82) |
 | 1 Dec 2026 | Dry run on Oct–Nov 2026 data (unscored) |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
 | 1 Apr / 1 May 2027 | Q1 2027, first confirmatory quarter: provisional / final |
