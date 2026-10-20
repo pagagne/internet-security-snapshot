@@ -36,7 +36,7 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 ## AI involvement and conflict of interest
 
 Code and draft evaluations are written with Claude, an AI model made by Anthropic.
-Anthropic is named in the report this study tests. Safeguards: the frozen
+Anthropic is named in the report this study grew from. Safeguards: the frozen
 pre-registration, public code, the author's approval of every release, and an external
 reviewer for the first confirmatory quarter.
 
