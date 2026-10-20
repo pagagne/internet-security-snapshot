@@ -1,0 +1,36 @@
+# Terms that mark a CVE credit entry as naming an AI tool (indicator I8, cohort category d).
+# Matching is case-insensitive on the credit "value" text in the CVE JSON 5 record.
+# Every match is checked by hand before it counts. Terms added after the
+# pre-registration freeze are logged in prereg/DEVIATIONS.md.
+version: 0.2-draft
+
+match:
+  case_sensitive: false
+  whole_word: true
+
+tool_names:
+  - Big Sleep
+  - XBOW
+  - depthfirst
+  - Claude
+  - Mythos
+  - Glasswing
+  - Codex
+  - GPT
+  - Gemini
+  - Aardvark
+  - Xint
+  - CodeMender
+  - Naptime
+
+generic_phrases:
+  - AI agent
+  - AI-assisted
+  - AI-powered
+  - autonomous agent
+  - large language model
+  - LLM
+
+# Phrases that look like matches but are not AI credits (checked before counting).
+exclusions:
+  - Claude Bernard        # personal names containing a tool name

@@ -1,17 +1,20 @@
 # Internet Security Snapshot
 
-An unfunded, quarterly measurement of the internet's security status, built to test
-whether the internet is being "cleaned up" faster than it is being attacked.
+An unfunded, quarterly measurement of whether internet security is getting better or
+worse, and how AI is involved. The central question: are defenders closing
+internet-exposed vulnerabilities faster than attackers start exploiting them?
 
 Each quarter, an automated job pulls free, versioned public data (CVE, CISA KEV,
 Vulnrichment, EPSS, Shadowserver, SEC EDGAR, ransomware.live and others), freezes it,
-and tests five pre-registered hypotheses. A provisional evaluation is published on the
+and reports seven pre-registered tracking questions. A provisional evaluation is published on the
 1st of January, April, July and October; the final one follows a month later.
 
 - **Pre-registration:** [`prereg/PREREGISTRATION.md`](prereg/PREREGISTRATION.md)
   (draft; frozen on OSF by 31 October 2026)
 - **Deviations log:** [`prereg/DEVIATIONS.md`](prereg/DEVIATIONS.md)
-- **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml)
+- **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml),
+  [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
+  [`config/root_cause_map.yaml`](config/root_cause_map.yaml)
 
 ## Schedule
 
@@ -27,7 +30,7 @@ and tests five pre-registered hypotheses. A provisional evaluation is published 
 - Free data and free infrastructure only; nothing is estimated to fill a gap.
 - Rates with stated denominators, not raw counts.
 - Raw inputs frozen with checksums; every published number reproducible with one command.
-- All five hypotheses reported every quarter, whatever the result.
+- All seven tracking questions reported every quarter, whatever the result.
 - No scanning, no exploitation, no host-level data, no victim names.
 
 ## AI involvement and conflict of interest

@@ -1,0 +1,29 @@
+# Maps CWE IDs to root-cause classes (cohort tag, Section 7.3). Analysis only;
+# never used for selection. CWE source order: CVE record, Vulnrichment, NVD.
+version: 0.2-draft
+
+classes:
+  memory_safety:
+    label: Memory safety
+    cwe: [119, 120, 121, 122, 125, 190, 191, 415, 416, 476, 787, 788, 805, 824]
+  injection_code_exec:
+    label: Injection and code execution
+    cwe: [74, 77, 78, 79, 88, 89, 91, 94, 95, 917, 1336]
+  auth_access:
+    label: Authentication and access control
+    cwe: [284, 285, 287, 288, 290, 294, 306, 307, 639, 862, 863, 1390]
+  path_file:
+    label: Path traversal and file handling
+    cwe: [22, 23, 35, 59, 73, 434]
+  deserialization:
+    label: Deserialization
+    cwe: [502]
+  request_forgery:
+    label: Request forgery
+    cwe: [352, 918]
+  credentials_defaults:
+    label: Credentials and insecure defaults
+    cwe: [259, 521, 798, 1188, 1392, 1393]
+  other_unknown:
+    label: Other or unknown
+    cwe: []   # anything unmapped, NVD-CWE-Other, NVD-CWE-noinfo, or missing

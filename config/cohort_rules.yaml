@@ -1,7 +1,7 @@
 # Cohort selection rules (frozen with the pre-registration).
 # Categories are matched in order against the CVE's affected vendor/product
 # (CVE record "affected" entries, falling back to NVD CPE). First match wins.
-version: 0.1-draft
+version: 0.2-draft
 
 eligibility:
   min_cvss_base: 8.0          # or vendor severity "critical"
@@ -54,8 +54,18 @@ categories:
   c_other:
     label: Any other internet-facing product
     product_keywords: []      # catch-all for eligible CVEs not matched above
+  d_ai_credited:
+    label: AI-credited (credits name an AI tool)
+    match_file: config/ai_credit_terms.yaml
+    checked_last: true        # only CVEs not already selected in a-c
+    hand_check_required: true
+
+root_cause_tag:
+  map_file: config/root_cause_map.yaml
+  used_for_selection: false
 
 per_month:
   per_category: 1
-  max_total: 3
+  max_total: 4
   top_up_by_hand: false
+  outcome_data_used_for_selection: false   # never EPSS, KEV or exploitation evidence
