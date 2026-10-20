@@ -215,3 +215,45 @@ date is explained by free-source coverage.
   evaluations; Anthropic is named in the report this study grew from. Safeguards: this
   frozen plan, public code, author approval of every release, and an external reviewer
   for the first confirmatory quarter.
+
+## 13. Annual check against reference data
+
+Once a year, the free quarterly results are compared with better reference data to show
+how well the free system tracked reality. This section is frozen now, before any
+reference data is seen.
+
+**Period and timing.** Each check covers one calendar year and is published in March of
+the following year, after the insurers' and payment analysts' annual reports appear. The
+first check covers 2027 and is published in March 2028. The Q4 2026 pilot quarter is
+included as a separately labeled extra.
+
+**Exposure reference (T1b, T2).** Internet scan data with historical lookups (Censys
+research access if approved, otherwise a one-off licence). For every cohort CVE of the
+year, the race and the exposure half-life are recomputed from the scan data using the
+definitions in Sections 7–9. The scan data is used only for this annual check, never in
+the quarterly results, so it remains an independent reference.
+
+**Harm reference (T6).** Published aggregate figures for the same year: cyber-insurance
+claims frequency (e.g. Coalition), the share of ransomware victims paying (e.g.
+Coveware), and total ransom payments (e.g. Chainalysis). Raw claims or negotiation data
+is used only if a data-sharing agreement is in place; it is not required.
+
+**What is reported.** No pass mark is set; the comparison is reported, not graded:
+
+1. Coverage: how many cohort CVEs had usable free exposure data versus reference data.
+2. Agreement on values: median absolute difference between free and reference
+   half-lives, and the share of race outcomes (won, lost, open) that match.
+3. Agreement on direction: for each quarter, whether the free direction for T1b, T2 and
+   T6 matches the direction in the reference data.
+4. Known divergence for T6: leak sites list only victims who do not pay, so a falling
+   payment rate can raise leak-site counts while attacks are flat. The check reports
+   whether leak-site direction and claims or payment direction diverged, and says which
+   way.
+
+**If reference data is unavailable.** If no scan data is obtained by 31 January of the
+publication year, the exposure part is skipped and the gap recorded. The harm part
+always runs, since its reference figures are published free.
+
+**Publishing.** Only comparison results and aggregates are published; the reference
+data itself is not redistributed. The annual check is therefore the one part of the
+study outsiders cannot rerun from public files, and every check says so.
