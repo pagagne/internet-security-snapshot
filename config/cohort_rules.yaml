@@ -1,0 +1,61 @@
+# Cohort selection rules (frozen with the pre-registration).
+# Categories are matched in order against the CVE's affected vendor/product
+# (CVE record "affected" entries, falling back to NVD CPE). First match wins.
+version: 0.1-draft
+
+eligibility:
+  min_cvss_base: 8.0          # or vendor severity "critical"
+  vendor_critical_qualifies: true
+  publish_day_max: 25         # published on day 1..25 of the month
+  internet_facing_required: true
+
+categories:
+  a_edge:
+    label: Firewalls, VPNs and remote-access gateways
+    product_keywords:
+      - firewall
+      - vpn
+      - gateway
+      - remote access
+      - ssl vpn
+      - secure access
+      - globalprotect
+      - fortigate
+      - fortios
+      - netscaler
+      - citrix adc
+      - ivanti connect secure
+      - pulse connect secure
+      - sonicwall
+      - pan-os
+      - asa
+      - firepower
+      - check point
+  b_web_collab:
+    label: Web applications, file-transfer and collaboration servers
+    product_keywords:
+      - file transfer
+      - mft
+      - moveit
+      - goanywhere
+      - crushftp
+      - sharepoint
+      - confluence
+      - jira
+      - exchange
+      - zimbra
+      - papercut
+      - wordpress
+      - drupal
+      - gitlab
+      - jenkins
+      - web server
+      - cms
+  c_other:
+    label: Any other internet-facing product
+    product_keywords: []      # catch-all for eligible CVEs not matched above
+
+per_month:
+  per_category: 1
+  max_total: 3
+  top_up_by_hand: false
