@@ -18,3 +18,19 @@ logged in `prereg/DEVIATIONS.md`. Replies must arrive before the pilot evaluatio
   API or feed; one account and key; **no publishing of raw data in any form**; no
   website that mimics ransomware.live. The collector therefore keeps only aggregate
   counts in any saved or published output, including GitHub Actions artifacts.
+- **VulnCheck Service Terms** (revised 6 July 2026; accepted 2026-10-20 on community
+  sign-up). Relevant points: free offerings require a prominent attribution notice on
+  any output that uses the data; free-tier data may not be used to train or fine-tune AI
+  models; VulnCheck may name the user as a customer in marketing; and Section 6 says
+  "Customer may not make the Services Data available for free or under an open source
+  or similar license" and bars derivative works. Whether derived statistics (agreement
+  scores, median lags) count as Services Data is unclear, so **nothing derived from
+  VulnCheck is published until VulnCheck confirms in writing**. Until then VulnCheck KEV
+  and XDB are used privately only; published T1/T3 dates and the I6 agreement check use
+  CISA KEV and Shadowserver. If VulnCheck declines, the change is logged in
+  `prereg/DEVIATIONS.md`.
+
+## Keys saved as GitHub repository secrets
+
+`RANSOMWARE_LIVE_KEY`, `NVD_API_KEY`, `VULNCHECK_TOKEN` (2026-10-20). Still to add:
+`CLOUDFLARE_TOKEN`.
