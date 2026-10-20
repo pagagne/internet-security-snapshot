@@ -2,7 +2,7 @@
 # Matching is case-insensitive on the credit "value" text in the CVE JSON 5 record.
 # Every match is checked by hand before it counts. Terms added after the
 # pre-registration freeze are logged in prereg/DEVIATIONS.md.
-version: 1.1   # 1.1 (2026-10-20): frontier-lab models and lab names added; see prereg/DEVIATIONS.md
+version: 1.2   # 1.1: frontier-lab models and lab names; 1.2: more Chinese labs and 360's security models (both 2026-10-20); see prereg/DEVIATIONS.md
 
 match:
   case_sensitive: false
@@ -47,6 +47,12 @@ tool_names:
   - SparkDesk          # iFlytek Spark (China)
   - 01.AI              # 01.AI / Yi models (China)
   - InternLM           # Shanghai AI Lab (China)
+  - MiMo               # Xiaomi (China)
+  - LongCat            # Meituan (China)
+  - Pangu              # Huawei (China)
+  - Tulongfeng         # Qihoo 360 vulnerability-discovery model (China, ISC.AI 2026)
+  - Yitianzhen         # Qihoo 360 automated-defense model (China)
+  - Yitian Tulong      # Qihoo 360 model pair
   - HyperCLOVA         # Naver (South Korea)
   - EXAONE             # LG AI Research (South Korea)
   - Sakana AI          # Japan
@@ -77,6 +83,7 @@ lab_names:
   - Meta Superintelligence
   - Alibaba Qwen
   - ByteDance Seed
+  - Qihoo 360          # very often credits human researchers; needs an AI-tool mention
 
 # Phrases that look like matches but are not AI credits (checked before counting).
 exclusions:

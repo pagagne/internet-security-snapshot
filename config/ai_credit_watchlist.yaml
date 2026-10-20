@@ -1,0 +1,43 @@
+# Watchlist for new AI tools and labs ("newcomers"), refreshed every quarter.
+#
+# Candidates here are NOT matched until promoted into ai_credit_terms.yaml with a version
+# bump and a dated entry in prereg/DEVIATIONS.md. Every quarter T7 is reported under the
+# registered list (v1.0) and the current list, so additions never rewrite history.
+version: 1.0
+
+refresh_each_quarter:
+  # 1. Automatic: the pull lists credit texts that look AI-related but match no term
+  #    (see snapshot.classify.unmatched_ai_signals). Reviewed with the hand check.
+  # 2. Manual sweep of these sources, with extra attention to China and the rest of Asia:
+  sources:
+    - LMArena and Artificial Analysis leaderboards (new frontier-class models)
+    - SuperCLUE and OpenCompass leaderboards (Chinese models)
+    - China's generative-AI service filing lists (Cyberspace Administration of China)
+    - Security conferences with AI vulnerability work (ISC.AI, Tianfu Cup, GeekPwn, DEF CON, Black Hat)
+    - Threat and vulnerability reports from AI labs and security vendors
+    - AI-attributed CVE trackers
+
+promotion_rule:
+  # A candidate is promoted when it appears in at least one CVE credit, or is a model or
+  # security tool from a lab already on the list, or a new lab ranks among the top
+  # models on a leaderboard above. Lab and company names go to `lab_names` (need an
+  # explicit AI-tool mention to count); model and tool names go to `tool_names`.
+  record: name, lab, country, first seen (date and source), promoted in version
+
+# First sweep, 2026-10-20, from Q3 2026 CVE credits (automatic scan). Awaiting review;
+# none is matched until promoted. "Human team?" = may be people at an AI-named company.
+candidates:
+  - {name: MopMonk AI, lab: Tophant, country: China, first_seen: "2026Q3 CVE credits", note: "AI vulnerability hunter; credit email @tophant.com"}
+  - {name: ZAST.AI, lab: ZAST.AI, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: Fluid Attacks AI SAST Scanner, lab: Fluid Attacks, country: Colombia, first_seen: "2026Q3 CVE credits"}
+  - {name: CodeAnt AI, lab: CodeAnt AI, country: India/US, first_seen: "2026Q3 CVE credits", note: "Human team?"}
+  - {name: WatchGuard AI Security Research, lab: WatchGuard, country: US, first_seen: "2026Q3 CVE credits", note: "Human team?"}
+  - {name: aisafe-bot, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: bugbunny.ai, lab: bugbunny.ai, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: Kolega.dev, lab: Kolega, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: Pwn.ai, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: Submersion.ai, lab: Submersion.ai, country: unknown, first_seen: "2026Q3 CVE credits", note: "Human team?"}
+  - {name: offensive-ai, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: neo-ai-engineer, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: agent-kira, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
+  - {name: Autonomous Code Security (Microsoft), lab: Microsoft, country: US, first_seen: "2026Q3 CVE credits", note: "Human team?"}

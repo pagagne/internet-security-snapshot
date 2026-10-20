@@ -4,7 +4,13 @@ from pathlib import Path
 
 import pytest
 
-from snapshot.classify import ai_credit_matches, lab_name_only, product_category, root_cause_class
+from snapshot.classify import (
+    ai_credit_matches,
+    lab_name_only,
+    product_category,
+    root_cause_class,
+    unmatched_ai_signals,
+)
 from snapshot.collect.cve import parse_record
 from snapshot.pull import infer_quarter, infer_run
 from snapshot.util import Quarter
@@ -66,6 +72,8 @@ def test_bad_quarter():
         (["LG EXAONE agent"], ["EXAONE"]),
         (["Meta Llama 5 audit"], ["Llama"]),
         (["metadata parser fuzzing"], []),
+        (["Qihoo 360 Tulongfeng"], ["Tulongfeng", "Qihoo 360"]),
+        (["Xiaomi MiMo"], ["MiMo"]),
     ],
 )
 def test_ai_credit_matches(credits, expected):
@@ -123,3 +131,10 @@ def test_lab_name_only():
     assert lab_name_only(["Anthropic"]) is True
     assert lab_name_only(["Claude", "Anthropic"]) is False
     assert lab_name_only([]) is False
+
+
+def test_unmatched_ai_signals():
+    assert unmatched_ai_signals(["Found by the NovaHunter agent"]) == ["Found by the NovaHunter agent"]
+    assert unmatched_ai_signals(["Jane Doe"]) == []
+    assert unmatched_ai_signals(["Found by XBOW autonomous agent"]) == []  # already matched
+    assert unmatched_ai_signals(["Zephyr-4.2 audit"]) == ["Zephyr-4.2 audit"]

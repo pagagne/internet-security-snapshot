@@ -65,6 +65,28 @@ def ai_credit_matches(credit_values: list[str]) -> list[str]:
     return found
 
 
+# Words that suggest an AI tool may be involved, used only to surface possible
+# newcomers for review; they never count as AI credits by themselves.
+_AI_SIGNAL = re.compile(
+    r"(?<![A-Za-z0-9])(AI|agent|agents|agentic|LLM|model|automated|autonomous|"
+    r"machine learning|neural|copilot|bot)(?![A-Za-z0-9])"
+    r"|(?<![A-Za-z0-9])[A-Z][A-Za-z]+-\d+(\.\d+)?(?![A-Za-z0-9])",  # e.g. "Foo-3.5"
+    re.IGNORECASE,
+)
+
+
+def unmatched_ai_signals(credit_values: list[str]) -> list[str]:
+    """Credit texts that look AI-related but match no listed term.
+
+    These are candidates for the newcomer watchlist, reviewed by hand each quarter.
+    """
+    out = []
+    for value in credit_values:
+        if value and _AI_SIGNAL.search(value) and not ai_credit_matches([value]):
+            out.append(value)
+    return out
+
+
 @lru_cache(maxsize=1)
 def _cwe_index() -> tuple[dict[int, str], list[str]]:
     cfg = load_config("root_cause_map.yaml")
