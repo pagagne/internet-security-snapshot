@@ -20,10 +20,15 @@ import tempfile
 import traceback
 from pathlib import Path
 
-from .collect import cve, kev
-from .util import Manifest, Quarter
+import json
+import os
 
-SOURCES = ("kev", "cve")
+from .collect import cve, epss, kev, nvd, radar, ransomware, sec
+from .util import Manifest, Quarter, utcnow
+
+SOURCES = ("kev", "cve", "nvd", "epss", "sec", "radar", "ransomware")
+# Set by main(): the quarter being pulled, the last day with complete data, EPSS step.
+CTX: dict = {}
 
 
 def infer_run(today: dt.date) -> str:
@@ -70,7 +75,87 @@ def pull_cve(out: Path, manifest: Manifest, work: Path) -> None:
     )
 
 
-PULLERS = {"kev": pull_kev, "cve": pull_cve}
+def _window() -> tuple[dt.date, dt.date]:
+    q: Quarter = CTX["quarter"]
+    return q.start, min(q.end, CTX["yesterday"])
+
+
+def pull_nvd(out: Path, manifest: Manifest, work: Path) -> None:
+    start, end = _window()
+    table = nvd.build_table(start, end)
+    dest = out / "nvd"
+    dest.mkdir(parents=True, exist_ok=True)
+    pq = dest / "nvd_cves.parquet"
+    table.to_parquet(pq, index=False)
+    manifest.add_file("nvd", pq, f"NVD API 2.0, retrieved {utcnow()}",
+                      note=f"{len(table)} CVEs published {start}..{end}; key={'yes' if os.environ.get('NVD_API_KEY') else 'no'}")
+
+
+def pull_epss(out: Path, manifest: Manifest, work: Path) -> None:
+    q: Quarter = CTX["quarter"]
+    # Follow-up runs past the quarter end so cohort CVEs get up to 90 days of scores.
+    end = min(q.end + dt.timedelta(days=92), CTX["yesterday"])
+    table, notes, models = epss.build_table(q.start, end, min_year=q.start.year - 1, step_days=CTX["epss_step"])
+    dest = out / "epss"
+    dest.mkdir(parents=True, exist_ok=True)
+    pq = dest / "epss_scores.parquet"
+    table.to_parquet(pq, index=False)
+    days = table["date"].nunique() if len(table) else 0
+    manifest.add_file("epss", pq, f"FIRST EPSS {', '.join(models) or 'n/a'}",
+                      status="ok" if not notes else "partial",
+                      note=f"{days} days {q.start}..{end}, step {CTX['epss_step']}d; CVE IDs from {q.start.year - 1} on; {len(notes)} day(s) missing")
+    for n in notes:
+        manifest.add_gap("epss", n)
+
+
+def pull_sec(out: Path, manifest: Manifest, work: Path) -> None:
+    start, end = _window()
+    table = sec.filings_105(start, end)
+    regs = sec.registrant_count()
+    dest = out / "sec"
+    dest.mkdir(parents=True, exist_ok=True)
+    pq = dest / "sec_8k_item105.parquet"
+    table.to_parquet(pq, index=False)
+    summary = dest / "sec_summary.json"
+    summary.write_text(json.dumps({
+        "window": [start.isoformat(), end.isoformat()],
+        "filings_item_1_05": int(len(table)),
+        "original_8k": int((table["form"] == "8-K").sum()) if len(table) else 0,
+        "registrants_company_tickers": regs,
+        "per_1000_registrants": round(1000 * int((table["form"] == "8-K").sum()) / regs, 3) if regs and len(table) else 0.0,
+    }, indent=2))
+    manifest.add_file("sec_edgar", pq, f"EDGAR full-text search, retrieved {utcnow()}", note=f"{len(table)} filings")
+    manifest.add_file("sec_edgar", summary, f"company_tickers.json, retrieved {utcnow()}", note=f"{regs} registrants")
+
+
+def pull_radar(out: Path, manifest: Manifest, work: Path) -> None:
+    start, end = _window()
+    dest = out / "radar"
+    dest.mkdir(parents=True, exist_ok=True)
+    for name, data in radar.fetch(start, end).items():
+        path = dest / f"{name}.json"
+        path.write_text(json.dumps(data, indent=1))
+        manifest.add_file("cloudflare_radar", path, f"Radar API, retrieved {utcnow()}")
+
+
+def pull_ransomware(out: Path, manifest: Manifest, work: Path) -> None:
+    start, end = _window()
+    months, d = [], start.replace(day=1)
+    while d <= end:
+        months.append((d.year, d.month))
+        d = (d + dt.timedelta(days=32)).replace(day=1)
+    table = ransomware.build_table(months)
+    dest = out / "ransomware"
+    dest.mkdir(parents=True, exist_ok=True)
+    pq = dest / "ransomware_counts.parquet"
+    table.to_parquet(pq, index=False)
+    totals = table[table["dimension"] == "all"][["month", "count"]].to_dict("records")
+    manifest.add_file("ransomware_live", pq, f"ransomware.live API, retrieved {utcnow()}",
+                      note=f"aggregate counts only, no victim names; monthly totals {totals}")
+
+
+PULLERS = {"kev": pull_kev, "cve": pull_cve, "nvd": pull_nvd, "epss": pull_epss,
+           "sec": pull_sec, "radar": pull_radar, "ransomware": pull_ransomware}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -79,11 +164,13 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--run", choices=["provisional", "final", "dry-run"], help="default: inferred from today")
     ap.add_argument("--sources", default=",".join(SOURCES), help=f"comma list from {SOURCES}")
     ap.add_argument("--out", default="data/raw", help="output root")
+    ap.add_argument("--epss-step", type=int, default=1, help="days between EPSS samples (default 1 = daily)")
     args = ap.parse_args(argv)
 
     today = dt.datetime.now(dt.timezone.utc).date()
     run = args.run or infer_run(today)
     quarter = Quarter.parse(args.quarter) if args.quarter else infer_quarter(today)
+    CTX.update(quarter=quarter, yesterday=today - dt.timedelta(days=1), epss_step=args.epss_step)
     out = Path(args.out) / str(quarter) / run
     out.mkdir(parents=True, exist_ok=True)
     manifest = Manifest(quarter, run, out)

@@ -33,5 +33,6 @@ logged in `prereg/DEVIATIONS.md`. Replies must arrive before the pilot evaluatio
 ## Keys saved as GitHub repository secrets
 
 `RANSOMWARE_LIVE_KEY`, `NVD_API_KEY`, `VULNCHECK_TOKEN`, `CLOUDFLARE_TOKEN` (all added
-2026-10-20). The Cloudflare token is limited to Account → Radar → Read, with no IP filter
+2026-10-20). `SEC_USER_AGENT` (the SEC requires a User-Agent with the requester's name and
+contact email, e.g. "Name name@example.com"; it is sent only to sec.gov). The Cloudflare token is limited to Account → Radar → Read, with no IP filter
 and no expiry.

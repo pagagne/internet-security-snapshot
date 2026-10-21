@@ -64,6 +64,31 @@ def _cwes(containers: list[dict]) -> list[str]:
     return out
 
 
+def _cisa_ssvc(adp: list[dict]) -> dict:
+    """CISA Vulnrichment decision points (SSVC) from the CISA-ADP container.
+
+    Vulnrichment is published into the CVE record itself, so no separate download is
+    needed. Exploitation is none / poc / active; the timestamp is when CISA last scored it.
+    """
+    out = {"ssvc_exploitation": None, "ssvc_automatable": None, "ssvc_technical_impact": None, "ssvc_timestamp": None}
+    for cont in adp:
+        if (cont.get("providerMetadata", {}) or {}).get("shortName") != "CISA-ADP":
+            continue
+        for metric in cont.get("metrics", []) or []:
+            other = metric.get("other") or {}
+            if other.get("type") != "ssvc":
+                continue
+            content = other.get("content") or {}
+            for opt in content.get("options", []) or []:
+                for k, v in opt.items():
+                    key = {"Exploitation": "ssvc_exploitation", "Automatable": "ssvc_automatable",
+                           "Technical Impact": "ssvc_technical_impact"}.get(k)
+                    if key:
+                        out[key] = str(v).lower()
+            out["ssvc_timestamp"] = parse_ts(content.get("timestamp"))
+    return out
+
+
 def parse_record(doc: dict) -> dict:
     """Normalize one CVE JSON 5 record to a flat row."""
     meta = doc.get("cveMetadata", {})
@@ -92,6 +117,7 @@ def parse_record(doc: dict) -> dict:
         "credit_types": [c.get("type", "") for c in credits],
         "ai_credit_terms": ai_credit_matches(credit_values),
         "has_cisa_adp": any((a.get("providerMetadata", {}) or {}).get("shortName") == "CISA-ADP" for a in adp),
+        **_cisa_ssvc(adp),
     }
 
 

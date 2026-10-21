@@ -19,7 +19,11 @@ on:
       sources:
         description: "Comma-separated sources"
         required: false
-        default: "kev,cve"
+        default: "kev,cve,nvd,epss,sec,radar,ransomware"
+      epss_step:
+        description: "Days between EPSS samples (1 = daily, as in quarterly runs)"
+        required: false
+        default: "1"
 
 permissions:
   contents: write   # to tag each provisional/final run
@@ -42,12 +46,27 @@ jobs:
         run: pytest -q
 
       - name: Pull
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+          RANSOMWARE_LIVE_KEY: ${{ secrets.RANSOMWARE_LIVE_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          # VULNCHECK_TOKEN is not passed: VulnCheck data stays private until they confirm in writing.
         run: |
           ARGS="--out data/raw"
           if [ -n "${{ inputs.quarter }}" ]; then ARGS="$ARGS --quarter ${{ inputs.quarter }}"; fi
           if [ -n "${{ inputs.run }}" ]; then ARGS="$ARGS --run ${{ inputs.run }}"; fi
           if [ -n "${{ inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ inputs.sources }}"; fi
+          if [ -n "${{ inputs.epss_step }}" ]; then ARGS="$ARGS --epss-step ${{ inputs.epss_step }}"; fi
           python -m snapshot.pull $ARGS
+
+      - name: Summary
+        if: always()
+        run: |
+          for m in data/raw/*/*/manifest.json; do
+            echo "### $m" >> "$GITHUB_STEP_SUMMARY"
+            python -c "import json,sys; d=json.load(open('$m')); [print(f\"- {e['source']}: {e['status']} {e.get('file_path') or ''} {e.get('note') or ''}\") for e in d.get('entries', d.get('files', []))]" >> "$GITHUB_STEP_SUMMARY" || true
+          done
 
       - name: Upload frozen bundle
         if: always()
@@ -58,6 +77,7 @@ jobs:
           retention-days: 90
 
       - name: Tag the run
+        if: always()   # gaps are recorded in the manifest; the run is still tagged
         # Tags the exact code and config used, e.g. snapshot-2026Q4-provisional.
         # Dry runs are not tagged.
         run: |
