@@ -1,7 +1,9 @@
 # Cohort selection rules (frozen with the pre-registration).
 # Categories are matched in order against the CVE's affected vendor/product
 # (CVE record "affected" entries, falling back to NVD CPE). First match wins.
-version: 1.0
+# Which CVE in a category is picked each month is set by the seeded random draw
+# in the `selection` block below (v1.1), not by publication order.
+version: 1.1   # 1.1 (2026-10-21): seeded random draw replaces earliest-published; see prereg/DEVIATIONS.md
 
 eligibility:
   min_cvss_base: 8.0          # or vendor severity "critical"
@@ -69,3 +71,16 @@ per_month:
   max_total: 4
   top_up_by_hand: false
   outcome_data_used_for_selection: false   # never EPSS, KEV or exploitation evidence
+
+# How the one pick per slot is chosen (v1.1). Replaces "earliest published", which
+# favoured vendors that publish early in the month.
+selection:
+  method: seeded_random_draw
+  # Each eligible CVE gets a draw key: SHA-256 of "<seed_prefix>|<YYYY-MM>|<slot>|<CVE ID>".
+  # Sorting by that key gives a random order that anyone can recompute; it does not
+  # depend on publication time, file order, or anything the study measures.
+  seed_prefix: internet-security-snapshot
+  slot_order: [a_edge, b_web_collab, c_other, d_ai_credited]   # a CVE picked earlier is skipped later
+  # Walk the draw order and take the first CVE that passes the slot's hand check
+  # (slot c: confirmed internet-facing; slot d: AI credit confirmed). A CVE that
+  # fails is recorded with the reason and the next in draw order is used.

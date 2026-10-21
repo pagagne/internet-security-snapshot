@@ -24,6 +24,18 @@ out and reported as pending.
 5. Only rows marked yes are used. Unreviewed rows are excluded and reported as pending.
 6. The review file, decisions, reviewer and date are published in the quarter's bundle.
 
+## How the hand check fits the random draw
+
+Each month's pick in every slot comes from a seeded random draw (`config/cohort_rules.yaml`,
+`selection`). The review file lists, for slots (c) and (d), the CVE at the top of the
+draw order. Mark it yes or no:
+
+- **Yes:** it is the month's pick for that slot.
+- **No:** it is recorded as skipped with the reason, and the next CVE in draw order is
+  added to the next review file. You never choose which CVE comes next; the draw does.
+- A slot stays open until its pick is confirmed, so an unanswered item holds that slot
+  (and only that slot) back.
+
 ## Criteria for AI-credit matches
 
 A match counts as **AI-credited** only if the credit names an AI tool, model or agent as
