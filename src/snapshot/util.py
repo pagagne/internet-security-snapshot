@@ -11,7 +11,17 @@ from pathlib import Path
 
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+def _repo_root() -> Path:
+    """The checkout holding config/: SNAPSHOT_ROOT if set, else the source tree, else the
+    working directory (the package may be installed outside the checkout)."""
+    import os
+    for cand in (os.environ.get("SNAPSHOT_ROOT"), Path(__file__).resolve().parents[2], Path.cwd()):
+        if cand and (Path(cand) / "config" / "cohort_rules.yaml").exists():
+            return Path(cand)
+    raise FileNotFoundError("config/ not found; run from the repository root or set SNAPSHOT_ROOT")
+
+
+REPO_ROOT = _repo_root()
 CONFIG_DIR = REPO_ROOT / "config"
 
 

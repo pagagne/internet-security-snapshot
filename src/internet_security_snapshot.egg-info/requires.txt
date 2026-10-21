@@ -1,0 +1,12 @@
+duckdb>=1.1
+pandas>=2.2
+pyarrow>=17
+pandera>=0.20
+lifelines>=0.29
+statsmodels>=0.14
+ruptures>=1.1
+requests>=2.32
+pyyaml>=6.0
+
+[dev]
+pytest>=8

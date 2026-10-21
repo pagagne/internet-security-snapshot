@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: internet-security-snapshot
+Version: 0.1.0
+Summary: Quarterly, pre-registered measurement of internet security status from free versioned data
+License: MIT
+Requires-Python: >=3.12
+License-File: LICENSE
+Requires-Dist: duckdb>=1.1
+Requires-Dist: pandas>=2.2
+Requires-Dist: pyarrow>=17
+Requires-Dist: pandera>=0.20
+Requires-Dist: lifelines>=0.29
+Requires-Dist: statsmodels>=0.14
+Requires-Dist: ruptures>=1.1
+Requires-Dist: requests>=2.32
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Dynamic: license-file
