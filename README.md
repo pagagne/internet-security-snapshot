@@ -26,9 +26,11 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 | Date | Milestone |
 |---|---|
 | 20 Oct 2026 | Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82) |
-| 1 Dec 2026 | Dry run on Oct–Nov 2026 data (unscored) |
-| 15 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |
+| 1 Dec 2026 | Dry run on Oct–Nov 2026 data (unscored; started by hand) |
+| 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
+| Feb 2027 | Censys research-access application (written by the author) |
+| 15 Mar 2027, then yearly | Annual review and change window; annual check of free numbers from March 2028 |
 | 1 Apr / 1 May 2027 | Q1 2027, first confirmatory quarter: provisional / final |
 
 ## Principles
