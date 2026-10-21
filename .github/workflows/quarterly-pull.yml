@@ -22,7 +22,7 @@ on:
         default: "kev,cve"
 
 permissions:
-  contents: read
+  contents: write   # to tag each provisional/final run
 
 jobs:
   pull:
@@ -56,3 +56,15 @@ jobs:
           name: snapshot-${{ github.run_id }}
           path: data/raw
           retention-days: 90
+
+      - name: Tag the run
+        # Tags the exact code and config used, e.g. snapshot-2026Q4-provisional.
+        # Dry runs are not tagged.
+        run: |
+          for dir in data/raw/*/*/; do
+            run=$(basename "$dir"); quarter=$(basename "$(dirname "$dir")")
+            if [ "$run" != "dry-run" ]; then
+              tag="snapshot-${quarter}-${run}"
+              git tag "$tag" && git push origin "$tag" || echo "tag $tag exists; not moved"
+            fi
+          done

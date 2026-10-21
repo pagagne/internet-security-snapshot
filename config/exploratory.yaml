@@ -1,0 +1,22 @@
+# Add-on (exploratory) measures. These appear in a separate "Exploratory" section of each
+# quarterly report. They never decide an Improving/Worsening or Rising/Falling label and
+# never change the cohort. Anything may be added here at any time with a dated entry.
+# Promotion to the core happens only at the March annual review (docs/CHANGE_POLICY.md).
+version: 1
+
+measures:
+  - id: X1
+    name: AI-credited share by lab family
+    question: Which labs' tools are credited with finding vulnerabilities, and how is that mix shifting?
+    sources: [cve]
+    added: 2026-10-21
+    feeds_labels: false
+    status: active
+
+  - id: X2
+    name: Watchlist matches
+    question: How many credits name tools on the newcomer watchlist that are not yet in the term list?
+    sources: [cve]
+    added: 2026-10-21
+    feeds_labels: false
+    status: active

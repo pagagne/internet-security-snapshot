@@ -1,0 +1,23 @@
+# Locked core of the study (baseline core-v1.1).
+# tests/test_locks.py fails if any file below changes without this manifest being
+# updated. Changing a locked file therefore takes three visible steps: edit the file,
+# add a dated row to prereg/DEVIATIONS.md, and record the new checksum and that date
+# here. See docs/CHANGE_POLICY.md for when a core change is allowed.
+baseline: core-v1.1
+files:
+  prereg/PREREGISTRATION.md:
+    sha256: 53131e11644b13c48c8db8981643ea4a39e0ee479c4c8ec90b2105d5e2acb2f1
+    deviation: null
+    note: "Registered on OSF 2026-10-20 (DOI 10.17605/OSF.IO/3XT82). Never edited."
+  config/cohort_rules.yaml:
+    sha256: 049063c7ee6dd5dd1d7d5eab725f21f5fa7781144e47ade23443b68e8ff58c74
+    deviation: 2026-10-21
+    note: "v1.1, seeded random draw"
+  config/ai_credit_terms.yaml:
+    sha256: 2fc836bf6fcf7a2e3b35fad072648c9996f1b994c2fe6930c620ebb7285206fb
+    deviation: 2026-10-20
+    note: "v1.2; T7 is also reported under the registered v1.0 list"
+  config/root_cause_map.yaml:
+    sha256: 12906cc90f31aef6d908128262bf876bf360c8d82dd6ab6450c97d58d1429efa
+    deviation: null
+    note: "v1.0 as registered"

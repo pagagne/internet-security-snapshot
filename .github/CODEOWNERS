@@ -1,0 +1,6 @@
+# Locked core: any pull request touching these needs the author's review.
+/prereg/                    @pagagne
+/config/cohort_rules.yaml   @pagagne
+/config/ai_credit_terms.yaml @pagagne
+/config/root_cause_map.yaml @pagagne
+/tests/test_locks.py        @pagagne

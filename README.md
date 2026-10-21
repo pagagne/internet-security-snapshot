@@ -14,6 +14,9 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
   [doi.org/10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82)
   (project: [osf.io/3smuq](https://osf.io/3smuq))
 - **Deviations log:** [`prereg/DEVIATIONS.md`](prereg/DEVIATIONS.md)
+- **Change policy:** [`docs/CHANGE_POLICY.md`](docs/CHANGE_POLICY.md): a locked core
+  (baseline `core-v1.1`, checksums in `prereg/LOCKED.yaml`) and an exploratory add-on
+  layer (`config/exploratory.yaml`) that never decides a label
 - **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml),
   [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
   [`config/root_cause_map.yaml`](config/root_cause_map.yaml)
