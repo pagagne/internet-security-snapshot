@@ -60,6 +60,17 @@ jobs:
           if [ -n "${{ inputs.epss_step }}" ]; then ARGS="$ARGS --epss-step ${{ inputs.epss_step }}"; fi
           python -m snapshot.pull $ARGS
 
+      - name: Data quality report
+        if: always()
+        # Writes quality.md/json into each bundle, adds it to the run summary, and posts it
+        # as a public notice so it can be read without downloading the bundle.
+        run: |
+          for b in data/raw/*/*/; do
+            python -m snapshot.quality "$b" > /dev/null || true
+            cat "$b/quality.md" >> "$GITHUB_STEP_SUMMARY"
+            python -c "import sys; t=open(sys.argv[1]).read()[:60000]; print('::notice title=Data quality ' + sys.argv[1] + '::' + t.replace('%','%25').replace('\r','%0D').replace('\n','%0A'))" "$b/quality.md"
+          done
+
       - name: Summary
         if: always()
         run: |
