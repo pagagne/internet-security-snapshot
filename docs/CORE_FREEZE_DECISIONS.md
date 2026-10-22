@@ -13,7 +13,7 @@ from the December dry run and the test runs.
 
 | # | Item | Now | Question for the session | Evidence to bring |
 |---|---|---|---|---|
-| 1 | Root-cause map coverage | Core | Extend the CWE map and let NVD fill missing CWEs? (39% "other/unknown" in Q3 2026) | Top unmapped CWEs; effect of NVD fill |
+| 1 | Root-cause map coverage | Core | Adopt map v1.1 (`proposals/root_cause_map_v1.1.yaml`)? It cuts "other/unknown" from 29% to 14% of eligible CVEs (Q3 2026). NVD fill is already in the registered source order and will be implemented regardless (small effect: 11.6% to 10.7% with no CWE). | `proposals/ROOT_CAUSE_MAP.md` |
 | 2 | T6(b) SEC Item 1.05 | Core | Keep as is, or add voluntary Item 8.01 cyber disclosures alongside? (4 filings in Q3, all amendments) | Next run's SEC diagnostics |
 | 3 | X6 Speed in the tail | Exploratory | Promote? It is tool-agnostic and catches faster attackers, incl. self-hosted models | Q3 2026 and baseline-year values |
 | 4 | X7 Patch to public exploit code | Exploratory | Keep exploratory until a year of data shows it is stable? | Coverage of PoC-in-GitHub for cohort CVEs |
