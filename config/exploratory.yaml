@@ -32,11 +32,13 @@ measures:
       Hand-curated from public reports. A campaign is logged when a security firm,
       government agency or AI lab reports attackers using AI agents or AI tooling in
       intrusions. Counted per quarter by date reported, with entry vector and whether a
-      second independent source confirms it. Victim names are never recorded. Reporting
+      second independent source confirms it. When a campaign names CVEs, the quarter
+      also reports how many of its KEV additions are linked to an AI-run campaign.
+      Victim names are never recorded. Reporting
       volume reflects attention as well as activity, so counts are read as a lower bound.
     report_sources:
       - Threat-intelligence reports on AI misuse from AI labs (Anthropic, OpenAI, Google GTIG); Anthropic is a conflict of interest and is labeled as such
-      - Security vendor and researcher disclosures (e.g. NorForge for Cairn)
+      - Security vendor and researcher disclosures (e.g. NorForge for Cairn; GreyNoise for the PaperCut agent campaign)
       - Government advisories (CISA, NCSC, ACSC, JPCERT)
       - MITRE ATLAS case studies and the AI Incident Database
       - LLM-agent honeypot research (e.g. Palisade Research's honeypot), as context
