@@ -68,7 +68,7 @@ textarea { width: 100%; min-height: 44px; resize: vertical; }
 .links { display: grid; gap: 4px; font-size: .9rem; }
 .links a { color: var(--accent); word-break: break-all; }
 .question { font-weight: 700; font-size: 1.05rem; }
-.actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .btn {
   border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 12px 10px; cursor: pointer;
   font-weight: 700; display: grid; gap: 2px; justify-items: center;
@@ -273,6 +273,7 @@ th { color: var(--muted); font-weight: 700; }
           <button class="btn primary" id="fix-ok">Confirm date<small>key C</small></button>
           <button class="btn" id="fix-edit">Correct it<small>key E</small></button>
           <button class="btn" id="fix-unknown">Can't find<small>recorded as unknown</small></button>
+          <button class="btn" id="fix-none">No fix yet<small>vendor has not released one</small></button>
         </div>
         <div class="row" id="fix-editor" hidden><input type="date" id="fixdate" value="${esc(a.fix_date || it.prefill_date || "")}"><button class="btn primary" id="fix-save">Save date</button></div>
       </div>`;
@@ -484,6 +485,7 @@ th { color: var(--muted); font-weight: 700; }
         await save(it, { fix_date: v, fix_status: v === it.prefill_date ? "confirmed" : "corrected" }); advance();
       };
       $("#fix-unknown").onclick = async () => { await save(it, { fix_date: "", fix_status: "unknown" }); advance(); };
+      $("#fix-none").onclick = async () => { await save(it, { fix_date: "", fix_status: "no_fix_yet", checked_on: new Date().toISOString().slice(0, 10) }); advance(); };
     }
     const clr = $("#clear");
     if (clr) clr.onclick = async () => { await clearAnswer(it); state.current = it.id; state.shownAt = Date.now(); render(); };
@@ -521,13 +523,13 @@ th { color: var(--muted); font-weight: 700; }
       return {
         g, first, pick: chosen, pending,
         status: chosen ? (a?.fix_status ? "Picked" : "Fix date pending") : pending ? "In progress" : "No candidate passed (slot empty)",
-        fix: a?.fix_status ? `${a.fix_date || "unknown"} (${a.fix_status})` : "",
+        fix: a?.fix_status ? (a.fix_status === "no_fix_yet" ? `no fix yet (checked ${a.checked_on || ""})` : `${a.fix_date || "unknown"} (${a.fix_status})`) : "",
       };
     });
     const secs = Object.values(state.answers).reduce((s, a) => s + (a.seconds || 0), 0);
     const unsure = Object.values(state.answers).filter((a) => a.unsure).length;
     const corrected = Object.values(state.answers).filter((a) => a.fix_status === "corrected").length;
-    const unknown = Object.values(state.answers).filter((a) => a.fix_status === "unknown").length;
+    const unknown = Object.values(state.answers).filter((a) => a.fix_status === "unknown" || a.fix_status === "no_fix_yet").length;
     const notes = its.filter((i) => ans(i.id)?.note);
     const allDone = its.filter(needed).every(isDone);
 
@@ -539,7 +541,7 @@ th { color: var(--muted); font-weight: 700; }
         <div class="stat"><b>${autoCredits.length}</b>accepted automatically</div>
         <div class="stat"><b>${picks.filter((p) => p.status === "Picked").length} / ${picks.length}</b>cohort slots filled</div>
         <div class="stat"><b>${Math.round(secs / 60)} min</b>review time</div>
-        <div class="stat"><b>${corrected} · ${unknown}</b>dates corrected · unknown</div>
+        <div class="stat"><b>${corrected} · ${unknown}</b>dates corrected · unknown or no fix yet</div>
       </div>
       <div class="meta"><span>"Not sure" answers (counted as no): ${unsure}</span></div>
       <h2>Cohort picks</h2>

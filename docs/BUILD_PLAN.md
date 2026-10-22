@@ -8,6 +8,7 @@
 | 20 Nov | Pre-filled fix dates in review lists (GitHub releases, advisories, commits; else marked as assumed) | built 2026-10-22; first live test pending |
 | 30 Nov | Evaluation code: T1-T7 labels, bootstrap intervals, exploratory X1-X12; T7 range (floor/hand/ceiling, `snapshot.t7`) and consistency rate built 2026-10-22 | to do |
 | 30 Nov | Draft evaluation page for the dry run | to do |
+| 20 Nov | Picks recorded "no fix yet" return to the review list for a fix date in later runs (within the 90-day follow-up) | to do |
 
 Author checkpoints: 16 Nov reference-date spot check, 23-24 Nov baseline-year hand check (two sessions),
 1 Dec dry run, 2 Dec dry-run hand check, 4 Dec landing page.

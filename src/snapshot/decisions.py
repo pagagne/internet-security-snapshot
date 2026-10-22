@@ -25,7 +25,7 @@ import json
 from pathlib import Path
 
 FIELDS = ["batch", "item_id", "decided_by", "kind", "month", "slot", "rank", "cve_id", "credit", "terms",
-          "decision", "unsure", "bulk", "fix_date", "fix_status", "prefill_date", "prefill_source",
+          "decision", "unsure", "bulk", "fix_date", "fix_status", "checked_on", "prefill_date", "prefill_source",
           "seconds", "note", "answered_at", "recorded_at"]
 
 
@@ -50,7 +50,7 @@ def load(export: Path, batch: str) -> tuple[dict, list[dict]]:
             "cve_id": it.get("cve_id", a.get("cve_id", "")), "credit": it.get("credit", ""),
             "terms": "; ".join(it.get("terms", []) or []),
             "decision": a.get("decision", ""), "unsure": bool(a.get("unsure")), "bulk": bool(a.get("bulk")),
-            "fix_date": a.get("fix_date", ""), "fix_status": a.get("fix_status", ""),
+            "fix_date": a.get("fix_date", ""), "fix_status": a.get("fix_status", ""), "checked_on": a.get("checked_on", ""),
             "prefill_date": it.get("prefill_date", ""), "prefill_source": it.get("prefill_source", ""),
             "seconds": a.get("seconds", 0), "note": a.get("note", ""), "answered_at": a.get("at", ""),
             "recorded_at": now,

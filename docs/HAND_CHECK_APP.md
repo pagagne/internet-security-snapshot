@@ -68,8 +68,10 @@ and the app asks for the fix date. If all three are no, the slot stays empty.
 
 - **Confirm date** (`C`) if the link shows the same date.
 - **Correct it** (`E`) to pick the right date.
-- **Can't find** if no fix date can be established (for example only a workaround exists);
-  add a note.
+- **Can't find** if a fix exists but its date can't be established; add a note.
+- **No fix yet** if the vendor has not released a fix (for example only workarounds, or
+  "fix pending" for every version). The check date is recorded, and the flaw comes back for a fix date in later runs until one exists.
+  An unfixed flaw is a real result for the race between fixing and exploitation.
 
 Dates marked *assumed* came from the CVE publication date, not from an advisory: open the
 link before confirming.
