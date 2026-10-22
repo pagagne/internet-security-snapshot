@@ -120,6 +120,30 @@ def retest_sample(decisions_csv: Path, n: int, seed: str) -> list[str]:
     return ranked[:n]
 
 
+def no_fix_rechecks(decisions_csv: Path, through_month: str, follow_up_days: int = 90) -> list[dict]:
+    """Cohort picks last recorded as 'no fix yet' whose 90-day follow-up has not ended by
+    the end of `through_month`: they return to the review list for a fix date."""
+    import calendar
+    if not decisions_csv.exists():
+        return []
+    latest: dict[str, dict] = {}
+    with open(decisions_csv, newline="") as f:
+        for r in csv.DictReader(f):
+            if r.get("decided_by", "author") == "author" and r.get("fix_status") and r["cve_id"]:
+                if r["cve_id"] not in latest or r.get("answered_at", "") >= latest[r["cve_id"]].get("answered_at", ""):
+                    latest[r["cve_id"]] = r
+    y, m = map(int, through_month.split("-"))
+    end = dt.date(y, m, calendar.monthrange(y, m)[1])
+    out = []
+    for r in latest.values():
+        if r["fix_status"] != "no_fix_yet" or not r.get("month"):
+            continue
+        my, mm = map(int, r["month"].split("-"))
+        if (end - dt.date(my, mm, 1)).days <= follow_up_days + 31:
+            out.append(r)
+    return out
+
+
 def consistency(decisions_csv: Path) -> dict:
     """Share of re-shown credit texts the author answered the same way as before."""
     if not decisions_csv.exists():

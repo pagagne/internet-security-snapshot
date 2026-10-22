@@ -30,6 +30,25 @@ def t7_range(cve: pd.DataFrame, author_yes: set[str] | None = None) -> dict:
             "floor_pct": share(int(auto.sum())), "hand_pct": share(int(hand.sum())), "ceiling_pct": share(len(cand))}
 
 
+def programme_evidence(cve: pd.DataFrame, floor_mask: pd.Series | None = None) -> int:
+    """Floor plus credits from organizations with a dated AI-discovery programme active at
+    publication (config/ai_programs.yaml). Exploratory (decision item 15)."""
+    import re
+    from .util import load_config
+    progs = load_config("ai_programs.yaml")["programmes"]
+    pub = pd.to_datetime(cve["date_published"], utc=True, errors="coerce").dt.date
+    text = cve["credit_values"].map(lambda v: " | ".join(list(v)))
+    hit = pd.Series(False, index=cve.index)
+    for p in progs:
+        start = pd.Timestamp(p["active_from"]).date()
+        end = pd.Timestamp(p["active_to"]).date() if p.get("active_to") else None
+        in_window = pub.map(lambda d: d is not None and d == d and d >= start and (end is None or d <= end))
+        hit |= in_window & text.map(lambda t: bool(re.search(p["credit_regex"], t)))
+    if floor_mask is not None:
+        hit |= floor_mask
+    return int(hit.sum())
+
+
 def direction(history: list[dict], window: int = 4) -> str:
     """Direction label from floor and ceiling: each compared with the median of the
     previous `window` quarters, two quarters running, both edges agreeing."""

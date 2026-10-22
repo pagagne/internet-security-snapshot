@@ -71,3 +71,36 @@ def test_retest_and_consistency(tmp_path):
         w.writerow({"batch": "q1", "item_id": "c", "decided_by": "rule:using", "kind": "credit", "credit": "Y using Codex", "decision": "yes", "answered_at": "1"})
     assert retest_sample(p, 5, "s") == ["X of OpenAI"]
     assert consistency(p) == {"pairs": 1, "same": 1, "rate": 1.0}
+
+
+def test_validation_no_fix_and_case_grouping(tmp_path):
+    import csv
+    import pandas as pd
+    from snapshot.validate import compare
+    ref = tmp_path / "ref.csv"
+    with open(ref, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["case", "cve_id", "t_patch", "t_kev", "t_exploit", "t_exploit_note"])
+        w.writeheader()
+        w.writerow({"case": "A", "cve_id": "C1", "t_patch": "2026-01-02", "t_kev": "2026-01-05", "t_exploit": "2026-01-04", "t_exploit_note": "x"})
+        w.writerow({"case": "B", "cve_id": "C2", "t_patch": "", "t_kev": "2026-01-05", "t_exploit": "2026-01-05", "t_exploit_note": "x"})
+    ev = pd.DataFrame([
+        {"cve_id": "C1", "t_patch": pd.Timestamp("2026-01-02"), "t_patch_source": "author:confirmed", "t_kev": pd.Timestamp("2026-01-05"), "t_exploit": pd.Timestamp("2026-01-05")},
+        {"cve_id": "C2", "t_patch": pd.NaT, "t_patch_source": "author:no_fix_yet", "t_kev": pd.Timestamp("2026-01-05"), "t_exploit": pd.Timestamp("2026-01-05")},
+    ])
+    df, s = compare(ref, ev)
+    assert s["passed"] == 2 and df["patch_ok"].all()
+
+
+def test_t1_race_basic():
+    import pandas as pd
+    from snapshot.race import t1_race
+    T = pd.Timestamp
+    ev = pd.DataFrame([
+        {"cve_id": "a", "t0": T("2026-07-01"), "t_patch": T("2026-07-01"), "t_exploit": T("2026-07-11")},
+        {"cve_id": "b", "t0": T("2026-07-01"), "t_patch": T("2026-07-05"), "t_exploit": T("2026-07-03")},
+        {"cve_id": "c", "t0": T("2026-07-01"), "t_patch": T("2026-07-01"), "t_exploit": None},
+        {"cve_id": "d", "t0": T("2026-07-01"), "t_patch": None, "t_exploit": None},
+    ])
+    r = t1_race(ev, "2026-12-31")
+    assert r["n_measured"] == 3 and r["exploited"] == 2
+    assert r["outcomes"]["lost"] == 1 and r["outcomes"]["open (no fix)"] == 1

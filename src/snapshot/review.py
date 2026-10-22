@@ -148,7 +148,11 @@ def main(argv=None) -> int:
     for m in a.months:
         r, s = month_rows(cve, m)
         rows += r; stats.append(s)
-    from .decisions import decided_credits, retest_sample
+    from .decisions import decided_credits, no_fix_rechecks, retest_sample
+    for r in no_fix_rechecks(a.decisions, a.months[-1]):
+        rows.append({"month": r["month"], "slot": r["slot"], "draw_rank": r["rank"], "cve_id": r["cve_id"],
+                     "task": "patch_date", "question": f"Re-check: no fix found on {r['checked_on']}. Has the vendor released one?",
+                     "patch_date": "", "patch_source": f"no fix yet as of {r['checked_on']}"})
     rows += credit_rows(cve, a.months, decided_credits(a.decisions))
     rows += [{"month": ",".join(a.months), "slot": "T7", "draw_rank": "", "cve_id": "", "task": "ai_credit",
               "retest": True, "auto_rule": "", "spot_check": False,

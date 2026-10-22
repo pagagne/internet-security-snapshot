@@ -1,0 +1,37 @@
+# Organizations with a dated, public AI-driven vulnerability-discovery programme (exploratory;
+# decision item 15). A credit counts toward the "programme-evidence" T7 estimate when it
+# matches `credit_regex` and the CVE was published within [active_from, active_to].
+# Reported only; never decides T7's direction. Sources: exploratory/credit_groups.md.
+version: 0.1-proposed
+programmes:
+  - org: OpenAI
+    programme: Codex Security (formerly Aardvark); Patch the Planet
+    active_from: 2026-03-06
+    active_to: null
+    credit_regex: '\bOpenAI\b|Codex Security'
+    source: https://openai.com/blog/patch-the-planet
+  - org: Trail of Bits (with OpenAI)
+    programme: Patch the Planet (lead partner)
+    active_from: 2026-06-22
+    active_to: null
+    credit_regex: 'Trail of Bits.{0,40}OpenAI'
+    source: https://openai.com/blog/patch-the-planet
+  - org: Anthropic and CVD partners
+    programme: Frontier Red Team coordinated disclosure (Claude); OSS Scanner
+    active_from: 2026-02-05
+    active_to: null
+    credit_regex: '\bAnthropic\b|Calif\.io|Ada Logics'
+    source: https://red.anthropic.com/2026/cvd/about
+    conflict_of_interest: true
+  - org: Z.ai
+    programme: GLM vulnerability disclosure ledger (cvd.z.ai)
+    active_from: 2026-01-01
+    active_to: null
+    credit_regex: '\bZ\.ai\b|Zhipu'
+    source: https://codersera.com/blog/glm-5-3-cyber-capabilities-explained-2026/
+  - org: Theori
+    programme: Xint Code
+    active_from: 2026-03-17
+    active_to: null
+    credit_regex: '\bXint\b'
+    source: https://siliconangle.com/2026/03/17/theori-launches-xint-code-ai-platform-uncover-hidden-vulnerabilities-massive-codebases/
