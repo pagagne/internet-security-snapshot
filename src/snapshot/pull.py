@@ -17,6 +17,7 @@ import datetime as dt
 import shutil
 import sys
 import tempfile
+import time
 import traceback
 from pathlib import Path
 
@@ -158,6 +159,13 @@ PULLERS = {"kev": pull_kev, "cve": pull_cve, "nvd": pull_nvd, "epss": pull_epss,
            "sec": pull_sec, "radar": pull_radar, "ransomware": pull_ransomware}
 
 
+def _annotate(level: str, source: str, text: str) -> None:
+    """On GitHub Actions, post a public run annotation per source (status and duration)."""
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        msg = text.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::{level} title=pull {source}::{msg}", flush=True)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--quarter", help="e.g. 2026Q4 (default: previous quarter)")
@@ -182,12 +190,15 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"unknown source: {name}", file=sys.stderr)
                 return 2
             print(f"[pull] {name} -> {out}")
+            t0 = time.monotonic()
             try:
                 PULLERS[name](out, manifest, Path(tmp))
+                _annotate("notice", name, f"ok in {time.monotonic() - t0:.0f}s")
             except Exception as exc:  # recorded as a gap, never silently skipped
                 failures += 1
                 traceback.print_exc()
                 manifest.add_gap(name, f"{type(exc).__name__}: {exc}")
+                _annotate("error", name, f"gap after {time.monotonic() - t0:.0f}s: {type(exc).__name__}: {str(exc)[:500]}")
     path = manifest.write()
     print(f"[pull] manifest: {path} ({failures} gap(s))")
     return 1 if failures else 0
