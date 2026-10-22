@@ -1,0 +1,24 @@
+[pull] kev -> data/raw/2026Q3/dry-run
+::notice title=pull kev::ok in 8s
+[pull] cve -> data/raw/2026Q3/dry-run
+::notice title=pull cve::ok in 198s
+[pull] nvd -> data/raw/2026Q3/dry-run
+::notice title=pull nvd::ok in 6540s
+[pull] epss -> data/raw/2026Q3/dry-run
+::notice title=pull epss::ok in 86s
+[pull] sec -> data/raw/2026Q3/dry-run
+::notice title=pull sec::ok in 1s
+Traceback (most recent call last):
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 201, in main
+    PULLERS[name](out, manifest, Path(tmp))
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 142, in pull_radar
+    for name, data in radar.fetch(start, end).items():
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/radar.py", line 47, in fetch
+    raise RuntimeError("Cloudflare Radar rejected CLOUDFLARE_TOKEN: " + "; ".join(codes))
+RuntimeError: Cloudflare Radar rejected CLOUDFLARE_TOKEN: line 1 (length 64): HTTP 400 ['9106:Authentication failed (status: 400)']; line 2 (length 80): HTTP 400 ['9106:Authentication failed (status: 400)']
+[pull] radar -> data/raw/2026Q3/dry-run
+::error title=pull radar::gap after 1s: RuntimeError: Cloudflare Radar rejected CLOUDFLARE_TOKEN: line 1 (length 64): HTTP 400 ['9106:Authentication failed (status: 400)']; line 2 (length 80): HTTP 400 ['9106:Authentication failed (status: 400)']
+[pull] ransomware -> data/raw/2026Q3/dry-run
+::notice title=pull ransomware::ok in 15s
+[pull] manifest: data/raw/2026Q3/dry-run/manifest.json (1 gap(s))
