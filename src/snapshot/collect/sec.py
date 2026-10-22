@@ -32,15 +32,16 @@ DIAG: dict = {}
 
 
 def filings_105(start: dt.date, end: dt.date) -> pd.DataFrame:
-    frames = [_search(q, start, end) for q in QUERIES]
+    # Each form searched on its own: a combined "8-K,8-K/A" filter returned amendments only.
+    frames = [_search(q, start, end, form) for q in QUERIES for form in ("8-K", "8-K/A")]
     df = pd.concat(frames, ignore_index=True)
     return df.drop_duplicates("accession")
 
 
-def _search(query: str, start: dt.date, end: dt.date) -> pd.DataFrame:
+def _search(query: str, start: dt.date, end: dt.date, form: str = "8-K") -> pd.DataFrame:
     rows, offset, total, hits_seen, forms = [], 0, None, 0, {}
     while total is None or offset < total:
-        params = {"q": query, "forms": "8-K,8-K/A", "dateRange": "custom",
+        params = {"q": query, "forms": form, "dateRange": "custom",
                   "startdt": start.isoformat(), "enddt": end.isoformat(), "from": offset}
         data = get(SEARCH, params=params, headers=_headers(), pause=0.2).json()
         hits = data["hits"]["hits"]
@@ -63,7 +64,7 @@ def _search(query: str, start: dt.date, end: dt.date) -> pd.DataFrame:
         if not hits:
             break
         offset += len(hits)
-    DIAG[query] = {"total_hits": total, "hits_read": hits_seen, "forms": forms, "with_item_1_05": len(rows)}
+    DIAG[f"{query} [{form}]"] = {"total_hits": total, "hits_read": hits_seen, "forms": forms, "with_item_1_05": len(rows)}
     df = pd.DataFrame(rows, columns=["accession", "form", "file_date", "items", "cik"])
     return df.drop_duplicates("accession")
 
