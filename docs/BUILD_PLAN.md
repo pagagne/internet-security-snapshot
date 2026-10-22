@@ -14,3 +14,5 @@
 
 Author checkpoints: 16 Nov reference-date spot check, 23-24 Nov baseline-year hand check (two sessions),
 1 Dec dry run, 2 Dec dry-run hand check, 4 Dec landing page.
+
+Research window 23 Oct - 15 Nov (two plans: with and without data permissions): see `docs/RESEARCH_PLAN.md`; review 12 Nov.
