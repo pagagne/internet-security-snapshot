@@ -41,3 +41,32 @@ def test_spot_check_is_seeded():
     keys = [f"k{i}" for i in range(40)]
     a, b = spot_check(keys, "s"), spot_check(keys, "s")
     assert a == b and len(a) == 4
+
+
+def test_t7_range_and_direction():
+    import pandas as pd
+    from snapshot.t7 import direction, t7_range
+    cve = pd.DataFrame({
+        "credit_values": [["Jane using Codex"], ["Amy Burnett of OpenAI"], ["Bob"], ["Ann with Claude"]],
+        "credit_types": [["finder"], ["finder"], ["finder"], ["finder"]],
+        "ai_credit_terms": [["Codex"], ["OpenAI"], [], ["Claude"]],
+    })
+    r = t7_range(cve, author_yes={"Amy Burnett of OpenAI"})
+    assert (r["floor"], r["hand"], r["ceiling"]) == (2, 3, 3)
+    up = [{"floor_pct": v, "ceiling_pct": v * 2} for v in (1, 1, 1, 1, 2, 3)]
+    assert direction(up) == "Rising"
+    mixed = [{"floor_pct": v, "ceiling_pct": w} for v, w in zip((1, 1, 1, 1, 2, 3), (5, 5, 5, 5, 4, 3))]
+    assert direction(mixed).startswith("Unclear")
+
+
+def test_retest_and_consistency(tmp_path):
+    import csv
+    from snapshot.decisions import FIELDS, consistency, retest_sample
+    p = tmp_path / "d.csv"
+    with open(p, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore"); w.writeheader()
+        w.writerow({"batch": "q1", "item_id": "a", "decided_by": "author", "kind": "credit", "credit": "X of OpenAI", "decision": "no", "answered_at": "1"})
+        w.writerow({"batch": "q2", "item_id": "b", "decided_by": "author", "kind": "credit", "credit": "X of OpenAI", "decision": "no", "answered_at": "2"})
+        w.writerow({"batch": "q1", "item_id": "c", "decided_by": "rule:using", "kind": "credit", "credit": "Y using Codex", "decision": "yes", "answered_at": "1"})
+    assert retest_sample(p, 5, "s") == ["X of OpenAI"]
+    assert consistency(p) == {"pairs": 1, "same": 1, "rate": 1.0}

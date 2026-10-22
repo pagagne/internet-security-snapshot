@@ -28,6 +28,7 @@ from .util import Quarter, load_config
 
 BACKUPS = 3
 CARRIED: dict[str, str] = {}   # credit texts carried over from earlier decisions (last run)
+RETEST_N = 5                     # earlier author decisions shown again, unmarked, each quarter
 
 
 def eligible(cve: pd.DataFrame, month: str) -> pd.DataFrame:
@@ -147,13 +148,17 @@ def main(argv=None) -> int:
     for m in a.months:
         r, s = month_rows(cve, m)
         rows += r; stats.append(s)
-    from .decisions import decided_credits
+    from .decisions import decided_credits, retest_sample
     rows += credit_rows(cve, a.months, decided_credits(a.decisions))
+    rows += [{"month": ",".join(a.months), "slot": "T7", "draw_rank": "", "cve_id": "", "task": "ai_credit",
+              "retest": True, "auto_rule": "", "spot_check": False,
+              "question": "Does this credit say an AI tool took part?", "credit": k, "terms": "", "examples": ""}
+             for k in retest_sample(a.decisions, RETEST_N, seed=",".join(a.months))]
     if CARRIED:
         print(f"{len(CARRIED)} credit texts carried over from earlier decisions")
     a.out.parent.mkdir(parents=True, exist_ok=True)
     fields = ["month", "slot", "draw_rank", "cve_id", "product", "cvss", "published", "task", "question",
-              "credit", "terms", "examples", "auto_rule", "spot_check", "links", "answer", "patch_date", "patch_source", "notes"]
+              "credit", "terms", "examples", "auto_rule", "spot_check", "retest", "links", "answer", "patch_date", "patch_source", "notes"]
     with open(a.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
     print(pd.DataFrame(stats).to_string(index=False))

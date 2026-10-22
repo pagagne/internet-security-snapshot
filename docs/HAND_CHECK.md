@@ -91,6 +91,28 @@ leans toward undercounting rather than overcounting AI involvement.
 T7 is reported each quarter under the registered term list (v1.0) and the current list,
 with the current list labeled as a deviation. See `prereg/DEVIATIONS.md`.
 
+## T7 as a range
+
+Credits often do not say how a flaw was found, so T7 is reported as a range each quarter
+(`src/snapshot/t7.py`), with one denominator, all CVEs published in the quarter:
+
+- **Floor:** credits accepted by a clear published pattern; no judgment involved.
+- **Hand-checked:** the floor plus credits the author answered yes to (the registered T7).
+- **Ceiling:** every credit mentioning any listed AI term, lab names included.
+
+Q3 2026 (test data): floor 0.43%, ceiling 0.81% of 36,732 CVEs.
+A direction is called only when the floor and the ceiling move the same way (two quarters
+running against the median of the previous four); otherwise T7's direction is "unclear".
+Borderline calls can move the hand-checked figure within the range but cannot create a
+trend on their own. (Direction rule to be confirmed at the 21 December session.)
+
+## Consistency of hand decisions
+
+Each quarter, five credit texts the author decided before are shown again, unmarked, among
+the new ones. The share answered the same way both times is published as the consistency
+rate (`snapshot.decisions.consistency`). High consistency means the judgment is steady even
+where the rules are fuzzy.
+
 ## How to read T7: disclosed, not total
 
 T7 counts flaws whose credits *say* an AI tool took part. It depends on the finder

@@ -108,6 +108,36 @@ def decided_credits(decisions_csv: Path) -> dict[str, str]:
     return {k: v[0] for k, v in out.items()}
 
 
+def retest_sample(decisions_csv: Path, n: int, seed: str) -> list[str]:
+    """Seeded sample of credit texts the author decided before, shown again unmarked."""
+    import hashlib
+    if not decisions_csv.exists():
+        return []
+    with open(decisions_csv, newline="") as f:
+        keys = sorted({r["credit"] for r in csv.DictReader(f)
+                       if r["kind"] == "credit" and r.get("decided_by", "author") == "author" and r["credit"] and r["decision"]})
+    ranked = sorted(keys, key=lambda k: hashlib.sha256(f"retest|{seed}|{k}".encode()).hexdigest())
+    return ranked[:n]
+
+
+def consistency(decisions_csv: Path) -> dict:
+    """Share of re-shown credit texts the author answered the same way as before."""
+    if not decisions_csv.exists():
+        return {"pairs": 0, "same": 0, "rate": None}
+    by_text: dict[str, list[tuple[str, str]]] = {}
+    with open(decisions_csv, newline="") as f:
+        for r in csv.DictReader(f):
+            if r["kind"] == "credit" and r.get("decided_by", "author") == "author" and r["decision"]:
+                by_text.setdefault(r["credit"], []).append((r["answered_at"], r["decision"]))
+    pairs = same = 0
+    for answers in by_text.values():
+        answers.sort()
+        for (_, a), (_, b) in zip(answers, answers[1:]):
+            pairs += 1
+            same += a == b
+    return {"pairs": pairs, "same": same, "rate": round(same / pairs, 3) if pairs else None}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("export", type=Path)

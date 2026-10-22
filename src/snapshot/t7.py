@@ -1,0 +1,48 @@
+"""T7 (AI-credited share) reported as a range.
+
+- floor:   CVEs whose credit is accepted by a clear published pattern (no judgment)
+- hand:    floor plus credits the author answered "yes" to (the registered measure)
+- ceiling: every CVE whose credit mentions any listed AI term, lab names included
+
+All three share one denominator: CVEs published in the quarter. A direction (Rising or
+Falling) is called only when floor and ceiling move the same way (decision item 14);
+otherwise T7's direction is reported as unclear.
+"""
+
+from __future__ import annotations
+
+import pandas as pd
+
+from .autoaccept import auto_accept
+
+
+def t7_range(cve: pd.DataFrame, author_yes: set[str] | None = None) -> dict:
+    """cve: published CVEs of one quarter (cve_records rows). author_yes: credit texts
+    (joined with ' | ', first 300 chars) the author answered yes to."""
+    author_yes = author_yes or set()
+    n = len(cve)
+    cand = cve[cve["ai_credit_terms"].map(lambda x: len(x) > 0)]
+    keys = cand["credit_values"].map(lambda v: " | ".join(list(v)))
+    auto = cand.apply(lambda r: auto_accept(" | ".join(list(r["credit_values"])), list(r["credit_types"])) is not None, axis=1)
+    hand = auto | keys.map(lambda k: k[:300] in author_yes)
+    share = lambda k: round(100 * k / n, 3) if n else None
+    return {"cves": n, "floor": int(auto.sum()), "hand": int(hand.sum()), "ceiling": len(cand),
+            "floor_pct": share(int(auto.sum())), "hand_pct": share(int(hand.sum())), "ceiling_pct": share(len(cand))}
+
+
+def direction(history: list[dict], window: int = 4) -> str:
+    """Direction label from floor and ceiling: each compared with the median of the
+    previous `window` quarters, two quarters running, both edges agreeing."""
+    def edge(key):
+        vals = [h[key] for h in history]
+        if len(vals) < window + 2:
+            return None
+        moves = []
+        for i in (-2, -1):
+            prior = pd.Series(vals[i - window:i]).median()
+            moves.append("up" if vals[i] > prior else "down" if vals[i] < prior else "flat")
+        return moves[0] if moves[0] == moves[1] and moves[0] != "flat" else None
+    f, c = edge("floor_pct"), edge("ceiling_pct")
+    if f and f == c:
+        return "Rising" if f == "up" else "Falling"
+    return "No clear direction" if f == c else "Unclear (floor and ceiling disagree)"
