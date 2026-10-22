@@ -30,7 +30,7 @@ permissions:
 
 jobs:
   pull:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
@@ -100,7 +100,7 @@ jobs:
 
       - name: Upload frozen bundle
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: snapshot-${{ github.run_id }}
           path: data/raw

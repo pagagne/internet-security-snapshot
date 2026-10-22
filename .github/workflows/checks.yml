@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6

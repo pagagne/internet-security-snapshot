@@ -26,6 +26,7 @@ from .fixdates import prefill
 from .util import Quarter, load_config
 
 BACKUPS = 3
+CARRIED: dict[str, str] = {}   # credit texts carried over from earlier decisions (last run)
 
 
 def eligible(cve: pd.DataFrame, month: str) -> pd.DataFrame:
@@ -97,7 +98,9 @@ def month_rows(cve: pd.DataFrame, month: str) -> tuple[list[dict], dict]:
     return rows, stats
 
 
-def credit_rows(cve: pd.DataFrame, months: list[str]) -> list[dict]:
+def credit_rows(cve: pd.DataFrame, months: list[str], already: dict[str, str] | None = None) -> list[dict]:
+    """One row per distinct AI-credit text. Texts already decided in an earlier scored
+    batch (review/decisions.csv) are carried over and not asked again."""
     d = cve.copy()
     d["m"] = pd.to_datetime(d["date_published"], utc=True, errors="coerce").dt.strftime("%Y-%m")
     d = d[d["m"].isin(months) & d["ai_credit_terms"].map(lambda x: len(x) > 0)]
@@ -108,6 +111,10 @@ def credit_rows(cve: pd.DataFrame, months: list[str]) -> list[dict]:
         g["n"] += 1
         if len(g["ids"]) < 5:
             g["ids"].append(r["cve_id"])
+    already = already or {}
+    CARRIED.clear()
+    CARRIED.update({k: already[k[:300]] for k in groups if k[:300] in already})
+    groups = {k: g for k, g in groups.items() if k[:300] not in already}
     return [{"month": ",".join(months), "slot": "T7", "draw_rank": "", "cve_id": g["example"],
              "task": "ai_credit", "question": f"Does this credit say an AI tool took part? Applies to {g['n']} CVE(s)."
              + (" Lab name only: needs an explicit AI-tool mention." if lab_name_only(g["terms"]) else ""),
@@ -121,6 +128,8 @@ def main(argv=None) -> int:
     ap.add_argument("--months", nargs="+", help="YYYY-MM months (or use --quarter)")
     ap.add_argument("--quarter", help="e.g. 2026Q3: its three months")
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--decisions", type=Path, default=Path("review/decisions.csv"),
+                    help="earlier scored decisions; decided credit texts are not asked again")
     a = ap.parse_args(argv)
     if a.quarter and not a.months:
         q = Quarter.parse(a.quarter)
@@ -132,7 +141,10 @@ def main(argv=None) -> int:
     for m in a.months:
         r, s = month_rows(cve, m)
         rows += r; stats.append(s)
-    rows += credit_rows(cve, a.months)
+    from .decisions import decided_credits
+    rows += credit_rows(cve, a.months, decided_credits(a.decisions))
+    if CARRIED:
+        print(f"{len(CARRIED)} credit texts carried over from earlier decisions")
     a.out.parent.mkdir(parents=True, exist_ok=True)
     fields = ["month", "slot", "draw_rank", "cve_id", "product", "cvss", "published", "task", "question",
               "credit", "terms", "examples", "links", "answer", "patch_date", "patch_source", "notes"]
