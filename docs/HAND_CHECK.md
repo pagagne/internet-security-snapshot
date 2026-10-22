@@ -24,6 +24,23 @@ out and reported as pending.
 5. Only rows marked yes are used. Unreviewed rows are excluded and reported as pending.
 6. The review file, decisions, reviewer and date are published in the quarter's bundle.
 
+## The Hand Check app
+
+Hand checks are done in a private web app (source: `apps/hand-check.html`), not in a
+spreadsheet. After each data run, Claude loads that quarter's review list into it. The app
+shows one item at a time (AI credits and cohort picks as separate sections), saves every
+answer as it is made, tracks time spent, and ends with a report.
+
+How results flow into the study:
+1. The author answers items in the app; answers are saved in the app's own database.
+2. When the author says the list is done, Claude reads the answers and writes them to
+   `review/decisions.csv` in this repository (one row per item: decision, fix date and its
+   status, time, note), committed with a dated message. Earlier decisions carry over to
+   later quarters automatically.
+3. The evaluation uses only `review/decisions.csv`, so every hand decision behind a
+   published number is public and reviewable.
+4. A CSV copy can also be saved from the app's Report view as a personal backup.
+
 ## How the hand check fits the random draw
 
 Each month's pick in every slot comes from a seeded random draw (`config/cohort_rules.yaml`,

@@ -7,3 +7,4 @@ data/work/
 *.parquet
 *.duckdb
 .ipynb_checkpoints/
+.seed/

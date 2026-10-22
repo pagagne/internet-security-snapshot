@@ -1,0 +1,411 @@
+<title>Snapshot Hand Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one review card at a time, a slim progress header above, the report as a second view. */
+:root {
+  --bg: #f4f5f2;
+  --surface: #ffffff;
+  --ink: #1d2324;
+  --muted: #5d6766;
+  --line: #d9ddd8;
+  --accent: #1f6f78;        /* teal: the reviewer's own actions */
+  --accent-ink: #ffffff;
+  --yes: #2e7d4f;
+  --no: #b3412e;
+  --warn: #a86a00;
+  --warn-bg: #fbf1dc;
+  --chip: #e8ecea;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131819; --surface: #1b2223; --ink: #e6ebe9; --muted: #9aa6a4; --line: #2d3738;
+    --accent: #4fb3bd; --accent-ink: #0f1516; --yes: #5cc287; --no: #ec7a62; --warn: #e3ac4a;
+    --warn-bg: #2c2414; --chip: #252e2f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131819; --surface: #1b2223; --ink: #e6ebe9; --muted: #9aa6a4; --line: #2d3738;
+  --accent: #4fb3bd; --accent-ink: #0f1516; --yes: #5cc287; --no: #ec7a62; --warn: #e3ac4a;
+  --warn-bg: #2c2414; --chip: #252e2f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 12px 40px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 14px; }
+header { display: grid; gap: 10px; }
+.top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; justify-content: space-between; }
+h1 { font-size: 1.15rem; margin: 0; letter-spacing: .01em; }
+h2 { font-size: 1rem; margin: 0; text-wrap: balance; }
+select, input[type=date], textarea, button { font: inherit; color: inherit; }
+select, input[type=date], textarea {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+}
+textarea { width: 100%; min-height: 44px; resize: vertical; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; cursor: pointer;
+}
+.tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.bar { height: 8px; border-radius: 99px; background: var(--chip); overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+.meta { color: var(--muted); font-size: .9rem; display: flex; flex-wrap: wrap; gap: 4px 14px; font-variant-numeric: tabular-nums; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+.kicker { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pill { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; padding: 3px 9px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+.pill.warn { background: var(--warn-bg); color: var(--warn); }
+.credit { font-size: 1.25rem; line-height: 1.45; word-break: break-word; }
+.mono { font-family: var(--font-mono); font-size: .92rem; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: .95rem; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; min-width: 0; word-break: break-word; }
+.links { display: grid; gap: 4px; font-size: .9rem; }
+.links a { color: var(--accent); word-break: break-all; }
+.question { font-weight: 700; font-size: 1.05rem; }
+.actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.btn {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 12px 10px; cursor: pointer;
+  font-weight: 700; display: grid; gap: 2px; justify-items: center;
+}
+.btn small { font-weight: 400; color: var(--muted); font-size: .75rem; }
+.btn.yes { border-color: var(--yes); color: var(--yes); }
+.btn.no { border-color: var(--no); color: var(--no); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.primary small { color: inherit; opacity: .8; }
+.btn:focus-visible, .tab:focus-visible, a:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.ghost { background: none; border: none; color: var(--accent); cursor: pointer; padding: 6px 0; text-decoration: underline; }
+.hint { background: var(--warn-bg); color: var(--ink); border-radius: 10px; padding: 10px 12px; font-size: .92rem; }
+.done { text-align: center; display: grid; gap: 10px; padding: 28px 18px; }
+details summary { cursor: pointer; color: var(--muted); }
+.fix { display: grid; gap: 10px; border-top: 1px dashed var(--line); padding-top: 14px; }
+.status { font-size: .9rem; color: var(--muted); min-height: 1.4em; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .88rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 700; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.stat b { display: block; font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.y { color: var(--yes); font-weight: 700; } .n { color: var(--no); font-weight: 700; }
+@media (max-width: 480px) { .actions { grid-template-columns: 1fr 1fr; } .actions .btn:last-child { grid-column: span 2; } .credit { font-size: 1.1rem; } }
+@media (prefers-reduced-motion: reduce) { .bar > span { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="top">
+      <h1>Snapshot Hand Check</h1>
+      <label class="row"><span class="meta">List</span> <select id="batch" aria-label="Review list"></select></label>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" id="tab-credit" data-view="credit" aria-selected="true">AI credits</button>
+      <button class="tab" role="tab" id="tab-cohort" data-view="cohort" aria-selected="false">Cohort picks</button>
+      <button class="tab" role="tab" id="tab-report" data-view="report" aria-selected="false">Report</button>
+    </div>
+    <div class="bar" aria-hidden="true"><span id="barfill"></span></div>
+    <div class="meta" id="progress">Loading your review list…</div>
+  </header>
+  <main id="main" aria-live="polite"></main>
+  <div class="status" id="status"></div>
+</div>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const SLOT = { a_edge: "Edge device", b_web_collab: "Web / collaboration", c_other: "Other product", d_ai_credited: "AI-credited" };
+  const RULES = "Lab or company names alone never count. Count it only if the credit says an AI tool or agent took part. When unclear, answer no.";
+  const IDLE_CAP = 600; // seconds; longer pauses are not counted as review time
+
+  const state = { loaded: false, db: null, batches: [], batchId: null, items: [], answers: {}, view: "credit", current: null, shownAt: 0, unsub: [], back: [] };
+
+  function setStatus(t) { $("#status").textContent = t || ""; }
+
+  // ---------- derived queue ----------
+  const ans = (id) => state.answers[id];
+  function needed(it) {
+    if (it.kind === "empty") return false;
+    if ((it.kind === "slot_c" || it.kind === "slot_d") && it.rank > 1) {
+      const lower = state.items.filter((o) => o.group === it.group && o.rank < it.rank);
+      return lower.every((o) => ans(o.id)?.decision === "no");
+    }
+    return true;
+  }
+  function isDone(it) {
+    const a = ans(it.id);
+    if (!a) return false;
+    if (it.kind === "credit") return !!a.decision;
+    if (it.kind === "fix") return !!a.fix_status;
+    if (a.decision === "no") return true;
+    return a.decision === "yes" && !!a.fix_status;
+  }
+  const inView = (it, v) => (v === "credit" ? it.kind === "credit" : it.kind !== "credit");
+  function queue(v) { return state.items.filter((it) => inView(it, v) && needed(it)); }
+
+  // ---------- render ----------
+  function renderProgress() {
+    const all = state.items.filter(needed);
+    const done = all.filter(isDone);
+    const secs = Object.values(state.answers).reduce((s, a) => s + (a.seconds || 0), 0);
+    const per = done.length ? secs / done.length : 30;
+    const left = Math.round(((all.length - done.length) * per) / 60);
+    $("#barfill").style.width = all.length ? `${(100 * done.length) / all.length}%` : "0";
+    const q = (v) => { const x = queue(v); return `${x.filter(isDone).length}/${x.length}`; };
+    $("#progress").innerHTML = `<span>${done.length} of ${all.length} done</span><span>AI credits ${q("credit")}</span><span>Cohort picks ${q("cohort")}</span><span>Time so far ${Math.round(secs / 60)} min</span><span>About ${left} min left</span>`;
+  }
+
+  function render() {
+    renderProgress();
+    document.querySelectorAll(".tab").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.view === state.view)));
+    if (!state.loaded) { $("#main").innerHTML = `<div class="card done"><h2>Opening your review list…</h2></div>`; return; }
+    if (!state.items.length) {
+      $("#main").innerHTML = `<div class="card done"><h2>No review list loaded yet</h2><p>Claude adds each quarter's list here after the data run. Ask Claude in the chat to load it, then reopen this page.</p></div>`;
+      return;
+    }
+    if (state.view === "report") return renderReport();
+    const q = queue(state.view);
+    let it = state.current && q.find((x) => x.id === state.current);
+    if (!it) it = q.find((x) => !isDone(x));
+    if (!it) {
+      $("#main").innerHTML = `<div class="card done"><h2>${state.view === "credit" ? "All AI-credit texts done" : "All cohort picks done"}</h2><p>Your answers are saved. Open the Report to review them, or switch section.</p><div class="row" style="justify-content:center"><button class="btn primary" id="go-report">Open report</button></div></div>`;
+      $("#go-report").onclick = () => switchView("report");
+      return;
+    }
+    if (state.current !== it.id) { state.current = it.id; state.shownAt = Date.now(); }
+    $("#main").innerHTML = cardHTML(it, q);
+    wireCard(it);
+  }
+
+  function linksHTML(links) {
+    if (!links?.length) return "";
+    return `<div class="links">${links.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`).join("")}</div>`;
+  }
+
+  function cardHTML(it, q) {
+    const a = ans(it.id) || {};
+    const pos = q.indexOf(it) + 1;
+    const head = (label, extra = "") => `<div class="kicker"><span class="pill">${label}</span>${extra}<span class="meta">${pos} of ${q.length}</span></div>`;
+    const noteBox = `<label class="meta" for="note">Note (optional)</label><textarea id="note" placeholder="Anything worth remembering about this one">${esc(a.note || "")}</textarea>`;
+    const nav = `<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="skip">Skip for now</button></div>`;
+
+    if (it.kind === "credit") {
+      return `<section class="card">${head("AI credit", it.lab_only ? `<span class="pill warn">Lab name only</span>` : "")}
+        <div class="credit">${esc(it.credit)}</div>
+        <div class="meta"><span>Covers ${it.covers} CVE${it.covers === 1 ? "" : "s"}</span><span class="mono">e.g. ${esc(it.cve_id)}</span></div>
+        <div class="question">Does this credit say an AI tool took part in finding the flaw?</div>
+        <div class="hint">${RULES}</div>
+        <div class="actions">
+          <button class="btn yes" data-d="yes">Yes<small>key Y</small></button>
+          <button class="btn no" data-d="no">No<small>key N</small></button>
+          <button class="btn" data-d="unsure">Not sure<small>counts as no · U</small></button>
+        </div>${noteBox}${nav}</section>`;
+    }
+
+    const facts = `<dl class="facts">
+      <dt>CVE</dt><dd class="mono">${esc(it.cve_id)}</dd>
+      <dt>Product</dt><dd>${esc(it.product)}</dd>
+      <dt>Severity</dt><dd class="mono">${esc(it.cvss)}</dd>
+      <dt>Published</dt><dd class="mono">${esc(it.published)}</dd>
+      ${it.credit ? `<dt>Credit</dt><dd>${esc(it.credit)}</dd>` : ""}
+    </dl>`;
+    const label = `${esc(it.month)} · ${SLOT[it.slot] || it.slot}`;
+    const fixBlock = `<div class="fix" id="fixblock">
+        <div class="question">When did the vendor release the fix?</div>
+        <div class="meta"><span>Pre-filled: <b class="mono">${esc(it.prefill_date || "none")}</b></span><span>${esc(it.prefill_source || "")}</span></div>
+        ${String(it.prefill_source || "").startsWith("ASSUMED") ? `<div class="hint">This date is an assumption. Check the advisory link before confirming.</div>` : ""}
+        ${linksHTML(it.links)}
+        <div class="actions">
+          <button class="btn primary" id="fix-ok">Confirm date<small>key C</small></button>
+          <button class="btn" id="fix-edit">Correct it<small>key E</small></button>
+          <button class="btn" id="fix-unknown">Can't find<small>recorded as unknown</small></button>
+        </div>
+        <div class="row" id="fix-editor" hidden><input type="date" id="fixdate" value="${esc(a.fix_date || it.prefill_date || "")}"><button class="btn primary" id="fix-save">Save date</button></div>
+      </div>`;
+
+    if (it.kind === "fix") {
+      return `<section class="card">${head(label, `<span class="pill">Fix date</span>`)}${facts}${fixBlock}${noteBox}${nav}</section>`;
+    }
+    const q2 = it.kind === "slot_c"
+      ? "Is this product reachable from the internet in normal use?"
+      : "Does the credit say an AI tool took part in finding this flaw?";
+    const hint = it.kind === "slot_c"
+      ? "Think servers, appliances and web apps people reach over the internet. Desktop apps, libraries and local tools are usually no. When unclear, answer no."
+      : RULES;
+    const showFix = a.decision === "yes";
+    return `<section class="card">${head(label, `<span class="pill">Candidate ${it.rank} of 3</span>`)}${facts}
+      <div class="question">${q2}</div><div class="hint">${hint}</div>
+      ${showFix ? "" : linksHTML(it.links)}
+      <div class="actions">
+        <button class="btn yes" data-d="yes">Yes<small>key Y</small></button>
+        <button class="btn no" data-d="no">No<small>next candidate · N</small></button>
+        <button class="btn" data-d="unsure">Not sure<small>counts as no · U</small></button>
+      </div>
+      ${showFix ? fixBlock : ""}${noteBox}${nav}</section>`;
+  }
+
+  function elapsed() { return Math.min(IDLE_CAP, Math.round((Date.now() - state.shownAt) / 1000)); }
+
+  async function save(it, patch) {
+    const prev = state.answers[it.id] || {};
+    const body = { ...prev, ...patch, item: it.id, kind: it.kind, cve_id: it.cve_id || "", at: new Date().toISOString() };
+    body.note = $("#note")?.value?.trim() || prev.note || "";
+    body.seconds = (prev.seconds || 0) + elapsed();
+    state.answers[it.id] = body; // optimistic; the snapshot confirms
+    state.shownAt = Date.now();
+    try {
+      await state.db.collection(`batches/${state.batchId}/answers`).doc(it.id).set(body);
+      setStatus("Saved");
+    } catch (e) {
+      setStatus(e?.code === "invalid_argument" ? "This list is read-only for you." : "Couldn't save just now. Your answer is kept on screen; try again in a moment.");
+    }
+  }
+
+  function advance() { state.back.push(state.current); state.current = null; render(); }
+
+  function wireCard(it) {
+    document.querySelectorAll("[data-d]").forEach((b) => (b.onclick = () => decide(it, b.dataset.d)));
+    const fixOk = $("#fix-ok");
+    if (fixOk) {
+      fixOk.onclick = async () => { await save(it, { fix_date: it.prefill_date || "", fix_status: "confirmed" }); advance(); };
+      $("#fix-edit").onclick = () => { $("#fix-editor").hidden = false; $("#fixdate").focus(); };
+      $("#fix-save").onclick = async () => {
+        const v = $("#fixdate").value;
+        if (!v) return setStatus("Pick a date first, or choose Can't find.");
+        await save(it, { fix_date: v, fix_status: v === it.prefill_date ? "confirmed" : "corrected" }); advance();
+      };
+      $("#fix-unknown").onclick = async () => { await save(it, { fix_date: "", fix_status: "unknown" }); advance(); };
+    }
+    $("#back").onclick = () => { const p = state.back.pop(); if (p) { state.current = p; state.shownAt = Date.now(); render(); } };
+    $("#skip").onclick = () => {
+      const q = queue(state.view).filter((x) => !isDone(x));
+      const i = q.findIndex((x) => x.id === it.id);
+      const nxt = q[(i + 1) % q.length];
+      if (nxt && nxt.id !== it.id) { state.back.push(it.id); state.current = nxt.id; state.shownAt = Date.now(); render(); }
+    };
+  }
+
+  async function decide(it, d) {
+    const decision = d === "unsure" ? "no" : d;
+    await save(it, { decision, unsure: d === "unsure" });
+    if (it.kind !== "credit" && decision === "yes") { render(); $("#fix-ok")?.focus(); return; }
+    advance();
+  }
+
+  // ---------- report ----------
+  function renderReport() {
+    const its = state.items;
+    const credits = its.filter((i) => i.kind === "credit");
+    const cy = credits.filter((i) => ans(i.id)?.decision === "yes");
+    const cn = credits.filter((i) => ans(i.id)?.decision === "no");
+    const groups = [...new Set(its.filter((i) => i.kind !== "credit").map((i) => i.group))];
+    const picks = groups.map((g) => {
+      const g_items = its.filter((i) => i.group === g).sort((a, b) => a.rank - b.rank);
+      const first = g_items[0];
+      if (first.kind === "empty") return { g, first, pick: null, status: "Empty slot", fix: "" };
+      const chosen = first.kind === "fix" ? first : g_items.find((i) => ans(i.id)?.decision === "yes");
+      const pending = !chosen && g_items.some((i) => needed(i) && !isDone(i));
+      const a = chosen ? ans(chosen.id) : null;
+      return {
+        g, first, pick: chosen, pending,
+        status: chosen ? (a?.fix_status ? "Picked" : "Fix date pending") : pending ? "In progress" : "No candidate passed (slot empty)",
+        fix: a?.fix_status ? `${a.fix_date || "unknown"} (${a.fix_status})` : "",
+      };
+    });
+    const secs = Object.values(state.answers).reduce((s, a) => s + (a.seconds || 0), 0);
+    const unsure = Object.values(state.answers).filter((a) => a.unsure).length;
+    const corrected = Object.values(state.answers).filter((a) => a.fix_status === "corrected").length;
+    const unknown = Object.values(state.answers).filter((a) => a.fix_status === "unknown").length;
+    const notes = its.filter((i) => ans(i.id)?.note);
+    const allDone = its.filter(needed).every(isDone);
+
+    $("#main").innerHTML = `<section class="card">
+      <h2>${esc(state.batches.find((b) => b.id === state.batchId)?.title || "Report")}</h2>
+      <div class="${allDone ? "" : "hint"}">${allDone ? "Everything on this list is answered. Tell Claude in the chat that you're done; Claude reads your answers from here and records them in the study." : "Some items are still open. Your answers so far are saved; finish them any time."}</div>
+      <div class="stats">
+        <div class="stat"><b>${cy.length} / ${credits.length}</b>AI credits counted</div>
+        <div class="stat"><b>${picks.filter((p) => p.status === "Picked").length} / ${picks.length}</b>cohort slots filled</div>
+        <div class="stat"><b>${Math.round(secs / 60)} min</b>review time</div>
+        <div class="stat"><b>${corrected} · ${unknown}</b>dates corrected · unknown</div>
+      </div>
+      <div class="meta"><span>"Not sure" answers (counted as no): ${unsure}</span></div>
+      <h2>Cohort picks</h2>
+      <div class="tablewrap"><table><thead><tr><th>Month</th><th>Slot</th><th>Pick</th><th>Status</th><th>Fix date</th></tr></thead><tbody>
+      ${picks.map((p) => `<tr><td class="mono">${esc(p.first.month)}</td><td>${esc(SLOT[p.first.slot] || p.first.slot)}</td><td class="mono">${p.pick ? `<button class="ghost" data-jump="${esc(p.pick.id)}">${esc(p.pick.cve_id)}</button>` : "—"}</td><td>${esc(p.status)}</td><td class="mono">${esc(p.fix)}</td></tr>`).join("")}
+      </tbody></table></div>
+      <h2>AI credits</h2>
+      <details><summary>Counted as AI (${cy.length})</summary><div class="tablewrap"><table><tbody>${cy.map((i) => `<tr><td class="y">Yes</td><td>${esc(i.credit)}</td><td><button class="ghost" data-jump="${esc(i.id)}">Change</button></td></tr>`).join("")}</tbody></table></div></details>
+      <details><summary>Not counted (${cn.length})</summary><div class="tablewrap"><table><tbody>${cn.map((i) => `<tr><td class="n">${ans(i.id)?.unsure ? "Not sure" : "No"}</td><td>${esc(i.credit)}</td><td><button class="ghost" data-jump="${esc(i.id)}">Change</button></td></tr>`).join("")}</tbody></table></div></details>
+      ${notes.length ? `<h2>Your notes</h2><div class="tablewrap"><table><tbody>${notes.map((i) => `<tr><td class="mono">${esc(i.cve_id)}</td><td>${esc(ans(i.id).note)}</td></tr>`).join("")}</tbody></table></div>` : ""}
+      <div class="row"><button class="btn" id="csv" hidden>Save answers as CSV</button></div>
+    </section>`;
+    document.querySelectorAll("[data-jump]").forEach((b) => (b.onclick = () => {
+      const it = its.find((i) => i.id === b.dataset.jump);
+      state.view = it.kind === "credit" ? "credit" : "cohort"; state.current = it.id; state.shownAt = Date.now(); render();
+    }));
+    claude.use("downloads").then((dl) => {
+      const btn = $("#csv"); if (!dl || !btn) return;
+      btn.hidden = false;
+      btn.onclick = async () => {
+        const cols = ["item", "kind", "cve_id", "decision", "unsure", "fix_date", "fix_status", "seconds", "note", "at"];
+        const rows = Object.values(state.answers).map((a) => cols.map((c) => `"${String(a[c] ?? "").replace(/"/g, '""')}"`).join(","));
+        try { await dl.save({ filename: `hand-check-${state.batchId}.csv`, data: [cols.join(","), ...rows].join("\n") }); setStatus("Saved a copy."); }
+        catch (e) { if (e?.code !== "declined") setStatus("That copy couldn't be saved here."); }
+      };
+    });
+  }
+
+  function switchView(v) { state.view = v; state.current = null; render(); try { localStorage.setItem("hc-view", v); } catch {} }
+
+  // ---------- data ----------
+  function subscribeBatch(id) {
+    state.unsub.forEach((u) => u()); state.unsub = [];
+    state.batchId = id; state.items = []; state.answers = {}; state.current = null; state.back = [];
+    try { localStorage.setItem("hc-batch", id); } catch {}
+    const err = () => setStatus("Lost the connection to your saved answers. Reload the page to reconnect.");
+    state.unsub.push(state.db.collection(`batches/${id}/items`).orderBy("order").onSnapshot((s) => {
+      state.items = s.docs.map((d) => ({ id: d.id, ...d.data() })); state.loaded = true; render();
+    }, err));
+    state.unsub.push(state.db.collection(`batches/${id}/answers`).onSnapshot((s) => {
+      const next = {}; s.docs.forEach((d) => (next[d.id] = d.data())); state.answers = next; renderProgress();
+      if (state.view === "report") render();
+    }, err));
+  }
+
+  document.querySelectorAll(".tab").forEach((t) => (t.onclick = () => switchView(t.dataset.view)));
+  $("#batch").onchange = (e) => subscribeBatch(e.target.value);
+  document.addEventListener("keydown", (e) => {
+    if (e.target.matches("textarea, input, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    const click = (sel) => { const b = $(sel); if (b) { e.preventDefault(); b.click(); } };
+    if (k === "y") click('[data-d="yes"]');
+    else if (k === "n") click('[data-d="no"]');
+    else if (k === "u") click('[data-d="unsure"]');
+    else if (k === "c") click("#fix-ok");
+    else if (k === "e") click("#fix-edit");
+  });
+  try { const v = localStorage.getItem("hc-view"); if (v) state.view = v; } catch {}
+
+  claude.use("db").then((db) => {
+    if (!db) { state.loaded = true; render(); $("#progress").textContent = "Sign in to claude.ai to open your review list."; return; }
+    state.db = db;
+    db.collection("batches").orderBy("created", "desc").onSnapshot((s) => {
+      state.batches = s.docs.map((d) => ({ id: d.id, ...d.data() }));
+      const sel = $("#batch");
+      sel.innerHTML = state.batches.map((b) => `<option value="${esc(b.id)}">${esc(b.title)}</option>`).join("");
+      if (!state.batches.length) { state.loaded = true; render(); $("#progress").textContent = "No review list yet."; return; }
+      let want = null; try { want = localStorage.getItem("hc-batch"); } catch {}
+      const pick = state.batches.find((b) => b.id === state.batchId) || state.batches.find((b) => b.id === want) || state.batches[0];
+      sel.value = pick.id;
+      if (pick.id !== state.batchId) subscribeBatch(pick.id);
+    }, () => setStatus("Couldn't load your review lists. Reload the page to try again."));
+  });
+  render();
+})();
+</script>
