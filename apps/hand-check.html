@@ -234,9 +234,10 @@ th { color: var(--muted); font-weight: 700; }
   function cardHTML(it, q) {
     const a = ans(it.id) || {};
     const pos = q.indexOf(it) + 1;
-    const head = (label, extra = "") => `<div class="kicker"><span class="pill">${label}</span>${extra}<span class="meta">${pos} of ${q.length}</span></div>`;
+    const cur = a.decision ? `<span class="pill">${a.unsure ? "Your answer: Not sure (counts as no)" : "Your answer: " + (a.decision === "yes" ? "Yes" : "No")}</span>` : "";
+    const head = (label, extra = "") => `<div class="kicker"><span class="pill">${label}</span>${extra}${cur}<span class="meta">${pos > 0 ? `${pos} of ${q.length}` : ""}</span></div>`;
     const noteBox = `<label class="meta" for="note">Note (optional)</label><textarea id="note" placeholder="Anything worth remembering about this one">${esc(a.note || "")}</textarea>`;
-    const nav = `<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="skip">Skip for now</button></div>`;
+    const nav = `<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="skip">Skip for now</button>${ans(it.id) ? `<button class="ghost" id="clear">Clear my answer</button>` : ""}</div>`;
 
     if (it.kind === "credit") {
       const tag = it.spot_check ? `<span class="pill warn">Spot check of an automatic yes (${esc(it.auto_rule)})</span>` : it.lab_only ? `<span class="pill warn">Lab name only</span>` : "";
@@ -325,7 +326,7 @@ th { color: var(--muted); font-weight: 700; }
       return `<div class="seg">
         <button class="y" data-id="${esc(it.id)}" data-d="yes" aria-pressed="${cur === "yes"}">Yes</button>
         <button class="n" data-id="${esc(it.id)}" data-d="no" aria-pressed="${cur === "no"}">No</button>
-        <button class="u" data-id="${esc(it.id)}" data-d="unsure" aria-pressed="${cur === "unsure"}" title="Counts as no">?</button></div>`;
+        <button class="u" data-id="${esc(it.id)}" data-d="unsure" aria-pressed="${cur === "unsure"}" title="Not sure (counts as no)">?</button></div>`;
     };
     const html = GROUPS.map((g) => {
       const its = credits.filter(g.test).sort((a, b) => (b.covers || 0) - (a.covers || 0));
@@ -336,10 +337,10 @@ th { color: var(--muted); font-weight: 700; }
             <button class="btn primary" id="bulk-ok">Confirm</button><button class="ghost" id="bulk-cancel">Cancel</button></div>` : "";
       return `<section class="card group">
         <div class="group-head"><h2>${esc(g.title)}</h2><span class="meta">${its.length - open.length} of ${its.length} answered</span></div>
-        <div class="hint">${esc(g.help)} ${RULES}</div>
+        <div class="hint">${esc(g.help)} ${RULES} Tap a highlighted answer again to clear it.</div>
         ${open.length ? `<div class="row"><button class="ghost" data-bulk="${g.key}" data-bd="yes">Mark unanswered as Yes</button><button class="ghost" data-bulk="${g.key}" data-bd="no">Mark unanswered as No</button></div>` : ""}
         ${confirm}
-        ${its.map((it) => `<div class="lrow"><div class="ctext"><div>${esc(it.credit)}</div>${termsHTML(it)}<div class="meta"><span>Covers ${it.covers}</span></div>${verifyHTML(it)}</div>${segBtns(it)}</div>`).join("")}
+        ${its.map((it) => `<div class="lrow"><div class="ctext"><div>${esc(it.credit)}</div>${termsHTML(it)}<div class="meta"><span>Covers ${it.covers}</span></div>${verifyHTML(it)}<div><button class="ghost" data-help="${esc(it.id)}">Help me decide</button></div></div>${segBtns(it)}</div>`).join("")}
       </section>`;
     }).join("");
     const autoHtml = autos.length ? `<section class="card group"><div class="group-head"><h2>Accepted automatically</h2><span class="meta">${autos.length} credit texts</span></div>
@@ -350,8 +351,13 @@ th { color: var(--muted); font-weight: 700; }
     document.querySelectorAll(".seg button").forEach((b) => (b.onclick = async () => {
       const it = state.items.find((i) => i.id === b.dataset.id);
       const d = b.dataset.d;
-      await save(it, { decision: d === "unsure" ? "no" : d, unsure: d === "unsure" });
+      if (b.getAttribute("aria-pressed") === "true") { await clearAnswer(it); }
+      else { await save(it, { decision: d === "unsure" ? "no" : d, unsure: d === "unsure" }); }
       renderCreditList(); renderProgress();
+    }));
+    document.querySelectorAll("[data-help]").forEach((b) => (b.onclick = () => {
+      state.creditMode = "one"; state.current = b.dataset.help; state.shownAt = Date.now(); render();
+      const t = $("#tree"); if (t) { t.open = true; t.scrollIntoView({ block: "nearest" }); }
     }));
     document.querySelectorAll("[data-bulk]").forEach((b) => (b.onclick = () => { state.confirmGroup = { key: b.dataset.bulk, d: b.dataset.bd }; renderCreditList(); }));
     const ok = $("#bulk-ok");
@@ -432,6 +438,14 @@ th { color: var(--muted); font-weight: 700; }
     }
   }
 
+  async function clearAnswer(it) {
+    delete state.answers[it.id];
+    try {
+      await state.db.collection(`batches/${state.batchId}/answers`).doc(it.id).delete();
+      setStatus("Answer cleared");
+    } catch (e) { setStatus("Couldn't clear that answer just now. Try again in a moment."); }
+  }
+
   function advance() { state.back.push(state.current); state.current = null; render(); }
 
   function wireCard(it) {
@@ -448,6 +462,8 @@ th { color: var(--muted); font-weight: 700; }
       };
       $("#fix-unknown").onclick = async () => { await save(it, { fix_date: "", fix_status: "unknown" }); advance(); };
     }
+    const clr = $("#clear");
+    if (clr) clr.onclick = async () => { await clearAnswer(it); state.current = it.id; state.shownAt = Date.now(); render(); };
     $("#back").onclick = () => { const p = state.back.pop(); if (p) { state.current = p; state.shownAt = Date.now(); render(); } };
     $("#skip").onclick = () => {
       const q = queue(state.view).filter((x) => !isDone(x));

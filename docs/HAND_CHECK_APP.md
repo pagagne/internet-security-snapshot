@@ -80,7 +80,8 @@ tab.
 
 ## 5. Help me decide
 
-On AI-credit cards and slot c/d candidates (one-at-a-time view), **Help me decide** walks
+On AI-credit cards and slot c/d candidates, **Help me decide** (in the list view, it opens
+that credit in the one-at-a-time view) walks
 through the rule as a few yes/no questions and ends with a suggested answer and the reason.
 **Use this answer** records it; **Start over** resets. The questions are:
 
@@ -97,6 +98,8 @@ exposed anyway (from your own knowledge or the vendor's documentation)? Otherwis
 - **Note:** optional, saved with the answer. Use it for anything unusual.
 - **Back:** returns to the previous item to change an answer.
 - **Skip for now:** moves on and leaves the item open.
+- **Clear my answer** (one at a time), or tap a highlighted answer again (list view):
+  removes the answer so the item is open again.
 
 Answers save the moment you tap. Close the page any time; it resumes where you left off,
 on any device.
