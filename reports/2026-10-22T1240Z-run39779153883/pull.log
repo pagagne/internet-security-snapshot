@@ -1,0 +1,16 @@
+[pull] kev -> data/raw/2026Q3/dry-run
+::notice title=pull kev::ok in 8s
+[pull] cve -> data/raw/2026Q3/dry-run
+::notice title=pull cve::ok in 167s
+[pull] nvd -> data/raw/2026Q3/dry-run
+::notice title=pull nvd::ok in 104s
+[pull] epss -> data/raw/2026Q3/dry-run
+::notice title=pull epss::ok in 96s
+[pull] sec -> data/raw/2026Q3/dry-run
+[pull] sec search diagnostics: {"\"Item 1.05\"": {"total_hits": 4, "hits_read": 4, "forms": {"8-K/A": 4}, "with_item_1_05": 4}, "\"Material Cybersecurity Incidents\"": {"total_hits": 4, "hits_read": 4, "forms": {"8-K/A": 4}, "with_item_1_05": 4}}
+::notice title=pull sec::ok in 1s
+[pull] radar -> data/raw/2026Q3/dry-run
+::notice title=pull radar::ok in 17s
+[pull] ransomware -> data/raw/2026Q3/dry-run
+::notice title=pull ransomware::ok in 13s
+[pull] manifest: data/raw/2026Q3/dry-run/manifest.json (0 gap(s))

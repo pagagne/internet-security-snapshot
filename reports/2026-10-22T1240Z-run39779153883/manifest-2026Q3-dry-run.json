@@ -1,0 +1,138 @@
+{
+  "quarter": "2026Q3",
+  "run": "dry-run",
+  "started_at": "2026-10-22T12:32:57Z",
+  "finished_at": "2026-10-22T12:40:34Z",
+  "files": [
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/known_exploited_vulnerabilities.json",
+      "sha256": "ef8fffede5c472001da046c7751beb2a3242458896d0ce08da52b30968b8b56b",
+      "bytes": 1803428,
+      "source_version": "cisagov/kev-data@fd12990e9c566a1ad3060e1a2073129778f438cc",
+      "retrieved_at": "2026-10-22T12:32:59Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/kev_entries.parquet",
+      "sha256": "2079a4e93eafbf24130757e239d14642ab200e5a3e075eeb51f7315932a25c8c",
+      "bytes": 54370,
+      "source_version": "cisagov/kev-data@fd12990e9c566a1ad3060e1a2073129778f438cc",
+      "retrieved_at": "2026-10-22T12:33:04Z",
+      "status": "ok",
+      "note": "1754 entries"
+    },
+    {
+      "source": "cve_org",
+      "file_path": "cve/cve_records.parquet",
+      "sha256": "60b386f87d25143a7b149e9fe9c5e05af18c08a70a2e9f4ac23dc6f4c153c195",
+      "bytes": 16746513,
+      "source_version": "CVEProject/cvelistV5@19087031d35edd6689f5d8c31377eaf3aa6d2e1e",
+      "retrieved_at": "2026-10-22T12:35:51Z",
+      "status": "ok",
+      "note": "413092 records; raw JSON pinned by commit, not copied"
+    },
+    {
+      "source": "nvd",
+      "file_path": "nvd/nvd_cves.parquet",
+      "sha256": "df4e756ac6f572c337bd508413527502a995eac8524605c1a94c40016c21e5d3",
+      "bytes": 1155982,
+      "source_version": "fkie-cad/nvd-json-data-feeds@26ad1846ffaceaa47af2a12d0d998f04e47fa996",
+      "retrieved_at": "2026-10-22T12:37:35Z",
+      "status": "ok",
+      "note": "37369 CVEs published 2026-07-01..2026-09-30; key=yes"
+    },
+    {
+      "source": "epss",
+      "file_path": "epss/epss_scores.parquet",
+      "sha256": "70ffb209ef223abea38761a37d8e2198c53b74e209ea09150dffe17255ee3ebd",
+      "bytes": 71202832,
+      "source_version": "FIRST EPSS model v2026.06.15",
+      "retrieved_at": "2026-10-22T12:39:12Z",
+      "status": "ok",
+      "note": "113 days 2026-07-01..2026-10-21, step 1d; CVE IDs from 2025 on; 0 day(s) missing"
+    },
+    {
+      "source": "sec_edgar",
+      "file_path": "sec/sec_8k_item105.parquet",
+      "sha256": "5589d5166a901b4b3cb6d561b1d0ad44a4c16904badefb79817f8541fc304868",
+      "bytes": 3464,
+      "source_version": "EDGAR full-text search, retrieved 2026-10-22T12:39:13Z",
+      "retrieved_at": "2026-10-22T12:39:13Z",
+      "status": "ok",
+      "note": "4 filings"
+    },
+    {
+      "source": "sec_edgar",
+      "file_path": "sec/sec_summary.json",
+      "sha256": "b9b14d94d6a64396845ffbae23cedfff552f168bc3339e7a264fadd5096821d9",
+      "bytes": 517,
+      "source_version": "company_tickers.json, retrieved 2026-10-22T12:39:13Z",
+      "retrieved_at": "2026-10-22T12:39:13Z",
+      "status": "ok",
+      "note": "8029 registrants"
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer7_timeseries.json",
+      "sha256": "47a12ab7abf01d731143865f8c58bf05a529ed03abe8e425ae53cf10863649c0",
+      "bytes": 1102,
+      "source_version": "Radar API, retrieved 2026-10-22T12:39:29Z",
+      "retrieved_at": "2026-10-22T12:39:29Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer3_timeseries.json",
+      "sha256": "ccb9d27e07c6f5dd49ea0ce400afbbf750d588ce20d39e2d84b132012b81539a",
+      "bytes": 1104,
+      "source_version": "Radar API, retrieved 2026-10-22T12:39:29Z",
+      "retrieved_at": "2026-10-22T12:39:29Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer7_by_vertical.json",
+      "sha256": "a1e0638e9097e3b68261d742a689f17672ed874b0e082d559b36be0f2118d045",
+      "bytes": 801,
+      "source_version": "Radar API, retrieved 2026-10-22T12:39:29Z",
+      "retrieved_at": "2026-10-22T12:39:29Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/http_bot_class_timeseries.json",
+      "sha256": "56e9a75a46cbe892dca504e99b5fc0d81aad0aa263efcaf3389f564709dd8147",
+      "bytes": 1658,
+      "source_version": "Radar API, retrieved 2026-10-22T12:39:29Z",
+      "retrieved_at": "2026-10-22T12:39:29Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/ai_bots_by_user_agent_timeseries.json",
+      "sha256": "fd255a866dc7b2d42bef4b1f286509220c162fc760864b7053af9e25c5407249",
+      "bytes": 3379,
+      "source_version": "Radar API, retrieved 2026-10-22T12:39:29Z",
+      "retrieved_at": "2026-10-22T12:39:29Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "ransomware_live",
+      "file_path": "ransomware/ransomware_counts.parquet",
+      "sha256": "1b4b2c14782a9fc75975b012fa478ced43555ef34123bb54cd84ba1e8fb46909",
+      "bytes": 6023,
+      "source_version": "ransomware.live API, retrieved 2026-10-22T12:39:43Z",
+      "retrieved_at": "2026-10-22T12:39:43Z",
+      "status": "ok",
+      "note": "aggregate counts only, no victim names; monthly totals [{'month': '2026-07', 'count': 952}, {'month': '2026-08', 'count': 1146}, {'month': '2026-09', 'count': 847}]"
+    }
+  ]
+}
