@@ -78,7 +78,21 @@ link before confirming.
 search, and the vendor's advisory or patch links from the CVE record. They open in a new
 tab.
 
-## 5. Notes, Back and Skip
+## 5. Help me decide
+
+On AI-credit cards and slot c/d candidates (one-at-a-time view), **Help me decide** walks
+through the rule as a few yes/no questions and ends with a suggested answer and the reason.
+**Use this answer** records it; **Start over** resets. The questions are:
+
+*AI credit:* (1) Does it name an AI tool or model, not just a company? (2) Is the AI only the
+thing that had the flaw? If so, does it also say an AI tool helped find it? (3) Does it say
+the tool took part in finding, testing or reporting it? (4) If still unclear: answer no.
+
+*Internet-facing (slot c):* (1) Is it a server, appliance, web app or online service?
+(2) Is it normally reached over the internet? (3) If meant to be internal, is it commonly
+exposed anyway (from your own knowledge or the vendor's documentation)? Otherwise no.
+
+## 6. Notes, Back and Skip
 
 - **Note:** optional, saved with the answer. Use it for anything unusual.
 - **Back:** returns to the previous item to change an answer.
@@ -87,7 +101,7 @@ tab.
 Answers save the moment you tap. Close the page any time; it resumes where you left off,
 on any device.
 
-## 6. Report and finishing
+## 7. Report and finishing
 
 The **Report** tab shows AI credits counted, each slot's pick and fix date, dates corrected
 or unknown, "not sure" answers, notes and total time. Tap any item to change it.

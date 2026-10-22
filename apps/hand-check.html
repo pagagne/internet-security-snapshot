@@ -110,6 +110,13 @@ th { color: var(--muted); font-weight: 700; }
 .seg button[aria-pressed="true"].u { background: var(--muted); color: var(--surface); border-color: var(--muted); }
 .confirmbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: var(--warn-bg); padding: 8px 10px; border-radius: 8px; }
 @media (max-width: 560px) { .lrow { grid-template-columns: 1fr; } }
+.tree { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.tree summary { font-weight: 700; color: var(--accent); }
+.tree-step { display: grid; gap: 10px; margin-top: 10px; }
+.tree-q { font-weight: 700; }
+.tree-ex { color: var(--muted); font-size: .9rem; }
+.tree-path { font-size: .85rem; color: var(--muted); }
+.tree-result { padding: 10px 12px; border-radius: 8px; background: var(--chip); display: grid; gap: 8px; }
 @media (max-width: 480px) { .actions { grid-template-columns: 1fr 1fr; } .actions .btn:last-child { grid-column: span 2; } .credit { font-size: 1.1rem; } }
 @media (prefers-reduced-motion: reduce) { .bar > span { transition: none; } }
 </style>
@@ -240,6 +247,7 @@ th { color: var(--muted); font-weight: 700; }
         ${verifyHTML(it)}
         <div class="question">Does this credit say an AI tool took part in finding the flaw?</div>
         <div class="hint">${RULES}</div>
+        ${treeHTML("credit")}
         <div class="actions">
           <button class="btn yes" data-d="yes">Yes<small>key Y</small></button>
           <button class="btn no" data-d="no">No<small>key N</small></button>
@@ -280,6 +288,7 @@ th { color: var(--muted); font-weight: 700; }
     const showFix = a.decision === "yes";
     return `<section class="card">${head(label, `<span class="pill">Candidate ${it.rank} of 3</span>`)}${facts}${verifyHTML(it)}
       <div class="question">${q2}</div><div class="hint">${hint}</div>
+      ${showFix ? "" : treeHTML(it.kind)}
       ${showFix ? "" : linksHTML(it.links)}
       <div class="actions">
         <button class="btn yes" data-d="yes">Yes<small>key Y</small></button>
@@ -360,6 +369,52 @@ th { color: var(--muted); font-weight: 700; }
     }
   }
 
+  // ---------- decision trees ("Help me decide") ----------
+  const TREES = {
+    credit: {
+      start: "q1",
+      q1: { q: "Does the credit name an AI tool or model, not just a company or lab?", ex: "Tools: Claude, GPT, Codex, Gemini, Big Sleep, an \"AI agent\". Companies only: \"of OpenAI\", \"Anthropic\", \"OpenAI Security Research\".", yes: "q2", no: { a: "no", why: "A company or lab name alone often just names a person's employer." } },
+      q2: { q: "Is the AI only the thing that had the flaw?", ex: "For example \"prompt injection in Claude\" or \"vulnerability in the Copilot extension\", with people credited for finding it.", yes: "q2b", no: "q3" },
+      q2b: { q: "Does it also say an AI tool helped find it?", ex: "For example \"found by Jane Doe using Codex\".", yes: { a: "yes", why: "The flaw is in an AI product, and an AI tool also helped find it." }, no: { a: "no", why: "The AI is where the flaw was, not what found it." } },
+      q3: { q: "Does the credit say the tool took part in finding, testing or reporting it?", ex: "\"using Codex\", \"with Claude\", \"in collaboration with Claude\", \"found by Big Sleep\", or the model listed as a credited party (\"Claude Opus 5\").", yes: { a: "yes", why: "The credit says an AI tool took part." }, no: "q4" },
+      q4: { q: "Is it clear from the wording at all what the AI did?", ex: "If you'd have to guess, the answer is no.", yes: { a: "yes", why: "The wording makes the AI's part clear." }, no: { a: "no", why: "When unclear, the rule is to answer no." } },
+    },
+    slot_c: {
+      start: "q1",
+      q1: { q: "Is it a server, network appliance, web application or online service?", ex: "Not desktop apps, browsers, phone apps, code libraries or command-line tools.", yes: "q2", no: { a: "no", why: "Desktop software, libraries and local tools are not reached directly from the internet." } },
+      q2: { q: "In normal use, do people or other systems reach it over the internet?", ex: "Websites, VPNs, email servers, file-transfer and collaboration servers usually yes. Software meant only for a private company network usually no.", yes: { a: "yes", why: "It is normally reachable from the internet." }, no: "q3" },
+      q3: { q: "Is it commonly put on the internet even though it is meant to be internal?", ex: "Only answer yes if you know this is common, for example from the vendor's own documentation.", yes: { a: "yes", why: "It is commonly exposed in practice." }, no: { a: "no", why: "When unclear, the rule is to answer no." } },
+    },
+  };
+  TREES.slot_d = TREES.credit;
+
+  function treeHTML(kind) { return TREES[kind] ? `<details class="tree" id="tree"><summary>Help me decide</summary><div id="tree-body"></div></details>` : ""; }
+
+  function wireTree(it) {
+    const tree = TREES[it.kind];
+    const body = $("#tree-body");
+    if (!tree || !body) return;
+    const path = [];
+    const show = (node) => {
+      if (typeof node === "string") {
+        const n = tree[node];
+        body.innerHTML = `<div class="tree-step">${path.length ? `<div class="tree-path">${path.map(esc).join(" → ")}</div>` : ""}
+          <div class="tree-q">${esc(n.q)}</div><div class="tree-ex">${esc(n.ex)}</div>
+          <div class="row"><button class="btn yes" id="t-yes">Yes</button><button class="btn no" id="t-no">No</button>${path.length ? `<button class="ghost" id="t-restart">Start over</button>` : ""}</div></div>`;
+        $("#t-yes").onclick = () => { path.push(`${n.q.split("?")[0]}? Yes`); show(n.yes); };
+        $("#t-no").onclick = () => { path.push(`${n.q.split("?")[0]}? No`); show(n.no); };
+        const r = $("#t-restart"); if (r) r.onclick = () => { path.length = 0; show(tree.start); };
+      } else {
+        body.innerHTML = `<div class="tree-step"><div class="tree-path">${path.map(esc).join(" → ")}</div>
+          <div class="tree-result"><div>Suggested answer: <b class="${node.a === "yes" ? "y" : "n"}">${node.a === "yes" ? "Yes" : "No"}</b></div><div class="tree-ex">${esc(node.why)}</div>
+          <div class="row"><button class="btn primary" id="t-use">Use this answer</button><button class="ghost" id="t-restart">Start over</button></div></div></div>`;
+        $("#t-use").onclick = () => decide(it, node.a);
+        $("#t-restart").onclick = () => { path.length = 0; show(tree.start); };
+      }
+    };
+    show(tree.start);
+  }
+
   function elapsed() { return Math.min(IDLE_CAP, Math.round((Date.now() - state.shownAt) / 1000)); }
 
   async function save(it, patch) {
@@ -380,6 +435,7 @@ th { color: var(--muted); font-weight: 700; }
   function advance() { state.back.push(state.current); state.current = null; render(); }
 
   function wireCard(it) {
+    wireTree(it);
     document.querySelectorAll("[data-d]").forEach((b) => (b.onclick = () => decide(it, b.dataset.d)));
     const fixOk = $("#fix-ok");
     if (fixOk) {
