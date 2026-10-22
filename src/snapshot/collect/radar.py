@@ -29,17 +29,22 @@ def fetch(start: dt.date, end: dt.date) -> dict[str, dict]:
     candidates = [line.strip() for line in raw.splitlines() if line.strip()]
     if not candidates:
         raise RuntimeError("CLOUDFLARE_TOKEN not set")
-    token = None
+    import requests
+    token, codes = None, []
     for cand in candidates:
-        try:
-            get(BASE + "/http/summary/bot_class", params={"dateRange": "1d", "format": "json"},
-                headers={"Authorization": f"Bearer {cand}"}, tries=1)
+        r = requests.get(BASE + "/http/summary/bot_class", params={"dateRange": "7d", "format": "json"},
+                         headers={"Authorization": f"Bearer {cand}", "User-Agent": "internet-security-snapshot"}, timeout=60)
+        if r.ok:
             token = cand
             break
+        # Status and Cloudflare's error codes only; the token itself is never printed.
+        try:
+            errs = [f"{e.get('code')}:{e.get('message')}" for e in r.json().get("errors", [])][:2]
         except Exception:
-            continue
+            errs = []
+        codes.append(f"line {len(codes) + 1} (length {len(cand)}): HTTP {r.status_code} {errs}")
     if token is None:
-        raise RuntimeError(f"Cloudflare Radar rejected all {len(candidates)} line(s) of CLOUDFLARE_TOKEN")
+        raise RuntimeError("Cloudflare Radar rejected CLOUDFLARE_TOKEN: " + "; ".join(codes))
     params = {"dateStart": f"{start.isoformat()}T00:00:00Z",
               "dateEnd": f"{(end + dt.timedelta(days=1)).isoformat()}T00:00:00Z", "format": "json"}
     out = {}

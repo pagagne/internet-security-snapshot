@@ -19,7 +19,7 @@ import hashlib
 import json
 import time
 
-from .http import get
+from .http import download, get
 
 URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 FEED = "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-{year}.{ext}"
@@ -68,7 +68,7 @@ def from_feeds(start: dt.date, end: dt.date, years_back: int = 2) -> tuple[pd.Da
     rows, versions = [], []
     for year in range(start.year - years_back, end.year + 1):
         meta = dict(line.split(":", 1) for line in get(FEED.format(year=year, ext="meta"), headers={"Accept": "*/*"}).text.splitlines() if ":" in line)
-        raw = gzip.decompress(get(FEED.format(year=year, ext="json.gz"), headers={"Accept": "*/*"}, timeout=600).content)
+        raw = gzip.decompress(download(FEED.format(year=year, ext="json.gz")))
         if hashlib.sha256(raw).hexdigest().upper() != meta.get("sha256", "").strip().upper():
             raise ValueError(f"NVD feed {year}: checksum mismatch")
         data = json.loads(raw)

@@ -128,6 +128,7 @@ def pull_sec(out: Path, manifest: Manifest, work: Path) -> None:
         "filings_item_1_05": int(len(table)),
         "original_8k": int((table["form"] == "8-K").sum()) if len(table) else 0,
         "registrants_company_tickers": regs,
+        "search_diagnostics": sec.DIAG,
         "per_1000_registrants": round(1000 * int((table["form"] == "8-K").sum()) / regs, 3) if regs and len(table) else 0.0,
     }, indent=2))
     manifest.add_file("sec_edgar", pq, f"EDGAR full-text search, retrieved {utcnow()}", note=f"{len(table)} filings")

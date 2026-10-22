@@ -26,16 +26,30 @@ def _headers() -> dict:
     return {"User-Agent": ua}
 
 
+# Two phrasings, unioned: filings cite the item number and/or its title.
+QUERIES = ('"Item 1.05"', '"Material Cybersecurity Incidents"')
+DIAG: dict = {}
+
+
 def filings_105(start: dt.date, end: dt.date) -> pd.DataFrame:
-    rows, offset, total = [], 0, None
+    frames = [_search(q, start, end) for q in QUERIES]
+    df = pd.concat(frames, ignore_index=True)
+    return df.drop_duplicates("accession")
+
+
+def _search(query: str, start: dt.date, end: dt.date) -> pd.DataFrame:
+    rows, offset, total, hits_seen, forms = [], 0, None, 0, {}
     while total is None or offset < total:
-        params = {"q": '"Item 1.05"', "forms": "8-K,8-K/A", "dateRange": "custom",
+        params = {"q": query, "forms": "8-K,8-K/A", "dateRange": "custom",
                   "startdt": start.isoformat(), "enddt": end.isoformat(), "from": offset}
         data = get(SEARCH, params=params, headers=_headers(), pause=0.2).json()
         hits = data["hits"]["hits"]
         total = min(data["hits"]["total"]["value"], 10000)
         for h in hits:
             s = h["_source"]
+            hits_seen += 1
+            f = s.get("form") or s.get("file_type") or "?"
+            forms[f] = forms.get(f, 0) + 1
             items = s.get("items") or []
             if "1.05" not in items:
                 continue
@@ -49,6 +63,7 @@ def filings_105(start: dt.date, end: dt.date) -> pd.DataFrame:
         if not hits:
             break
         offset += len(hits)
+    DIAG[query] = {"total_hits": total, "hits_read": hits_seen, "forms": forms, "with_item_1_05": len(rows)}
     df = pd.DataFrame(rows, columns=["accession", "form", "file_date", "items", "cik"])
     return df.drop_duplicates("accession")
 
