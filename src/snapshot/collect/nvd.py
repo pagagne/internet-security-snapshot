@@ -1,7 +1,10 @@
 """NVD: CVEs published in a date range, with NVD's own scores, CWEs, CPE
 products and the CISA KEV date NVD records (cisaExploitAdd).
 
-Primary source: NVD's yearly JSON 2.0 feed files (one download per CVE-ID year, checked
+Primary source: the FKIE-CAD mirror of the NVD API 2.0 data on GitHub
+(fkie-cad/nvd-json-data-feeds), one JSON file per CVE in exactly the API's format,
+pinned by commit. NVD's own servers throttle large downloads (the yearly feed files took
+109 minutes in testing), so they are the fallback: NVD's yearly JSON 2.0 feed files (one download per CVE-ID year, checked
 against the published SHA-256). The API is slow and often times out for large windows
 (the first test run spent 87 minutes on it), so it is only the fallback, with a time
 budget. Uses the NVD_API_KEY secret when present.
@@ -60,6 +63,29 @@ def parse(vuln: dict) -> dict:
 def _in_window(row: dict, start: dt.date, end: dt.date) -> bool:
     pub = (row.get("nvd_published") or "")[:10]
     return start.isoformat() <= pub <= end.isoformat()
+
+
+MIRROR = "https://github.com/fkie-cad/nvd-json-data-feeds"
+
+
+def from_mirror(start: dt.date, end: dt.date, work, years_back: int = 2) -> tuple[pd.DataFrame, str]:
+    """CVEs published in [start, end] from a sparse shallow clone of the mirror."""
+    import subprocess
+    from pathlib import Path
+    repo = Path(work) / "nvd-mirror"
+    subprocess.run(["git", "clone", "-q", "--depth", "1", "--filter=blob:none", "--sparse", MIRROR, str(repo)], check=True)
+    dirs = [f"CVE-{y}" for y in range(start.year - years_back, end.year + 1)]
+    subprocess.run(["git", "-C", str(repo), "sparse-checkout", "set", *dirs], check=True)
+    sha = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], check=True, capture_output=True, text=True).stdout.strip()
+    rows = []
+    for d in dirs:
+        for path in (repo / d).rglob("CVE-*.json"):
+            with open(path, encoding="utf-8") as f:
+                row = parse({"cve": json.load(f)})
+            if _in_window(row, start, end):
+                rows.append(row)
+    df = pd.DataFrame(rows)
+    return (df.drop_duplicates("cve_id") if not df.empty else df), f"fkie-cad/nvd-json-data-feeds@{sha}"
 
 
 def from_feeds(start: dt.date, end: dt.date, years_back: int = 2) -> tuple[pd.DataFrame, list[str]]:

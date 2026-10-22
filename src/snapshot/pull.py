@@ -84,11 +84,11 @@ def _window() -> tuple[dt.date, dt.date]:
 def pull_nvd(out: Path, manifest: Manifest, work: Path) -> None:
     start, end = _window()
     try:
+        table, how = nvd.from_mirror(start, end, work)
+    except Exception as exc:
+        print(f"[pull] nvd mirror failed ({type(exc).__name__}: {exc}); falling back to NVD's feed files")
         table, versions = nvd.from_feeds(start, end)
         how = "NVD JSON 2.0 feeds " + ", ".join(versions)
-    except Exception as exc:
-        print(f"[pull] nvd feeds failed ({type(exc).__name__}: {exc}); falling back to the API")
-        table, how = nvd.build_table(start, end), f"NVD API 2.0, retrieved {utcnow()}"
     dest = out / "nvd"
     dest.mkdir(parents=True, exist_ok=True)
     pq = dest / "nvd_cves.parquet"
@@ -107,7 +107,8 @@ def pull_epss(out: Path, manifest: Manifest, work: Path) -> None:
     pq = dest / "epss_scores.parquet"
     table.to_parquet(pq, index=False)
     days = table["date"].nunique() if len(table) else 0
-    manifest.add_file("epss", pq, f"FIRST EPSS {', '.join(models) or 'n/a'}",
+    model_versions = sorted({m.split(",")[0].replace("model_version:", "") for m in models})
+    manifest.add_file("epss", pq, f"FIRST EPSS model {', '.join(model_versions) or 'n/a'}",
                       status="ok" if not notes else "partial",
                       note=f"{days} days {q.start}..{end}, step {CTX['epss_step']}d; CVE IDs from {q.start.year - 1} on; {len(notes)} day(s) missing")
     for n in notes:
@@ -117,6 +118,7 @@ def pull_epss(out: Path, manifest: Manifest, work: Path) -> None:
 def pull_sec(out: Path, manifest: Manifest, work: Path) -> None:
     start, end = _window()
     table = sec.filings_105(start, end)
+    print(f"[pull] sec search diagnostics: {json.dumps(sec.DIAG)}")
     regs = sec.registrant_count()
     dest = out / "sec"
     dest.mkdir(parents=True, exist_ok=True)

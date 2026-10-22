@@ -171,7 +171,10 @@ def build(bundle: Path) -> tuple[str, dict]:
     sec = bundle / "sec/sec_summary.json"
     if sec.exists():
         s = json.loads(sec.read_text())
-        L += ["## 9. SEC 8-K Item 1.05", "", f"- {s['filings_item_1_05']} filings ({s['original_8k']} original 8-Ks) against {s['registrants_company_tickers']:,} registrants: {s['per_1000_registrants']} per 1,000", ""]
+        L += ["## 9. SEC 8-K Item 1.05", "", f"- {s['filings_item_1_05']} filings ({s['original_8k']} original 8-Ks) against {s['registrants_company_tickers']:,} registrants: {s['per_1000_registrants']} per 1,000"]
+        for q, d in (s.get("search_diagnostics") or {}).items():
+            L.append(f"- Search {q}: {d.get('total_hits')} hits, {d.get('hits_read')} read, forms {d.get('forms')}, with Item 1.05: {d.get('with_item_1_05')}")
+        L.append("")
     radar = sorted((bundle / "radar").glob("*.json")) if (bundle / "radar").exists() else []
     if radar:
         L += ["## 10. Cloudflare Radar", ""]
