@@ -11,8 +11,11 @@ Only exploited flaws can say anything about the race, and very few serious flaws
 exploited:
 
 - Q3 2026: 9,812 cohort-eligible CVEs; 41 of them (0.42%) are on CISA's exploited list so far.
-- A 12-pick cohort therefore expects 0.05 exploited flaws per quarter, about one every five
-  years. In the test, 0 of 11 picks were exploited.
+- Because slots a and b draw from small, more-exploited pools (edge devices: 6 of 96 in Q3),
+  the cohort does better than that average: the back-test below puts it at about 0.3-0.4
+  exploited picks per quarter (slots a-c), a 27-33% chance of even one. (An earlier draft
+  of this paper said 0.05, which ignored the slots; corrected 2026-10-22.) In the test, 0 of
+  11 picks were exploited.
 - With no exploited flaws, the median cannot be computed. T1(a) would be "no estimate"
   almost every quarter.
 
@@ -25,6 +28,7 @@ exposure tracking, T1(b) and T2), but too small and too rarely exploited for T1(
 |---|---|---|---|---|
 | **(a) All flaws first exploited in the quarter** (recommended) | For each CVE added to CISA KEV in the quarter: days from fix to first exploitation; share exploited before any fix existed | about 100 | Large enough to estimate every quarter; uses data already collected | Fix dates needed for about 100 CVEs: pre-filled automatically, with a random sample of about 15 hand-checked per quarter. Looks only at flaws that were exploited (answers "how fast after a fix are exploited flaws attacked", not "what share get exploited"). Overlaps T3 where fix and publication are the same day. |
 | **(b) Keep as registered** | Cohort only | 0-1 exploited | No change to the plan | Almost always "no estimate"; the central question goes unanswered |
+| **(d) Weighted cohort** (back-tested below) | Same as registered, but picks favour flaws EPSS rates as likely to be exploited; re-weighted so it still describes all eligible flaws | 2-3 exploited of 9 race picks (6-7 of 18) | More exploited flaws in the cohort, which can then be followed end to end with exposure data | Estimates far too uncertain from one quarter (see below); breaks the locked rule that EPSS is never used for selection; the cohort's other figures would also need weighting |
 | **(c) Larger cohort** | Same as registered | would need roughly 2,000 picks for ~10 exploited | Keeps a random sample | Far too much hand work; still few events |
 
 ## What option (a) would have shown for Q3 2026 (preview)
@@ -45,3 +49,46 @@ pre-filled and hand-checked fix dates):
   comparisons.
 - Logged as a deviation, reported alongside the registered cohort version (which will
   mostly read "no estimate") for four quarters, per the change policy.
+
+## Back-test: weighted cohort (d) against the registered cohort and (a), Q2 and Q3 2026
+Run 2026-10-22 (`src/snapshot/backtest_t1.py`, results in
+`proposals/backtest_t1_2026Q2-Q3.json`). 2,000 simulated draws per design and quarter on
+the real eligible CVEs, compared with the true value computed on every eligible CVE.
+Simplifications: fix date = publication date; exploitation = CISA KEV only; EPSS from
+weekly snapshots; the slot c internet-facing check and slot d are not simulated.
+
+**True values** (all eligible CVEs exploited within 90 days):
+Q2: 35 of 4,804 exploited; 14% before the fix; median 9 days.
+Q3: 41 of 9,812 exploited; 24% before the fix; median 2 days.
+
+**What one quarter's sample would show** (range = 90% of simulated quarters):
+
+| Design | Race picks | Exploited picks (avg) | Share before fix: range | Median days: range |
+|---|---|---|---|---|
+| (b) registered, 1 per slot | 9 | Q2 0.3 / Q3 0.4 | 0-100% | 0-64 |
+| (b) registered, 2 per slot | 18 | 0.6 / 0.9 | 0-100% | 0-64 |
+| (d) EPSS at +7 days, floor 0.01, 1 per slot | 9 | 2.2 / 2.6 | 0-100% | 0-21 |
+| (d) EPSS at +7 days, floor 0.001, 1 per slot | 9 | 3.3 / 3.2 | 1-100% | 0-21 |
+| (d) EPSS at draw date, floor 0.01, 1 per slot | 9 | 2.9 / 2.8 | 0-100% | 0-64 |
+| (d) EPSS at +7 days, floor 0.001, 2 per slot | 18 | 6.7 / 6.5 | 3-87% | 0-45 |
+| (d) same, pooled over both quarters | 36 | 13.2 | 4-80% | 0-45 |
+| **(a) all first exploited in the quarter** | none (all used) | Q2 57 / Q3 91 | **21% / 25%** | **8 / 5** |
+
+**Findings**
+1. Weighting works as intended for its narrow goal: 7-10 times more exploited flaws in the
+   cohort (2-3 per quarter instead of 0.3-0.4).
+2. It does not give a usable race number. Even 18 weighted picks per quarter, or 36 over
+   half a year, leave the zero-day share anywhere between a few percent and over 80%.
+   Two reasons: few exploited picks, and large weights on the occasional low-EPSS
+   exploited pick swing the estimate. EPSS a week after publication separates exploited
+   flaws only moderately (top 10% of scores holds about 70% of later-exploited flaws).
+3. Option (a) gives a stable number directly from about 60-90 flaws per quarter.
+4. Cost of (d): it breaks `outcome_data_used_for_selection: false` (EPSS is named in the
+   locked rule), and the cohort's other figures (root cause, AI vs human) would need the
+   same re-weighting, making them noisier.
+
+**Where (d) still adds value, a combined option (a+d)**: use (a) for the T1(a) number, and
+the weighted draw only if the goal is to follow more exploited cohort flaws end to end
+with exposure data (T1b: did exposed systems get patched before attacks started?), as
+described cases rather than estimates. Whether that is worth breaking the EPSS rule is a
+question for 21 Dec; it needs exposure data (Shadowserver) to pay off at all.
