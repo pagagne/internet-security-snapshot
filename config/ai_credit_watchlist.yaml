@@ -3,7 +3,7 @@
 # Candidates here are NOT matched until promoted into ai_credit_terms.yaml with a version
 # bump and a dated entry in prereg/DEVIATIONS.md. Every quarter T7 is reported under the
 # registered list (v1.0) and the current list, so additions never rewrite history.
-version: 1.0
+version: 1.1   # 1.1 (2026-10-22): ordinary-word naming rule; Flint/Recursive added
 
 refresh_each_quarter:
   # 1. Automatic: the pull lists credit texts that look AI-related but match no term
@@ -24,6 +24,13 @@ promotion_rule:
   # explicit AI-tool mention to count); model and tool names go to `tool_names`.
   record: name, lab, country, first seen (date and source), promoted in version
 
+ordinary_word_rule:
+  # Names that are also ordinary words, surnames, places or other products (e.g. "Flint",
+  # "Recursive") are never added as bare terms. They are watched and, if promoted,
+  # matched only through qualified phrases that name the model with its lab or the word
+  # "model"/"AI" (listed under `phrases` for each candidate). This keeps false matches
+  # out of the hand-check queue.
+
 # First sweep, 2026-10-20, from Q3 2026 CVE credits (automatic scan). Awaiting review;
 # none is matched until promoted. "Human team?" = may be people at an AI-named company.
 candidates:
@@ -41,3 +48,6 @@ candidates:
   - {name: neo-ai-engineer, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
   - {name: agent-kira, lab: unknown, country: unknown, first_seen: "2026Q3 CVE credits"}
   - {name: Autonomous Code Security (Microsoft), lab: Microsoft, country: US, first_seen: "2026Q3 CVE credits", note: "Human team?"}
+  # Added 2026-10-22 from news (not yet seen in CVE credits):
+  - {name: Flint, lab: Recursive, country: US, first_seen: "2026-10-21 TechCrunch (release)", note: "Open-weight (Apache 2.0) laptop coding model; ordinary-word rule applies", phrases: ["Flint model", "Recursive Flint", "Flint (Recursive)", "Flint by Recursive"]}
+  - {name: Eureka Machine, lab: Recursive, country: US, first_seen: "2026-10-21 TechCrunch", note: "Recursive's automated research system; lab name 'Recursive' is an ordinary word", phrases: ["Eureka Machine", "Recursive AI", "Recursive Inc"]}

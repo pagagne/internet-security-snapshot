@@ -1,0 +1,40 @@
+# Products counted as "AI software" for exploratory measure X5. Matched whole-word,
+# case-insensitive, against CVE affected vendor|product strings. Additions are dated.
+version: 1.0   # 2026-10-22
+products:
+  # model servers and runtimes
+  - ollama
+  - vllm
+  - llama.cpp
+  - text-generation-webui
+  - localai
+  - lm studio
+  - triton inference server
+  - torchserve
+  - ray
+  # agent platforms and frameworks
+  - langchain
+  - langflow
+  - langgraph
+  - llamaindex
+  - autogen
+  - crewai
+  - openclaw
+  - dify
+  - flowise
+  - n8n
+  - open webui
+  - anythingllm
+  - comfyui
+  # gateways, proxies and protocol servers
+  - litellm
+  - mcp server
+  - model context protocol
+  - openai-compatible
+  # ML platforms
+  - mlflow
+  - kubeflow
+  - h2o
+  - gradio
+  - streamlit
+  - jupyter

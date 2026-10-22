@@ -17,7 +17,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from .classify import lab_name_only, product_category, unmatched_ai_signals
+from .classify import is_ai_software, lab_name_only, product_category, unmatched_ai_signals
 from .util import Quarter, load_config
 
 
@@ -138,6 +138,15 @@ def build(bundle: Path) -> tuple[str, dict]:
             M["pools"] = {m: {k: int(v) for k, v in piv.loc[m].items()} | {"d": int(d.get(m, 0))} for m in piv.index}
         else:
             L += ["- No eligible CVEs in this bundle.", ""]
+        if len(elig):
+            ai_sw = elig["affected"].map(is_ai_software)
+            L += ["## 5b. X5 (exploratory): flaws in AI software", "",
+                  f"- Eligible CVEs affecting AI software: {int(ai_sw.sum()):,} of {len(elig):,} ({pct(int(ai_sw.sum()), len(elig))})"]
+            if kev is not None:
+                kq = qc[qc["cve_id"].isin(set(kev["cve_id"]))]
+                k_ai = kq["affected"].map(is_ai_software).sum() if len(kq) else 0
+                L.append(f"- Quarter CVEs in KEV affecting AI software: {int(k_ai)} of {len(kq)}")
+            L.append("")
 
         # 6. AI-credit review load
         cand = qc[qc["ai_credit_terms"].map(lambda x: len(x) > 0)]

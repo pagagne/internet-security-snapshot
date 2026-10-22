@@ -131,3 +131,15 @@ def product_category(affected: list[str]) -> str:
         if any(p.search(text) for p in pats):
             return key
     return "c_other"
+
+
+@lru_cache(maxsize=1)
+def _ai_software_patterns():
+    words = load_config("ai_software_products.yaml")["products"]
+    return [re.compile(rf"(?<![a-z0-9]){re.escape(w.lower())}(?![a-z0-9])") for w in words]
+
+
+def is_ai_software(affected) -> bool:
+    """Exploratory X5: does any affected vendor|product name an AI software product?"""
+    text = " ; ".join(str(a).lower().replace("|", " ") for a in affected)
+    return any(p.search(text) for p in _ai_software_patterns())

@@ -53,3 +53,16 @@ measures:
     method: >
       Weekly series from Cloudflare Radar: human vs bot traffic share and AI bot activity
       by user agent. Context only; it cannot separate malicious agents from benign ones.
+
+  - id: X5
+    name: Flaws in AI software
+    question: Is AI software itself (model servers, agent platforms, AI workflow tools, AI gateways, MCP servers) a growing share of serious and exploited flaws?
+    sources: [cve, kev]
+    added: 2026-10-22
+    feeds_labels: false
+    status: active
+    method: >
+      Each eligible CVE and each new KEV entry is tagged "AI software" when its affected
+      vendor/product matches config/ai_software_products.yaml (whole-word, case-insensitive).
+      Reported per quarter as a share of eligible CVEs, of KEV additions, and within each
+      cohort slot. The tag never affects the draw or any label.

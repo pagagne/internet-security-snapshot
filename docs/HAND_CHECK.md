@@ -61,5 +61,15 @@ leans toward undercounting rather than overcounting AI involvement.
 
 ## Two versions reported
 
-T7 is reported each quarter under the registered term list (v1.0) and the expanded list
-(v1.1), with v1.1 labeled as a deviation. See `prereg/DEVIATIONS.md`.
+T7 is reported each quarter under the registered term list (v1.0) and the current list,
+with the current list labeled as a deviation. See `prereg/DEVIATIONS.md`.
+
+## How to read T7: disclosed, not total
+
+T7 counts flaws whose credits *say* an AI tool took part. It depends on the finder
+choosing to disclose it. Discoveries made with hosted AI services are often credited
+(the lab may share the credit), while discoveries made with models run privately on a
+researcher's own machine, such as open-weight models, usually are not. As local models
+improve, T7 can lag real AI use, or even fall while use rises. Every report states this
+next to the T7 figures, and a change in T7 is described as a change in *disclosed* AI
+involvement.

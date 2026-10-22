@@ -139,3 +139,11 @@ def test_unmatched_ai_signals():
     assert unmatched_ai_signals(["Found by XBOW autonomous agent"]) == []  # already matched
     assert unmatched_ai_signals(["Zephyr-4.2 audit"]) == ["Zephyr-4.2 audit"]
     assert unmatched_ai_signals(["CVE-2026-14970 reported to IBM by Onecons"]) == []
+
+
+def test_is_ai_software():
+    from snapshot.classify import is_ai_software
+    assert is_ai_software(["langflow-ai|langflow"])
+    assert is_ai_software(["Ollama|ollama"])
+    assert not is_ai_software(["Fortinet|FortiOS"])
+    assert not is_ai_software(["Acme|Rayleigh"])  # 'ray' whole word only
