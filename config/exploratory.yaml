@@ -66,3 +66,69 @@ measures:
       vendor/product matches config/ai_software_products.yaml (whole-word, case-insensitive).
       Reported per quarter as a share of eligible CVEs, of KEV additions, and within each
       cohort slot. The tag never affects the draw or any label.
+
+  # X6-X12 added 2026-10-22: fingerprints of AI-accelerated attacks that show up
+  # whatever model the attacker used, including self-hosted ones. Candidates for the
+  # core-freeze decision session (docs/CORE_FREEZE_DECISIONS.md).
+  - id: X6
+    name: Speed in the tail
+    question: What share of the quarter's newly exploited flaws were exploited within 1 day and within 7 days of public disclosure?
+    sources: [cve, kev]
+    added: 2026-10-22
+    feeds_labels: false
+    status: planned
+    method: For KEV additions in the quarter, days from CVE publication to the KEV date (and to earlier exploitation evidence where recorded). Reported as shares at 1 and 7 days.
+
+  - id: X7
+    name: Patch to public exploit code
+    question: How quickly does public exploit code appear on GitHub after a fix?
+    sources: [poc_in_github]   # new free source: nomi-sec/PoC-in-GitHub (git), to be added
+    added: 2026-10-22
+    feeds_labels: false
+    status: planned
+    method: For cohort CVEs and KEV additions, days from the vendor fix to the first public proof-of-concept repository indexed by PoC-in-GitHub. Indexed repositories are not all working exploits; reported as an upper-bound timing signal.
+
+  - id: X8
+    name: Breadth of exploitation
+    question: Are attackers exploiting more different vendors and products, including ones never exploited before?
+    sources: [kev]
+    added: 2026-10-22
+    feeds_labels: false
+    status: planned
+    method: Per quarter, distinct vendors and products among KEV additions, and how many appear in KEV for the first time.
+
+  - id: X9
+    name: Bug types being exploited
+    question: Are exploited flaws shifting toward logic, authentication and access-control bugs relative to memory-safety bugs?
+    sources: [kev, cve, nvd]
+    added: 2026-10-22
+    feeds_labels: false
+    status: planned
+    method: Root-cause class (config/root_cause_map.yaml, with NVD CWEs filling gaps) for KEV additions per quarter. Depends on the root-cause map decision at the freeze session.
+
+  - id: X10
+    name: Exploited before a fix existed
+    question: How often does exploitation start before a fix is available (zero-day share)?
+    sources: [kev, cve, nvd]
+    added: 2026-10-22
+    feeds_labels: false
+    status: planned
+    method: Share of KEV additions whose first exploitation evidence precedes the vendor fix date. Fix dates come from the cohort hand check for cohort CVEs and from vendor advisory references otherwise; unknown dates are reported as unknown, never guessed.
+
+  - id: X11
+    name: Exposed and hijacked AI servers
+    question: Are self-hosted AI servers (e.g. Ollama, LLM gateways) increasingly exposed and attacked?
+    sources: [curated, shadowserver]   # honeypot and research reports; Shadowserver if permission arrives
+    added: 2026-10-22
+    feeds_labels: false
+    status: planned
+    method: Logged from public honeypot reports and, if available, Shadowserver exposure series for AI services. Context only.
+
+  - id: X12
+    name: Open-weight model release log
+    question: When do capable models that attackers can run privately become available?
+    sources: [curated]   # exploratory/open_model_releases.csv
+    added: 2026-10-22
+    feeds_labels: false
+    status: active
+    method: Dated log of open-weight model releases with strong coding or security ability (name, lab, country, licence, size, runs on a laptop). Used only as a timeline for reading changes in other measures.

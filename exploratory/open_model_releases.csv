@@ -1,0 +1,2 @@
+date_released,model,lab,country,licence,parameters,runs_on_laptop,source_url,added,notes
+2026-10-21,Flint,Recursive,US,Apache-2.0,"40B total, 2.5B active (MoE)",yes,https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/,2026-10-22,Leads sub-50B models on SWE-Bench Verified per Recursive; largely built by Recursive's automated research system.
