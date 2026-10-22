@@ -118,6 +118,10 @@ def parse_record(doc: dict) -> dict:
         "ai_credit_terms": ai_credit_matches(credit_values),
         "has_cisa_adp": any((a.get("providerMetadata", {}) or {}).get("shortName") == "CISA-ADP" for a in adp),
         **_cisa_ssvc(adp),
+        # Links that help the patch-date hand check (vendor advisories and patches first).
+        "fix_links": [r.get("url", "") for r in (cna.get("references", []) or [])
+                      if set(r.get("tags", []) or []) & {"patch", "vendor-advisory", "release-notes"}][:5],
+        "ref_links": [r.get("url", "") for r in (cna.get("references", []) or [])][:5],
     }
 
 
