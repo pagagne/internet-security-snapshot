@@ -1,0 +1,117 @@
+[pull] kev -> data/raw/2026Q3/dry-run
+::notice title=pull kev::ok in 7s
+[pull] cve -> data/raw/2026Q3/dry-run
+::notice title=pull cve::ok in 187s
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/urllib3/response.py", line 929, in _error_catcher
+    yield
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/urllib3/response.py", line 1067, in _raw_read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+urllib3.exceptions.IncompleteRead: IncompleteRead(1601931 bytes read, 24037833 more expected)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/models.py", line 937, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/urllib3/response.py", line 1291, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/urllib3/response.py", line 1179, in read
+    data = self._raw_read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/urllib3/response.py", line 1045, in _raw_read
+    with self._error_catcher():
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/urllib3/response.py", line 949, in _error_catcher
+    raise ProtocolError(arg, e) from e
+urllib3.exceptions.ProtocolError: ('Connection broken: IncompleteRead(1601931 bytes read, 24037833 more expected)', IncompleteRead(1601931 bytes read, 24037833 more expected))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 87, in pull_nvd
+    table, versions = nvd.from_feeds(start, end)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/nvd.py", line 71, in from_feeds
+    raw = gzip.decompress(get(FEED.format(year=year, ext="json.gz"), headers={"Accept": "*/*"}, timeout=600).content)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/http.py", line 30, in get
+    raise last
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/http.py", line 18, in get
+    r = requests.get(url, params=params, headers=h, timeout=timeout, stream=stream)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/api.py", line 87, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/sessions.py", line 827, in send
+    r.content
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/models.py", line 1042, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/models.py", line 939, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(1601931 bytes read, 24037833 more expected)', IncompleteRead(1601931 bytes read, 24037833 more expected))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 200, in main
+    PULLERS[name](out, manifest, Path(tmp))
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 91, in pull_nvd
+    table, how = nvd.build_table(start, end), f"NVD API 2.0, retrieved {utcnow()}"
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/nvd.py", line 103, in build_table
+    data = get(URL, params=params, headers=headers, timeout=60, tries=3, pause=pause).json()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/http.py", line 30, in get
+    raise last
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/http.py", line 18, in get
+    r = requests.get(url, params=params, headers=h, timeout=timeout, stream=stream)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/api.py", line 87, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/sessions.py", line 827, in send
+    r.content
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/models.py", line 1042, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/requests/models.py", line 943, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='services.nvd.nist.gov', port=443): Read timed out.
+[pull] nvd -> data/raw/2026Q3/dry-run
+[pull] nvd feeds failed (ChunkedEncodingError: ('Connection broken: IncompleteRead(1601931 bytes read, 24037833 more expected)', IncompleteRead(1601931 bytes read, 24037833 more expected))); falling back to the API
+::error title=pull nvd::gap after 2269s: ConnectionError: HTTPSConnectionPool(host='services.nvd.nist.gov', port=443): Read timed out.
+[pull] epss -> data/raw/2026Q3/dry-run
+::notice title=pull epss::ok in 137s
+[pull] sec -> data/raw/2026Q3/dry-run
+::notice title=pull sec::ok in 1s
+Traceback (most recent call last):
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 200, in main
+    PULLERS[name](out, manifest, Path(tmp))
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 141, in pull_radar
+    for name, data in radar.fetch(start, end).items():
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/radar.py", line 42, in fetch
+    raise RuntimeError(f"Cloudflare Radar rejected all {len(candidates)} line(s) of CLOUDFLARE_TOKEN")
+RuntimeError: Cloudflare Radar rejected all 2 line(s) of CLOUDFLARE_TOKEN
+[pull] radar -> data/raw/2026Q3/dry-run
+::error title=pull radar::gap after 0s: RuntimeError: Cloudflare Radar rejected all 2 line(s) of CLOUDFLARE_TOKEN
+[pull] ransomware -> data/raw/2026Q3/dry-run
+::notice title=pull ransomware::ok in 13s
+[pull] manifest: data/raw/2026Q3/dry-run/manifest.json (2 gap(s))
