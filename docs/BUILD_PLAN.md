@@ -10,7 +10,7 @@
 | 30 Nov | Draft evaluation page for the dry run | to do |
 | 30 Nov | Root cause: fill missing CWEs from Vulnrichment then NVD (registered source order) in the evaluation | to do |
 | 20 Nov | Picks recorded "no fix yet" return to the review list for a fix date in later runs (within the 90-day follow-up) | done 2026-10-22 |
-| 16 Nov | Validation batch in the Hand Check app: the author records fix dates for the reference CVEs before opening the reference file | to do |
+| 16 Nov | Validation batch in the Hand Check app: the author records fix dates for the reference CVEs before opening the reference file | batch loaded 2026-10-22; author step 16 Nov |
 
 Author checkpoints: 16 Nov reference-date spot check, 23-24 Nov baseline-year hand check (two sessions),
 1 Dec dry run, 2 Dec dry-run hand check, 4 Dec landing page.

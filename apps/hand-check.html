@@ -270,7 +270,7 @@ th { color: var(--muted); font-weight: 700; }
         ${String(it.prefill_source || "").startsWith("ASSUMED") ? `<div class="hint">This date is an assumption. Check the advisory link before confirming.</div>` : ""}
         ${linksHTML(it.links)}
         <div class="actions">
-          <button class="btn primary" id="fix-ok">Confirm date<small>key C</small></button>
+          ${it.prefill_date ? `<button class="btn primary" id="fix-ok">Confirm date<small>key C</small></button>` : ""}
           <button class="btn" id="fix-edit">Correct it<small>key E</small></button>
           <button class="btn" id="fix-unknown">Can't find<small>recorded as unknown</small></button>
           <button class="btn" id="fix-none">No fix yet<small>vendor has not released one</small></button>
@@ -476,8 +476,8 @@ th { color: var(--muted); font-weight: 700; }
     if (nt) nt.onblur = () => { if ((ans(it.id)?.note || "") !== nt.value.trim()) saveNote(it, nt.value); };
     document.querySelectorAll("[data-d]").forEach((b) => (b.onclick = () => decide(it, b.dataset.d)));
     const fixOk = $("#fix-ok");
-    if (fixOk) {
-      fixOk.onclick = async () => { await save(it, { fix_date: it.prefill_date || "", fix_status: "confirmed" }); advance(); };
+    if ($("#fix-edit")) {
+      if (fixOk) fixOk.onclick = async () => { await save(it, { fix_date: it.prefill_date || "", fix_status: "confirmed" }); advance(); };
       $("#fix-edit").onclick = () => { $("#fix-editor").hidden = false; $("#fixdate").focus(); };
       $("#fix-save").onclick = async () => {
         const v = $("#fixdate").value;
