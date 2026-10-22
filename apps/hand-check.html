@@ -148,6 +148,7 @@ th { color: var(--muted); font-weight: 700; }
   const ans = (id) => state.answers[id];
   function needed(it) {
     if (it.kind === "empty") return false;
+    if (it.kind === "credit" && it.auto_rule && !it.spot_check) return false; // accepted by a published rule
     if ((it.kind === "slot_c" || it.kind === "slot_d") && it.rank > 1) {
       const lower = state.items.filter((o) => o.group === it.group && o.rank < it.rank);
       return lower.every((o) => ans(o.id)?.decision === "no");
@@ -231,7 +232,8 @@ th { color: var(--muted); font-weight: 700; }
     const nav = `<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="skip">Skip for now</button></div>`;
 
     if (it.kind === "credit") {
-      return `<section class="card">${head("AI credit", it.lab_only ? `<span class="pill warn">Lab name only</span>` : "")}
+      const tag = it.spot_check ? `<span class="pill warn">Spot check of an automatic yes (${esc(it.auto_rule)})</span>` : it.lab_only ? `<span class="pill warn">Lab name only</span>` : "";
+      return `<section class="card">${head("AI credit", tag)}
         <div class="credit">${esc(it.credit)}</div>
         ${termsHTML(it)}
         <div class="meta"><span>Covers ${it.covers} CVE${it.covers === 1 ? "" : "s"}</span></div>
@@ -305,7 +307,9 @@ th { color: var(--muted); font-weight: 700; }
   ];
 
   function renderCreditList() {
-    const credits = state.items.filter((i) => i.kind === "credit");
+    const allCredits = state.items.filter((i) => i.kind === "credit");
+    const credits = allCredits.filter(needed);
+    const autos = allCredits.filter((i) => !needed(i));
     const segBtns = (it) => {
       const a = ans(it.id) || {};
       const cur = a.unsure ? "unsure" : a.decision;
@@ -329,7 +333,10 @@ th { color: var(--muted); font-weight: 700; }
         ${its.map((it) => `<div class="lrow"><div class="ctext"><div>${esc(it.credit)}</div>${termsHTML(it)}<div class="meta"><span>Covers ${it.covers}</span></div>${verifyHTML(it)}</div>${segBtns(it)}</div>`).join("")}
       </section>`;
     }).join("");
-    $("#main").innerHTML = modeHTML() + html;
+    const autoHtml = autos.length ? `<section class="card group"><div class="group-head"><h2>Accepted automatically</h2><span class="meta">${autos.length} credit texts</span></div>
+      <div class="hint">These follow a clear published pattern (for example "in collaboration with Claude", "using Codex", a model name with its version) and were counted without a hand check. A random sample of them appears in the groups above as spot checks; answering No to a spot check suspends that pattern.</div>
+      <details><summary>Show them</summary>${autos.map((it) => `<div class="lrow"><div class="ctext"><div>${esc(it.credit)}</div><div class="meta"><span>Rule: ${esc(it.auto_rule)}</span><span>Covers ${it.covers}</span></div></div></div>`).join("")}</details></section>` : "";
+    $("#main").innerHTML = modeHTML() + html + autoHtml;
     wireMode();
     document.querySelectorAll(".seg button").forEach((b) => (b.onclick = async () => {
       const it = state.items.find((i) => i.id === b.dataset.id);
@@ -404,7 +411,8 @@ th { color: var(--muted); font-weight: 700; }
   // ---------- report ----------
   function renderReport() {
     const its = state.items;
-    const credits = its.filter((i) => i.kind === "credit");
+    const autoCredits = its.filter((i) => i.kind === "credit" && !needed(i));
+    const credits = its.filter((i) => i.kind === "credit" && needed(i));
     const cy = credits.filter((i) => ans(i.id)?.decision === "yes");
     const cn = credits.filter((i) => ans(i.id)?.decision === "no");
     const groups = [...new Set(its.filter((i) => i.kind !== "credit").map((i) => i.group))];
@@ -432,7 +440,8 @@ th { color: var(--muted); font-weight: 700; }
       <h2>${esc(state.batches.find((b) => b.id === state.batchId)?.title || "Report")}</h2>
       <div class="${allDone ? "" : "hint"}">${allDone ? "Everything on this list is answered. Tell Claude in the chat that you're done; Claude reads your answers from here and records them in the study." : "Some items are still open. Your answers so far are saved; finish them any time."}</div>
       <div class="stats">
-        <div class="stat"><b>${cy.length} / ${credits.length}</b>AI credits counted</div>
+        <div class="stat"><b>${cy.length} / ${credits.length}</b>AI credits you counted</div>
+        <div class="stat"><b>${autoCredits.length}</b>accepted automatically</div>
         <div class="stat"><b>${picks.filter((p) => p.status === "Picked").length} / ${picks.length}</b>cohort slots filled</div>
         <div class="stat"><b>${Math.round(secs / 60)} min</b>review time</div>
         <div class="stat"><b>${corrected} · ${unknown}</b>dates corrected · unknown</div>

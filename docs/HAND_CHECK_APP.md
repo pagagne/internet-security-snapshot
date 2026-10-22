@@ -44,6 +44,11 @@ Two ways to work, switch any time:
   **Mark unanswered as Yes/No** answers all remaining rows in a group after you confirm;
   use it only after reading the rows, and change any exception before or after.
 
+Clear-cut credits (for example "in collaboration with Claude", "using Codex", a model
+name with its version) are accepted automatically and listed under **Accepted
+automatically** for reference; a few of them appear in your list as **spot checks**
+(marked). Answer those honestly: a "No" suspends the pattern that accepted it.
+
 Each distinct credit text appears once even if it covers many flaws, and decisions carry
 over to later quarters, so later lists only ask about new credit texts.
 

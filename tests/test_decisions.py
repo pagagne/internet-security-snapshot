@@ -20,3 +20,24 @@ def test_roundtrip_and_carry_over(tmp_path):
     assert write(rows, out) == 2
     assert write(rows, out) == 2  # upsert, no duplicates
     assert decided_credits(out) == {"Jane with Claude": "yes"}
+
+
+def test_auto_accept_patterns():
+    from snapshot.autoaccept import auto_accept
+    assert auto_accept("Alex Gaynor in collaboration with Claude and Anthropic Research") == "collaboration"
+    assert auto_accept("The ASF using Claude Agents") == "using"
+    assert auto_accept("Red Hat would like to thank Google Big Sleep for reporting this issue.") == "credited_directly"
+    assert auto_accept("iglocska | Claude Fable 5.1") == "model_with_version"
+    assert auto_accept("Amy Burnett of OpenAI") is None          # lab name only
+    assert auto_accept("Paul Bottinelli (Trail of Bits in collaboration with OpenAI)") is None
+    assert auto_accept("Prompt injection in Claude found by Jane Doe") is None   # AI is the subject
+    assert auto_accept("Claude Bernard") is None                 # excluded name
+    assert auto_accept("Jane Doe", credit_types=["tool"]) is None  # no tool term
+    assert auto_accept("Claude (Anthropic)", credit_types=["tool"]) == "credit_type_tool"
+
+
+def test_spot_check_is_seeded():
+    from snapshot.autoaccept import spot_check
+    keys = [f"k{i}" for i in range(40)]
+    a, b = spot_check(keys, "s"), spot_check(keys, "s")
+    assert a == b and len(a) == 4

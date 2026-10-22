@@ -24,7 +24,8 @@ from the December dry run and the test runs.
 | 9 | AI credit term list | Core (v1.2) | Promote any watchlist candidates seen in credits by December? | Watchlist scan from the dry run |
 | 10 | Slot (a) keyword "gateway" | Core | Too broad: the Q3 preview put Jupyter Enterprise Gateway (a data-science server) in the edge-device slot. Match "gateway" only with VPN/remote-access/SSL/security words? | Edge-slot picks from the baseline preview |
 | 11 | Internet-facing rule for slot (d) | Core | Does the internet-facing requirement apply to AI-credited picks too? The preview offered Firefox and FreeBSD. | Slot d candidates in the baseline |
-| 12 | Anything else | — | Brainstorm: what would we regret not measuring by 2028? | Notes |
+| 12 | Automatic yes for clear-cut AI credits | Core (adopted 2026-10-22) | Confirm, adjust patterns, or revert, in light of the spot checks so far | Spot-check answers; list of auto-accepted texts |
+| 13 | Anything else | — | Brainstorm: what would we regret not measuring by 2028? | Notes |
 
 Rules of thumb for promotion: computed from free data already collected; defined
 before seeing its trend; stable enough that two quarters running in one direction

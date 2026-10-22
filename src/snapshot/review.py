@@ -23,6 +23,7 @@ import pandas as pd
 from .classify import lab_name_only, product_category
 from .cohort import draw_order
 from .fixdates import prefill
+from .autoaccept import auto_accept, spot_check
 from .util import Quarter, load_config
 
 BACKUPS = 3
@@ -107,7 +108,8 @@ def credit_rows(cve: pd.DataFrame, months: list[str], already: dict[str, str] | 
     groups = {}
     for _, r in d.iterrows():
         key = " | ".join(list(r["credit_values"]))
-        g = groups.setdefault(key, {"n": 0, "terms": list(r["ai_credit_terms"]), "example": r["cve_id"], "ids": []})
+        g = groups.setdefault(key, {"n": 0, "terms": list(r["ai_credit_terms"]), "example": r["cve_id"], "ids": [], "types": set()})
+        g["types"].update(list(r["credit_types"]) if r.get("credit_types") is not None else [])
         g["n"] += 1
         if len(g["ids"]) < 5:
             g["ids"].append(r["cve_id"])
@@ -115,8 +117,12 @@ def credit_rows(cve: pd.DataFrame, months: list[str], already: dict[str, str] | 
     CARRIED.clear()
     CARRIED.update({k: already[k[:300]] for k in groups if k[:300] in already})
     groups = {k: g for k, g in groups.items() if k[:300] not in already}
+    rules = {k: auto_accept(k, g["types"]) for k, g in groups.items()}
+    spots = spot_check([k for k, r in rules.items() if r], seed=f"spot|{','.join(months)}")
     return [{"month": ",".join(months), "slot": "T7", "draw_rank": "", "cve_id": g["example"],
-             "task": "ai_credit", "question": f"Does this credit say an AI tool took part? Applies to {g['n']} CVE(s)."
+             "task": ("auto_accept" if rules[k] and k not in spots else "ai_credit"),
+             "auto_rule": rules[k] or "", "spot_check": k in spots,
+             "question": f"Does this credit say an AI tool took part? Applies to {g['n']} CVE(s)."
              + (" Lab name only: needs an explicit AI-tool mention." if lab_name_only(g["terms"]) else ""),
              "credit": k[:300], "terms": "; ".join(g["terms"]), "examples": " ".join(g["ids"]),
              "answer": "", "notes": ""} for k, g in sorted(groups.items(), key=lambda x: -x[1]["n"])]
@@ -147,7 +153,7 @@ def main(argv=None) -> int:
         print(f"{len(CARRIED)} credit texts carried over from earlier decisions")
     a.out.parent.mkdir(parents=True, exist_ok=True)
     fields = ["month", "slot", "draw_rank", "cve_id", "product", "cvss", "published", "task", "question",
-              "credit", "terms", "examples", "links", "answer", "patch_date", "patch_source", "notes"]
+              "credit", "terms", "examples", "auto_rule", "spot_check", "links", "answer", "patch_date", "patch_source", "notes"]
     with open(a.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
     print(pd.DataFrame(stats).to_string(index=False))

@@ -53,6 +53,16 @@ draw order. Mark it yes or no:
 - A slot stays open until its pick is confirmed, so an unanswered item holds that slot
   (and only that slot) back.
 
+## Automatic yes for clear-cut credits (since 2026-10-22)
+
+Credits where a tool or model name appears in a clear role pattern, such as "in
+collaboration with Claude", "using Codex", "found by Big Sleep" or "Claude Opus 5", are
+accepted automatically (`config/ai_credit_auto_accept.yaml`). Lab or company names alone
+never qualify, and wording that makes the AI the subject of the flaw ("vulnerability in
+Claude", "prompt injection") always goes to the author. A random 10% of automatic yeses
+(at least three) still comes to the author as spot checks; a "no" on a spot check
+suspends that pattern until it is reviewed. Everything else is checked by hand as below.
+
 ## Criteria for AI-credit matches
 
 A match counts as **AI-credited** only if the credit names an AI tool, model or agent as

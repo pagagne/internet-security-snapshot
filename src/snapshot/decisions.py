@@ -24,7 +24,7 @@ import datetime as dt
 import json
 from pathlib import Path
 
-FIELDS = ["batch", "item_id", "kind", "month", "slot", "rank", "cve_id", "credit", "terms",
+FIELDS = ["batch", "item_id", "decided_by", "kind", "month", "slot", "rank", "cve_id", "credit", "terms",
           "decision", "unsure", "bulk", "fix_date", "fix_status", "prefill_date", "prefill_source",
           "seconds", "note", "answered_at", "recorded_at"]
 
@@ -45,7 +45,7 @@ def load(export: Path, batch: str) -> tuple[dict, list[dict]]:
     for iid, a in sorted(answers.items()):
         it = items.get(iid, {})
         rows.append({
-            "batch": batch, "item_id": iid, "kind": it.get("kind", a.get("kind", "")),
+            "batch": batch, "item_id": iid, "decided_by": "author", "kind": it.get("kind", a.get("kind", "")),
             "month": it.get("month", ""), "slot": it.get("slot", ""), "rank": it.get("rank", ""),
             "cve_id": it.get("cve_id", a.get("cve_id", "")), "credit": it.get("credit", ""),
             "terms": "; ".join(it.get("terms", []) or []),
@@ -56,6 +56,25 @@ def load(export: Path, batch: str) -> tuple[dict, list[dict]]:
             "recorded_at": now,
         })
     return meta, rows
+
+
+def auto_rows(review_csv: Path, batch: str) -> list[dict]:
+    """Rows for credits accepted by a rule (config/ai_credit_auto_accept.yaml), not shown to the author."""
+    now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    out = []
+    with open(review_csv, newline="") as f:
+        for i, r in enumerate(csv.DictReader(f), 1):
+            if r.get("task") == "auto_accept":
+                out.append({"batch": batch, "item_id": f"auto{i:04d}", "decided_by": f"rule:{r['auto_rule']}",
+                            "kind": "credit", "cve_id": r["cve_id"], "credit": r["credit"], "terms": r.get("terms", ""),
+                            "decision": "yes", "unsure": False, "bulk": False, "seconds": 0, "recorded_at": now})
+    return out
+
+
+def suspended_rules(rows: list[dict], items: dict) -> set[str]:
+    """Rules whose spot-checked credits the author answered 'no' to."""
+    return {items[r["item_id"]].get("auto_rule") for r in rows
+            if items.get(r["item_id"], {}).get("spot_check") and r["decision"] == "no"} - {None, ""}
 
 
 def write(rows: list[dict], out: Path) -> int:
@@ -94,8 +113,15 @@ def main(argv=None) -> int:
     ap.add_argument("export", type=Path)
     ap.add_argument("--batch", required=True)
     ap.add_argument("--repo", type=Path, default=Path("."))
+    ap.add_argument("--review-csv", type=Path, help="the batch's review list, to record auto-accepted credits")
     a = ap.parse_args(argv)
     meta, rows = load(a.export, a.batch)
+    items = {p.stem: _doc(p) for p in (a.export / "batches" / a.batch / "items").glob("*.json")}
+    bad = suspended_rules(rows, items)
+    if bad:
+        print(f"WARNING: author rejected spot-checked credits for rule(s) {sorted(bad)}: suspend and review them")
+    if a.review_csv:
+        rows += auto_rows(a.review_csv, a.batch)
     practice = bool(meta.get("practice")) or a.batch.startswith("practice-")
     out = a.repo / ("review/practice" if practice else "review") / (f"{a.batch}.csv" if practice else "decisions.csv")
     total = write(rows, out)

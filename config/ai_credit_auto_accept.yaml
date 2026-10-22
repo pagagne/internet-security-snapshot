@@ -1,0 +1,38 @@
+# Clear-cut AI credits accepted without a hand check (adopted 2026-10-22; see
+# prereg/DEVIATIONS.md). Everything else still goes to the author.
+#
+# A credit text is auto-accepted only if ALL of these hold:
+#   1. it matches a term from `tool_names` or `generic_phrases` in ai_credit_terms.yaml
+#      (a lab or company name alone never qualifies);
+#   2. that term appears in one of the role patterns below, OR the CVE record types the
+#      credit as "tool" (the CVE format's own label for a tool that helped find the flaw);
+#   3. no `send_to_author` pattern matches.
+# A seeded random sample of auto-accepted texts (spot_check_share, at least
+# spot_check_min) is still shown to the author each quarter. If the author answers "no"
+# to any of them, that pattern is suspended until reviewed.
+version: 1.0
+
+role_patterns:
+  - id: collaboration
+    regex: '\b(in collaboration with|collaborating with|together with|working with|paired with)\s+(the\s+)?{term}\b'
+  - id: using
+    regex: '\b(using|used|via|with the help of|with help from|assisted by|aided by|powered by|leveraging|with)\s+(the\s+)?{term}\b'
+  - id: found_by
+    regex: '\b(found|discovered|detected|identified|reported|uncovered)\s+(by|with|using)\s+(the\s+)?{term}\b'
+  - id: model_with_version
+    # a model listed as a credited party with its version, e.g. "Claude Opus 5", "Claude Fable 5.1", "GPT-5.4"
+    regex: '\b{term}([\s-]+[A-Za-z]+)?[\s-]*\d+(\.\d+)*\b'
+  - id: credited_directly
+    # the tool itself is thanked or credited as the reporter, e.g. "thank Google Big Sleep for reporting"
+    regex: '\bthanks?\s+(\w+\s+)?{term}\b(?!\s*\()|\b{term}\s+(for reporting|reported this)'
+  - id: agent
+    regex: '\b{term}\s+(agent|agents|code|security agent|autonomous agent)\b'
+
+send_to_author:
+  # wording where the AI tool is the subject of the flaw, not the finder
+  - '\b(in|of|against|affecting)\s+(the\s+)?(claude|chatgpt|gpt|gemini|copilot|codex|llama)\b'
+  - '\bvulnerabilit(y|ies)\s+in\b'
+  - '\bprompt injection\b'
+
+spot_check_share: 0.10
+spot_check_min: 3
