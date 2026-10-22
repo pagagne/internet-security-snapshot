@@ -27,7 +27,8 @@ from the December dry run and the test runs.
 | 12 | Automatic yes for clear-cut AI credits | Core (adopted 2026-10-22) | Confirm, adjust patterns, or revert, in light of the spot checks so far | Spot-check answers; list of auto-accepted texts |
 | 13 | Promote "Anthropic OSS program" to the AI term list | Watchlist | Credit names a program, not a tool, so it is a hand-check "no" today, yet the program is an AI scanner (Claude models) and the CVE records type it as finder. Promote as a tool name, or keep the strict wording rule? Also: promote other program/service names on the same basis? Same pattern seen in the practice hand check (22 Oct): "Amy Burnett (OpenAI Codex Security)" and "Zheng Yu (DepthFirst AI)" name an organization whose business is AI vulnerability-finding, as a person's affiliation, without saying the tool was used (answered no). Conflict of interest: Anthropic. | Count of CVEs credited to it by December; the program's public description |
 | 14 | T7 direction rule | Proposed | Call T7 Rising/Falling only when floor and ceiling agree (two quarters running), else "unclear"? Keep the hand-checked figure as the headline number? | Floor/ceiling for the baseline year; first consistency rate |
-| 15 | Anything else | — | Brainstorm: what would we regret not measuring by 2028? | Notes |
+| 15 | Programme-evidence T7 estimate | Proposed | Report a fourth T7 figure counting credits from organizations with a documented, dated AI-discovery programme (see `exploratory/credit_groups.md`)? Reported only; never decides direction. Promote any such organizations' names in the term list instead? | Q3 2026: about 133 of 139 unclear CVEs come from such organizations |
+| 16 | Anything else | — | Brainstorm: what would we regret not measuring by 2028? | Notes |
 
 Rules of thumb for promotion: computed from free data already collected; defined
 before seeing its trend; stable enough that two quarters running in one direction
