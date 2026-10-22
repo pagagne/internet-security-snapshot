@@ -6,7 +6,9 @@ replaces working through a spreadsheet. The criteria for each decision are in
 
 - **Where:** a private page in the author's Claude account, named "Snapshot Hand Check"
   (claude.ai → Artifacts). Only the author can open it. It works on a phone or a computer.
-- **Source code:** [`apps/hand-check.html`](../apps/hand-check.html)
+- **Source code:** [`apps/hand-check.html`](../apps/hand-check.html). This file is for
+  reference only: downloaded and opened from a computer it cannot reach the review lists or
+  save answers. Always open the app from claude.ai → Artifacts → Snapshot Hand Check.
 - **When:** the day after each quarterly run, and the baseline-year sessions (23-24 Nov 2026).
   Calendar entries carry the steps.
 

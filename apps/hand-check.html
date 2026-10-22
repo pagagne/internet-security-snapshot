@@ -452,7 +452,7 @@ th { color: var(--muted); font-weight: 700; }
       const it = its.find((i) => i.id === b.dataset.jump);
       state.view = it.kind === "credit" ? "credit" : "cohort"; state.current = it.id; state.shownAt = Date.now(); render();
     }));
-    claude.use("downloads").then((dl) => {
+    (window.claude?.use ? window.claude.use("downloads") : Promise.resolve(null)).then((dl) => {
       const btn = $("#csv"); if (!dl || !btn) return;
       btn.hidden = false;
       btn.onclick = async () => {
@@ -496,6 +496,12 @@ th { color: var(--muted); font-weight: 700; }
   });
   try { const v = localStorage.getItem("hc-view"); if (v) state.view = v; const m = localStorage.getItem("hc-mode"); if (m) state.creditMode = m; } catch {}
 
+  if (!window.claude?.use) {
+    state.loaded = true;
+    $("#progress").textContent = "This is the source copy of the app.";
+    $("#main").innerHTML = `<div class="card done"><h2>Open the app in your Claude account</h2><p>This file is the app's source code. It only works when opened from claude.ai, where your review lists and answers are saved. Go to claude.ai, open Artifacts in the sidebar, and choose Snapshot Hand Check.</p></div>`;
+    return;
+  }
   claude.use("db").then((db) => {
     if (!db) { state.loaded = true; render(); $("#progress").textContent = "Sign in to claude.ai to open your review list."; return; }
     state.db = db;
