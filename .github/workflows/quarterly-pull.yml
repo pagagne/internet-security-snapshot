@@ -67,8 +67,11 @@ jobs:
         # Writes quality.md/json into each bundle, adds it to the run summary, and posts it
         # as a public notice so it can be read without downloading the bundle.
         run: |
+          # Previous run's metrics, for the drift checks
+          git fetch -q origin run-reports 2>/dev/null && prev=$(git ls-tree -r --name-only FETCH_HEAD | grep 'quality-.*\.json$' | sort | tail -1)
+          if [ -n "$prev" ]; then git show "FETCH_HEAD:$prev" > /tmp/prev-quality.json; fi
           for b in data/raw/*/*/; do
-            python -m snapshot.quality "$b" > /dev/null || true
+            python -m snapshot.quality "$b" --previous /tmp/prev-quality.json > /dev/null || true
             cat "$b/quality.md" >> "$GITHUB_STEP_SUMMARY"
             python -c "import sys; t=open(sys.argv[1]).read()[:60000]; print('::notice title=Data quality ' + sys.argv[1] + '::' + t.replace('%','%25').replace('\r','%0D').replace('\n','%0A'))" "$b/quality.md"
           done
@@ -123,6 +126,7 @@ jobs:
             n=$(echo "$b" | cut -d/ -f3,4 | tr / -)
             cp "$b/manifest.json" "/tmp/rr/$dest/manifest-$n.json" 2>/dev/null || true
             cp "$b/quality.md" "/tmp/rr/$dest/quality-$n.md" 2>/dev/null || true
+            cp "$b/quality.json" "/tmp/rr/$dest/quality-$n.json" 2>/dev/null || true
           done
           python - "/tmp/rr/$dest" <<'PY'
           import os, pathlib, sys

@@ -191,16 +191,78 @@ def build(bundle: Path) -> tuple[str, dict]:
             ok = json.loads(p.read_text()).get("success")
             L.append(f"- {p.stem}: {'ok' if ok else 'error'}")
         L.append("")
+    M["counts"], M["fields"] = source_counts(bundle)
     return "\n".join(L), M
+
+
+# Fields each source must keep providing; a missing or all-empty field is flagged.
+EXPECTED_FIELDS = {
+    "cve/cve_records.parquet": ["cve_id", "state", "date_published", "cvss_base", "cwe_ids", "affected",
+                                "credit_values", "has_cisa_adp", "ssvc_exploitation"],
+    "nvd/nvd_cves.parquet": ["cve_id", "nvd_published", "nvd_status", "nvd_cvss31", "nvd_cwe_ids", "nvd_products"],
+    "kev/kev_entries.parquet": ["cve_id", "date_added", "vendor", "product"],
+    "epss/epss_scores.parquet": ["cve", "date", "epss", "percentile"],
+    "sec/sec_8k_item105.parquet": ["accession", "form", "file_date", "items"],
+    "ransomware/ransomware_counts.parquet": ["month", "dimension", "value", "count"],
+}
+DROP_FLAG = 0.5   # flag a count that falls below half (or more than doubles) the previous run's
+
+
+def source_counts(bundle: Path) -> tuple[dict, dict]:
+    counts, fields = {}, {}
+    for rel, cols in EXPECTED_FIELDS.items():
+        p = bundle / rel
+        if not p.exists():
+            continue
+        df = pd.read_parquet(p)
+        counts[rel] = len(df)
+        fields[rel] = {c: ("missing" if c not in df.columns else "empty" if df[c].isna().all() else "ok") for c in cols}
+    radar = bundle / "radar"
+    if radar.exists():
+        counts["radar/series_ok"] = sum(1 for f in radar.glob("*.json") if json.loads(f.read_text()).get("success"))
+    return counts, fields
+
+
+def drift_section(metrics: dict, previous: dict | None) -> list[str]:
+    L = ["## 11. Drift checks", ""]
+    flags = []
+    for rel, cols in (metrics.get("fields") or {}).items():
+        for c, st in cols.items():
+            if st != "ok":
+                flags.append(f"**{rel}: field `{c}` is {st}** (source format may have changed)")
+    if previous:
+        prev_counts = previous.get("counts") or {}
+        same_q = previous.get("quarter") == metrics.get("quarter")
+        for rel, n in (metrics.get("counts") or {}).items():
+            p = prev_counts.get(rel)
+            if p in (None, 0):
+                continue
+            ratio = n / p
+            if same_q and (ratio < DROP_FLAG or ratio > 1 / DROP_FLAG):
+                flags.append(f"**{rel}: {n:,} rows vs {p:,} in the previous run of {previous.get('quarter')}**")
+            elif not same_q and n == 0:
+                flags.append(f"**{rel}: 0 rows** (previous run had {p:,})")
+        for src in metrics.get("gaps", []):
+            if src not in (previous.get("gaps") or []):
+                flags.append(f"**{src}: gap this run, ok in the previous run**")
+        L.append(f"Compared with the previous run ({previous.get('quarter')} {previous.get('run')}).")
+    else:
+        L.append("No previous run to compare with; field checks only.")
+    L += [""] + ([f"- {f}" for f in flags] if flags else ["- No drift flagged."]) + [""]
+    metrics["drift_flags"] = flags
+    return L
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("bundles", nargs="+", type=Path)
+    ap.add_argument("--previous", type=Path, help="quality.json from the previous run (drift checks)")
     args = ap.parse_args(argv)
     for b in args.bundles:
         try:
             md, metrics = build(b)
+            prev = json.loads(args.previous.read_text()) if args.previous and args.previous.exists() else None
+            md += "\n" + "\n".join(drift_section(metrics, prev))
         except Exception as exc:  # the report must never hide a failed run
             md, metrics = f"# Data quality: {b}\n\nReport failed: {type(exc).__name__}: {exc}\n", {"error": str(exc)}
         (b / "quality.md").write_text(md)

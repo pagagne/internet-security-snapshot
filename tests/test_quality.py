@@ -25,3 +25,13 @@ def test_quality_report_on_small_bundle(tmp_path):
     assert "## 1. Sources" in md and "## 8. Ransomware" in md
     assert metrics["gaps"] == ["sec_edgar"]
     assert "x" not in md.split("## 8.")[1].split("postings")[0].replace("2026-05", "")
+
+
+def test_drift_flags():
+    from snapshot.quality import drift_section
+    cur = {"quarter": "2026Q3", "run": "dry-run", "gaps": ["radar"],
+           "counts": {"nvd/nvd_cves.parquet": 100}, "fields": {"kev/kev_entries.parquet": {"vendor": "missing"}}}
+    prev = {"quarter": "2026Q3", "run": "dry-run", "gaps": [], "counts": {"nvd/nvd_cves.parquet": 1000}}
+    text = "\n".join(drift_section(cur, prev))
+    assert "field `vendor` is missing" in text and "100 rows vs 1,000" in text and "radar: gap this run" in text
+    assert "No drift flagged" in "\n".join(drift_section({"counts": {}, "fields": {}, "gaps": []}, None))
