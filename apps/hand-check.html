@@ -549,6 +549,7 @@ th { color: var(--muted); font-weight: 700; }
       <h2>AI credits</h2>
       <details><summary>Counted as AI (${cy.length})</summary><div class="tablewrap"><table><tbody>${cy.map((i) => `<tr><td class="y">Yes</td><td>${esc(i.credit)}</td><td><button class="ghost" data-jump="${esc(i.id)}">Change</button></td></tr>`).join("")}</tbody></table></div></details>
       <details><summary>Not counted (${cn.length})</summary><div class="tablewrap"><table><tbody>${cn.map((i) => `<tr><td class="n">${ans(i.id)?.unsure ? "Not sure" : "No"}</td><td>${esc(i.credit)}</td><td><button class="ghost" data-jump="${esc(i.id)}">Change</button></td></tr>`).join("")}</tbody></table></div></details>
+      ${(() => { const open = its.filter((i) => needed(i) && !isDone(i)); return open.length ? `<h2>Still open (${open.length})</h2><div class="tablewrap"><table><tbody>${open.map((i) => `<tr><td class="mono">${esc(i.month || "")}</td><td>${esc(i.kind === "credit" ? "AI credit" : (SLOT[i.slot] || i.slot))}</td><td class="mono">${esc(i.cve_id || "")}</td><td>${ans(i.id)?.decision === "yes" ? "Fix date needed" : "Answer needed"}</td><td><button class="ghost" data-jump="${esc(i.id)}">Open</button></td></tr>`).join("")}</tbody></table></div>` : ""; })()}
       ${notes.length ? `<h2>Your notes</h2><div class="tablewrap"><table><tbody>${notes.map((i) => `<tr><td class="mono">${esc(i.cve_id)}</td><td>${esc(ans(i.id).note)}</td></tr>`).join("")}</tbody></table></div>` : ""}
       <div class="row"><button class="btn" id="csv" hidden>Save answers as CSV</button></div>
     </section>`;
