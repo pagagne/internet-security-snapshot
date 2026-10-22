@@ -44,7 +44,7 @@ def lab_name_terms() -> frozenset[str]:
 def lab_name_only(terms: list[str]) -> bool:
     """True when every matched term is a lab name, i.e. no tool or AI phrase matched."""
     labs = lab_name_terms()
-    return bool(terms) and all(t in labs for t in terms)
+    return len(terms) > 0 and all(t in labs for t in terms)
 
 
 def ai_credit_matches(credit_values: list[str]) -> list[str]:

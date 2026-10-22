@@ -29,6 +29,12 @@ def _read(path: Path) -> pd.DataFrame | None:
     return pd.read_parquet(path) if path.exists() else None
 
 
+def _has_names(affected) -> bool:
+    """True if any vendor|product entry has a real name (not blank or 'n/a')."""
+    junk = {"", "n/a", "na", "unknown", "-"}
+    return any(any(part.strip().lower() not in junk for part in str(x).split("|")) for x in affected)
+
+
 def _utc(s: pd.Series) -> pd.Series:
     return pd.to_datetime(s, utc=True, errors="coerce")
 
@@ -61,7 +67,7 @@ def build(bundle: Path) -> tuple[str, dict]:
               f"- Published: **{n:,}**; rejected in the same window: {int(((cve['state'] == 'REJECTED') & (cve['date_published'] >= qs) & (cve['date_published'] < qe)).sum()):,}"]
         has_cvss = qc["cvss_base"].notna()
         has_cwe = qc["cwe_ids"].map(len) > 0
-        has_aff = qc["affected"].map(lambda a: any(x.strip("|") for x in a))
+        has_aff = qc["affected"].map(_has_names)
         L += [f"- With a CVSS score in the CVE record: {pct(has_cvss.sum(), n)}",
               f"- With a CWE (weakness) ID: {pct(has_cwe.sum(), n)}; root cause 'other_unknown': {pct((qc['root_cause'] == 'other_unknown').sum(), n)}",
               f"- With vendor/product names: {pct(has_aff.sum(), n)}",
@@ -92,7 +98,7 @@ def build(bundle: Path) -> tuple[str, dict]:
         diff = (j.loc[both, "cvss_base"] - nvd_score[both]).abs()
         L += [f"- CVE record has no CVSS but NVD does: {fill:,} (NVD could fill these)",
               f"- Both scored: {both.sum():,}; differ by 1.0 or more: {pct((diff >= 1).sum(), both.sum())}; cross the 8.0 line differently: {((j.loc[both, 'cvss_base'] >= 8) != (nvd_score[both] >= 8)).sum():,}"]
-        no_aff = j["affected"].map(lambda a: not any(x.strip("|") for x in a))
+        no_aff = ~j["affected"].map(_has_names)
         L.append(f"- No product names in CVE record but NVD has CPE products: {(no_aff & (j['nvd_products'].map(len) > 0)).sum():,}")
         L.append("")
 
@@ -127,7 +133,7 @@ def build(bundle: Path) -> tuple[str, dict]:
             L += ["| Month | a edge | b web/collab | c other | d AI candidates |", "|---|---|---|---|---|"]
             for m in piv.index:
                 L.append(f"| {m} | {piv.loc[m].get('a_edge', 0)} | {piv.loc[m].get('b_web_collab', 0)} | {piv.loc[m].get('c_other', 0):,} | {int(d.get(m, 0))} |")
-            no_names = elig["affected"].map(lambda a: not any(x.strip('|') for x in a)).sum()
+            no_names = (~elig["affected"].map(_has_names)).sum()
             L += ["", f"- Eligible CVEs without product names (fall to slot c by default): {no_names:,} of {len(elig):,}", ""]
             M["pools"] = {m: {k: int(v) for k, v in piv.loc[m].items()} | {"d": int(d.get(m, 0))} for m in piv.index}
         else:

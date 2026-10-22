@@ -83,12 +83,17 @@ def _window() -> tuple[dt.date, dt.date]:
 
 def pull_nvd(out: Path, manifest: Manifest, work: Path) -> None:
     start, end = _window()
-    table = nvd.build_table(start, end)
+    try:
+        table, versions = nvd.from_feeds(start, end)
+        how = "NVD JSON 2.0 feeds " + ", ".join(versions)
+    except Exception as exc:
+        print(f"[pull] nvd feeds failed ({type(exc).__name__}: {exc}); falling back to the API")
+        table, how = nvd.build_table(start, end), f"NVD API 2.0, retrieved {utcnow()}"
     dest = out / "nvd"
     dest.mkdir(parents=True, exist_ok=True)
     pq = dest / "nvd_cves.parquet"
     table.to_parquet(pq, index=False)
-    manifest.add_file("nvd", pq, f"NVD API 2.0, retrieved {utcnow()}",
+    manifest.add_file("nvd", pq, how,
                       note=f"{len(table)} CVEs published {start}..{end}; key={'yes' if os.environ.get('NVD_API_KEY') else 'no'}")
 
 

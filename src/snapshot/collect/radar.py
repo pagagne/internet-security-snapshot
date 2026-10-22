@@ -23,9 +23,23 @@ SERIES = {
 
 
 def fetch(start: dt.date, end: dt.date) -> dict[str, dict]:
-    token = os.environ.get("CLOUDFLARE_TOKEN")
-    if not token:
+    raw = os.environ.get("CLOUDFLARE_TOKEN") or ""
+    # The saved secret may hold more than one line (e.g. a token name and the token);
+    # try each line and keep the first that Radar accepts.
+    candidates = [line.strip() for line in raw.splitlines() if line.strip()]
+    if not candidates:
         raise RuntimeError("CLOUDFLARE_TOKEN not set")
+    token = None
+    for cand in candidates:
+        try:
+            get(BASE + "/http/summary/bot_class", params={"dateRange": "1d", "format": "json"},
+                headers={"Authorization": f"Bearer {cand}"}, tries=1)
+            token = cand
+            break
+        except Exception:
+            continue
+    if token is None:
+        raise RuntimeError(f"Cloudflare Radar rejected all {len(candidates)} line(s) of CLOUDFLARE_TOKEN")
     params = {"dateStart": f"{start.isoformat()}T00:00:00Z",
               "dateEnd": f"{(end + dt.timedelta(days=1)).isoformat()}T00:00:00Z", "format": "json"}
     out = {}
