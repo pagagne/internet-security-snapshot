@@ -24,7 +24,8 @@ def test_roundtrip_and_carry_over(tmp_path):
 
 def test_auto_accept_patterns():
     from snapshot.autoaccept import auto_accept
-    assert auto_accept("Alex Gaynor in collaboration with Claude and Anthropic Research") == "collaboration"
+    assert auto_accept("Alex Gaynor in collaboration with Claude and Anthropic Research") is None  # removed in 1.1
+    assert auto_accept("Alex Matrosov with Claude, Anthropic") is None
     assert auto_accept("The ASF using Claude Agents") == "using"
     assert auto_accept("Red Hat would like to thank Google Big Sleep for reporting this issue.") == "credited_directly"
     assert auto_accept("iglocska | Claude Fable 5.1") == "model_with_version"
@@ -52,7 +53,7 @@ def test_t7_range_and_direction():
         "ai_credit_terms": [["Codex"], ["OpenAI"], [], ["Claude"]],
     })
     r = t7_range(cve, author_yes={"Amy Burnett of OpenAI"})
-    assert (r["floor"], r["hand"], r["ceiling"]) == (2, 3, 3)
+    assert (r["floor"], r["hand"], r["ceiling"]) == (1, 2, 3)  # "with Claude" is no longer automatic
     up = [{"floor_pct": v, "ceiling_pct": v * 2} for v in (1, 1, 1, 1, 2, 3)]
     assert direction(up) == "Rising"
     mixed = [{"floor_pct": v, "ceiling_pct": w} for v, w in zip((1, 1, 1, 1, 2, 3), (5, 5, 5, 5, 4, 3))]

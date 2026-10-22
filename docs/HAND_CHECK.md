@@ -55,13 +55,17 @@ draw order. Mark it yes or no:
 
 ## Automatic yes for clear-cut credits (since 2026-10-22)
 
-Credits where a tool or model name appears in a clear role pattern, such as "in
-collaboration with Claude", "using Codex", "found by Big Sleep" or "Claude Opus 5", are
+Credits where a tool or model name appears in a clear role pattern, such as "using
+Codex", "found by Big Sleep" or "Claude Opus 5", are
 accepted automatically (`config/ai_credit_auto_accept.yaml`). Lab or company names alone
 never qualify, and wording that makes the AI the subject of the flaw ("vulnerability in
 Claude", "prompt injection") always goes to the author. A random 10% of automatic yeses
 (at least three) still comes to the author as spot checks; a "no" on a spot check
 suspends that pattern until it is reviewed. Everything else is checked by hand as below.
+
+"In collaboration with Claude" and bare "with Claude" are not automatic (removed
+2026-10-22 after the author's spot-check review): they do not say what the AI did, so the
+author decides them.
 
 ## Criteria for AI-credit matches
 

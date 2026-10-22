@@ -7,16 +7,16 @@
 #   2. that term appears in one of the role patterns below, OR the CVE record types the
 #      credit as "tool" (the CVE format's own label for a tool that helped find the flaw);
 #   3. no `send_to_author` pattern matches.
+# Removed in 1.1: "in collaboration with X" and bare "with X" (the author judged that these do
+# not say what the AI did; such credits now go to the author).
 # A seeded random sample of auto-accepted texts (spot_check_share, at least
 # spot_check_min) is still shown to the author each quarter. If the author answers "no"
 # to any of them, that pattern is suspended until reviewed.
-version: 1.0
+version: 1.1   # 1.1 (2026-10-22): 'collaboration' pattern and bare 'with' removed after the author's spot-check review
 
 role_patterns:
-  - id: collaboration
-    regex: '\b(in collaboration with|collaborating with|together with|working with|paired with)\s+(the\s+)?{term}\b'
   - id: using
-    regex: '\b(using|used|via|with the help of|with help from|assisted by|aided by|powered by|leveraging|with)\s+(the\s+)?{term}\b'
+    regex: '\b(using|used|via|with the help of|with help from|assisted by|aided by|powered by|leveraging)\s+(the\s+)?{term}\b'
   - id: found_by
     regex: '\b(found|discovered|detected|identified|reported|uncovered)\s+(by|with|using)\s+(the\s+)?{term}\b'
   - id: model_with_version
