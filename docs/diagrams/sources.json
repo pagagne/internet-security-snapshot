@@ -1,0 +1,35 @@
+{
+ "note": "Files each diagram depends on. A change to any of them raises a warning in the Checks workflow until the diagram is reviewed and re-stamped (python -m snapshot.diagrams stamp <name>).",
+ "diagrams": {
+  "evaluation_flow": {
+   "doc": "docs/EVALUATION_FLOW.md (section 1)",
+   "source": "docs/diagrams/evaluation_flow.mmd",
+   "depends_on": [
+    "config/cohort_rules.yaml",
+    "config/ai_credit_auto_accept.yaml",
+    "prereg/PREREGISTRATION.md",
+    "src/snapshot/events.py"
+   ],
+   "fingerprints": {
+    "config/cohort_rules.yaml": "049063c7ee6dd5dd",
+    "config/ai_credit_auto_accept.yaml": "6b2db79078879f5a",
+    "prereg/PREREGISTRATION.md": "53131e11644b13c4",
+    "src/snapshot/events.py": "a699c512fd9f1152",
+    "docs/diagrams/evaluation_flow.mmd": "c2ef737338bce04f"
+   },
+   "reviewed_on": "2026-10-22"
+  },
+  "t1_decision": {
+   "doc": "docs/EVALUATION_FLOW.md (section 2)",
+   "source": "docs/diagrams/t1_decision.mmd",
+   "depends_on": [
+    "proposals/T1_OPTIONS.md"
+   ],
+   "fingerprints": {
+    "proposals/T1_OPTIONS.md": "113a7fb729cc680c",
+    "docs/diagrams/t1_decision.mmd": "fed1463d5676fd1c"
+   },
+   "reviewed_on": "2026-10-22"
+  }
+ }
+}

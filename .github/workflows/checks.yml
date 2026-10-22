@@ -18,3 +18,6 @@ jobs:
           python-version: "3.12"
       - run: pip install -e ".[dev]"
       - run: pytest -q
+      - name: Diagrams up to date?
+        # Warns (never fails) when a file a diagram depends on changed since it was reviewed.
+        run: python -m snapshot.diagrams check

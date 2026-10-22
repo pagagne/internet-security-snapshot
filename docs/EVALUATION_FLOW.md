@@ -5,6 +5,12 @@ Two diagrams. GitHub draws them from the Mermaid source below; PNG copies are in
 app), blue boxes are the reported measures, dashed grey boxes are not yet measurable or
 still to be decided.
 
+**Keeping them current.** The diagrams are drawn by hand. `docs/diagrams/sources.json`
+lists the files each one depends on; when one of those changes, the Checks workflow shows a
+yellow "Diagram may be out of date" warning until the diagram has been reviewed and
+re-stamped with `python -m snapshot.diagrams stamp <name>`. Edit only the `.mmd` files: the
+Diagrams workflow redraws the PNG copies automatically.
+
 ## 1. How a flaw moves through the study each quarter
 
 ```mermaid
