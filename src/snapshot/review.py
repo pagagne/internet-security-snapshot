@@ -104,12 +104,15 @@ def credit_rows(cve: pd.DataFrame, months: list[str]) -> list[dict]:
     groups = {}
     for _, r in d.iterrows():
         key = " | ".join(list(r["credit_values"]))
-        g = groups.setdefault(key, {"n": 0, "terms": list(r["ai_credit_terms"]), "example": r["cve_id"]})
+        g = groups.setdefault(key, {"n": 0, "terms": list(r["ai_credit_terms"]), "example": r["cve_id"], "ids": []})
         g["n"] += 1
+        if len(g["ids"]) < 5:
+            g["ids"].append(r["cve_id"])
     return [{"month": ",".join(months), "slot": "T7", "draw_rank": "", "cve_id": g["example"],
              "task": "ai_credit", "question": f"Does this credit say an AI tool took part? Applies to {g['n']} CVE(s)."
              + (" Lab name only: needs an explicit AI-tool mention." if lab_name_only(g["terms"]) else ""),
-             "credit": k[:300], "answer": "", "notes": ""} for k, g in sorted(groups.items(), key=lambda x: -x[1]["n"])]
+             "credit": k[:300], "terms": "; ".join(g["terms"]), "examples": " ".join(g["ids"]),
+             "answer": "", "notes": ""} for k, g in sorted(groups.items(), key=lambda x: -x[1]["n"])]
 
 
 def main(argv=None) -> int:
@@ -132,7 +135,7 @@ def main(argv=None) -> int:
     rows += credit_rows(cve, a.months)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     fields = ["month", "slot", "draw_rank", "cve_id", "product", "cvss", "published", "task", "question",
-              "credit", "links", "answer", "patch_date", "patch_source", "notes"]
+              "credit", "terms", "examples", "links", "answer", "patch_date", "patch_source", "notes"]
     with open(a.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
     print(pd.DataFrame(stats).to_string(index=False))

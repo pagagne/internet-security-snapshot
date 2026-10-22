@@ -17,6 +17,8 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 - **Change policy:** [`docs/CHANGE_POLICY.md`](docs/CHANGE_POLICY.md): a locked core
   (baseline `core-v1.1`, checksums in `prereg/LOCKED.yaml`) and an exploratory add-on
   layer (`config/exploratory.yaml`) that never decides a label
+- **Hand checks:** criteria in [`docs/HAND_CHECK.md`](docs/HAND_CHECK.md); the author works
+  through them in the Hand Check app ([user guide](docs/HAND_CHECK_APP.md))
 - **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml),
   [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
   [`config/root_cause_map.yaml`](config/root_cause_map.yaml)

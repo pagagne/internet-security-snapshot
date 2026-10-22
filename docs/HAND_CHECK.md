@@ -26,8 +26,8 @@ out and reported as pending.
 
 ## The Hand Check app
 
-Hand checks are done in a private web app (source: `apps/hand-check.html`), not in a
-spreadsheet. After each data run, Claude loads that quarter's review list into it. The app
+Hand checks are done in a private web app (source: `apps/hand-check.html`; how to use it:
+[`HAND_CHECK_APP.md`](HAND_CHECK_APP.md)), not in a spreadsheet. After each data run, Claude loads that quarter's review list into it. The app
 shows one item at a time (AI credits and cohort picks as separate sections), saves every
 answer as it is made, tracks time spent, and ends with a report.
 
