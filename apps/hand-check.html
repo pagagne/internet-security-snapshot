@@ -236,7 +236,7 @@ th { color: var(--muted); font-weight: 700; }
     const pos = q.indexOf(it) + 1;
     const cur = a.decision ? `<span class="pill">${a.unsure ? "Your answer: Not sure (counts as no)" : "Your answer: " + (a.decision === "yes" ? "Yes" : "No")}</span>` : "";
     const head = (label, extra = "") => `<div class="kicker"><span class="pill">${label}</span>${extra}${cur}<span class="meta">${pos > 0 ? `${pos} of ${q.length}` : ""}</span></div>`;
-    const noteBox = `<label class="meta" for="note">Note (optional)</label><textarea id="note" placeholder="Anything worth remembering about this one">${esc(a.note || "")}</textarea>`;
+    const noteBox = `<div class="notebox"><label class="meta" for="note">Note (optional)</label><textarea id="note" placeholder="Anything worth remembering about this one">${esc(a.note || "")}</textarea><div class="row"><button class="ghost" id="note-save">Save note</button></div></div>`;
     const nav = `<div class="row"><button class="ghost" id="back">Back</button><button class="ghost" id="skip">Skip for now</button>${ans(it.id) ? `<button class="ghost" id="clear">Clear my answer</button>` : ""}</div>`;
 
     if (it.kind === "credit") {
@@ -340,7 +340,7 @@ th { color: var(--muted); font-weight: 700; }
         <div class="hint">${esc(g.help)} ${RULES} Tap a highlighted answer again to clear it.</div>
         ${open.length ? `<div class="row"><button class="ghost" data-bulk="${g.key}" data-bd="yes">Mark unanswered as Yes</button><button class="ghost" data-bulk="${g.key}" data-bd="no">Mark unanswered as No</button></div>` : ""}
         ${confirm}
-        ${its.map((it) => `<div class="lrow"><div class="ctext"><div>${esc(it.credit)}</div>${termsHTML(it)}<div class="meta"><span>Covers ${it.covers}</span></div>${verifyHTML(it)}<div><button class="ghost" data-help="${esc(it.id)}">Help me decide</button></div></div>${segBtns(it)}</div>`).join("")}
+        ${its.map((it) => `<div class="lrow"><div class="ctext"><div>${esc(it.credit)}</div>${termsHTML(it)}<div class="meta"><span>Covers ${it.covers}</span></div>${verifyHTML(it)}<div class="row"><button class="ghost" data-help="${esc(it.id)}">Help me decide</button><button class="ghost" data-note="${esc(it.id)}">${ans(it.id)?.note ? "Edit note" : "Add note"}</button></div>${ans(it.id)?.note ? `<div class="meta">Note: ${esc(ans(it.id).note)}</div>` : ""}<div class="row" id="ln-${esc(it.id)}" hidden><textarea aria-label="Note">${esc(ans(it.id)?.note || "")}</textarea><button class="btn" data-notesave="${esc(it.id)}">Save note</button></div></div>${segBtns(it)}</div>`).join("")}
       </section>`;
     }).join("");
     const autoHtml = autos.length ? `<section class="card group"><div class="group-head"><h2>Accepted automatically</h2><span class="meta">${autos.length} credit texts</span></div>
@@ -354,6 +354,13 @@ th { color: var(--muted); font-weight: 700; }
       if (b.getAttribute("aria-pressed") === "true") { await clearAnswer(it); }
       else { await save(it, { decision: d === "unsure" ? "no" : d, unsure: d === "unsure" }); }
       renderCreditList(); renderProgress();
+    }));
+    document.querySelectorAll("[data-note]").forEach((b) => (b.onclick = () => {
+      const box = document.getElementById("ln-" + b.dataset.note); box.hidden = !box.hidden; if (!box.hidden) box.querySelector("textarea").focus();
+    }));
+    document.querySelectorAll("[data-notesave]").forEach((b) => (b.onclick = async () => {
+      const it = state.items.find((i) => i.id === b.dataset.notesave);
+      await saveNote(it, b.previousElementSibling.value); renderCreditList();
     }));
     document.querySelectorAll("[data-help]").forEach((b) => (b.onclick = () => {
       state.creditMode = "one"; state.current = b.dataset.help; state.shownAt = Date.now(); render();
@@ -438,10 +445,23 @@ th { color: var(--muted); font-weight: 700; }
     }
   }
 
+  async function saveNote(it, text) {
+    const prev = state.answers[it.id] || {};
+    const note = (text || "").trim();
+    if ((prev.note || "") === note) return setStatus("Note saved");
+    const body = { ...prev, note, item: it.id, kind: it.kind, cve_id: it.cve_id || "", at: prev.at || new Date().toISOString() };
+    state.answers[it.id] = body;
+    try { await state.db.collection(`batches/${state.batchId}/answers`).doc(it.id).set(body); setStatus("Note saved"); }
+    catch (e) { setStatus("Couldn't save the note just now. Try again in a moment."); }
+  }
+
   async function clearAnswer(it) {
+    const note = state.answers[it.id]?.note;
     delete state.answers[it.id];
     try {
-      await state.db.collection(`batches/${state.batchId}/answers`).doc(it.id).delete();
+      const ref = state.db.collection(`batches/${state.batchId}/answers`).doc(it.id);
+      if (note) { state.answers[it.id] = { note, item: it.id, kind: it.kind, cve_id: it.cve_id || "" }; await ref.set(state.answers[it.id]); }
+      else await ref.delete();
       setStatus("Answer cleared");
     } catch (e) { setStatus("Couldn't clear that answer just now. Try again in a moment."); }
   }
@@ -450,6 +470,9 @@ th { color: var(--muted); font-weight: 700; }
 
   function wireCard(it) {
     wireTree(it);
+    const ns = $("#note-save"), nt = $("#note");
+    if (ns) ns.onclick = () => saveNote(it, nt.value);
+    if (nt) nt.onblur = () => { if ((ans(it.id)?.note || "") !== nt.value.trim()) saveNote(it, nt.value); };
     document.querySelectorAll("[data-d]").forEach((b) => (b.onclick = () => decide(it, b.dataset.d)));
     const fixOk = $("#fix-ok");
     if (fixOk) {

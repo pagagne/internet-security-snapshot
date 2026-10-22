@@ -95,7 +95,9 @@ exposed anyway (from your own knowledge or the vendor's documentation)? Otherwis
 
 ## 6. Notes, Back and Skip
 
-- **Note:** optional, saved with the answer. Use it for anything unusual.
+- **Note:** optional. On a card, type it and tap **Save note** (it also saves when you click
+  away). In the list view, tap **Add note** under a credit. Notes are kept even if you clear
+  the answer, and appear in the Report.
 - **Back:** returns to the previous item to change an answer.
 - **Skip for now:** moves on and leaves the item open.
 - **Clear my answer** (one at a time), or tap a highlighted answer again (list view):
