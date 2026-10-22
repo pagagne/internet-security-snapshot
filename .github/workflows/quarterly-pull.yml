@@ -58,7 +58,9 @@ jobs:
           if [ -n "${{ inputs.run }}" ]; then ARGS="$ARGS --run ${{ inputs.run }}"; fi
           if [ -n "${{ inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ inputs.sources }}"; fi
           if [ -n "${{ inputs.epss_step }}" ]; then ARGS="$ARGS --epss-step ${{ inputs.epss_step }}"; fi
-          python -m snapshot.pull $ARGS
+          set -o pipefail
+          mkdir -p data/raw
+          python -m snapshot.pull $ARGS 2>&1 | tee data/raw/pull.log
 
       - name: Data quality report
         if: always()
@@ -99,3 +101,41 @@ jobs:
               git tag "$tag" && git push origin "$tag" || echo "tag $tag exists; not moved"
             fi
           done
+
+      - name: Publish run report
+        # Saves the log, manifest and quality report to the run-reports branch so they can be
+        # read without signing in to GitHub. Secret values are scrubbed first; the data
+        # bundle itself is not included. Also keeps the repository active between quarters.
+        if: always()
+        env:
+          S1: ${{ secrets.NVD_API_KEY }}
+          S2: ${{ secrets.CLOUDFLARE_TOKEN }}
+          S3: ${{ secrets.RANSOMWARE_LIVE_KEY }}
+          S4: ${{ secrets.SEC_USER_AGENT }}
+          S5: ${{ secrets.VULNCHECK_TOKEN }}
+        run: |
+          dest="reports/$(date -u +%Y-%m-%dT%H%MZ)-run${{ github.run_id }}"
+          git fetch origin run-reports:run-reports 2>/dev/null || true
+          git worktree add -q /tmp/rr run-reports 2>/dev/null || { git worktree add -q --detach /tmp/rr && git -C /tmp/rr checkout -q --orphan run-reports && git -C /tmp/rr rm -rqf . ; }
+          mkdir -p "/tmp/rr/$dest"
+          cp data/raw/pull.log "/tmp/rr/$dest/" 2>/dev/null || true
+          for b in data/raw/*/*/; do
+            n=$(echo "$b" | cut -d/ -f3,4 | tr / -)
+            cp "$b/manifest.json" "/tmp/rr/$dest/manifest-$n.json" 2>/dev/null || true
+            cp "$b/quality.md" "/tmp/rr/$dest/quality-$n.md" 2>/dev/null || true
+          done
+          python - "/tmp/rr/$dest" <<'PY'
+          import os, pathlib, sys
+          secrets = [os.environ.get(k) for k in ("S1", "S2", "S3", "S4", "S5")]
+          for p in pathlib.Path(sys.argv[1]).iterdir():
+              t = p.read_text(errors="replace")
+              for s in secrets:
+                  if s and len(s) > 3:
+                      t = t.replace(s, "***")
+              p.write_text(t)
+          PY
+          cd /tmp/rr
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Run report ${{ github.run_id }}" && git push -q origin run-reports
+

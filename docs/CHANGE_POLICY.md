@@ -51,3 +51,10 @@ are still logged as deviations if they change any published number.
 - `core-v1.1`, `core-v1.2`, …: each locked baseline.
 - `snapshot-<quarter>-<provisional|final>`: the exact code and config used for each
   quarterly run, created by the quarterly workflow. Tags are never moved or deleted.
+
+## 6. Run reports
+
+Each quarterly or manual run saves its log, manifest and data quality report to the
+`run-reports` branch (secret values scrubbed, no data bundle), so problems can be diagnosed
+without signing in to GitHub. The data bundles themselves stay as run artifacts and are
+archived on Zenodo with each final release.
