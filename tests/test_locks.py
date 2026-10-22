@@ -1,4 +1,4 @@
-"""Guards on the locked core. See docs/CHANGE_POLICY.md."""
+"""Guards on the locked core and the exploratory layer. See docs/CHANGE_POLICY.md."""
 
 import hashlib
 from pathlib import Path
@@ -39,3 +39,15 @@ def test_exploratory_measures_never_feed_labels():
     for m in cfg["measures"]:
         assert {"id", "name", "question", "sources", "added", "feeds_labels"} <= set(m)
         assert m["feeds_labels"] is False, f"{m['id']} must not feed labels"
+
+
+def test_ai_attack_campaign_log_is_well_formed():
+    import csv
+    rows = list(csv.DictReader((ROOT / "exploratory/ai_attack_campaigns.csv").open()))
+    vectors = {"known_cve", "web_app_unknown", "credentials", "misconfiguration", "supply_chain", "phishing", "unknown"}
+    roles = {"agents_operated_intrusion", "ai_assisted_operator", "ai_generated_malware", "ai_enabled_fraud"}
+    for r in rows:
+        assert r["entry_vector"] in vectors, r["campaign"]
+        assert r["ai_role"] in roles, r["campaign"]
+        assert r["source_url"].startswith("https://")
+        assert r["confirmed_by_second_source"] in {"yes", "no"}

@@ -20,3 +20,34 @@ measures:
     added: 2026-10-21
     feeds_labels: false
     status: active
+
+  - id: X3
+    name: AI-operated attack campaigns (curated log)
+    question: How often are attacks run by AI agents or AI tooling publicly reported, what do they target, and do they use known flaws or bugs that never get a CVE?
+    sources: [curated]   # exploratory/ai_attack_campaigns.csv, one row per reported campaign
+    added: 2026-10-21
+    feeds_labels: false
+    status: active
+    method: >
+      Hand-curated from public reports. A campaign is logged when a security firm,
+      government agency or AI lab reports attackers using AI agents or AI tooling in
+      intrusions. Counted per quarter by date reported, with entry vector and whether a
+      second independent source confirms it. Victim names are never recorded. Reporting
+      volume reflects attention as well as activity, so counts are read as a lower bound.
+    report_sources:
+      - Threat-intelligence reports on AI misuse from AI labs (Anthropic, OpenAI, Google GTIG); Anthropic is a conflict of interest and is labeled as such
+      - Security vendor and researcher disclosures (e.g. NorForge for Cairn)
+      - Government advisories (CISA, NCSC, ACSC, JPCERT)
+      - MITRE ATLAS case studies and the AI Incident Database
+      - LLM-agent honeypot research (e.g. Palisade Research's honeypot), as context
+
+  - id: X4
+    name: Automated and AI traffic against websites (Cloudflare Radar)
+    question: Is the share of automated (bot) traffic and AI-crawler activity on the web rising, alongside the layer-7 attack series already collected?
+    sources: [radar]
+    added: 2026-10-21
+    feeds_labels: false
+    status: active
+    method: >
+      Weekly series from Cloudflare Radar: human vs bot traffic share and AI bot activity
+      by user agent. Context only; it cannot separate malicious agents from benign ones.

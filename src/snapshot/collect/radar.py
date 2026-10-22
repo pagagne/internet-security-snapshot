@@ -16,6 +16,9 @@ SERIES = {
     "attacks_layer7_timeseries": "/attacks/layer7/timeseries",
     "attacks_layer3_timeseries": "/attacks/layer3/timeseries",
     "attacks_layer7_by_vertical": "/attacks/layer7/summary/vertical",
+    # X4 (exploratory): automated and AI traffic
+    "http_bot_class_timeseries": "/http/timeseries_groups/bot_class",
+    "ai_bots_by_user_agent_timeseries": "/ai/bots/timeseries_groups/user_agent",
 }
 
 
@@ -30,5 +33,8 @@ def fetch(start: dt.date, end: dt.date) -> dict[str, dict]:
         p = dict(params)
         if "timeseries" in name:
             p["aggInterval"] = "1w"
-        out[name] = get(BASE + path, params=p, headers={"Authorization": f"Bearer {token}"}).json()
+        try:
+            out[name] = get(BASE + path, params=p, headers={"Authorization": f"Bearer {token}"}).json()
+        except Exception as exc:  # one series failing must not lose the others
+            out[name] = {"success": False, "error": f"{type(exc).__name__}: {exc}"}
     return out
