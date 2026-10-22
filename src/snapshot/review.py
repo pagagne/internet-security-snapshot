@@ -7,7 +7,8 @@ For each month: eligible CVEs (cohort_rules.yaml), one pick per slot by the seed
 random draw (snapshot.cohort). Slots a and b need no judgment. For slots c and d the
 review list shows the top three in draw order: mark them in order until one is "yes";
 rows after the first "yes" are ignored, so a "no" never needs a second round. Every
-pick also needs its patch (fix) date. Separately, every distinct AI-credit text in the
+pick's fix date is pre-filled (snapshot.fixdates) with its source; the author confirms or
+corrects it. Separately, every distinct AI-credit text in the
 period is listed once for the T7 check.
 """
 
@@ -21,7 +22,8 @@ import pandas as pd
 
 from .classify import lab_name_only, product_category
 from .cohort import draw_order
-from .util import load_config
+from .fixdates import prefill
+from .util import Quarter, load_config
 
 BACKUPS = 3
 
@@ -46,14 +48,24 @@ def _links(r) -> list[str]:
     return (fix if len(fix) else ref)[:3]
 
 
+def _links_all(r) -> list[str]:
+    out = []
+    for key in ("fix_links", "ref_links"):
+        v = r.get(key)
+        if v is not None:
+            out += [u for u in list(v) if u not in out]
+    return out
+
+
 def _row(month, slot, rank, r, task, question):
+    fix_date, fix_source = prefill(_links_all(r), str(r["date_published"]))
     return {
         "month": month, "slot": slot, "draw_rank": rank, "cve_id": r["cve_id"],
         "product": "; ".join(list(r["affected"])[:2]), "cvss": r["cvss_base"],
         "published": str(r["date_published"])[:10], "task": task, "question": question,
         "credit": " | ".join(list(r["credit_values"])[:3]),
         "links": " ".join(_links(r)),
-        "answer": "", "patch_date": "", "notes": "",
+        "answer": "", "patch_date": fix_date, "patch_source": fix_source, "notes": "",
     }
 
 
@@ -103,9 +115,15 @@ def credit_rows(cve: pd.DataFrame, months: list[str]) -> list[dict]:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--cve", required=True, type=Path)
-    ap.add_argument("--months", nargs="+", required=True)
+    ap.add_argument("--months", nargs="+", help="YYYY-MM months (or use --quarter)")
+    ap.add_argument("--quarter", help="e.g. 2026Q3: its three months")
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)
+    if a.quarter and not a.months:
+        q = Quarter.parse(a.quarter)
+        a.months = [f"{q.start.year}-{q.start.month + i:02d}" for i in range(3)]
+    if not a.months:
+        ap.error("give --months or --quarter")
     cve = pd.read_parquet(a.cve)
     rows, stats = [], []
     for m in a.months:
@@ -114,7 +132,7 @@ def main(argv=None) -> int:
     rows += credit_rows(cve, a.months)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     fields = ["month", "slot", "draw_rank", "cve_id", "product", "cvss", "published", "task", "question",
-              "credit", "links", "answer", "patch_date", "notes"]
+              "credit", "links", "answer", "patch_date", "patch_source", "notes"]
     with open(a.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
     print(pd.DataFrame(stats).to_string(index=False))

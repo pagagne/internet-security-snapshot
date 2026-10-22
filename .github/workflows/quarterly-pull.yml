@@ -76,6 +76,20 @@ jobs:
             python -c "import sys; t=open(sys.argv[1]).read()[:60000]; print('::notice title=Data quality ' + sys.argv[1] + '::' + t.replace('%','%25').replace('\r','%0D').replace('\n','%0A'))" "$b/quality.md"
           done
 
+      - name: Review list
+        # The author's hand-check list for the quarter: the seeded draw with backups,
+        # pre-filled fix dates (GitHub API, via GITHUB_TOKEN) and grouped AI-credit texts.
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for b in data/raw/*/*/; do
+            q=$(echo "$b" | cut -d/ -f3)
+            if [ -f "$b/cve/cve_records.parquet" ]; then
+              python -m snapshot.review --cve "$b/cve/cve_records.parquet" --quarter "$q" --out "$b/review-$q.csv" || true
+            fi
+          done
+
       - name: Summary
         if: always()
         run: |
@@ -127,6 +141,7 @@ jobs:
             cp "$b/manifest.json" "/tmp/rr/$dest/manifest-$n.json" 2>/dev/null || true
             cp "$b/quality.md" "/tmp/rr/$dest/quality-$n.md" 2>/dev/null || true
             cp "$b/quality.json" "/tmp/rr/$dest/quality-$n.json" 2>/dev/null || true
+            cp "$b"/review-*.csv "/tmp/rr/$dest/" 2>/dev/null || true
           done
           python - "/tmp/rr/$dest" <<'PY'
           import os, pathlib, sys

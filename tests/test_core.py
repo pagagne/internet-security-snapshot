@@ -147,3 +147,10 @@ def test_is_ai_software():
     assert is_ai_software(["Ollama|ollama"])
     assert not is_ai_software(["Fortinet|FortiOS"])
     assert not is_ai_software(["Acme|Rayleigh"])  # 'ray' whole word only
+
+
+def test_fixdate_fallback_is_marked(monkeypatch):
+    from snapshot import fixdates
+    monkeypatch.setattr(fixdates, "_get", lambda path: None)
+    d, src = fixdates.prefill(["https://vendor.example/advisory/1"], "2026-07-14T10:00:00+00:00")
+    assert d == "2026-07-14" and src.startswith("ASSUMED")
