@@ -1,0 +1,21 @@
+flowchart TD
+  Q["Decision item 0 (21 Dec)<br/>How should T1(a), the race, be measured?"]
+  Q --> A1{"Do we need a race number<br/>every quarter?"}
+  A1 -- "no, report it as mostly 'no estimate'" --> B["(b) Keep as registered<br/>cohort only · 0.3–0.4 exploited picks a quarter"]
+  A1 -- yes --> A2{"Is it acceptable to measure only<br/>flaws that were actually attacked?"}
+  A2 -- no --> C["(c) Much larger cohort<br/>~2,000 picks · not practical"]
+  A2 -- yes --> A["(a) All flaws first exploited in the quarter<br/>60–90 flaws · zero-day share 21–25% · median 5–8 days<br/>+ ~15 fix dates hand-checked"]
+  A --> A3{"Also follow attacked flaws end to end<br/>with exposure data (T1b)?"}
+  A3 -- "no" --> AFIN["Adopt (a)<br/>cohort unchanged"]
+  A3 -- "yes, worth breaking the<br/>'no EPSS in selection' rule" --> AD["Adopt (a+d)<br/>EPSS-weighted draw in slots a–c<br/>2–3 attacked flaws a quarter as described cases<br/>other cohort figures re-weighted"]
+  AD --> W["Only pays off once<br/>Shadowserver data arrives"]
+  AFIN --> LOG["Log as deviation · run alongside the<br/>registered version for four quarters"]
+  AD --> LOG
+  B --> LOG2["No change to the plan"]
+
+  classDef dec fill:#fff4d6,stroke:#b8860b,color:#222
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  classDef weak fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
+  class A1,A2,A3 dec
+  class AFIN,AD,A out
+  class B,C weak

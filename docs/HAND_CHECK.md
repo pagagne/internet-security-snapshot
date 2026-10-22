@@ -126,3 +126,5 @@ researcher's own machine, such as open-weight models, usually are not. As local 
 improve, T7 can lag real AI use, or even fall while use rises. Every report states this
 next to the T7 figures, and a change in T7 is described as a change in *disclosed* AI
 involvement.
+
+See `docs/EVALUATION_FLOW.md` for where each hand check feeds into the measures.

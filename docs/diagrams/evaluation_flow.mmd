@@ -1,0 +1,36 @@
+flowchart TD
+  SRC["Free sources, pulled each quarter<br/>CVE.org · CISA KEV · NVD · EPSS<br/>SEC · Cloudflare Radar · ransomware.live"]
+  SRC --> ALL["All CVEs published in the quarter"]
+  SRC --> KEV["All CVEs first exploited in the quarter<br/>(added to CISA KEV)"]
+  SRC --> HARM["Harm series<br/>leak-site posts · SEC 8-K Item 1.05"]
+
+  ALL --> ELIG{"Eligible?<br/>CVSS ≥ 8 or critical<br/>published day 1–25"}
+  ELIG -- no --> OUT["Not in the cohort"]
+  ELIG -- yes --> SLOT["Sorted into slots<br/>a firewall/VPN · b web/collab · c other · d AI-credited"]
+  SLOT --> DRAW["Seeded random draw<br/>1 pick per slot per month = up to 12 a quarter"]
+  DRAW --> HC1{"Hand check<br/>slot c: reachable from the internet?<br/>slot d: did AI take part?"}
+  HC1 -- no --> NEXT["Next CVE in draw order"] --> HC1
+  HC1 -- yes --> FIX["Hand check: fix date<br/>confirm · correct · No fix yet · Still open"]
+
+  ALL --> CRED["AI-credit texts"] --> AUTO{"Clear pattern?"}
+  AUTO -- yes --> ACC["Auto-accepted<br/>10% spot-checked by hand"]
+  AUTO -- no --> HC2["Hand check: Yes / No / Unsure"]
+  ACC --> T7["T7 AI involvement<br/>floor · hand · ceiling range"]
+  HC2 --> T7
+
+  FIX --> EV["Event dates per CVE<br/>T0 published · T_patch fix · T_exploit first attack"]
+  KEV --> EV2["Event dates per exploited CVE<br/>fix date pre-filled, ~15 hand-checked"]
+  EV --> T1B["T1(b) and T2 exposure race<br/>waits for Shadowserver data"]
+  EV --> T1REG["T1(a) as registered<br/>cohort only: almost never measurable"]
+  EV2 --> T1A["T1(a) option (a)<br/>share attacked before a fix · median days"]
+  KEV --> T3["T3 time from disclosure to attack"]
+  KEV --> T4["T4 age of exploited flaws"]
+  HARM --> T6["T6 visible harm"]
+  ALL --> T5["T5 discovery volume<br/>(count of all CVEs)"]
+
+  classDef hand fill:#fff4d6,stroke:#b8860b,color:#222
+  classDef open fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
+  classDef measure fill:#e3effc,stroke:#2a6bb5,color:#123
+  class HC1,FIX,HC2,ACC hand
+  class T1REG,T1A,T1B open
+  class T3,T4,T5,T6,T7 measure
