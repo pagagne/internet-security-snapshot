@@ -1,0 +1,12 @@
+flowchart TD
+  A1["All serious flaws<br/>published this month"] --> A2["Sorted into four groups<br/>firewalls & VPNs · web & collaboration<br/>other internet-facing · credited to an AI tool"]
+  A2 --> A3["A fair random pick:<br/>one flaw per group per month"]
+  A3 --> A4{"Hand check:<br/>does it qualify?"}
+  A4 -- "no: take the next<br/>flaw in the random order" --> A3
+  A4 -- "yes" --> A5["Hand check:<br/>when was the fix released?"]
+  A5 --> A6["Followed for 90 days"]
+  A6 --> A7["Report: how fast exposed<br/>systems get patched<br/><i>(needs scan data)</i>"]
+  classDef you fill:#fff4d6,stroke:#b8860b,color:#222
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  class A4,A5 you
+  class A7 out

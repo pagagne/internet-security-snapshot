@@ -1,0 +1,10 @@
+flowchart TD
+  B1["CISA's list of flaws<br/>known to be attacked"] --> B2["Flaws added to the list<br/>for the first time this quarter"]
+  B2 --> B3["Dates for each flaw:<br/>made public · fixed · first attacked"]
+  B3 --> B4["Report: how soon after<br/>going public are flaws attacked?"]
+  B3 --> B5["Report: how old are<br/>the flaws being attacked?"]
+  B3 --> B6["Report: the race:<br/>attacked before or after the fix?<br/><i>(decision on 21 Dec)</i>"]
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  classDef open fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
+  class B4,B5 out
+  class B6 open

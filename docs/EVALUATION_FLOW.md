@@ -1,66 +1,151 @@
-# Evaluation flow and the T1 decision
+# How the quarterly report is built
 
-Two diagrams. GitHub draws them from the Mermaid source below; PNG copies are in
-`docs/diagrams/` for slides and the landing page. Yellow boxes are hand checks (Hand Check
-app), blue boxes are the reported measures, dashed grey boxes are not yet measurable or
-still to be decided.
+Every quarter the study collects public data about software flaws and answers a small set
+of questions about them. The work runs on four separate tracks. This page explains each
+track in plain terms: what goes in, what is checked by hand, and what the report says.
 
-**Keeping them current.** The diagrams are drawn by hand. `docs/diagrams/sources.json`
-lists the files each one depends on; when one of those changes, the Checks workflow shows a
-yellow "Diagram may be out of date" warning until the diagram has been reviewed and
-re-stamped with `python -m snapshot.diagrams stamp <name>`. Edit only the `.mmd` files: the
-Diagrams workflow redraws the PNG copies automatically.
+In the diagrams, **yellow boxes** are checks done by hand by the author, **blue boxes** are
+findings that appear in the report, and **dashed grey boxes** are findings that cannot be
+reported yet or are still being decided.
 
-## 1. How a flaw moves through the study each quarter
+**Words used on this page**
+- **Flaw:** a security weakness in a piece of software that has been given a public ID
+  (a "CVE" number).
+- **Serious:** rated 8 or higher out of 10 for severity, or rated "critical" by the vendor.
+- **Fix:** the update from the software maker that closes the flaw.
+- **Attacked:** there is public evidence that criminals or other attackers have used the flaw.
+  The main source is CISA (the US Cybersecurity and Infrastructure Security Agency), which
+  keeps a list of flaws known to be attacked.
+- **Zero-day:** a flaw attacked before any fix existed.
+
+## Overview: four tracks
+
+```mermaid
+flowchart LR
+  S["Public data,<br/>collected every quarter"] --> A["Track A<br/>A random sample of<br/>new serious flaws"]
+  S --> B["Track B<br/>Every flaw attackers<br/>started using this quarter"]
+  S --> C["Track C<br/>Who found the flaws:<br/>was AI involved?"]
+  S --> D["Track D<br/>Background trends:<br/>flaw volume and visible harm"]
+  A --> R["Quarterly report"]
+  B --> R
+  C --> R
+  D --> R
+  classDef track fill:#e3effc,stroke:#2a6bb5,color:#123
+  class A,B,C,D track
+```
+
+| Track | Question the report answers | Status |
+|---|---|---|
+| A | Once a fix exists, how fast do exposed systems on the internet get updated? | Waiting for internet scan data |
+| B | How soon are flaws attacked, how old are they, and is the fix usually out first? | Reported now (the "race" measure is decided on 21 Dec) |
+| C | How often are flaws found with the help of AI tools? | Reported now |
+| D | Is the number of flaws found rising, and is visible harm rising or falling? | Reported now |
+
+## Track A: a fair sample of new serious flaws
 
 ```mermaid
 flowchart TD
-  SRC["Free sources, pulled each quarter<br/>CVE.org · CISA KEV · NVD · EPSS<br/>SEC · Cloudflare Radar · ransomware.live"]
-  SRC --> ALL["All CVEs published in the quarter"]
-  SRC --> KEV["All CVEs first exploited in the quarter<br/>(added to CISA KEV)"]
-  SRC --> HARM["Harm series<br/>leak-site posts · SEC 8-K Item 1.05"]
-
-  ALL --> ELIG{"Eligible?<br/>CVSS ≥ 8 or critical<br/>published day 1–25"}
-  ELIG -- no --> OUT["Not in the cohort"]
-  ELIG -- yes --> SLOT["Sorted into slots<br/>a firewall/VPN · b web/collab · c other · d AI-credited"]
-  SLOT --> DRAW["Seeded random draw<br/>1 pick per slot per month = up to 12 a quarter"]
-  DRAW --> HC1{"Hand check<br/>slot c: reachable from the internet?<br/>slot d: did AI take part?"}
-  HC1 -- no --> NEXT["Next CVE in draw order"] --> HC1
-  HC1 -- yes --> FIX["Hand check: fix date<br/>confirm · correct · No fix yet · Still open"]
-
-  ALL --> CRED["AI-credit texts"] --> AUTO{"Clear pattern?"}
-  AUTO -- yes --> ACC["Auto-accepted<br/>10% spot-checked by hand"]
-  AUTO -- no --> HC2["Hand check: Yes / No / Unsure"]
-  ACC --> T7["T7 AI involvement<br/>floor · hand · ceiling range"]
-  HC2 --> T7
-
-  FIX --> EV["Event dates per CVE<br/>T0 published · T_patch fix · T_exploit first attack"]
-  KEV --> EV2["Event dates per exploited CVE<br/>fix date pre-filled from vendor sources, flagged ones hand-checked"]
-  EV --> T1B["T1(b) and T2 exposure race<br/>waits for Shadowserver data"]
-  EV --> T1REG["T1(a) as registered<br/>cohort only: almost never measurable"]
-  EV2 --> T1A["T1(a) option (a)<br/>share attacked before a fix · median days"]
-  KEV --> T3["T3 time from disclosure to attack"]
-  KEV --> T4["T4 age of exploited flaws"]
-  HARM --> T6["T6 visible harm"]
-  ALL --> T5["T5 discovery volume<br/>(count of all CVEs)"]
-
-  classDef hand fill:#fff4d6,stroke:#b8860b,color:#222
-  classDef open fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
-  classDef measure fill:#e3effc,stroke:#2a6bb5,color:#123
-  class HC1,FIX,HC2,ACC hand
-  class T1REG,T1A,T1B open
-  class T3,T4,T5,T6,T7 measure
+  A1["All serious flaws<br/>published this month"] --> A2["Sorted into four groups<br/>firewalls & VPNs · web & collaboration<br/>other internet-facing · credited to an AI tool"]
+  A2 --> A3["A fair random pick:<br/>one flaw per group per month"]
+  A3 --> A4{"Hand check:<br/>does it qualify?"}
+  A4 -- "no: take the next<br/>flaw in the random order" --> A3
+  A4 -- "yes" --> A5["Hand check:<br/>when was the fix released?"]
+  A5 --> A6["Followed for 90 days"]
+  A6 --> A7["Report: how fast exposed<br/>systems get patched<br/><i>(needs scan data)</i>"]
+  classDef you fill:#fff4d6,stroke:#b8860b,color:#222
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  class A4,A5 you
+  class A7 out
 ```
 
-Notes
-- The cohort (left) feeds T1(b) and T2 once exposure data arrives, plus the root-cause and
-  AI-vs-human comparisons. Its fix dates are the hand-checked T_patch.
-- The exploited set (right) needs no draw: every CVE first added to CISA KEV in the quarter.
-  It feeds T3 and T4 today, and T1(a) if option (a) is adopted (decision item 0).
-- AI-credit texts (middle) feed T7; clear patterns are auto-accepted with a 10% spot check
-  (`config/ai_credit_auto_accept.yaml`).
+**What happens.** Each month, every newly published serious flaw is sorted into one of four
+groups: firewalls and VPNs; web and collaboration software; other software reachable from the
+internet; and flaws whose finders credit an AI tool. One flaw per group is then picked by a
+fixed random draw that anyone can repeat, so nobody chooses which flaws are studied. That
+gives up to 12 flaws a quarter.
 
-## 2. Decision item 0: how to measure T1(a), the race (21 Dec)
+**What is checked by hand.** Whether the pick really qualifies (for the "other" group: can it
+be reached from the internet? for the AI group: did an AI tool really take part?). If not, the
+next flaw in the random order is used. Then the date the fix was released is confirmed from
+the software maker's own announcement.
+
+**What the report will say.** For each flaw, how quickly the number of vulnerable systems
+visible on the internet fell after the fix. This needs internet scan data, which has been
+requested (Shadowserver); until it arrives, the report lists the sample and its fix dates only.
+
+## Track B: every flaw attackers started using this quarter
+
+```mermaid
+flowchart TD
+  B1["CISA's list of flaws<br/>known to be attacked"] --> B2["Flaws added to the list<br/>for the first time this quarter"]
+  B2 --> B3["Dates for each flaw:<br/>made public · fixed · first attacked"]
+  B3 --> B4["Report: how soon after<br/>going public are flaws attacked?"]
+  B3 --> B5["Report: how old are<br/>the flaws being attacked?"]
+  B3 --> B6["Report: the race:<br/>attacked before or after the fix?<br/><i>(decision on 21 Dec)</i>"]
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  classDef open fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
+  class B4,B5 out
+  class B6 open
+```
+
+**What happens.** No sampling here: every flaw added for the first time to CISA's list of
+attacked flaws during the quarter is included, typically 75 to 100. For each, three dates
+are recorded: when the flaw was made public, when the fix came out, and when the first attack
+was recorded.
+
+**What the report will say.**
+- **How soon after going public are flaws attacked?** The typical number of days, and the
+  share attacked on or before the day the flaw was made public.
+- **How old are the flaws being attacked?** The share of attacks on flaws more than a year old.
+- **The race (decision pending):** the share attacked before any fix existed, and how many
+  days the fix was out before the first attack. Because CISA lists a flaw only once there is
+  guidance for fixing it, these figures are minimums: the true zero-day share is likely higher.
+
+## Track C: was AI involved in finding the flaw?
+
+```mermaid
+flowchart TD
+  C1["The 'credits' line of each new flaw<br/>(who found it)"] --> C2{"Does it name<br/>an AI tool?"}
+  C2 -- "clearly yes" --> C3["Counted automatically<br/>(1 in 10 re-checked by hand)"]
+  C2 -- "unclear" --> C4["Hand check: Yes / No"]
+  C2 -- "no" --> C5["Not AI-credited"]
+  C3 --> C6["Report: share of new flaws<br/>found with AI, as a range"]
+  C4 --> C6
+  classDef you fill:#fff4d6,stroke:#b8860b,color:#222
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  class C3,C4 you
+  class C6 out
+```
+
+**What happens.** Most flaw records include a credits line naming who found the flaw. Lines
+that clearly name an AI tool (for example "found using [tool]") are counted automatically; one
+in ten of those is re-checked by hand to make sure the rule works. Unclear lines are decided by
+hand, and lab or company names alone never count as AI.
+
+**What the report will say.** The share of the quarter's new flaws found with an AI tool,
+given as a range: a low figure (only clear cases), the hand-checked figure, and a high figure
+(every flaw whose credits mention any AI-related term, including names of AI labs). A trend is
+called only when the low and high figures move the same way.
+
+## Track D: background trends
+
+```mermaid
+flowchart LR
+  D1["Count of all new<br/>flaws published"] --> D3["Report: is the number<br/>of flaws found rising?"]
+  D2["Ransomware leak-site posts<br/>and company breach filings (SEC)"] --> D4["Report: is visible<br/>harm rising or falling?"]
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  class D3,D4 out
+```
+
+**What happens.** Two simple counts, compared with the same months a year earlier: the number
+of new flaws published, and two signs of real-world harm: posts on ransomware groups' leak
+sites (counts only, no victim names) and the breach reports US public companies must file with
+the SEC.
+
+**What the report will say.** Whether flaw discovery is rising, and whether visible harm is
+rising or falling.
+
+## For the author: decision on the race measure (21 Dec)
 
 ```mermaid
 flowchart TD
@@ -86,4 +171,13 @@ flowchart TD
   class B,C weak
 ```
 
-Figures from `proposals/T1_OPTIONS.md` (Q2 and Q3 2026 back-test, corrected 2026-10-23 to include older CVEs).
+Figures from `proposals/T1_OPTIONS.md` (Q2 and Q3 2026 back-test, corrected 2026-10-23 to
+include older flaws).
+
+## Keeping this page current
+
+The diagrams are drawn by hand. `docs/diagrams/sources.json` lists the files each one depends
+on; when one of those changes, the Checks workflow shows a yellow "Diagram may be out of date"
+warning until the diagram is reviewed and re-stamped with
+`python -m snapshot.diagrams stamp <name>`. Edit only the `.mmd` files: the Diagrams workflow
+redraws the PNG copies automatically.

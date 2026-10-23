@@ -1,0 +1,11 @@
+flowchart TD
+  C1["The 'credits' line of each new flaw<br/>(who found it)"] --> C2{"Does it name<br/>an AI tool?"}
+  C2 -- "clearly yes" --> C3["Counted automatically<br/>(1 in 10 re-checked by hand)"]
+  C2 -- "unclear" --> C4["Hand check: Yes / No"]
+  C2 -- "no" --> C5["Not AI-credited"]
+  C3 --> C6["Report: share of new flaws<br/>found with AI, as a range"]
+  C4 --> C6
+  classDef you fill:#fff4d6,stroke:#b8860b,color:#222
+  classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
+  class C3,C4 you
+  class C6 out

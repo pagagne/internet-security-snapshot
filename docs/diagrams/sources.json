@@ -1,26 +1,76 @@
 {
  "note": "Files each diagram depends on. A change to any of them raises a warning in the Checks workflow until the diagram is reviewed and re-stamped (python -m snapshot.diagrams stamp <name>).",
  "diagrams": {
-  "evaluation_flow": {
-   "doc": "docs/EVALUATION_FLOW.md (section 1)",
-   "source": "docs/diagrams/evaluation_flow.mmd",
+  "overview": {
+   "doc": "docs/EVALUATION_FLOW.md",
+   "source": "docs/diagrams/overview.mmd",
+   "depends_on": [
+    "prereg/PREREGISTRATION.md"
+   ],
+   "fingerprints": {
+    "prereg/PREREGISTRATION.md": "53131e11644b13c4",
+    "docs/diagrams/overview.mmd": "bf5e56a1259fa36c"
+   },
+   "reviewed_on": "2026-10-23"
+  },
+  "track_a": {
+   "doc": "docs/EVALUATION_FLOW.md",
+   "source": "docs/diagrams/track_a.mmd",
    "depends_on": [
     "config/cohort_rules.yaml",
-    "config/ai_credit_auto_accept.yaml",
-    "prereg/PREREGISTRATION.md",
-    "src/snapshot/events.py"
+    "prereg/PREREGISTRATION.md"
    ],
    "fingerprints": {
     "config/cohort_rules.yaml": "049063c7ee6dd5dd",
-    "config/ai_credit_auto_accept.yaml": "6b2db79078879f5a",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
+    "docs/diagrams/track_a.mmd": "a4d3a96a3fe2f7ba"
+   },
+   "reviewed_on": "2026-10-23"
+  },
+  "track_b": {
+   "doc": "docs/EVALUATION_FLOW.md",
+   "source": "docs/diagrams/track_b.mmd",
+   "depends_on": [
+    "src/snapshot/events.py",
+    "proposals/T1_OPTIONS.md"
+   ],
+   "fingerprints": {
     "src/snapshot/events.py": "a699c512fd9f1152",
-    "docs/diagrams/evaluation_flow.mmd": "a073dd1bb5f587d7"
+    "proposals/T1_OPTIONS.md": "6de3217b76775b2e",
+    "docs/diagrams/track_b.mmd": "ba9864066a8396da"
+   },
+   "reviewed_on": "2026-10-23"
+  },
+  "track_c": {
+   "doc": "docs/EVALUATION_FLOW.md",
+   "source": "docs/diagrams/track_c.mmd",
+   "depends_on": [
+    "config/ai_credit_auto_accept.yaml",
+    "config/ai_credit_terms.yaml",
+    "docs/HAND_CHECK.md"
+   ],
+   "fingerprints": {
+    "config/ai_credit_auto_accept.yaml": "6b2db79078879f5a",
+    "config/ai_credit_terms.yaml": "2fc836bf6fcf7a2e",
+    "docs/HAND_CHECK.md": "4efd9043c5cbe5d6",
+    "docs/diagrams/track_c.mmd": "5a2698431528a900"
+   },
+   "reviewed_on": "2026-10-23"
+  },
+  "track_d": {
+   "doc": "docs/EVALUATION_FLOW.md",
+   "source": "docs/diagrams/track_d.mmd",
+   "depends_on": [
+    "prereg/PREREGISTRATION.md"
+   ],
+   "fingerprints": {
+    "prereg/PREREGISTRATION.md": "53131e11644b13c4",
+    "docs/diagrams/track_d.mmd": "08b3d39f48ec0ed5"
    },
    "reviewed_on": "2026-10-23"
   },
   "t1_decision": {
-   "doc": "docs/EVALUATION_FLOW.md (section 2)",
+   "doc": "docs/EVALUATION_FLOW.md",
    "source": "docs/diagrams/t1_decision.mmd",
    "depends_on": [
     "proposals/T1_OPTIONS.md"

@@ -1,0 +1,11 @@
+flowchart LR
+  S["Public data,<br/>collected every quarter"] --> A["Track A<br/>A random sample of<br/>new serious flaws"]
+  S --> B["Track B<br/>Every flaw attackers<br/>started using this quarter"]
+  S --> C["Track C<br/>Who found the flaws:<br/>was AI involved?"]
+  S --> D["Track D<br/>Background trends:<br/>flaw volume and visible harm"]
+  A --> R["Quarterly report"]
+  B --> R
+  C --> R
+  D --> R
+  classDef track fill:#e3effc,stroke:#2a6bb5,color:#123
+  class A,B,C,D track
