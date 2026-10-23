@@ -109,7 +109,7 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |
 | 5–28 Apr | Q1 2027 hand-check window | As above | As above |
 | 3–28 Apr | External review of Q1 2027 | An independent reviewer checks the first scored report before it is final | Promised in the pre-registration as a safeguard against the author's and Claude's blind spots |
-| Sat 1 May | Q1 2027 final report | As above | As above |
+| Sat 1 May | Q1 2027 final report | Data pulled again, hand checks and the reviewer's comments included | Sources keep updating; a month's wait catches late listings and corrections |
 | Thu 1 Jul, 5–28 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
 | Fri 1 Oct, 4–28 Oct, Mon 1 Nov | Q3 2027 provisional, hand check, final | Third scored quarter; fourth report of the year | Four comparable quarters: enough to see trends |
 | All year | Old and new race measures side by side | Applies only if the race measure changes on 21 December 2026 | A changed rule is shown next to the old one for four quarters, so readers can see what the change did |
