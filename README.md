@@ -9,6 +9,7 @@ Vulnrichment, EPSS, Shadowserver, SEC EDGAR, ransomware.live and others), freeze
 and reports seven pre-registered tracking questions. A provisional evaluation is published on the
 1st of January, April, July and October; the final one follows a month later.
 
+- **How it works (plain-language overview with diagrams):** [`docs/HOW_IT_WORKS.md`](docs/HOW_IT_WORKS.md)
 - **Pre-registration:** [`prereg/PREREGISTRATION.md`](prereg/PREREGISTRATION.md)
   (v1.0, tag `prereg-v1.0`), registered on OSF on 20 October 2026:
   [doi.org/10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82)
