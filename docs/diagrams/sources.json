@@ -96,6 +96,32 @@
     "docs/diagrams/calendar_2027.mmd": "7adcb23d6584f366"
    },
    "reviewed_on": "2026-10-23"
+  },
+  "build_plan": {
+   "doc": "docs/BUILD_PLAN.md",
+   "source": "docs/diagrams/build_plan.mmd",
+   "depends_on": [
+    "docs/RESEARCH_PLAN.md"
+   ],
+   "fingerprints": {
+    "docs/RESEARCH_PLAN.md": "fddc3c774024de0c",
+    "docs/diagrams/build_plan.mmd": "924d9c8bffceaf9e"
+   },
+   "reviewed_on": "2026-10-23"
+  },
+  "freeze_year": {
+   "doc": "docs/CORE_FREEZE_DECISIONS.md",
+   "source": "docs/diagrams/freeze_year.mmd",
+   "depends_on": [
+    "docs/CHANGE_POLICY.md",
+    "README.md"
+   ],
+   "fingerprints": {
+    "docs/CHANGE_POLICY.md": "066238ea9d05f923",
+    "README.md": "2010401be8a6244e",
+    "docs/diagrams/freeze_year.mmd": "c3bdd357386a1c3c"
+   },
+   "reviewed_on": "2026-10-23"
   }
  }
 }

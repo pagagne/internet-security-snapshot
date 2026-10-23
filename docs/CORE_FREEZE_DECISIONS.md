@@ -8,6 +8,32 @@ review (docs/CHANGE_POLICY.md). The exploratory layer stays open at all times.
 - **Freeze:** by 31 December 2026 — tag `core-v1.2`, update `prereg/LOCKED.yaml`,
   log in `prereg/DEVIATIONS.md`, file an update on OSF.
 
+```mermaid
+gantt
+  title From the core freeze through 2027
+  dateFormat YYYY-MM-DD
+  axisFormat %b %Y
+  tickInterval 1month
+  section Freeze
+    Decision session                    :milestone, 2026-12-21, 0d
+    Freeze core-v1.2 and OSF update     :milestone, 2026-12-29, 0d
+  section Quarterly reports
+    Q4 2026 pilot, provisional and final :2027-01-01, 2027-02-01
+    Q1 2027 first scored quarter         :2027-04-01, 2027-05-01
+    Q2 2027                              :2027-07-01, 2027-08-01
+    Q3 2027                              :2027-10-01, 2027-11-01
+  section Changing the core
+    Core locked, changes only at March review :2027-01-01, 2027-12-31
+    Annual review and change window      :milestone, 2027-03-15, 0d
+    Old and new versions side by side, four quarters (changed items) :2027-01-01, 2027-11-01
+  section Data access
+    Censys research application          :2027-02-15, 14d
+```
+
+After the freeze the core stays locked all year. The only change window is the annual
+review on 15 March; any core item changed there (or on 21 Dec) is reported in old and new
+form side by side for four quarters. The exploratory layer can change at any time.
+
 Each item: decide **promote to core**, **keep exploratory**, or **drop**. Evidence comes
 from the December dry run and the test runs.
 
