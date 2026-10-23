@@ -6,7 +6,7 @@
 
 The Internet Security Snapshot asks one question every quarter: are defenders closing exploitable software flaws faster than attackers start using them, and how is AI changing that race? It answers with free public data only, on a plan registered in advance (OSF, DOI 10.17605/OSF.IO/3XT82, 20 October 2026), so the results cannot be bent to fit a story.
 
-Each quarter an automatic job collects the data and freezes an exact copy. The author hand-checks the few judgments a computer cannot make, and a report follows: provisional on the 1st of January, April, July and October, final one month later. The report tracks seven questions, from how fast newly disclosed flaws are attacked to how often AI tools are credited with finding them.
+Each quarter an automatic job collects the data and freezes an exact copy. The author hand-checks the few judgments a computer cannot make, and a report follows: a provisional draft on the 1st of January, April, July and October, published once the author has reviewed it (within two days), and a final report one month later. The report tracks seven questions, from how fast newly disclosed flaws are attacked to how often AI tools are credited with finding them.
 
 The first report covers the last quarter of 2026 as a labelled pilot. The first scored quarter is Q1 2027. By the end of 2027 the project will have a year of comparable evidence on the race, and on AI's growing role on both sides of it.
 
@@ -95,7 +95,7 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 
 ## The 2027 calendar
 
-The year runs on a fixed rhythm: each quarter gets a provisional report on the 1st, a hand check in the following week, and a final report a month later.
+The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand check in the following week, and a final report a month later.
 
 ![Snapshot calendar 2027: four quarterly cycles plus the Censys application, the annual review and the side-by-side period](diagrams/calendar_2027.png)
 

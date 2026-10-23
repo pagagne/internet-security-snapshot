@@ -38,6 +38,9 @@ On GitHub the red line marks today.
 | 30 Nov | Root cause: fill missing CWEs from Vulnrichment then NVD (registered source order) in the evaluation | to do |
 | 20 Nov | Picks recorded "no fix yet" return to the review list for a fix date in later runs (within the 90-day follow-up) | done 2026-10-22 |
 | 31 Dec | Zenodo archiving: quarterly workflow publishes a GitHub release on each final run; `.zenodo.json` metadata (title, author, licence, OSF link); check whether the data bundle can ride the release or needs Zenodo's upload API (a `ZENODO_TOKEN` secret), keeping only publishable data (no VulnCheck, ransomware.live aggregates only and only once permitted) | to do |
+| 31 Dec | Quarter archive: a quarter-by-quarter index page on the project site (GitHub Pages), one entry per provisional and final report; the Q4 2026 pilot is the first entry | to do |
+| 31 Dec | Cohort timelines: one timeline per sampled flaw (published, fixed, first attacked; exposure added once scan data arrives), linked from each quarter's report | to do |
+| 31 Dec | Review gate: the automatic run on the 1st produces a draft; the evaluation page is published only after the author's review (within two days) | to do |
 | 4-18 Dec | **Author:** after the repository goes public on 4 Dec, sign in to zenodo.org with GitHub and switch on archiving for `internet-security-snapshot` (about 2 minutes); first archived release = Q4 2026 final, 1 Feb 2027 | to do |
 | 16 Nov | Validation batch in the Hand Check app: the author records fix dates for the reference CVEs before opening the reference file | batch loaded 2026-10-22; author step 16 Nov |
 

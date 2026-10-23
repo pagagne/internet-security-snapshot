@@ -90,10 +90,10 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "8b74566d5d48c79d",
+    "README.md": "34f9425c11df776a",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
-    "docs/diagrams/calendar_2027.mmd": "7adcb23d6584f366"
+    "docs/diagrams/calendar_2027.mmd": "a32b99da26b164ba"
    },
    "reviewed_on": "2026-10-23"
   },
@@ -118,7 +118,7 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "066238ea9d05f923",
-    "README.md": "8b74566d5d48c79d",
+    "README.md": "34f9425c11df776a",
     "docs/diagrams/freeze_year.mmd": "c3bdd357386a1c3c"
    },
    "reviewed_on": "2026-10-23"

@@ -6,8 +6,8 @@ internet-exposed vulnerabilities faster than attackers start exploiting them?
 
 Each quarter, an automated job pulls free, versioned public data (CVE, CISA KEV,
 Vulnrichment, EPSS, Shadowserver, SEC EDGAR, ransomware.live and others), freezes it,
-and reports seven pre-registered tracking questions. A provisional evaluation is published on the
-1st of January, April, July and October; the final one follows a month later.
+and reports seven pre-registered tracking questions. A provisional evaluation is drafted automatically on the
+1st of January, April, July and October and published once the author has reviewed it (within two days); the final one follows a month later.
 
 - **How it works (plain-language overview with diagrams):** [`docs/HOW_IT_WORKS.md`](docs/HOW_IT_WORKS.md)
 - **Pre-registration:** [`prereg/PREREGISTRATION.md`](prereg/PREREGISTRATION.md)

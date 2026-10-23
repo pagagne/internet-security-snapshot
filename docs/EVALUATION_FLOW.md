@@ -182,19 +182,19 @@ gantt
   axisFormat %b
   tickInterval 1month
   section Q4 2026 (pilot)
-    Provisional report          :milestone, 2027-01-01, 0d
+    Provisional draft, author review :milestone, 2027-01-01, 0d
     Hand check                  :2027-01-04, 5d
     Final report                :milestone, 2027-02-01, 0d
   section Q1 2027 (first scored)
-    Provisional report          :milestone, 2027-04-01, 0d
+    Provisional draft, author review :milestone, 2027-04-01, 0d
     Hand check                  :2027-04-05, 5d
     Final report                :milestone, 2027-05-01, 0d
   section Q2 2027
-    Provisional report          :milestone, 2027-07-01, 0d
+    Provisional draft, author review :milestone, 2027-07-01, 0d
     Hand check                  :2027-07-05, 5d
     Final report                :milestone, 2027-08-01, 0d
   section Q3 2027
-    Provisional report          :milestone, 2027-10-01, 0d
+    Provisional draft, author review :milestone, 2027-10-01, 0d
     Hand check                  :2027-10-04, 5d
     Final report                :milestone, 2027-11-01, 0d
   section Project milestones
@@ -205,7 +205,7 @@ gantt
 
 | Date | What happens |
 |---|---|
-| Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional report published, labelled **pilot** |
+| Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional draft reviewed by the author and published within two days, labelled **pilot** |
 | 4–8 Jan | Hand check for Q4 2026 (about 45–50 minutes) |
 | Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
 | 15 Feb – 1 Mar | Application for Censys research access (internet scan data), written by the author |
@@ -223,7 +223,7 @@ gantt
 | *Next:* Sat 1 Jan 2028 | Q4 2027 provisional report; first annual check against better reference data follows in March 2028 |
 
 Data is pulled at 06:00 UTC (1 or 2 a.m. US Eastern) on the dates shown; reports are
-built from that pull. A provisional report uses the automatic figures; the hand-checked
+built from that pull. Each report is a draft until the author has reviewed it (within two days for a provisional report). A provisional report uses the automatic figures; the hand-checked
 figures (cohort fix dates, unclear AI credits) appear in the final report a month later.
 
 ## For the author: decision on the race measure (21 Dec)
