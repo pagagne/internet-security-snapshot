@@ -122,6 +122,20 @@
     "docs/diagrams/freeze_year.mmd": "c3bdd357386a1c3c"
    },
    "reviewed_on": "2026-10-23"
+  },
+  "architecture": {
+   "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
+   "source": "docs/diagrams/architecture.mmd",
+   "depends_on": [
+    "docs/PERMISSIONS.md",
+    ".github/workflows/quarterly-pull.yml"
+   ],
+   "fingerprints": {
+    "docs/PERMISSIONS.md": "80be6186e34f3864",
+    ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
+    "docs/diagrams/architecture.mmd": "0afb20b61479a447"
+   },
+   "reviewed_on": "2026-10-23"
   }
  }
 }

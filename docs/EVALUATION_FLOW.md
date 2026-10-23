@@ -41,6 +41,58 @@ flowchart LR
 | C | How often are flaws found with the help of AI tools? | Reported now |
 | D | Is the number of flaws found rising, and is visible harm rising or falling? | Reported now |
 
+## How the data flows
+
+```mermaid
+flowchart TB
+  subgraph SRC["Free sources (confirmed)"]
+    S1["Git histories:<br/>CVE records, CISA KEV,<br/>Vulnrichment"]
+    S2["EPSS daily archive,<br/>NVD, vendor advisories"]
+    S3["Harm: SEC 8-K<br/>breach filings"]
+    S4["Cloudflare Radar"]
+  end
+  subgraph WAIT["Awaiting permission"]
+    P1["Shadowserver<br/>exposure series, honeypot stats<br/><i>asked 20 Oct<br/>follow-up 20 Nov<br/>hoped for by 1 Jan 2027</i>"]
+    P2["VulnCheck KEV<br/>community tier<br/><i>asked 20 Oct<br/>follow-up 20 Nov<br/>hoped for by 1 Jan 2027</i>"]
+    P3["ransomware.live<br/>leak-site post counts<br/><i>asked 20 Oct<br/>follow-up 20 Nov<br/>hoped for by 1 Jan 2027</i>"]
+  end
+  PULL["<b>Quarterly pull</b><br/>GitHub Actions<br/>1 Jan, Apr, Jul, Oct<br/>final re-run one month later"]
+  STORE["<b>Frozen bundles</b><br/>repo releases + Zenodo<br/>git pinned by commit"]
+  NORM["<b>Normalize</b><br/>data checks, cohort rule"]
+  HAND["<b>Hand Check app</b><br/>author's checks"]
+  ANA["<b>Analysis</b><br/>timing, baselines,<br/>uncertainty ranges<br/>Claude drafts, author approves"]
+  subgraph PUB["Publish"]
+    O1["<b>Evaluation page</b><br/>provisional, then final"]
+    O2["<b>Quarter archive</b><br/>quarter-by-quarter index"]
+    O3["<b>Cohort timelines</b><br/>up to 12 flaws a quarter"]
+    O4["<b>Zenodo bundle</b><br/>data + code, DOI"]
+  end
+  SRC --> PULL
+  WAIT -.-> PULL
+  PULL --> STORE --> NORM --> ANA
+  HAND --> ANA
+  ANA --> PUB
+  classDef box fill:#f4f4f2,stroke:#bdbdb5,color:#222
+  classDef pending fill:#ffffff,stroke:#999,stroke-dasharray:5 4,color:#666
+  classDef you fill:#fff4d6,stroke:#b8860b,color:#222
+  class S1,S2,S3,S4,PULL,STORE,NORM,ANA,O1,O2,O3,O4 box
+  class P1,P2,P3 pending
+  class HAND you
+  style WAIT fill:#fafafa,stroke:#999,stroke-dasharray:5 4
+  style SRC fill:#eef4fb,stroke:#9bb7d6
+  style PUB fill:#eef4fb,stroke:#9bb7d6
+```
+
+Each quarter an automatic job on GitHub pulls the data from free public sources, freezes an
+exact copy (so every number can be recomputed later), checks it, and applies the rules for
+picking flaws. The author's hand checks are added, Claude drafts the analysis, and the
+author approves it before anything is published.
+
+**Sources still awaiting permission** (dashed boxes) are shown as placeholders. Requests went
+out on 20 October 2026, follow-ups are due on 20 November, and replies are hoped for by
+1 January 2027, before the first (pilot) report. A source that says no is dropped and the
+change is logged publicly; until a source says yes, nothing derived from it is published.
+
 ## Track A: a fair sample of new serious flaws
 
 ```mermaid
@@ -139,7 +191,7 @@ flowchart LR
 
 **What happens.** Two simple counts, compared with the same months a year earlier: the number
 of new flaws published, and two signs of real-world harm: posts on ransomware groups' leak
-sites (counts only, no victim names) and the breach reports US public companies must file with
+sites (counts only, no victim names; published only once ransomware.live confirms) and the breach reports US public companies must file with
 the SEC.
 
 **What the report will say.** Whether flaw discovery is rising, and whether visible harm is
