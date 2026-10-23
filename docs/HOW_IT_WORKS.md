@@ -14,7 +14,7 @@ The first report covers the last quarter of 2026 as a labelled pilot. The first 
 
 Every number in the report travels the same path, left to right: free sources, an automatic quarterly pull, a frozen copy, checks, analysis, and publication.
 
-![Architecture: free sources flow through the quarterly pull, frozen bundles, normalize and analysis to four published outputs](diagrams/architecture.png)
+![Architecture: free sources flow through the quarterly pull, frozen bundles, normalize and analysis to four published outputs](diagrams/architecture.svg)
 
 1. **Free sources.** Public records of software flaws (CVE records), CISA's list of flaws known to be attacked, CISA's added analysis (Vulnrichment), daily attack-likelihood scores (EPSS), NVD, vendor advisories, company breach filings with the SEC, and Cloudflare Radar's internet traffic data.
 2. **Quarterly pull.** GitHub Actions collects everything at 06:00 UTC on 1 January, April, July and October, and again one month later for the final report.

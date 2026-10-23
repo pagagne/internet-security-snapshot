@@ -1,5 +1,5 @@
 {
- "note": "Files each diagram depends on. A change to any of them raises a warning in the Checks workflow until the diagram is reviewed and re-stamped (python -m snapshot.diagrams stamp <name>).",
+ "note": "Files each diagram depends on. A change to any of them raises a warning in the Checks workflow until the diagram is reviewed and re-stamped (python -m snapshot.diagrams stamp <name>). The architecture diagram is drawn by tools/architecture_svg.py (edit its spec, then run it) rather than from Mermaid.",
  "diagrams": {
   "overview": {
    "doc": "docs/EVALUATION_FLOW.md",
@@ -125,15 +125,17 @@
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
-   "source": "docs/diagrams/architecture.mmd",
+   "source": "docs/diagrams/architecture.svg",
    "depends_on": [
     "docs/PERMISSIONS.md",
-    ".github/workflows/quarterly-pull.yml"
+    ".github/workflows/quarterly-pull.yml",
+    "tools/architecture_svg.py"
    ],
    "fingerprints": {
     "docs/PERMISSIONS.md": "80be6186e34f3864",
     ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
-    "docs/diagrams/architecture.mmd": "3bbea715eb6915f6"
+    "tools/architecture_svg.py": "7cfa07300af7bf8c",
+    "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
    },
    "reviewed_on": "2026-10-23"
   }
