@@ -98,3 +98,9 @@ Probe run on GitHub Actions over all 175 CVEs added to CISA KEV in Apr-Sep 2026
   record only gives the latest assessment date, which is an upper bound). Free, already
   collected, no permission needed - works under Plan 1 and Plan 2.
 
+### From the reconciliation with the October assessment (2026-10-23)
+See `docs/RECONCILIATION_2026-10.md`. Added to this window:
+- OSV as a fix-date source for open-source flaws (probe alongside item 1).
+- Policy-deadline dates (CISA BOD 26-04, CERT-In CISG-2026-02) as exploratory context.
+- Every timing figure names its population (recent CVEs vs all newly exploited flaws).
+
