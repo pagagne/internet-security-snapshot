@@ -92,3 +92,18 @@ the weighted draw only if the goal is to follow more exploited cohort flaws end 
 with exposure data (T1b: did exposed systems get patched before attacks started?), as
 described cases rather than estimates. Whether that is worth breaking the EPSS rule is a
 question for 21 Dec; it needs exposure data (Shadowserver) to pay off at all.
+
+## Corrections and refinements from the research window (2026-10-23)
+See `docs/RESEARCH_PLAN.md` (Findings) for details.
+- The option (a) preview left out older CVEs first exploited in the quarter. Counting them,
+  the median is at least 15 days (Q2) and 8 days (Q3), and the zero-day share 16% (Q2) and
+  23% (Q3), instead of 8 / 5 days and 21% / 25%.
+- KEV-based zero-day shares are lower bounds (KEV waits for remediation guidance; Mandiant's
+  incident-response data finds 70% zero-days in 2023). VulnCheck's 23.4% for 1H 2026 is close
+  to ours.
+- T_exploit can be improved for free with CISA's "active exploitation" flag, which predates
+  the KEV listing by a week or more for about 1 in 10 KEV CVEs.
+- Fix dates: free vendor sources date 54 of 175 exploited CVEs (GitHub alone: 18); cases
+  where the fix shipped after the advisory are detectable from revision histories and go to
+  the hand check.
+
