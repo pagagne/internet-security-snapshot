@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" property="title" content="PSIRT | FortiGuard Labs" />
+    <meta name="description" property="description" content="None" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="twitter:card" property="twitter:card" content="summary" />
+    <meta name="twitter:title" property="twitter:title" content="PSIRT | FortiGuard Labs" />
+    <meta name="twitter:url" property="twitter:url" content="https://fortiguard.fortinet.com/psirt/FG-IR-25-084" />
+    <meta name="twitter:description" property="twitter:url" content="None" />
+    
+<meta name="og:type" property="og:type" content="article" />
+    <meta name="og:site_name" property="og:site_name" content="FortiGuard Labs" />
+    <meta name="og:locale" property="og:locale" content="" />
+<meta name="og:title" property="og:title" content="PSIRT | FortiGuard Labs" />
+    <meta name="og:url" property="og:url" content="https://fortiguard.fortinet.com/psirt/FG-IR-25-084" />
+    <meta name="og:description" property="og:description" content="None" />
+<meta name="og:image" property="og:image" content="https://filestore.fortinet.com/fortiguard/static/images/fortiguard-logo-dark-theme.svg?v=56416" />
+    <meta name="twitter:image" property="twitter:image" content="https://filestore.fortinet.com/fortiguard/static/images/fortiguard-logo-dark-theme.svg?v=56416" />
+
+
+<link rel="preconnect" href="https://filestore.fortinet.com">
+    <link rel="preconnect" href="https://filestore.fortinet.com" crossorigin>
+    <link rel="dns-prefetch" href="https://filestore.fortinet.com">
+
+    <link rel="shortcut icon" href="https://filestore.fortinet.com/fortiguard/static/images/favicon.ico?v=56416" type="image/x-icon" />
+
+    <title>PSIRT | FortiGuard Labs</title>
+
+
+<link rel="stylesheet" href="https://filestore.fortinet.com/fortiguard/static/styles/bootstrap.min.css?v=56416">
+    <link rel="stylesheet" href="https://filestore.fortinet.com/fortiguard/static/styles/vendor.min.css?v=56416">
+    
+
+        <link rel="stylesheet" href="https://filestore.fortinet.com/fortiguard/static/styles/style.min.css?v=56416">
+       
+        <style>
+            /* Hacks to deal with mm-slider and bootstrap colliding with eachother */
+            .mm-slideout {
+                z-index: inherit;
+            }
+            .modal {
+                color: #000;
+            }
+            /* End Hacks */
+        </style>
+
+        <!-- Google tag (gtag.js) - configured by assets/js/custom/analytics.js -->
+        <meta name="ga-measurement-id" content="G-64GHK0036C">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-64GHK0036C" nonce="2IojhN9D9WTN88ct"></script>
+
+
+
+</head>
+
+<body class="detail  dark-theme">
+
+<header>
+  <div id="main-nav">
+
+<nav class="desktop-nav d-none d-xl-block" aria-label="desktop navigation menu">
+  <div class="container-xxl">
+    <div class="row align-items-center">
+      <div class="col-xxl-3 col-xl-3 col-lg-3 logo">
+        <a href="/" class="d-inline-flex">
+            <img src="https://filestore.fortinet.com/fortiguard/static/images/fortiguard-logo-dark-theme.svg?v=56416"
+                 alt="fortiguard-logo"
+                 width="330"
+                 height="41">
+        </a>
+      </div>
+      <div class="col-xxl-7 col-xl-7 col-lg-7 ps-0">
+        <ul class="main-menu-bar" role="menu">
+  <li role="menuitem" class="main-menu-item">
+    <a role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-controls="desktop-panel"
+aria-label="News / Research"       class="main-menu"
+       tabindex="0"
+       data-menu="news"
+       id="heading-news-item">Research</a>
+  </li>
+  <li role="menuitem" class="main-menu-item">
+    <a role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-controls="desktop-panel"
+       class="main-menu"
+       tabindex="0"
+       data-menu="services"
+       id="heading-services-item">Services</a>
+  </li>
+  <li role="menuitem" class="main-menu-item">
+    <a role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-controls="desktop-panel"
+       class="main-menu"
+       tabindex="0"
+       data-menu="threats"
+       id="heading-threats-item">Threat Intelligence</a>
+  </li>
+  <li role="menuitem" class="main-menu-item">
+    <a role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-controls="desktop-panel"
+       class="main-menu"
+       tabindex="0"
+       data-menu="support"
+       id="heading-support-item">Support</a>
+  </li>
+  <li role="menuitem" class="main-menu-item">
+    <a role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-controls="desktop-panel"
+       class="main-menu"
+       tabindex="0"
+       data-menu="resources"
+       id="heading-resources-item">Resources</a>
+  </li>
+  <li role="menuitem" class="main-menu-item">
+    <a role="button"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-controls="desktop-panel"
+       class="main-menu"
+       tabindex="0"
+       data-menu="about"
+       id="heading-about-item">About</a>
+  </li>
+<li role="menuitem">
+  <div class="header-search-btn">
+    <img id="header_search_btn"
+         src="https://filestore.fortinet.com/fortiguard/static/images/icons_white/search.svg?v=56416"
+         alt="search">
+    <i id="header_search_close_btn"
+       class="fa fa-times d-none"
+       aria-hidden="true"
+       style="color: white;
+              font-size: 20px;
+              margin-top:2px"></i>
+  </div>
+  <div class="header-search  animated zoomIn faster d-none">
+    <form action="/search" method="get">
+      <div class="input-group">
+        <label for="fortiguard-search" class="visually-hidden">Search FortiGuard</label>
+        <input type="text"
+               id="fortiguard-search"
+               class="form-control"
+               placeholder="Search FortiGuard"
+               name="q"
+               required="required"
+               autocomplete="off"
+                 value=""
+ />
+        <div class="react_bits_star_border"
+             data-icon=""
+             data-label="Try Threat Intel Search"
+             data-class="btn btn-sm btn-try-new"
+             data-id="threatIntelSearchBtn"
+             data-thickness="1"></div>
+        <button type="submit" value=" " class="btn btn-sm" aria-label="Submit your search">
+          <i class="fa fa-search ms-1 me-1" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="header-search-curtain d-none"></div>
+</li>
+        </ul>
+      </div>
+        <div class="col-xxl-2 col-xl-2 col-lg-2 fortinet-logo-item">
+          <ul class="float-end mb-0">
+            <li class="fortinet-item">
+              <a href="https://www.fortinet.com" target="_blank" aria-label="Click here to navigate to fortinet.com">
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+<div id="desktop-panel" class="header-hover">
+    <div class="header-hover-section" data-menu="news">
+<div class="menu-panel dropdown-news">
+    <div class="container-xxl h-100 dropdown-menu-wrapper">
+        <div class="row h-100">
+            <div class="col-xl-3 col-lg-2 news-research-psirt pt-4 pe-0 services-category-wrapper">
+                <h2 class="text-start">Research Center</h2>
+            </div>
+            <div class="col-xl-7 col-lg-8 pt-4 ps-4" role="region" aria-labelledby="heading-news-item">
+                <div class="row">
+                    <div class="col-md-5 research-center">
+                        <div class="description text-start mb-3">
+                            <span>Explore latest research and threat reports on emerging cyber threats.</span>
+                    </div>
+                        <ul class="w-100">
+                                            <li class="border-start border-3"><a href="/outbreak-alert"
+                        >Outbreak Alerts</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/blog/threat-research.html"
+                       target = _blank
+                        >Security Blog<i class='ps-2 fa fa-external-link' aria-hidden='true'></i></a></li>
+                <li class="border-start border-3"><a href="/threat-signal-report"
+                        >Threat Signal</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+    <div class="header-hover-section d-none" data-menu="services">
+<div class="menu-panel dropdown-services">
+    <div class="container-xxl h-100 dropdown-menu-wrapper">
+        <div class="row h-100">
+            <div class="col-xl-2 col-lg-2 services-category-wrapper pt-4 pe-0">
+                <h2 class="text-start">Services</h2>
+                <button type="button" class="services-outbreak menu-category-selector active" data-category="outbreak">By Outbreak</button>
+                <button type="button" class="services-solution menu-category-selector" data-category="solution">By Solution</button>
+                <button type="button" class="services-product menu-category-selector toggles-category" data-category="product">By Product</button>
+            </div>
+            <div class="col-xl-10 col-lg-10 ps-0">
+                <div class="menu-overflow services-outbreak pt-4 ps-4">
+                    <div role="region" aria-labelledby="heading-services-item">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="mb-2 title text-uppercase border-3 border-start">Protect</h3>
+                                <div class="description text-start"><span>
+                            Counter measures across the security fabric for protecting assets, data and network.
+                        </span></div>
+                                <ul class="col-md-12 mt-3">
+                                                    <li class="border-start border-3"><a href="/services/ai-protect-security-services"
+                        >AI-Protect Security</a></li>
+                <li class="border-start border-3"><a href="/services/botnet"
+                        >Anti-Botnet</a></li>
+                <li class="border-start border-3"><a href="/services/antivirus"
+                        >AntiMalware</a></li>
+                <li class="border-start border-3"><a href="/services/antispam"
+                        >AntiSpam</a></li>
+                <li class="border-start border-3"><a href="/services/appcontrol"
+                        >Application Control</a></li>
+                <li class="border-start border-3"><a href="/services/ips"
+                        >Intrusion Protection</a></li>
+                <li class="border-start border-3"><a href="/services/operational-technology-security-service"
+                        >Operational Technology Security</a></li>
+                <li class="border-start border-3"><a href="/services/sandbox"
+                        >Sandbox Behavior Engine</a></li>
+                <li class="border-start border-3"><a href="/services/fortiguard-virtual-patching-service"
+                        >Virtual Patching</a></li>
+                <li class="border-start border-3"><a href="/services/ws"
+                        >Web Application Security</a></li>
+                <li class="border-start border-3"><a href="/services/wf"
+                        >Web Filtering</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h3 class="mb-2 title text-uppercase border-3 border-start">Detect</h3>
+                                <div class="description text-start">
+                                    <span>Find and correlate important information to identify an outbreak.<span
+                                            class="invisible">Find and correlate</span></span>
+                                </div>
+                                <ul class="col-md-12 mt-3">
+                                                    <li class="border-start border-3"><a href="/services/arae"
+                        >Anti-Recon and Anti-Exploit</a></li>
+                <li class="border-start border-3"><a href="/services/cloud-vulnerability-and-threat-detection"
+                        >Cloud Threat Detection</a></li>
+                <li class="border-start border-3"><a href="/services/fedr"
+                        >Endpoint Detection &amp; Response</a></li>
+                <li class="border-start border-3"><a href="/services/ioc"
+                        >Indicators of Compromise</a></li>
+                <li class="border-start border-3"><a href="/services/odcs"
+                        >Outbreak Deception</a></li>
+                <li class="border-start border-3"><a href="/services/outbreak-detection-service"
+                        >Outbreak Detection</a></li>
+                <li class="border-start border-3"><a href="/services/security-automation-service"
+                        >Security Automation</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-12 mb-2"><h3
+                                            class="mb-2 title text-uppercase border-3 border-start">
+                                        Respond</h3>
+                                        <div class="description text-start">
+                                            <span>Develop containment techniques to mitigate impacts of security events.<span
+                                                    class="invisible">Develop containment</span></span>
+                                        </div>
+                                        <ul class="col-md-12 mt-3">
+                                                            <li class="border-start border-3"><a href="https://www.fortinet.com/products/fortixdr"
+                       target = _blank
+                        >Endpoint Detection and Response</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/products/endpoint-security/forticlient#support-services"
+                       target = _blank
+                        >Endpoint Forensics</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/solutions/enterprise-midsize-business/security-as-a-service/respond"
+                       target = _blank
+                        >Incident Response</a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="mb-2 mt-4  text-uppercase title border-3 border-start">Recover</h3>
+                                        <div class="description text-start">
+                                            <span>Improve security posture and processes by implementing security awareness and training.</span>
+                                        </div>
+                                        <ul class="col-md-12 mt-3">
+                                                            <li class="border-start border-3"><a href="https://www.fortinet.com/solutions/enterprise-midsize-business/security-as-a-service/assess"
+                       target = _blank
+                        >Assessment Services</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/training/cybersecurity-professionals"
+                       target = _blank
+                        >NSE Training</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/training/security-awareness-training"
+                       target = _blank
+                        >Security Awareness Training</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h3 class="mb-2 title text-uppercase border-3 border-start">Identify</h3>
+                                <div class="description text-start">
+                                    <span>Identify processes and assets that need protection.<span class="invisible">Identify processes and assets that</span></span>
+
+                                </div>
+                                <ul class="col-md-12 mt-3">
+                                                    <li class="border-start border-3"><a href="https://www.fortinet.com/products/fortirecon"
+                       target = _blank
+                        >Adversary Centric Intelligence</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/products/fortirecon"
+                       target = _blank
+                        >Attack Surface Management</a></li>
+                <li class="border-start border-3"><a href="https://www.fortinet.com/products/fortirecon"
+                       target = _blank
+                        >Brand Protection</a></li>
+                <li class="border-start border-3"><a href="/services/breach-attack-simulation"
+                        >Breach Attack Simulation</a></li>
+                <li class="border-start border-3"><a href="/services/cloud-access-security"
+                        >Cloud Access Security</a></li>
+                <li class="border-start border-3"><a href="/services/cloud-vulnerability-and-threat-detection"
+                        >Cloud Vulnerability</a></li>
+                <li class="border-start border-3"><a href="/services/dynamic-application-security-testing"
+                        >DAST</a></li>
+                <li class="border-start border-3"><a href="/services/fortidevsec"
+                        >DevSecOps</a></li>
+                <li class="border-start border-3"><a href="/services/ev"
+                        >Endpoint Vulnerability</a></li>
+                <li class="border-start border-3"><a href="/services/dds"
+                        >IoT Device Detection</a></li>
+                <li class="border-start border-3"><a href="/services/pentesting"
+                        >Pen Testing</a></li>
+                <li class="border-start border-3"><a href="/services/secr"
+                        >Security Rating</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-overflow services-solution pt-4 ps-4 d-none">
+                    <div role="region" aria-labelledby="heading-services-item">
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                            <li>
+            <h3 class="text-uppercase">Network Security</h3>
+            <img src="https://filestore.fortinet.com/fortiguard/static/images/icons_white/network.svg?v=56416" alt="Network Security icon" loading="lazy">
+        </li>
+                <li class="border-start border-3"><a href="/services/botnet"
+                        >Anti-Botnet</a></li>
+                <li class="border-start border-3"><a href="/services/arae"
+                        >Anti-Recon and Anti-Exploit</a></li>
+                <li class="border-start border-3"><a href="/services/dlp"
+                        >Data Loss Prevention</a></li>
+                <li class="border-start border-3"><a href="/services/ioc"
+                        >Indicators of Compromise</a></li>
+                <li class="border-start border-3"><a href="/services/isdb"
+                        >Internet Services</
