@@ -2,8 +2,8 @@
 
 Requests to data providers to confirm that this free, non-commercial project may publish
 derived results from their data. Any source that declines is dropped and the change is
-logged in `prereg/DEVIATIONS.md`. Replies must arrive before the pilot evaluation
-(1 January 2027).
+logged in `prereg/DEVIATIONS.md`. A source without a written yes by the 21 December 2026 decision session runs
+without it for the Q4 2026 pilot (decision item 16); a later yes is switched on at the next quarter's run.
 
 | Source | Asked | Channel | Reference | What was asked | Status | Reply |
 |---|---|---|---|---|---|---|

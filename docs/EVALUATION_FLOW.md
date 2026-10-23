@@ -183,41 +183,44 @@ gantt
   tickInterval 1month
   section Q4 2026 (pilot)
     Provisional draft, author review :milestone, 2027-01-01, 0d
-    Hand check                  :2027-01-04, 5d
+    Hand-check window            :2027-01-04, 2027-01-28
     Final report                :milestone, 2027-02-01, 0d
   section Q1 2027 (first scored)
     Provisional draft, author review :milestone, 2027-04-01, 0d
-    Hand check                  :2027-04-05, 5d
+    Hand-check window            :2027-04-05, 2027-04-28
     Final report                :milestone, 2027-05-01, 0d
   section Q2 2027
     Provisional draft, author review :milestone, 2027-07-01, 0d
-    Hand check                  :2027-07-05, 5d
+    Hand-check window            :2027-07-05, 2027-07-28
     Final report                :milestone, 2027-08-01, 0d
   section Q3 2027
     Provisional draft, author review :milestone, 2027-10-01, 0d
-    Hand check                  :2027-10-04, 5d
+    Hand-check window            :2027-10-04, 2027-10-28
     Final report                :milestone, 2027-11-01, 0d
   section Project milestones
     Censys research application :2027-02-15, 14d
     Annual review and change window :milestone, 2027-03-15, 0d
+    External reviewer confirmed :milestone, 2027-03-15, 0d
+    External review of Q1 2027 :2027-04-03, 2027-04-28
     Race measure, old and new side by side (if changed on 21 Dec) :2027-01-01, 2027-12-31
 ```
 
 | Date | What happens |
 |---|---|
 | Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional draft reviewed by the author and published within two days, labelled **pilot** |
-| 4–8 Jan | Hand check for Q4 2026 (about 45–50 minutes) |
+| 4–28 Jan | Hand-check window for Q4 2026 (about 45–50 minutes of work, at any time in the window; answers due by the 28th) |
 | Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
 | 15 Feb – 1 Mar | Application for Censys research access (internet scan data), written by the author |
-| Mon 15 Mar | Annual review and change window: the only time the core rules may change; changes logged on OSF |
+| Mon 15 Mar | Annual review and change window: the only time the core rules may change; changes logged on OSF. External reviewer confirmed by this date |
 | Thu 1 Apr | Q1 2027 provisional report: the **first scored quarter**, the first with Improving / Worsening labels |
-| 5–9 Apr | Hand check for Q1 2027 |
+| 5–28 Apr | Hand-check window for Q1 2027 |
+| 3–28 Apr | External review of the Q1 2027 provisional report (the first scored quarter), before the final report |
 | Sat 1 May | Q1 2027 final report |
 | Thu 1 Jul | Q2 2027 provisional report |
-| 5–9 Jul | Hand check for Q2 2027 |
+| 5–28 Jul | Hand-check window for Q2 2027 |
 | Sun 1 Aug | Q2 2027 final report |
 | Fri 1 Oct | Q3 2027 provisional report |
-| 4–8 Oct | Hand check for Q3 2027 |
+| 4–28 Oct | Hand-check window for Q3 2027 |
 | Mon 1 Nov | Q3 2027 final report |
 | All year | If the race measure is changed on 21 Dec 2026, the old and new versions are reported side by side for four quarters |
 | *Next:* Sat 1 Jan 2028 | Q4 2027 provisional report; first annual check against better reference data follows in March 2028 |

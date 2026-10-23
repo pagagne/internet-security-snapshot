@@ -5,13 +5,22 @@ The study keeps a stable baseline while still learning new things by keeping two
 ## 1. Locked core (baseline `core-v1.1`)
 
 The seven tracking questions, the cohort rule (`config/cohort_rules.yaml`), the AI-credit
-term list (`config/ai_credit_terms.yaml`) and the root-cause map
+term list (`config/ai_credit_terms.yaml`), the automatic-yes rules for clear-cut AI credits
+(`config/ai_credit_auto_accept.yaml`) and the root-cause map
 (`config/root_cause_map.yaml`), together with the frozen pre-registration. These are
 computed the same way every quarter and alone decide the Improving/Worsening and
 Rising/Falling labels.
 
-The baseline includes the four changes logged in `prereg/DEVIATIONS.md` on 20–21 October
-2026, all made before any result or cohort existed. Git tag `core-v1.1` marks it.
+The baseline includes the rule changes logged in `prereg/DEVIATIONS.md` on 20–21 October
+2026 (AI-credit term list v1.1 and v1.2, the seeded random draw, plus two clarifications),
+all made before any result or cohort existed. Git tag `core-v1.1` marks it.
+
+**Until the core freeze (31 December 2026)** the core can still change, because no quarter
+has been scored yet: each change is logged in `prereg/DEVIATIONS.md` on the day it is made
+(for example the automatic yes for clear-cut AI credits and the T7 range, 22 October), and
+the open questions are settled at the 21 December decision session
+(`docs/CORE_FREEZE_DECISIONS.md`). The freeze tags `core-v1.2` and files an update on OSF.
+From then on the rules in section 4 apply.
 
 Checksums of the locked files are in `prereg/LOCKED.yaml`. `tests/test_locks.py` runs on
 every push and fails if a locked file changes without its checksum and a dated deviation

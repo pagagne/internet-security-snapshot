@@ -26,25 +26,27 @@ exposure tracking, T1(b) and T2), but too small and too rarely exploited for T1(
 
 | | What T1(a) measures | Sample per quarter | Strengths | Weaknesses |
 |---|---|---|---|---|
-| **(a) All flaws first exploited in the quarter** (recommended) | For each CVE added to CISA KEV in the quarter: days from fix to first exploitation; share exploited before any fix existed | about 100 | Large enough to estimate every quarter; uses data already collected | Fix dates needed for about 100 CVEs: pre-filled automatically, with a random sample of about 15 hand-checked per quarter. Looks only at flaws that were exploited (answers "how fast after a fix are exploited flaws attacked", not "what share get exploited"). Overlaps T3 where fix and publication are the same day. |
+| **(a) All flaws first exploited in the quarter** (recommended) | For each CVE added to CISA KEV in the quarter: days from fix to first exploitation; share exploited before any fix existed | 75-100 | Large enough to estimate every quarter; uses data already collected | Fix dates needed for 75-100 CVEs: pre-filled from vendor sources (GitHub, Microsoft, Cisco, Palo Alto; 54 of 175 in Q2-Q3 2026), with flagged cases (fix possibly later than the advisory, or no source) hand-checked: about 60 a quarter, or a random sample of them. Looks only at flaws that were exploited (answers "how fast after a fix are exploited flaws attacked", not "what share get exploited"). Overlaps T3 where fix and publication are the same day. |
 | **(b) Keep as registered** | Cohort only | 0-1 exploited | No change to the plan | Almost always "no estimate"; the central question goes unanswered |
 | **(d) Weighted cohort** (back-tested below) | Same as registered, but picks favour flaws EPSS rates as likely to be exploited; re-weighted so it still describes all eligible flaws | 2-3 exploited of 9 race picks (6-7 of 18) | More exploited flaws in the cohort, which can then be followed end to end with exposure data | Estimates far too uncertain from one quarter (see below); breaks the locked rule that EPSS is never used for selection; the cohort's other figures would also need weighting |
 | **(c) Larger cohort** | Same as registered | would need roughly 2,000 picks for ~10 exploited | Keeps a random sample | Far too much hand work; still few events |
 
-## What option (a) would have shown for Q3 2026 (preview)
-Fix date approximated by the CVE publication date in this preview (the real version uses
-pre-filled and hand-checked fix dates):
+## What option (a) would have shown (preview, corrected 2026-10-23)
+Fix date approximated by the CVE publication date (the real version uses vendor-sourced and
+hand-checked fix dates). Every CVE first added to KEV in the quarter is counted, including
+older CVEs (an earlier version of this preview left those out):
 
-- 91 CVEs first exploited in Q3 with records available here (100 KEV additions in total)
-- Median 5 days from fix to first exploitation
-- 25% exploited on or before the fix (zero-days)
-- 53% within 7 days, 31% after more than 30 days
+| | Q2 2026 | Q3 2026 |
+|---|---|---|
+| CVEs first exploited in the quarter | 75 | 100 |
+| Attacked on or before the fix (zero-day share, a minimum) | 16% | 23% |
+| Median days from fix to first attack | at least 15 | at least 8 |
 
 ## What changes if (a) is adopted
 - T1(a) headline: share of the quarter's newly exploited flaws attacked before a fix
   existed, plus the median days from fix to exploitation (Kaplan-Meier not needed: every
   case has an exploitation date).
-- Hand work: about 15 extra fix dates per quarter (about 15 minutes).
+- Hand work: about 60 flagged fix dates per quarter (mostly a quick "was the fix out at the advisory?" check), or a random sample of them; to be settled on 12 Nov.
 - The cohort stays as is for exposure (T1b, T2), the root-cause tag and AI-vs-human
   comparisons.
 - Logged as a deviation, reported alongside the registered cohort version (which will
@@ -72,7 +74,7 @@ Q3: 41 of 9,812 exploited; 24% before the fix; median 2 days.
 | (d) EPSS at draw date, floor 0.01, 1 per slot | 9 | 2.9 / 2.8 | 0-100% | 0-64 |
 | (d) EPSS at +7 days, floor 0.001, 2 per slot | 18 | 6.7 / 6.5 | 3-87% | 0-45 |
 | (d) same, pooled over both quarters | 36 | 13.2 | 4-80% | 0-45 |
-| **(a) all first exploited in the quarter** | none (all used) | Q2 57 / Q3 91 | **21% / 25%** | **8 / 5** |
+| **(a) all first exploited in the quarter** | none (all used) | Q2 75 / Q3 100 | **16% / 23%** | **at least 15 / 8** |
 
 **Findings**
 1. Weighting works as intended for its narrow goal: 7-10 times more exploited flaws in the
@@ -106,4 +108,28 @@ See `docs/RESEARCH_PLAN.md` (Findings) for details.
 - Fix dates: free vendor sources date 54 of 175 exploited CVEs (GitHub alone: 18); cases
   where the fix shipped after the advisory are detectable from revision histories and go to
   the hand check.
+
+## Option (a) and exploratory measure X10 (decision items 0 and 7)
+X10 ("exploited before a fix existed") and option (a)'s headline are the same number: the
+share of the quarter's newly exploited CVEs attacked on or before the fix date. They differ
+only in status. X10 is exploratory: reported, labelled, never decides Improving/Worsening.
+Option (a) would make it part of the scored race (T1), so it would carry a label.
+
+What the numbers support (Q2-Q3 2026 back-test):
+- **Precision.** With 75-100 flaws a quarter, a share near 20% has a 90% interval of about
+  plus or minus 7 percentage points. Only shifts larger than that can be called a trend.
+- **Bias.** The share is a minimum: CISA lists a flaw only once a fix or guidance exists,
+  and 88 of 175 fix dates still fall back to "assumed = publication". The CISA
+  active-exploitation flag and vendor fix dates reduce both problems but do not remove them.
+- **Stability.** 16% then 23% in consecutive quarters: inside the noise, so one year of
+  quarters is needed before any label means much.
+
+Ways to resolve the overlap on 21 Dec:
+1. **Adopt (a), retire X10.** The zero-day share becomes the scored race headline; X10's id is
+   kept as an alias so earlier references still resolve.
+2. **Adopt (a) for the median days only; keep X10 exploratory.** The scored race uses the
+   less biased timing figure; the zero-day share is reported but cannot set a label until a
+   year of data shows it is stable. Can be promoted at the March 2027 review.
+3. **Keep T1 as registered; keep X10 exploratory.** The zero-day share is reported every
+   quarter but nothing about the race is scored.
 

@@ -5,7 +5,8 @@ worse, and how AI is involved. The central question: are defenders closing
 internet-exposed vulnerabilities faster than attackers start exploiting them?
 
 Each quarter, an automated job pulls free, versioned public data (CVE, CISA KEV,
-Vulnrichment, EPSS, Shadowserver, SEC EDGAR, ransomware.live and others), freezes it,
+Vulnrichment, EPSS, NVD, SEC EDGAR, Cloudflare Radar and others; Shadowserver, VulnCheck
+and ransomware.live once each confirms permission), freezes it,
 and reports seven pre-registered tracking questions. A provisional evaluation is drafted automatically on the
 1st of January, April, July and October and published once the author has reviewed it (within two days); the final one follows a month later.
 
@@ -36,7 +37,7 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
 | Feb 2027 | Censys research-access application (written by the author) |
 | 15 Mar 2027, then yearly | Annual review and change window; annual check of free numbers from March 2028 |
-| 1 Apr / 1 May 2027 | Q1 2027, first confirmatory quarter: provisional / final |
+| 1 Apr / 1 May 2027 | Q1 2027, first scored (confirmatory) quarter: provisional / final; external review 3-28 Apr |
 
 ## Principles
 
@@ -56,4 +57,4 @@ reviewer for the first confirmatory quarter.
 ## Licence
 
 Code: MIT (see `LICENSE`). Documentation and the study's own derived data: CC BY 4.0.
-Third-party data keeps its own terms; see the licensing table in the spec.
+Third-party data keeps its own terms; see [`docs/PERMISSIONS.md`](docs/PERMISSIONS.md).

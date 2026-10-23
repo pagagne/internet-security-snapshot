@@ -27,7 +27,7 @@ Every number in the report travels the same path, left to right: free sources, a
 
 ## What the study looks at: flaws and four tracks
 
-A **flaw** here is a security weakness in a piece of software that has been given a public ID, a CVE number. Around 10,000 serious flaws are published every quarter. "Serious" means rated 8 or higher out of 10, or "critical" by the vendor. Only a few hundred of all flaws are ever known to be attacked, and the study is built around that imbalance.
+A **flaw** here is a security weakness in a piece of software that has been given a public ID, a CVE number. Thousands of serious flaws are published every quarter: about 4,800 in Q2 2026 and 9,800 in Q3 met the study's rules, and the number is rising. "Serious" means rated 8 or higher out of 10, or "critical" by the vendor. Only a few hundred flaws a year are newly known to be attacked, and the study is built around that imbalance.
 
 The work runs on four separate tracks, each feeding its own part of the report.
 
@@ -49,7 +49,7 @@ A few questions need a person reading a vendor's page or a credit line, not a pr
 | Hand check | Why a program cannot do it alone |
 | --- | --- |
 | **Does the pick qualify?** Is an "other" product really reachable from the internet; did an AI tool really take part in finding an AI-credited flaw? | Product names and credit lines are ambiguous: "Claude" in a credit can be a person, a lab or a tool. |
-| **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Still open". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
+| **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Can't find". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
 | **Unclear AI credits** (Yes / No). Clear patterns such as "found using \[tool\]" are counted automatically, with 1 in 10 re-checked. | Wording varies widely; a lab or company name alone never counts as AI. |
 
 Two safeguards keep the hand checks honest. Each quarter, five earlier answers are shown again unmarked, and the share answered the same way is reported. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
@@ -71,7 +71,7 @@ It has two halves. The attacker side is how many days pass between the fix and t
 | **(c) Much larger sample** | Same rule, about 2,000 picks a quarter | Not run | Far too much hand work. |
 | **(a+d) Add a weighted sample** | (a) for the number; the sample favours flaws predicted likely to be attacked (EPSS), so 2 to 3 attacked flaws a quarter can be followed end to end | Weighted sample alone: zero-day share anywhere from about 3% to 87% | Breaks the registered rule that predictions never pick flaws; pays off only with scan data. |
 
-The figures for (a) count every newly attacked flaw, including older ones, as corrected on 23 October. They are minimums because CISA lists a flaw only once there is guidance for fixing it, which delays the listing of zero-days most. Two free improvements are already in hand. CISA's "active exploitation" flag marks about 1 in 10 attacked flaws a week or more before the listing. Vendor sources (Microsoft, Cisco, Palo Alto, GitHub) now date the fix for 54 of 175 recent attacked flaws, up from 18. Details: [proposals/T1_OPTIONS.md](../proposals/T1_OPTIONS.md).
+The figures for (a) count every newly attacked flaw, including older ones, as corrected on 23 October. They are minimums because CISA lists a flaw only once there is guidance for fixing it, which delays the listing of zero-days most. Two free improvements have been identified and are being built in. CISA's "active exploitation" flag marks about 1 in 10 attacked flaws a week or more before the listing. Vendor sources (Microsoft, Cisco, Palo Alto, GitHub) now date the fix for 54 of 175 recent attacked flaws, up from 18. Details: [proposals/T1_OPTIONS.md](../proposals/T1_OPTIONS.md).
 
 ## What we hope to show about AI, from now to the end of 2027
 
@@ -95,26 +95,27 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 
 ## The 2027 calendar
 
-The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand check in the following week, and a final report a month later.
+The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand-check window from the 4th to the 28th, and a final report a month later.
 
-![Snapshot calendar 2027: four quarterly cycles plus the Censys application, the annual review and the side-by-side period](diagrams/calendar_2027.png)
+![Snapshot calendar 2027: four quarterly cycles plus the Censys application, the annual review, the external review and the side-by-side period](diagrams/calendar_2027.png)
 
 | Date | Event | What it is | Why it is needed |
 | --- | --- | --- | --- |
 | Fri 1 Jan | Q4 2026 provisional report | The automatic pull for October to December 2026, labelled **pilot** | Tests the whole system on real data before any result is scored |
-| 4–8 Jan | Q4 2026 hand check | About 45 to 50 minutes in the Hand Check app | Supplies fix dates and AI-credit decisions no program can make |
+| 4–28 Jan | Q4 2026 hand-check window | About 45 to 50 minutes in the Hand Check app, at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
 | Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included | Sources keep updating; a month's wait catches late listings and corrections |
 | 15 Feb – 1 Mar | Censys research application | Request for internet scan data, written by the author | Needed for the defender side of the race and the yearly accuracy check |
-| Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF | Lets the study fix errors in the open without moving the goalposts mid-year |
+| Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by this date | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |
-| 5–9 Apr | Q1 2027 hand check | As above | As above |
+| 5–28 Apr | Q1 2027 hand-check window | As above | As above |
+| 3–28 Apr | External review of Q1 2027 | An independent reviewer checks the first scored report before it is final | Promised in the pre-registration as a safeguard against the author's and Claude's blind spots |
 | Sat 1 May | Q1 2027 final report | As above | As above |
-| Thu 1 Jul, 5–9 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
-| Fri 1 Oct, 4–8 Oct, Mon 1 Nov | Q3 2027 provisional, hand check, final | Third scored quarter; fourth report of the year | Four comparable quarters: enough to see trends |
+| Thu 1 Jul, 5–28 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
+| Fri 1 Oct, 4–28 Oct, Mon 1 Nov | Q3 2027 provisional, hand check, final | Third scored quarter; fourth report of the year | Four comparable quarters: enough to see trends |
 | All year | Old and new race measures side by side | Applies only if the race measure changes on 21 December 2026 | A changed rule is shown next to the old one for four quarters, so readers can see what the change did |
 | Sat 1 Jan 2028 | Q4 2027 provisional report | Closes the first full year | Followed in March 2028 by the first check against better reference data |
 
-The hand check weeks are a planning assumption, not part of the registered plan, and await the author's confirmation.
+Hand-check windows run from the 4th to the 28th so the author has as much time as possible; answers are needed by the 28th so the final run on the 1st can use them.
 
 ## How the rules stay trustworthy
 

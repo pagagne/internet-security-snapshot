@@ -19,8 +19,8 @@ out and reported as pending.
 2. Identical credit texts are grouped, so one decision covers every CVE that uses it.
 3. Decisions already made in earlier quarters are applied automatically from
    `review/decisions.csv` and listed as "already decided".
-4. The author marks each new row **yes** or **no**, with an optional note. Rows can be
-   edited in GitHub's web editor, or the answers given to Claude to record.
+4. The author marks each new row **yes** or **no**, with an optional note, in the Hand Check
+   app (below).
 5. Only rows marked yes are used. Unreviewed rows are excluded and reported as pending.
 6. The review file, decisions, reviewer and date are published in the quarter's bundle.
 

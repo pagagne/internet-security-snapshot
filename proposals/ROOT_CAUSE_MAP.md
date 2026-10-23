@@ -4,8 +4,9 @@ Analysis of the 36,732 CVEs published in Q3 2026 (test data, 2026-10-22).
 
 ## Findings
 
-1. **"Other/unknown" is 38.6% of all CVEs and 29.2% of cohort-eligible CVEs** under the
-   registered map (v1.0).
+1. **"Other/unknown" is 38.6% of all CVEs (38.1% after filling missing CWEs from NVD) and
+   29.2% of cohort-eligible CVEs** under the registered map (v1.0). The table below uses the
+   NVD-filled figures.
 2. **Missing CWE is not the main cause.** 11.6% of CVE records carry no CWE. Filling from
    NVD, which the registered source order already allows (CVE record, Vulnrichment, NVD),
    lowers that only to 10.7%. NVD fill is an implementation step, not a rule change, and will

@@ -9,7 +9,7 @@ replaces working through a spreadsheet. The criteria for each decision are in
 - **Source code:** [`apps/hand-check.html`](../apps/hand-check.html). This file is for
   reference only: downloaded and opened from a computer it cannot reach the review lists or
   save answers. Always open the app from claude.ai → Artifacts → Snapshot Hand Check.
-- **When:** the day after each quarterly run, and the baseline-year sessions (23-24 Nov 2026).
+- **When:** any time from the 4th to the 28th of the month after each provisional run (for example 4-28 Jan for Q4 2026), and the baseline-year sessions (23-24 Nov 2026). Answers given by the 28th are used in the final report on the 1st.
   Calendar entries carry the steps.
 
 ## 1. Before you start
