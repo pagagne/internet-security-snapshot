@@ -145,6 +145,73 @@ the SEC.
 **What the report will say.** Whether flaw discovery is rising, and whether visible harm is
 rising or falling.
 
+## How the rules can change
+
+The study is built so its results can be trusted from one quarter to the next. Its core (the
+seven questions, the rules for picking flaws, the list of AI-tool terms and the root-cause
+groups) was registered publicly in advance and is locked: an automatic check stops any quiet
+change, and only the core decides whether a trend is called Improving, Worsening, Rising or
+Falling. New ideas can still be explored at any time, but they appear in a separate,
+clearly labelled "Exploratory" section and never affect those labels. The core changes only
+to fix an error or a measure that has stopped working, and then in the open: the old and new
+versions are reported side by side for four quarters, the switch happens only at the March
+annual review, and every change is logged with its date, recorded on the public registration
+(OSF) and marked with a new version tag. All raw data is kept, so a question added later can
+usually be answered for earlier quarters too. Full details: `docs/CHANGE_POLICY.md`.
+
+## Calendar for 2027
+
+```mermaid
+gantt
+  title Snapshot calendar 2027
+  dateFormat YYYY-MM-DD
+  axisFormat %b
+  tickInterval 1month
+  section Q4 2026 (pilot)
+    Provisional report          :milestone, 2027-01-01, 0d
+    Hand check                  :2027-01-04, 5d
+    Final report                :milestone, 2027-02-01, 0d
+  section Q1 2027 (first scored)
+    Provisional report          :milestone, 2027-04-01, 0d
+    Hand check                  :2027-04-05, 5d
+    Final report                :milestone, 2027-05-01, 0d
+  section Q2 2027
+    Provisional report          :milestone, 2027-07-01, 0d
+    Hand check                  :2027-07-05, 5d
+    Final report                :milestone, 2027-08-01, 0d
+  section Q3 2027
+    Provisional report          :milestone, 2027-10-01, 0d
+    Hand check                  :2027-10-04, 5d
+    Final report                :milestone, 2027-11-01, 0d
+  section Project milestones
+    Censys research application :2027-02-15, 14d
+    Annual review and change window :milestone, 2027-03-15, 0d
+    Race measure, old and new side by side (if changed on 21 Dec) :2027-01-01, 2027-12-31
+```
+
+| Date | What happens |
+|---|---|
+| Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional report published, labelled **pilot** |
+| 4–8 Jan | Hand check for Q4 2026 (about 45–50 minutes) |
+| Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
+| 15 Feb – 1 Mar | Application for Censys research access (internet scan data), written by the author |
+| Mon 15 Mar | Annual review and change window: the only time the core rules may change; changes logged on OSF |
+| Thu 1 Apr | Q1 2027 provisional report: the **first scored quarter**, the first with Improving / Worsening labels |
+| 5–9 Apr | Hand check for Q1 2027 |
+| Sat 1 May | Q1 2027 final report |
+| Thu 1 Jul | Q2 2027 provisional report |
+| 5–9 Jul | Hand check for Q2 2027 |
+| Sun 1 Aug | Q2 2027 final report |
+| Fri 1 Oct | Q3 2027 provisional report |
+| 4–8 Oct | Hand check for Q3 2027 |
+| Mon 1 Nov | Q3 2027 final report |
+| All year | If the race measure is changed on 21 Dec 2026, the old and new versions are reported side by side for four quarters |
+| *Next:* Sat 1 Jan 2028 | Q4 2027 provisional report; first annual check against better reference data follows in March 2028 |
+
+Data is pulled at 06:00 UTC (1 or 2 a.m. US Eastern) on the dates shown; reports are
+built from that pull. A provisional report uses the automatic figures; the hand-checked
+figures (cohort fix dates, unclear AI credits) appear in the final report a month later.
+
 ## For the author: decision on the race measure (21 Dec)
 
 ```mermaid

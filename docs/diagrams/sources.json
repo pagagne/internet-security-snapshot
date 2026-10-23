@@ -80,6 +80,22 @@
     "docs/diagrams/t1_decision.mmd": "71f4301d6848ba0a"
    },
    "reviewed_on": "2026-10-23"
+  },
+  "calendar_2027": {
+   "doc": "docs/EVALUATION_FLOW.md (Calendar for 2027)",
+   "source": "docs/diagrams/calendar_2027.mmd",
+   "depends_on": [
+    "README.md",
+    "prereg/PREREGISTRATION.md",
+    ".github/workflows/quarterly-pull.yml"
+   ],
+   "fingerprints": {
+    "README.md": "2010401be8a6244e",
+    "prereg/PREREGISTRATION.md": "53131e11644b13c4",
+    ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
+    "docs/diagrams/calendar_2027.mmd": "7adcb23d6584f366"
+   },
+   "reviewed_on": "2026-10-23"
   }
  }
 }
