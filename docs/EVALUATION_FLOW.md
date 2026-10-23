@@ -35,7 +35,7 @@ flowchart TD
   HC2 --> T7
 
   FIX --> EV["Event dates per CVE<br/>T0 published · T_patch fix · T_exploit first attack"]
-  KEV --> EV2["Event dates per exploited CVE<br/>fix date pre-filled, ~15 hand-checked"]
+  KEV --> EV2["Event dates per exploited CVE<br/>fix date pre-filled from vendor sources, flagged ones hand-checked"]
   EV --> T1B["T1(b) and T2 exposure race<br/>waits for Shadowserver data"]
   EV --> T1REG["T1(a) as registered<br/>cohort only: almost never measurable"]
   EV2 --> T1A["T1(a) option (a)<br/>share attacked before a fix · median days"]
@@ -69,7 +69,7 @@ flowchart TD
   A1 -- "no, report it as mostly 'no estimate'" --> B["(b) Keep as registered<br/>cohort only · 0.3–0.4 exploited picks a quarter"]
   A1 -- yes --> A2{"Is it acceptable to measure only<br/>flaws that were actually attacked?"}
   A2 -- no --> C["(c) Much larger cohort<br/>~2,000 picks · not practical"]
-  A2 -- yes --> A["(a) All flaws first exploited in the quarter<br/>60–90 flaws · zero-day share 21–25% · median 5–8 days<br/>+ ~15 fix dates hand-checked"]
+  A2 -- yes --> A["(a) All flaws first exploited in the quarter<br/>75–100 flaws · zero-day share 16–23% (lower bound)<br/>median at least 8–15 days · flagged fix dates hand-checked"]
   A --> A3{"Also follow attacked flaws end to end<br/>with exposure data (T1b)?"}
   A3 -- "no" --> AFIN["Adopt (a)<br/>cohort unchanged"]
   A3 -- "yes, worth breaking the<br/>'no EPSS in selection' rule" --> AD["Adopt (a+d)<br/>EPSS-weighted draw in slots a–c<br/>2–3 attacked flaws a quarter as described cases<br/>other cohort figures re-weighted"]
@@ -86,4 +86,4 @@ flowchart TD
   class B,C weak
 ```
 
-Figures from `proposals/T1_OPTIONS.md` (Q2 and Q3 2026 back-test).
+Figures from `proposals/T1_OPTIONS.md` (Q2 and Q3 2026 back-test, corrected 2026-10-23 to include older CVEs).

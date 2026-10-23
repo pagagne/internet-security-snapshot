@@ -15,9 +15,9 @@
     "config/ai_credit_auto_accept.yaml": "6b2db79078879f5a",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     "src/snapshot/events.py": "a699c512fd9f1152",
-    "docs/diagrams/evaluation_flow.mmd": "c2ef737338bce04f"
+    "docs/diagrams/evaluation_flow.mmd": "a073dd1bb5f587d7"
    },
-   "reviewed_on": "2026-10-22"
+   "reviewed_on": "2026-10-23"
   },
   "t1_decision": {
    "doc": "docs/EVALUATION_FLOW.md (section 2)",
@@ -26,10 +26,10 @@
     "proposals/T1_OPTIONS.md"
    ],
    "fingerprints": {
-    "proposals/T1_OPTIONS.md": "113a7fb729cc680c",
-    "docs/diagrams/t1_decision.mmd": "fed1463d5676fd1c"
+    "proposals/T1_OPTIONS.md": "6de3217b76775b2e",
+    "docs/diagrams/t1_decision.mmd": "71f4301d6848ba0a"
    },
-   "reviewed_on": "2026-10-22"
+   "reviewed_on": "2026-10-23"
   }
  }
 }

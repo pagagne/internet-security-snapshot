@@ -19,7 +19,7 @@ flowchart TD
   HC2 --> T7
 
   FIX --> EV["Event dates per CVE<br/>T0 published · T_patch fix · T_exploit first attack"]
-  KEV --> EV2["Event dates per exploited CVE<br/>fix date pre-filled, ~15 hand-checked"]
+  KEV --> EV2["Event dates per exploited CVE<br/>fix date pre-filled from vendor sources, flagged ones hand-checked"]
   EV --> T1B["T1(b) and T2 exposure race<br/>waits for Shadowserver data"]
   EV --> T1REG["T1(a) as registered<br/>cohort only: almost never measurable"]
   EV2 --> T1A["T1(a) option (a)<br/>share attacked before a fix · median days"]
