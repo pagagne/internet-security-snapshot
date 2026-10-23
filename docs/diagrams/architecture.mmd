@@ -1,4 +1,4 @@
-flowchart TB
+flowchart LR
   subgraph SRC["Free sources (confirmed)"]
     S1["Git histories:<br/>CVE records, CISA KEV,<br/>Vulnrichment"]
     S2["EPSS daily archive,<br/>NVD, vendor advisories"]
@@ -21,11 +21,19 @@ flowchart TB
     O3["<b>Cohort timelines</b><br/>up to 12 flaws a quarter"]
     O4["<b>Zenodo bundle</b><br/>data + code, DOI"]
   end
-  SRC --> PULL
-  WAIT -.-> PULL
+  S1 --> PULL
+  S2 --> PULL
+  S3 --> PULL
+  S4 --> PULL
+  P1 -.-> PULL
+  P2 -.-> PULL
+  P3 -.-> PULL
   PULL --> STORE --> NORM --> ANA
   HAND --> ANA
-  ANA --> PUB
+  ANA --> O1
+  ANA --> O2
+  ANA --> O3
+  ANA --> O4
   classDef box fill:#f4f4f2,stroke:#bdbdb5,color:#222
   classDef pending fill:#ffffff,stroke:#999,stroke-dasharray:5 4,color:#666
   classDef you fill:#fff4d6,stroke:#b8860b,color:#222
