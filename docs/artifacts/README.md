@@ -1,6 +1,7 @@
 # Project documents: repository copies and their Claude artifacts
 
-The repository is the source of truth. Each Claude artifact is a shareable copy and a backup.
+The repository is the source of truth. Each Claude artifact, and each doc in the Claude project
+"AI Internet Security 2027 Research Project", is a shareable copy and a backup.
 When one changes, change the other in the same session (`docs/OPERATIONS.md`).
 
 | Repository file | Claude artifact | Kept in step how |
@@ -12,7 +13,9 @@ When one changes, change the other in the same session (`docs/OPERATIONS.md`).
 | `docs/artifacts/listening-version.md` | [Listening Version](https://claude.ai/artifact/DF97QSNCnCpLDMc3a6Vcz3) | Fixed record of 20 Oct |
 | `docs/artifacts/october-assessment-*.md` | [Is AI Cleaning Up the Internet?](https://claude.ai/artifact/MW5YmRTzi4VZpqmYhAibMG) | Fixed record (reconciled in `docs/RECONCILIATION_2026-10.md`) |
 | `docs/artifacts/combined-report-2026.md` | [Combined Report](https://claude.ai/artifact/FFMzZZivpEHetjQefrQGgL) | Fixed record of 18 Oct |
-| `docs/ANNUAL_PLAN.md` | Annual Plan (backup page) | Regenerated from `docs/schedule/schedule.yaml`; republish the backup after changes |
+| `docs/ANNUAL_PLAN.md` | Claude project doc `claude/annual-plan.md` | Regenerated from `docs/schedule/schedule.yaml`; re-upload after changes |
+| `docs/OPERATIONS.md` | Claude project doc `claude/operations.md` | Re-upload after changes |
+| `docs/HANDOVER.md` | Claude project doc `claude/handover-session-1.md` | Re-upload after changes |
 | `apps/hand-check.html` | [Snapshot Hand Check app](https://claude.ai/artifact/C5bsQdxdWcrM9tNTJfY5CB) | Edit the file, `read` the artifact, republish; answers stay in the app's database |
 
 Not in the repository (the repository is public): the reviewer invitation letter, which is a
