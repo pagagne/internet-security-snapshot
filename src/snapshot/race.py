@@ -73,6 +73,90 @@ def t1_race(cohort_events: pd.DataFrame, eval_date) -> dict:
             "outcomes": pd.Series(outcome).value_counts().to_dict()}
 
 
+def _median_bound(x: np.ndarray) -> float | None:
+    """Median allowing -inf/+inf for unbounded rows; None when the median itself is unbounded."""
+    if len(x) == 0:
+        return None
+    m = float(np.median(x))
+    return m if np.isfinite(m) else None
+
+
+def t1_kev_race(events: pd.DataFrame, quarter_start, quarter_end) -> dict:
+    """T1(a) as decided 23 Oct 2026: every CVE first added to CISA KEV in the quarter.
+
+    events: snapshot.events rows (with t_kev, t_patch, fix_lo, fix_hi, exploit_hi).
+
+    Registered figure: median days from T_patch to T_exploit, with its 90% bootstrap
+    interval; the zero-day share (exploited on or before the fix, or with no fix) is
+    exploratory X10. CVEs without any fix date are counted in the zero-day share as
+    "no fix" when marked so by the author, and otherwise left out of both figures.
+
+    Bounds (reporting addition, decision item 20): from fix_lo/fix_hi and exploit_hi,
+      days_low  = exploit_hi - fix_hi   (fix shipped as late as possible; -inf if unbounded)
+      days_high = exploit_hi - fix_lo
+    The median of days_high is an upper bound on the true median (attacks come on or before
+    exploit_hi, fixes on or after fix_lo). The median of days_low is the lowest value the
+    fix-date uncertainty allows if each attack came on its exploit_hi date; the true median
+    can be lower still, since free data gives no lower bound on when an attack started.
+    Zero-day share low = attacks known by the earliest possible fix date; high = also every
+    case where the fix could have come after that date. Both are minimums, for the same reason.
+    """
+    qs, qe = pd.Timestamp(quarter_start), pd.Timestamp(quarter_end)
+    na = lambda v: v is None or pd.isna(v)
+    e = events[events["t_kev"].notna()]
+    e = e[(e["t_kev"] >= qs) & (e["t_kev"] <= qe)].copy()
+    for col in ("t_kev", "t_exploit", "t_patch", "fix_lo", "fix_hi", "exploit_hi"):
+        e[col] = pd.to_datetime(e[col])   # all-empty columns arrive as objects
+    n = len(e)
+    if n == 0:
+        return {"n": 0}
+
+    # registered point figures
+    days, zd = [], []
+    for r in e.itertuples():
+        if na(r.t_exploit):
+            continue
+        if na(r.t_patch):
+            if getattr(r, "t_patch_source", "") == "author:no_fix_yet":
+                zd.append(True)
+            continue
+        dd = float((r.t_exploit - r.t_patch).days)
+        days.append(dd); zd.append(dd <= 0)
+    days, zd = np.array(days), np.array(zd, dtype=bool)
+    med = float(np.median(days)) if len(days) else None
+    lo, hi = _boot(lambda i: float(np.median(days[i])), len(days)) if len(days) else (None, None)
+    zshare = float(zd.mean()) if len(zd) else None
+    zlo, zhi = _boot(lambda i: float(zd[i].mean()), len(zd)) if len(zd) else (None, None)
+
+    # bounds from date intervals
+    b = e[e["exploit_hi"].notna() & e["fix_lo"].notna()]
+    ex = b["exploit_hi"]
+    d_high = (ex - b["fix_lo"]).dt.days.astype(float).to_numpy()
+    fix_hi = b["fix_hi"]
+    d_low = np.where(fix_hi.notna(), (ex - fix_hi).dt.days.astype(float), -np.inf)
+    definite = (ex <= b["fix_lo"]).to_numpy()
+    possible = (fix_hi.isna() | (ex <= fix_hi)).to_numpy()
+    return {
+        "n": n,
+        "n_measured": int(len(days)),
+        "median_days_fix_to_exploit": med, "ci90": (lo, hi),
+        "zero_day_share_x10": round(zshare, 3) if zshare is not None else None, "zero_day_ci90": (zlo, zhi),
+        "bounds": {
+            "n": int(len(b)),
+            "n_fix_date_bounded": int(fix_hi.notna().sum()),
+            "n_exploit_before_kev": int((b["exploit_hi"] < b["t_kev"]).sum()) if "t_kev" in b else 0,
+            "median_days_low": _median_bound(d_low),
+            "median_days_high": _median_bound(d_high),
+            "zero_day_share_low": round(float(definite.mean()), 3) if len(b) else None,
+            "zero_day_share_high": round(float(possible.mean()), 3) if len(b) else None,
+            "note": "Bounds use the earliest exploitation evidence (KEV or CISA's active assessment). "
+                    "median_days_high is an upper bound on the true median; median_days_low reflects "
+                    "fix-date uncertainty only. Both zero-day shares are minimums: no free source "
+                    "dates when an attack started.",
+        },
+    }
+
+
 def t3_time_to_exploit(events: pd.DataFrame, quarter_start, quarter_end) -> dict:
     """events: rows for CVEs first exploited in the quarter (t_exploit within the quarter)."""
     qs, qe = pd.Timestamp(quarter_start), pd.Timestamp(quarter_end)

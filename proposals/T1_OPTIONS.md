@@ -156,3 +156,22 @@ a qualifier rather than a change:
   to outweigh the delay. The zero-day share stays a minimum for the same reason.
 Fix and attack dates are to be stored as intervals (`docs/STATISTICAL_REVIEW_2026-10-24.md`,
 point 6), so each published median and share carries both bounds.
+
+### Preview with bounds (2026-10-24, test data, not a result)
+`snapshot.race.t1_kev_race` on KEV additions with a 2025-2026 CVE record (older CVEs not yet
+fetched: Q2 57 of 75, Q3 91 of 100), fix date taken as the publication date with no upper
+bound (no vendor or hand-checked dates yet):
+
+| | Q2 2026 | Q3 2026 |
+|---|---|---|
+| Registered figure: median days, fix to KEV listing | 8 | 5 |
+| Zero-day share (X10), KEV dates | 21% | 25% |
+| Flaws whose CISA "active" assessment predates the KEV listing | 23 of 57 | 30 of 91 |
+| Median days, upper bound using the earliest evidence | 1 | 1 |
+| Zero-day share, range using the earliest evidence | 49% to 100% | 43% to 100% |
+
+The upper ends of the zero-day range are 100% only because no fix date has an upper bound
+yet; vendor-stated and hand-checked fix dates narrow them. The lower ends suggest the
+KEV-based share understates zero-days by about half, in line with the research note that the
+CISA flag does not wait for remediation guidance. To be recomputed on the dry run with all
+records and vendor fix dates before anything is published.
