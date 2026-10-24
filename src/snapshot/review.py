@@ -124,7 +124,7 @@ def credit_rows(cve: pd.DataFrame, months: list[str], already: dict[str, str] | 
              "task": ("auto_accept" if rules[k] and k not in spots else "ai_credit"),
              "auto_rule": rules[k] or "", "spot_check": k in spots,
              "question": f"Does this credit say an AI tool took part? Applies to {g['n']} CVE(s)."
-             + (" Lab name only: needs an explicit AI-tool mention." if lab_name_only(g["terms"]) else ""),
+             + (" Lab name only: counts as AI involvement unless it is a name collision or a non-AI company." if lab_name_only(g["terms"]) else ""),
              "credit": k[:300], "terms": "; ".join(g["terms"]), "examples": " ".join(g["ids"]),
              "answer": "", "notes": ""} for k, g in sorted(groups.items(), key=lambda x: -x[1]["n"])]
 
