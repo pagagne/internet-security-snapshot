@@ -13,6 +13,19 @@ T_poc      not yet collected (Exploit-DB, Metasploit, Nuclei, GitHub; see explor
 
 Dates are calendar dates (UTC). Events not observed by the evaluation date are left
 empty; callers censor them.
+
+Bounds (docs/STATISTICAL_REVIEW_2026-10-24.md, point 6; decision item 20). Beside the
+registered dates, each row carries what is known about their uncertainty:
+fix_lo, fix_hi  the fix was released no earlier than fix_lo and no later than fix_hi.
+                Author-checked and vendor-stated release dates give fix_lo = fix_hi.
+                Otherwise fix_lo is the earliest dated fix evidence (a fix commit), or the
+                public disclosure date (assuming no fix precedes disclosure unless a source
+                shows one), and fix_hi is empty: the fix may have shipped later.
+exploit_hi      first exploitation happened on or before this date: the earliest of the
+                registered exploitation sources and CISA's "active exploitation" assessment
+                (Vulnrichment), which does not wait for remediation guidance. There is no
+                lower bound in free data. exploit_hi is reporting-only; T_exploit keeps its
+                registered definition.
 """
 
 from __future__ import annotations
@@ -50,10 +63,40 @@ def load_fix_decisions(decisions_csv: Path) -> dict[str, dict]:
     return out
 
 
+def fix_interval(t0, fx: dict | None, prefill) -> tuple:
+    """(fix_lo, fix_hi, basis) for one CVE; see the module docstring.
+
+    fx: the author's decision (load_fix_decisions), if any.
+    prefill: a date string (source not recorded), or (date, source note, needs_hand_check)
+    as returned by snapshot.fixdates.prefill_exploited.
+    """
+    if fx and fx["status"] in ("confirmed", "corrected") and _date(fx["date"]) is not None:
+        d = _date(fx["date"])
+        return d, d, f"author:{fx['status']}"
+    if fx and fx["status"] == "no_fix_yet":
+        return _date(fx.get("answered_at")) or t0, None, "author:no_fix_yet"
+    if fx and fx["status"] == "unknown":
+        return t0, None, "author:unknown"
+    if isinstance(prefill, (tuple, list)):
+        d, note, needs_check = _date(prefill[0]), str(prefill[1]), bool(prefill[2])
+        if d is None:
+            return t0, None, "no fix evidence"
+        if note.startswith("ASSUMED") or "fix date not stated" in note:
+            return d, None, "disclosure date, fix not dated"
+        if needs_check:
+            return d, None, f"earliest evidence, may ship later: {note}"
+        return d, d, f"vendor-stated: {note}"
+    if prefill:
+        return _date(prefill), None, "pre-fill, source not recorded"
+    return t0, None, "no fix evidence"
+
+
 def build_events(cve: pd.DataFrame, kev: pd.DataFrame | None, fixes: dict[str, dict] | None = None,
-                 prefills: dict[str, str] | None = None, other_exploit: pd.DataFrame | None = None) -> pd.DataFrame:
+                 prefills: dict | None = None, other_exploit: pd.DataFrame | None = None) -> pd.DataFrame:
     """One row per CVE in `cve` (cve_records rows).
 
+    prefills: cve_id -> date string, or -> (date, source note, needs_hand_check) from
+    snapshot.fixdates.prefill_exploited (needed for informative fix bounds).
     other_exploit: optional rows (cve_id, source, date) from VulnCheck or Shadowserver,
     when those sources become available.
     """
@@ -81,7 +124,8 @@ def build_events(cve: pd.DataFrame, kev: pd.DataFrame | None, fixes: dict[str, d
         elif fx and fx["status"] == "unknown":
             t_patch, src = None, "author:unknown"
         elif r.cve_id in prefills:
-            t_patch, src = _date(prefills[r.cve_id]), "prefill (not hand-checked)"
+            pf = prefills[r.cve_id]
+            t_patch, src = _date(pf[0] if isinstance(pf, (tuple, list)) else pf), "prefill (not hand-checked)"
         else:
             t_patch, src = None, "none"
         cands = []
@@ -89,7 +133,16 @@ def build_events(cve: pd.DataFrame, kev: pd.DataFrame | None, fixes: dict[str, d
             cands.append((kev_dates[r.cve_id], "cisa_kev"))
         cands += extra.get(r.cve_id, [])
         t_exp, exp_src = (min(cands) if cands else (None, ""))
+        # Upper bound on first exploitation: also CISA's "active" assessment, when dated
+        hi_cands = list(cands)
+        if str(getattr(r, "ssvc_exploitation", "") or "").lower() == "active":
+            ts = _date(getattr(r, "ssvc_timestamp", None))
+            if ts is not None:
+                hi_cands.append((ts, "cisa_ssvc_active"))
+        exp_hi, exp_hi_src = (min(hi_cands) if hi_cands else (None, ""))
+        fix_lo, fix_hi, basis = fix_interval(t0, fx, prefills.get(r.cve_id))
         rows.append({"cve_id": r.cve_id, "t0": t0, "t_patch": t_patch, "t_patch_source": src,
                      "t_kev": kev_dates.get(r.cve_id), "t_exploit": t_exp, "t_exploit_source": exp_src,
-                     "t_poc": None})
+                     "t_poc": None, "fix_lo": fix_lo, "fix_hi": fix_hi, "fix_basis": basis,
+                     "exploit_hi": exp_hi, "exploit_hi_source": exp_hi_src})
     return pd.DataFrame(rows)
