@@ -76,8 +76,14 @@ The registration states that selection never uses EPSS or other outcome measures
   `tests/test_labels.py` reproduces the false-alarm rates.
 - `config/exploratory.yaml`: X13 defined before any result is computed.
 - `proposals/T1_OPTIONS.md`: note on the direction of the race bounds.
-- Still to build: interval dates in the race and cohort tables, the Hand Check app changes
-  (20 re-shown items, second-coder export), the pinned container and the scheduled rebuild check.
+- Built in follow-up changes: interval dates and the KEV-based race (`snapshot.events`,
+  `snapshot.race.t1_kev_race`); 20 re-shown items and the second-coder check
+  (`snapshot.decisions`, `snapshot.agreement`); the pinned container (`Dockerfile`, base image
+  by digest, tested on every push) and the monthly rebuild check
+  (`.github/workflows/rebuild-check.yml`, `snapshot.rebuild`).
+- Still to do: archive the container image with each Zenodo release (with the Zenodo item in
+  `docs/BUILD_PLAN.md`), and move the quarterly pull itself into the container once the
+  1 December dry run has passed on the runner.
 
 ## Reproducing the numbers
 

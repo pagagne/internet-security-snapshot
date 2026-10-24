@@ -49,3 +49,13 @@ def test_manifest_records_the_environment(tmp_path):
     env = json.loads(path.read_text())["environment"]
     assert env["python"] and env["requirements_lock_sha256"]
     assert set(env["packages"]) >= {"pandas", "numpy", "lifelines"}
+
+
+def test_dockerfile_is_pinned_and_matches_the_workflows():
+    text = (ROOT / "Dockerfile").read_text()
+    m = re.search(r"^FROM\s+python:(\d+\.\d+\.\d+)-\S+@sha256:[0-9a-f]{64}\s*$", text, re.M)
+    assert m, "base image must be pinned by digest"
+    assert "pip install --require-hashes -r requirements.lock" in text
+    for wf in (ROOT / ".github/workflows").glob("*.yml"):
+        for v in re.findall(r'python-version:\s*"([^"]+)"', wf.read_text()):
+            assert v == m.group(1), f"{wf.name} uses Python {v}, the container {m.group(1)}"

@@ -1,0 +1,8 @@
+.git
+data
+build
+*.egg-info
+__pycache__
+.venv
+.env
+research-out
