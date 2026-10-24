@@ -37,7 +37,7 @@ The work runs on four separate tracks, each feeding its own part of the report.
 | --- | --- | --- | --- |
 | A. A fair sample of new serious flaws | Up to 12 flaws a quarter, one per group per month: firewalls and VPNs, web and collaboration software, other internet-facing software, flaws credited to an AI tool | Once a fix exists, how fast do exposed systems on the internet get updated? | Waits for internet scan data |
 | B. Every flaw attackers started using this quarter | Every flaw added for the first time to CISA's list of attacked flaws, typically 75 to 100 | How soon are flaws attacked, how old are they, and is the fix usually out first? | Reported now; the race measure is decided on 21 December |
-| C. Was AI involved in finding the flaw? | The credits line of every new flaw | What share of new flaws were found with AI tools? | Reported now |
+| C. Was AI involved in finding the flaw? | The credits line of every new flaw | What share of new flaws have credits involving AI (an AI tool or an AI lab)? | Reported now |
 | D. Background trends | Count of all new flaws; ransomware leak-site posts; company breach filings | Is flaw discovery rising, and is visible harm rising or falling? | Reported now (leak-site counts once permitted) |
 
 Track A is picked by a fixed random draw that anyone can repeat, so nobody chooses which flaws are studied. Track B takes no sample at all: every newly attacked flaw counts. Each track is explained step by step, with its own diagram, in [EVALUATION_FLOW.md](EVALUATION_FLOW.md).
@@ -108,7 +108,7 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | 15 Feb – 1 Mar | Censys research application | Request for internet scan data, written by the author | Needed for the defender side of the race and the yearly accuracy check |
 | Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by this date | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |
-| 5–28 Apr | Q1 2027 hand-check window | As above | As above |
+| 5–28 Apr | Q1 2027 hand-check window | As for Q4 2026 | As for Q4 2026 |
 | 3–28 Apr | External review of Q1 2027 | An independent reviewer checks the first scored report before it is final | Promised in the pre-registration as a safeguard against the author's and Claude's blind spots |
 | Sat 1 May | Q1 2027 final report | Data pulled again, hand checks and the reviewer's comments included | Sources keep updating; a month's wait catches late listings and corrections |
 | Thu 1 Jul, 5–28 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
