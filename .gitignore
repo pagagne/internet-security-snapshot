@@ -8,3 +8,6 @@ data/work/
 *.duckdb
 .ipynb_checkpoints/
 .seed/
+# Build output (never committed; the code under src/ is the only source)
+build/
+*.egg-info/
