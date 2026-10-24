@@ -215,7 +215,7 @@ gantt
 | Date | What happens |
 |---|---|
 | Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional draft reviewed by the author and published within two days, labelled **pilot** |
-| 4–28 Jan | Hand-check window for Q4 2026 (about 45–50 minutes of work, at any time in the window; answers due by the 28th) |
+| 4–28 Jan | Hand-check window for Q4 2026 (about 1½ hours of work, or about 50 minutes if race fix dates are sampled, at any time in the window; answers due by the 28th) |
 | Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
 | 2–12 Feb | Evaluation of the AI-credit rule on the pilot data: headline (any AI tool or lab mentioned) against the narrow count (AI tool named), a sample of lab-affiliated credits, and spot-check results; outcome goes to the 15 March review |
 | 15 Feb – 1 Mar | Application for Censys research access (internet scan data), written by the author |

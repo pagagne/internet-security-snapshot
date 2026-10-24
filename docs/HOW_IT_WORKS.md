@@ -44,7 +44,7 @@ Track A is picked by a fixed random draw that anyone can repeat, so nobody choos
 
 ## Why some checks are done by hand
 
-A few questions need a person reading a vendor's page or a credit line, not a program matching words. The author answers them in a private Hand Check app, about 45 to 50 minutes a quarter, under written rules ([HAND_CHECK.md](HAND_CHECK.md)).
+A few questions need a person reading a vendor's page or a credit line, not a program matching words. The author answers them in a private Hand Check app, about 1½ hours a quarter if every flagged race fix date is checked, or about 50 minutes if a sample is (decided 12 Nov), under written rules ([HAND_CHECK.md](HAND_CHECK.md)).
 
 | Hand check | Why a program cannot do it alone |
 | --- | --- |
@@ -102,7 +102,7 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | Date | Event | What it is | Why it is needed |
 | --- | --- | --- | --- |
 | Fri 1 Jan | Q4 2026 provisional report | The automatic pull for October to December 2026, labelled **pilot** | Tests the whole system on real data before any result is scored |
-| 4–28 Jan | Q4 2026 hand-check window | About 45 to 50 minutes in the Hand Check app, at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
+| 4–28 Jan | Q4 2026 hand-check window | About 1½ hours in the Hand Check app (about 50 minutes if race fix dates are sampled), at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
 | Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included | Sources keep updating; a month's wait catches late listings and corrections |
 | 2–12 Feb | Evaluation of the AI-credit rule | The pilot's two AI numbers compared, with a sample of lab-affiliated credits checked | Decides at the 15 March review whether any mention of an AI lab should keep counting |
 | 15 Feb – 1 Mar | Censys research application | Request for internet scan data, written by the author | Needed for the defender side of the race and the yearly accuracy check |

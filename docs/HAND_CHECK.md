@@ -163,3 +163,22 @@ next to the T7 figures, and a change in T7 is described as a change in *disclose
 involvement.
 
 See `docs/EVALUATION_FLOW.md` for where each hand check feeds into the measures.
+
+## Time per quarter (estimate, 24 Oct 2026)
+
+From the practice round (about 30-60 seconds per item) and the rules as of 24 Oct:
+
+| Part | Items | Time |
+|---|---|---|
+| Approve the provisional draft (1st-3rd) | 1 | 20-30 min |
+| AI credits: spot checks and edge cases | about 10-15 | 5-8 min |
+| Cohort: fix dates and slot c checks | about 12 picks + 3-6 candidates | 15-20 min |
+| Race: flagged fix dates of newly attacked flaws | about 60 (or a sample of about 15-20) | about 60 min (or 15-20 min) |
+| Re-shown items (consistency) | 20 | about 8 min |
+| **Hand-check window total** | | **about 1½ hours, or about 50 minutes with a race sample** |
+| Final-run check (2nd of the following month) | new rows only | 15-30 min |
+
+Whether every flagged race fix date is checked or a sample is decided on 12 Nov 2026. The
+same choice applies to the baseline year (four quarters of newly attacked flaws, roughly
+200-250 flagged dates if all are checked), which the race labels compare against.
+
