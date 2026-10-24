@@ -56,6 +56,8 @@ def load_fix_decisions(decisions_csv: Path) -> dict[str, dict]:
         for r in csv.DictReader(f):
             if r.get("decided_by", "author") != "author" or not r.get("fix_status"):
                 continue
+            if str(r.get("retest", "")).strip().lower() in ("true", "1", "yes"):
+                continue   # re-shown items measure consistency; the original answer stands
             prev = out.get(r["cve_id"])
             if not prev or r.get("answered_at", "") >= prev["answered_at"]:
                 out[r["cve_id"]] = {"date": r.get("fix_date", ""), "status": r["fix_status"],

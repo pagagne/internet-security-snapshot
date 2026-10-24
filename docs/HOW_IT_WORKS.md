@@ -52,7 +52,7 @@ A few questions need a person reading a vendor's page or a credit line, not a pr
 | **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Can't find". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
 | **AI-credit edge cases** (Yes / No). Any mention of an AI tool or AI lab is counted automatically, with 1 in 10 re-checked. | Name collisions (a person named Claude) and credits where the AI product is the thing that had the flaw need a reader. |
 
-Two safeguards keep the hand checks honest. Each quarter, five earlier answers are shown again unmarked, and the share answered the same way is reported. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
+Three safeguards keep the hand checks honest. Each quarter, 20 earlier answers are shown again unmarked, and the share answered the same way is reported. A second, independent coder answers 20 of the quarter's items without seeing the author's answers, and the agreement is reported. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
 
 ## The race, and the decision on how to measure it
 
