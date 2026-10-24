@@ -1,8 +1,11 @@
 """T7 (AI-credited share) reported as a range.
 
-- floor:   CVEs whose credit is accepted by a clear published pattern (no judgment)
-- hand:    floor plus credits the author answered "yes" to (the registered measure)
+- floor:   credits naming an AI tool in a clear published role pattern (lab names ignored):
+           the narrow "AI tool named" figure, reported alongside the headline
+- hand:    the headline (author's rule of 23 Oct 2026): any mention of an AI tool or a
+           frontier AI lab counts (auto-accept v1.3), plus credits the author answered yes to
 - ceiling: every CVE whose credit mentions any listed AI term, lab names included
+           (equals the headline except for excluded or author-rejected credits)
 
 All three share one denominator: CVEs published in the quarter. A direction (Rising or
 Falling) is called only when floor and ceiling move the same way (decision item 14);
@@ -23,8 +26,9 @@ def t7_range(cve: pd.DataFrame, author_yes: set[str] | None = None) -> dict:
     n = len(cve)
     cand = cve[cve["ai_credit_terms"].map(lambda x: len(x) > 0)]
     keys = cand["credit_values"].map(lambda v: " | ".join(list(v)))
-    auto = cand.apply(lambda r: auto_accept(" | ".join(list(r["credit_values"])), list(r["credit_types"])) is not None, axis=1)
-    hand = auto | keys.map(lambda k: k[:300] in author_yes)
+    auto = cand.apply(lambda r: auto_accept(" | ".join(list(r["credit_values"])), list(r["credit_types"]), tools_only=True) is not None, axis=1)
+    head = cand.apply(lambda r: auto_accept(" | ".join(list(r["credit_values"])), list(r["credit_types"])) is not None, axis=1)
+    hand = auto | head | keys.map(lambda k: k[:300] in author_yes)
     share = lambda k: round(100 * k / n, 3) if n else None
     return {"cves": n, "floor": int(auto.sum()), "hand": int(hand.sum()), "ceiling": len(cand),
             "floor_pct": share(int(auto.sum())), "hand_pct": share(int(hand.sum())), "ceiling_pct": share(len(cand))}
@@ -50,8 +54,9 @@ def programme_evidence(cve: pd.DataFrame, floor_mask: pd.Series | None = None) -
 
 
 def direction(history: list[dict], window: int = 4) -> str:
-    """Direction label from floor and ceiling: each compared with the median of the
-    previous `window` quarters, two quarters running, both edges agreeing."""
+    """Direction label from the low end (floor) and the headline (hand; ceiling for older
+    records): each compared with the median of the previous `window` quarters, two quarters
+    running, both agreeing."""
     def edge(key):
         vals = [h[key] for h in history]
         if len(vals) < window + 2:
@@ -61,7 +66,8 @@ def direction(history: list[dict], window: int = 4) -> str:
             prior = pd.Series(vals[i - window:i]).median()
             moves.append("up" if vals[i] > prior else "down" if vals[i] < prior else "flat")
         return moves[0] if moves[0] == moves[1] and moves[0] != "flat" else None
-    f, c = edge("floor_pct"), edge("ceiling_pct")
+    f = edge("floor_pct")
+    c = edge("hand_pct") if all("hand_pct" in h for h in history) else edge("ceiling_pct")
     if f and f == c:
         return "Rising" if f == "up" else "Falling"
-    return "No clear direction" if f == c else "Unclear (floor and ceiling disagree)"
+    return "No clear direction" if f == c else "Unclear (low end and headline disagree)"

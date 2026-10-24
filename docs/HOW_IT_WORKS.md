@@ -50,7 +50,7 @@ A few questions need a person reading a vendor's page or a credit line, not a pr
 | --- | --- |
 | **Does the pick qualify?** Is an "other" product really reachable from the internet; did an AI tool really take part in finding an AI-credited flaw? | Product names and credit lines are ambiguous: "Claude" in a credit can be a person, a lab or a tool. |
 | **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Can't find". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
-| **Unclear AI credits** (Yes / No). Clear patterns such as "found using \[tool\]" are counted automatically, with 1 in 10 re-checked. | Wording varies widely; a lab or company name alone never counts as AI, unless the credit says the work was a collaboration with it. |
+| **AI-credit edge cases** (Yes / No). Any mention of an AI tool or AI lab is counted automatically, with 1 in 10 re-checked. | Name collisions (a person named Claude) and credits where the AI product is the thing that had the flaw need a reader. |
 
 Two safeguards keep the hand checks honest. Each quarter, five earlier answers are shown again unmarked, and the share answered the same way is reported. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
 
@@ -79,10 +79,10 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 
 **Defender side: AI finding flaws (scored).**
 
-- **Share of new flaws found with AI tools,** every quarter, as a low, hand-checked and high range. The author's registered prediction is that it rises. A trend is called only when the low and high figures move the same way.
+- **Share of new flaws whose credits involve AI,** every quarter, as two numbers: the headline counts any mention of an AI tool or AI lab (people credited from an AI company are taken to be using AI); the low end counts only credits naming an AI tool in a clear role, as registered. Q3 2026 test data: 0.81% and 0.43%. The author's registered prediction is that it rises. A trend is called only when both move the same way.
 - **Are AI-found flaws different?** Within the sample, flaws credited to AI are compared with the rest on severity, on how often they allow an attacker to run code, and on how soon they are attacked.
 - **Who is finding them:** which AI labs' tools are credited, and new tools appearing before they reach the term list.
-- A caution already found: in Q3 2026, about 133 of 139 unclear credits came from organisations with documented AI-discovery programmes. The true AI share is probably above the hand-checked figure, which is why the range is shown.
+- Why two numbers: credits rarely say how a flaw was found. The gap between them shows how much rests on lab affiliation; if AI labs hire more security researchers, the headline rises even if AI use does not. The rule is re-evaluated on the pilot data in February 2027.
 
 **Attacker side: AI-assisted attacks (exploratory, clearly labelled, never deciding a label).**
 
@@ -104,6 +104,7 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | Fri 1 Jan | Q4 2026 provisional report | The automatic pull for October to December 2026, labelled **pilot** | Tests the whole system on real data before any result is scored |
 | 4–28 Jan | Q4 2026 hand-check window | About 45 to 50 minutes in the Hand Check app, at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
 | Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included | Sources keep updating; a month's wait catches late listings and corrections |
+| 2–12 Feb | Evaluation of the AI-credit rule | The pilot's two AI numbers compared, with a sample of lab-affiliated credits checked | Decides at the 15 March review whether any mention of an AI lab should keep counting |
 | 15 Feb – 1 Mar | Censys research application | Request for internet scan data, written by the author | Needed for the defender side of the race and the yearly accuracy check |
 | Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by this date | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |

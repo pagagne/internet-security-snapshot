@@ -27,28 +27,26 @@ Practice lists are labelled "not scored".
 
 ## 3. AI credits
 
-Question: does this credit say an AI tool took part in finding the flaw?
+Since 23 October 2026, any mention of an AI tool or a frontier AI lab in a credit counts as
+AI involvement and is accepted automatically (`HAND_CHECK.md`). Most quarters this section
+will therefore be short: it holds only
 
-Two ways to work, switch any time:
+- **spot checks** (marked): a random sample of automatic yeses, mainly to catch name
+  collisions such as a person named Claude. Answer honestly: a "No" suspends the rule that
+  accepted it;
+- **edge cases**: credits where the AI product may be the thing that had the flaw, and
+  credits naming Qihoo 360 (a security company, not an AI lab).
 
-- **One at a time:** the credit text, the terms that matched, how many flaws it covers,
-  and links to open example CVE records. Answer **Yes**, **No** or **Not sure** (counts
-  as no). Keys on a computer: `Y`, `N`, `U`.
-- **List by category:** every credit on one screen, in two groups:
-  1. *Names an AI tool or AI phrase* (for example "in collaboration with Claude",
-     "using Codex"). Usually yes, but read each one.
-  2. *Lab or company name only* (for example "Jane Doe of OpenAI"). Usually no: count it
-     only if the text also says an AI tool took part, or says the work was done in
-     collaboration with the lab.
+Question for each: does this credit name an AI tool or AI lab as taking part, rather than a
+person who shares a name with a tool, or the product that had the flaw? Answer **Yes**,
+**No** or **Not sure** (counts as no). Keys on a computer: `Y`, `N`, `U`.
 
-  Each row has Yes / No / ? buttons. Credits covering the most flaws are listed first.
-  **Mark unanswered as Yes/No** answers all remaining rows in a group after you confirm;
-  use it only after reading the rows, and change any exception before or after.
+Two ways to work, switch any time: **one at a time** (credit text, matched terms, flaws
+covered, links to example CVE records) or **list by category** (all items on one screen,
+Yes / No / ? on each row; **Mark unanswered as Yes/No** answers the rest of a group after
+you confirm).
 
-Clear-cut credits (for example "in collaboration with Claude", "using Codex", a model
-name with its version) are accepted automatically and listed under **Accepted
-automatically** for reference; a few of them appear in your list as **spot checks**
-(marked). Answer those honestly: a "No" suspends the pattern that accepted it.
+Everything accepted automatically is listed under **Accepted automatically** for reference.
 
 Each distinct credit text appears once even if it covers many flaws, and decisions carry
 over to later quarters, so later lists only ask about new credit texts.

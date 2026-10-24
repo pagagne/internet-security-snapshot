@@ -50,10 +50,10 @@
     "docs/HAND_CHECK.md"
    ],
    "fingerprints": {
-    "config/ai_credit_auto_accept.yaml": "bde59fca8c08e094",
+    "config/ai_credit_auto_accept.yaml": "d29c0b4d7cb5609c",
     "config/ai_credit_terms.yaml": "2fc836bf6fcf7a2e",
-    "docs/HAND_CHECK.md": "9c3e7cfa31a66d42",
-    "docs/diagrams/track_c.mmd": "5a2698431528a900"
+    "docs/HAND_CHECK.md": "7c23468f70e0ffed",
+    "docs/diagrams/track_c.mmd": "bb99230c6a2086e8"
    },
    "reviewed_on": "2026-10-23"
   },
@@ -93,7 +93,7 @@
     "README.md": "5aa60e431a00a9f5",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
-    "docs/diagrams/calendar_2027.mmd": "7929c9213a27d556"
+    "docs/diagrams/calendar_2027.mmd": "6cf95118916b6a08"
    },
    "reviewed_on": "2026-10-23"
   },

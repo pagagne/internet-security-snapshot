@@ -53,47 +53,54 @@ draw order. Mark it yes or no:
 - A slot stays open until its pick is confirmed, so an unanswered item holds that slot
   (and only that slot) back.
 
-## Automatic yes for clear-cut credits (since 2026-10-22)
+## What counts as AI involvement (author's rule, since 2026-10-23)
 
-Credits where a tool or model name appears in a clear role pattern, such as "using
-Codex", "found by Big Sleep" or "Claude Opus 5", are
-accepted automatically (`config/ai_credit_auto_accept.yaml`). Lab or company names alone
-never qualify (except in a stated collaboration, below), and wording that makes the AI the subject of the flaw ("vulnerability in
-Claude", "prompt injection") always goes to the author. A random 10% of automatic yeses
-(at least three) still comes to the author as spot checks; a "no" on a spot check
-suspends that pattern until it is reviewed. Everything else is checked by hand as below.
+**Any mention of an AI tool or a frontier AI lab in the credits counts**, whatever the
+wording: "using Codex", "found by Big Sleep", "Claude Opus 5", "in collaboration with Claude
+and Anthropic Research", "Trail of Bits in collaboration with OpenAI", "Amy Burnett of
+OpenAI", "Alex Matrosov with Claude, Anthropic". The reasoning: people credited from an AI
+company can be taken to be using AI, and credits rarely say how a flaw was found, so
+judging each wording adds work without adding information. These credits are counted
+automatically (`config/ai_credit_auto_accept.yaml`, v1.3).
 
-**Stated collaboration counts (author's decision, 2026-10-23).** A credit saying the finder
-worked "in collaboration with" an AI tool or an AI lab ("in collaboration with Claude and
-Anthropic Research", "Trail of Bits in collaboration with OpenAI") counts as AI involvement
-and is accepted automatically. Credits do not say what the AI did, and the study does not
-try to split that hair: a stated collaboration is taken as involvement. Affiliation alone
-("Jane Doe of OpenAI") and bare "with Claude" still go to the author. (History: the pattern
-was removed on 22 Oct after a practice spot check and restored, extended to labs, on 23 Oct.)
+Still sent to the author:
+- Name collisions: a person or handle that happens to match a term ("Claude Bernard",
+  "Qwen (VulDB User)").
+- Wording that makes the AI the subject of the flaw ("vulnerability in Claude", "prompt
+  injection").
+- Qihoo 360, a security company rather than an AI lab, whose credits usually name human
+  researchers.
 
-## Criteria for AI-credit matches
+A random 10% of automatic yeses (at least three) still comes to the author as spot checks,
+mainly to catch name collisions; a "no" on a spot check suspends the rule that accepted it
+until it is reviewed.
 
-A match counts as **AI-credited** only if the credit names an AI tool, model or agent as
-the finder or co-finder of the vulnerability. Examples that count:
+**The narrower count is kept alongside.** Credits that name an AI *tool* in a clear role
+("using", "found by", a model name with its version, "in collaboration with" a tool) are
+also counted separately, with lab names ignored. This is the measure as registered, and it
+is the low end of the T7 range (below). The gap between the two shows how much of the
+headline rests on lab affiliation; for example, if AI labs hire more security researchers,
+the headline rises even if AI use does not.
 
-- "Found by XBOW", "Google Big Sleep", "Claude Security"
-- "Jane Doe using Claude", "in collaboration with Claude and Anthropic Research"
-- "Tsinghua University using GLM-5.1 from Z.ai", "Deepseek agent"
+History: automatic yes for clear patterns adopted 22 Oct; "in collaboration with" removed
+22 Oct after a practice spot check; restored and extended to labs 23 Oct; any mention of a
+tool or lab 23 Oct. All logged in `prereg/DEVIATIONS.md`. The rule is re-evaluated on the
+Q4 2026 pilot data in February 2027, before the 15 March review.
 
-Examples that do **not** count:
+## Criteria for the remaining hand decisions
 
-- A person's name that happens to match a term (e.g. "Claude Bernard").
-- A username or handle that matches a term with no sign of an AI tool (e.g. "Qwen (VulDB
+The few credits that still reach the author are name collisions and edge cases. Count a
+credit as AI involvement if it names an AI tool, model or agent, or a frontier AI lab, in
+any role other than as the thing that had the flaw. Do **not** count:
+
+- A person's name or handle that happens to match a term ("Claude Bernard", "Qwen (VulDB
   User)").
-- A researcher identified only by employer, including AI labs (e.g. "Nicholas Carlini of
-  Anthropic", "Amy Burnett | OpenAI"). **Lab-name matches never count on their own**; the
-  credit must also say an AI tool or agent took part, or that the work was done in
-  collaboration with the lab.
-- Human teams with no AI tool named (e.g. "Google Project Zero"; its AI tool Big Sleep is
-  matched separately).
+- Credits where the AI product is the subject of the flaw, with no sign an AI tool helped
+  find it.
+- Security companies that are not AI labs (Qihoo 360, Google Project Zero as a human team;
+  its AI tool Big Sleep is matched separately).
 
-When the text is genuinely unclear, the decision is **no**, with a note, so the measure
-leans toward undercounting rather than overcounting AI involvement.
+When the text is genuinely unclear, the decision is **no**, with a note.
 
 ## Two versions reported
 
@@ -105,12 +112,15 @@ with the current list labeled as a deviation. See `prereg/DEVIATIONS.md`.
 Credits often do not say how a flaw was found, so T7 is reported as a range each quarter
 (`src/snapshot/t7.py`), with one denominator, all CVEs published in the quarter:
 
-- **Floor:** credits accepted by a clear published pattern; no judgment involved.
-- **Hand-checked:** the floor plus credits the author answered yes to (the registered T7).
-- **Ceiling:** every credit mentioning any listed AI term, lab names included.
+- **Low end (AI tool named):** credits naming an AI tool in a clear role, lab names
+  ignored; the measure as registered; no judgment involved.
+- **Headline (AI tool or lab mentioned):** any mention of an AI tool or frontier AI lab,
+  plus any credits the author answered yes to.
+- **Ceiling:** every credit mentioning any listed AI term; equals the headline except for
+  name collisions and other credits the author rejected.
 
-Q3 2026 (test data, rules of 23 Oct): floor 0.53%, ceiling 0.81% of 36,732 CVEs.
-A direction is called only when the floor and the ceiling move the same way (two quarters
+Q3 2026 (test data, rules of 23 Oct): low end 0.43%, headline 0.81% of 36,732 CVEs.
+A direction is called only when the low end and the headline move the same way (two quarters
 running against the median of the previous four); otherwise T7's direction is "unclear".
 Borderline calls can move the hand-checked figure within the range but cannot create a
 trend on their own. (Direction rule to be confirmed at the 21 December session.)

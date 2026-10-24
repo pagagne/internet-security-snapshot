@@ -41,6 +41,7 @@ role_patterns:
     # Checked last, so the more specific patterns above still name the rule where they apply.
     # Qihoo 360 is a security company, not a frontier lab, and stays with the author.
     labs_allowed: true
+    headline_only: true   # not used for the narrow 'AI tool named' figure (low end of T7)
     exclude_terms: ["Qihoo 360"]
     regex: '{term}'
 

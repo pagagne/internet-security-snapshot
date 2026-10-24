@@ -119,11 +119,11 @@ was recorded.
 
 ```mermaid
 flowchart TD
-  C1["The 'credits' line of each new flaw<br/>(who found it)"] --> C2{"Does it name<br/>an AI tool?"}
-  C2 -- "clearly yes" --> C3["Counted automatically<br/>(1 in 10 re-checked by hand)"]
-  C2 -- "unclear" --> C4["Hand check: Yes / No"]
+  C1["The 'credits' line of each new flaw<br/>(who found it)"] --> C2{"Does it mention an<br/>AI tool or AI lab?"}
+  C2 -- "yes" --> C3["Counted automatically<br/>(1 in 10 re-checked by hand)"]
+  C2 -- "name collision or<br/>AI is the flawed product" --> C4["Hand check: Yes / No"]
   C2 -- "no" --> C5["Not AI-credited"]
-  C3 --> C6["Report: share of new flaws<br/>found with AI, as a range"]
+  C3 --> C6["Report: share of new flaws<br/>involving AI: headline and<br/>narrow (AI tool named)"]
   C4 --> C6
   classDef you fill:#fff4d6,stroke:#b8860b,color:#222
   classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
@@ -131,16 +131,16 @@ flowchart TD
   class C6 out
 ```
 
-**What happens.** Most flaw records include a credits line naming who found the flaw. Lines
-that clearly name an AI tool (for example "found using [tool]") are counted automatically; one
-in ten of those is re-checked by hand to make sure the rule works. Unclear lines are decided by
-hand. A lab or company name alone never counts as AI, unless the credit says the work was
-done in collaboration with it.
+**What happens.** Most flaw records include a credits line naming who found the flaw. Any
+line that mentions an AI tool or a frontier AI lab is counted automatically (people credited
+from an AI company are taken to be using AI); one in ten of those is re-checked by hand to
+catch name collisions such as a person named Claude. Edge cases, such as an AI product that
+is itself the thing with the flaw, are decided by hand.
 
-**What the report will say.** The share of the quarter's new flaws found with an AI tool,
-given as a range: a low figure (only clear cases), the hand-checked figure, and a high figure
-(every flaw whose credits mention any AI-related term, including names of AI labs). A trend is
-called only when the low and high figures move the same way.
+**What the report will say.** The share of the quarter's new flaws whose credits involve AI,
+as two numbers: the headline (any mention of an AI tool or AI lab) and the low end (an AI
+tool named in a clear role, as registered). Q3 2026 test data: 0.81% and 0.43%. A trend is
+called only when both move the same way.
 
 ## Track D: background trends
 
@@ -199,6 +199,7 @@ gantt
     Hand-check window            :2027-10-04, 2027-10-28
     Final report                :milestone, 2027-11-01, 0d
   section Project milestones
+    Evaluate AI-credit rule on pilot data :2027-02-02, 2027-02-12
     Censys research application :2027-02-15, 14d
     Annual review and change window :milestone, 2027-03-15, 0d
     External reviewer confirmed :milestone, 2027-03-15, 0d
@@ -211,6 +212,7 @@ gantt
 | Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional draft reviewed by the author and published within two days, labelled **pilot** |
 | 4–28 Jan | Hand-check window for Q4 2026 (about 45–50 minutes of work, at any time in the window; answers due by the 28th) |
 | Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
+| 2–12 Feb | Evaluation of the AI-credit rule on the pilot data: headline (any AI tool or lab mentioned) against the narrow count (AI tool named), a sample of lab-affiliated credits, and spot-check results; outcome goes to the 15 March review |
 | 15 Feb – 1 Mar | Application for Censys research access (internet scan data), written by the author |
 | Mon 15 Mar | Annual review and change window: the only time the core rules may change; changes logged on OSF. External reviewer confirmed by this date |
 | Thu 1 Apr | Q1 2027 provisional report: the **first scored quarter**, the first with Improving / Worsening labels |

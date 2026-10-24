@@ -22,6 +22,6 @@ files:
     deviation: null
     note: "v1.0 as registered"
   config/ai_credit_auto_accept.yaml:
-    sha256: bde59fca8c08e094aec2f697a2d94824024986c46071e9f7ce714755f181ff76
+    sha256: d29c0b4d7cb5609cc4d1ce75da4f8873957882a4675c2e70df17a8f9faab8ec8
     deviation: 2026-10-23
-    note: "v1.2 (stated collaboration with an AI tool or lab counts); locked 2026-10-23"
+    note: "v1.3 (any mention of an AI tool or frontier AI lab counts; narrow tool-named count kept as the low end)"

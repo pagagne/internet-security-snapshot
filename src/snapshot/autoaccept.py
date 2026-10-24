@@ -24,8 +24,11 @@ def _term_rx(term: str) -> str:
     return r"(?<![A-Za-z0-9])" + re.escape(term) + r"(?![A-Za-z0-9])"
 
 
-def auto_accept(credit_text: str, credit_types=(), suspended: frozenset = frozenset()) -> str | None:
-    """Return the id of the rule that accepts this credit, or None (send to the author)."""
+def auto_accept(credit_text: str, credit_types=(), suspended: frozenset = frozenset(), tools_only: bool = False) -> str | None:
+    """Return the id of the rule that accepts this credit, or None (send to the author).
+
+    tools_only=True ignores lab names entirely (patterns marked labs_allowed then match only
+    tool names): the narrower 'AI tool named' count used as the low end of T7."""
     cfg = _cfg()
     text = credit_text or ""
     for rx in cfg.get("send_to_author", []):
@@ -34,14 +37,14 @@ def auto_accept(credit_text: str, credit_types=(), suspended: frozenset = frozen
     labs = lab_name_terms()
     matched = ai_credit_matches(text.split(" | "))
     tools = [t for t in matched if t not in labs]
-    if not matched:
+    if not matched or (tools_only and not tools):
         return None
     if tools and "tool" in set(credit_types or ()) and "credit_type_tool" not in suspended:
         return "credit_type_tool"
     for p in cfg["role_patterns"]:
-        if p["id"] in suspended:
+        if p["id"] in suspended or (tools_only and p.get("headline_only")):
             continue
-        for t in (matched if p.get("labs_allowed") else tools):
+        for t in (matched if p.get("labs_allowed") and not tools_only else tools):
             if t in p.get("exclude_terms", []):
                 continue
             rx = p["regex"].replace(r"{term}", _term_rx(t)).replace("\\b" + _term_rx(t), _term_rx(t))
