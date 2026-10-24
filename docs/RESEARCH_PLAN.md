@@ -68,6 +68,9 @@ Probe run on GitHub Actions over all 175 CVEs added to CISA KEV in Apr-Sep 2026
 - Implication for option (a): hand-check effort is not "about 15 random"; it is every flagged
   case (about 120 of 175 per half-year, mostly quick "fix available at advisory? yes"
   checks) or a random sample of flagged cases. To settle on 12 Nov.
+  Author's leaning (24 Oct): the extra time is fine, so check every flagged case (about 1½ h
+  a quarter rather than about 50 min); confirm on 12 Nov. Checking every case also narrows
+  the fix-date ranges the race now reports (`snapshot.events`), so the zero-day range shrinks.
 
 ### Item 2: comparison with published studies (2026-10-23)
 - VulnCheck, 1H 2026 (495 newly exploited CVEs, 79 sources): 23.4% exploited on or before CVE
