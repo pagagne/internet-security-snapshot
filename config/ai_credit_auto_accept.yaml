@@ -3,7 +3,7 @@
 #
 # A credit text is auto-accepted only if ALL of these hold:
 #   1. it matches a term from `tool_names` or `generic_phrases` in ai_credit_terms.yaml
-#      (a lab or company name alone never qualifies);
+#      (a lab or company name alone qualifies only in a pattern marked labs_allowed);
 #   2. that term appears in one of the role patterns below, OR the CVE record types the
 #      credit as "tool" (the CVE format's own label for a tool that helped find the flaw);
 #   3. no `send_to_author` pattern matches.
@@ -12,7 +12,8 @@
 # A seeded random sample of auto-accepted texts (spot_check_share, at least
 # spot_check_min) is still shown to the author each quarter. If the author answers "no"
 # to any of them, that pattern is suspended until reviewed.
-version: 1.1   # 1.1 (2026-10-22): 'collaboration' pattern and bare 'with' removed after the author's spot-check review
+version: 1.2   # 1.1 (2026-10-22): 'collaboration' pattern and bare 'with' removed after the author's spot-check review
+              # 1.2 (2026-10-23): author's decision: a stated collaboration with an AI tool OR an AI lab counts
 
 role_patterns:
   - id: using
@@ -25,6 +26,12 @@ role_patterns:
   - id: credited_directly
     # the tool itself is thanked or credited as the reporter, e.g. "thank Google Big Sleep for reporting"
     regex: '\bthanks?\s+(\w+\s+)?{term}\b(?!\s*\()|\b{term}\s+(for reporting|reported this)'
+  - id: collaboration
+    # "in collaboration with Claude and Anthropic Research", "(Trail of Bits in collaboration with OpenAI)".
+    # Author's decision 2026-10-23: a stated collaboration with an AI tool or an AI lab counts as AI
+    # involvement. Affiliation alone ("Jane Doe of OpenAI") and bare "with X" still go to the author.
+    labs_allowed: true
+    regex: '\b(in\s+)?collaborat(ion|ing|ed)\s+with\s+(the\s+)?{term}\b'
   - id: agent
     regex: '\b{term}\s+(agent|agents|code|security agent|autonomous agent)\b'
 

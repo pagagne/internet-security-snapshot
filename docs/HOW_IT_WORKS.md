@@ -50,7 +50,7 @@ A few questions need a person reading a vendor's page or a credit line, not a pr
 | --- | --- |
 | **Does the pick qualify?** Is an "other" product really reachable from the internet; did an AI tool really take part in finding an AI-credited flaw? | Product names and credit lines are ambiguous: "Claude" in a credit can be a person, a lab or a tool. |
 | **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Can't find". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
-| **Unclear AI credits** (Yes / No). Clear patterns such as "found using \[tool\]" are counted automatically, with 1 in 10 re-checked. | Wording varies widely; a lab or company name alone never counts as AI. |
+| **Unclear AI credits** (Yes / No). Clear patterns such as "found using \[tool\]" are counted automatically, with 1 in 10 re-checked. | Wording varies widely; a lab or company name alone never counts as AI, unless the credit says the work was a collaboration with it. |
 
 Two safeguards keep the hand checks honest. Each quarter, five earlier answers are shown again unmarked, and the share answered the same way is reported. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
 

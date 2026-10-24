@@ -314,7 +314,7 @@ th { color: var(--muted); font-weight: 700; }
 
   const GROUPS = [
     { key: "tool", title: "Names an AI tool or AI phrase", help: "The credit names a model, agent or AI tool (for example Claude, GPT, Codex, Big Sleep). Usually yes, but read each one: a tool named as the product, not the finder, is no.", test: (i) => !i.lab_only },
-    { key: "lab", title: "Lab or company name only", help: "Only an AI lab or company is named, often as a person's employer. Count it only if the text also says an AI tool took part.", test: (i) => i.lab_only },
+    { key: "lab", title: "Lab or company name only", help: "Only an AI lab or company is named, often as a person's employer. Count it only if the text also says an AI tool took part, or that the work was done in collaboration with the lab.", test: (i) => i.lab_only },
   ];
 
   function renderCreditList() {
@@ -387,7 +387,7 @@ th { color: var(--muted); font-weight: 700; }
   const TREES = {
     credit: {
       start: "q1",
-      q1: { q: "Does the credit name an AI tool or model, not just a company or lab?", ex: "Tools: Claude, GPT, Codex, Gemini, Big Sleep, an \"AI agent\". Companies only: \"of OpenAI\", \"Anthropic\", \"OpenAI Security Research\".", yes: "q2", no: { a: "no", why: "A company or lab name alone often just names a person's employer." } },
+      q1: { q: "Does the credit name an AI tool or model, or say the work was done in collaboration with an AI lab?", ex: "Tools: Claude, GPT, Codex, Gemini, Big Sleep, an \"AI agent\". Collaboration: \"in collaboration with OpenAI\". Company as employer only: \"of OpenAI\", \"OpenAI Security Research\".", yes: "q2", no: { a: "no", why: "A company or lab name alone often just names a person's employer." } },
       q2: { q: "Is the AI only the thing that had the flaw?", ex: "For example \"prompt injection in Claude\" or \"vulnerability in the Copilot extension\", with people credited for finding it.", yes: "q2b", no: "q3" },
       q2b: { q: "Does it also say an AI tool helped find it?", ex: "For example \"found by Jane Doe using Codex\".", yes: { a: "yes", why: "The flaw is in an AI product, and an AI tool also helped find it." }, no: { a: "no", why: "The AI is where the flaw was, not what found it." } },
       q3: { q: "Does the credit say the tool took part in finding, testing or reporting it?", ex: "\"using Codex\", \"with Claude\", \"in collaboration with Claude\", \"found by Big Sleep\", or the model listed as a credited party (\"Claude Opus 5\").", yes: { a: "yes", why: "The credit says an AI tool took part." }, no: "q4" },

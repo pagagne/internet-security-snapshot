@@ -24,13 +24,14 @@ def test_roundtrip_and_carry_over(tmp_path):
 
 def test_auto_accept_patterns():
     from snapshot.autoaccept import auto_accept
-    assert auto_accept("Alex Gaynor in collaboration with Claude and Anthropic Research") is None  # removed in 1.1
+    assert auto_accept("Alex Gaynor in collaboration with Claude and Anthropic Research") == "collaboration"  # v1.2
     assert auto_accept("Alex Matrosov with Claude, Anthropic") is None
     assert auto_accept("The ASF using Claude Agents") == "using"
     assert auto_accept("Red Hat would like to thank Google Big Sleep for reporting this issue.") == "credited_directly"
     assert auto_accept("iglocska | Claude Fable 5.1") == "model_with_version"
     assert auto_accept("Amy Burnett of OpenAI") is None          # lab name only
-    assert auto_accept("Paul Bottinelli (Trail of Bits in collaboration with OpenAI)") is None
+    assert auto_accept("Paul Bottinelli (Trail of Bits in collaboration with OpenAI)") == "collaboration"  # lab allowed here only
+    assert auto_accept("Nicholas Carlini of Anthropic") is None  # affiliation only
     assert auto_accept("Prompt injection in Claude found by Jane Doe") is None   # AI is the subject
     assert auto_accept("Claude Bernard") is None                 # excluded name
     assert auto_accept("Jane Doe", credit_types=["tool"]) is None  # no tool term

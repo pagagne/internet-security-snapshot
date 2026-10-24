@@ -50,9 +50,9 @@
     "docs/HAND_CHECK.md"
    ],
    "fingerprints": {
-    "config/ai_credit_auto_accept.yaml": "6b2db79078879f5a",
+    "config/ai_credit_auto_accept.yaml": "bde59fca8c08e094",
     "config/ai_credit_terms.yaml": "2fc836bf6fcf7a2e",
-    "docs/HAND_CHECK.md": "3975ce47fcf04d6e",
+    "docs/HAND_CHECK.md": "9c3e7cfa31a66d42",
     "docs/diagrams/track_c.mmd": "5a2698431528a900"
    },
    "reviewed_on": "2026-10-23"

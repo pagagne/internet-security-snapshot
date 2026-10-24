@@ -22,6 +22,6 @@ files:
     deviation: null
     note: "v1.0 as registered"
   config/ai_credit_auto_accept.yaml:
-    sha256: 6b2db79078879f5a75203dc9220c02b32852c86cfacfd6860502d954d80c35f8
-    deviation: 2026-10-22
-    note: "v1.1; locked 2026-10-23 because it decides part of the scored T7 figure"
+    sha256: bde59fca8c08e094aec2f697a2d94824024986c46071e9f7ce714755f181ff76
+    deviation: 2026-10-23
+    note: "v1.2 (stated collaboration with an AI tool or lab counts); locked 2026-10-23"

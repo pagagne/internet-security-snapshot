@@ -1,7 +1,8 @@
 """Auto-accept clear-cut AI credits (config/ai_credit_auto_accept.yaml).
 
 Deterministic and public: the same credit text always gets the same answer, and every
-auto-accepted row records the pattern that accepted it. Lab names never qualify.
+auto-accepted row records the pattern that accepted it. Lab names qualify only in a
+pattern marked `labs_allowed` (a stated collaboration with an AI lab, since v1.2).
 """
 
 from __future__ import annotations
@@ -31,15 +32,16 @@ def auto_accept(credit_text: str, credit_types=(), suspended: frozenset = frozen
         if re.search(rx, text, re.IGNORECASE):
             return None
     labs = lab_name_terms()
-    tools = [t for t in ai_credit_matches(text.split(" | ")) if t not in labs]
-    if not tools:
+    matched = ai_credit_matches(text.split(" | "))
+    tools = [t for t in matched if t not in labs]
+    if not matched:
         return None
-    if "tool" in set(credit_types or ()) and "credit_type_tool" not in suspended:
+    if tools and "tool" in set(credit_types or ()) and "credit_type_tool" not in suspended:
         return "credit_type_tool"
     for p in cfg["role_patterns"]:
         if p["id"] in suspended:
             continue
-        for t in tools:
+        for t in (matched if p.get("labs_allowed") else tools):
             rx = p["regex"].replace(r"{term}", _term_rx(t)).replace("\\b" + _term_rx(t), _term_rx(t))
             if re.search(rx, text, re.IGNORECASE):
                 return p["id"]

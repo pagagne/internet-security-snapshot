@@ -58,14 +58,18 @@ draw order. Mark it yes or no:
 Credits where a tool or model name appears in a clear role pattern, such as "using
 Codex", "found by Big Sleep" or "Claude Opus 5", are
 accepted automatically (`config/ai_credit_auto_accept.yaml`). Lab or company names alone
-never qualify, and wording that makes the AI the subject of the flaw ("vulnerability in
+never qualify (except in a stated collaboration, below), and wording that makes the AI the subject of the flaw ("vulnerability in
 Claude", "prompt injection") always goes to the author. A random 10% of automatic yeses
 (at least three) still comes to the author as spot checks; a "no" on a spot check
 suspends that pattern until it is reviewed. Everything else is checked by hand as below.
 
-"In collaboration with Claude" and bare "with Claude" are not automatic (removed
-2026-10-22 after the author's spot-check review): they do not say what the AI did, so the
-author decides them.
+**Stated collaboration counts (author's decision, 2026-10-23).** A credit saying the finder
+worked "in collaboration with" an AI tool or an AI lab ("in collaboration with Claude and
+Anthropic Research", "Trail of Bits in collaboration with OpenAI") counts as AI involvement
+and is accepted automatically. Credits do not say what the AI did, and the study does not
+try to split that hair: a stated collaboration is taken as involvement. Affiliation alone
+("Jane Doe of OpenAI") and bare "with Claude" still go to the author. (History: the pattern
+was removed on 22 Oct after a practice spot check and restored, extended to labs, on 23 Oct.)
 
 ## Criteria for AI-credit matches
 
@@ -83,7 +87,8 @@ Examples that do **not** count:
   User)").
 - A researcher identified only by employer, including AI labs (e.g. "Nicholas Carlini of
   Anthropic", "Amy Burnett | OpenAI"). **Lab-name matches never count on their own**; the
-  credit must also say an AI tool or agent took part.
+  credit must also say an AI tool or agent took part, or that the work was done in
+  collaboration with the lab.
 - Human teams with no AI tool named (e.g. "Google Project Zero"; its AI tool Big Sleep is
   matched separately).
 
@@ -104,7 +109,7 @@ Credits often do not say how a flaw was found, so T7 is reported as a range each
 - **Hand-checked:** the floor plus credits the author answered yes to (the registered T7).
 - **Ceiling:** every credit mentioning any listed AI term, lab names included.
 
-Q3 2026 (test data): floor 0.43%, ceiling 0.81% of 36,732 CVEs.
+Q3 2026 (test data, rules of 23 Oct): floor 0.53%, ceiling 0.81% of 36,732 CVEs.
 A direction is called only when the floor and the ceiling move the same way (two quarters
 running against the median of the previous four); otherwise T7's direction is "unclear".
 Borderline calls can move the hand-checked figure within the range but cannot create a

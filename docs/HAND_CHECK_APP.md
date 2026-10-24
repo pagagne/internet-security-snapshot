@@ -38,7 +38,8 @@ Two ways to work, switch any time:
   1. *Names an AI tool or AI phrase* (for example "in collaboration with Claude",
      "using Codex"). Usually yes, but read each one.
   2. *Lab or company name only* (for example "Jane Doe of OpenAI"). Usually no: count it
-     only if the text also says an AI tool took part.
+     only if the text also says an AI tool took part, or says the work was done in
+     collaboration with the lab.
 
   Each row has Yes / No / ? buttons. Credits covering the most flaws are listed first.
   **Mark unanswered as Yes/No** answers all remaining rows in a group after you confirm;

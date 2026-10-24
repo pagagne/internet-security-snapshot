@@ -134,7 +134,8 @@ flowchart TD
 **What happens.** Most flaw records include a credits line naming who found the flaw. Lines
 that clearly name an AI tool (for example "found using [tool]") are counted automatically; one
 in ten of those is re-checked by hand to make sure the rule works. Unclear lines are decided by
-hand, and lab or company names alone never count as AI.
+hand. A lab or company name alone never counts as AI, unless the credit says the work was
+done in collaboration with it.
 
 **What the report will say.** The share of the quarter's new flaws found with an AI tool,
 given as a range: a low figure (only clear cases), the hand-checked figure, and a high figure
