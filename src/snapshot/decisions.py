@@ -26,7 +26,12 @@ from pathlib import Path
 
 FIELDS = ["batch", "item_id", "decided_by", "kind", "month", "slot", "rank", "cve_id", "credit", "terms",
           "decision", "unsure", "bulk", "fix_date", "fix_status", "checked_on", "prefill_date", "prefill_source",
-          "seconds", "note", "answered_at", "recorded_at"]
+          "seconds", "note", "answered_at", "recorded_at", "retest"]
+
+
+def is_retest(r: dict) -> bool:
+    """A re-shown item: counts for consistency only, never replaces the original decision."""
+    return str(r.get("retest", "")).strip().lower() in ("true", "1", "yes")
 
 
 def _doc(path: Path) -> dict:
@@ -42,10 +47,11 @@ def load(export: Path, batch: str) -> tuple[dict, list[dict]]:
     answers = {p.stem: _doc(p) for p in (base / "answers").glob("*.json")} if (base / "answers").exists() else {}
     now = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     rows = []
+    coder = meta.get("coder") or "author"   # a second coder's batch names them in its metadata
     for iid, a in sorted(answers.items()):
         it = items.get(iid, {})
         rows.append({
-            "batch": batch, "item_id": iid, "decided_by": "author", "kind": it.get("kind", a.get("kind", "")),
+            "batch": batch, "item_id": iid, "decided_by": coder, "kind": it.get("kind", a.get("kind", "")),
             "month": it.get("month", ""), "slot": it.get("slot", ""), "rank": it.get("rank", ""),
             "cve_id": it.get("cve_id", a.get("cve_id", "")), "credit": it.get("credit", ""),
             "terms": "; ".join(it.get("terms", []) or []),
@@ -53,7 +59,7 @@ def load(export: Path, batch: str) -> tuple[dict, list[dict]]:
             "fix_date": a.get("fix_date", ""), "fix_status": a.get("fix_status", ""), "checked_on": a.get("checked_on", ""),
             "prefill_date": it.get("prefill_date", ""), "prefill_source": it.get("prefill_source", ""),
             "seconds": a.get("seconds", 0), "note": a.get("note", ""), "answered_at": a.get("at", ""),
-            "recorded_at": now,
+            "recorded_at": now, "retest": bool(it.get("retest")),
         })
     return meta, rows
 
@@ -101,7 +107,7 @@ def decided_credits(decisions_csv: Path) -> dict[str, str]:
         return {}
     with open(decisions_csv, newline="") as f:
         for r in csv.DictReader(f):
-            if r["kind"] == "credit" and r["decision"] and r["credit"]:
+            if r["kind"] == "credit" and r["decision"] and r["credit"] and not is_retest(r):
                 prev = out.get(r["credit"])
                 if not prev or r["answered_at"] > prev[1]:
                     out[r["credit"]] = (r["decision"], r["answered_at"])
@@ -120,6 +126,84 @@ def retest_sample(decisions_csv: Path, n: int, seed: str) -> list[str]:
     return ranked[:n]
 
 
+RETEST_KINDS = ("credit", "fix", "slot_c")
+
+
+def retest_items(decisions_csv: Path, n: int, seed: str) -> list[dict]:
+    """Seeded sample of earlier author decisions of every hand-checked kind, shown again
+    unmarked: AI-credit texts, fix dates and slot (c) internet-facing calls.
+
+    Since 23 Oct most AI-credit decisions are automatic, so most hand work is now fix dates
+    and the internet-facing check; re-showing credits alone would measure the smallest part
+    of it. Each returned dict is the latest author row for that item (its original pre-fill
+    included, never shown with the author's earlier answer).
+    """
+    import hashlib
+    if not decisions_csv.exists():
+        return []
+    latest: dict[tuple, dict] = {}
+    with open(decisions_csv, newline="") as f:
+        for r in csv.DictReader(f):
+            if r.get("decided_by", "author") != "author" or r["kind"] not in RETEST_KINDS or is_retest(r):
+                continue
+            if r["kind"] == "credit" and not (r["credit"] and r["decision"]):
+                continue
+            if r["kind"] == "fix" and not r.get("fix_status"):
+                continue
+            if r["kind"] == "slot_c" and not (r.get("cve_id") and r["decision"]):
+                continue
+            key = (r["kind"], r["credit"] if r["kind"] == "credit" else r["cve_id"])
+            if key not in latest or r.get("answered_at", "") >= latest[key].get("answered_at", ""):
+                latest[key] = r
+    ranked = sorted(latest, key=lambda k: hashlib.sha256(f"retest|{seed}|{k[0]}|{k[1]}".encode()).hexdigest())
+    return [latest[k] for k in ranked[:n]]
+
+
+def _within(a: str, b: str, days: int = 1) -> bool:
+    try:
+        return abs((dt.date.fromisoformat(a[:10]) - dt.date.fromisoformat(b[:10])).days) <= days
+    except ValueError:
+        return False
+
+
+def consistency_by_kind(decisions_csv: Path) -> dict:
+    """Test-retest consistency of the author's own decisions, per kind of hand check.
+
+    credit, slot_c: same yes/no answer. fix: same status, and for dated fixes a date within
+    one day. Each kind also gets the one-sided 90% lower bound on its consistency rate
+    (Clopper-Pearson), which shows how much a handful of re-shown items can support.
+    """
+    out = {k: {"pairs": 0, "same": 0} for k in RETEST_KINDS}
+    if not decisions_csv.exists():
+        return out
+    by_item: dict[tuple, list[dict]] = {}
+    with open(decisions_csv, newline="") as f:
+        for r in csv.DictReader(f):
+            if r.get("decided_by", "author") == "author" and r["kind"] in RETEST_KINDS:
+                key = (r["kind"], r["credit"] if r["kind"] == "credit" else r["cve_id"])
+                by_item.setdefault(key, []).append(r)
+    for (kind, _), rows in by_item.items():
+        rows.sort(key=lambda r: r.get("answered_at", ""))
+        for a, b in zip(rows, rows[1:]):
+            if kind == "fix":
+                same = a.get("fix_status") == b.get("fix_status") and (
+                    a.get("fix_status") not in ("confirmed", "corrected") or _within(a.get("fix_date", ""), b.get("fix_date", "")))
+            else:
+                same = a["decision"] == b["decision"]
+            out[kind]["pairs"] += 1
+            out[kind]["same"] += bool(same)
+    for v in out.values():
+        v["rate"] = round(v["same"] / v["pairs"], 3) if v["pairs"] else None
+        v["lower90"] = round(lower_bound_90(v["same"], v["pairs"]), 3) if v["pairs"] else None
+    return out
+
+
+def lower_bound_90(successes: int, n: int) -> float:
+    """One-sided 90% Clopper-Pearson lower bound on a proportion (0.631 for 5 of 5)."""
+    from scipy.stats import beta
+    return 0.0 if successes == 0 else float(beta.ppf(0.10, successes, n - successes + 1))
+
+
 def no_fix_rechecks(decisions_csv: Path, through_month: str, follow_up_days: int = 90) -> list[dict]:
     """Cohort picks last recorded as 'no fix yet' whose 90-day follow-up has not ended by
     the end of `through_month`: they return to the review list for a fix date."""
@@ -129,7 +213,7 @@ def no_fix_rechecks(decisions_csv: Path, through_month: str, follow_up_days: int
     latest: dict[str, dict] = {}
     with open(decisions_csv, newline="") as f:
         for r in csv.DictReader(f):
-            if r.get("decided_by", "author") == "author" and r.get("fix_status") and r["cve_id"]:
+            if r.get("decided_by", "author") == "author" and r.get("fix_status") and r["cve_id"] and not is_retest(r):
                 if r["cve_id"] not in latest or r.get("answered_at", "") >= latest[r["cve_id"]].get("answered_at", ""):
                     latest[r["cve_id"]] = r
     y, m = map(int, through_month.split("-"))
@@ -178,6 +262,9 @@ def main(argv=None) -> int:
         rows += auto_rows(a.review_csv, a.batch)
     practice = bool(meta.get("practice")) or a.batch.startswith("practice-")
     out = a.repo / ("review/practice" if practice else "review") / (f"{a.batch}.csv" if practice else "decisions.csv")
+    if (meta.get("coder") or "author") != "author":
+        # a second coder's answers never enter review/decisions.csv (snapshot.agreement reads them)
+        out = a.repo / "review" / "second_coder.csv"
     total = write(rows, out)
     secs = sum(float(r["seconds"] or 0) for r in rows)
     print(f"{len(rows)} answers from {a.batch} -> {out} ({total} rows in file); review time {secs / 60:.0f} min"

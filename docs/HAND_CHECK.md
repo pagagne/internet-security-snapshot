@@ -127,10 +127,30 @@ trend on their own. (Direction rule to be confirmed at the 21 December session.)
 
 ## Consistency of hand decisions
 
-Each quarter, five credit texts the author decided before are shown again, unmarked, among
-the new ones. The share answered the same way both times is published as the consistency
-rate (`snapshot.decisions.consistency`). High consistency means the judgment is steady even
-where the rules are fuzzy.
+Each quarter, 20 earlier author decisions are shown again, unmarked, among the new ones:
+AI-credit texts, fix dates and slot (c) internet-facing calls, drawn by a seeded sample
+(`snapshot.decisions.retest_items`). Fix-date items show the pre-fill the author saw the first
+time, never the earlier answer. A re-shown answer is recorded with `retest=True` and never
+replaces the original decision. Consistency is published per kind
+(`snapshot.decisions.consistency_by_kind`): the same yes/no answer for credits and slot (c),
+and for fix dates the same status with dates within one day. Each rate carries its one-sided
+90% lower bound: if all 20 match, consistency is at least 89% (with 5 it was only 63%; five
+items were used until 24 Oct 2026). About 8 extra minutes a quarter.
+
+## Second coder
+
+Consistency cannot reveal a bias the author applies the same way every time; a second,
+independent coder can. Each quarter, after the author's hand check, `snapshot.agreement`
+draws 20 of the author's decisions (up to half from uncertain cases: marked unsure, fix date
+corrected, unknown or "no fix yet", pre-fill assumed or flagged), writes them without the
+author's answers for the second coder, and keeps the sampling weights in a separate file the
+coder does not see. The coder answers in that file, or in the Hand Check app as a batch whose
+metadata names them; their answers go to `review/second_coder.csv`, never to
+`review/decisions.csv`. Reported: raw agreement, Cohen's kappa, Gwet's AC1 and agreement on
+Yes and No for the yes/no checks, and the share of fix dates within one day with the median
+difference, weighted back to the whole batch. Pooled over the year for the March review.
+Nothing here decides a label. The second coder is lined up with the external reviewer
+(decision item 17).
 
 ## How to read T7: disclosed, not total
 

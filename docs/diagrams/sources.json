@@ -52,10 +52,10 @@
    "fingerprints": {
     "config/ai_credit_auto_accept.yaml": "d29c0b4d7cb5609c",
     "config/ai_credit_terms.yaml": "2fc836bf6fcf7a2e",
-    "docs/HAND_CHECK.md": "7c23468f70e0ffed",
+    "docs/HAND_CHECK.md": "6af87e43e4343213",
     "docs/diagrams/track_c.mmd": "bb99230c6a2086e8"
    },
-   "reviewed_on": "2026-10-23"
+   "reviewed_on": "2026-10-24"
   },
   "track_d": {
    "doc": "docs/EVALUATION_FLOW.md",

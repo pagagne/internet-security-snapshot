@@ -28,7 +28,8 @@ from .util import Quarter, load_config
 
 BACKUPS = 3
 CARRIED: dict[str, str] = {}   # credit texts carried over from earlier decisions (last run)
-RETEST_N = 5                     # earlier author decisions shown again, unmarked, each quarter
+RETEST_N = 20                    # earlier author decisions shown again, unmarked, each quarter
+                                 # (5 until 24 Oct 2026; 20 supports consistency of at least 89% if all match)
 
 
 def eligible(cve: pd.DataFrame, month: str) -> pd.DataFrame:
@@ -129,6 +130,35 @@ def credit_rows(cve: pd.DataFrame, months: list[str], already: dict[str, str] | 
              "answer": "", "notes": ""} for k, g in sorted(groups.items(), key=lambda x: -x[1]["n"])]
 
 
+def retest_rows(cve: pd.DataFrame, earlier: list[dict], months: list[str]) -> list[dict]:
+    """Review rows that show earlier decisions again, unmarked, looking like any other item.
+
+    Fix-date items show the pre-fill the author saw the first time, never the earlier answer.
+    """
+    by_id = cve.set_index("cve_id") if "cve_id" in cve else None
+    out = []
+    for d in earlier:
+        if d["kind"] == "credit":
+            out.append({"month": ",".join(months), "slot": "T7", "draw_rank": "", "cve_id": "", "task": "ai_credit",
+                        "retest": True, "auto_rule": "", "spot_check": False,
+                        "question": "Does this credit say an AI tool took part?", "credit": d["credit"], "terms": "", "examples": ""})
+            continue
+        cid = d["cve_id"]
+        if by_id is None or cid not in by_id.index:
+            continue
+        rec = by_id.loc[cid].copy(); rec["cve_id"] = cid
+        if d["kind"] == "fix":
+            row = _row(d.get("month", ""), d.get("slot", ""), d.get("rank", "") or 1, rec, "patch_date", "Find the vendor's fix date.")
+        else:  # slot_c
+            row = _row(d.get("month", ""), "c_other", 1, rec, "yes_no_then_patch_date",
+                       "Is this product reachable from the internet in normal use? If yes, also find the fix date.")
+        if d.get("prefill_date"):
+            row["patch_date"], row["patch_source"] = d["prefill_date"], d.get("prefill_source", "")
+        row["retest"] = True
+        out.append(row)
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--cve", required=True, type=Path)
@@ -148,16 +178,13 @@ def main(argv=None) -> int:
     for m in a.months:
         r, s = month_rows(cve, m)
         rows += r; stats.append(s)
-    from .decisions import decided_credits, no_fix_rechecks, retest_sample
+    from .decisions import decided_credits, no_fix_rechecks, retest_items
     for r in no_fix_rechecks(a.decisions, a.months[-1]):
         rows.append({"month": r["month"], "slot": r["slot"], "draw_rank": r["rank"], "cve_id": r["cve_id"],
                      "task": "patch_date", "question": f"Re-check: no fix found on {r['checked_on']}. Has the vendor released one?",
                      "patch_date": "", "patch_source": f"no fix yet as of {r['checked_on']}"})
     rows += credit_rows(cve, a.months, decided_credits(a.decisions))
-    rows += [{"month": ",".join(a.months), "slot": "T7", "draw_rank": "", "cve_id": "", "task": "ai_credit",
-              "retest": True, "auto_rule": "", "spot_check": False,
-              "question": "Does this credit say an AI tool took part?", "credit": k, "terms": "", "examples": ""}
-             for k in retest_sample(a.decisions, RETEST_N, seed=",".join(a.months))]
+    rows += retest_rows(cve, retest_items(a.decisions, RETEST_N, seed=",".join(a.months)), a.months)
     if CARRIED:
         print(f"{len(CARRIED)} credit texts carried over from earlier decisions")
     a.out.parent.mkdir(parents=True, exist_ok=True)

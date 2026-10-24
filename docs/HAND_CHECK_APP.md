@@ -18,6 +18,12 @@ After a data run, Claude loads that quarter's review list into the app. Ask Clau
 chat if the list you expect is missing. Pick the list from the **List** menu at the top.
 Practice lists are labelled "not scored".
 
+About 20 items in each quarterly list are earlier decisions shown again, unmarked, to measure
+consistency (`docs/HAND_CHECK.md`). Answer them like any other item; they never change your
+original answer. When loading a list, Claude keeps each review row's `retest` flag on the
+item (not displayed). A second coder's list is loaded as its own batch with `coder` set in
+the batch metadata, so their answers are recorded separately.
+
 ## 2. The screen
 
 - **Progress bar and counts** at the top: items done, done per section, time spent so far,
