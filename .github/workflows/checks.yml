@@ -18,6 +18,9 @@ jobs:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
       - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
       - run: pytest -q
+      - name: Schedule outputs up to date?
+        # docs/ANNUAL_PLAN.md and the calendar feed must match docs/schedule/schedule.yaml.
+        run: python -m snapshot.schedule check
       - name: Diagrams up to date?
         # Warns (never fails) when a file a diagram depends on changed since it was reviewed.
         run: python -m snapshot.diagrams check

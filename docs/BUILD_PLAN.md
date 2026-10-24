@@ -19,7 +19,8 @@ gantt
     Validation fix dates and spot check :milestone, 2026-11-16, 0d
     Data-permission follow-ups          :milestone, 2026-11-20, 0d
     Baseline hand check, 2 sessions     :2026-11-23, 2d
-    Dry run (started by hand)           :milestone, 2026-12-01, 0d
+    Cutover - repo runs the study       :milestone, 2026-11-30, 0d
+    Dry run (Schedule workflow starts it) :milestone, 2026-12-01, 0d
     Dry-run hand check                  :milestone, 2026-12-02, 0d
     Landing page and Discussions        :milestone, 2026-12-04, 0d
 ```
@@ -32,6 +33,7 @@ On GitHub the red line marks today.
 | 24 Oct | Pinned environment: hash-locked requirements, Actions pinned by commit, Python 3.12.15, environment recorded in every manifest; pinned container tested on every push, monthly rebuild check | done 2026-10-24 |
 | 24 Oct | Hand-check reliability: 20 re-shown items a quarter across credits, fix dates and slot c; blinded second-coder sample with agreement scores (second coder lined up with the external reviewer) | done 2026-10-24 |
 | 24 Oct | Statistical review response: companion check beside each label (item 19), interval dates and X13 (item 20), 2027 closing re-run (item 21) | done 2026-10-24; decisions on 21 Dec |
+| 24 Oct | Schedule as code: every action item in `docs/schedule/schedule.yaml`, generated annual plan and shared calendar feed, daily Schedule workflow opening issues and starting dispatched runs; runbook `docs/OPERATIONS.md`; project documents copied to `docs/artifacts/` | done 2026-10-24; cutover 30 Nov |
 | 15 Nov | Reference dates for five validation cases (`prereg/ground_truth_reference.csv`) | done 2026-10-22 |
 | 16 Nov | Validation batch in the Hand Check app: the author records fix dates for the reference CVEs before opening the reference file | batch loaded 2026-10-22; author step 16 Nov |
 | 20 Nov | Cohort draw over real data; `review/baseline.csv` and quarterly review files; `review/decisions.csv` carry-over | builder done (`snapshot.review`); carry-over to do |
