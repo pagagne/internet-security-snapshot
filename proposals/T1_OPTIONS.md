@@ -142,3 +142,17 @@ and the rule that EPSS never selects flaws are unchanged (option d not adopted).
 registered cohort version of T1(a) is reported alongside for four quarters. Logged in
 `prereg/DEVIATIONS.md`; confirmed and frozen at the 21 December session.
 
+
+## Note on the direction of the bounds (2026-10-24)
+Two biases pull the option (a) median in opposite directions, so the previews' wording needs
+a qualifier rather than a change:
+- **Missing dates (why the previews say "at least").** Older CVEs first exploited in the
+  quarter were counted without their publication dates (as "published before 2025"), so the
+  Q2 and Q3 medians (15 and 8 days) are lower bounds. This disappears once option (a) fetches
+  the record of every KEV addition, as planned.
+- **KEV delay (the other way).** KEV lists a flaw after its first exploitation, so days from
+  fix to KEV listing overstate days from fix to first attack. Once every date is fetched, the
+  median is an upper bound, unless quiet fixes released before the advisory are common enough
+  to outweigh the delay. The zero-day share stays a minimum for the same reason.
+Fix and attack dates are to be stored as intervals (`docs/STATISTICAL_REVIEW_2026-10-24.md`,
+point 6), so each published median and share carries both bounds.

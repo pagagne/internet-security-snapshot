@@ -127,10 +127,37 @@ class Manifest:
             "run": self.run,
             "started_at": self.started_at,
             "finished_at": utcnow(),
+            "environment": environment(),
             "files": self.entries,
         }
         path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
         return path
+
+
+def environment() -> dict:
+    """The software a run used, so any published number can be recomputed with the same
+    environment: Python version, the checksum of the hash-locked requirements file, the
+    installed versions of the analysis packages, and the git commit and runner image when
+    run under GitHub Actions."""
+    import os
+    import platform
+    from importlib import metadata
+
+    lock = REPO_ROOT / "requirements.lock"
+    pkgs = {}
+    for name in ("duckdb", "pandas", "numpy", "pyarrow", "scipy", "lifelines", "statsmodels", "ruptures"):
+        try:
+            pkgs[name] = metadata.version(name)
+        except metadata.PackageNotFoundError:
+            pkgs[name] = None
+    return {
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "requirements_lock_sha256": sha256_file(lock) if lock.exists() else None,
+        "packages": pkgs,
+        "git_commit": os.environ.get("GITHUB_SHA"),
+        "runner_image": " ".join(filter(None, (os.environ.get("ImageOS"), os.environ.get("ImageVersion")))) or None,
+    }
 
 
 def utcnow() -> str:

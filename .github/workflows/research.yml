@@ -25,11 +25,11 @@ jobs:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
         with:
-          python-version: "3.12"
-      - run: pip install -e ".[dev]"
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
       - name: Probe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
