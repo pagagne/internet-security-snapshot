@@ -133,3 +133,12 @@ Ways to resolve the overlap on 21 Dec:
 3. **Keep T1 as registered; keep X10 exploratory.** The zero-day share is reported every
    quarter but nothing about the race is scored.
 
+## Decision (author, 23 Oct 2026)
+Resolution 2 above: option (a) is adopted for the median days from fix to first attack,
+measured on every CVE first added to CISA KEV in the quarter (older CVEs included). The
+zero-day share stays exploratory as X10, reported every quarter, and is a promotion
+candidate at the 15 March 2027 review once a year of data shows it is steady. The cohort
+and the rule that EPSS never selects flaws are unchanged (option d not adopted). The
+registered cohort version of T1(a) is reported alongside for four quarters. Logged in
+`prereg/DEVIATIONS.md`; confirmed and frozen at the 21 December session.
+

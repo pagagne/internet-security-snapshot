@@ -113,6 +113,7 @@ measures:
     added: 2026-10-22
     feeds_labels: false
     status: planned
+    note: Kept exploratory by the author's decision of 2026-10-23 (decision items 0 and 7); promotion candidate at the 15 March 2027 review once a year of data shows it is steady.
     method: Share of KEV additions whose first exploitation evidence precedes the vendor fix date. Fix dates come from the cohort hand check for cohort CVEs and from vendor advisory references otherwise; unknown dates are reported as unknown, never guessed.
 
   - id: X11

@@ -37,7 +37,7 @@ flowchart LR
 | Track | Question the report answers | Status |
 |---|---|---|
 | A | Once a fix exists, how fast do exposed systems on the internet get updated? | Waiting for internet scan data |
-| B | How soon are flaws attacked, how old are they, and is the fix usually out first? | Reported now (the "race" measure is decided on 21 Dec) |
+| B | How soon are flaws attacked, how old are they, and is the fix usually out first? | Reported now (race measure decided 23 Oct 2026) |
 | C | How often are flaws found with the help of AI tools? | Reported now |
 | D | Is the number of flaws found rising, and is visible harm rising or falling? | Reported now |
 
@@ -95,7 +95,7 @@ flowchart TD
   B2 --> B3["Dates for each flaw:<br/>made public · fixed · first attacked"]
   B3 --> B4["Report: how soon after<br/>going public are flaws attacked?"]
   B3 --> B5["Report: how old are<br/>the flaws being attacked?"]
-  B3 --> B6["Report: the race:<br/>attacked before or after the fix?<br/><i>(decision on 21 Dec)</i>"]
+  B3 --> B6["Report: the race:<br/>attacked before or after the fix?<br/><i>(days from fix to attack, scored)</i>"]
   classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
   classDef open fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
   class B4,B5 out
@@ -111,9 +111,14 @@ was recorded.
 - **How soon after going public are flaws attacked?** The typical number of days, and the
   share attacked on or before the day the flaw was made public.
 - **How old are the flaws being attacked?** The share of attacks on flaws more than a year old.
-- **The race (decision pending):** the share attacked before any fix existed, and how many
-  days the fix was out before the first attack. Because CISA lists a flaw only once there is
-  guidance for fixing it, these figures are minimums: the true zero-day share is likely higher.
+- **The race (scored):** how many days the fix was out before the first attack, across every
+  newly attacked flaw (adopted 23 Oct 2026; reported next to the registered version for four
+  quarters).
+- **Attacked before any fix existed (exploratory):** the zero-day share, reported every
+  quarter but not yet scored, because one quarter's figure moves by about 7 points either way.
+  It can be promoted at a March review once a year of data shows it is steady. Because CISA
+  lists a flaw only once there is guidance for fixing it, it is a minimum: the true share is
+  likely higher.
 
 ## Track C: was AI involved in finding the flaw?
 
@@ -204,7 +209,7 @@ gantt
     Annual review and change window :milestone, 2027-03-15, 0d
     External reviewer confirmed :milestone, 2027-03-15, 0d
     External review of Q1 2027 :2027-04-03, 2027-04-28
-    Race measure, old and new side by side (if changed on 21 Dec) :2027-01-01, 2027-12-31
+    Race measure, old and new side by side :2027-01-01, 2027-12-31
 ```
 
 | Date | What happens |
@@ -225,25 +230,25 @@ gantt
 | Fri 1 Oct | Q3 2027 provisional report |
 | 4–28 Oct | Hand-check window for Q3 2027 |
 | Mon 1 Nov | Q3 2027 final report |
-| All year | If the race measure is changed on 21 Dec 2026, the old and new versions are reported side by side for four quarters |
+| All year | The new race measure (days from fix to first attack, all newly attacked flaws) is reported side by side with the registered version for four quarters |
 | *Next:* Sat 1 Jan 2028 | Q4 2027 provisional report; first annual check against better reference data follows in March 2028 |
 
 Data is pulled at 06:00 UTC (1 or 2 a.m. US Eastern) on the dates shown; reports are
 built from that pull. Each report is a draft until the author has reviewed it (within two days for a provisional report). A provisional report uses the automatic figures; the hand-checked
 figures (cohort fix dates, unclear AI credits) appear in the final report a month later.
 
-## For the author: decision on the race measure (21 Dec)
+## For the author: decision on the race measure (decided 23 Oct 2026)
 
 ```mermaid
 flowchart TD
-  Q["Decision item 0 (21 Dec)<br/>How should T1(a), the race, be measured?"]
+  Q["Decision item 0, decided 23 Oct 2026<br/>How should T1(a), the race, be measured?"]
   Q --> A1{"Do we need a race number<br/>every quarter?"}
   A1 -- "no, report it as mostly 'no estimate'" --> B["(b) Keep as registered<br/>cohort only · 0.3–0.4 exploited picks a quarter"]
   A1 -- yes --> A2{"Is it acceptable to measure only<br/>flaws that were actually attacked?"}
   A2 -- no --> C["(c) Much larger cohort<br/>~2,000 picks · not practical"]
   A2 -- yes --> A["(a) All flaws first exploited in the quarter<br/>75–100 flaws · zero-day share 16–23% (lower bound)<br/>median at least 8–15 days · flagged fix dates hand-checked"]
   A --> A3{"Also follow attacked flaws end to end<br/>with exposure data (T1b)?"}
-  A3 -- "no" --> AFIN["Adopt (a)<br/>cohort unchanged"]
+  A3 -- "no" --> AFIN["<b>Adopted 23 Oct:</b> (a) for days from fix<br/>to first attack · zero-day share stays<br/>exploratory (X10), review March 2027<br/>cohort unchanged"]
   A3 -- "yes, worth breaking the<br/>'no EPSS in selection' rule" --> AD["Adopt (a+d)<br/>EPSS-weighted draw in slots a–c<br/>2–3 attacked flaws a quarter as described cases<br/>other cohort figures re-weighted"]
   AD --> W["Only pays off once<br/>Shadowserver data arrives"]
   AFIN --> LOG["Log as deviation · run alongside the<br/>registered version for four quarters"]
@@ -254,7 +259,10 @@ flowchart TD
   classDef out fill:#e3effc,stroke:#2a6bb5,color:#123
   classDef weak fill:#f3f3f3,stroke:#888,stroke-dasharray:5 4,color:#444
   class A1,A2,A3 dec
-  class AFIN,AD,A out
+  classDef chosen fill:#e3f5e1,stroke:#2e7d32,stroke-width:2px,color:#123
+  class A out
+  class AFIN chosen
+  class AD weak
   class B,C weak
 ```
 

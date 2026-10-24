@@ -36,7 +36,7 @@ The work runs on four separate tracks, each feeding its own part of the report.
 | Track | What goes in | Question the report answers | Status |
 | --- | --- | --- | --- |
 | A. A fair sample of new serious flaws | Up to 12 flaws a quarter, one per group per month: firewalls and VPNs, web and collaboration software, other internet-facing software, flaws credited to an AI tool | Once a fix exists, how fast do exposed systems on the internet get updated? | Waits for internet scan data |
-| B. Every flaw attackers started using this quarter | Every flaw added for the first time to CISA's list of attacked flaws, typically 75 to 100 | How soon are flaws attacked, how old are they, and is the fix usually out first? | Reported now; the race measure is decided on 21 December |
+| B. Every flaw attackers started using this quarter | Every flaw added for the first time to CISA's list of attacked flaws, typically 75 to 100 | How soon are flaws attacked, how old are they, and is the fix usually out first? | Reported now; race measure decided 23 October 2026 |
 | C. Was AI involved in finding the flaw? | The credits line of every new flaw | What share of new flaws have credits involving AI (an AI tool or an AI lab)? | Reported now |
 | D. Background trends | Count of all new flaws; ransomware leak-site posts; company breach filings | Is flaw discovery rising, and is visible harm rising or falling? | Reported now (leak-site counts once permitted) |
 
@@ -60,7 +60,7 @@ The race starts when a fix is released. Defenders must install it on their syste
 
 It has two halves. The attacker side is how many days pass between the fix and the first recorded attack (negative when the attack came before any fix, a zero-day). The defender side is how fast exposed systems disappear from the internet once the fix is out. The defender side needs internet scan data (Shadowserver), so the attacker side comes first.
 
-**The measurement problem.** As registered, the attacker side was to be measured on the random sample of Track A. But very few serious flaws are ever attacked: in Q3 2026 only 41 of 9,812 eligible flaws (0.42%) reached CISA's list. A back-test on Q2 and Q3 2026 found the sample averages 0.3 to 0.4 attacked flaws a quarter, too few to compute anything. The decision tree below sets out the choice for the 21 December session.
+**The measurement problem.** As registered, the attacker side was to be measured on the random sample of Track A. But very few serious flaws are ever attacked: in Q3 2026 only 41 of 9,812 eligible flaws (0.42%) reached CISA's list. A back-test on Q2 and Q3 2026 found the sample averages 0.3 to 0.4 attacked flaws a quarter, too few to compute anything. The decision tree below set out the choice. **Decided 23 October 2026:** the race is scored on every newly attacked flaw as the number of days from fix to first attack (option a). The share attacked before any fix existed stays exploratory, reported every quarter but not scored, until a year of data shows it is steady; it can be promoted at the March 2027 review. The random sample keeps its other jobs, and the registered version is reported alongside for four quarters.
 
 ![T1 decision tree: three questions lead to options (a), (b), (c) or (a+d)](diagrams/t1_decision.png)
 
@@ -113,7 +113,7 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | Sat 1 May | Q1 2027 final report | Data pulled again, hand checks and the reviewer's comments included | Sources keep updating; a month's wait catches late listings and corrections |
 | Thu 1 Jul, 5–28 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
 | Fri 1 Oct, 4–28 Oct, Mon 1 Nov | Q3 2027 provisional, hand check, final | Third scored quarter; fourth report of the year | Four comparable quarters: enough to see trends |
-| All year | Old and new race measures side by side | Applies only if the race measure changes on 21 December 2026 | A changed rule is shown next to the old one for four quarters, so readers can see what the change did |
+| All year | Old and new race measures side by side | The new race measure (decided 23 October 2026) next to the registered one | A changed rule is shown next to the old one for four quarters, so readers can see what the change did |
 | Sat 1 Jan 2028 | Q4 2027 provisional report | Closes the first full year | Followed in March 2028 by the first check against better reference data |
 
 Hand-check windows run from the 4th to the 28th so the author has as much time as possible; answers are needed by the 28th so the final run on the 1st can use them.
