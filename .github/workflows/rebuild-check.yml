@@ -1,0 +1,57 @@
+name: Rebuild check
+
+# Recomputes the most recent frozen bundle inside the pinned container and fails if any file
+# no longer matches its manifest checksum or any recomputed figure differs from the published
+# one (docs/STATISTICAL_REVIEW_2026-10-24.md, point 8; src/snapshot/rebuild.py).
+on:
+  schedule:
+    # 07:17 UTC on the 10th of each month: after each final run (1st) has been reviewed
+    - cron: "17 7 10 * *"
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Quarterly pull run to check (blank = most recent with a bundle)"
+        required: false
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+
+      - name: Find the bundle
+        id: find
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "${{ inputs.run_id }}" ]; then
+            run="${{ inputs.run_id }}"
+          else
+            run=$(gh api "repos/${{ github.repository }}/actions/artifacts?per_page=100" \
+              --jq '[.artifacts[] | select(.name|startswith("snapshot-")) | select(.expired|not)][0].workflow_run.id')
+          fi
+          if [ -z "$run" ] || [ "$run" = "null" ]; then echo "No unexpired bundle to check." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - name: Download the bundle
+        if: steps.find.outputs.run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download "${{ steps.find.outputs.run }}" -n "snapshot-${{ steps.find.outputs.run }}" -D data/raw
+
+      - name: Build the pinned container
+        if: steps.find.outputs.run
+        run: docker build -t snapshot-env .
+
+      - name: Recompute and compare
+        if: steps.find.outputs.run
+        run: |
+          set -o pipefail
+          bundles=$(cd data/raw && ls -d */*/ | sed 's|^|/data/|')
+          docker run --rm -v "$PWD/data/raw:/data:ro" snapshot-env python -m snapshot.rebuild $bundles | tee report.md
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
