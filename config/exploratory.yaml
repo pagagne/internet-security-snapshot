@@ -133,3 +133,28 @@ measures:
     feeds_labels: false
     status: active
     method: Dated log of open-weight model releases with strong coding or security ability (name, lab, country, licence, size, runs on a laptop). Used only as a timeline for reading changes in other measures.
+
+  - id: X13
+    name: AI-credited versus other serious flaws, whole population
+    question: Do flaws credited to AI tools differ from other serious flaws in severity, bug type and how soon they reach CISA KEV?
+    sources: [cve, kev, nvd]
+    added: 2026-10-24
+    feeds_labels: false
+    status: planned
+    note: >
+      Defined on 2026-10-24, before any result is computed (docs/STATISTICAL_REVIEW_2026-10-24.md,
+      point 9). Replaces the 12-flaw cohort as the evidence for the registered secondary
+      comparison of AI-credited and other CVEs; the registered cohort comparison is still reported.
+    method: >
+      Population: every CVE meeting the cohort eligibility rule (prereg 7.1 items 2 and 3:
+      critical or CVSS >= 8.0, published on the 1st to 25th) in the quarter, backfilled for
+      Q4 2025 to Q3 2026. Groups: AI-credited under the narrow (registered, tool named in a
+      clear role) and headline (any mention) definitions, each reported. (1) Every quarter:
+      CVSS, share allowing remote code execution and root-cause mix, AI-credited versus other,
+      with 90% intervals. (2) Pooled over all quarters to date: Kaplan-Meier time from
+      publication to first KEV listing, censored at 90 days or the evaluation date, with the
+      event count in each group; while the AI-credited group has fewer than 10 events, only the
+      count and an exact 95% upper bound on its 90-day listing rate are reported (Q2-Q3 2026:
+      0 of 102). (3) From 20 events: Cox model with product slot, vendor type, CVSS and root
+      cause, proportional hazards checked with Schoenfeld residuals. Descriptive only: AI tools
+      search different code than attackers target, so no difference is read as an effect of AI.

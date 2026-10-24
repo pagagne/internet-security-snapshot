@@ -36,10 +36,10 @@
    ],
    "fingerprints": {
     "src/snapshot/events.py": "a699c512fd9f1152",
-    "proposals/T1_OPTIONS.md": "ff1072143a1700c3",
+    "proposals/T1_OPTIONS.md": "6a60af85ffc56f08",
     "docs/diagrams/track_b.mmd": "dcb3fc86ebf2ee72"
    },
-   "reviewed_on": "2026-10-23"
+   "reviewed_on": "2026-10-24"
   },
   "track_c": {
    "doc": "docs/EVALUATION_FLOW.md",
@@ -76,10 +76,10 @@
     "proposals/T1_OPTIONS.md"
    ],
    "fingerprints": {
-    "proposals/T1_OPTIONS.md": "ff1072143a1700c3",
+    "proposals/T1_OPTIONS.md": "6a60af85ffc56f08",
     "docs/diagrams/t1_decision.mmd": "728657785d31ba4c"
    },
-   "reviewed_on": "2026-10-23"
+   "reviewed_on": "2026-10-24"
   },
   "calendar_2027": {
    "doc": "docs/EVALUATION_FLOW.md (Calendar for 2027)",
@@ -92,10 +92,10 @@
    "fingerprints": {
     "README.md": "5aa60e431a00a9f5",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
+    ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
     "docs/diagrams/calendar_2027.mmd": "d88f7ff49c0dbb51"
    },
-   "reviewed_on": "2026-10-23"
+   "reviewed_on": "2026-10-24"
   },
   "build_plan": {
    "doc": "docs/BUILD_PLAN.md",
@@ -133,11 +133,11 @@
    ],
    "fingerprints": {
     "docs/PERMISSIONS.md": "3f1ced1165d19414",
-    ".github/workflows/quarterly-pull.yml": "34ff9814480971fa",
+    ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
     "tools/architecture_svg.py": "7cfa07300af7bf8c",
     "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
    },
-   "reviewed_on": "2026-10-23"
+   "reviewed_on": "2026-10-24"
   }
  }
 }
