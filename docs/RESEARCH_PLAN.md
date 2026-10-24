@@ -124,4 +124,8 @@ sources handle them.
     exploitation, which is also why KEV waits.
   - *Cohort:* eligible for October (slot c, "other product", if PHP is judged internet-facing);
     only drawn if the seeded draw picks it.
+  - *Follow-up:* reviewed with the author on 8 Feb 2027, after the pilot's final report (same
+    session as the AI-credit rule evaluation). Claude writes the case note to
+    `docs/cases/php2shell.md` by 3 Feb: what each step recorded, and anything to change before
+    the first scored quarter.
 
