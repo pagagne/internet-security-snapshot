@@ -16,8 +16,9 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 
 ## The schedule is code
 - **Source:** `docs/schedule/schedule.yaml`. Edit it, then run
-  `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md` and the calendar
-  feed `docs/schedule/snapshot.ics`. The Checks workflow fails if you forget.
+  `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
+  feed `docs/schedule/snapshot.ics` and the Schedule table in `README.md` (from the
+  `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
 - **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC. It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never
   duplicate) and starts any `dispatch:` run that has no cron of its own, such as the 1 Dec dry

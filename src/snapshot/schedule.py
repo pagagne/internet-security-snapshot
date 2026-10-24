@@ -26,6 +26,8 @@ from .util import REPO_ROOT
 SOURCE = REPO_ROOT / "docs/schedule/schedule.yaml"
 ICS = REPO_ROOT / "docs/schedule/snapshot.ics"
 PLAN = REPO_ROOT / "docs/ANNUAL_PLAN.md"
+README = REPO_ROOT / "README.md"
+BEGIN, END = "<!-- schedule:begin -->", "<!-- schedule:end -->"
 OWNERS = ("author", "claude", "github")
 OWNER_NAME = {"author": "Author", "claude": "Claude", "github": "GitHub (automatic)"}
 DEFAULT_OPEN = {"author": 2, "claude": 0, "github": 0}
@@ -241,10 +243,57 @@ def act(today: dt.date, dry: bool = False, gh=None) -> list[str]:
     return log
 
 
+def load_milestones(path: Path = SOURCE) -> list[dict]:
+    return yaml.safe_load(path.read_text()).get("milestones") or []
+
+
+def _dates(ds: list[dt.date]) -> str:
+    """1 Dec 2026; 1 Jan / 1 Feb 2027; 21 Dec 2026 / 4 Jan 2027."""
+    if len({d.year for d in ds}) == 1:
+        return " / ".join(f"{d.day} {d:%b}" for d in ds) + f" {ds[0].year}"
+    return " / ".join(f"{d.day} {d:%b %Y}" for d in ds)
+
+
+def readme_table(occ: list[dict], milestones: list[dict]) -> str:
+    by_uid = {o["uid"]: o for o in occ}
+    by_id: dict[str, list[dict]] = {}
+    for o in occ:
+        by_id.setdefault(o["id"], []).append(o)
+    rows = []
+    for m in milestones:
+        if "when" in m:
+            when, key = str(m["when"]), dt.datetime.strptime(str(m["when"]), "%d %b %Y").date()
+        else:
+            ds = []
+            for ref in m["at"]:
+                if ref in by_uid:
+                    ds.append(by_uid[ref]["date"])
+                elif len(by_id.get(ref, [])) == 1:
+                    ds.append(by_id[ref][0]["date"])
+                else:
+                    raise ValueError(f"milestone '{m['text']}': no single occurrence '{ref}'")
+            when, key = m.get("prefix", "") + _dates(ds) + m.get("suffix", ""), ds[0]
+        rows.append((key, f"| {when} | {m['text']} |"))
+    rows.sort(key=lambda r: r[0])
+    return "\n".join(["| Date | Milestone |", "|---|---|", *(r for _, r in rows)])
+
+
+def readme(text: str, table: str) -> str:
+    if BEGIN not in text or END not in text:
+        raise ValueError(f"README.md needs {BEGIN} and {END} around the schedule table")
+    head, rest = text.split(BEGIN, 1)
+    _, tail = rest.split(END, 1)
+    return f"{head}{BEGIN}\n<!-- Generated from docs/schedule/schedule.yaml (milestones); edit there, then run python -m snapshot.schedule build. -->\n{table}\n{END}{tail}"
+
+
 def build() -> tuple[str, str]:
     items = load()
     occ = expand(items)
     return plan(items, occ), ics(occ)
+
+
+def build_readme() -> str:
+    return readme(README.read_text(), readme_table(expand(load()), load_milestones()))
 
 
 def main(argv=None) -> int:
@@ -266,9 +315,11 @@ def main(argv=None) -> int:
     if a.cmd == "build":
         PLAN.write_text(md + "\n")
         ICS.write_bytes(cal.encode())
-        print(f"wrote {PLAN.relative_to(REPO_ROOT)} and {ICS.relative_to(REPO_ROOT)}")
+        README.write_text(build_readme())
+        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the README schedule table")
         return 0
-    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode())) if not p.exists() or p.read_bytes() != want]
+    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (README, build_readme().encode()))
+             if not p.exists() or p.read_bytes() != want]
     if stale:
         print("out of date: " + ", ".join(str(p.relative_to(REPO_ROOT)) for p in stale) + " (run: python -m snapshot.schedule build)")
         return 1

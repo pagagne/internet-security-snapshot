@@ -402,3 +402,35 @@ items:
   utc: true
   minutes: 15
   details: Cron in .github/workflows/rebuild-check.yml; fails visibly if a file or figure differs.
+
+# ---------------------------------------------------------------- README milestones
+# The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule
+# build). Each row takes its date(s) from the items above, so a date changed there changes the
+# README too. `at` lists occurrence ids (item id, or item-id@YYYY-MM-DD for a repeating item);
+# `when` is only for past, fixed facts; `prefix`/`suffix` add words around the dates.
+milestones:
+- when: 20 Oct 2026
+  text: Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82)
+- at: [cutover]
+  text: Cutover - the repository's schedule runs the study (docs/OPERATIONS.md)
+- at: [dry-run]
+  text: Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow)
+- at: [landing-page]
+  text: Public landing page (GitHub Pages) and Discussions opened; project links shared from here on
+- at: [freeze-session]
+  text: Core-freeze decision session (docs/CORE_FREEZE_DECISIONS.md)
+- at: [freeze]
+  text: "Final core freeze: tag core-v1.2, OSF update"
+- at: [pull-provisional@2027-01-01, pull-final@2027-02-01]
+  text: "Q4 2026 pilot: provisional / final"
+- at: [censys]
+  text: Censys research-access application (written by the author)
+- at: [annual-review@2027-03-15]
+  suffix: ", then yearly"
+  text: Annual review and change window; annual check of free numbers from March 2028
+- at: [pull-provisional@2027-04-01, pull-final@2027-05-01]
+  text: "Q1 2027, first scored (confirmatory) quarter: provisional / final; external review 3-28 Apr"
+- at: [pull-final@2028-02-01]
+  text: "Q4 2027 final: last quarter of the first year"
+- at: [closing-rerun]
+  text: 2027 closing re-run with full follow-up

@@ -59,3 +59,10 @@ def test_act_is_idempotent():
     n = len(calls)
     assert S.act(day, gh=gh) == []                 # second run: nothing new
     assert all(c[:2] == ["issue", "list"] for c in calls[n:])
+
+
+def test_readme_schedule_generated():
+    assert S.README.read_text() == S.build_readme(), "run: python -m snapshot.schedule build"
+    table = S.readme_table(S.expand(S.load()), S.load_milestones())
+    assert "| 1 Dec 2026 | Dry run" in table
+    assert "| 1 Jan / 1 Feb 2027 |" in table
