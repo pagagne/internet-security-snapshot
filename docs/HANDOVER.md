@@ -1,5 +1,9 @@
 # Handover: session 1 to the continuing session (24 Oct 2026)
 
+> **Since 24 Oct:** day-to-day work is driven from the repository. Start with
+> `docs/OPERATIONS.md` (how any session picks up work) and `docs/ANNUAL_PLAN.md` (every action
+> item by owner). Dates below are kept for the record; `docs/schedule/schedule.yaml` is current.
+
 From now on, **one Claude session works on this repository, the author's calendar and the
 artifacts below**. This file and the project doc `claude/handover-session-1.md` hold what the
 new session needs. Read this first, then `docs/BUILD_PLAN.md`, `docs/RESEARCH_PLAN.md` and

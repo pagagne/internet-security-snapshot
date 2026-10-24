@@ -1,0 +1,49 @@
+name: Schedule
+
+# Every morning: opens a GitHub issue for each author or Claude action item that falls due
+# (docs/schedule/schedule.yaml), and starts any scheduled run that has no cron of its own
+# (for example the 1 December dry run). Issues are the study's to-do list, readable by the
+# author and by any Claude session, so nothing depends on one chat (docs/OPERATIONS.md).
+on:
+  schedule:
+    - cron: "7 12 * * *"   # 12:07 UTC = 07:07 ET (08:07 in summer)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Pretend today is this date (YYYY-MM-DD); blank = today"
+        required: false
+      dry_run:
+        description: "List what would happen without doing it"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+jobs:
+  act:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create schedule --color 5319e7 --description "Opened by the Schedule workflow" --force
+          gh label create owner:author --color d93f0b --description "For the author" --force
+          gh label create owner:claude --color 0e8a16 --description "For a Claude session" --force
+          gh label create owner:github --color 1d76db --description "Automatic GitHub run" --force
+      - name: Open due issues and start due runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.date }}" ]; then ARGS="$ARGS --date ${{ inputs.date }}"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          python -m snapshot.schedule act $ARGS | tee -a "$GITHUB_STEP_SUMMARY"

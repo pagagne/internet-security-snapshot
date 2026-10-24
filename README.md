@@ -27,17 +27,23 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 
 ## Schedule
 
+<!-- schedule:begin -->
+<!-- Generated from docs/schedule/schedule.yaml (milestones); edit there, then run python -m snapshot.schedule build. -->
 | Date | Milestone |
 |---|---|
 | 20 Oct 2026 | Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82) |
-| 1 Dec 2026 | Dry run on Oct–Nov 2026 data (unscored; started by hand) |
+| 30 Nov 2026 | Cutover - the repository's schedule runs the study (docs/OPERATIONS.md) |
+| 1 Dec 2026 | Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow) |
 | 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |
 | 21 Dec 2026 | Core-freeze decision session (docs/CORE_FREEZE_DECISIONS.md) |
-| by 31 Dec 2026 | Final core freeze: tag core-v1.2, OSF update |
+| 29 Dec 2026 | Final core freeze: tag core-v1.2, OSF update |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
-| Feb 2027 | Censys research-access application (written by the author) |
+| 15 Feb 2027 | Censys research-access application (written by the author) |
 | 15 Mar 2027, then yearly | Annual review and change window; annual check of free numbers from March 2028 |
 | 1 Apr / 1 May 2027 | Q1 2027, first scored (confirmatory) quarter: provisional / final; external review 3-28 Apr |
+| 1 Feb 2028 | Q4 2027 final: last quarter of the first year |
+| 1 Apr 2028 | 2027 closing re-run with full follow-up |
+<!-- schedule:end -->
 
 ## Principles
 
