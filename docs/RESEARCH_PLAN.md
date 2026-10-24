@@ -104,3 +104,24 @@ See `docs/RECONCILIATION_2026-10.md`. Added to this window:
 - Policy-deadline dates (CISA BOD 26-04, CERT-In CISG-2026-02) as exploratory context.
 - Every timing figure names its population (recent CVEs vs all newly exploited flaws).
 
+## Pilot watch cases
+Real cases to follow through the Q4 2026 pilot, to see how the study's rules and free
+sources handle them.
+
+- **PHP2Shell, CVE-2026-109618 and CVE-2026-109619** (PHP, CVSS 9.2, published and fixed
+  21 Oct 2026). Amazon's MadPot honeypots logged an exploit attempt on 17 Oct, four days
+  before disclosure, after details leaked around the embargo
+  ([Implicator](https://www.implicator.ai/amazon-logged-a-php2shell-exploit-attempt-four-days-before-disclosure/),
+  citing the AWS Security Blog). As of 23 Oct: not in CISA KEV; CISA's exploitation flag
+  "none" (21 Oct); CISA, Huntress and the PHP Foundation report no confirmed working
+  exploitation.
+  - *AI credit:* credits are "Ryan at Calif.io", "Wiz", "OpenAI" and PHP developers; OpenAI
+    says frontier AI found the flaws. Counted in the T7 headline (OpenAI is mentioned), not in
+    the narrow count (no tool named): a live example of why both numbers are kept.
+  - *Race:* if CISA lists it later, our first-attack date will be the listing date, after the
+    fix, while Amazon saw an attempt before it. Shows why the zero-day share is a minimum and
+    what honeypot data (Shadowserver, Plan 1) would add. An attempt is not a confirmed
+    exploitation, which is also why KEV waits.
+  - *Cohort:* eligible for October (slot c, "other product", if PHP is judged internet-facing);
+    only drawn if the seeded draw picks it.
+
