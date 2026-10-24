@@ -12,8 +12,9 @@
 # A seeded random sample of auto-accepted texts (spot_check_share, at least
 # spot_check_min) is still shown to the author each quarter. If the author answers "no"
 # to any of them, that pattern is suspended until reviewed.
-version: 1.2   # 1.1 (2026-10-22): 'collaboration' pattern and bare 'with' removed after the author's spot-check review
+version: 1.3   # 1.1 (2026-10-22): 'collaboration' pattern and bare 'with' removed after the author's spot-check review
               # 1.2 (2026-10-23): author's decision: a stated collaboration with an AI tool OR an AI lab counts
+              # 1.3 (2026-10-23): author's decision: any mention of an AI tool or frontier AI lab counts
 
 role_patterns:
   - id: using
@@ -34,6 +35,14 @@ role_patterns:
     regex: '\b(in\s+)?collaborat(ion|ing|ed)\s+with\s+(the\s+)?{term}\b'
   - id: agent
     regex: '\b{term}\s+(agent|agents|code|security agent|autonomous agent)\b'
+  - id: mention
+    # Author's decision 2026-10-23 (v1.3): any mention of an AI tool or a frontier AI lab in the
+    # credits counts as AI involvement, whatever the wording ("of OpenAI", "with Claude").
+    # Checked last, so the more specific patterns above still name the rule where they apply.
+    # Qihoo 360 is a security company, not a frontier lab, and stays with the author.
+    labs_allowed: true
+    exclude_terms: ["Qihoo 360"]
+    regex: '{term}'
 
 send_to_author:
   # wording where the AI tool is the subject of the flaw, not the finder

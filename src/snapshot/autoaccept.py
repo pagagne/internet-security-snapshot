@@ -42,6 +42,8 @@ def auto_accept(credit_text: str, credit_types=(), suspended: frozenset = frozen
         if p["id"] in suspended:
             continue
         for t in (matched if p.get("labs_allowed") else tools):
+            if t in p.get("exclude_terms", []):
+                continue
             rx = p["regex"].replace(r"{term}", _term_rx(t)).replace("\\b" + _term_rx(t), _term_rx(t))
             if re.search(rx, text, re.IGNORECASE):
                 return p["id"]
