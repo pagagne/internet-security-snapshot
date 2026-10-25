@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py", line 191, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py", line 182, in main
+    d = probe(a.start, a.end)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py", line 145, in probe
+    e = euvd().groupby("cve_id", as_index=False).agg(euvd_exploited_since=("euvd_exploited_since", "min"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/util/_decorators.py", line 335, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/frame.py", line 13788, in groupby
+    return DataFrameGroupBy(
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/groupby/groupby.py", line 849, in __init__
+    grouper, exclusions, obj = get_grouper(
+                               ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/groupby/grouper.py", line 925, in get_grouper
+    raise KeyError(gpr)
+KeyError: 'cve_id'
