@@ -17,7 +17,7 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Author | Annual review and change window | day 15, Mar, 2027-03 to 2030-03, 11:00 ET |
 | External reviewer | Second coder - 20 blinded items | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 (14 days) |
 | Claude | Draft the provisional evaluation; load the hand-check lists | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
-| Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
+| Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
 | Claude | Score the second coder's sheet; publish agreement | day 13, Feb, May, Aug, Nov, 2027-05 to 2028-02 |
 | Claude | Draft the annual check against reference data (previous year) | day 1, Mar, 2029-03 to 2030-03 |
@@ -66,7 +66,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 12 Jan 2027, 10:00 ET | Paul | Line up the external reviewer and second coder |
 | Wed 20 Jan 2027 | Claude | Build the figure worksheets for the reviewer's spot check |
 | Mon 25 Jan 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
-| Fri 29 Jan 2027 | Claude | Send the second coder this quarter's blinded sample |
 | Mon 01 Feb 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
 | Mon 01 Feb 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Tue 02 Feb 2027, 10:00 ET | Paul | Final-run check and approve the final results |

@@ -32,3 +32,11 @@ def test_sample_in_repo_is_consistent():
     inp = pd.read_csv(d / "inputs.csv", dtype=str)
     days = (pd.to_datetime(inp["attack_date_kev_added"]) - pd.to_datetime(inp["fix_date"])).dt.days
     assert f"**{float(np.median(days)):g}**" in (d / "README.md").read_text()
+
+
+def test_desk_copy_of_sample_inputs_matches_repo_sample():
+    """site/reviewer serves its own copy of the sample inputs (GitHub Pages publishes only site/)."""
+    from snapshot.util import REPO_ROOT
+    a = (REPO_ROOT / "site/reviewer/worksheets/race-sample/inputs.csv").read_bytes()
+    b = (REPO_ROOT / "docs/reviewer/sample-worksheet/inputs.csv").read_bytes()
+    assert a == b, "copy docs/reviewer/sample-worksheet/inputs.csv to site/reviewer/worksheets/race-sample/"

@@ -459,20 +459,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAnything still open on the 28th i
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:second-coder-sample@2027-01-29@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270129
-DTEND;VALUE=DATE:20270130
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
- ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
-  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
- le/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:final-summary@2027-02-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270201
@@ -840,9 +826,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
 DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
-  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
- le/schedule.yaml
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1024,9 +1011,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
 DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
-  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
- le/schedule.yaml
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1194,9 +1182,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
 DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
-  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
- le/schedule.yaml
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1364,9 +1353,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
 DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
-  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
- le/schedule.yaml
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

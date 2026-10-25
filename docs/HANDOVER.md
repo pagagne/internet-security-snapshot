@@ -35,7 +35,11 @@ new session needs. Read this first, then `docs/BUILD_PLAN.md`, `docs/RESEARCH_PL
 | Is AI Cleaning Up the Internet? (the October assessment) | https://claude.ai/artifact/MW5YmRTzi4VZpqmYhAibMG | Reconciled in `docs/RECONCILIATION_2026-10.md`. |
 | AI and the Internet's Security Posture: Combined Report | https://claude.ai/artifact/FFMzZZivpEHetjQefrQGgL | Not updated since 18 Oct. |
 
-## Calendar (author's Google Calendar, all titled "Snapshot: ...")
+## Calendar (as of the handover; superseded)
+
+> Since 24 Oct the calendar is the subscribed feed generated from `docs/schedule/schedule.yaml`;
+> the hand-made events listed below were removed. Kept for the record.
+
 12 Nov research review (includes the decision on race hand-check effort) · 16 Nov validation ·
 20 Nov permission follow-ups · 23-24 Nov baseline hand check · 1 Dec dry run · 2 Dec dry-run hand
 check · 3 Dec move the pull into the container (added by the other session) · 4 Dec landing page,

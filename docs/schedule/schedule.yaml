@@ -408,10 +408,12 @@ items:
 - id: second-coder-sample
   owner: claude
   title: Send the second coder this quarter's blinded sample
-  repeat: {months: [1, 4, 7, 10], day: 29, from: 2027-01, until: 2028-01}
+  repeat: {months: [1, 4, 7, 10], day: 29, from: 2027-04, until: 2028-01}
+  feeds: [reviewer]
   details: >
-    python -m snapshot.agreement sample --batch <quarter>; give the coder the sheet (not the
-    weights file); score it when returned (snapshot.agreement score).
+    python -m snapshot.agreement sample --batch <quarter>; send the coder the sheet (not the
+    weights file), which they open in the Reviewer's Desk; scored on the 13th of the next month
+    (second-coder-score). The pilot quarter's sheet is the practice round (2 Mar 2027).
 
 - id: pull-final
   owner: github

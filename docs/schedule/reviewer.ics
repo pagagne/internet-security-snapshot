@@ -135,6 +135,21 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
+UID:second-coder-sample@2027-04-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270430
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
+ ple
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:review-publish@2027-05-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270501
@@ -162,6 +177,21 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
+UID:second-coder-sample@2027-07-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270729
+DTEND;VALUE=DATE:20270730
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
+ ple
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:reviewer-second-coder@2027-10-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271029
@@ -175,6 +205,21 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
+UID:second-coder-sample@2027-10-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271030
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
+ ple
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:reviewer-second-coder@2028-01-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20280129
@@ -186,6 +231,21 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
  s cover each case. Your answers never change his\; they measure agreement\
  , published each quarter.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:second-coder-sample@2028-01-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280129
+DTEND;VALUE=DATE:20280130
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
+ ple
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
+  which they open in the Reviewer's Desk\; scored on the 13th of the next m
+ onth (second-coder-score). The pilot quarter's sheet is the practice round
+  (2 Mar 2027).\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-annual-check@2028-03-02@internet-security-snapshot

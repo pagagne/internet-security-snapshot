@@ -66,8 +66,9 @@ confirm (1 Mar 2027); it subscribes the same way:
 `https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/docs/schedule/reviewer.ics`
 (Google: [add with one click](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2Fpagagne%2Finternet-security-snapshot%2Fmain%2Fdocs%2Fschedule%2Freviewer.ics); Outlook and Apple Calendar: "subscribe from web" with the URL).
 It names no one: the reviewer's name, email and phone never go in the repository.
-The older hand-made "Snapshot: ..." events in the author's own calendar can be deleted after
-subscribing; the feed has them all.
+The author subscribed on 24 Oct 2026, and the older hand-made "Snapshot: ..." events were
+removed from the author's own calendar the same day (all of them are in the feed). Add new
+dates to the schedule file, never as hand-made calendar events, so the calendars cannot drift.
 
 ## How a Claude session picks up work
 (In a Claude session GitHub's GraphQL API is blocked, so use `gh api` REST calls rather than
@@ -98,7 +99,7 @@ confirms it can see the queue; the original chat's check-ins handle 26 Oct, 20 N
 
 ## Cutover checklist (30 Nov 2026; issue opens that day)
 - [ ] Schedule workflow green for 7 days in a row.
-- [ ] Author subscribed to the calendar feed.
+- [x] Author subscribed to the calendar feed (24 Oct 2026).
 - [ ] Claude work-queue task live and has confirmed it can see the queue.
 - [ ] This file current.
 - [ ] Remaining one-off check-ins in the original chat retired.
