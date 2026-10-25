@@ -1,0 +1,25 @@
+# KEV lag probe
+
+KEV additions in window: 246
+
+| Source | KEV additions covered | dated before KEV | median days before KEV (when before) |
+|---|---|---|---|
+| euvd_exploited_since | 246 | 10 | 4.5 |
+| p0_discovered | 0 | 0 | - |
+| itw_first_report | 9 | 9 | 2643.0 |
+| earliest_other | 246 | 19 | 69.0 |
+
+Notes:
+- euvd variant search?exploited=true&page={p}&size=100: 200 '{"items":[{"id":"EUVD-2026-100274","enisaUuid":"2fef80fc-8113-3efa-aa67-4b4ac56aadbf","description":"Improper neutraliza'
+- euvd first bytes: {"items":[{"id":"EUVD-2026-100274","enisaUuid":"2fef80fc-8113-3efa-aa67-4b4ac56aadbf","description":"Improper neutralization of special elements used in a command (\u0027command injection\u0027) in Windows Shell allows an unauthorized attacker to bypass a security feature over a network.","datePubli
+- euvd response type dict; total 1772
+- euvd exploitedSince most common values: 2021-11-03: 287; 2022-03-03: 95; 2022-03-25: 66; 2022-06-08: 35; 2022-05-25: 34
+- euvd exploited entries: 1772, with CVE aliases: 1772
+- p0 tabs found: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', 'All', 'Introduction']
+- p0 columns: ['CVE', 'Vendor', 'Product', 'Type', 'Description', 'Date Discovered', 'Date Patched', 'Advisory', 'Analysis URL', 'Root Cause Analysis', 'Reported By', 'tab']; rows 184; per tab {'2023': 80, '2025': 43, '2024': 36, '2026': 25}
+- p0 sample CVE values (2026 tab): ['CVE-2026-20805', 'CVE-2026-21509', 'CVE-2026-21510', 'CVE-2026-21513', 'CVE-2026-21514']
+- p0 sample dates: discovered ['???', '???', '???', '???'], patched ['2026-01-13', '2026-01-26', '2026-02-10', '2026-02-10']
+- inthewild tables: {'_litestream_seq': ['id', 'seq'], '_litestream_lock': ['id'], 'exploits': ['id', 'referenceURL', 'timeStamp', 'source', 'type'], 'vulns': ['id', 'referenceURL', 'description', 'lastUpdated']}
+- inthewild types: {"exploit": 100433, "exploitation": 3082}
+- inthewild exploitation reports: latest 2024-12-30 00:00:00, in 2026: 0, in 2025: 0
+- p0 CVEs (2023+) also in this KEV window: 24
