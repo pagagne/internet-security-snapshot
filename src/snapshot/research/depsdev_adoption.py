@@ -8,6 +8,7 @@ of today only (history needs deps.dev's BigQuery tables). Research only.
 from __future__ import annotations
 
 import argparse
+import os
 import time
 from pathlib import Path
 from urllib.parse import quote
@@ -30,6 +31,20 @@ def _json(url):
         return None
 
 
+GH = {"User-Agent": UA, "Accept": "application/vnd.github+json"}
+if os.environ.get("GITHUB_TOKEN"):
+    GH["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+
+
+def ghsa_ids(cve: str) -> list[str]:
+    try:
+        r = requests.get(f"https://api.github.com/advisories?cve_id={cve}", headers=GH, timeout=40)
+        time.sleep(0.3)
+        return [a["ghsa_id"] for a in r.json()] if r.ok else []
+    except (requests.RequestException, ValueError, KeyError, TypeError):
+        return []
+
+
 def dependents(system, name, version):
     j = _json(f"https://api.deps.dev/v3alpha/systems/{system}/packages/{quote(name, safe='')}/versions/{quote(version, safe='')}:dependents")
     return (j or {}).get("dependentCount")
@@ -40,10 +55,8 @@ def probe(start, end, max_versions=150) -> pd.DataFrame:
     kev = kev[(kev["dateAdded"] >= start) & (kev["dateAdded"] <= end)]
     rows = []
     for k in kev.itertuples():
-        osv = _json(f"https://api.osv.dev/v1/vulns/{k.cveID}")
-        if not osv:
-            continue
-        for a in osv.get("affected") or []:
+        recs = [r for r in (_json(f"https://api.osv.dev/v1/vulns/{g}") for g in ghsa_ids(k.cveID)) if r]
+        for a in (a for osv in recs for a in osv.get("affected") or []):
             pkg = a.get("package") or {}
             system = SYS.get(pkg.get("ecosystem", ""))
             if not system:

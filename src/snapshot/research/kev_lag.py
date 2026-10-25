@@ -26,7 +26,13 @@ import requests
 from ..collect.http import UA
 
 KEV_URL = "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
-EUVD = "https://euvdservices.enisa.europa.eu/api/vulnerabilities?exploited=true&page={p}&size=100"
+EUVD_VARIANTS = [
+    "https://euvdservices.enisa.europa.eu/api/search?exploited=true&page={p}&size=100",
+    "https://euvdservices.enisa.europa.eu/api/vulnerabilities?exploited=true&fromScore=0&toScore=10&page={p}&size=100",
+    "https://euvdservices.enisa.europa.eu/api/vulnerabilities?exploited=1&page={p}&size=100",
+    "https://euvdservices.enisa.europa.eu/api/exploitedvulnerabilities?page={p}&size=100",
+]
+EUVD = EUVD_VARIANTS[0]
 P0_ID = "1lkNJ0uQwbeC1ZTRrxdtuPLCIl7mlUreoKfSIgajnSyY"
 ITW_DB = "https://pub-4c1eae2a180542b19ea7c88f1e4ccf07.r2.dev/inthewild.db"
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,7}", re.I)
@@ -42,7 +48,21 @@ def _get(url, **kw):
         return None
 
 
+def _pick_euvd():
+    global EUVD
+    for v in EUVD_VARIANTS:
+        try:
+            r = requests.get(v.format(p=0), headers={"User-Agent": UA, "Accept": "application/json"}, timeout=60)
+            NOTES.append(f"euvd variant {v.split('/api/')[1][:60]}: {r.status_code} {r.text[:120]!r}")
+            if r.ok and r.text.strip().startswith(("{", "[")):
+                EUVD = v
+                return
+        except requests.RequestException as e:
+            NOTES.append(f"euvd variant error {type(e).__name__}")
+
+
 def euvd() -> pd.DataFrame:
+    _pick_euvd()
     rows, seen = [], set()
     for p in range(0, 200):
         r = _get(EUVD.format(p=p))
@@ -107,9 +127,12 @@ def p0() -> pd.DataFrame:
     NOTES.append(f"p0 columns: {list(t.columns)[:14]}; rows {len(t)}; per tab {t['tab'].value_counts().to_dict()}")
     if cve_col:
         NOTES.append(f"p0 sample CVE values (2026 tab): {t.loc[t['tab'] == '2026', cve_col].head(5).tolist()}")
+    if disc:
+        NOTES.append(f"p0 sample dates: discovered {t[disc].dropna().head(4).tolist()}, patched {t[patch].dropna().head(4).tolist() if patch else None}")
+    pdate = lambda col: pd.to_datetime(t[col].astype(str).str.strip(), errors="coerce", format="mixed") if col else pd.NaT
     out = pd.DataFrame({"cve_id": t[cve_col].str.upper().str.strip() if cve_col else None,
-                        "p0_discovered": pd.to_datetime(t[disc], errors="coerce") if disc else pd.NaT,
-                        "p0_patched": pd.to_datetime(t[patch], errors="coerce") if patch else pd.NaT,
+                        "p0_discovered": pdate(disc),
+                        "p0_patched": pdate(patch),
                         "p0_tab": t["tab"]})
     return out.dropna(subset=["cve_id"])
 
