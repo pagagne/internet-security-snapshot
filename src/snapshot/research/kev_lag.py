@@ -26,7 +26,7 @@ import requests
 from ..collect.http import UA
 
 KEV_URL = "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json"
-EUVD = "https://euvdservices.enisa.europa.eu/api/exploitedvulnerabilities?page={p}&size=100"
+EUVD = "https://euvdservices.enisa.europa.eu/api/vulnerabilities?exploited=true&page={p}&size=100"
 P0_ID = "1lkNJ0uQwbeC1ZTRrxdtuPLCIl7mlUreoKfSIgajnSyY"
 ITW_DB = "https://pub-4c1eae2a180542b19ea7c88f1e4ccf07.r2.dev/inthewild.db"
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,7}", re.I)
@@ -49,6 +49,8 @@ def euvd() -> pd.DataFrame:
         if r is None:
             NOTES.append(f"euvd page {p} failed"); break
         items = r.json()
+        if p == 0:
+            NOTES.append(f"euvd response type {type(items).__name__}; total {items.get('total') if isinstance(items, dict) else len(items)}")
         items = items.get("items", items) if isinstance(items, dict) else items
         if not items:
             break
@@ -100,7 +102,9 @@ def p0() -> pd.DataFrame:
     cve_col = next((c for c in t.columns if "cve" in c.lower()), None)
     disc = next((c for c in t.columns if "discover" in c.lower()), None)
     patch = next((c for c in t.columns if "patch" in c.lower()), None)
-    NOTES.append(f"p0 columns: {list(t.columns)[:14]}; rows {len(t)}")
+    NOTES.append(f"p0 columns: {list(t.columns)[:14]}; rows {len(t)}; per tab {t['tab'].value_counts().to_dict()}")
+    if cve_col:
+        NOTES.append(f"p0 sample CVE values (2026 tab): {t.loc[t['tab'] == '2026', cve_col].head(5).tolist()}")
     out = pd.DataFrame({"cve_id": t[cve_col].str.upper().str.strip() if cve_col else None,
                         "p0_discovered": pd.to_datetime(t[disc], errors="coerce") if disc else pd.NaT,
                         "p0_patched": pd.to_datetime(t[patch], errors="coerce") if patch else pd.NaT,
@@ -128,6 +132,7 @@ def itw() -> pd.DataFrame:
     NOTES.append("inthewild types: " + json.dumps(d["type"].value_counts().head(5).to_dict()))
     d = d[d["type"].str.lower().str.contains("exploitation", na=False)]
     d["ts"] = pd.to_datetime(d["ts"], errors="coerce", utc=True).dt.tz_localize(None)
+    NOTES.append(f"inthewild exploitation reports: latest {d['ts'].max()}, in 2026: {int((d['ts'].dt.year == 2026).sum())}, in 2025: {int((d['ts'].dt.year == 2025).sum())}")
     d["cve_id"] = d["cve_id"].str.upper()
     return d.groupby("cve_id", as_index=False)["ts"].min().rename(columns={"ts": "itw_first_report"})
 
@@ -149,6 +154,8 @@ def probe(start, end) -> pd.DataFrame:
     ev = [c for c in ("euvd_exploited_since", "p0_discovered", "itw_first_report") if c in d]
     d["earliest_other"] = d[ev].min(axis=1)
     d["days_before_kev"] = (d["kev_added"] - d["earliest_other"]).dt.days
+    if len(pz):
+        NOTES.append(f"p0 CVEs (2023+) also in this KEV window: {int(d['cve_id'].isin(set(pz['cve_id'])).sum())}")
     return d
 
 
