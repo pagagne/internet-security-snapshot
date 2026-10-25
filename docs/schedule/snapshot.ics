@@ -402,10 +402,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270112T150000Z
 DTEND:20270112T160000Z
 SUMMARY:[Paul] Snapshot: Line up the external reviewer and second coder
-DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (claude.ai do
- c "Invitation: Independent Reviewer")\; candidates from the 21 Dec shortli
- st. The second coder can be the same person. Confirm by 1 March.\n\nSource
- : docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (docs/reviewe
+ r/INVITATION.md\; edit the claude.ai doc "Invitation: Independent Reviewer
+ ")\; candidates from the 21 Dec shortlist. The second coder can be the sam
+ e person. Confirm by 1 March.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

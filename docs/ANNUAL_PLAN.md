@@ -168,7 +168,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 21 Dec 2026, 10:00 ET | Core-freeze decision session | docs/CORE_FREEZE_DECISIONS.md items 0-21 (confirm 0, 7, 12; decide 1-3, 9-11, 13-21, including the companion label check, X13 and hand-check reliability, the 2028 closing re-run). Any source without a written yes runs without it for the pilot. |
 | Tue 29 Dec 2026, 10:00 ET | Freeze the core (core-v1.2) and update OSF | Publish release core-v1.2 on GitHub; file the OSF update (Claude gives you the text). |
 | Mon 04 Jan 2027 | Post the reviewer ad; email statistics department coordinators | On each approved board (UGA first); applications close 15 Feb. |
-| Tue 12 Jan 2027, 10:00 ET | Line up the external reviewer and second coder | Send the invitation (claude.ai doc "Invitation: Independent Reviewer"); candidates from the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March. |
+| Tue 12 Jan 2027, 10:00 ET | Line up the external reviewer and second coder | Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer"); candidates from the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March. |
 | Mon 08 Feb 2027, 10:00 ET | Evaluate the AI-credit rule on pilot data; PHP2Shell case | Outcome goes to the 15 March review. |
 | Mon 15 Feb 2027 | Reviewer applications close; schedule calls | Calls with finalists 16-26 Feb, with the three-item fix-date trial. |
 | Mon 15 Feb 2027, 10:00 ET | Write the Censys research-access application | In your own words (Censys rejects AI-written requests). Claude can list the facts to cover. |

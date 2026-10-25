@@ -16,9 +16,7 @@ When one changes, change the other in the same session (`docs/OPERATIONS.md`).
 | `docs/ANNUAL_PLAN.md` | Claude project doc `claude/annual-plan.md` | Regenerated from `docs/schedule/schedule.yaml`; re-upload after changes |
 | `docs/OPERATIONS.md` | Claude project doc `claude/operations.md` | Re-upload after changes |
 | `docs/HANDOVER.md` | Claude project doc `claude/handover-session-1.md` | Re-upload after changes |
+| `docs/reviewer/INVITATION.md` | [Invitation: Independent Reviewer](https://claude.ai/artifact/VJaEuiADo22MGeEGadAGnm) | Edited in the doc; re-export here (no personal details in the repository copy) |
 | `apps/hand-check.html` | [Snapshot Hand Check app](https://claude.ai/artifact/C5bsQdxdWcrM9tNTJfY5CB) | Edit the file, `read` the artifact, republish; answers stay in the app's database |
-
-Not in the repository (the repository is public): the reviewer invitation letter, which is a
-personal letter. It is kept as a Claude artifact only.
 
 Exports were made on 24 Oct 2026 and checked for keys, tokens and private data before commit.

@@ -244,7 +244,7 @@ items:
   time: "10:00"
   minutes: 60
   details: >
-    Send the invitation (claude.ai doc "Invitation: Independent Reviewer"); candidates from
+    Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer"); candidates from
     the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March.
 
 - id: ai-rule-prep
