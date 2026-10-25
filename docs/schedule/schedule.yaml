@@ -306,9 +306,9 @@ items:
   days: 26
   details: >
     About 8-12 hours. Read the provisional Q1 2027 report against the registered plan and the
-    deviations log; check that each headline figure is computed as the plan defines it (read
-    the code, or recompute a few numbers from the data bundle); look at the sample of hand
-    decisions and their written rules. Send a short written review (two to five pages: what
+    deviations log; spot-check three headline figures drawn at random (from a seed you choose)
+    plus any you pick, recomputing each from its worksheet in a spreadsheet (no programming
+    needed); look at the sample of hand decisions and their written rules. Send a short written review (two to five pages: what
     holds up, what doesn't, what you'd change) by 28 April. The window can move a week or two
     if needed; publication is 1 May.
 
@@ -419,6 +419,18 @@ items:
 # Reviewer"), plus the author and Claude tasks around it. Reviewer items are not GitHub
 # issues (the reviewer is not a repository member); they are in the reviewer's own feed,
 # docs/schedule/reviewer.ics, and the author/Claude items around them open issues as usual.
+- id: reviewer-worksheets
+  owner: claude
+  title: Build the figure worksheets for the reviewer's spot check
+  date: 2027-01-20
+  details: >
+    A worksheet per headline figure (T1-T7), generated with every release: the plan's
+    definition in plain words, the inputs as a CSV a spreadsheet opens, the steps from inputs
+    to figure, and the published value to match. Plus a seeded draw that picks three figures
+    from a seed the reviewer gives. Test on the Q4 2026 pilot (provisional 1 Jan) so a
+    worksheet can be tried in the practice round. Check that each worksheet can be followed in
+    a spreadsheet with no code.
+
 - id: reviewer-credit
   owner: claude
   title: Record the confirmed reviewer
@@ -482,8 +494,10 @@ items:
   feeds: [reviewer]
   details: >
     Once the provisional Q1 2027 report is approved: links to the report, the registered plan,
-    prereg/DEVIATIONS.md, the data bundle and the exact code commit; the sample of hand
-    decisions with their rules; a short review template (holds up / doesn't / would change).
+    prereg/DEVIATIONS.md, the data bundle and the exact code commit; the worksheet for every
+    headline figure; the sample of hand decisions with their rules; a short review template
+    (holds up / doesn't / would change). Ask the reviewer for a seed number and run the
+    spot-check draw with it (three figures); send them the result. Never choose the figures.
 
 - id: reviewer-check-in
   owner: author

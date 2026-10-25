@@ -83,9 +83,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the reviewer the Q1 2027 review packet
 DESCRIPTION:Responsible: Claude (claude)\n\nOnce the provisional Q1 2027 re
  port is approved: links to the report\, the registered plan\, prereg/DEVIA
- TIONS.md\, the data bundle and the exact code commit\; the sample of hand 
- decisions with their rules\; a short review template (holds up / doesn't /
-  would change).\n\nSource: docs/schedule/schedule.yaml
+ TIONS.md\, the data bundle and the exact code commit\; the worksheet for e
+ very headline figure\; the sample of hand decisions with their rules\; a s
+ hort review template (holds up / doesn't / would change). Ask the reviewer
+  for a seed number and run the spot-check draw with it (three figures)\; s
+ end them the result. Never choose the figures.\n\nSource: docs/schedule/sc
+ hedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -98,12 +101,13 @@ SUMMARY:[Reviewer] Snapshot: Independent review of the Q1 2027 provisional
  report
 DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 8-12 hours. 
  Read the provisional Q1 2027 report against the registered plan and the de
- viations log\; check that each headline figure is computed as the plan def
- ines it (read the code\, or recompute a few numbers from the data bundle)\
- ; look at the sample of hand decisions and their written rules. Send a sho
- rt written review (two to five pages: what holds up\, what doesn't\, what 
- you'd change) by 28 April. The window can move a week or two if needed\; p
- ublication is 1 May.\n\nSource: docs/schedule/schedule.yaml
+ viations log\; spot-check three headline figures drawn at random (from a s
+ eed you choose) plus any you pick\, recomputing each from its worksheet in
+  a spreadsheet (no programming needed)\; look at the sample of hand decisi
+ ons and their written rules. Send a short written review (two to five page
+ s: what holds up\, what doesn't\, what you'd change) by 28 April. The wind
+ ow can move a week or two if needed\; publication is 1 May.\n\nSource: doc
+ s/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
