@@ -48,6 +48,8 @@ def euvd() -> pd.DataFrame:
         r = _get(EUVD.format(p=p))
         if r is None:
             NOTES.append(f"euvd page {p} failed"); break
+        if p == 0:
+            NOTES.append("euvd first bytes: " + r.text[:300].replace("\n", " "))
         items = r.json()
         if p == 0:
             NOTES.append(f"euvd response type {type(items).__name__}; total {items.get('total') if isinstance(items, dict) else len(items)}")
@@ -66,7 +68,7 @@ def euvd() -> pd.DataFrame:
         if new == 0:
             break
         time.sleep(0.5)
-    d = pd.DataFrame(rows)
+    d = pd.DataFrame(rows, columns=["cve_id", "euvd_id", "euvd_exploited_since", "euvd_published"])
     if len(d):
         d["euvd_exploited_since"] = pd.to_datetime(d["euvd_exploited_since"], errors="coerce", format="mixed")
         top = d["euvd_exploited_since"].value_counts().head(5)
