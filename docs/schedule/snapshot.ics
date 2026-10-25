@@ -32,10 +32,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Monthly honeypot capture (SANS ISC)\, aggregates
   only - built
 DESCRIPTION:Responsible: Claude (claude)\n\nBuilt and first run 25 Oct (exp
- loratory X14\, context only\; .github/workflows/honeypot.yml\, first Sunda
- y of each month\; data/isc-honeypot/ on run-reports\, about 40 KB a captur
- e). First capture: 10.2 million URLs\, 304 attack categories\, 241 CVEs.\n
- \nSource: docs/schedule/schedule.yaml
+ loratory X14\, context only\; .github/workflows/honeypot.yml\, 2nd of each
+  month\; data/isc-honeypot/ on run-reports\, about 40 KB a capture). First
+  capture: 10.2 million URLs\, 304 attack categories\, 241 CVEs.\n\nSource:
+  docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

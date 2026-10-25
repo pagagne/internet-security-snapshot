@@ -8,7 +8,7 @@ name: Honeypot capture
 # Storm Center, https://isc.sans.edu (attribution required, no reselling).
 on:
   schedule:
-    - cron: "43 9 1-7 * 0"   # first Sunday of each month, 09:43 UTC, after ISC's daily update
+    - cron: "43 9 2 * *"   # the 2nd of each month, 09:43 UTC, after ISC's daily update (one cron field only: day-of-month and day-of-week together would mean either)
   workflow_dispatch:
 
 permissions:
