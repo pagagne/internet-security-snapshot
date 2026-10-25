@@ -4,11 +4,12 @@ From the **cutover on Mon 30 Nov 2026**, everything the annual study needs lives
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
 person, can pick up the work from the files and issues below.
 
-## The three kinds of work
+## The four kinds of work
 
 | Who | Where it comes from | How it is tracked |
 |---|---|---|
 | **Author** | `docs/schedule/schedule.yaml` (`owner: author`) | Shared calendar feed; a GitHub issue labelled `owner:author` opens two days before |
+| **External reviewer** | `docs/schedule/schedule.yaml` (`owner: reviewer`) | The reviewer's own calendar feed (below); no GitHub issues, since the reviewer is not a repository member. The author and Claude items around each reviewer task open issues as usual |
 | **Claude** | `docs/schedule/schedule.yaml` (`owner: claude`) | A GitHub issue labelled `owner:claude` opens on the day; the daily Claude work-queue task picks it up |
 | **GitHub (automatic)** | Workflow crons, plus `dispatch:` items in the schedule | Actions tab; dispatched runs leave a closed `owner:github` issue as a record |
 
@@ -17,7 +18,7 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 ## The schedule is code
 - **Source:** `docs/schedule/schedule.yaml`. Edit it, then run
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
-  feed `docs/schedule/snapshot.ics` and the Schedule table in `README.md` (from the
+  feeds `docs/schedule/snapshot.ics` and `docs/schedule/reviewer.ics` and the Schedule table in `README.md` (from the
   `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
 - **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC. It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never
@@ -36,7 +37,14 @@ subscribed calendars every few hours to a day):
 Google Calendar › **Other calendars** › **+** › **From URL** ›
 `https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/docs/schedule/snapshot.ics`
 
-Every entry says who does it (Author, Claude or GitHub) in its description and category.
+Every entry says who does it (Author, External reviewer, Claude or GitHub) in its description and category.
+
+**The external reviewer's feed** holds only the reviewer's tasks and the author/Claude items
+they depend on (onboarding call, review packet, publication). Send it to the reviewer once they
+confirm (1 Mar 2027); it subscribes the same way:
+`https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/docs/schedule/reviewer.ics`
+(Google: [add with one click](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2Fpagagne%2Finternet-security-snapshot%2Fmain%2Fdocs%2Fschedule%2Freviewer.ics); Outlook and Apple Calendar: "subscribe from web" with the URL).
+It names no one: the reviewer's name, email and phone never go in the repository.
 The older hand-made "Snapshot: ..." events in the author's own calendar can be deleted after
 subscribing; the feed has them all.
 

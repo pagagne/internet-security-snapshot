@@ -66,3 +66,12 @@ def test_readme_schedule_generated():
     table = S.readme_table(S.expand(S.load()), S.load_milestones())
     assert "| 1 Dec 2026 | Dry run" in table
     assert "| 1 Jan / 1 Feb 2027 |" in table
+
+
+def test_reviewer_feed_and_no_reviewer_issues():
+    occ = S.expand(S.load())
+    rev = S.reviewer_occ(occ)
+    assert rev and all(o["owner"] == "reviewer" or "reviewer" in o["feeds"] for o in rev)
+    assert S.REVIEWER_ICS.read_text().count("BEGIN:VEVENT") == len(rev)
+    for day in (dt.date(2027, 4, 3), dt.date(2027, 4, 29)):
+        assert not any(o["owner"] == "reviewer" for o in S.due(occ, day)["issues"])

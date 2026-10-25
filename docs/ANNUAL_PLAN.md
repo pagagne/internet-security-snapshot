@@ -13,9 +13,11 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Author | Hand-check answers due by the 28th | day 25, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 10:00 ET |
 | Author | Final-run check and approve the final results | day 2, Feb, May, Aug, Nov, 2027-02 to 2028-02, 10:00 ET |
 | Author | Annual review and change window | day 15, Mar, 2027-03 to 2028-03, 11:00 ET |
+| External reviewer | Second coder - 20 blinded items | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 (14 days) |
 | Claude | Draft the provisional evaluation; load the hand-check lists | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
+| Claude | Score the second coder's sheet; publish agreement | day 13, Feb, May, Aug, Nov, 2027-05 to 2028-02 |
 | GitHub (automatic) | Quarterly pull, provisional run | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 06:00 UTC |
 | GitHub (automatic) | Rebuild check of the latest frozen bundle | day 10, every month, 2026-11 to 2028-04, 07:17 UTC |
 | GitHub (automatic) | Quarterly pull, final run | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02, 06:00 UTC |
@@ -44,8 +46,20 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Mon 08 Feb 2027, 10:00 ET | Evaluate the AI-credit rule on pilot data; PHP2Shell case | Outcome goes to the 15 March review. |
 | Mon 15 Feb 2027 | Reviewer applications close; schedule calls | Calls with finalists 16-26 Feb, with the three-item fix-date trial. |
 | Mon 15 Feb 2027, 10:00 ET | Write the Censys research-access application | In your own words (Censys rejects AI-written requests). Claude can list the facts to cover. |
-| Mon 01 Mar 2027 | Confirm the external reviewer | Two weeks before the annual review; review window 3-28 April. |
-| Sat 03 Apr 2027 to 28 Apr | External review window (Q1 2027 provisional report) | The reviewer reviews the report, code and hand decisions; published with the final report on 1 May. |
+| Mon 01 Mar 2027 | Confirm the external reviewer | Two weeks before the annual review; review window 3-28 April. Ask for their disclosure of any ties to AI labs (Anthropic included), security vendors or the data providers, how they want to be named (name or initials) and their ORCID. Send them the reviewer calendar feed (docs/OPERATIONS.md). Then tell Claude, so the reviewer items below can start. |
+| Thu 04 Mar 2027, 10:00 ET | Onboarding call with the external reviewer | Walk through the repository, the hand-check rules and the second-coder sheet; answer questions; go over the practice round if done. Move the time to suit the reviewer. |
+| Thu 15 Apr 2027, 10:00 ET | Optional mid-review check-in with the reviewer | Answer questions; confirm the review will arrive by 28 April or agree a new date. |
+| Thu 29 Apr 2027 | Write the response to the external review | Point by point; anything accepted becomes a deviations-log row or an item for the next annual review. The review itself is published unedited. |
+
+## External reviewer: dated items
+
+| When | What | Details |
+|---|---|---|
+| Tue 02 Mar 2027 to 14 Mar | Getting started - read the overview, plan and statistical review | About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the overview), the registered plan (OSF DOI 10.17605/OSF.IO/3XT82, and prereg/ in the repository), docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in February if you confirm early. |
+| Tue 02 Mar 2027 to 14 Mar | Optional - practice round as second coder (pilot quarter) | About 45 minutes, not scored. 20 items from the Q4 2026 pilot with Paul's answers removed: mostly fix dates (open the vendor's advisory, record when the fix was released). |
+| Mon 15 Mar 2027, 11:00 ET | Optional - join the 2027 annual review | Video call; the one time each year the scored rules may change. Comments welcome beforehand. |
+| Sat 03 Apr 2027 to 28 Apr | Independent review of the Q1 2027 provisional report | About 8-12 hours. Read the provisional Q1 2027 report against the registered plan and the deviations log; check that each headline figure is computed as the plan defines it (read the code, or recompute a few numbers from the data bundle); look at the sample of hand decisions and their written rules. Send a short written review (two to five pages: what holds up, what doesn't, what you'd change) by 28 April. The window can move a week or two if needed; publication is 1 May. |
+| Thu 02 Mar 2028 to 14 Mar | Optional - comment on the first annual check | About 1-2 hours. Read the first annual check of the free data against better reference data (drafted 1 March) and comment before the 15 March 2028 annual review. |
 
 ## Claude: dated items
 
@@ -59,6 +73,10 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Tue 01 Dec 2026 | Read the dry-run quality report; prepare the hand-check lists | Load the review lists (including the race list) into the Hand Check app. |
 | Tue 22 Dec 2026 | Prepare the core freeze (core-v1.2) | Deviation rows, LOCKED.yaml checksums, freeze summary and the OSF update text. |
 | Wed 03 Feb 2027 | Prepare the 8 Feb session | AI-credit rule evaluation on the pilot's final data (headline vs narrow count, a sample of lab-affiliation-only credits, spot checks) and the PHP2Shell case note docs/cases/php2shell.md. Send the author a heads-up. |
+| Tue 02 Mar 2027 | Record the confirmed reviewer | Add the reviewer as a contributor (name or initials as they asked, ORCID) to .zenodo.json and the report template; record their disclosed ties for publication beside the review. Never put their email or phone in the public repository. |
+| Tue 02 Mar 2027 | Send the reviewer the practice second-coder sheet (pilot quarter) | python -m snapshot.agreement sample --batch 2026Q4; send the sheet (not the weights file) and the written rules. Unscored practice; score it only to discuss on the onboarding call. |
+| Fri 02 Apr 2027 | Send the reviewer the Q1 2027 review packet | Once the provisional Q1 2027 report is approved: links to the report, the registered plan, prereg/DEVIATIONS.md, the data bundle and the exact code commit; the sample of hand decisions with their rules; a short review template (holds up / doesn't / would change). |
+| Sat 01 May 2027 | Publish the external review beside the Q1 2027 final report | Review unedited, the author's response, the reviewer's disclosed ties and credit; archived with the release (Zenodo). Send the reviewer the link. |
 | Wed 01 Mar 2028 | Draft the first annual check against reference data (2027) | prereg section 13: exposure reference if scan data was obtained by 31 Jan, harm reference always. For the author's approval at the 15 March 2028 review. |
 | Sat 01 Apr 2028 | 2027 closing re-run with full follow-up | Re-run all four 2027 quarters once every 2027 cohort CVE has its 90-day follow-up; publish as a completeness addendum to the annual check. Labels unchanged (decision item 21). The author approves. |
 

@@ -1,0 +1,197 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//internet-security-snapshot//schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Internet Security Snapshot: reviewer
+X-WR-CALDESC:The external reviewer's tasks and the project dates they depen
+ d on. Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-s
+ ecurity-snapshot
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:reviewer-orientation@2027-03-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270302
+DTEND;VALUE=DATE:20270315
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Getting started - read the overview\, plan and stat
+ istical review
+DESCRIPTION:About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the o
+ verview)\, the registered plan (OSF DOI 10.17605/OSF.IO/3XT82\, and prereg
+ / in the repository)\, docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in
+  February if you confirm early.\n\nOwner: External reviewer. Source: docs/
+ schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-practice@2027-03-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270302
+DTEND;VALUE=DATE:20270315
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Optional - practice round as second coder (pilot qu
+ arter)
+DESCRIPTION:About 45 minutes\, not scored. 20 items from the Q4 2026 pilot 
+ with Paul's answers removed: mostly fix dates (open the vendor's advisory\
+ , record when the fix was released).\n\nOwner: External reviewer. Source: 
+ docs/schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-practice-send@2027-03-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270302
+DTEND;VALUE=DATE:20270303
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Send the reviewer the practice second-coder shee
+ t (pilot quarter)
+DESCRIPTION:python -m snapshot.agreement sample --batch 2026Q4\; send the s
+ heet (not the weights file) and the written rules. Unscored practice\; sco
+ re it only to discuss on the onboarding call.\n\nOwner: Claude. Source: do
+ cs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-onboarding@2027-03-04@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270304T150000Z
+DTEND:20270304T160000Z
+SUMMARY:[Paul] Snapshot: Onboarding call with the external reviewer
+DESCRIPTION:Walk through the repository\, the hand-check rules and the seco
+ nd-coder sheet\; answer questions\; go over the practice round if done. Mo
+ ve the time to suit the reviewer.\n\nOwner: Author. Source: docs/schedule/
+ schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-annual-review@2027-03-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270315T150000Z
+DTEND:20270315T163000Z
+SUMMARY:[You] Snapshot: Optional - join the 2027 annual review
+DESCRIPTION:Video call\; the one time each year the scored rules may change
+ . Comments welcome beforehand.\n\nOwner: External reviewer. Source: docs/s
+ chedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-packet@2027-04-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270402
+DTEND;VALUE=DATE:20270403
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Send the reviewer the Q1 2027 review packet
+DESCRIPTION:Once the provisional Q1 2027 report is approved: links to the r
+ eport\, the registered plan\, prereg/DEVIATIONS.md\, the data bundle and t
+ he exact code commit\; the sample of hand decisions with their rules\; a s
+ hort review template (holds up / doesn't / would change).\n\nOwner: Claude
+ . Source: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:external-review@2027-04-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270403
+DTEND;VALUE=DATE:20270429
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Independent review of the Q1 2027 provisional repor
+ t
+DESCRIPTION:About 8-12 hours. Read the provisional Q1 2027 report against t
+ he registered plan and the deviations log\; check that each headline figur
+ e is computed as the plan defines it (read the code\, or recompute a few n
+ umbers from the data bundle)\; look at the sample of hand decisions and th
+ eir written rules. Send a short written review (two to five pages: what ho
+ lds up\, what doesn't\, what you'd change) by 28 April. The window can mov
+ e a week or two if needed\; publication is 1 May.\n\nOwner: External revie
+ wer. Source: docs/schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-check-in@2027-04-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270415T140000Z
+DTEND:20270415T143000Z
+SUMMARY:[Paul] Snapshot: Optional mid-review check-in with the reviewer
+DESCRIPTION:Answer questions\; confirm the review will arrive by 28 April o
+ r agree a new date.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-second-coder@2027-04-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270513
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Second coder - 20 blinded items
+DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
+ rs are removed\; written rules cover each case. Your answers never change 
+ his\; they measure agreement\, published each quarter.\n\nOwner: External 
+ reviewer. Source: docs/schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:review-publish@2027-05-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Publish the external review beside the Q1 2027 f
+ inal report
+DESCRIPTION:Review unedited\, the author's response\, the reviewer's disclo
+ sed ties and credit\; archived with the release (Zenodo). Send the reviewe
+ r the link.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-second-coder@2027-07-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270729
+DTEND;VALUE=DATE:20270812
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Second coder - 20 blinded items
+DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
+ rs are removed\; written rules cover each case. Your answers never change 
+ his\; they measure agreement\, published each quarter.\n\nOwner: External 
+ reviewer. Source: docs/schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-second-coder@2027-10-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271112
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Second coder - 20 blinded items
+DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
+ rs are removed\; written rules cover each case. Your answers never change 
+ his\; they measure agreement\, published each quarter.\n\nOwner: External 
+ reviewer. Source: docs/schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-second-coder@2028-01-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280129
+DTEND;VALUE=DATE:20280212
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Second coder - 20 blinded items
+DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
+ rs are removed\; written rules cover each case. Your answers never change 
+ his\; they measure agreement\, published each quarter.\n\nOwner: External 
+ reviewer. Source: docs/schedule/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:reviewer-annual-check@2028-03-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280302
+DTEND;VALUE=DATE:20280315
+TRANSP:TRANSPARENT
+SUMMARY:[You] Snapshot: Optional - comment on the first annual check
+DESCRIPTION:About 1-2 hours. Read the first annual check of the free data a
+ gainst better reference data (drafted 1 March) and comment before the 15 M
+ arch 2028 annual review.\n\nOwner: External reviewer. Source: docs/schedul
+ e/schedule.yaml
+CATEGORIES:External reviewer
+END:VEVENT
+END:VCALENDAR

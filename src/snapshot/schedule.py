@@ -25,12 +25,13 @@ from .util import REPO_ROOT
 
 SOURCE = REPO_ROOT / "docs/schedule/schedule.yaml"
 ICS = REPO_ROOT / "docs/schedule/snapshot.ics"
+REVIEWER_ICS = REPO_ROOT / "docs/schedule/reviewer.ics"   # the external reviewer's own feed
 PLAN = REPO_ROOT / "docs/ANNUAL_PLAN.md"
 README = REPO_ROOT / "README.md"
 BEGIN, END = "<!-- schedule:begin -->", "<!-- schedule:end -->"
-OWNERS = ("author", "claude", "github")
-OWNER_NAME = {"author": "Author", "claude": "Claude", "github": "GitHub (automatic)"}
-DEFAULT_OPEN = {"author": 2, "claude": 0, "github": 0}
+OWNERS = ("author", "reviewer", "claude", "github")
+OWNER_NAME = {"author": "Author", "reviewer": "External reviewer", "claude": "Claude", "github": "GitHub (automatic)"}
+DEFAULT_OPEN = {"author": 2, "reviewer": 0, "claude": 0, "github": 0}
 
 
 # --- time zone: America/New_York without relying on system tz data ---------------------
@@ -103,6 +104,7 @@ def expand(items: list[dict]) -> list[dict]:
                 "minutes": int(it.get("minutes", 30)), "days": int(it.get("days", 1)),
                 "open": int(it.get("open", DEFAULT_OPEN[it["owner"]])),
                 "dispatch": it.get("dispatch"),
+                "feeds": list(it.get("feeds") or []),
             }
             out.append(occ)
     return sorted(out, key=lambda o: (o["date"], o["time"] or "", OWNERS.index(o["owner"]), o["id"]))
@@ -125,14 +127,25 @@ def _fold(line: str) -> list[str]:
     return out
 
 
-def ics(occ: list[dict]) -> str:
+ALL_FEED = ("Internet Security Snapshot",
+            "Every action item of the study: author, external reviewer, Claude and automatic GitHub runs. "
+            "Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-security-snapshot")
+REVIEWER_FEED = ("Internet Security Snapshot: reviewer",
+                 "The external reviewer's tasks and the project dates they depend on. "
+                 "Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-security-snapshot")
+
+
+def reviewer_occ(occ: list[dict]) -> list[dict]:
+    return [o for o in occ if o["owner"] == "reviewer" or "reviewer" in o["feeds"]]
+
+
+def ics(occ: list[dict], feed: tuple[str, str] = ALL_FEED, you: str = "author") -> str:
+    name, desc = feed
     L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//internet-security-snapshot//schedule//EN",
-         "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "X-WR-CALNAME:Internet Security Snapshot",
-         "X-WR-CALDESC:Every action item of the study: author, Claude and automatic GitHub runs. "
-         "Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-security-snapshot",
-         "X-WR-TIMEZONE:America/New_York"]
+         "CALSCALE:GREGORIAN", "METHOD:PUBLISH", f"X-WR-CALNAME:{_ics_text(name)}",
+         f"X-WR-CALDESC:{_ics_text(desc)}", "X-WR-TIMEZONE:America/New_York"]
     for o in occ:
-        tag = {"author": "[You]", "claude": "[Claude]", "github": "[GitHub]"}[o["owner"]]
+        tag = "[You]" if o["owner"] == you else {"author": "[Paul]", "reviewer": "[Reviewer]", "claude": "[Claude]", "github": "[GitHub]"}[o["owner"]]
         L += ["BEGIN:VEVENT", f"UID:{o['uid']}@internet-security-snapshot", "DTSTAMP:20261024T000000Z"]
         if o["time"]:
             s = to_utc(o["date"], o["time"], o["utc"])
@@ -292,6 +305,10 @@ def build() -> tuple[str, str]:
     return plan(items, occ), ics(occ)
 
 
+def build_reviewer_ics() -> str:
+    return ics(reviewer_occ(expand(load())), REVIEWER_FEED, you="reviewer")
+
+
 def build_readme() -> str:
     return readme(README.read_text(), readme_table(expand(load()), load_milestones()))
 
@@ -315,10 +332,11 @@ def main(argv=None) -> int:
     if a.cmd == "build":
         PLAN.write_text(md + "\n")
         ICS.write_bytes(cal.encode())
+        REVIEWER_ICS.write_bytes(build_reviewer_ics().encode())
         README.write_text(build_readme())
-        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the README schedule table")
+        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the reviewer feed and the README schedule table")
         return 0
-    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (README, build_readme().encode()))
+    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (REVIEWER_ICS, build_reviewer_ics().encode()), (README, build_readme().encode()))
              if not p.exists() or p.read_bytes() != want]
     if stale:
         print("out of date: " + ", ".join(str(p.relative_to(REPO_ROOT)) for p in stale) + " (run: python -m snapshot.schedule build)")
