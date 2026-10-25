@@ -1692,6 +1692,18 @@ DESCRIPTION:Responsible: Claude (claude)\n\nRe-run all four 2027 quarters o
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:closing-rerun-approve@2028-04-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20280403T140000Z
+DTEND:20280403T143000Z
+SUMMARY:[Paul] Snapshot: Approve the 2027 closing re-run addendum
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of what cha
+ nged against each 2027 quarter's final report (scored labels do not change
+ \; decision item 21) and approve publishing it as an addendum to the annua
+ l check\, with its Zenodo archive.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2028-04-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280410T071700Z

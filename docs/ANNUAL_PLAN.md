@@ -163,6 +163,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 10 Mar 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Wed 15 Mar 2028, 11:00 ET | Paul | Annual review and change window |
 | Sat 01 Apr 2028 | Claude | 2027 closing re-run with full follow-up |
+| Mon 03 Apr 2028, 10:00 ET | Paul | Approve the 2027 closing re-run addendum |
 | Mon 10 Apr 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Wed 31 Jan 2029 | Paul | Confirm whether scan data was obtained for the annual check |
 | Thu 01 Mar 2029 | Claude | Draft the annual check against reference data (previous year) |
@@ -200,6 +201,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 04 Mar 2027, 10:00 ET | Onboarding call with the external reviewer | Walk through the repository, the hand-check rules and the second-coder sheet; answer questions; go over the practice round if done. Move the time to suit the reviewer. |
 | Thu 15 Apr 2027, 10:00 ET | Optional mid-review check-in with the reviewer | Answer questions; confirm the review will arrive by 28 April or agree a new date. |
 | Thu 29 Apr 2027 | Write the response to the external review | Point by point; anything accepted becomes a deviations-log row or an item for the next annual review. The review itself is published unedited. |
+| Mon 03 Apr 2028, 10:00 ET | Approve the 2027 closing re-run addendum | Read Claude's summary of what changed against each 2027 quarter's final report (scored labels do not change; decision item 21) and approve publishing it as an addendum to the annual check, with its Zenodo archive. |
 
 ## External reviewer: dated items
 

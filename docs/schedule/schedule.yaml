@@ -402,6 +402,17 @@ items:
     as a completeness addendum to the annual check. Labels unchanged (decision item 21). The
     author approves.
 
+- id: closing-rerun-approve
+  owner: author
+  title: Approve the 2027 closing re-run addendum
+  date: 2028-04-03
+  time: "10:00"
+  minutes: 30
+  details: >
+    Read Claude's summary of what changed against each 2027 quarter's final report (scored
+    labels do not change; decision item 21) and approve publishing it as an addendum to the
+    annual check, with its Zenodo archive.
+
 # ---------------------------------------------------------------- every quarter
 - id: pull-provisional
   owner: github
