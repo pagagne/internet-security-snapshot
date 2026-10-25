@@ -1,0 +1,18 @@
+# KEV lag probe
+
+KEV additions in window: 246
+
+| Source | KEV additions covered | dated before KEV | median days before KEV (when before) |
+|---|---|---|---|
+| euvd_exploited_since | 0 | 0 | - |
+| p0_discovered | 0 | 0 | - |
+| itw_first_report | 9 | 9 | 2643.0 |
+| earliest_other | 9 | 9 | 2643.0 |
+
+Notes:
+- euvd exploitedSince most common values: 2026-10-23: 2; 2026-10-19: 1; 2026-10-20: 1
+- euvd exploited entries: 4, with CVE aliases: 4
+- p0 tabs found: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', 'All', 'Introduction']
+- p0 columns: ['CVE', 'Vendor', 'Product', 'Type', 'Description', 'Date Discovered', 'Date Patched', 'Advisory', 'Analysis URL', 'Root Cause Analysis', 'Reported By', 'tab']; rows 184
+- inthewild tables: {'_litestream_seq': ['id', 'seq'], '_litestream_lock': ['id'], 'exploits': ['id', 'referenceURL', 'timeStamp', 'source', 'type'], 'vulns': ['id', 'referenceURL', 'description', 'lastUpdated']}
+- inthewild types: {"exploit": 100433, "exploitation": 3082}
