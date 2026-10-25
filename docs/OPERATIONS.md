@@ -38,6 +38,12 @@ then, a private preview is a Claude artifact. Worksheets are listed in
 `site/reviewer/worksheets.json`; its `draw_from` list (the headline figures reported that
 quarter) is what the reviewer's seeded draw picks from.
 
+## Sync review
+`docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
+scheduled tasks and the Reviewer's Desk in step: weekly until the cutover, then three days
+before each provisional report, and on request. Questions for the author are always asked
+together, in one list.
+
 ## Checking progress
 - **Run log:** the Schedule and Rebuild check workflows add a line to
   `reports/log/<YYYY-MM>.md` on the `run-reports` branch after every run (when, result, link to

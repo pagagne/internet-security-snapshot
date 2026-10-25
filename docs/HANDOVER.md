@@ -72,7 +72,7 @@ Session 1's check-ins fired into session 1 and were removed when it was retired.
 
 ## Open for the author
 - 12 Nov: every flagged race fix date or a sample (sets the quarterly and baseline workload).
-- 21 Dec agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-21).
+- 21 Dec agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-22; 22 = the workflow lock, added 25 Oct).
 
 ## Standing rules (unchanged)
 Never paste keys or tokens into chat (GitHub secrets only); VulnCheck-derived data private until
