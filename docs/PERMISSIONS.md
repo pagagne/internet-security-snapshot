@@ -11,6 +11,26 @@ without it for the Q4 2026 pilot (decision item 16); a later yes is switched on 
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply | — |
 | Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow up by reply to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject if no answer by 20 Nov 2026 | — |
 
+## Requests planned (25 Oct 2026 brainstorm)
+
+| Source | When | Channel | What will be asked | Status |
+|---|---|---|---|---|
+| Censys research access | 28 Oct 2026 | Censys research-access request (written by the author, no AI tools, as Censys requires) | Free research access (BigQuery, delayed data) for published, non-commercial results that cite Censys | To send |
+| GreyNoise research (VIP) access | 27 Oct 2026 | GreyNoise research programme form | Research access for an open, published study; aggregates only | To send |
+| CrowdSec CVE tracker | 27 Oct 2026 | Email to the CrowdSec team | Whether research use and publishing aggregate figures are allowed, and an API key | To send |
+
+## Free sources used without a request (terms read 25 Oct 2026)
+
+| Source | Terms that matter | How the project complies |
+|---|---|---|
+| SANS Internet Storm Center web-honeypot files | Attribution required ("SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"); no reselling; the site carries a non-commercial licence; at most one download an hour | One download a week; aggregates only (no URLs, no IP addresses); credited on every output |
+| ENISA EU Vulnerability Database | Public EU service | Dates only; cited |
+| Google Project Zero "0day In the Wild" sheet | Public community resource | Dates only; cited |
+| deps.dev | Generated data under CC-BY 4.0 | Aggregates; credited |
+| OSV and GitHub advisories | Public; OSV data CC-BY 4.0 | Version lists only; credited |
+| WordPress.org plugin statistics | Public API | Version shares only |
+| inthewild.io | Apache 2.0 | Dropped 25 Oct: no exploitation reports after Dec 2024 |
+
 ## Terms already accepted
 
 - **ransomware.live Fair Usage Policy** (accepted 2026-10-20 when generating the PRO API
