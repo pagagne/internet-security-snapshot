@@ -1,0 +1,60 @@
+# web honeypot url summary data (c) isc.sans.edu# for details see https://isc.sans.edu/feeds_doc.html# last update : 2026-10-25T09:16:02.910839+00:00# Columns:# URL: the HTTP URL# category: the category/type assigned to the URL# details: any details (often includes CVEurl	category	details
+/.git/HEAD.pdf	Data Leakage	Attempt to find git information
+/.git/HEAD.sql	Data Leakage	Attempt to find git information
+/.git/HEAD.gz	Data Leakage	Attempt to find git information
+/.git/HEAD.json	Data Leakage	Attempt to find git information
+/.git/HEAD.config	Data Leakage	Attempt to find git information
+/.git/HEAD.db	Data Leakage	Attempt to find git information
+/.git/HEAD.aspx	Data Leakage	Attempt to find git information
+/.git/HEAD.bak	Data Leakage	Attempt to find git information
+/.git/config.log	Data Leakage	Attempt to read Git configuration file
+/.git/config.mysql	Data Leakage	Attempt to read Git configuration file
+/.git/config.db	Data Leakage	Attempt to read Git configuration file
+/.git/config.env	Data Leakage	Attempt to read Git configuration file
+/.git/config.aspx	Data Leakage	Attempt to read Git configuration file
+/.git/config.cnf	Data Leakage	Attempt to read Git configuration file
+/.env.travis.php	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.yaml	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.gz	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.html	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.config	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.db	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.asp	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.travis.bak	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.sql	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.txt	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.gz	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.json	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.log	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.mysql	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.conf	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.config	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.asp	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.sample.aspx	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.sql	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.txt	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.json	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.log	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.asp	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.aspx	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.local.bak	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.env	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.git	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.yml	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.test.cnf	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.php	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.sql	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.json	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.log	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.env	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.git	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.cnf	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.conf	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.yml	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.stage.asp	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.php	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.sql	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.git	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.html	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.json	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials
+/.env.save.log	Credential Leak	Attempting to search for a file that contains environment variables, which in turn may leak credentials

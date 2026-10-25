@@ -1,0 +1,97 @@
+{
+ "isc_urlsummary": {
+  "url": "https://isc.sans.edu/feeds/urlsummary.txt",
+  "status": 200,
+  "bytes": 839984036,
+  "content_type": "text/plain",
+  "lines": 10207005
+ },
+ "isc_urlcategories": {
+  "url": "https://isc.sans.edu/feeds/urlcategories.txt",
+  "status": 200,
+  "bytes": 194705116,
+  "content_type": "text/plain",
+  "lines": 1254986
+ },
+ "isc_api_webhoneypot": {
+  "url": "https://isc.sans.edu/api/webhoneypotsummary/2026-10-24?json",
+  "status": 200,
+  "bytes": 68194,
+  "content_type": "text/html; charset=UTF-8",
+  "lines": 1168
+ },
+ "euvd_exploited": {
+  "url": "https://euvdservices.enisa.europa.eu/api/exploitedvulnerabilities?page=0&size=5",
+  "status": 200,
+  "bytes": 4346,
+  "content_type": "application/json",
+  "lines": 0
+ },
+ "euvd_search_cve": {
+  "url": "https://euvdservices.enisa.europa.eu/api/vulnerabilities?text=CVE-2024-3400&page=0&size=3",
+  "status": 404,
+  "bytes": 110,
+  "content_type": "application/json;charset=UTF-8",
+  "lines": 0
+ },
+ "p0_itw_sheet": {
+  "url": "https://docs.google.com/spreadsheets/d/1lkNJ0uQwbeC1ZTRrxdtuPLCIl7mlUreoKfSIgajnSyY/export?format=csv",
+  "status": 200,
+  "bytes": 2261,
+  "content_type": "text/csv; charset=utf-8",
+  "lines": 28
+ },
+ "inthewild_exploited": {
+  "url": "https://inthewild.io/api/exploited",
+  "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='inthewild.io', port=443): Max retries exceeded with url: /api/exploited (Caused by ConnectTimeoutError(<HTTPSConnection(host='inthewild.io', port=443) at 0x7fcfcc2026c0>, 'Connection to inthewild.io timed out. (connect timeout=90)'))\"))"
+ },
+ "inthewild_github_readme": {
+  "url": "https://raw.githubusercontent.com/gmatuz/inthewilddb/master/README.md",
+  "status": 200,
+  "bytes": 2692,
+  "content_type": "text/plain; charset=utf-8",
+  "lines": 27
+ },
+ "depsdev_package": {
+  "url": "https://api.deps.dev/v3/systems/npm/packages/lodash",
+  "status": 200,
+  "bytes": 19369,
+  "content_type": "application/json; charset=utf-8",
+  "lines": 0
+ },
+ "depsdev_dependents": {
+  "url": "https://api.deps.dev/v3alpha/systems/npm/packages/lodash/versions/4.17.21:dependents",
+  "status": 200,
+  "bytes": 83,
+  "content_type": "application/json; charset=utf-8",
+  "lines": 0
+ },
+ "hhs_ocr_portal": {
+  "url": "https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf",
+  "status": 200,
+  "bytes": 12933,
+  "content_type": "text/html;charset=UTF-8",
+  "lines": 176
+ },
+ "bigsleep_tracker": {
+  "url": "https://issuetracker.google.com/action/issues?q=componentid:1836411&count=25",
+  "status": 401,
+  "bytes": 56,
+  "content_type": "application/json; charset=utf-8",
+  "lines": 2
+ },
+ "wordpress_plugin_stats": {
+  "url": "https://api.wordpress.org/stats/plugin/1.0/wordfence",
+  "status": 200,
+  "bytes": 62,
+  "content_type": "application/json",
+  "lines": 0
+ },
+ "debian_tracker_cve": {
+  "url": "https://security-tracker.debian.org/tracker/CVE-2024-1086",
+  "status": 200,
+  "bytes": 5268,
+  "content_type": "text/html; charset=UTF-8",
+  "lines": 1
+ }
+}

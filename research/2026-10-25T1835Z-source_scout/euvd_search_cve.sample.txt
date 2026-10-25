@@ -1,0 +1,1 @@
+{"error":"No API endpoint at this path. See https://euvd.enisa.europa.eu/apidoc for the available endpoints."}
