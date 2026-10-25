@@ -20,7 +20,8 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
   feeds `docs/schedule/snapshot.ics` and `docs/schedule/reviewer.ics` and the Schedule table in `README.md` (from the
   `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
-- **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC. It opens each due
+- **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC, with a backup run at
+  15:37 UTC because GitHub sometimes drops scheduled runs (it skipped the first one, 25 Oct). It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never
   duplicate) and starts any `dispatch:` run that has no cron of its own, such as the 1 Dec dry
   run. If a day is missed, the next run catches up on anything from the previous 6 days.
