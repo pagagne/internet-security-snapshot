@@ -8,7 +8,7 @@
 #
 # Fields
 #   id      unique slug; with the date it names the issue and the calendar entry
-#   owner   author | claude | github
+#   owner   author | reviewer | claude | github  (reviewer = the independent external reviewer)
 #   title   short, starts with a verb where possible
 #   date    YYYY-MM-DD (local date, America/New_York), or use `repeat`
 #   time    HH:MM local (America/New_York); omit for an all-day item
@@ -18,6 +18,7 @@
 #   repeat  {months: [..], day: N, from: YYYY-MM, until: YYYY-MM}: one item per listed month
 #   open    days before the date to open the GitHub issue (default 0; author items default 2)
 #   dispatch {workflow: file.yml, inputs: {...}}: the daily schedule job runs this workflow
+#   feeds   [reviewer]: also show this author/Claude item in the reviewer's own calendar feed
 #   details what to do (plain text; links welcome)
 
 items:
@@ -243,7 +244,7 @@ items:
   time: "10:00"
   minutes: 60
   details: >
-    Send the invitation (claude.ai doc "Invitation: Independent Reviewer"); candidates from
+    Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer") with the sample spot-check worksheet (docs/reviewer/sample-worksheet); candidates from
     the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March.
 
 - id: ai-rule-prep
@@ -281,25 +282,37 @@ items:
   owner: author
   title: Confirm the external reviewer
   date: 2027-03-01
-  details: Two weeks before the annual review; review window 3-28 April.
+  details: >
+    Two weeks before the annual review; review window 3-28 April. Ask for their disclosure of
+    any ties to AI labs (Anthropic included), security vendors or the data providers, how they
+    want to be named (name or initials) and their ORCID. Send them the reviewer calendar feed
+    (docs/OPERATIONS.md). Then tell Claude, so the reviewer items below can start.
 
 - id: annual-review
   owner: author
   title: Annual review and change window
-  repeat: {months: [3], day: 15, from: 2027-03, until: 2028-03}
+  repeat: {months: [3], day: 15, from: 2027-03, until: 2030-03}
   time: "11:00"
   minutes: 90
   details: >
     The one time each year core rules may change (docs/CHANGE_POLICY.md). Promotion
-    candidates; the AI-credit rule; any change run side by side for four quarters. From 2028:
-    approve the annual check against reference data.
+    candidates; the AI-credit rule; any change run side by side for four quarters. From 2028
+    (the annual wrap-up): review the annual check of the previous year's free results against
+    reference scan data and published insurance-claims and ransom-payment figures
+    (pre-registration section 13), and approve it for publishing.
 
 - id: external-review
-  owner: author
-  title: External review window (Q1 2027 provisional report)
+  owner: reviewer
+  title: Independent review of the Q1 2027 provisional report
   date: 2027-04-03
   days: 26
-  details: The reviewer reviews the report, code and hand decisions; published with the final report on 1 May.
+  details: >
+    About 8-12 hours. Read the provisional Q1 2027 report against the registered plan and the
+    deviations log; spot-check three headline figures drawn at random (from a seed you choose)
+    plus any you pick, recomputing each from its worksheet in a spreadsheet (no programming
+    needed); look at the sample of hand decisions and their written rules. Send a short written review (two to five pages: what
+    holds up, what doesn't, what you'd change) by 28 April. The window can move a week or two
+    if needed; publication is 1 May.
 
 - id: annual-check
   owner: claude
@@ -308,6 +321,22 @@ items:
   details: >
     prereg section 13: exposure reference if scan data was obtained by 31 Jan, harm reference
     always. For the author's approval at the 15 March 2028 review.
+
+- id: scan-data-confirm
+  owner: author
+  title: Confirm whether scan data was obtained for the annual check
+  repeat: {months: [1], day: 31, from: 2028-01, until: 2030-01}
+  details: >
+    Censys research access or a one-off licence, by 31 January. Tell Claude either way: it
+    decides whether the annual check includes the exposure reference.
+
+- id: annual-check-later
+  owner: claude
+  title: Draft the annual check against reference data (previous year)
+  repeat: {months: [3], day: 1, from: 2029-03, until: 2030-03}
+  details: >
+    As in 2028 (prereg section 13), for the previous year; for the author's approval at the
+    15 March annual review.
 
 - id: closing-rerun
   owner: claude
@@ -403,6 +432,147 @@ items:
   minutes: 15
   details: Cron in .github/workflows/rebuild-check.yml; fails visibly if a file or figure differs.
 
+# ---------------------------------------------------------------- the external reviewer
+# What the reviewer agreed to in the invitation (claude.ai doc "Invitation: Independent
+# Reviewer"), plus the author and Claude tasks around it. Reviewer items are not GitHub
+# issues (the reviewer is not a repository member); they are in the reviewer's own feed,
+# docs/schedule/reviewer.ics, and the author/Claude items around them open issues as usual.
+- id: reviewer-worksheets
+  owner: claude
+  title: Build the figure worksheets for the reviewer's spot check
+  date: 2027-01-20
+  details: >
+    Extend the sample (docs/reviewer/sample-worksheet, snapshot.worksheet race-sample) to a
+    worksheet per headline figure (T1-T7), generated with every release: the plan's
+    definition in plain words, the inputs as a CSV a spreadsheet opens, the steps from inputs
+    to figure, and the published value to match. Plus a seeded draw that picks three figures
+    from a seed the reviewer gives. Test on the Q4 2026 pilot (provisional 1 Jan) so a
+    worksheet can be tried in the practice round. Check that each worksheet can be followed in
+    a spreadsheet with no code.
+
+- id: reviewer-credit
+  owner: claude
+  title: Record the confirmed reviewer
+  date: 2027-03-02
+  details: >
+    Add the reviewer as a contributor (name or initials as they asked, ORCID) to .zenodo.json
+    and the report template; record their disclosed ties for publication beside the review.
+    Never put their email or phone in the public repository.
+
+- id: reviewer-practice-send
+  owner: claude
+  title: Send the reviewer the practice second-coder sheet (pilot quarter)
+  date: 2027-03-02
+  feeds: [reviewer]
+  details: >
+    python -m snapshot.agreement sample --batch 2026Q4; send the sheet (not the weights file)
+    and the written rules. Unscored practice; score it only to discuss on the onboarding call.
+
+- id: reviewer-orientation
+  owner: reviewer
+  title: Getting started - read the overview, plan and statistical review
+  date: 2027-03-02
+  days: 13
+  details: >
+    About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the overview), the registered
+    plan (OSF DOI 10.17605/OSF.IO/3XT82, and prereg/ in the repository),
+    docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in February if you confirm early.
+
+- id: reviewer-practice
+  owner: reviewer
+  title: Optional - practice round as second coder (pilot quarter)
+  date: 2027-03-02
+  days: 13
+  details: >
+    About 45 minutes, not scored. 20 items from the Q4 2026 pilot with Paul's answers removed:
+    mostly fix dates (open the vendor's advisory, record when the fix was released).
+
+- id: reviewer-onboarding
+  owner: author
+  title: Onboarding call with the external reviewer
+  date: 2027-03-04
+  time: "10:00"
+  minutes: 60
+  feeds: [reviewer]
+  details: >
+    Walk through the repository, the hand-check rules and the second-coder sheet; answer
+    questions; go over the practice round if done. Move the time to suit the reviewer.
+
+- id: reviewer-annual-review
+  owner: reviewer
+  title: Optional - join the 2027 annual review
+  date: 2027-03-15
+  time: "11:00"
+  minutes: 90
+  details: Video call; the one time each year the scored rules may change. Comments welcome beforehand.
+
+- id: reviewer-packet
+  owner: claude
+  title: Send the reviewer the Q1 2027 review packet
+  date: 2027-04-02
+  feeds: [reviewer]
+  details: >
+    Once the provisional Q1 2027 report is approved: links to the report, the registered plan,
+    prereg/DEVIATIONS.md, the data bundle and the exact code commit; the worksheet for every
+    headline figure; the sample of hand decisions with their rules; a short review template
+    (holds up / doesn't / would change). Ask the reviewer for a seed number and run the
+    spot-check draw with it (three figures); send them the result. Never choose the figures.
+
+- id: reviewer-check-in
+  owner: author
+  title: Optional mid-review check-in with the reviewer
+  date: 2027-04-15
+  time: "10:00"
+  minutes: 30
+  feeds: [reviewer]
+  details: Answer questions; confirm the review will arrive by 28 April or agree a new date.
+
+- id: review-response
+  owner: author
+  title: Write the response to the external review
+  date: 2027-04-29
+  minutes: 60
+  details: >
+    Point by point; anything accepted becomes a deviations-log row or an item for the next
+    annual review. The review itself is published unedited.
+
+- id: review-publish
+  owner: claude
+  title: Publish the external review beside the Q1 2027 final report
+  date: 2027-05-01
+  feeds: [reviewer]
+  details: >
+    Review unedited, the author's response, the reviewer's disclosed ties and credit; archived
+    with the release (Zenodo). Send the reviewer the link.
+
+- id: reviewer-second-coder
+  owner: reviewer
+  title: Second coder - 20 blinded items
+  repeat: {months: [1, 4, 7, 10], day: 29, from: 2027-04, until: 2028-01}
+  days: 14
+  details: >
+    About 45 minutes, one sitting, within two weeks. Paul's answers are removed; written rules
+    cover each case. Your answers never change his; they measure agreement, published each
+    quarter.
+
+- id: second-coder-score
+  owner: claude
+  title: Score the second coder's sheet; publish agreement
+  repeat: {months: [2, 5, 8, 11], day: 13, from: 2027-05, until: 2028-02}
+  details: >
+    python -m snapshot.agreement score on the returned sheet; agreement rates (with Gwet's AC1)
+    go into the next report. If the sheet has not come back, comment on the issue so the
+    author can send a reminder; do not contact the reviewer directly.
+
+- id: reviewer-annual-check
+  owner: reviewer
+  title: Optional - comment on the first annual check
+  date: 2028-03-02
+  days: 13
+  details: >
+    About 1-2 hours. Read the first annual check of the free data against better reference
+    data (drafted 1 March) and comment before the 15 March 2028 annual review.
+
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule
 # build). Each row takes its date(s) from the items above, so a date changed there changes the
@@ -428,8 +598,12 @@ milestones:
 - at: [annual-review@2027-03-15]
   suffix: ", then yearly"
   text: Annual review and change window; annual check of free numbers from March 2028
+- at: [reviewer-confirm]
+  text: External reviewer confirmed (decision item 17)
 - at: [pull-provisional@2027-04-01, pull-final@2027-05-01]
-  text: "Q1 2027, first scored (confirmatory) quarter: provisional / final; external review 3-28 Apr"
+  text: "Q1 2027, first scored (confirmatory) quarter: provisional / final, with the external review published beside the final"
+- at: [external-review]
+  text: Independent external review of the Q1 2027 provisional report
 - at: [pull-final@2028-02-01]
   text: "Q4 2027 final: last quarter of the first year"
 - at: [closing-rerun]

@@ -321,9 +321,9 @@ Being unfunded and non-commercial is what makes every source usable. Keep the si
 
 ## Schedule
 
-&#91;embedded content: Registered on OSF on 20 October, build in November, dry run on 1 December; Q4 2026 is the pilot and Q1 2027 the first quarter that counts.\]
-
 The pre-registration was frozen and registered on **20 October 2026**. Q4 2026 had already started by then, so it runs as a **pilot quarter**: evaluated and published in full, but labeled as a pilot. **Q1 2027 is the first confirmatory quarter.** The early-December deliverable becomes a **dry run on 1 December** using October and November data. It tests the pipeline end to end and gives a first look, clearly marked as unscored.
+
+The full schedule is not repeated here, so that it is kept in one place. Every dated action item, with who is responsible (the author, the external reviewer, Claude or an automatic GitHub run), is in the [annual plan](../ANNUAL_PLAN.md), generated from `docs/schedule/schedule.yaml` together with the shared calendar feed and the milestone table in the README. How the schedule runs is described in [docs/OPERATIONS.md](../OPERATIONS.md).
 
 ## Costs
 

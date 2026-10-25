@@ -25,12 +25,15 @@ from .util import REPO_ROOT
 
 SOURCE = REPO_ROOT / "docs/schedule/schedule.yaml"
 ICS = REPO_ROOT / "docs/schedule/snapshot.ics"
+REVIEWER_ICS = REPO_ROOT / "docs/schedule/reviewer.ics"   # the external reviewer's own feed
 PLAN = REPO_ROOT / "docs/ANNUAL_PLAN.md"
 README = REPO_ROOT / "README.md"
 BEGIN, END = "<!-- schedule:begin -->", "<!-- schedule:end -->"
-OWNERS = ("author", "claude", "github")
-OWNER_NAME = {"author": "Author", "claude": "Claude", "github": "GitHub (automatic)"}
-DEFAULT_OPEN = {"author": 2, "claude": 0, "github": 0}
+OWNERS = ("author", "reviewer", "claude", "github")
+OWNER_NAME = {"author": "Author", "reviewer": "External reviewer", "claude": "Claude", "github": "GitHub (automatic)"}
+# Who is responsible, as shown at the start of every calendar title and in the plan's Who column
+RESPONSIBLE = {"author": "Paul", "reviewer": "Reviewer", "claude": "Claude", "github": "GitHub"}
+DEFAULT_OPEN = {"author": 2, "reviewer": 0, "claude": 0, "github": 0}
 
 
 # --- time zone: America/New_York without relying on system tz data ---------------------
@@ -103,6 +106,7 @@ def expand(items: list[dict]) -> list[dict]:
                 "minutes": int(it.get("minutes", 30)), "days": int(it.get("days", 1)),
                 "open": int(it.get("open", DEFAULT_OPEN[it["owner"]])),
                 "dispatch": it.get("dispatch"),
+                "feeds": list(it.get("feeds") or []),
             }
             out.append(occ)
     return sorted(out, key=lambda o: (o["date"], o["time"] or "", OWNERS.index(o["owner"]), o["id"]))
@@ -125,14 +129,25 @@ def _fold(line: str) -> list[str]:
     return out
 
 
-def ics(occ: list[dict]) -> str:
+ALL_FEED = ("Internet Security Snapshot",
+            "Every action item of the study: author, external reviewer, Claude and automatic GitHub runs. "
+            "Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-security-snapshot")
+REVIEWER_FEED = ("Internet Security Snapshot: reviewer",
+                 "The external reviewer's tasks and the project dates they depend on. "
+                 "Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-security-snapshot")
+
+
+def reviewer_occ(occ: list[dict]) -> list[dict]:
+    return [o for o in occ if o["owner"] == "reviewer" or "reviewer" in o["feeds"]]
+
+
+def ics(occ: list[dict], feed: tuple[str, str] = ALL_FEED) -> str:
+    name, desc = feed
     L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//internet-security-snapshot//schedule//EN",
-         "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "X-WR-CALNAME:Internet Security Snapshot",
-         "X-WR-CALDESC:Every action item of the study: author, Claude and automatic GitHub runs. "
-         "Source: docs/schedule/schedule.yaml in github.com/pagagne/internet-security-snapshot",
-         "X-WR-TIMEZONE:America/New_York"]
+         "CALSCALE:GREGORIAN", "METHOD:PUBLISH", f"X-WR-CALNAME:{_ics_text(name)}",
+         f"X-WR-CALDESC:{_ics_text(desc)}", "X-WR-TIMEZONE:America/New_York"]
     for o in occ:
-        tag = {"author": "[You]", "claude": "[Claude]", "github": "[GitHub]"}[o["owner"]]
+        tag = f"[{RESPONSIBLE[o['owner']]}]"
         L += ["BEGIN:VEVENT", f"UID:{o['uid']}@internet-security-snapshot", "DTSTAMP:20261024T000000Z"]
         if o["time"]:
             s = to_utc(o["date"], o["time"], o["utc"])
@@ -143,7 +158,7 @@ def ics(occ: list[dict]) -> str:
                   f"DTEND;VALUE=DATE:{o['date'] + dt.timedelta(days=o['days']):%Y%m%d}",
                   "TRANSP:TRANSPARENT"]
         L += [f"SUMMARY:{_ics_text(f'{tag} Snapshot: ' + o['title'])}",
-              f"DESCRIPTION:{_ics_text(o['details'] + chr(10) + chr(10) + 'Owner: ' + OWNER_NAME[o['owner']] + '. Source: docs/schedule/schedule.yaml')}",
+              f"DESCRIPTION:{_ics_text('Responsible: ' + RESPONSIBLE[o['owner']] + ' (' + OWNER_NAME[o['owner']].lower() + ')' + chr(10) + chr(10) + o['details'] + chr(10) + chr(10) + 'Source: docs/schedule/schedule.yaml')}",
               f"CATEGORIES:{OWNER_NAME[o['owner']]}", "END:VEVENT"]
     L.append("END:VCALENDAR")
     return "\r\n".join(x for line in L for x in _fold(line)) + "\r\n"
@@ -161,7 +176,8 @@ def _when(o: dict) -> str:
 def plan(items: list[dict], occ: list[dict]) -> str:
     L = ["# Annual plan: every action item, by who does it", "",
          "Generated from `docs/schedule/schedule.yaml` by `python -m snapshot.schedule build`; do not edit by hand.",
-         "The same items are in the calendar feed `docs/schedule/snapshot.ics`, and each author or Claude item",
+         "The same items are in the calendar feeds `docs/schedule/snapshot.ics` (everything) and",
+         "`docs/schedule/reviewer.ics` (the external reviewer's items), and each author or Claude item",
          "opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or `owner:claude`).", ""]
     repeating = [it for it in items if "repeat" in it]
     L += ["## Every quarter and every month", "", "| Who | What | When |", "|---|---|---|"]
@@ -174,6 +190,12 @@ def plan(items: list[dict], occ: list[dict]) -> str:
         if it.get("time"):
             when += f", {it['time']} {'UTC' if it.get('utc') else 'ET'}"
         L.append(f"| {OWNER_NAME[it['owner']]} | {it['title']} | {when} |")
+    L.append("")
+    L += ["## Calendar: every dated item in order", "",
+          "The same list as the calendar feeds, one row per occurrence (repeating items included).", "",
+          "| When | Who is responsible | What |", "|---|---|---|"]
+    for o in occ:
+        L.append(f"| {_when(o)} | {RESPONSIBLE[o['owner']]} | {o['title']} |")
     L.append("")
     one_off = [o for o in occ if o["id"] not in {i["id"] for i in repeating}]
     for owner in OWNERS:
@@ -272,7 +294,14 @@ def readme_table(occ: list[dict], milestones: list[dict]) -> str:
                     ds.append(by_id[ref][0]["date"])
                 else:
                     raise ValueError(f"milestone '{m['text']}': no single occurrence '{ref}'")
-            when, key = m.get("prefix", "") + _dates(ds) + m.get("suffix", ""), ds[0]
+            text = _dates(ds)
+            if len(m["at"]) == 1:
+                o = by_uid.get(m["at"][0]) or by_id[m["at"][0]][0]
+                if o["days"] > 1:
+                    end = o["date"] + dt.timedelta(days=o["days"] - 1)
+                    text = (f"{o['date'].day}-{end.day} {end:%b %Y}" if end.month == o["date"].month
+                            else f"{o['date'].day} {o['date']:%b} - {end.day} {end:%b %Y}")
+            when, key = m.get("prefix", "") + text + m.get("suffix", ""), ds[0]
         rows.append((key, f"| {when} | {m['text']} |"))
     rows.sort(key=lambda r: r[0])
     return "\n".join(["| Date | Milestone |", "|---|---|", *(r for _, r in rows)])
@@ -290,6 +319,10 @@ def build() -> tuple[str, str]:
     items = load()
     occ = expand(items)
     return plan(items, occ), ics(occ)
+
+
+def build_reviewer_ics() -> str:
+    return ics(reviewer_occ(expand(load())), REVIEWER_FEED)
 
 
 def build_readme() -> str:
@@ -315,10 +348,11 @@ def main(argv=None) -> int:
     if a.cmd == "build":
         PLAN.write_text(md + "\n")
         ICS.write_bytes(cal.encode())
+        REVIEWER_ICS.write_bytes(build_reviewer_ics().encode())
         README.write_text(build_readme())
-        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the README schedule table")
+        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the reviewer feed and the README schedule table")
         return 0
-    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (README, build_readme().encode()))
+    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (REVIEWER_ICS, build_reviewer_ics().encode()), (README, build_readme().encode()))
              if not p.exists() or p.read_bytes() != want]
     if stale:
         print("out of date: " + ", ".join(str(p.relative_to(REPO_ROOT)) for p in stale) + " (run: python -m snapshot.schedule build)")

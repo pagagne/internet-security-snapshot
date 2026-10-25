@@ -39,8 +39,10 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 | 29 Dec 2026 | Final core freeze: tag core-v1.2, OSF update |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
 | 15 Feb 2027 | Censys research-access application (written by the author) |
+| 1 Mar 2027 | External reviewer confirmed (decision item 17) |
 | 15 Mar 2027, then yearly | Annual review and change window; annual check of free numbers from March 2028 |
-| 1 Apr / 1 May 2027 | Q1 2027, first scored (confirmatory) quarter: provisional / final; external review 3-28 Apr |
+| 1 Apr / 1 May 2027 | Q1 2027, first scored (confirmatory) quarter: provisional / final, with the external review published beside the final |
+| 3-28 Apr 2027 | Independent external review of the Q1 2027 provisional report |
 | 1 Feb 2028 | Q4 2027 final: last quarter of the first year |
 | 1 Apr 2028 | 2027 closing re-run with full follow-up |
 <!-- schedule:end -->
