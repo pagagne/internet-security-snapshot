@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reviewer's Desk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working desk. Header with the one thing due now, then four tabs (tasks, spot check,
+   second coder, review), each a single column of instruments; data in mono, prose in sans. */
+:root {
+  --paper: #f4f6f7; --card: #ffffff; --ink: #172028; --muted: #59646e; --line: #d6dce1;
+  --accent: #0e5a61; --accent-ink: #ffffff; --accent-soft: #e0eeef;
+  --due: #9a520a; --due-soft: #f8ecdc; --ok: #2c6a37; --ok-soft: #e3f1e5; --bad: #a12b2b; --bad-soft: #f8e4e4;
+  --f-display: "Literata", Georgia, "Times New Roman", serif;
+  --f-body: "Public Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0f151a; --card: #161e25; --ink: #e4eaee; --muted: #9ba7b1; --line: #2a353e;
+  --accent: #62b4bb; --accent-ink: #0b1418; --accent-soft: #16302f;
+  --due: #e3a457; --due-soft: #33261a; --ok: #82c78f; --ok-soft: #17301d; --bad: #f08c8c; --bad-soft: #3a1d1d;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #0f151a; --card: #161e25; --ink: #e4eaee; --muted: #9ba7b1; --line: #2a353e;
+  --accent: #62b4bb; --accent-ink: #0b1418; --accent-soft: #16302f;
+  --due: #e3a457; --due-soft: #33261a; --ok: #82c78f; --ok-soft: #17301d; --bad: #f08c8c; --bad-soft: #3a1d1d;
+  color-scheme: dark }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.55 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 28px 64px; display: grid; gap: 22px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 650; text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [role="tab"]:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; }
+.mono, .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font: 500 .72rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.small { font-size: .86rem; }
+header.top { display: grid; gap: 8px; }
+.now { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; display: grid; gap: 10px; }
+.now .row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between; }
+.now .count { font: 500 1.6rem/1 var(--f-mono); color: var(--due); font-variant-numeric: tabular-nums; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs button { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--muted);
+  font: 500 .95rem var(--f-body); padding: 10px 12px; cursor: pointer; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+section.panel { display: grid; gap: 18px; }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; display: grid; gap: 12px; min-width: 0; }
+.chip { display: inline-block; font: 500 .72rem/1 var(--f-mono); letter-spacing: .04em; text-transform: uppercase;
+  padding: 5px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.chip.due { background: var(--due-soft); color: var(--due); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.bad { background: var(--bad-soft); color: var(--bad); }
+.chip.quiet { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.tasks { display: grid; gap: 0; }
+.task { display: grid; grid-template-columns: 8.5rem 1fr auto; gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--line); align-items: start; }
+.task:first-child { border-top: 0; }
+.task .when { font: .82rem/1.45 var(--f-mono); color: var(--muted); }
+.task .what { min-width: 0; display: grid; gap: 4px; }
+.task .what b { font-weight: 600; }
+.task .side { display: grid; gap: 6px; justify-items: end; }
+.task.past .what b { color: var(--muted); }
+.task label { font-size: .82rem; color: var(--muted); display: flex; gap: 6px; align-items: center; cursor: pointer; }
+@media (max-width: 560px) {
+  .task { grid-template-columns: 1fr; }
+  .task .side { justify-items: start; grid-auto-flow: column; justify-content: start; }
+}
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+.field { display: grid; gap: 4px; }
+.field > span { font-size: .8rem; color: var(--muted); }
+input[type="text"], input[type="date"], input[type="number"], select, textarea {
+  font: 15px var(--f-body); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; min-width: 0; }
+input.mono { font-family: var(--f-mono); }
+textarea { width: 100%; min-height: 18rem; font: 14px/1.5 var(--f-mono); resize: vertical; }
+button.btn { appearance: none; font: 600 .9rem var(--f-body); padding: 9px 14px; border-radius: 4px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); }
+button.btn.ghost { background: transparent; color: var(--accent); }
+button.btn:disabled { opacity: .45; cursor: not-allowed; }
+.linkrow { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .9rem; }
+.ws { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 12px; }
+.ws:first-of-type { border-top: 0; padding-top: 0; }
+.answers { display: grid; gap: 8px; }
+.answer { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.answer .field { flex: 1 1 14rem; }
+.drawn { display: flex; flex-wrap: wrap; gap: 6px; }
+.slot { font: 500 .85rem var(--f-mono); padding: 6px 9px; border-radius: 4px; border: 1px dashed var(--line); color: var(--muted); }
+.slot.have { border-style: solid; border-color: var(--accent); color: var(--accent); }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.progress i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s; }
+@media (prefers-reduced-motion: reduce) { .progress i { transition: none; } }
+.item { display: grid; gap: 12px; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: .92rem; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.rule { background: var(--accent-soft); border-radius: 4px; padding: 10px 12px; font-size: .9rem; display: grid; gap: 4px; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.choices label { display: flex; gap: 6px; align-items: center; border: 1px solid var(--line); border-radius: 4px; padding: 7px 11px; cursor: pointer; }
+.choices input:checked + span { font-weight: 600; color: var(--accent); }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; }
+ol.check { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+ol.check li { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); align-items: start; counter-increment: s; }
+ol.check li:first-child { border-top: 0; }
+ol.check li::before { content: counter(s); font: 500 .8rem/1.9 var(--f-mono); color: var(--muted); width: 1.4rem; }
+ol.check li > div { min-width: 0; display: grid; gap: 2px; }
+ol.check input { margin-top: 5px; }
+.note { font-size: .86rem; color: var(--muted); }
+.flash { font-size: .86rem; color: var(--ok); min-height: 1.2em; }
+.sample-flag { border-left: 3px solid var(--due); padding-left: 10px; }
+pre.out { margin: 0; overflow-x: auto; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 10px; font: 12.5px/1.45 var(--f-mono); }
+footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Internet Security Snapshot · independent review</span>
+    <h1>Reviewer's Desk</h1>
+    <p class="muted">Everything the independent reviewer does for the study, in one place: what is due, the spot-check worksheets, the second-coder rounds and the April review. Your progress is kept in this browser only.</p>
+  </header>
+
+  <div class="now" id="now" aria-live="polite">
+    <span class="eyebrow">Loading your schedule…</span>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-tasks" aria-controls="tasks" aria-selected="true">Tasks</button>
+    <button role="tab" id="tab-spot" aria-controls="spot" aria-selected="false">Spot check</button>
+    <button role="tab" id="tab-coder" aria-controls="coder" aria-selected="false">Second coder</button>
+    <button role="tab" id="tab-review" aria-controls="review" aria-selected="false">April review</button>
+  </nav>
+
+  <!-- TASKS -->
+  <section class="panel" id="tasks" role="tabpanel" aria-labelledby="tab-tasks">
+    <div class="box">
+      <div class="controls">
+        <label class="field" for="asof"><span>Show the schedule as of</span><input type="date" id="asof"></label>
+        <button class="btn ghost" id="today" type="button">Today</button>
+      </div>
+      <div class="tasks" id="tasklist"></div>
+    </div>
+    <div class="box">
+      <h3>Get reminders in your own calendar</h3>
+      <p class="small">Subscribe once; dates update by themselves when the schedule changes.</p>
+      <div class="linkrow">
+        <a id="gcal" target="_blank" rel="noopener">Add to Google Calendar</a>
+        <span class="muted">or subscribe in Outlook or Apple Calendar with:</span>
+      </div>
+      <div class="controls"><input type="text" class="mono" id="icsurl" readonly style="flex:1 1 20rem"><button class="btn ghost" id="copyics" type="button">Copy</button></div>
+      <div class="flash" id="icsflash"></div>
+    </div>
+  </section>
+
+  <!-- SPOT CHECK -->
+  <section class="panel" id="spot" role="tabpanel" aria-labelledby="tab-spot" hidden>
+    <div class="box">
+      <h2>Spot-check three headline figures</h2>
+      <p>Choose any seed number you like. The draw below picks three figures from it; Paul and Claude never choose them. For each, open the worksheet, recompute the figure in a spreadsheet, and enter your result. The page tells you whether it matches the published value.</p>
+      <div class="controls">
+        <label class="field" for="seed"><span>Your seed (any number or word)</span><input type="text" class="mono" id="seed" placeholder="e.g. 4417"></label>
+        <button class="btn" id="drawbtn" type="button">Draw</button>
+      </div>
+      <div class="drawn" id="drawn"></div>
+      <p class="note" id="drawnote"></p>
+    </div>
+    <div class="box" id="wsbox">
+      <h3>Worksheets</h3>
+      <div id="wslist"></div>
+    </div>
+    <div class="box">
+      <h3>Your results so far</h3>
+      <pre class="out" id="spotout">No results yet.</pre>
+      <div class="controls"><button class="btn ghost" id="copyspot" type="button">Copy results</button></div>
+      <div class="flash" id="spotflash"></div>
+    </div>
+  </section>
+
+  <!-- SECOND CODER -->
+  <section class="panel" id="coder" role="tabpanel" aria-labelledby="tab-coder" hidden>
+    <div class="box">
+      <h2>Second-coder round</h2>
+      <p>Each quarter you receive a sheet of 20 items with Paul's answers removed. Open it here to work through the items one at a time with the written rule beside each, then save the completed sheet and send it back. About 45 minutes; the window is two weeks.</p>
+      <div class="controls">
+        <label class="field" for="sheet"><span>Open your sheet (.csv)</span><input type="file" id="sheet" accept=".csv,text/csv"></label>
+        <button class="btn ghost" id="example" type="button">Try the example sheet</button>
+      </div>
+      <p class="note" id="sheetinfo">No sheet open.</p>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+    </div>
+    <div class="box item" id="itembox" hidden></div>
+    <div class="box" id="exportbox" hidden>
+      <h3>Send the completed sheet back</h3>
+      <p class="small">Save the file and email it to Paul. Your answers never change his; they measure how often two careful people agree.</p>
+      <div class="controls"><button class="btn" id="dl" type="button">Save completed sheet</button><button class="btn ghost" id="copycsv" type="button">Copy as text</button></div>
+      <div class="flash" id="csvflash"></div>
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section class="panel" id="review" role="tabpanel" aria-labelledby="tab-review" hidden>
+    <div class="box">
+      <h2>The April review, step by step</h2>
+      <p class="small">Review window 3-28 April 2027, about 8-12 hours in all. Tick steps as you go.</p>
+      <ol class="check" id="steps"></ol>
+    </div>
+    <div class="box">
+      <h3>Your written review</h3>
+      <p class="small">Two to five pages is plenty. It is published as you write it, beside the final report on 1 May, with Paul's response. Draft here (kept in this browser) or in your own editor.</p>
+      <textarea id="draft" aria-label="Written review draft"></textarea>
+      <div class="controls"><button class="btn ghost" id="copydraft" type="button">Copy draft</button><button class="btn ghost" id="resetdraft" type="button">Start from the template</button></div>
+      <div class="flash" id="draftflash"></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Schedule from <span class="mono">docs/schedule/schedule.yaml</span> in <a href="https://github.com/pagagne/internet-security-snapshot" target="_blank" rel="noopener">github.com/pagagne/internet-security-snapshot</a>. Registered plan: OSF DOI 10.17605/OSF.IO/3XT82.</span>
+    <span>Nothing you type here leaves this browser unless you copy or save it.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  const REPO = "https://github.com/pagagne/internet-security-snapshot";
+  const RAW = "https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/";
+  const ICS = RAW + "docs/schedule/reviewer.ics";
+  const FIGURES = ["T1a", "T1b", "T2", "T3", "T4", "T5", "T6", "T7"];
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("rdesk:" + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem("rdesk:" + k, JSON.stringify(v)); } catch (e) {} },
+  };
+  const flash = (el, msg) => { el.textContent = msg; setTimeout(() => { if (el.textContent === msg) el.textContent = ""; }, 2500); };
+  async function copy(text, flashEl, fallbackEl) {
+    try { await navigator.clipboard.writeText(text); flash(flashEl, "Copied."); }
+    catch (e) { if (fallbackEl) { fallbackEl.focus(); fallbackEl.select && fallbackEl.select(); } flash(flashEl, "Select the text and copy it with your keyboard."); }
+  }
+  const iso = (d) => d.toISOString().slice(0, 10);
+  const dayDiff = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
+  const todayIso = () => { const n = new Date(); return iso(new Date(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()))); };
+
+  /* ---------- tabs ---------- */
+  const tabs = ["tasks", "spot", "coder", "review"];
+  function show(id) {
+    tabs.forEach((t) => { $("#" + t).hidden = t !== id; $("#tab-" + t).setAttribute("aria-selected", t === id); });
+    store.set("tab", id);
+  }
+  tabs.forEach((t) => $("#tab-" + t).addEventListener("click", () => show(t)));
+  const h = (location.hash || "").slice(1);
+  show(tabs.includes(h) ? h : store.get("tab", "tasks"));
+
+  /* ---------- tasks ---------- */
+  let TASKS = [];
+  const done = store.get("done", {});
+  function renderTasks() {
+    const d = $("#asof").value || todayIso();
+    const mine = TASKS.filter((t) => t.who === "Reviewer");
+    const current = mine.filter((t) => t.start <= d && d <= t.end && !done[t.uid]);
+    const next = mine.filter((t) => t.start > d && !done[t.uid]).sort((a, b) => a.start.localeCompare(b.start))[0];
+    const now = $("#now");
+    if (current.length) {
+      now.innerHTML = `<span class="eyebrow">Now</span>` + current.map((t) => `
+        <div class="row"><h2>${esc(t.title)}</h2><span class="count">${dayDiff(d, t.end)} days left</span></div>
+        <p class="small muted">${esc(t.when)} · ${esc(t.details)}</p>`).join("");
+    } else if (next) {
+      now.innerHTML = `<span class="eyebrow">Next</span>
+        <div class="row"><h2>${esc(next.title)}</h2><span class="count">in ${dayDiff(d, next.start)} days</span></div>
+        <p class="small muted">${esc(next.when)}${next.optional ? " · optional" : ""} · ${esc(next.details)}</p>`;
+    } else {
+      now.innerHTML = `<span class="eyebrow">All done</span><h2>Nothing left on your schedule</h2>`;
+    }
+    $("#tasklist").innerHTML = TASKS.map((t) => {
+      const past = t.end < d, cur = t.start <= d && d <= t.end, isMine = t.who === "Reviewer";
+      let chip = past ? `<span class="chip quiet">Past</span>` : cur ? `<span class="chip due">Now</span>` : `<span class="chip quiet">${dayDiff(d, t.start)} days</span>`;
+      if (isMine && done[t.uid]) chip = `<span class="chip ok">Done</span>`;
+      const who = isMine ? (t.optional ? "You · optional" : "You") : esc(t.who);
+      return `<div class="task${past || done[t.uid] ? " past" : ""}">
+        <div class="when">${esc(t.when)}</div>
+        <div class="what"><b>${esc(t.title)}</b><span class="small muted">${esc(t.details)}</span></div>
+        <div class="side">${chip}<span class="small muted">${who}</span>${isMine ? `<label><input type="checkbox" data-uid="${esc(t.uid)}" ${done[t.uid] ? "checked" : ""}> done</label>` : ""}</div>
+      </div>`;
+    }).join("");
+    $("#tasklist").querySelectorAll("input[data-uid]").forEach((c) => c.addEventListener("change", () => {
+      if (c.checked) done[c.dataset.uid] = true; else delete done[c.dataset.uid];
+      store.set("done", done); renderTasks();
+    }));
+  }
+  $("#asof").value = todayIso();
+  $("#asof").addEventListener("change", renderTasks);
+  $("#today").addEventListener("click", () => { $("#asof").value = todayIso(); renderTasks(); });
+  $("#icsurl").value = ICS;
+  $("#gcal").href = "https://calendar.google.com/calendar/render?cid=" + encodeURIComponent(ICS);
+  $("#copyics").addEventListener("click", () => copy(ICS, $("#icsflash"), $("#icsurl")));
+
+  /* ---------- spot check ---------- */
+  let WS = [];
+  const results = store.get("spot", {});
+  async function sha(s) {
+    const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+    return [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join("");
+  }
+  async function draw(seed, ids, k) {
+    const keyed = await Promise.all(ids.map(async (i) => [await sha(`spot|${seed}|${i}`), i]));
+    return keyed.sort((a, b) => (a[0] < b[0] ? -1 : 1)).slice(0, k).map((x) => x[1]);
+  }
+  async function renderDraw() {
+    const seed = $("#seed").value.trim();
+    store.set("seed", seed);
+    if (!seed) { $("#drawn").innerHTML = ""; $("#drawnote").textContent = ""; return; }
+    const picked = await draw(seed, FIGURES, 3);
+    const have = new Set(WS.map((w) => w.id));
+    $("#drawn").innerHTML = picked.map((f) => `<span class="slot${have.has(f) ? " have" : ""}">${f}</span>`).join("");
+    const missing = picked.filter((f) => !have.has(f));
+    $("#drawnote").textContent = missing.length
+      ? `Worksheets for ${missing.join(", ")} arrive with the Q1 2027 report (2 April). Until then, practise on the sample below.`
+      : "All three worksheets are ready below.";
+  }
+  $("#drawbtn").addEventListener("click", renderDraw);
+  $("#seed").value = store.get("seed", "");
+  const drafts = {};   // typed but not yet checked; kept across re-renders
+  function renderWS() {
+    $("#wslist").innerHTML = WS.map((w) => `
+      <div class="ws">
+        <div class="nav"><h3>${esc(w.title)}</h3>${w.sample ? `<span class="chip due">Sample</span>` : ""}</div>
+        ${w.sample ? `<p class="small sample-flag">Real public data, but the fix dates are the automatic first pass before the hand check, so this is practice, not a study result.</p>` : ""}
+        <div class="linkrow"><a href="${esc(w.instructions)}" target="_blank" rel="noopener">Open the worksheet (definition and steps)</a><a href="${esc(w.inputs_url)}" target="_blank" rel="noopener">Inputs (${w.rows} rows, CSV)</a></div>
+        <div class="answers">${w.answers.map((a, i) => {
+          const r = (results[w.id] || {})[i];
+          const chip = r ? (r.match ? `<span class="chip ok">Matches</span>` : `<span class="chip bad">Differs: published ${esc(a.value)}</span>`) : "";
+          return `<div class="answer"><label class="field" for="a-${w.id}-${i}"><span>${esc(a.label)}</span>
+            <input type="number" step="any" class="mono" id="a-${w.id}-${i}" value="${r ? esc(r.mine) : esc(drafts[`a-${w.id}-${i}`] ?? "")}"></label>
+            <button class="btn ghost" type="button" data-ws="${esc(w.id)}" data-i="${i}">Check</button>${chip}</div>`;
+        }).join("")}</div>
+      </div>`).join("") || `<p class="muted">No worksheets published yet.</p>`;
+    $("#wslist").querySelectorAll("input[type=number]").forEach((el) => el.addEventListener("input", () => { drafts[el.id] = el.value; }));
+    $("#wslist").querySelectorAll("button[data-ws]").forEach((b) => b.addEventListener("click", () => {
+      const w = WS.find((x) => x.id === b.dataset.ws), i = +b.dataset.i, a = w.answers[i];
+      const v = $(`#a-${w.id}-${i}`).value;
+      if (v === "") return;
+      (results[w.id] = results[w.id] || {})[i] = { mine: +v, match: Math.abs(+v - a.value) < 1e-9, at: todayIso() };
+      store.set("spot", results); renderWS(); renderSpotOut();
+    }));
+  }
+  function renderSpotOut() {
+    const lines = [];
+    WS.forEach((w) => w.answers.forEach((a, i) => {
+      const r = (results[w.id] || {})[i];
+      if (r) lines.push(`${w.id}${w.sample ? " (sample)" : ""} | ${a.label}: mine ${r.mine}, published ${a.value} | ${r.match ? "match" : "DIFFERS"} | ${r.at}`);
+    }));
+    const seed = store.get("seed", "");
+    $("#spotout").textContent = lines.length ? (seed ? `Seed: ${seed}\n` : "") + lines.join("\n") : "No results yet.";
+  }
+  $("#copyspot").addEventListener("click", () => copy($("#spotout").textContent, $("#spotflash")));
+
+  /* ---------- second coder ---------- */
+  const FIELDS = ["item_id", "kind", "month", "slot", "cve_id", "credit", "prefill_date", "prefill_source", "answer", "fix_date", "fix_status", "note"];
+  const RULES = {
+    fix: ["When was a fix first available?", "Open the vendor's advisory (links below). Record the date the vendor first released an update, patched version or official fix. If the pre-filled date is right, choose Confirmed; if the advisory shows a different date, enter it and choose Corrected; if no fix exists yet, No fix yet; if you can't tell, Unknown, with a note."],
+    credit: ["Does this credit show an AI tool or a frontier AI lab took part?", "Yes for any mention of an AI tool, model or agent, or a frontier AI lab, in any role other than as the thing that had the flaw. No for a person's name that happens to match (\"Claude Bernard\"), for credits where the AI product is the subject of the flaw, and for security companies that are not AI labs. When genuinely unclear: No, with a note."],
+    slot_c: ["Is this product reachable from the internet in normal use?", "Yes for products that normally face the internet (VPN gateways, firewalls, web and email servers, remote-access portals). No for products used only inside a network. When unclear, choose the closer answer and add a note."],
+  };
+  let sheet = null, idx = 0, key = "";
+  function parseCSV(text) {
+    const rows = []; let row = [], f = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+      else if (c === '"') q = true;
+      else if (c === ",") { row.push(f); f = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; }
+      else f += c;
+    }
+    if (f !== "" || row.length) { row.push(f); rows.push(row); }
+    const head = rows.shift() || [];
+    return rows.filter((r) => r.some((x) => x !== "")).map((r) => Object.fromEntries(head.map((hd, i) => [hd, r[i] ?? ""])));
+  }
+  const toCSV = (rows) => [FIELDS.join(",")].concat(rows.map((r) => FIELDS.map((k) => {
+    const v = String(r[k] ?? ""); return /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
+  }).join(","))).join("\n") + "\n";
+  async function openSheet(text, name) {
+    const items = parseCSV(text);
+    if (!items.length || !("item_id" in items[0])) { $("#sheetinfo").textContent = "That file doesn't look like a second-coder sheet (no item_id column)."; return; }
+    key = "coder:" + (await sha(items.map((r) => r.item_id).join("|"))).slice(0, 16);
+    const saved = store.get(key, {});
+    items.forEach((r) => Object.assign(r, saved[r.item_id] || {}));
+    sheet = { items, name }; idx = 0;
+    $("#itembox").hidden = false; $("#exportbox").hidden = false;
+    renderItem();
+  }
+  const answered = (r) => (r.kind === "fix" ? !!r.fix_status : !!r.answer);
+  function saveItem(r) { const s = store.get(key, {}); s[r.item_id] = { answer: r.answer, fix_date: r.fix_date, fix_status: r.fix_status, note: r.note }; store.set(key, s); }
+  function renderItem() {
+    const items = sheet.items, r = items[idx], n = items.filter(answered).length;
+    $("#sheetinfo").textContent = `${sheet.name}: ${n} of ${items.length} answered.`;
+    $("#bar").style.width = (100 * n / items.length) + "%";
+    const [q, rule] = RULES[r.kind] || ["", ""];
+    const cve = r.cve_id;
+    const links = cve ? `<div class="linkrow small"><a href="https://www.cve.org/CVERecord?id=${esc(cve)}" target="_blank" rel="noopener">CVE record</a><a href="https://nvd.nist.gov/vuln/detail/${esc(cve)}" target="_blank" rel="noopener">NVD (advisory links)</a><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=${esc(cve)}" target="_blank" rel="noopener">CISA KEV</a></div>` : "";
+    const facts = [["Item", `<span class="mono">${esc(r.item_id)}</span>`], ["Month", `<span class="mono">${esc(r.month)}</span>`]];
+    if (cve) facts.push(["Flaw", `<span class="mono">${esc(cve)}</span>`]);
+    if (r.kind === "fix") facts.push(["Pre-filled fix date", `<span class="mono">${esc(r.prefill_date || "none")}</span>`], ["From", esc(r.prefill_source)]);
+    if (r.kind === "slot_c") facts.push(["Product", esc(r.prefill_source)]);
+    if (r.kind === "credit") facts.push(["Credit line", esc(r.credit)]);
+    const form = r.kind === "fix" ? `
+      <div class="controls">
+        <label class="field" for="fx-date"><span>Fix date</span><input type="date" id="fx-date" value="${esc(r.fix_date || r.prefill_date)}"></label>
+        <label class="field" for="fx-status"><span>Status</span><select id="fx-status">
+          ${[["", "Choose…"], ["confirmed", "Confirmed"], ["corrected", "Corrected"], ["no_fix_yet", "No fix yet"], ["unknown", "Unknown"]].map(([v, l]) => `<option value="${v}" ${r.fix_status === v ? "selected" : ""}>${l}</option>`).join("")}
+        </select></label>
+      </div>` : `
+      <div class="choices" role="radiogroup" aria-label="Answer">
+        ${["yes", "no"].map((v) => `<label><input type="radio" name="yn" value="${v}" ${r.answer === v ? "checked" : ""}><span>${v === "yes" ? "Yes" : "No"}</span></label>`).join("")}
+      </div>`;
+    $("#itembox").innerHTML = `
+      <div class="nav"><span class="eyebrow">Item ${idx + 1} of ${items.length} · ${esc(r.kind === "slot_c" ? "internet-facing" : r.kind === "fix" ? "fix date" : "AI credit")}</span>${answered(r) ? `<span class="chip ok">Answered</span>` : `<span class="chip quiet">Open</span>`}</div>
+      <h3>${esc(q)}</h3>
+      <dl class="facts">${facts.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>
+      ${links}
+      <div class="rule"><b>The rule</b><span>${esc(rule)}</span><a href="${REPO}/blob/main/docs/HAND_CHECK.md" target="_blank" rel="noopener">Full written rules</a></div>
+      ${form}
+      <label class="field" for="it-note"><span>Note (optional)</span><input type="text" id="it-note" value="${esc(r.note)}"></label>
+      <div class="nav"><button class="btn ghost" id="prev" type="button" ${idx === 0 ? "disabled" : ""}>Previous</button><button class="btn" id="next" type="button">${idx === items.length - 1 ? "Finish" : "Save and next"}</button></div>`;
+    const commit = () => {
+      if (r.kind === "fix") { r.fix_date = $("#fx-date").value; r.fix_status = $("#fx-status").value; }
+      else { const c = document.querySelector('input[name="yn"]:checked'); r.answer = c ? c.value : ""; }
+      r.note = $("#it-note").value; saveItem(r);
+    };
+    $("#prev").addEventListener("click", () => { commit(); idx--; renderItem(); });
+    $("#next").addEventListener("click", () => { commit(); if (idx < items.length - 1) { idx++; renderItem(); } else { renderItem(); $("#exportbox").scrollIntoView({ block: "nearest" }); } });
+  }
+  $("#sheet").addEventListener("change", (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    const rd = new FileReader(); rd.onload = () => openSheet(String(rd.result), f.name); rd.readAsText(f);
+  });
+  $("#example").addEventListener("click", async () => {
+    try { const t = await (await fetch("second-coder-example.csv")).text(); openSheet(t, "Example sheet (7 practice items)"); }
+    catch (e) { $("#sheetinfo").textContent = "The example sheet could not be loaded."; }
+  });
+  $("#dl").addEventListener("click", () => {
+    if (!sheet) return;
+    const blob = new Blob([toCSV(sheet.items)], { type: "text/csv" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = sheet.name.replace(/\.csv$/i, "") + "-answers.csv"; document.body.appendChild(a); a.click(); a.remove();
+    flash($("#csvflash"), "Saved to your downloads. If nothing appeared, use Copy as text.");
+  });
+  $("#copycsv").addEventListener("click", () => sheet && copy(toCSV(sheet.items), $("#csvflash")));
+
+  /* ---------- review ---------- */
+  const STEPS = [
+    ["Read the provisional Q1 2027 report", "Published 1 April. Note each headline figure and the claims made about it.", "1-2 h"],
+    ["Read it against the registered plan and the deviations log", "OSF DOI 10.17605/OSF.IO/3XT82 and prereg/DEVIATIONS.md. Is every change from the plan logged and explained?", "1-2 h"],
+    ["Spot-check three headline figures", "Use the Spot check tab: your seed, the draw, one worksheet per figure.", "1-2 h"],
+    ["Look at the sample of hand decisions", "Sent with the review packet, with the written rules. Do the rules look applied as written?", "1-2 h"],
+    ["Optional mid-review call with Paul (15 April)", "Questions, or to agree a new date if you need one.", "30 min"],
+    ["Write the review", "What holds up, what doesn't, what you would change. Two to five pages.", "2-3 h"],
+    ["Send it by 28 April", "Published as you wrote it, beside the final report on 1 May, with Paul's response.", ""],
+  ];
+  const ticks = store.get("steps", {});
+  $("#steps").innerHTML = STEPS.map(([t, d, m], i) => `<li><div><b>${esc(t)}</b><span class="small muted">${esc(d)}</span></div>
+    <span class="small muted mono">${esc(m)}</span><input type="checkbox" id="st-${i}" aria-label="Done: ${esc(t)}" ${ticks[i] ? "checked" : ""}></li>`).join("");
+  STEPS.forEach((_, i) => $("#st-" + i).addEventListener("change", (e) => { ticks[i] = e.target.checked; store.set("steps", ticks); }));
+  const TEMPLATE = `# Independent review: Internet Security Snapshot, Q1 2027 provisional report
+
+Reviewer: [your name or initials]
+Date: [date]
+Disclosed ties: [none, or describe]
+
+## What I checked
+- The report against the registered plan (OSF DOI 10.17605/OSF.IO/3XT82) and the deviations log
+- Spot check: seed [ ], figures [ , , ], results [match / differs]
+- Hand decisions: [how many looked at, which kinds]
+
+## What holds up
+
+## What doesn't
+
+## What I would change
+
+## Anything else
+`;
+  $("#draft").value = store.get("draft", TEMPLATE);
+  $("#draft").addEventListener("input", () => store.set("draft", $("#draft").value));
+  $("#copydraft").addEventListener("click", () => copy($("#draft").value, $("#draftflash"), $("#draft")));
+  $("#resetdraft").addEventListener("click", () => {
+    if ($("#resetdraft").dataset.armed) { $("#draft").value = TEMPLATE; store.set("draft", TEMPLATE); delete $("#resetdraft").dataset.armed; $("#resetdraft").textContent = "Start from the template"; flash($("#draftflash"), "Template restored."); }
+    else { $("#resetdraft").dataset.armed = "1"; $("#resetdraft").textContent = "Replace my draft? Click again"; }
+  });
+
+  /* ---------- load data ---------- */
+  fetch("tasks.json").then((r) => r.json()).then((j) => { TASKS = j.tasks; renderTasks(); })
+    .catch(() => { $("#now").innerHTML = `<span class="eyebrow">Schedule unavailable</span><p>The schedule could not be loaded. The same dates are in your calendar feed.</p>`; });
+  fetch("worksheets.json").then((r) => r.json()).then((j) => { WS = j.worksheets; renderWS(); renderSpotOut(); renderDraw(); })
+    .catch(() => { $("#wslist").innerHTML = `<p class="muted">The worksheets could not be loaded.</p>`; });
+})();
+</script>
+</body>
+</html>

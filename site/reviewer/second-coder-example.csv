@@ -1,0 +1,8 @@
+item_id,kind,month,slot,cve_id,credit,prefill_date,prefill_source,answer,fix_date,fix_status,note
+EXAMPLE-01,fix,2026-07,,CVE-2026-45659,,2026-05-21,Microsoft Update Guide release date,,,,
+EXAMPLE-02,fix,2026-07,,CVE-2026-48282,,2026-06-30,CVE record: disclosure date (datePublic),,,,
+EXAMPLE-03,fix,2026-07,,CVE-2026-55255,,2026-06-19,GitHub advisory GHSA-qrpv-q767-xqq2,,,,
+EXAMPLE-04,fix,2026-07,,CVE-2008-4128,,2008-09-17,CVE record: disclosure date (datePublic),,,,
+EXAMPLE-05,fix,2026-07,,CVE-2026-48908,,2026-06-20,CVE publication date (assumed; no fix date found),,,,
+EXAMPLE-06,slot_c,2026-08,c,CVE-2026-8452,,,Citrix NetScaler ADC and NetScaler Gateway,,,,
+EXAMPLE-07,credit,2026-09,,,EXAMPLE TEXT: Reported by a researcher using an AI code-review assistant,,,,,,

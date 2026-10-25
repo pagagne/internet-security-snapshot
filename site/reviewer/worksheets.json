@@ -1,0 +1,24 @@
+{
+ "worksheets": [
+  {
+   "id": "T1a",
+   "title": "Race: median days from fix to known attack (T1a), Q3 2026",
+   "sample": true,
+   "rows": 100,
+   "instructions": "https://github.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/sample-worksheet/README.md",
+   "inputs": "worksheets/race-sample/inputs.csv",
+   "inputs_url": "https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/site/reviewer/worksheets/race-sample/inputs.csv",
+   "answers": [
+    {
+     "label": "Median days, fix to known attack",
+     "value": 8.5
+    },
+    {
+     "label": "Rows with days of 0 or less (optional)",
+     "value": 22,
+     "optional": true
+    }
+   ]
+  }
+ ]
+}

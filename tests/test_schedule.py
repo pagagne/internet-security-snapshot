@@ -87,3 +87,10 @@ def test_feeds_in_sync():
     rev = _events(S.REVIEWER_ICS.read_text())
     assert rev and all(e in full for e in rev)
     assert all(any(f"SUMMARY:[{who}]" in e for who in S.RESPONSIBLE.values()) for e in full)
+
+
+def test_reviewer_desk_tasks_match_feed():
+    import json
+    tasks = json.loads(S.REVIEWER_JSON.read_text())["tasks"]
+    assert [t["uid"] for t in tasks] == [o["uid"] for o in S.reviewer_occ(S.expand(S.load()))]
+    assert all(t["title"][:1].isupper() for t in tasks)

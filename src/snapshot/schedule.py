@@ -26,6 +26,7 @@ from .util import REPO_ROOT
 SOURCE = REPO_ROOT / "docs/schedule/schedule.yaml"
 ICS = REPO_ROOT / "docs/schedule/snapshot.ics"
 REVIEWER_ICS = REPO_ROOT / "docs/schedule/reviewer.ics"   # the external reviewer's own feed
+REVIEWER_JSON = REPO_ROOT / "site/reviewer/tasks.json"   # read by the reviewer's desk page
 PLAN = REPO_ROOT / "docs/ANNUAL_PLAN.md"
 README = REPO_ROOT / "README.md"
 BEGIN, END = "<!-- schedule:begin -->", "<!-- schedule:end -->"
@@ -325,6 +326,19 @@ def build_reviewer_ics() -> str:
     return ics(reviewer_occ(expand(load())), REVIEWER_FEED)
 
 
+def build_reviewer_json() -> str:
+    """The reviewer's tasks for site/reviewer/index.html (same occurrences as reviewer.ics)."""
+    rows = []
+    for o in reviewer_occ(expand(load())):
+        end = o["date"] + dt.timedelta(days=o["days"] - 1)
+        title = o["title"].removeprefix("Optional - ")
+        rows.append({"uid": o["uid"], "title": title[:1].upper() + title[1:],
+                     "optional": o["title"].startswith("Optional"), "who": RESPONSIBLE[o["owner"]],
+                     "start": o["date"].isoformat(), "end": end.isoformat(), "when": _when(o),
+                     "minutes": o["minutes"] if o["time"] else None, "details": o["details"]})
+    return json.dumps({"source": "docs/schedule/schedule.yaml", "tasks": rows}, indent=1) + "\n"
+
+
 def build_readme() -> str:
     return readme(README.read_text(), readme_table(expand(load()), load_milestones()))
 
@@ -349,10 +363,12 @@ def main(argv=None) -> int:
         PLAN.write_text(md + "\n")
         ICS.write_bytes(cal.encode())
         REVIEWER_ICS.write_bytes(build_reviewer_ics().encode())
+        REVIEWER_JSON.parent.mkdir(parents=True, exist_ok=True)
+        REVIEWER_JSON.write_text(build_reviewer_json())
         README.write_text(build_readme())
         print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the reviewer feed and the README schedule table")
         return 0
-    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (REVIEWER_ICS, build_reviewer_ics().encode()), (README, build_readme().encode()))
+    stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (REVIEWER_ICS, build_reviewer_ics().encode()), (REVIEWER_JSON, build_reviewer_json().encode()), (README, build_readme().encode()))
              if not p.exists() or p.read_bytes() != want]
     if stale:
         print("out of date: " + ", ".join(str(p.relative_to(REPO_ROOT)) for p in stale) + " (run: python -m snapshot.schedule build)")
