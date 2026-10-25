@@ -556,9 +556,10 @@ SUMMARY:[Paul] Snapshot: Confirm the external reviewer
 DESCRIPTION:Responsible: Paul (author)\n\nTwo weeks before the annual revie
  w\; review window 3-28 April. Ask for their disclosure of any ties to AI l
  abs (Anthropic included)\, security vendors or the data providers\, how th
- ey want to be named (name or initials) and their ORCID. Send them the revi
- ewer calendar feed (docs/OPERATIONS.md). Then tell Claude\, so the reviewe
- r items below can start.\n\nSource: docs/schedule/schedule.yaml
+ ey want to be named (name or initials) and their ORCID. Send them the Revi
+ ewer's Desk link (site/reviewer/\, it includes the calendar feed\; docs/OP
+ ERATIONS.md). Then tell Claude\, so the reviewer items below can start.\n\
+ nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

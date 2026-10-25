@@ -285,8 +285,8 @@ items:
   details: >
     Two weeks before the annual review; review window 3-28 April. Ask for their disclosure of
     any ties to AI labs (Anthropic included), security vendors or the data providers, how they
-    want to be named (name or initials) and their ORCID. Send them the reviewer calendar feed
-    (docs/OPERATIONS.md). Then tell Claude, so the reviewer items below can start.
+    want to be named (name or initials) and their ORCID. Send them the Reviewer's Desk link
+    (site/reviewer/, it includes the calendar feed; docs/OPERATIONS.md). Then tell Claude, so the reviewer items below can start.
 
 - id: annual-review
   owner: author

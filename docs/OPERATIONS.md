@@ -28,6 +28,15 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 - **Automatic runs with their own cron:** Quarterly pull (1st of each month at 06:00 UTC,
   provisional and final), Rebuild check (10th monthly), Checks (every push).
 
+## The Reviewer's Desk
+`site/reviewer/index.html` is the external reviewer's own page: what is due (from the same
+schedule as the calendars, via `site/reviewer/tasks.json`), the spot-check draw and worksheets
+with an automatic match check, a guided second-coder round that saves a completed sheet, and
+the April review steps with a draft template. Progress stays in the reviewer's browser; they
+send results by copying or saving them. It goes live with GitHub Pages on 4 Dec 2026; until
+then, a private preview is a Claude artifact. Worksheets are listed in
+`site/reviewer/worksheets.json`.
+
 ## Checking progress
 - **Run log:** the Schedule and Rebuild check workflows add a line to
   `reports/log/<YYYY-MM>.md` on the `run-reports` branch after every run (when, result, link to
