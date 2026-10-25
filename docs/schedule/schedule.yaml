@@ -565,8 +565,12 @@ milestones:
 - at: [annual-review@2027-03-15]
   suffix: ", then yearly"
   text: Annual review and change window; annual check of free numbers from March 2028
+- at: [reviewer-confirm]
+  text: External reviewer confirmed (decision item 17)
 - at: [pull-provisional@2027-04-01, pull-final@2027-05-01]
-  text: "Q1 2027, first scored (confirmatory) quarter: provisional / final; external review 3-28 Apr"
+  text: "Q1 2027, first scored (confirmatory) quarter: provisional / final, with the external review published beside the final"
+- at: [external-review]
+  text: Independent external review of the Q1 2027 provisional report
 - at: [pull-final@2028-02-01]
   text: "Q4 2027 final: last quarter of the first year"
 - at: [closing-rerun]

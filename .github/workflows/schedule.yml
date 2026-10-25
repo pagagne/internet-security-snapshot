@@ -18,7 +18,7 @@ on:
         default: false
 
 permissions:
-  contents: read
+  contents: write   # run log on the run-reports branch only
   issues: write
   actions: write
 
@@ -46,4 +46,8 @@ jobs:
           ARGS=""
           if [ -n "${{ inputs.date }}" ]; then ARGS="$ARGS --date ${{ inputs.date }}"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          python -m snapshot.schedule act $ARGS | tee -a "$GITHUB_STEP_SUMMARY"
+          python -m snapshot.schedule act $ARGS | tee act.txt | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -qx "nothing due" act.txt && : > act.txt || true
+      - name: Record the run (run-reports branch)
+        if: always()
+        run: tools/run_log.sh Schedule "${{ job.status }}" act.txt

@@ -75,3 +75,15 @@ def test_reviewer_feed_and_no_reviewer_issues():
     assert S.REVIEWER_ICS.read_text().count("BEGIN:VEVENT") == len(rev)
     for day in (dt.date(2027, 4, 3), dt.date(2027, 4, 29)):
         assert not any(o["owner"] == "reviewer" for o in S.due(occ, day)["issues"])
+
+
+def _events(text):
+    return [e.split("END:VEVENT")[0] for e in text.split("BEGIN:VEVENT")[1:]]
+
+
+def test_feeds_in_sync():
+    """Every entry in the reviewer's feed is byte-for-byte the same entry in the full feed."""
+    full = set(_events(S.ICS.read_text()))
+    rev = _events(S.REVIEWER_ICS.read_text())
+    assert rev and all(e in full for e in rev)
+    assert all(any(f"SUMMARY:[{who}]" in e for who in S.RESPONSIBLE.values()) for e in full)

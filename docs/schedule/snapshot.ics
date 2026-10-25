@@ -15,12 +15,13 @@ DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Continue the research window
-DESCRIPTION:docs/RESEARCH_PLAN.md: item 5 (an on/off switch per permissione
- d source in config)\, then item 4 (remaining evaluation code: labels T2\, 
- T4-T6\; X6-X12\; NVD root-cause fill\; draft evaluation page)\; consider C
- ISA's active-exploitation assessment date as a research-flag T_exploit can
- didate\; then Plan 1 / Plan 2 research. Report to the author only findings
-  worth knowing.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md: item 5 (
+ an on/off switch per permissioned source in config)\, then item 4 (remaini
+ ng evaluation code: labels T2\, T4-T6\; X6-X12\; NVD root-cause fill\; dra
+ ft evaluation page)\; consider CISA's active-exploitation assessment date 
+ as a research-flag T_exploit candidate\; then Plan 1 / Plan 2 research. Re
+ port to the author only findings worth knowing.\n\nSource: docs/schedule/s
+ chedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -28,13 +29,13 @@ UID:uga-call@2026-10-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261028T140000Z
 DTEND:20261028T142000Z
-SUMMARY:[You] Snapshot: Call the UGA Career Center about the reviewer posti
- ng
-DESCRIPTION:Employer relations\, (706) 542-3375. Ask whether an independent
-  researcher can post an unpaid\, remote research role on hireUGA (Handshak
- e)\, and whether it is better listed as an unpaid internship with course c
- redit. Note who you spoke with.\n\nOwner: Author. Source: docs/schedule/sc
- hedule.yaml
+SUMMARY:[Paul] Snapshot: Call the UGA Career Center about the reviewer post
+ ing
+DESCRIPTION:Responsible: Paul (author)\n\nEmployer relations\, (706) 542-33
+ 75. Ask whether an independent researcher can post an unpaid\, remote rese
+ arch role on hireUGA (Handshake)\, and whether it is better listed as an u
+ npaid internship with course credit. Note who you spoke with.\n\nSource: d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -43,10 +44,10 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261106
 DTEND;VALUE=DATE:20261107
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Create the project email address
-DESCRIPTION:For university postings and the reviewer invitation (instead of
-  a personal address).\n\nOwner: Author. Source: docs/schedule/schedule.yam
- l
+SUMMARY:[Paul] Snapshot: Create the project email address
+DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
+ eviewer invitation (instead of a personal address).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -55,9 +56,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261110T071700Z
 DTEND:20261110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -65,12 +66,13 @@ UID:research-review@2026-11-12@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261112T150000Z
 DTEND:20261112T153000Z
-SUMMARY:[You] Snapshot: Review research results\; decide race fix-date effo
- rt
-DESCRIPTION:Every flagged race fix date (about 1½ h a quarter\; the author
- 's leaning on 24 Oct) or a sample (about 50 min). The CISA-flag preview (z
- ero-day share possibly understated by half) is on the agenda. docs/RESEARC
- H_PLAN.md.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Review research results\; decide race fix-date eff
+ ort
+DESCRIPTION:Responsible: Paul (author)\n\nEvery flagged race fix date (abou
+ t 1½ h a quarter\; the author's leaning on 24 Oct) or a sample (about 50 
+ min). The CISA-flag preview (zero-day share possibly understated by half) 
+ is on the agenda. docs/RESEARCH_PLAN.md.\n\nSource: docs/schedule/schedule
+ .yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -78,10 +80,11 @@ UID:validation-fix-dates@2026-11-16@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261116T150000Z
 DTEND:20261116T154500Z
-SUMMARY:[You] Snapshot: Validation fix dates\, then spot-check references
-DESCRIPTION:In the Hand Check app\, list "Validation: reference cases": rec
- ord the fix dates BEFORE opening prereg/ground_truth_reference.csv. Then t
- ell Claude.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
+DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Val
+ idation: reference cases": record the fix dates BEFORE opening prereg/grou
+ nd_truth_reference.csv. Then tell Claude.\n\nSource: docs/schedule/schedul
+ e.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -91,8 +94,9 @@ DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Run the validation and report pass/fail
-DESCRIPTION:snapshot.validate against prereg/ground_truth_reference.csv (pa
- ss = 4 of 5 cases).\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nsnapshot.validate against prere
+ g/ground_truth_reference.csv (pass = 4 of 5 cases).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -101,10 +105,10 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Ask Georgia State Career Services about the reviewe
- r posting
-DESCRIPTION:Same question as UGA\; the Handshake account carries over.\n\nO
- wner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Ask Georgia State Career Services about the review
+ er posting
+DESCRIPTION:Responsible: Paul (author)\n\nSame question as UGA\; the Handsh
+ ake account carries over.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -115,8 +119,8 @@ DTEND;VALUE=DATE:20261121
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
  og
-DESCRIPTION:docs/PERMISSIONS.md\; decision item 16 sets the 21 Dec cutoff.\
- n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/PERMISSIONS.md\; decision 
+ item 16 sets the 21 Dec cutoff.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -124,12 +128,12 @@ UID:permission-follow-ups@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261120T140000Z
 DTEND:20261120T143000Z
-SUMMARY:[You] Snapshot: Data-permission follow-ups
-DESCRIPTION:Claude drafts follow-ups for any of ransomware.live (ticket #34
- 25)\, VulnCheck (community@vulncheck.com) and Shadowserver (ticket pqaytmy
- y) that have not replied\; you send them. Log in docs/PERMISSIONS.md. Cuto
- ff: the 21 Dec session.\n\nOwner: Author. Source: docs/schedule/schedule.y
- aml
+SUMMARY:[Paul] Snapshot: Data-permission follow-ups
+DESCRIPTION:Responsible: Paul (author)\n\nClaude drafts follow-ups for any 
+ of ransomware.live (ticket #3425)\, VulnCheck (community@vulncheck.com) an
+ d Shadowserver (ticket pqaytmyy) that have not replied\; you send them. Lo
+ g in docs/PERMISSIONS.md. Cutoff: the 21 Dec session.\n\nSource: docs/sche
+ dule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -137,9 +141,10 @@ UID:baseline-hand-check-1@2026-11-23@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261123T150000Z
 DTEND:20261123T161500Z
-SUMMARY:[You] Snapshot: Baseline-year hand check\, part 1 of 2
-DESCRIPTION:AI-credit spot checks and edge cases\, then cohort fix dates. d
- ocs/HAND_CHECK.md.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 1 of 2
+DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks and edge ca
+ ses\, then cohort fix dates. docs/HAND_CHECK.md.\n\nSource: docs/schedule/
+ schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -147,9 +152,10 @@ UID:baseline-hand-check-2@2026-11-24@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261124T150000Z
 DTEND:20261124T161500Z
-SUMMARY:[You] Snapshot: Baseline-year hand check\, part 2 of 2
-DESCRIPTION:Slot (c) internet-facing checks and fix dates for the 12 baseli
- ne months.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 2 of 2
+DESCRIPTION:Responsible: Paul (author)\n\nSlot (c) internet-facing checks a
+ nd fix dates for the 12 baseline months.\n\nSource: docs/schedule/schedule
+ .yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -158,12 +164,12 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Ask Georgia Tech College of Computing about a resea
- rch internship posting
-DESCRIPTION:Main board (CareerBuzz) does not accept unpaid remote roles\; a
- sk the College of Computing Career Center whether an unpaid remote researc
- h internship for course credit qualifies. If no\, drop Georgia Tech.\n\nOw
- ner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Ask Georgia Tech College of Computing about a rese
+ arch internship posting
+DESCRIPTION:Responsible: Paul (author)\n\nMain board (CareerBuzz) does not 
+ accept unpaid remote roles\; ask the College of Computing Career Center wh
+ ether an unpaid remote research internship for course credit qualifies. If
+  no\, drop Georgia Tech.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -173,10 +179,11 @@ DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Race fix-date list ready in the Hand Check app
-DESCRIPTION:List builder in snapshot.review\, report table and time estimat
- e\, alongside snapshot.race.t1_kev_race and X10\; read the app artifact be
- fore republishing. Tell the author only if something will not be ready for
-  1-2 Dec.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nList builder in snapshot.review
+ \, report table and time estimate\, alongside snapshot.race.t1_kev_race an
+ d X10\; read the app artifact before republishing. Tell the author only if
+  something will not be ready for 1-2 Dec.\n\nSource: docs/schedule/schedul
+ e.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -187,11 +194,11 @@ DTEND;VALUE=DATE:20261201
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Cutover check (study no longer depends on one Cl
  aude chat)
-DESCRIPTION:Confirm: the Schedule workflow has run green for 7 days\; the a
- uthor has subscribed to the calendar feed\; the Claude work-queue schedule
- d task is live\; docs/OPERATIONS.md is current. Then retire any remaining 
- one-off check-ins in the old chat. docs/OPERATIONS.md.\n\nOwner: Claude. S
- ource: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nConfirm: the Schedule workflow 
+ has run green for 7 days\; the author has subscribed to the calendar feed\
+ ; the Claude work-queue scheduled task is live\; docs/OPERATIONS.md is cur
+ rent. Then retire any remaining one-off check-ins in the old chat. docs/OP
+ ERATIONS.md.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -202,8 +209,9 @@ DTEND;VALUE=DATE:20261202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the dry-run quality report\; prepare the ha
  nd-check lists
-DESCRIPTION:Load the review lists (including the race list) into the Hand C
- heck app.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nLoad the review lists (includin
+ g the race list) into the Hand Check app.\n\nSource: docs/schedule/schedul
+ e.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -212,8 +220,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261201T110000Z
 DTEND:20261201T114000Z
 SUMMARY:[GitHub] Snapshot: Dry run of the quarterly pull (Oct-Nov data)
-DESCRIPTION:Started by the Schedule workflow (December has no cron). Unscor
- ed.\n\nOwner: GitHub (automatic). Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nStarted by the Sche
+ dule workflow (December has no cron). Unscored.\n\nSource: docs/schedule/s
+ chedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -221,11 +230,11 @@ UID:dry-run-hand-check@2026-12-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261202T150000Z
 DTEND:20261202T160000Z
-SUMMARY:[You] Snapshot: Hand check on the dry run
-DESCRIPTION:AI-credit spot checks\, slot (c) checks\, fix dates (cohort and
-  race list). First real test of the race list: note anything awkward. Appr
- ove or hold the dry-run page.\n\nOwner: Author. Source: docs/schedule/sche
- dule.yaml
+SUMMARY:[Paul] Snapshot: Hand check on the dry run
+DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks\, slot (c) 
+ checks\, fix dates (cohort and race list). First real test of the race lis
+ t: note anything awkward. Approve or hold the dry-run page.\n\nSource: doc
+ s/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -233,12 +242,12 @@ UID:container-pull@2026-12-03@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261203T150000Z
 DTEND:20261203T153000Z
-SUMMARY:[You] Snapshot: Move the quarterly pull into the container (if the 
- dry run passed)
-DESCRIPTION:Claude opens the pull request\; you review and merge\; then Act
- ions > Quarterly pull > Run workflow (2026Q4\, dry-run) to test it before 
- 1 Jan. If the dry run failed\, leave it for the 21 Dec session.\n\nOwner: 
- Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Move the quarterly pull into the container (if the
+  dry run passed)
+DESCRIPTION:Responsible: Paul (author)\n\nClaude opens the pull request\; y
+ ou review and merge\; then Actions > Quarterly pull > Run workflow (2026Q4
+ \, dry-run) to test it before 1 Jan. If the dry run failed\, leave it for 
+ the 21 Dec session.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -246,11 +255,12 @@ UID:landing-page@2026-12-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261204T150000Z
 DTEND:20261204T160000Z
-SUMMARY:[You] Snapshot: Landing page\, Discussions\, Zenodo
-DESCRIPTION:Claude builds the GitHub Pages landing page and Discussions wel
- come post\; you switch on Discussions and Pages\, and Zenodo archiving (ze
- nodo.org\, sign in with GitHub). Project links may be shared publicly from
-  today.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Landing page\, Discussions\, Zenodo
+DESCRIPTION:Responsible: Paul (author)\n\nClaude builds the GitHub Pages la
+ nding page and Discussions welcome post\; you switch on Discussions and Pa
+ ges\, and Zenodo archiving (zenodo.org\, sign in with GitHub). Project lin
+ ks may be shared publicly from today.\n\nSource: docs/schedule/schedule.ya
+ ml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -259,12 +269,12 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Register on Handshake and connect the approved scho
- ols
-DESCRIPTION:Organization: "Internet Security Snapshot (independent research
-  project)"\, the project email\, the GitHub page as website. Approvals arr
- ive during the RV trip.\n\nOwner: Author. Source: docs/schedule/schedule.y
- aml
+SUMMARY:[Paul] Snapshot: Register on Handshake and connect the approved sch
+ ools
+DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security 
+ Snapshot (independent research project)"\, the project email\, the GitHub 
+ page as website. Approvals arrive during the RV trip.\n\nSource: docs/sche
+ dule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -273,9 +283,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261210T071700Z
 DTEND:20261210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -283,12 +293,12 @@ UID:freeze-session@2026-12-21@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261221T150000Z
 DTEND:20261221T163000Z
-SUMMARY:[You] Snapshot: Core-freeze decision session
-DESCRIPTION:docs/CORE_FREEZE_DECISIONS.md items 0-21 (confirm 0\, 7\, 12\; 
- decide 1-3\, 9-11\, 13-21\, including the companion label check\, X13 and 
- hand-check reliability\, the 2028 closing re-run). Any source without a wr
- itten yes runs without it for the pilot.\n\nOwner: Author. Source: docs/sc
- hedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Core-freeze decision session
+DESCRIPTION:Responsible: Paul (author)\n\ndocs/CORE_FREEZE_DECISIONS.md ite
+ ms 0-21 (confirm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-21\, including the co
+ mpanion label check\, X13 and hand-check reliability\, the 2028 closing re
+ -run). Any source without a written yes runs without it for the pilot.\n\n
+ Source: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -298,8 +308,9 @@ DTSTART;VALUE=DATE:20261222
 DTEND;VALUE=DATE:20261223
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the core freeze (core-v1.2)
-DESCRIPTION:Deviation rows\, LOCKED.yaml checksums\, freeze summary and the
-  OSF update text.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nDeviation rows\, LOCKED.yaml ch
+ ecksums\, freeze summary and the OSF update text.\n\nSource: docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -307,10 +318,10 @@ UID:freeze@2026-12-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261229T150000Z
 DTEND:20261229T154500Z
-SUMMARY:[You] Snapshot: Freeze the core (core-v1.2) and update OSF
-DESCRIPTION:Publish release core-v1.2 on GitHub\; file the OSF update (Clau
- de gives you the text).\n\nOwner: Author. Source: docs/schedule/schedule.y
- aml
+SUMMARY:[Paul] Snapshot: Freeze the core (core-v1.2) and update OSF
+DESCRIPTION:Responsible: Paul (author)\n\nPublish release core-v1.2 on GitH
+ ub\; file the OSF update (Claude gives you the text).\n\nSource: docs/sche
+ dule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -321,9 +332,10 @@ DTEND;VALUE=DATE:20270102
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:From the run's frozen outputs only\; read the data-quality repo
- rt\; load the quarter's review lists (with 20 re-shown items) into the Han
- d Check app.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
+ nly\; read the data-quality report\; load the quarter's review lists (with
+  20 re-shown items) into the Hand Check app.\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -332,9 +344,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270101T060000Z
 DTEND:20270101T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-provisional.\n\nOwner: GitHub (automatic). Source: docs/schedule/s
- chedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource
+ : docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -342,9 +354,10 @@ UID:approve-provisional@2027-01-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270102T150000Z
 DTEND:20270102T160000Z
-SUMMARY:[You] Snapshot: Approve the provisional draft
-DESCRIPTION:Read Claude's draft and approve it for publishing (by the 3rd a
- t the latest).\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Approve the provisional draft
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft and approve i
+ t for publishing (by the 3rd at the latest).\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -353,11 +366,11 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270104
 DTEND;VALUE=DATE:20270129
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Quarterly hand-check window
-DESCRIPTION:About 1½ hours in the Hand Check app at any time from the 4th 
- to the 28th: fix dates for the cohort and the race list\, slot (c) checks\
- , AI-credit spot checks\, re-shown items.\n\nOwner: Author. Source: docs/s
- chedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Quarterly hand-check window
+DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
+  app at any time from the 4th to the 28th: fix dates for the cohort and th
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
+ nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -366,10 +379,10 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270104
 DTEND;VALUE=DATE:20270105
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Post the reviewer ad\; email statistics department 
- coordinators
-DESCRIPTION:On each approved board (UGA first)\; applications close 15 Feb.
- \n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Post the reviewer ad\; email statistics department
+  coordinators
+DESCRIPTION:Responsible: Paul (author)\n\nOn each approved board (UGA first
+ )\; applications close 15 Feb.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -378,9 +391,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270110T071700Z
 DTEND:20270110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -388,11 +401,11 @@ UID:reviewer-line-up@2027-01-12@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270112T150000Z
 DTEND:20270112T160000Z
-SUMMARY:[You] Snapshot: Line up the external reviewer and second coder
-DESCRIPTION:Send the invitation (claude.ai doc "Invitation: Independent Rev
- iewer")\; candidates from the 21 Dec shortlist. The second coder can be th
- e same person. Confirm by 1 March.\n\nOwner: Author. Source: docs/schedule
- /schedule.yaml
+SUMMARY:[Paul] Snapshot: Line up the external reviewer and second coder
+DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (claude.ai do
+ c "Invitation: Independent Reviewer")\; candidates from the 21 Dec shortli
+ st. The second coder can be the same person. Confirm by 1 March.\n\nSource
+ : docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -400,9 +413,10 @@ UID:hand-check-reminder@2027-01-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270125T150000Z
 DTEND:20270125T151500Z
-SUMMARY:[You] Snapshot: Hand-check answers due by the 28th
-DESCRIPTION:Anything still open on the 28th is reported as pending in the f
- inal report.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Hand-check answers due by the 28th
+DESCRIPTION:Responsible: Paul (author)\n\nAnything still open on the 28th i
+ s reported as pending in the final report.\n\nSource: docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -413,9 +427,10 @@ DTEND;VALUE=DATE:20270130
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:python -m snapshot.agreement sample --batch <quarter>\; give th
- e coder the sheet (not the weights file)\; score it when returned (snapsho
- t.agreement score).\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
+  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -426,9 +441,9 @@ DTEND;VALUE=DATE:20270202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Late KEV listings and credits\, hand-check answers\, agreement 
- scores\; Zenodo archive.\n\nOwner: Claude. Source: docs/schedule/schedule.
- yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
+  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: docs/s
+ chedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -437,9 +452,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270201T060000Z
 DTEND:20270201T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-final.\n\nOwner: GitHub (automatic). Source: docs/schedule/schedul
- e.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: docs
+ /schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -447,10 +462,10 @@ UID:approve-final@2027-02-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270202T150000Z
 DTEND:20270202T153000Z
-SUMMARY:[You] Snapshot: Final-run check and approve the final results
-DESCRIPTION:Review new rows since the provisional run\; approve the final r
- elease and its Zenodo archive.\n\nOwner: Author. Source: docs/schedule/sch
- edule.yaml
+SUMMARY:[Paul] Snapshot: Final-run check and approve the final results
+DESCRIPTION:Responsible: Paul (author)\n\nReview new rows since the provisi
+ onal run\; approve the final release and its Zenodo archive.\n\nSource: do
+ cs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -460,10 +475,11 @@ DTSTART;VALUE=DATE:20270203
 DTEND;VALUE=DATE:20270204
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the 8 Feb session
-DESCRIPTION:AI-credit rule evaluation on the pilot's final data (headline v
- s narrow count\, a sample of lab-affiliation-only credits\, spot checks) a
- nd the PHP2Shell case note docs/cases/php2shell.md. Send the author a head
- s-up.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nAI-credit rule evaluation on th
+ e pilot's final data (headline vs narrow count\, a sample of lab-affiliati
+ on-only credits\, spot checks) and the PHP2Shell case note docs/cases/php2
+ shell.md. Send the author a heads-up.\n\nSource: docs/schedule/schedule.ya
+ ml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -471,10 +487,10 @@ UID:ai-rule-session@2027-02-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270208T150000Z
 DTEND:20270208T154500Z
-SUMMARY:[You] Snapshot: Evaluate the AI-credit rule on pilot data\; PHP2She
- ll case
-DESCRIPTION:Outcome goes to the 15 March review.\n\nOwner: Author. Source: 
- docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Evaluate the AI-credit rule on pilot data\; PHP2Sh
+ ell case
+DESCRIPTION:Responsible: Paul (author)\n\nOutcome goes to the 15 March revi
+ ew.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -483,9 +499,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270210T071700Z
 DTEND:20270210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -494,9 +510,9 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270215
 DTEND;VALUE=DATE:20270216
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Reviewer applications close\; schedule calls
-DESCRIPTION:Calls with finalists 16-26 Feb\, with the three-item fix-date t
- rial.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Reviewer applications close\; schedule calls
+DESCRIPTION:Responsible: Paul (author)\n\nCalls with finalists 16-26 Feb\, 
+ with the three-item fix-date trial.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -504,10 +520,10 @@ UID:censys@2027-02-15@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270215T150000Z
 DTEND:20270215T160000Z
-SUMMARY:[You] Snapshot: Write the Censys research-access application
-DESCRIPTION:In your own words (Censys rejects AI-written requests). Claude 
- can list the facts to cover.\n\nOwner: Author. Source: docs/schedule/sched
- ule.yaml
+SUMMARY:[Paul] Snapshot: Write the Censys research-access application
+DESCRIPTION:Responsible: Paul (author)\n\nIn your own words (Censys rejects
+  AI-written requests). Claude can list the facts to cover.\n\nSource: docs
+ /schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -516,13 +532,13 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270302
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Confirm the external reviewer
-DESCRIPTION:Two weeks before the annual review\; review window 3-28 April. 
- Ask for their disclosure of any ties to AI labs (Anthropic included)\, sec
- urity vendors or the data providers\, how they want to be named (name or i
- nitials) and their ORCID. Send them the reviewer calendar feed (docs/OPERA
- TIONS.md). Then tell Claude\, so the reviewer items below can start.\n\nOw
- ner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Confirm the external reviewer
+DESCRIPTION:Responsible: Paul (author)\n\nTwo weeks before the annual revie
+ w\; review window 3-28 April. Ask for their disclosure of any ties to AI l
+ abs (Anthropic included)\, security vendors or the data providers\, how th
+ ey want to be named (name or initials) and their ORCID. Send them the revi
+ ewer calendar feed (docs/OPERATIONS.md). Then tell Claude\, so the reviewe
+ r items below can start.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -533,11 +549,11 @@ DTEND;VALUE=DATE:20270315
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Getting started - read the overview\, plan and
   statistical review
-DESCRIPTION:About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the o
- verview)\, the registered plan (OSF DOI 10.17605/OSF.IO/3XT82\, and prereg
- / in the repository)\, docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in
-  February if you confirm early.\n\nOwner: External reviewer. Source: docs/
- schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 3-4 hours in
+ cluding the call. docs/HOW_IT_WORKS.md (the overview)\, the registered pla
+ n (OSF DOI 10.17605/OSF.IO/3XT82\, and prereg/ in the repository)\, docs/S
+ TATISTICAL_REVIEW_2026-10-24.md. Can start in February if you confirm earl
+ y.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -548,10 +564,10 @@ DTEND;VALUE=DATE:20270315
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Optional - practice round as second coder (pil
  ot quarter)
-DESCRIPTION:About 45 minutes\, not scored. 20 items from the Q4 2026 pilot 
- with Paul's answers removed: mostly fix dates (open the vendor's advisory\
- , record when the fix was released).\n\nOwner: External reviewer. Source: 
- docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
+  not scored. 20 items from the Q4 2026 pilot with Paul's answers removed: 
+ mostly fix dates (open the vendor's advisory\, record when the fix was rel
+ eased).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -561,11 +577,11 @@ DTSTART;VALUE=DATE:20270302
 DTEND;VALUE=DATE:20270303
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Record the confirmed reviewer
-DESCRIPTION:Add the reviewer as a contributor (name or initials as they ask
- ed\, ORCID) to .zenodo.json and the report template\; record their disclos
- ed ties for publication beside the review. Never put their email or phone 
- in the public repository.\n\nOwner: Claude. Source: docs/schedule/schedule
- .yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nAdd the reviewer as a contribut
+ or (name or initials as they asked\, ORCID) to .zenodo.json and the report
+  template\; record their disclosed ties for publication beside the review.
+  Never put their email or phone in the public repository.\n\nSource: docs/
+ schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -576,10 +592,10 @@ DTEND;VALUE=DATE:20270303
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the reviewer the practice second-coder shee
  t (pilot quarter)
-DESCRIPTION:python -m snapshot.agreement sample --batch 2026Q4\; send the s
- heet (not the weights file) and the written rules. Unscored practice\; sco
- re it only to discuss on the onboarding call.\n\nOwner: Claude. Source: do
- cs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch 2026Q4\; send the sheet (not the weights file) and the writte
+ n rules. Unscored practice\; score it only to discuss on the onboarding ca
+ ll.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -587,11 +603,11 @@ UID:reviewer-onboarding@2027-03-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270304T150000Z
 DTEND:20270304T160000Z
-SUMMARY:[You] Snapshot: Onboarding call with the external reviewer
-DESCRIPTION:Walk through the repository\, the hand-check rules and the seco
- nd-coder sheet\; answer questions\; go over the practice round if done. Mo
- ve the time to suit the reviewer.\n\nOwner: Author. Source: docs/schedule/
- schedule.yaml
+SUMMARY:[Paul] Snapshot: Onboarding call with the external reviewer
+DESCRIPTION:Responsible: Paul (author)\n\nWalk through the repository\, the
+  hand-check rules and the second-coder sheet\; answer questions\; go over 
+ the practice round if done. Move the time to suit the reviewer.\n\nSource:
+  docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -600,9 +616,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270310T071700Z
 DTEND:20270310T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -610,11 +626,12 @@ UID:annual-review@2027-03-15@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270315T150000Z
 DTEND:20270315T163000Z
-SUMMARY:[You] Snapshot: Annual review and change window
-DESCRIPTION:The one time each year core rules may change (docs/CHANGE_POLIC
- Y.md). Promotion candidates\; the AI-credit rule\; any change run side by 
- side for four quarters. From 2028: approve the annual check against refere
- nce data.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Annual review and change window
+DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
+  may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
+ rule\; any change run side by side for four quarters. From 2028: approve t
+ he annual check against reference data.\n\nSource: docs/schedule/schedule.
+ yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -623,9 +640,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270315T150000Z
 DTEND:20270315T163000Z
 SUMMARY:[Reviewer] Snapshot: Optional - join the 2027 annual review
-DESCRIPTION:Video call\; the one time each year the scored rules may change
- . Comments welcome beforehand.\n\nOwner: External reviewer. Source: docs/s
- chedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nVideo call\; the o
+ ne time each year the scored rules may change. Comments welcome beforehand
+ .\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -636,9 +653,10 @@ DTEND;VALUE=DATE:20270402
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:From the run's frozen outputs only\; read the data-quality repo
- rt\; load the quarter's review lists (with 20 re-shown items) into the Han
- d Check app.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
+ nly\; read the data-quality report\; load the quarter's review lists (with
+  20 re-shown items) into the Hand Check app.\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -647,9 +665,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270401T060000Z
 DTEND:20270401T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-provisional.\n\nOwner: GitHub (automatic). Source: docs/schedule/s
- chedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource
+ : docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -659,11 +677,11 @@ DTSTART;VALUE=DATE:20270402
 DTEND;VALUE=DATE:20270403
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the reviewer the Q1 2027 review packet
-DESCRIPTION:Once the provisional Q1 2027 report is approved: links to the r
- eport\, the registered plan\, prereg/DEVIATIONS.md\, the data bundle and t
- he exact code commit\; the sample of hand decisions with their rules\; a s
- hort review template (holds up / doesn't / would change).\n\nOwner: Claude
- . Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nOnce the provisional Q1 2027 re
+ port is approved: links to the report\, the registered plan\, prereg/DEVIA
+ TIONS.md\, the data bundle and the exact code commit\; the sample of hand 
+ decisions with their rules\; a short review template (holds up / doesn't /
+  would change).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -671,9 +689,10 @@ UID:approve-provisional@2027-04-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270402T140000Z
 DTEND:20270402T150000Z
-SUMMARY:[You] Snapshot: Approve the provisional draft
-DESCRIPTION:Read Claude's draft and approve it for publishing (by the 3rd a
- t the latest).\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Approve the provisional draft
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft and approve i
+ t for publishing (by the 3rd at the latest).\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -684,14 +703,14 @@ DTEND;VALUE=DATE:20270429
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Independent review of the Q1 2027 provisional 
  report
-DESCRIPTION:About 8-12 hours. Read the provisional Q1 2027 report against t
- he registered plan and the deviations log\; check that each headline figur
- e is computed as the plan defines it (read the code\, or recompute a few n
- umbers from the data bundle)\; look at the sample of hand decisions and th
- eir written rules. Send a short written review (two to five pages: what ho
- lds up\, what doesn't\, what you'd change) by 28 April. The window can mov
- e a week or two if needed\; publication is 1 May.\n\nOwner: External revie
- wer. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 8-12 hours. 
+ Read the provisional Q1 2027 report against the registered plan and the de
+ viations log\; check that each headline figure is computed as the plan def
+ ines it (read the code\, or recompute a few numbers from the data bundle)\
+ ; look at the sample of hand decisions and their written rules. Send a sho
+ rt written review (two to five pages: what holds up\, what doesn't\, what 
+ you'd change) by 28 April. The window can move a week or two if needed\; p
+ ublication is 1 May.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -700,11 +719,11 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270404
 DTEND;VALUE=DATE:20270429
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Quarterly hand-check window
-DESCRIPTION:About 1½ hours in the Hand Check app at any time from the 4th 
- to the 28th: fix dates for the cohort and the race list\, slot (c) checks\
- , AI-credit spot checks\, re-shown items.\n\nOwner: Author. Source: docs/s
- chedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Quarterly hand-check window
+DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
+  app at any time from the 4th to the 28th: fix dates for the cohort and th
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
+ nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -713,9 +732,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270410T071700Z
 DTEND:20270410T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -723,9 +742,10 @@ UID:reviewer-check-in@2027-04-15@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270415T140000Z
 DTEND:20270415T143000Z
-SUMMARY:[You] Snapshot: Optional mid-review check-in with the reviewer
-DESCRIPTION:Answer questions\; confirm the review will arrive by 28 April o
- r agree a new date.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Optional mid-review check-in with the reviewer
+DESCRIPTION:Responsible: Paul (author)\n\nAnswer questions\; confirm the re
+ view will arrive by 28 April or agree a new date.\n\nSource: docs/schedule
+ /schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -733,9 +753,10 @@ UID:hand-check-reminder@2027-04-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270425T140000Z
 DTEND:20270425T141500Z
-SUMMARY:[You] Snapshot: Hand-check answers due by the 28th
-DESCRIPTION:Anything still open on the 28th is reported as pending in the f
- inal report.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Hand-check answers due by the 28th
+DESCRIPTION:Responsible: Paul (author)\n\nAnything still open on the 28th i
+ s reported as pending in the final report.\n\nSource: docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -744,10 +765,11 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270429
 DTEND;VALUE=DATE:20270430
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Write the response to the external review
-DESCRIPTION:Point by point\; anything accepted becomes a deviations-log row
-  or an item for the next annual review. The review itself is published une
- dited.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Write the response to the external review
+DESCRIPTION:Responsible: Paul (author)\n\nPoint by point\; anything accepte
+ d becomes a deviations-log row or an item for the next annual review. The 
+ review itself is published unedited.\n\nSource: docs/schedule/schedule.yam
+ l
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -757,10 +779,10 @@ DTSTART;VALUE=DATE:20270429
 DTEND;VALUE=DATE:20270513
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Second coder - 20 blinded items
-DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
- rs are removed\; written rules cover each case. Your answers never change 
- his\; they measure agreement\, published each quarter.\n\nOwner: External 
- reviewer. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
+  one sitting\, within two weeks. Paul's answers are removed\; written rule
+ s cover each case. Your answers never change his\; they measure agreement\
+ , published each quarter.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -771,9 +793,10 @@ DTEND;VALUE=DATE:20270430
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:python -m snapshot.agreement sample --batch <quarter>\; give th
- e coder the sheet (not the weights file)\; score it when returned (snapsho
- t.agreement score).\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
+  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -784,9 +807,9 @@ DTEND;VALUE=DATE:20270502
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Late KEV listings and credits\, hand-check answers\, agreement 
- scores\; Zenodo archive.\n\nOwner: Claude. Source: docs/schedule/schedule.
- yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
+  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: docs/s
+ chedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -797,9 +820,10 @@ DTEND;VALUE=DATE:20270502
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Publish the external review beside the Q1 2027 f
  inal report
-DESCRIPTION:Review unedited\, the author's response\, the reviewer's disclo
- sed ties and credit\; archived with the release (Zenodo). Send the reviewe
- r the link.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nReview unedited\, the author's 
+ response\, the reviewer's disclosed ties and credit\; archived with the re
+ lease (Zenodo). Send the reviewer the link.\n\nSource: docs/schedule/sched
+ ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -808,9 +832,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270501T060000Z
 DTEND:20270501T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-final.\n\nOwner: GitHub (automatic). Source: docs/schedule/schedul
- e.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: docs
+ /schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -818,10 +842,10 @@ UID:approve-final@2027-05-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270502T140000Z
 DTEND:20270502T143000Z
-SUMMARY:[You] Snapshot: Final-run check and approve the final results
-DESCRIPTION:Review new rows since the provisional run\; approve the final r
- elease and its Zenodo archive.\n\nOwner: Author. Source: docs/schedule/sch
- edule.yaml
+SUMMARY:[Paul] Snapshot: Final-run check and approve the final results
+DESCRIPTION:Responsible: Paul (author)\n\nReview new rows since the provisi
+ onal run\; approve the final release and its Zenodo archive.\n\nSource: do
+ cs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -830,9 +854,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270510T071700Z
 DTEND:20270510T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -843,11 +867,11 @@ DTEND;VALUE=DATE:20270514
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
  nt
-DESCRIPTION:python -m snapshot.agreement score on the returned sheet\; agre
- ement rates (with Gwet's AC1) go into the next report. If the sheet has no
- t come back\, comment on the issue so the author can send a reminder\; do 
- not contact the reviewer directly.\n\nOwner: Claude. Source: docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
+ ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
+ next report. If the sheet has not come back\, comment on the issue so the 
+ author can send a reminder\; do not contact the reviewer directly.\n\nSour
+ ce: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -856,9 +880,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270610T071700Z
 DTEND:20270610T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -869,9 +893,10 @@ DTEND;VALUE=DATE:20270702
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:From the run's frozen outputs only\; read the data-quality repo
- rt\; load the quarter's review lists (with 20 re-shown items) into the Han
- d Check app.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
+ nly\; read the data-quality report\; load the quarter's review lists (with
+  20 re-shown items) into the Hand Check app.\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -880,9 +905,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270701T060000Z
 DTEND:20270701T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-provisional.\n\nOwner: GitHub (automatic). Source: docs/schedule/s
- chedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource
+ : docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -890,9 +915,10 @@ UID:approve-provisional@2027-07-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270702T140000Z
 DTEND:20270702T150000Z
-SUMMARY:[You] Snapshot: Approve the provisional draft
-DESCRIPTION:Read Claude's draft and approve it for publishing (by the 3rd a
- t the latest).\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Approve the provisional draft
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft and approve i
+ t for publishing (by the 3rd at the latest).\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -901,11 +927,11 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270704
 DTEND;VALUE=DATE:20270729
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Quarterly hand-check window
-DESCRIPTION:About 1½ hours in the Hand Check app at any time from the 4th 
- to the 28th: fix dates for the cohort and the race list\, slot (c) checks\
- , AI-credit spot checks\, re-shown items.\n\nOwner: Author. Source: docs/s
- chedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Quarterly hand-check window
+DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
+  app at any time from the 4th to the 28th: fix dates for the cohort and th
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
+ nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -914,9 +940,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270710T071700Z
 DTEND:20270710T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -924,9 +950,10 @@ UID:hand-check-reminder@2027-07-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270725T140000Z
 DTEND:20270725T141500Z
-SUMMARY:[You] Snapshot: Hand-check answers due by the 28th
-DESCRIPTION:Anything still open on the 28th is reported as pending in the f
- inal report.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Hand-check answers due by the 28th
+DESCRIPTION:Responsible: Paul (author)\n\nAnything still open on the 28th i
+ s reported as pending in the final report.\n\nSource: docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -936,10 +963,10 @@ DTSTART;VALUE=DATE:20270729
 DTEND;VALUE=DATE:20270812
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Second coder - 20 blinded items
-DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
- rs are removed\; written rules cover each case. Your answers never change 
- his\; they measure agreement\, published each quarter.\n\nOwner: External 
- reviewer. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
+  one sitting\, within two weeks. Paul's answers are removed\; written rule
+ s cover each case. Your answers never change his\; they measure agreement\
+ , published each quarter.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -950,9 +977,10 @@ DTEND;VALUE=DATE:20270730
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:python -m snapshot.agreement sample --batch <quarter>\; give th
- e coder the sheet (not the weights file)\; score it when returned (snapsho
- t.agreement score).\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
+  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -963,9 +991,9 @@ DTEND;VALUE=DATE:20270802
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Late KEV listings and credits\, hand-check answers\, agreement 
- scores\; Zenodo archive.\n\nOwner: Claude. Source: docs/schedule/schedule.
- yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
+  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: docs/s
+ chedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -974,9 +1002,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270801T060000Z
 DTEND:20270801T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-final.\n\nOwner: GitHub (automatic). Source: docs/schedule/schedul
- e.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: docs
+ /schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -984,10 +1012,10 @@ UID:approve-final@2027-08-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270802T140000Z
 DTEND:20270802T143000Z
-SUMMARY:[You] Snapshot: Final-run check and approve the final results
-DESCRIPTION:Review new rows since the provisional run\; approve the final r
- elease and its Zenodo archive.\n\nOwner: Author. Source: docs/schedule/sch
- edule.yaml
+SUMMARY:[Paul] Snapshot: Final-run check and approve the final results
+DESCRIPTION:Responsible: Paul (author)\n\nReview new rows since the provisi
+ onal run\; approve the final release and its Zenodo archive.\n\nSource: do
+ cs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -996,9 +1024,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270810T071700Z
 DTEND:20270810T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1009,11 +1037,11 @@ DTEND;VALUE=DATE:20270814
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
  nt
-DESCRIPTION:python -m snapshot.agreement score on the returned sheet\; agre
- ement rates (with Gwet's AC1) go into the next report. If the sheet has no
- t come back\, comment on the issue so the author can send a reminder\; do 
- not contact the reviewer directly.\n\nOwner: Claude. Source: docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
+ ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
+ next report. If the sheet has not come back\, comment on the issue so the 
+ author can send a reminder\; do not contact the reviewer directly.\n\nSour
+ ce: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1022,9 +1050,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270910T071700Z
 DTEND:20270910T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1035,9 +1063,10 @@ DTEND;VALUE=DATE:20271002
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:From the run's frozen outputs only\; read the data-quality repo
- rt\; load the quarter's review lists (with 20 re-shown items) into the Han
- d Check app.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
+ nly\; read the data-quality report\; load the quarter's review lists (with
+  20 re-shown items) into the Hand Check app.\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1046,9 +1075,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271001T060000Z
 DTEND:20271001T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-provisional.\n\nOwner: GitHub (automatic). Source: docs/schedule/s
- chedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource
+ : docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1056,9 +1085,10 @@ UID:approve-provisional@2027-10-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271002T140000Z
 DTEND:20271002T150000Z
-SUMMARY:[You] Snapshot: Approve the provisional draft
-DESCRIPTION:Read Claude's draft and approve it for publishing (by the 3rd a
- t the latest).\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Approve the provisional draft
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft and approve i
+ t for publishing (by the 3rd at the latest).\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1067,11 +1097,11 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271004
 DTEND;VALUE=DATE:20271029
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Quarterly hand-check window
-DESCRIPTION:About 1½ hours in the Hand Check app at any time from the 4th 
- to the 28th: fix dates for the cohort and the race list\, slot (c) checks\
- , AI-credit spot checks\, re-shown items.\n\nOwner: Author. Source: docs/s
- chedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Quarterly hand-check window
+DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
+  app at any time from the 4th to the 28th: fix dates for the cohort and th
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
+ nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1080,9 +1110,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271010T071700Z
 DTEND:20271010T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1090,9 +1120,10 @@ UID:hand-check-reminder@2027-10-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271025T140000Z
 DTEND:20271025T141500Z
-SUMMARY:[You] Snapshot: Hand-check answers due by the 28th
-DESCRIPTION:Anything still open on the 28th is reported as pending in the f
- inal report.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Hand-check answers due by the 28th
+DESCRIPTION:Responsible: Paul (author)\n\nAnything still open on the 28th i
+ s reported as pending in the final report.\n\nSource: docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1102,10 +1133,10 @@ DTSTART;VALUE=DATE:20271029
 DTEND;VALUE=DATE:20271112
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Second coder - 20 blinded items
-DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
- rs are removed\; written rules cover each case. Your answers never change 
- his\; they measure agreement\, published each quarter.\n\nOwner: External 
- reviewer. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
+  one sitting\, within two weeks. Paul's answers are removed\; written rule
+ s cover each case. Your answers never change his\; they measure agreement\
+ , published each quarter.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -1116,9 +1147,10 @@ DTEND;VALUE=DATE:20271030
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:python -m snapshot.agreement sample --batch <quarter>\; give th
- e coder the sheet (not the weights file)\; score it when returned (snapsho
- t.agreement score).\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
+  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1129,9 +1161,9 @@ DTEND;VALUE=DATE:20271102
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Late KEV listings and credits\, hand-check answers\, agreement 
- scores\; Zenodo archive.\n\nOwner: Claude. Source: docs/schedule/schedule.
- yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
+  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: docs/s
+ chedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1140,9 +1172,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271101T060000Z
 DTEND:20271101T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-final.\n\nOwner: GitHub (automatic). Source: docs/schedule/schedul
- e.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: docs
+ /schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1150,10 +1182,10 @@ UID:approve-final@2027-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271102T140000Z
 DTEND:20271102T143000Z
-SUMMARY:[You] Snapshot: Final-run check and approve the final results
-DESCRIPTION:Review new rows since the provisional run\; approve the final r
- elease and its Zenodo archive.\n\nOwner: Author. Source: docs/schedule/sch
- edule.yaml
+SUMMARY:[Paul] Snapshot: Final-run check and approve the final results
+DESCRIPTION:Responsible: Paul (author)\n\nReview new rows since the provisi
+ onal run\; approve the final release and its Zenodo archive.\n\nSource: do
+ cs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1162,9 +1194,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271110T071700Z
 DTEND:20271110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1175,11 +1207,11 @@ DTEND;VALUE=DATE:20271114
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
  nt
-DESCRIPTION:python -m snapshot.agreement score on the returned sheet\; agre
- ement rates (with Gwet's AC1) go into the next report. If the sheet has no
- t come back\, comment on the issue so the author can send a reminder\; do 
- not contact the reviewer directly.\n\nOwner: Claude. Source: docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
+ ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
+ next report. If the sheet has not come back\, comment on the issue so the 
+ author can send a reminder\; do not contact the reviewer directly.\n\nSour
+ ce: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1188,9 +1220,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271210T071700Z
 DTEND:20271210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1201,9 +1233,10 @@ DTEND;VALUE=DATE:20280102
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:From the run's frozen outputs only\; read the data-quality repo
- rt\; load the quarter's review lists (with 20 re-shown items) into the Han
- d Check app.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
+ nly\; read the data-quality report\; load the quarter's review lists (with
+  20 re-shown items) into the Hand Check app.\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1212,9 +1245,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280101T060000Z
 DTEND:20280101T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-provisional.\n\nOwner: GitHub (automatic). Source: docs/schedule/s
- chedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource
+ : docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1222,9 +1255,10 @@ UID:approve-provisional@2028-01-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280102T150000Z
 DTEND:20280102T160000Z
-SUMMARY:[You] Snapshot: Approve the provisional draft
-DESCRIPTION:Read Claude's draft and approve it for publishing (by the 3rd a
- t the latest).\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Approve the provisional draft
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft and approve i
+ t for publishing (by the 3rd at the latest).\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1233,11 +1267,11 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20280104
 DTEND;VALUE=DATE:20280129
 TRANSP:TRANSPARENT
-SUMMARY:[You] Snapshot: Quarterly hand-check window
-DESCRIPTION:About 1½ hours in the Hand Check app at any time from the 4th 
- to the 28th: fix dates for the cohort and the race list\, slot (c) checks\
- , AI-credit spot checks\, re-shown items.\n\nOwner: Author. Source: docs/s
- chedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Quarterly hand-check window
+DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
+  app at any time from the 4th to the 28th: fix dates for the cohort and th
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
+ nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1246,9 +1280,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280110T071700Z
 DTEND:20280110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1256,9 +1290,10 @@ UID:hand-check-reminder@2028-01-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280125T150000Z
 DTEND:20280125T151500Z
-SUMMARY:[You] Snapshot: Hand-check answers due by the 28th
-DESCRIPTION:Anything still open on the 28th is reported as pending in the f
- inal report.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Hand-check answers due by the 28th
+DESCRIPTION:Responsible: Paul (author)\n\nAnything still open on the 28th i
+ s reported as pending in the final report.\n\nSource: docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1268,10 +1303,10 @@ DTSTART;VALUE=DATE:20280129
 DTEND;VALUE=DATE:20280212
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Second coder - 20 blinded items
-DESCRIPTION:About 45 minutes\, one sitting\, within two weeks. Paul's answe
- rs are removed\; written rules cover each case. Your answers never change 
- his\; they measure agreement\, published each quarter.\n\nOwner: External 
- reviewer. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 45 minutes\,
+  one sitting\, within two weeks. Paul's answers are removed\; written rule
+ s cover each case. Your answers never change his\; they measure agreement\
+ , published each quarter.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -1282,9 +1317,10 @@ DTEND;VALUE=DATE:20280130
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:python -m snapshot.agreement sample --batch <quarter>\; give th
- e coder the sheet (not the weights file)\; score it when returned (snapsho
- t.agreement score).\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
+ mple --batch <quarter>\; give the coder the sheet (not the weights file)\;
+  score it when returned (snapshot.agreement score).\n\nSource: docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1295,9 +1331,9 @@ DTEND;VALUE=DATE:20280202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Late KEV listings and credits\, hand-check answers\, agreement 
- scores\; Zenodo archive.\n\nOwner: Claude. Source: docs/schedule/schedule.
- yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
+  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: docs/s
+ chedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1306,9 +1342,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280201T060000Z
 DTEND:20280201T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Cron in .github/workflows/quarterly-pull.yml\; tags snapshot-<q
- uarter>-final.\n\nOwner: GitHub (automatic). Source: docs/schedule/schedul
- e.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/quarterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: docs
+ /schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1316,10 +1352,10 @@ UID:approve-final@2028-02-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280202T150000Z
 DTEND:20280202T153000Z
-SUMMARY:[You] Snapshot: Final-run check and approve the final results
-DESCRIPTION:Review new rows since the provisional run\; approve the final r
- elease and its Zenodo archive.\n\nOwner: Author. Source: docs/schedule/sch
- edule.yaml
+SUMMARY:[Paul] Snapshot: Final-run check and approve the final results
+DESCRIPTION:Responsible: Paul (author)\n\nReview new rows since the provisi
+ onal run\; approve the final release and its Zenodo archive.\n\nSource: do
+ cs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1328,9 +1364,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280210T071700Z
 DTEND:20280210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1341,11 +1377,11 @@ DTEND;VALUE=DATE:20280214
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
  nt
-DESCRIPTION:python -m snapshot.agreement score on the returned sheet\; agre
- ement rates (with Gwet's AC1) go into the next report. If the sheet has no
- t come back\, comment on the issue so the author can send a reminder\; do 
- not contact the reviewer directly.\n\nOwner: Claude. Source: docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
+ ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
+ next report. If the sheet has not come back\, comment on the issue so the 
+ author can send a reminder\; do not contact the reviewer directly.\n\nSour
+ ce: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1356,9 +1392,10 @@ DTEND;VALUE=DATE:20280302
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the first annual check against reference d
  ata (2027)
-DESCRIPTION:prereg section 13: exposure reference if scan data was obtained
-  by 31 Jan\, harm reference always. For the author's approval at the 15 Ma
- rch 2028 review.\n\nOwner: Claude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nprereg section 13: exposure ref
+ erence if scan data was obtained by 31 Jan\, harm reference always. For th
+ e author's approval at the 15 March 2028 review.\n\nSource: docs/schedule/
+ schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1368,10 +1405,10 @@ DTSTART;VALUE=DATE:20280302
 DTEND;VALUE=DATE:20280315
 TRANSP:TRANSPARENT
 SUMMARY:[Reviewer] Snapshot: Optional - comment on the first annual check
-DESCRIPTION:About 1-2 hours. Read the first annual check of the free data a
- gainst better reference data (drafted 1 March) and comment before the 15 M
- arch 2028 annual review.\n\nOwner: External reviewer. Source: docs/schedul
- e/schedule.yaml
+DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nAbout 1-2 hours. R
+ ead the first annual check of the free data against better reference data 
+ (drafted 1 March) and comment before the 15 March 2028 annual review.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
@@ -1380,9 +1417,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280310T071700Z
 DTEND:20280310T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1390,11 +1427,12 @@ UID:annual-review@2028-03-15@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280315T150000Z
 DTEND:20280315T163000Z
-SUMMARY:[You] Snapshot: Annual review and change window
-DESCRIPTION:The one time each year core rules may change (docs/CHANGE_POLIC
- Y.md). Promotion candidates\; the AI-credit rule\; any change run side by 
- side for four quarters. From 2028: approve the annual check against refere
- nce data.\n\nOwner: Author. Source: docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Annual review and change window
+DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
+  may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
+ rule\; any change run side by side for four quarters. From 2028: approve t
+ he annual check against reference data.\n\nSource: docs/schedule/schedule.
+ yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1404,10 +1442,10 @@ DTSTART;VALUE=DATE:20280401
 DTEND;VALUE=DATE:20280402
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: 2027 closing re-run with full follow-up
-DESCRIPTION:Re-run all four 2027 quarters once every 2027 cohort CVE has it
- s 90-day follow-up\; publish as a completeness addendum to the annual chec
- k. Labels unchanged (decision item 21). The author approves.\n\nOwner: Cla
- ude. Source: docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude (claude)\n\nRe-run all four 2027 quarters o
+ nce every 2027 cohort CVE has its 90-day follow-up\; publish as a complete
+ ness addendum to the annual check. Labels unchanged (decision item 21). Th
+ e author approves.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1416,9 +1454,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280410T071700Z
 DTEND:20280410T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Cron in .github/workflows/rebuild-check.yml\; fails visibly if 
- a file or figure differs.\n\nOwner: GitHub (automatic). Source: docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
+ kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
+ ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 END:VCALENDAR

@@ -1,7 +1,8 @@
 # Annual plan: every action item, by who does it
 
 Generated from `docs/schedule/schedule.yaml` by `python -m snapshot.schedule build`; do not edit by hand.
-The same items are in the calendar feed `docs/schedule/snapshot.ics`, and each author or Claude item
+The same items are in the calendar feeds `docs/schedule/snapshot.ics` (everything) and
+`docs/schedule/reviewer.ics` (the external reviewer's items), and each author or Claude item
 opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or `owner:claude`).
 
 ## Every quarter and every month
@@ -21,6 +22,130 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | GitHub (automatic) | Quarterly pull, provisional run | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 06:00 UTC |
 | GitHub (automatic) | Rebuild check of the latest frozen bundle | day 10, every month, 2026-11 to 2028-04, 07:17 UTC |
 | GitHub (automatic) | Quarterly pull, final run | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02, 06:00 UTC |
+
+## Calendar: every dated item in order
+
+The same list as the calendar feeds, one row per occurrence (repeating items included).
+
+| When | Who is responsible | What |
+|---|---|---|
+| Mon 26 Oct 2026 | Claude | Continue the research window |
+| Wed 28 Oct 2026, 10:00 ET | Paul | Call the UGA Career Center about the reviewer posting |
+| Fri 06 Nov 2026 | Paul | Create the project email address |
+| Tue 10 Nov 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Thu 12 Nov 2026, 10:00 ET | Paul | Review research results; decide race fix-date effort |
+| Mon 16 Nov 2026, 10:00 ET | Paul | Validation fix dates, then spot-check references |
+| Tue 17 Nov 2026 | Claude | Run the validation and report pass/fail |
+| Wed 18 Nov 2026 | Paul | Ask Georgia State Career Services about the reviewer posting |
+| Fri 20 Nov 2026 | Claude | Draft the permission follow-ups and update the log |
+| Fri 20 Nov 2026, 09:00 ET | Paul | Data-permission follow-ups |
+| Mon 23 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 1 of 2 |
+| Tue 24 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 2 of 2 |
+| Wed 25 Nov 2026 | Paul | Ask Georgia Tech College of Computing about a research internship posting |
+| Wed 25 Nov 2026 | Claude | Race fix-date list ready in the Hand Check app |
+| Mon 30 Nov 2026 | Claude | Cutover check (study no longer depends on one Claude chat) |
+| Tue 01 Dec 2026 | Claude | Read the dry-run quality report; prepare the hand-check lists |
+| Tue 01 Dec 2026, 11:00 UTC | GitHub | Dry run of the quarterly pull (Oct-Nov data) |
+| Wed 02 Dec 2026, 10:00 ET | Paul | Hand check on the dry run |
+| Thu 03 Dec 2026, 10:00 ET | Paul | Move the quarterly pull into the container (if the dry run passed) |
+| Fri 04 Dec 2026, 10:00 ET | Paul | Landing page, Discussions, Zenodo |
+| Sat 05 Dec 2026 | Paul | Register on Handshake and connect the approved schools |
+| Thu 10 Dec 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Mon 21 Dec 2026, 10:00 ET | Paul | Core-freeze decision session |
+| Tue 22 Dec 2026 | Claude | Prepare the core freeze (core-v1.2) |
+| Tue 29 Dec 2026, 10:00 ET | Paul | Freeze the core (core-v1.2) and update OSF |
+| Fri 01 Jan 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
+| Fri 01 Jan 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sat 02 Jan 2027, 10:00 ET | Paul | Approve the provisional draft |
+| Mon 04 Jan 2027 to 28 Jan | Paul | Quarterly hand-check window |
+| Mon 04 Jan 2027 | Paul | Post the reviewer ad; email statistics department coordinators |
+| Sun 10 Jan 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Tue 12 Jan 2027, 10:00 ET | Paul | Line up the external reviewer and second coder |
+| Mon 25 Jan 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
+| Fri 29 Jan 2027 | Claude | Send the second coder this quarter's blinded sample |
+| Mon 01 Feb 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
+| Mon 01 Feb 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
+| Tue 02 Feb 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Wed 03 Feb 2027 | Claude | Prepare the 8 Feb session |
+| Mon 08 Feb 2027, 10:00 ET | Paul | Evaluate the AI-credit rule on pilot data; PHP2Shell case |
+| Wed 10 Feb 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Mon 15 Feb 2027 | Paul | Reviewer applications close; schedule calls |
+| Mon 15 Feb 2027, 10:00 ET | Paul | Write the Censys research-access application |
+| Mon 01 Mar 2027 | Paul | Confirm the external reviewer |
+| Tue 02 Mar 2027 to 14 Mar | Reviewer | Getting started - read the overview, plan and statistical review |
+| Tue 02 Mar 2027 to 14 Mar | Reviewer | Optional - practice round as second coder (pilot quarter) |
+| Tue 02 Mar 2027 | Claude | Record the confirmed reviewer |
+| Tue 02 Mar 2027 | Claude | Send the reviewer the practice second-coder sheet (pilot quarter) |
+| Thu 04 Mar 2027, 10:00 ET | Paul | Onboarding call with the external reviewer |
+| Wed 10 Mar 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Mon 15 Mar 2027, 11:00 ET | Paul | Annual review and change window |
+| Mon 15 Mar 2027, 11:00 ET | Reviewer | Optional - join the 2027 annual review |
+| Thu 01 Apr 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
+| Thu 01 Apr 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Fri 02 Apr 2027 | Claude | Send the reviewer the Q1 2027 review packet |
+| Fri 02 Apr 2027, 10:00 ET | Paul | Approve the provisional draft |
+| Sat 03 Apr 2027 to 28 Apr | Reviewer | Independent review of the Q1 2027 provisional report |
+| Sun 04 Apr 2027 to 28 Apr | Paul | Quarterly hand-check window |
+| Sat 10 Apr 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Thu 15 Apr 2027, 10:00 ET | Paul | Optional mid-review check-in with the reviewer |
+| Sun 25 Apr 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
+| Thu 29 Apr 2027 | Paul | Write the response to the external review |
+| Thu 29 Apr 2027 to 12 May | Reviewer | Second coder - 20 blinded items |
+| Thu 29 Apr 2027 | Claude | Send the second coder this quarter's blinded sample |
+| Sat 01 May 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
+| Sat 01 May 2027 | Claude | Publish the external review beside the Q1 2027 final report |
+| Sat 01 May 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
+| Sun 02 May 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Mon 10 May 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Thu 13 May 2027 | Claude | Score the second coder's sheet; publish agreement |
+| Thu 10 Jun 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
+| Thu 01 Jul 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Fri 02 Jul 2027, 10:00 ET | Paul | Approve the provisional draft |
+| Sun 04 Jul 2027 to 28 Jul | Paul | Quarterly hand-check window |
+| Sat 10 Jul 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Sun 25 Jul 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
+| Thu 29 Jul 2027 to 11 Aug | Reviewer | Second coder - 20 blinded items |
+| Thu 29 Jul 2027 | Claude | Send the second coder this quarter's blinded sample |
+| Sun 01 Aug 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
+| Sun 01 Aug 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
+| Mon 02 Aug 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Tue 10 Aug 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Fri 13 Aug 2027 | Claude | Score the second coder's sheet; publish agreement |
+| Fri 10 Sep 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
+| Fri 01 Oct 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sat 02 Oct 2027, 10:00 ET | Paul | Approve the provisional draft |
+| Mon 04 Oct 2027 to 28 Oct | Paul | Quarterly hand-check window |
+| Sun 10 Oct 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Mon 25 Oct 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
+| Fri 29 Oct 2027 to 11 Nov | Reviewer | Second coder - 20 blinded items |
+| Fri 29 Oct 2027 | Claude | Send the second coder this quarter's blinded sample |
+| Mon 01 Nov 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
+| Mon 01 Nov 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
+| Tue 02 Nov 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Wed 10 Nov 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Sat 13 Nov 2027 | Claude | Score the second coder's sheet; publish agreement |
+| Fri 10 Dec 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |
+| Sat 01 Jan 2028, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sun 02 Jan 2028, 10:00 ET | Paul | Approve the provisional draft |
+| Tue 04 Jan 2028 to 28 Jan | Paul | Quarterly hand-check window |
+| Mon 10 Jan 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Tue 25 Jan 2028, 10:00 ET | Paul | Hand-check answers due by the 28th |
+| Sat 29 Jan 2028 to 11 Feb | Reviewer | Second coder - 20 blinded items |
+| Sat 29 Jan 2028 | Claude | Send the second coder this quarter's blinded sample |
+| Tue 01 Feb 2028 | Claude | Summarize provisional-to-final changes; prepare the release |
+| Tue 01 Feb 2028, 06:00 UTC | GitHub | Quarterly pull, final run |
+| Wed 02 Feb 2028, 10:00 ET | Paul | Final-run check and approve the final results |
+| Thu 10 Feb 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Sun 13 Feb 2028 | Claude | Score the second coder's sheet; publish agreement |
+| Wed 01 Mar 2028 | Claude | Draft the first annual check against reference data (2027) |
+| Thu 02 Mar 2028 to 14 Mar | Reviewer | Optional - comment on the first annual check |
+| Fri 10 Mar 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Wed 15 Mar 2028, 11:00 ET | Paul | Annual review and change window |
+| Sat 01 Apr 2028 | Claude | 2027 closing re-run with full follow-up |
+| Mon 10 Apr 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 
 ## Author: dated items
 

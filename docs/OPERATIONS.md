@@ -28,6 +28,16 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 - **Automatic runs with their own cron:** Quarterly pull (1st of each month at 06:00 UTC,
   provisional and final), Rebuild check (10th monthly), Checks (every push).
 
+## Checking progress
+- **Run log:** the Schedule and Rebuild check workflows add a line to
+  `reports/log/<YYYY-MM>.md` on the `run-reports` branch after every run (when, result, link to
+  the run, and a report file when something happened). The quarterly pull saves its full log,
+  manifests and quality reports there too. Anyone can read this branch on GitHub, and a Claude
+  session can read it with `git fetch origin run-reports` (Claude sessions cannot download
+  Actions logs, only see whether a run passed).
+- **Issues:** open `schedule` issues are what is due now; closed ones are what was done, with
+  a comment saying how.
+
 ## Shared calendar
 Subscribe once (one click, while signed in to Google:
 [add to Google Calendar](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2Fpagagne%2Finternet-security-snapshot%2Fmain%2Fdocs%2Fschedule%2Fsnapshot.ics),
@@ -37,7 +47,9 @@ subscribed calendars every few hours to a day):
 Google Calendar › **Other calendars** › **+** › **From URL** ›
 `https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/docs/schedule/snapshot.ics`
 
-Every entry says who does it (Author, External reviewer, Claude or GitHub) in its description and category.
+Every entry's title starts with who is responsible ([Paul], [Reviewer], [Claude] or [GitHub]),
+and its description repeats it. `docs/ANNUAL_PLAN.md` has the same list as one table with a
+"Who is responsible" column.
 
 **The external reviewer's feed** holds only the reviewer's tasks and the author/Claude items
 they depend on (onboarding call, review packet, publication). Send it to the reviewer once they
