@@ -1,0 +1,8 @@
+# Linux kernel fix dates
+
+Kernel flaws added to KEV: 8
+With fixing commits in the CVE record: 5
+Dated from a commit: 5
+Days from fix commit to CVE publication (median, dated ones): 22.0
+Commit before publication: 5 of 5
+
