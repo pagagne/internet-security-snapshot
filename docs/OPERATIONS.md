@@ -28,7 +28,9 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
   provisional and final), Rebuild check (10th monthly), Checks (every push).
 
 ## Shared calendar
-Subscribe once; it then updates itself whenever the schedule changes (Google refreshes
+Subscribe once (one click, while signed in to Google:
+[add to Google Calendar](https://calendar.google.com/calendar/render?cid=https%3A%2F%2Fraw.githubusercontent.com%2Fpagagne%2Finternet-security-snapshot%2Fmain%2Fdocs%2Fschedule%2Fsnapshot.ics),
+or by hand as below); it then updates itself whenever the schedule changes (Google refreshes
 subscribed calendars every few hours to a day):
 
 Google Calendar › **Other calendars** › **+** › **From URL** ›
