@@ -1,0 +1,42 @@
+name: Honeypot capture
+
+# Monthly capture of the SANS Internet Storm Center web-honeypot files as aggregates only
+# (exploratory X14, context only, src/snapshot/collect/isc_honeypot.py). The two files (about
+# 1 GB) are summarised on the runner and discarded; each capture saves about 40 KB of counts,
+# never a URL or IP address. Monthly, to keep the load on ISC low (author's decision, 25 Oct). Results go to the
+# run-reports branch under data/isc-honeypot/. Credit: SANS Technology Institute, Internet
+# Storm Center, https://isc.sans.edu (attribution required, no reselling).
+on:
+  schedule:
+    - cron: "43 9 2 * *"   # the 2nd of each month, 09:43 UTC, after ISC's daily update (one cron field only: day-of-month and day-of-week together would mean either)
+  workflow_dispatch:
+
+permissions:
+  contents: write   # run-reports branch only
+
+jobs:
+  capture:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Capture (aggregates only)
+        run: python -m snapshot.collect.isc_honeypot --out honeypot-out | tee summary.md
+      - name: Save to run-reports
+        run: |
+          day=$(date -u +%Y-%m-%d)
+          git fetch -q origin run-reports
+          git worktree add -q --detach /tmp/hp FETCH_HEAD
+          mkdir -p "/tmp/hp/data/isc-honeypot/$day"
+          cp honeypot-out/* "/tmp/hp/data/isc-honeypot/$day/"
+          cd /tmp/hp
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Honeypot capture $day" && git push -q origin HEAD:run-reports
+      - name: Record the run (run-reports branch)
+        if: always()
+        run: tools/run_log.sh "Honeypot capture" "${{ job.status }}" summary.md

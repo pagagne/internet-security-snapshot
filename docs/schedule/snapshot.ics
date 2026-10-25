@@ -9,6 +9,63 @@ X-WR-CALDESC:Every action item of the study: author\, external reviewer\, C
  thub.com/pagagne/internet-security-snapshot
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
+UID:deps-dev-prototype@2026-10-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Patch-adoption prototype from deps.dev (open-sou
+ rce flaws) - snapshot run
+DESCRIPTION:Responsible: Claude (claude)\n\nResearch probe depsdev_adoption
+ \, 25 Oct: today's share of dependents on affected versions for attacked o
+ pen-source flaws (deps.dev free API). History over time needs deps.dev's B
+ igQuery tables (httparchive-test\, after the BigQuery project).\n\nSource:
+  docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:honeypot-capture@2026-10-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Monthly honeypot capture (SANS ISC)\, aggregates
+  only - built
+DESCRIPTION:Responsible: Claude (claude)\n\nBuilt and first run 25 Oct (exp
+ loratory X14\, context only\; .github/workflows/honeypot.yml\, 2nd of each
+  month\; data/isc-honeypot/ on run-reports\, about 40 KB a capture). First
+  capture: 10.2 million URLs\, 304 attack categories\, 241 CVEs.\n\nSource:
+  docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:kernel-fixdates@2026-10-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Linux kernel fix dates - probe run
+DESCRIPTION:Responsible: Claude (claude)\n\nProbe 25 Oct: 5 of 8 kernel fla
+ ws added to KEV in Jan-Sep 2026 are dated from fixing commits\, a median 2
+ 2 days before CVE publication (the 3 others are older Red Hat records with
+ out commits). Follow-up: kernel-fixdates-prefill.\n\nSource: docs/schedule
+ /schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:kev-lag-backtest@2026-10-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Back-test KEV's lag against EUVD\, Project Zero'
+ s sheet and inthewild.io - first run
+DESCRIPTION:Responsible: Claude (claude)\n\nResearch probe kev_lag (KEV add
+ itions Jan-Sep 2026)\, first runs 25 Oct\; results and their limits go to 
+ the 12 Nov research review.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-10-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261025
@@ -40,6 +97,20 @@ DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md: item 5 (
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:later-applications@2026-10-27@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261027T140000Z
+DTEND:20261027T142000Z
+SUMMARY:[Paul] Snapshot: Send the GreyNoise research request and the CrowdS
+ ec question
+DESCRIPTION:Responsible: Paul (author)\n\nDrafts from Claude (chat\, 25 Oct
+ ). GreyNoise: research (VIP) access for work that is shared publicly. Crow
+ dSec: whether research use and publishing aggregates are allowed. Use the 
+ project email if it exists by then. Claude logs both in docs/PERMISSIONS.m
+ d.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:uga-call@2026-10-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261028T140000Z
@@ -54,20 +125,90 @@ DESCRIPTION:Responsible: Paul (author)\n\nEmployer relations\, (706) 542-33
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:honeypot-capture@2026-11-02@internet-security-snapshot
+UID:censys@2026-10-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261028T180000Z
+DTEND:20261028T190000Z
+SUMMARY:[Paul] Snapshot: Write and send the Censys research-access applicat
+ ion
+DESCRIPTION:Responsible: Paul (author)\n\nMoved from 15 Feb 2027 (17 Nov\, 
+ then 28 Oct at the author's choice). In your own words: Censys rejects req
+ uests written with AI tools\, and the standing rules say you write it. The
+ ir form asks for: a 3-4 sentence project description with the research que
+ stion and where results are published\; your background (public profile or
+  past work)\; how Censys helps and which access (BigQuery\; delayed data i
+ s fine)\; how recent the data must be\; confirmation of non-commercial use
+  and citing Censys\; agreement to the terms\; your Censys username (make a
+ n account first). Log it in docs/PERMISSIONS.md (Claude can do the log).\n
+ \nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:gcp-setup@2026-10-29@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261029T140000Z
+DTEND:20261029T142000Z
+SUMMARY:[Paul] Snapshot: Create a free Google Cloud project for BigQuery (H
+ TTP Archive\, deps.dev history)
+DESCRIPTION:Responsible: Paul (author)\n\nconsole.cloud.google.com: new pro
+ ject "internet-security-snapshot"\; enable the BigQuery API\; no billing n
+ eeded (the BigQuery sandbox includes 1 TB of queries a month)\; if you eve
+ r link billing\, add a budget alert at $1\; IAM > Service accounts > creat
+ e "snapshot-bq" with the role BigQuery Job User\; Keys > Add key > JSON\; 
+ in GitHub > Settings > Secrets and variables > Actions\, add GCP_SA_KEY (p
+ aste the whole file) and GCP_PROJECT (the project ID). Never paste the key
+  into chat. Delete the downloaded file afterwards.\n\nSource: docs/schedul
+ e/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:hhs-ocr-series@2026-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Daily honeypot capture (SANS ISC / DShield web h
- oneypot)\, aggregates only
-DESCRIPTION:Responsible: Claude (claude)\n\nA daily workflow that saves the
-  ISC web-honeypot URL summary and categories as aggregates (first and last
-  seen\, counts per URL category\; no IP addresses)\, at most one download 
- a day\, credited "SANS Technology Institute\, Internet Storm Center". Map 
- categories to CVEs for an exploratory first-attempt date beside T_exploit.
-  Record the terms in docs/PERMISSIONS.md\; register the measure in config/
- exploratory.yaml first.\n\nSource: docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: HHS OCR health-breach series - second attempt at
+  the export
+DESCRIPTION:Responsible: Claude (claude)\n\nProbe 25 Oct: the portal answer
+ s\, but its CSV export is a form the probe did not trigger. Second attempt
+  with the form's real fields\; if it still fails\, the public research cop
+ ies of the same register are checked for terms. Quarterly counts of "hacki
+ ng/IT incident" breaches of 500+ people\; aggregates only\, beside T6.\n\n
+ Source: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:httparchive-test@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: HTTP Archive test - are software versions record
+ ed? (after the BigQuery project)
+DESCRIPTION:Responsible: Claude (claude)\n\nOne small BigQuery query within
+  the free tier\, with a per-query byte cap. If versions are recorded\, pro
+ pose an exploratory patch-adoption measure for web software (share of site
+ s on the fixed version\, 30 and 90 days after the fix). WordPress.org vers
+ ion statistics work (probe 25 Oct: version shares per plugin\, today only)
+ \, so they need weekly capture to build history. Also deps.dev's BigQuery 
+ history for the patch-adoption prototype.\n\nSource: docs/schedule/schedul
+ e.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:kernel-fixdates-prefill@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Add kernel commit dates (and more CSAF vendors) 
+ to the fix-date pre-fill
+DESCRIPTION:Responsible: Claude (claude)\n\nsnapshot.fixdates.prefill_explo
+ ited: fixing commits from kernel CVE records dated through the GitHub mirr
+ ors\; Debian/Ubuntu trackers as a cross-check\; CSAF feeds of further vend
+ ors (Siemens\, Red Hat\, SUSE) where they cover attacked flaws. Measure th
+ e drop in "assumed" dates on the 175-flaw probe. Code change by pull reque
+ st\, before the 14 Dec review.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -96,36 +237,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
  eviewer invitation (instead of a personal address).\n\nSource: docs/schedu
  le/schedule.yaml
 CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:kernel-fixdates@2026-11-09@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261109
-DTEND;VALUE=DATE:20261110
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Linux kernel and distribution fix dates in the p
- re-fill
-DESCRIPTION:Responsible: Claude (claude)\n\nFixing commits and fixed versio
- ns from kernel CVE records\; Debian and Ubuntu tracker dates. Measure on t
- he 175-flaw probe how many "assumed" fix dates disappear. Also add CSAF fe
- eds of further vendors (Siemens\, Red Hat\, SUSE) where they cover attacke
- d flaws.\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:kev-lag-backtest@2026-11-09@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261109
-DTEND;VALUE=DATE:20261110
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Back-test KEV's lag against EUVD\, Project Zero'
- s sheet and inthewild.io (Q2-Q3 2026)
-DESCRIPTION:Responsible: Claude (claude)\n\nExploratory: earliest-evidence 
- date per flaw from KEV\, CISA's flag\, EUVD "exploited since"\, Project Ze
- ro's 0day In the Wild sheet and inthewild.io\; size of the gap to KEV and 
- effect on the X10 zero-day share. Check what EUVD's field means first. For
-  the 12 Nov review.\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-09@internet-security-snapshot
@@ -163,24 +274,10 @@ SUMMARY:[Paul] Snapshot: Review research results\; decide race fix-date eff
 DESCRIPTION:Responsible: Paul (author)\n\nEvery flagged race fix date (abou
  t 1½ h a quarter\; the author's leaning on 24 Oct) or a sample (about 50 
  min). The CISA-flag preview (zero-day share possibly understated by half) 
- is on the agenda. docs/RESEARCH_PLAN.md.\n\nSource: docs/schedule/schedule
- .yaml
+ is on the agenda\, with the 25 Oct probes: KEV's lag against other sources
+ \, Linux fix dates\, honeypot first-seen dates and the AI-list check. docs
+ /RESEARCH_PLAN.md.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:httparchive-test@2026-11-16@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261117
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: HTTP Archive test - are software versions record
- ed?
-DESCRIPTION:Responsible: Claude (claude)\n\nOne small BigQuery query within
-  the free tier. If versions are recorded\, propose an exploratory patch-ad
- option measure for web software (share of sites on the fixed version\, 30 
- and 90 days after the fix). Check the WordPress.org version statistics too
- .\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-16@internet-security-snapshot
@@ -220,24 +317,6 @@ DESCRIPTION:Responsible: Claude (claude)\n\nsnapshot.validate against prere
  g/ground_truth_reference.csv (pass = 4 of 5 cases).\n\nSource: docs/schedu
  le/schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:censys@2026-11-17@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261117T150000Z
-DTEND:20261117T160000Z
-SUMMARY:[Paul] Snapshot: Write and send the Censys research-access applicat
- ion
-DESCRIPTION:Responsible: Paul (author)\n\nMoved from 15 Feb 2027. In your o
- wn words: Censys rejects requests written with AI tools\, and the standing
-  rules say you write it. Their form asks for: a 3-4 sentence project descr
- iption with the research question and where results are published\; your b
- ackground (public profile or past work)\; how Censys helps and which acces
- s (BigQuery\, delayed data is fine)\; how recent the data must be\; confir
- mation of non-commercial use and citing Censys\; agreement to the terms\; 
- your Censys username (make an account first). Log it in docs/PERMISSIONS.m
- d.\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:gsu-contact@2026-11-18@internet-security-snapshot
@@ -467,21 +546,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:deps-dev-prototype@2026-12-07@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261207
-DTEND;VALUE=DATE:20261208
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Patch-adoption prototype from deps.dev (open-sou
- rce flaws)
-DESCRIPTION:Responsible: Claude (claude)\n\nShare of dependents on the fixe
- d version 30 and 90 days after the fix\, for attacked open-source flaws (n
- pm\, PyPI\, Maven\, Go\, Cargo)\; PyPI downloads by version as a second vi
- ew. Plan 2 substitute for exposure on open-source software. Ready for the 
- 14 Dec review.\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2026-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261210T071700Z
@@ -661,20 +725,6 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
-UID:later-applications@2027-01-11@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20270111T150000Z
-DTEND:20270111T154500Z
-SUMMARY:[Paul] Snapshot: Apply for GreyNoise research access\; ask CrowdSec
-  about research use
-DESCRIPTION:Responsible: Paul (author)\n\nAfter the lock\, as exploratory s
- ources. GreyNoise: research (VIP) access for work that is shared publicly.
-  CrowdSec: whether research use and publishing aggregates are allowed. Cla
- ude drafts the CrowdSec question\; you send both. Log in docs/PERMISSIONS.
- md.\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:reviewer-line-up@2027-01-12@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270112T150000Z
@@ -686,20 +736,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (docs/reviewe
   candidates from the 21 Dec shortlist. The second coder can be the same pe
  rson. Confirm by 1 March.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:hhs-ocr-series@2027-01-18@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270118
-DTEND;VALUE=DATE:20270119
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: HHS OCR health-breach series as exploratory harm
-  data
-DESCRIPTION:Responsible: Claude (claude)\n\nQuarterly counts of "hacking/IT
-  incident" breaches affecting 500+ people and people affected\, from the p
- ublic HHS OCR portal\; beside T6 (SEC 8-K filings). Aggregates only.\n\nSo
- urce: docs/schedule/schedule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-worksheets@2027-01-20@internet-security-snapshot
@@ -726,12 +762,15 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270125
 DTEND;VALUE=DATE:20270126
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: AI labs' published finding lists against our AI-
- credit counts
-DESCRIPTION:Responsible: Claude (claude)\n\nGoogle's Big Sleep issue-tracke
- r list first\, then OpenAI-funded audits and similar: which of their CVEs 
- our headline and narrow counts catch. For the 8 Feb AI-credit session.\n\n
- Source: docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Outside AI-found CVE lists against our AI-credit
+  counts\, on pilot data
+DESCRIPTION:Responsible: Claude (claude)\n\nPrototype 25 Oct (research prob
+ e ai_lists): of 5 outside AI-found CVEs with records\, the headline rule c
+ aught 3\, the narrow 0\, and 2 (Microsoft\, Apple) have empty credit field
+ s: those vendors credit finders only in their own advisories. For 8 Feb: r
+ erun on the pilot\, and test vendor acknowledgments (Microsoft's update gu
+ ide\, Apple's security notes) as an exploratory source for T7.\n\nSource: 
+ docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

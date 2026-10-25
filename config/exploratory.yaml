@@ -158,3 +158,72 @@ measures:
       0 of 102). (3) From 20 events: Cox model with product slot, vendor type, CVSS and root
       cause, proportional hazards checked with Schoenfeld residuals. Descriptive only: AI tools
       search different code than attackers target, so no difference is read as an effect of AI.
+
+  # ---- added 25 Oct 2026 from the brainstorm (Claude doc "Brainstorm: Data Sources and Process").
+  # Defined on 25 Oct; the research probes that tested whether each source works ran the same
+  # day on 2026 data, before any quarterly figure is computed with them.
+  - id: X14
+    name: Honeypot attack activity by category (SANS ISC), context only
+    question: Which kinds of web attacks do honeypots see each quarter, and which named CVEs?
+    sources: [isc_honeypot]
+    added: 2026-10-25
+    feeds_labels: false
+    status: active
+    method: >
+      Monthly capture of the SANS Internet Storm Center web-honeypot files as aggregates
+      (src/snapshot/collect/isc_honeypot.py): requests and URLs per attack category, and per
+      CVE named in a URL or category. Context only (author's decision, 25 Oct 2026): not used
+      as a first-attack date, because the probe found only 2 of 246 KEV additions in the data
+      and first-seen dates belong to URLs, not flaws. Credit: SANS Technology Institute,
+      Internet Storm Center.
+
+  - id: X15
+    name: Zero-day check against Project Zero's list
+    question: Of the zero-days Google Project Zero lists, how many does the study's free data also class as zero-days?
+    sources: [kev, p0_itw]
+    added: 2026-10-25
+    feeds_labels: false
+    status: planned
+    method: >
+      Each quarter: KEV additions that appear in Project Zero's public "0day In the Wild" sheet
+      (24 of 246 in Jan-Sep 2026), and the share of them that X10 classes as exploited on or
+      before the fix. A low share shows how far the free data understates zero-days. ENISA EUVD
+      and inthewild.io were tested as earlier-attack sources on 25 Oct and dropped (EUVD mirrors
+      KEV; inthewild.io has no reports after Dec 2024).
+
+  - id: X16
+    name: Patch adoption for open-source flaws (deps.dev)
+    question: How fast do dependent packages move off affected versions of attacked open-source flaws?
+    sources: [osv, depsdev]
+    added: 2026-10-25
+    feeds_labels: false
+    status: planned
+    method: >
+      For KEV additions that OSV maps to npm, PyPI, Maven, Go or Cargo packages: share of
+      dependents on affected versions 30 and 90 days after the fix (deps.dev BigQuery history;
+      a today-only snapshot from the free API until then). Open-source software only.
+
+  - id: X17
+    name: Health-sector hacking breaches (HHS OCR)
+    question: Is reported hacking harm in US health care rising or falling?
+    sources: [hhs_ocr]
+    added: 2026-10-25
+    feeds_labels: false
+    status: planned
+    method: >
+      Quarterly count of "Hacking/IT Incident" breaches affecting 500 or more people, and
+      people affected, from the public HHS OCR register. Entity names are never stored.
+
+  - id: X18
+    name: Outside AI-found lists against the AI-credit counts
+    question: How many flaws that outside lists attribute to AI tools do the headline and narrow counts catch?
+    sources: [cve, curated]
+    added: 2026-10-25
+    feeds_labels: false
+    status: planned
+    method: >
+      A dated, hand-entered list of CVEs that labs or verified trackers attribute to AI tools,
+      each with its source; share caught by the headline and narrow T7 rules, and share with
+      empty credit fields (vendors that credit only in their own advisories). Read with the
+      list's own selection bias in mind.
+

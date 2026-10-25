@@ -8,7 +8,7 @@ on:
       task:
         description: "Probe to run"
         type: choice
-        options: [fixdate_probe]
+        options: [fixdate_probe, source_scout, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists]
         default: fixdate_probe
       start:
         description: "First KEV date-added (YYYY-MM-DD)"
@@ -46,4 +46,5 @@ jobs:
           cd /tmp/rr
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A && git commit -qm "Research ${{ inputs.task }} ${{ github.run_id }}" && git push -q origin run-reports
+          git add -A && git commit -qm "Research ${{ inputs.task }} ${{ github.run_id }}"
+          for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1
