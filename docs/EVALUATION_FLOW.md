@@ -205,7 +205,6 @@ gantt
     Final report                :milestone, 2027-11-01, 0d
   section Project milestones
     Evaluate AI-credit rule on pilot data :2027-02-02, 2027-02-12
-    Censys research application :2027-02-15, 14d
     Annual review and change window :milestone, 2027-03-15, 0d
     External reviewer confirmed :milestone, 2027-03-01, 0d
     External review of Q1 2027 :2027-04-03, 2027-04-28
@@ -218,7 +217,6 @@ gantt
 | 4–28 Jan | Hand-check window for Q4 2026 (about 1½ hours of work, or about 50 minutes if race fix dates are sampled, at any time in the window; answers due by the 28th) |
 | Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
 | 2–12 Feb | Evaluation of the AI-credit rule on the pilot data: headline (any AI tool or lab mentioned) against the narrow count (AI tool named), a sample of lab-affiliated credits, and spot-check results; outcome goes to the 15 March review |
-| 15 Feb – 1 Mar | Application for Censys research access (internet scan data), written by the author |
 | Mon 1 Mar | External reviewer confirmed |
 | Mon 15 Mar | Annual review and change window: the only time the core rules may change; changes logged on OSF |
 | Thu 1 Apr | Q1 2027 provisional report: the **first scored quarter**, the first with Improving / Worsening labels |

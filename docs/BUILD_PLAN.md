@@ -14,9 +14,13 @@ gantt
     Evaluation code - all labels, exploratory measures :2026-10-26, 2026-11-30
     Root-cause fill from Vulnrichment and NVD :2026-11-16, 2026-11-30
     Draft evaluation page               :2026-11-20, 2026-11-30
+  section Exploratory additions (Claude, from the 25 Oct brainstorm)
+    Daily honeypot capture, KEV lag, kernel fix dates :2026-11-02, 2026-11-16
+    HTTP Archive test, deps.dev prototype :2026-11-16, 2026-12-07
   section Author checkpoints
     Review research results             :milestone, 2026-11-12, 0d
     Validation fix dates and spot check :milestone, 2026-11-16, 0d
+    Censys application sent             :milestone, 2026-11-17, 0d
     Data-permission follow-ups          :milestone, 2026-11-20, 0d
     Baseline hand check, 2 sessions     :2026-11-23, 2d
     Cutover - repo runs the study       :milestone, 2026-11-30, 0d
@@ -43,6 +47,7 @@ On GitHub the red line marks today.
 | 30 Nov | Evaluation code: T1-T7 labels, bootstrap intervals, exploratory X1-X12. Built 2026-10-22: events (`snapshot.events`), validation (`snapshot.validate`), T1(a)/T3 (`snapshot.race`), T7 range and programme-evidence figure (`snapshot.t7`), consistency rate | in progress |
 | 30 Nov | T1(a) as decided 23 Oct: median days from fix to first attack over all CVEs first added to KEV in the quarter (vendor fix dates, flagged ones to the hand check), next to the registered cohort version; X10 zero-day share computed as exploratory | computation built 2026-10-24 (`snapshot.race.t1_kev_race`, with fix-date and attack-date bounds from `snapshot.events`); list builder and report table to do |
 | 30 Nov | Draft evaluation page for the dry run | to do |
+| 2 Nov-7 Dec | Exploratory additions adopted 25 Oct (brainstorm): daily SANS ISC honeypot capture, KEV-lag back-test (EUVD, Project Zero, inthewild.io), Linux kernel and distribution fix dates, HTTP Archive version test, deps.dev patch adoption; each registered in `config/exploratory.yaml` before its first result; collectors tested before the 14 Dec workflow review | to do |
 | 30 Nov | Root cause: fill missing CWEs from Vulnrichment then NVD (registered source order) in the evaluation | to do |
 | 4-18 Dec | **Author:** from 4 Dec (project links public; the repository itself is already public), sign in to zenodo.org with GitHub and switch on archiving for `internet-security-snapshot` (about 2 minutes); first archived release = Q4 2026 final, 1 Feb 2027 | to do |
 | 31 Dec | Zenodo archiving: quarterly workflow publishes a GitHub release on each final run; `.zenodo.json` metadata (title, author, licence, OSF link); check whether the data bundle can ride the release or needs Zenodo's upload API (a `ZENODO_TOKEN` secret), keeping only publishable data (no VulnCheck, ransomware.live aggregates only and only once permitted); also archive the pinned container image (`docker save`) with each final release | to do |

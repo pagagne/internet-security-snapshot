@@ -54,6 +54,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nEmployer relations\, (706) 542-33
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:honeypot-capture@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Daily honeypot capture (SANS ISC / DShield web h
+ oneypot)\, aggregates only
+DESCRIPTION:Responsible: Claude (claude)\n\nA daily workflow that saves the
+  ISC web-honeypot URL summary and categories as aggregates (first and last
+  seen\, counts per URL category\; no IP addresses)\, at most one download 
+ a day\, credited "SANS Technology Institute\, Internet Storm Center". Map 
+ categories to CVEs for an exploratory first-attempt date beside T_exploit.
+  Record the terms in docs/PERMISSIONS.md\; register the measure in config/
+ exploratory.yaml first.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
@@ -79,6 +96,36 @@ DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
  eviewer invitation (instead of a personal address).\n\nSource: docs/schedu
  le/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:kernel-fixdates@2026-11-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Linux kernel and distribution fix dates in the p
+ re-fill
+DESCRIPTION:Responsible: Claude (claude)\n\nFixing commits and fixed versio
+ ns from kernel CVE records\; Debian and Ubuntu tracker dates. Measure on t
+ he 175-flaw probe how many "assumed" fix dates disappear. Also add CSAF fe
+ eds of further vendors (Siemens\, Red Hat\, SUSE) where they cover attacke
+ d flaws.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:kev-lag-backtest@2026-11-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Back-test KEV's lag against EUVD\, Project Zero'
+ s sheet and inthewild.io (Q2-Q3 2026)
+DESCRIPTION:Responsible: Claude (claude)\n\nExploratory: earliest-evidence 
+ date per flaw from KEV\, CISA's flag\, EUVD "exploited since"\, Project Ze
+ ro's 0day In the Wild sheet and inthewild.io\; size of the gap to KEV and 
+ effect on the X10 zero-day share. Check what EUVD's field means first. For
+  the 12 Nov review.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-09@internet-security-snapshot
@@ -121,6 +168,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nEvery flagged race fix date (abou
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:httparchive-test@2026-11-16@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: HTTP Archive test - are software versions record
+ ed?
+DESCRIPTION:Responsible: Claude (claude)\n\nOne small BigQuery query within
+  the free tier. If versions are recorded\, propose an exploratory patch-ad
+ option measure for web software (share of sites on the fixed version\, 30 
+ and 90 days after the fix). Check the WordPress.org version statistics too
+ .\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-16@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261116
@@ -158,6 +220,24 @@ DESCRIPTION:Responsible: Claude (claude)\n\nsnapshot.validate against prere
  g/ground_truth_reference.csv (pass = 4 of 5 cases).\n\nSource: docs/schedu
  le/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:censys@2026-11-17@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261117T150000Z
+DTEND:20261117T160000Z
+SUMMARY:[Paul] Snapshot: Write and send the Censys research-access applicat
+ ion
+DESCRIPTION:Responsible: Paul (author)\n\nMoved from 15 Feb 2027. In your o
+ wn words: Censys rejects requests written with AI tools\, and the standing
+  rules say you write it. Their form asks for: a 3-4 sentence project descr
+ iption with the research question and where results are published\; your b
+ ackground (public profile or past work)\; how Censys helps and which acces
+ s (BigQuery\, delayed data is fine)\; how recent the data must be\; confir
+ mation of non-commercial use and citing Censys\; agreement to the terms\; 
+ your Censys username (make an account first). Log it in docs/PERMISSIONS.m
+ d.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:gsu-contact@2026-11-18@internet-security-snapshot
@@ -387,6 +467,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:deps-dev-prototype@2026-12-07@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Patch-adoption prototype from deps.dev (open-sou
+ rce flaws)
+DESCRIPTION:Responsible: Claude (claude)\n\nShare of dependents on the fixe
+ d version 30 and 90 days after the fix\, for attacked open-source flaws (n
+ pm\, PyPI\, Maven\, Go\, Cargo)\; PyPI downloads by version as a second vi
+ ew. Plan 2 substitute for exposure on open-source software. Ready for the 
+ 14 Dec review.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2026-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261210T071700Z
@@ -410,10 +505,11 @@ DESCRIPTION:Responsible: Claude (claude)\n\ndocs/WORKFLOWS.md: for each wor
  , what happens on failure and who notices\, and its latest successful run 
  (link). Run any workflow without a successful run since its last change (r
  ebuild check on the dry run's bundle\; quarterly pull inside the container
- ). Draft the lock list for decision item 22: data workflows (quarterly pul
- l\, rebuild check\, Dockerfile) locked like the core\; support workflows (
- Checks\, Schedule\, Diagrams\, Research\, Pages) under a change log.\n\nSo
- urce: docs/schedule/schedule.yaml
+ \; the daily honeypot collector). Draft the lock list for decision item 22
+ : data workflows (quarterly pull\, rebuild check\, daily collectors\, Dock
+ erfile) locked like the core\; support workflows (Checks\, Schedule\, Diag
+ rams\, Research\, Pages) under a change log.\n\nSource: docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -539,6 +635,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nOn each approved board (UGA first
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:watch-case-pick@2027-01-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md\, "Pilot 
+ watch cases": every flaw published in the quarter just ended with CVSS 9.0
+  or more that at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\,
+  ANSSI\, CERT-In) issued an alert or advisory for\; if more than two\, two
+  by the seeded draw. Each gets an inquiry-log entry (docs/INQUIRIES.md) an
+ d a case note in docs/cases/.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-01-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270110T071700Z
@@ -548,6 +659,20 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
  kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
  ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:later-applications@2027-01-11@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270111T150000Z
+DTEND:20270111T154500Z
+SUMMARY:[Paul] Snapshot: Apply for GreyNoise research access\; ask CrowdSec
+  about research use
+DESCRIPTION:Responsible: Paul (author)\n\nAfter the lock\, as exploratory s
+ ources. GreyNoise: research (VIP) access for work that is shared publicly.
+  CrowdSec: whether research use and publishing aggregates are allowed. Cla
+ ude drafts the CrowdSec question\; you send both. Log in docs/PERMISSIONS.
+ md.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-line-up@2027-01-12@internet-security-snapshot
@@ -561,6 +686,20 @@ DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (docs/reviewe
   candidates from the 21 Dec shortlist. The second coder can be the same pe
  rson. Confirm by 1 March.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:hhs-ocr-series@2027-01-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: HHS OCR health-breach series as exploratory harm
+  data
+DESCRIPTION:Responsible: Claude (claude)\n\nQuarterly counts of "hacking/IT
+  incident" breaches affecting 500+ people and people affected\, from the p
+ ublic HHS OCR portal\; beside T6 (SEC 8-K filings). Aggregates only.\n\nSo
+ urce: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-worksheets@2027-01-20@internet-security-snapshot
@@ -579,6 +718,20 @@ DESCRIPTION:Responsible: Claude (claude)\n\nExtend the sample (docs/reviewe
  ee). Test on the Q4 2026 pilot (provisional 1 Jan) so a worksheet can be t
  ried in the practice round. Check that each worksheet can be followed in a
   spreadsheet with no code.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-lists-crosscheck@2027-01-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270125
+DTEND;VALUE=DATE:20270126
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: AI labs' published finding lists against our AI-
+ credit counts
+DESCRIPTION:Responsible: Claude (claude)\n\nGoogle's Big Sleep issue-tracke
+ r list first\, then OpenAI-funded audits and similar: which of their CVEs 
+ our headline and narrow counts catch. For the 8 Feb AI-credit session.\n\n
+ Source: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -672,17 +825,6 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Reviewer applications close\; schedule calls
 DESCRIPTION:Responsible: Paul (author)\n\nCalls with finalists 16-26 Feb\, 
  with the three-item fix-date trial.\n\nSource: docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:censys@2027-02-15@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20270215T150000Z
-DTEND:20270215T160000Z
-SUMMARY:[Paul] Snapshot: Write the Censys research-access application
-DESCRIPTION:Responsible: Paul (author)\n\nIn your own words (Censys rejects
-  AI-written requests). Claude can list the facts to cover.\n\nSource: docs
- /schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -789,11 +931,12 @@ DTEND:20270315T163000Z
 SUMMARY:[Paul] Snapshot: Annual review and change window
 DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
- rule\; any change run side by side for four quarters. From 2028 (the annua
- l wrap-up): review the annual check of the previous year's free results ag
- ainst reference scan data and published insurance-claims and ransom-paymen
- t figures (pre-registration section 13)\, and approve it for publishing.\n
- \nSource: docs/schedule/schedule.yaml
+ rule\; the inquiry log (docs/INQUIRIES.md) and the year's exploratory addi
+ tions\; any change run side by side for four quarters. From 2028 (the annu
+ al wrap-up): review the annual check of the previous year's free results a
+ gainst reference scan data and published insurance-claims and ransom-payme
+ nt figures (pre-registration section 13)\, and approve it for publishing.\
+ n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -906,6 +1049,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
  e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
  nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:watch-case-pick@2027-04-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md\, "Pilot 
+ watch cases": every flaw published in the quarter just ended with CVSS 9.0
+  or more that at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\,
+  ANSSI\, CERT-In) issued an alert or advisory for\; if more than two\, two
+  by the seeded draw. Each gets an inquiry-log entry (docs/INQUIRIES.md) an
+ d a case note in docs/cases/.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2027-04-10@internet-security-snapshot
@@ -1131,6 +1289,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:watch-case-pick@2027-07-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270706
+DTEND;VALUE=DATE:20270707
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md\, "Pilot 
+ watch cases": every flaw published in the quarter just ended with CVSS 9.0
+  or more that at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\,
+  ANSSI\, CERT-In) issued an alert or advisory for\; if more than two\, two
+  by the seeded draw. Each gets an inquiry-log entry (docs/INQUIRIES.md) an
+ d a case note in docs/cases/.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-07-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270710T071700Z
@@ -1314,6 +1487,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
  e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
  nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:watch-case-pick@2027-10-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271006
+DTEND;VALUE=DATE:20271007
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md\, "Pilot 
+ watch cases": every flaw published in the quarter just ended with CVSS 9.0
+  or more that at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\,
+  ANSSI\, CERT-In) issued an alert or advisory for\; if more than two\, two
+  by the seeded draw. Each gets an inquiry-log entry (docs/INQUIRIES.md) an
+ d a case note in docs/cases/.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2027-10-10@internet-security-snapshot
@@ -1501,6 +1689,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:watch-case-pick@2028-01-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280106
+DTEND;VALUE=DATE:20280107
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/RESEARCH_PLAN.md\, "Pilot 
+ watch cases": every flaw published in the quarter just ended with CVSS 9.0
+  or more that at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\,
+  ANSSI\, CERT-In) issued an alert or advisory for\; if more than two\, two
+  by the seeded draw. Each gets an inquiry-log entry (docs/INQUIRIES.md) an
+ d a case note in docs/cases/.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2028-01-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280110T071700Z
@@ -1671,11 +1874,12 @@ DTEND:20280315T163000Z
 SUMMARY:[Paul] Snapshot: Annual review and change window
 DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
- rule\; any change run side by side for four quarters. From 2028 (the annua
- l wrap-up): review the annual check of the previous year's free results ag
- ainst reference scan data and published insurance-claims and ransom-paymen
- t figures (pre-registration section 13)\, and approve it for publishing.\n
- \nSource: docs/schedule/schedule.yaml
+ rule\; the inquiry log (docs/INQUIRIES.md) and the year's exploratory addi
+ tions\; any change run side by side for four quarters. From 2028 (the annu
+ al wrap-up): review the annual check of the previous year's free results a
+ gainst reference scan data and published insurance-claims and ransom-payme
+ nt figures (pre-registration section 13)\, and approve it for publishing.\
+ n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1749,11 +1953,12 @@ DTEND:20290315T163000Z
 SUMMARY:[Paul] Snapshot: Annual review and change window
 DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
- rule\; any change run side by side for four quarters. From 2028 (the annua
- l wrap-up): review the annual check of the previous year's free results ag
- ainst reference scan data and published insurance-claims and ransom-paymen
- t figures (pre-registration section 13)\, and approve it for publishing.\n
- \nSource: docs/schedule/schedule.yaml
+ rule\; the inquiry log (docs/INQUIRIES.md) and the year's exploratory addi
+ tions\; any change run side by side for four quarters. From 2028 (the annu
+ al wrap-up): review the annual check of the previous year's free results a
+ gainst reference scan data and published insurance-claims and ransom-payme
+ nt figures (pre-registration section 13)\, and approve it for publishing.\
+ n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1791,11 +1996,12 @@ DTEND:20300315T163000Z
 SUMMARY:[Paul] Snapshot: Annual review and change window
 DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
- rule\; any change run side by side for four quarters. From 2028 (the annua
- l wrap-up): review the annual check of the previous year's free results ag
- ainst reference scan data and published insurance-claims and ransom-paymen
- t figures (pre-registration section 13)\, and approve it for publishing.\n
- \nSource: docs/schedule/schedule.yaml
+ rule\; the inquiry log (docs/INQUIRIES.md) and the year's exploratory addi
+ tions\; any change run side by side for four quarters. From 2028 (the annu
+ al wrap-up): review the annual check of the previous year's free results a
+ gainst reference scan data and published insurance-claims and ransom-payme
+ nt figures (pre-registration section 13)\, and approve it for publishing.\
+ n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 END:VCALENDAR

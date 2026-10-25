@@ -136,6 +136,110 @@ items:
     Career Center whether an unpaid remote research internship for course credit qualifies.
     If no, drop Georgia Tech.
 
+# ---------------------------------------------------------------- brainstorm of 25 Oct
+# Decided by the author on 25 Oct 2026 (Claude doc "Brainstorm: Data Sources and Process").
+# Everything here is exploratory: registered in config/exploratory.yaml before its first
+# result, reported, never scored until a March review. Collectors are data workflows, so they
+# are built and tested before the 14 Dec workflow review.
+- id: censys
+  owner: author
+  title: Write and send the Censys research-access application
+  date: 2026-11-17
+  time: "10:00"
+  minutes: 60
+  details: >
+    Moved from 15 Feb 2027. In your own words: Censys rejects requests written with AI tools,
+    and the standing rules say you write it. Their form asks for: a 3-4 sentence project
+    description with the research question and where results are published; your background
+    (public profile or past work); how Censys helps and which access (BigQuery, delayed data
+    is fine); how recent the data must be; confirmation of non-commercial use and citing
+    Censys; agreement to the terms; your Censys username (make an account first). Log it in
+    docs/PERMISSIONS.md.
+
+- id: honeypot-capture
+  owner: claude
+  title: Daily honeypot capture (SANS ISC / DShield web honeypot), aggregates only
+  date: 2026-11-02
+  details: >
+    A daily workflow that saves the ISC web-honeypot URL summary and categories as aggregates
+    (first and last seen, counts per URL category; no IP addresses), at most one download a
+    day, credited "SANS Technology Institute, Internet Storm Center". Map categories to CVEs
+    for an exploratory first-attempt date beside T_exploit. Record the terms in
+    docs/PERMISSIONS.md; register the measure in config/exploratory.yaml first.
+
+- id: kev-lag-backtest
+  owner: claude
+  title: Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io (Q2-Q3 2026)
+  date: 2026-11-09
+  details: >
+    Exploratory: earliest-evidence date per flaw from KEV, CISA's flag, EUVD "exploited since",
+    Project Zero's 0day In the Wild sheet and inthewild.io; size of the gap to KEV and effect on
+    the X10 zero-day share. Check what EUVD's field means first. For the 12 Nov review.
+
+- id: kernel-fixdates
+  owner: claude
+  title: Linux kernel and distribution fix dates in the pre-fill
+  date: 2026-11-09
+  details: >
+    Fixing commits and fixed versions from kernel CVE records; Debian and Ubuntu tracker dates.
+    Measure on the 175-flaw probe how many "assumed" fix dates disappear. Also add CSAF feeds
+    of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws.
+
+- id: httparchive-test
+  owner: claude
+  title: HTTP Archive test - are software versions recorded?
+  date: 2026-11-16
+  details: >
+    One small BigQuery query within the free tier. If versions are recorded, propose an
+    exploratory patch-adoption measure for web software (share of sites on the fixed
+    version, 30 and 90 days after the fix). Check the WordPress.org version statistics too.
+
+- id: deps-dev-prototype
+  owner: claude
+  title: Patch-adoption prototype from deps.dev (open-source flaws)
+  date: 2026-12-07
+  details: >
+    Share of dependents on the fixed version 30 and 90 days after the fix, for attacked
+    open-source flaws (npm, PyPI, Maven, Go, Cargo); PyPI downloads by version as a second
+    view. Plan 2 substitute for exposure on open-source software. Ready for the 14 Dec review.
+
+- id: ai-lists-crosscheck
+  owner: claude
+  title: AI labs' published finding lists against our AI-credit counts
+  date: 2027-01-25
+  details: >
+    Google's Big Sleep issue-tracker list first, then OpenAI-funded audits and similar:
+    which of their CVEs our headline and narrow counts catch. For the 8 Feb AI-credit session.
+
+- id: later-applications
+  owner: author
+  title: Apply for GreyNoise research access; ask CrowdSec about research use
+  date: 2027-01-11
+  time: "10:00"
+  minutes: 45
+  details: >
+    After the lock, as exploratory sources. GreyNoise: research (VIP) access for work that is
+    shared publicly. CrowdSec: whether research use and publishing aggregates are allowed.
+    Claude drafts the CrowdSec question; you send both. Log in docs/PERMISSIONS.md.
+
+- id: hhs-ocr-series
+  owner: claude
+  title: HHS OCR health-breach series as exploratory harm data
+  date: 2027-01-18
+  details: >
+    Quarterly counts of "hacking/IT incident" breaches affecting 500+ people and people
+    affected, from the public HHS OCR portal; beside T6 (SEC 8-K filings). Aggregates only.
+
+- id: watch-case-pick
+  owner: claude
+  title: Choose this quarter's watch cases by the rule
+  repeat: {months: [1, 4, 7, 10], day: 6, from: 2027-01, until: 2028-01}
+  details: >
+    docs/RESEARCH_PLAN.md, "Pilot watch cases": every flaw published in the quarter just ended
+    with CVSS 9.0 or more that at least one national CERT (CISA, NCSC UK, CERT-EU, BSI, ANSSI,
+    CERT-In) issued an alert or advisory for; if more than two, two by the seeded draw. Each
+    gets an inquiry-log entry (docs/INQUIRIES.md) and a case note in docs/cases/.
+
 - id: sync-review
   owner: claude
   title: Sync review (three passes; findings to the author)
@@ -243,8 +347,9 @@ items:
     docs/WORKFLOWS.md: for each workflow, what starts it, its permissions and secrets, inputs
     and outputs, what happens on failure and who notices, and its latest successful run (link).
     Run any workflow without a successful run since its last change (rebuild check on the dry
-    run's bundle; quarterly pull inside the container). Draft the lock list for decision item
-    22: data workflows (quarterly pull, rebuild check, Dockerfile) locked like the core;
+    run's bundle; quarterly pull inside the container; the daily honeypot collector). Draft the
+    lock list for decision item 22: data workflows (quarterly pull, rebuild check, daily
+    collectors, Dockerfile) locked like the core;
     support workflows (Checks, Schedule, Diagrams, Research, Pages) under a change log.
 
 - id: workflows-review
@@ -319,13 +424,6 @@ items:
   minutes: 45
   details: Outcome goes to the 15 March review.
 
-- id: censys
-  owner: author
-  title: Write the Censys research-access application
-  date: 2027-02-15
-  time: "10:00"
-  minutes: 60
-  details: In your own words (Censys rejects AI-written requests). Claude can list the facts to cover.
 
 - id: reviewer-applications-close
   owner: author
@@ -351,7 +449,8 @@ items:
   minutes: 90
   details: >
     The one time each year core rules may change (docs/CHANGE_POLICY.md). Promotion
-    candidates; the AI-credit rule; any change run side by side for four quarters. From 2028
+    candidates; the AI-credit rule; the inquiry log (docs/INQUIRIES.md) and the year's
+    exploratory additions; any change run side by side for four quarters. From 2028
     (the annual wrap-up): review the annual check of the previous year's free results against
     reference scan data and published insurance-claims and ransom-payment figures
     (pre-registration section 13), and approve it for publishing.
@@ -664,7 +763,7 @@ milestones:
 - at: [pull-provisional@2027-01-01, pull-final@2027-02-01]
   text: "Q4 2026 pilot: provisional / final"
 - at: [censys]
-  text: Censys research-access application (written by the author)
+  text: Censys research-access application sent (written by the author)
 - at: [annual-review@2027-03-15]
   suffix: ", then yearly"
   text: Annual review and change window; annual check of free numbers from March 2028

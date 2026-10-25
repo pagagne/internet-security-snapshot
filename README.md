@@ -32,13 +32,13 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
 | Date | Milestone |
 |---|---|
 | 20 Oct 2026 | Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82) |
+| 17 Nov 2026 | Censys research-access application sent (written by the author) |
 | 30 Nov 2026 | Cutover - the repository's schedule runs the study (docs/OPERATIONS.md) |
 | 1 Dec 2026 | Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow) |
 | 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |
 | 21 Dec 2026 | Core-freeze decision session (docs/CORE_FREEZE_DECISIONS.md) |
 | 29 Dec 2026 | Final core freeze: tag core-v1.2, OSF update |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
-| 15 Feb 2027 | Censys research-access application (written by the author) |
 | 1 Mar 2027 | External reviewer confirmed (decision item 17) |
 | 15 Mar 2027, then yearly | Annual review and change window; annual check of free numbers from March 2028 |
 | 1 Apr / 1 May 2027 | Q1 2027, first scored (confirmatory) quarter: provisional / final, with the external review published beside the final |

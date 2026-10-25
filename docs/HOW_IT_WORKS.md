@@ -97,7 +97,7 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 
 The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand-check window from the 4th to the 28th, and a final report a month later.
 
-![Snapshot calendar 2027: four quarterly cycles plus the Censys application, the annual review, the external review and the side-by-side period](diagrams/calendar_2027.png)
+![Snapshot calendar 2027: four quarterly cycles plus the annual review, the external review and the side-by-side period](diagrams/calendar_2027.png)
 
 | Date | Event | What it is | Why it is needed |
 | --- | --- | --- | --- |
@@ -105,7 +105,6 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | 4–28 Jan | Q4 2026 hand-check window | About 1½ hours in the Hand Check app (about 50 minutes if race fix dates are sampled), at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
 | Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included | Sources keep updating; a month's wait catches late listings and corrections |
 | 2–12 Feb | Evaluation of the AI-credit rule | The pilot's two AI numbers compared, with a sample of lab-affiliated credits checked | Decides at the 15 March review whether any mention of an AI lab should keep counting |
-| 15 Feb – 1 Mar | Censys research application | Request for internet scan data, written by the author | Needed for the defender side of the race and the yearly accuracy check |
 | Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by 1 March | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |
 | 4–28 Apr | Q1 2027 hand-check window | As for Q4 2026 | As for Q4 2026 |

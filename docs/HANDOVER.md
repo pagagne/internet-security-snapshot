@@ -46,7 +46,7 @@ check · 3 Dec move the pull into the container (added by the other session) · 
 Discussions, Zenodo, delete leftover branch · 21 Dec decision session · 29 Dec freeze ·
 quarterly: 2nd Jan/Apr/Jul/Oct approve draft and open the 4th-28th hand-check window; 25th
 reminder; 2nd Feb/May/Aug/Nov final-run check · 12 Jan 2027 line up the external reviewer ·
-8 Feb 2027 AI-credit rule evaluation and PHP2Shell case · 15 Feb Censys application ·
+8 Feb 2027 AI-credit rule evaluation and PHP2Shell case · 15 Feb Censys application (moved to 17 Nov 2026 on 25 Oct) ·
 15 Mar annual review (yearly). Descriptions were updated 24 Oct to the current rules.
 
 ## Scheduled check-ins to recreate in the new session

@@ -35,8 +35,10 @@ Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for
   (Exploit-DB, Metasploit, Nuclei) as an earlier "attack possible" date (exploratory X7).
 - Patch speed without exposure scans: for open-source flaws, share of downloads/dependents on
   the fixed version over time (npm, PyPI, deps.dev). Feasibility research.
-- Other exposure options: terms of free tiers (GreyNoise, Shodan) for research use; Censys
-  application stays 15 Feb.
+- Other exposure options: see the 25 Oct brainstorm (below). Censys application moved to
+  17 Nov 2026 (author's decision, 25 Oct); Shodan's academic tier needs a university email.
+- Free substitutes if a permission is refused: Shadowserver -> SANS ISC honeypot data plus
+  HTTP Archive and deps.dev for patch adoption; VulnCheck -> EUVD plus inthewild.io.
 - Fallback wording for core-v1.2: T1b and T2 "not measured" with the reason; T1(a) under
   option (a) becomes the headline race measure.
 
@@ -107,9 +109,25 @@ See `docs/RECONCILIATION_2026-10.md`. Added to this window:
 - Policy-deadline dates (CISA BOD 26-04, CERT-In CISG-2026-02) as exploratory context.
 - Every timing figure names its population (recent CVEs vs all newly exploited flaws).
 
+## Brainstorm of 25 Oct: more free sources and process
+Claude doc "Brainstorm: Data Sources and Process" (copy: `docs/artifacts/brainstorm-data-sources-2026-10-25.md`).
+Adopted by the author on 25 Oct, all exploratory (registered before first look, never scored
+until a March review), scheduled in `docs/schedule/schedule.yaml`: daily SANS ISC honeypot
+capture (from 2 Nov); KEV-lag back-test against EUVD, Project Zero's sheet and inthewild.io,
+and Linux kernel/distribution fix dates (9 Nov); HTTP Archive version test (16 Nov); Censys
+application (17 Nov, by the author); deps.dev patch-adoption prototype (7 Dec); AI labs'
+lists against our credit counts (25 Jan); GreyNoise and CrowdSec requests (11 Jan); HHS OCR
+harm series (18 Jan). Also an inquiry log (`docs/INQUIRIES.md`) and watch cases chosen by rule.
+
 ## Pilot watch cases
 Real cases to follow through the Q4 2026 pilot, to see how the study's rules and free
 sources handle them.
+
+**How cases are chosen (from Q1 2027; author's decision, 25 Oct 2026):** every flaw published
+in the quarter with CVSS 9.0 or more that at least one national CERT (CISA, NCSC UK, CERT-EU,
+BSI, ANSSI, CERT-In) issued an alert or advisory for; if more than two qualify, two by the
+seeded draw. Chosen on the 6th of the month after the quarter (`watch-case-pick`). PHP2Shell,
+chosen before the rule, meets it (CVSS 9.2; CERT-EU and NCSC advised).
 
 - **PHP2Shell, CVE-2026-109618 and CVE-2026-109619** (PHP, CVSS 9.2, published and fixed
   21 Oct 2026). Amazon's MadPot honeypots logged an exploit attempt on 17 Oct, four days

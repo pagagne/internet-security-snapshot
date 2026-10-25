@@ -17,6 +17,7 @@ When one changes, change the other in the same session (`docs/OPERATIONS.md`).
 | `docs/OPERATIONS.md` | Claude project doc `claude/operations.md` | Re-upload after changes |
 | `docs/HANDOVER.md` | Claude project doc `claude/handover-session-1.md` | Re-upload after changes |
 | `docs/reviewer/INVITATION.md` | [Invitation: Independent Reviewer](https://claude.ai/artifact/VJaEuiADo22MGeEGadAGnm) | Edited in the doc; re-export here (no personal details in the repository copy) |
+| `docs/artifacts/brainstorm-data-sources-2026-10-25.md` | [Brainstorm: Data Sources and Process](https://claude.ai/artifact/MjibikbMynnVW7KXGWwPJe) | Edited in the doc; re-export here |
 | `apps/hand-check.html` | [Snapshot Hand Check app](https://claude.ai/artifact/C5bsQdxdWcrM9tNTJfY5CB) | Edit the file, `read` the artifact, republish; answers stay in the app's database |
 
 Exports were made on 24 Oct 2026 and checked for keys, tokens and private data before commit.
