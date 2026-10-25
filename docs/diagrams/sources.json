@@ -90,10 +90,10 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "5aa60e431a00a9f5",
+    "README.md": "0cbc08230494a8a9",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
-    "docs/diagrams/calendar_2027.mmd": "d88f7ff49c0dbb51"
+    "docs/diagrams/calendar_2027.mmd": "7e56a6b2b530a810"
    },
    "reviewed_on": "2026-10-24"
   },
@@ -104,8 +104,8 @@
     "docs/RESEARCH_PLAN.md"
    ],
    "fingerprints": {
-    "docs/RESEARCH_PLAN.md": "ecd7f9e40f6f0904",
-    "docs/diagrams/build_plan.mmd": "924d9c8bffceaf9e"
+    "docs/RESEARCH_PLAN.md": "52f9eadfd984b62a",
+    "docs/diagrams/build_plan.mmd": "302bb753442aa851"
    },
    "reviewed_on": "2026-10-24"
   },
@@ -118,7 +118,7 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "c8fb231e3fd9119c",
-    "README.md": "5aa60e431a00a9f5",
+    "README.md": "0cbc08230494a8a9",
     "docs/diagrams/freeze_year.mmd": "c3bdd357386a1c3c"
    },
    "reviewed_on": "2026-10-24"

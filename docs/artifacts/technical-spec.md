@@ -257,7 +257,7 @@ Each evaluation compares its findings with sources the study does not control:
 | Harm rate | Ransomware trackers' quarterly summaries; later, the Verizon DBIR and ENISA Threat Landscape for the same period |
 | Bot context | Cloudflare's quarterly Radar reports |
 
-An external reviewer from a CERT, Shadowserver or an academic measurement group is invited to review the first confirmatory evaluation before its final release on 1 May 2027.
+An independent external reviewer (candidates and recruiting: Open questions, item 2) is invited to review the first confirmatory evaluation before its final release on 1 May 2027.
 
 ### Annual check against reference data
 

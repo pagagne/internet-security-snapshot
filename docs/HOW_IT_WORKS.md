@@ -106,12 +106,12 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included | Sources keep updating; a month's wait catches late listings and corrections |
 | 2–12 Feb | Evaluation of the AI-credit rule | The pilot's two AI numbers compared, with a sample of lab-affiliated credits checked | Decides at the 15 March review whether any mention of an AI lab should keep counting |
 | 15 Feb – 1 Mar | Censys research application | Request for internet scan data, written by the author | Needed for the defender side of the race and the yearly accuracy check |
-| Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by this date | Lets the study fix errors in the open without moving the goalposts mid-year |
+| Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by 1 March | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |
-| 5–28 Apr | Q1 2027 hand-check window | As for Q4 2026 | As for Q4 2026 |
+| 4–28 Apr | Q1 2027 hand-check window | As for Q4 2026 | As for Q4 2026 |
 | 3–28 Apr | External review of Q1 2027 | An independent reviewer checks the first scored report before it is final | Promised in the pre-registration as a safeguard against the author's and Claude's blind spots |
 | Sat 1 May | Q1 2027 final report | Data pulled again, hand checks and the reviewer's comments included | Sources keep updating; a month's wait catches late listings and corrections |
-| Thu 1 Jul, 5–28 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
+| Thu 1 Jul, 4–28 Jul, Sun 1 Aug | Q2 2027 provisional, hand check, final | Second scored quarter | Builds the comparison |
 | Fri 1 Oct, 4–28 Oct, Mon 1 Nov | Q3 2027 provisional, hand check, final | Third scored quarter; fourth report of the year | Four comparable quarters: enough to see trends |
 | All year | Old and new race measures side by side | The new race measure (decided 23 October 2026) next to the registered one | A changed rule is shown next to the old one for four quarters, so readers can see what the change did |
 | Sat 1 Jan 2028 | Q4 2027 provisional report | Closes the first full year | Followed in March 2028 by the first check against better reference data |
