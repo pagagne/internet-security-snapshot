@@ -41,6 +41,10 @@ The older hand-made "Snapshot: ..." events in the author's own calendar can be d
 subscribing; the feed has them all.
 
 ## How a Claude session picks up work
+(In a Claude session GitHub's GraphQL API is blocked, so use `gh api` REST calls rather than
+`gh issue`, `gh pr` or `gh workflow run`. The Schedule workflow itself runs on GitHub and is
+not affected.)
+
 1. Read this file, then `docs/HANDOVER.md` (repository rules and standing rules).
 2. List open issues labelled `owner:claude`, oldest first. Each says what to do and points at
    the files involved. Do it, commit (small doc fixes to `main`; code by one pull request at a
