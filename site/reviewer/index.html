@@ -235,6 +235,9 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
   const RAW = "https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/";
   const ICS = RAW + "docs/schedule/reviewer.ics";
   const FIGURES = ["T1a", "T1b", "T2", "T3", "T4", "T5", "T6", "T7"];
+  // The quarter's reported headline figures (worksheets.json "draw_from") replace this list when given.
+  // Anyone can repeat a draw: SHA-256 of "spot|<seed>|<figure>", the three lowest.
+  let DRAW_FROM = null;
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const store = {
@@ -318,7 +321,7 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
     const seed = $("#seed").value.trim();
     store.set("seed", seed);
     if (!seed) { $("#drawn").innerHTML = ""; $("#drawnote").textContent = ""; return; }
-    const picked = await draw(seed, FIGURES, 3);
+    const picked = await draw(seed, DRAW_FROM || FIGURES, 3);
     const have = new Set(WS.map((w) => w.id));
     $("#drawn").innerHTML = picked.map((f) => `<span class="slot${have.has(f) ? " have" : ""}">${f}</span>`).join("");
     const missing = picked.filter((f) => !have.has(f));
@@ -500,7 +503,7 @@ Disclosed ties: [none, or describe]
   /* ---------- load data ---------- */
   fetch("tasks.json").then((r) => r.json()).then((j) => { TASKS = j.tasks; renderTasks(); })
     .catch(() => { $("#now").innerHTML = `<span class="eyebrow">Schedule unavailable</span><p>The schedule could not be loaded. The same dates are in your calendar feed.</p>`; });
-  fetch("worksheets.json").then((r) => r.json()).then((j) => { WS = j.worksheets; renderWS(); renderSpotOut(); renderDraw(); })
+  fetch("worksheets.json").then((r) => r.json()).then((j) => { WS = j.worksheets; DRAW_FROM = j.draw_from || null; renderWS(); renderSpotOut(); renderDraw(); })
     .catch(() => { $("#wslist").innerHTML = `<p class="muted">The worksheets could not be loaded.</p>`; });
 })();
 </script>

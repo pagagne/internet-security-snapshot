@@ -85,10 +85,11 @@ DESCRIPTION:Responsible: Claude (claude)\n\nOnce the provisional Q1 2027 re
  port is approved: links to the report\, the registered plan\, prereg/DEVIA
  TIONS.md\, the data bundle and the exact code commit\; the worksheet for e
  very headline figure\; the sample of hand decisions with their rules\; a s
- hort review template (holds up / doesn't / would change). Ask the reviewer
-  for a seed number and run the spot-check draw with it (three figures)\; s
- end them the result. Never choose the figures.\n\nSource: docs/schedule/sc
- hedule.yaml
+ hort review template (holds up / doesn't / would change). Before sending\,
+  list in site/reviewer/worksheets.json ("draw_from") the headline figures 
+ actually reported this quarter and add their worksheets\; the reviewer dra
+ ws three on the Reviewer's Desk with a seed of their own (anyone can repea
+ t it). Never choose the figures.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

@@ -460,8 +460,8 @@ items:
     Extend the sample (docs/reviewer/sample-worksheet, snapshot.worksheet race-sample) to a
     worksheet per headline figure (T1-T7), generated with every release: the plan's
     definition in plain words, the inputs as a CSV a spreadsheet opens, the steps from inputs
-    to figure, and the published value to match. Plus a seeded draw that picks three figures
-    from a seed the reviewer gives. Test on the Q4 2026 pilot (provisional 1 Jan) so a
+    to figure, and the published value to match, listed in site/reviewer/worksheets.json for
+    the Reviewer's Desk (whose seeded draw picks three). Test on the Q4 2026 pilot (provisional 1 Jan) so a
     worksheet can be tried in the practice round. Check that each worksheet can be followed in
     a spreadsheet with no code.
 
@@ -530,8 +530,10 @@ items:
     Once the provisional Q1 2027 report is approved: links to the report, the registered plan,
     prereg/DEVIATIONS.md, the data bundle and the exact code commit; the worksheet for every
     headline figure; the sample of hand decisions with their rules; a short review template
-    (holds up / doesn't / would change). Ask the reviewer for a seed number and run the
-    spot-check draw with it (three figures); send them the result. Never choose the figures.
+    (holds up / doesn't / would change). Before sending, list in site/reviewer/worksheets.json
+    ("draw_from") the headline figures actually reported this quarter and add their
+    worksheets; the reviewer draws three on the Reviewer's Desk with a seed of their own
+    (anyone can repeat it). Never choose the figures.
 
 - id: reviewer-check-in
   owner: author

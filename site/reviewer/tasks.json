@@ -65,7 +65,7 @@
    "end": "2027-04-02",
    "when": "Fri 02 Apr 2027",
    "minutes": null,
-   "details": "Once the provisional Q1 2027 report is approved: links to the report, the registered plan, prereg/DEVIATIONS.md, the data bundle and the exact code commit; the worksheet for every headline figure; the sample of hand decisions with their rules; a short review template (holds up / doesn't / would change). Ask the reviewer for a seed number and run the spot-check draw with it (three figures); send them the result. Never choose the figures."
+   "details": "Once the provisional Q1 2027 report is approved: links to the report, the registered plan, prereg/DEVIATIONS.md, the data bundle and the exact code commit; the worksheet for every headline figure; the sample of hand decisions with their rules; a short review template (holds up / doesn't / would change). Before sending, list in site/reviewer/worksheets.json (\"draw_from\") the headline figures actually reported this quarter and add their worksheets; the reviewer draws three on the Reviewer's Desk with a seed of their own (anyone can repeat it). Never choose the figures."
   },
   {
    "uid": "external-review@2027-04-03",

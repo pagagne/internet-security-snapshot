@@ -35,7 +35,8 @@ with an automatic match check, a guided second-coder round that saves a complete
 the April review steps with a draft template. Progress stays in the reviewer's browser; they
 send results by copying or saving them. It goes live with GitHub Pages on 4 Dec 2026; until
 then, a private preview is a Claude artifact. Worksheets are listed in
-`site/reviewer/worksheets.json`.
+`site/reviewer/worksheets.json`; its `draw_from` list (the headline figures reported that
+quarter) is what the reviewer's seeded draw picks from.
 
 ## Checking progress
 - **Run log:** the Schedule and Rebuild check workflows add a line to
