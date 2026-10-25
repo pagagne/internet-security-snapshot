@@ -154,6 +154,8 @@ def probe(start, end) -> pd.DataFrame:
     if len(w):
         d = d.merge(w, on="cve_id", how="left")
     ev = [c for c in ("euvd_exploited_since", "p0_discovered", "itw_first_report") if c in d]
+    for c in ev:
+        d[c] = pd.to_datetime(d[c], errors="coerce", utc=True).dt.tz_localize(None)
     d["earliest_other"] = d[ev].min(axis=1)
     d["days_before_kev"] = (d["kev_added"] - d["earliest_other"]).dt.days
     if len(pz):
@@ -168,7 +170,7 @@ def summarize(d: pd.DataFrame) -> str:
         if c not in d:
             continue
         has = d[c].notna()
-        before = (d["kev_added"] - d[c]).dt.days
+        before = (d["kev_added"] - pd.to_datetime(d[c], errors="coerce")).dt.days
         b = before[has & (before > 0)]
         L.append(f"| {c} | {int(has.sum())} | {int((before > 0).sum())} | {float(b.median()) if len(b) else '-'} |")
     L += ["", "Notes:"] + [f"- {x}" for x in NOTES]

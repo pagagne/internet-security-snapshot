@@ -61,7 +61,8 @@ items:
   details: >
     Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a
     sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by
-    half) is on the agenda. docs/RESEARCH_PLAN.md.
+    half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux
+    fix dates, honeypot first-seen dates and the AI-list check. docs/RESEARCH_PLAN.md.
 
 - id: validation-fix-dates
   owner: author
@@ -144,91 +145,120 @@ items:
 - id: censys
   owner: author
   title: Write and send the Censys research-access application
-  date: 2026-11-17
-  time: "10:00"
+  date: 2026-10-28
+  time: "14:00"
   minutes: 60
   details: >
-    Moved from 15 Feb 2027. In your own words: Censys rejects requests written with AI tools,
-    and the standing rules say you write it. Their form asks for: a 3-4 sentence project
-    description with the research question and where results are published; your background
-    (public profile or past work); how Censys helps and which access (BigQuery, delayed data
-    is fine); how recent the data must be; confirmation of non-commercial use and citing
-    Censys; agreement to the terms; your Censys username (make an account first). Log it in
-    docs/PERMISSIONS.md.
+    Moved from 15 Feb 2027 (17 Nov, then 28 Oct at the author's choice). In your own words:
+    Censys rejects requests written with AI tools, and the standing rules say you write it.
+    Their form asks for: a 3-4 sentence project description with the research question and
+    where results are published; your background (public profile or past work); how Censys
+    helps and which access (BigQuery; delayed data is fine); how recent the data must be;
+    confirmation of non-commercial use and citing Censys; agreement to the terms; your Censys
+    username (make an account first). Log it in docs/PERMISSIONS.md (Claude can do the log).
 
 - id: honeypot-capture
   owner: claude
-  title: Daily honeypot capture (SANS ISC / DShield web honeypot), aggregates only
-  date: 2026-11-02
+  title: Weekly honeypot capture (SANS ISC), aggregates only - built
+  date: 2026-10-25
   details: >
-    A daily workflow that saves the ISC web-honeypot URL summary and categories as aggregates
-    (first and last seen, counts per URL category; no IP addresses), at most one download a
-    day, credited "SANS Technology Institute, Internet Storm Center". Map categories to CVEs
-    for an exploratory first-attempt date beside T_exploit. Record the terms in
-    docs/PERMISSIONS.md; register the measure in config/exploratory.yaml first.
+    Built and first run 25 Oct (exploratory X14; .github/workflows/honeypot.yml, Sundays;
+    data/isc-honeypot/ on run-reports). First capture: 10.2 million URLs, 304 attack categories,
+    241 CVEs with first-seen dates. The files keep first-seen dates back to 2012, so a weekly
+    capture loses no first-attempt dates.
 
 - id: kev-lag-backtest
   owner: claude
-  title: Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io (Q2-Q3 2026)
-  date: 2026-11-09
+  title: Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io - first run
+  date: 2026-10-25
   details: >
-    Exploratory: earliest-evidence date per flaw from KEV, CISA's flag, EUVD "exploited since",
-    Project Zero's 0day In the Wild sheet and inthewild.io; size of the gap to KEV and effect on
-    the X10 zero-day share. Check what EUVD's field means first. For the 12 Nov review.
+    Research probe kev_lag (KEV additions Jan-Sep 2026), first runs 25 Oct; results and their
+    limits go to the 12 Nov research review.
 
 - id: kernel-fixdates
   owner: claude
-  title: Linux kernel and distribution fix dates in the pre-fill
-  date: 2026-11-09
+  title: Linux kernel fix dates - probe run
+  date: 2026-10-25
   details: >
-    Fixing commits and fixed versions from kernel CVE records; Debian and Ubuntu tracker dates.
-    Measure on the 175-flaw probe how many "assumed" fix dates disappear. Also add CSAF feeds
-    of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws.
+    Probe 25 Oct: 5 of 8 kernel flaws added to KEV in Jan-Sep 2026 are dated from fixing
+    commits, a median 22 days before CVE publication (the 3 others are older Red Hat records
+    without commits). Follow-up: kernel-fixdates-prefill.
+
+- id: kernel-fixdates-prefill
+  owner: claude
+  title: Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill
+  date: 2026-11-02
+  details: >
+    snapshot.fixdates.prefill_exploited: fixing commits from kernel CVE records dated through
+    the GitHub mirrors; Debian/Ubuntu trackers as a cross-check; CSAF feeds of further vendors
+    (Siemens, Red Hat, SUSE) where they cover attacked flaws. Measure the drop in "assumed"
+    dates on the 175-flaw probe. Code change by pull request, before the 14 Dec review.
+
+- id: gcp-setup
+  owner: author
+  title: Create a free Google Cloud project for BigQuery (HTTP Archive, deps.dev history)
+  date: 2026-10-29
+  time: "10:00"
+  minutes: 20
+  details: >
+    console.cloud.google.com: new project "internet-security-snapshot"; enable the BigQuery
+    API; no billing needed (the BigQuery sandbox includes 1 TB of queries a month); if you
+    ever link billing, add a budget alert at $1; IAM > Service accounts > create "snapshot-bq"
+    with the role BigQuery Job User; Keys > Add key > JSON; in GitHub > Settings >
+    Secrets and variables > Actions, add GCP_SA_KEY (paste the whole file) and GCP_PROJECT
+    (the project ID). Never paste the key into chat. Delete the downloaded file afterwards.
 
 - id: httparchive-test
   owner: claude
-  title: HTTP Archive test - are software versions recorded?
-  date: 2026-11-16
+  title: HTTP Archive test - are software versions recorded? (after the BigQuery project)
+  date: 2026-11-02
   details: >
-    One small BigQuery query within the free tier. If versions are recorded, propose an
-    exploratory patch-adoption measure for web software (share of sites on the fixed
-    version, 30 and 90 days after the fix). Check the WordPress.org version statistics too.
+    One small BigQuery query within the free tier, with a per-query byte cap. If versions are
+    recorded, propose an exploratory patch-adoption measure for web software (share of sites
+    on the fixed version, 30 and 90 days after the fix). WordPress.org version statistics work
+    (probe 25 Oct: version shares per plugin, today only), so they need weekly capture to build
+    history. Also deps.dev's BigQuery history for the patch-adoption prototype.
 
 - id: deps-dev-prototype
   owner: claude
-  title: Patch-adoption prototype from deps.dev (open-source flaws)
-  date: 2026-12-07
+  title: Patch-adoption prototype from deps.dev (open-source flaws) - snapshot run
+  date: 2026-10-25
   details: >
-    Share of dependents on the fixed version 30 and 90 days after the fix, for attacked
-    open-source flaws (npm, PyPI, Maven, Go, Cargo); PyPI downloads by version as a second
-    view. Plan 2 substitute for exposure on open-source software. Ready for the 14 Dec review.
+    Research probe depsdev_adoption, 25 Oct: today's share of dependents on affected
+    versions for attacked open-source flaws (deps.dev free API). History over time needs
+    deps.dev's BigQuery tables (httparchive-test, after the BigQuery project).
 
 - id: ai-lists-crosscheck
   owner: claude
-  title: AI labs' published finding lists against our AI-credit counts
+  title: Outside AI-found CVE lists against our AI-credit counts, on pilot data
   date: 2027-01-25
   details: >
-    Google's Big Sleep issue-tracker list first, then OpenAI-funded audits and similar:
-    which of their CVEs our headline and narrow counts catch. For the 8 Feb AI-credit session.
+    Prototype 25 Oct (research probe ai_lists): of 5 outside AI-found CVEs with records, the
+    headline rule caught 3, the narrow 0, and 2 (Microsoft, Apple) have empty credit fields:
+    those vendors credit finders only in their own advisories. For 8 Feb: rerun on the pilot,
+    and test vendor acknowledgments (Microsoft's update guide, Apple's security notes) as an
+    exploratory source for T7.
 
 - id: later-applications
   owner: author
-  title: Apply for GreyNoise research access; ask CrowdSec about research use
-  date: 2027-01-11
+  title: Send the GreyNoise research request and the CrowdSec question
+  date: 2026-10-27
   time: "10:00"
-  minutes: 45
+  minutes: 20
   details: >
-    After the lock, as exploratory sources. GreyNoise: research (VIP) access for work that is
-    shared publicly. CrowdSec: whether research use and publishing aggregates are allowed.
-    Claude drafts the CrowdSec question; you send both. Log in docs/PERMISSIONS.md.
+    Drafts from Claude (chat, 25 Oct). GreyNoise: research (VIP) access for work that is shared
+    publicly. CrowdSec: whether research use and publishing aggregates are allowed. Use the
+    project email if it exists by then. Claude logs both in docs/PERMISSIONS.md.
 
 - id: hhs-ocr-series
   owner: claude
-  title: HHS OCR health-breach series as exploratory harm data
-  date: 2027-01-18
+  title: HHS OCR health-breach series - second attempt at the export
+  date: 2026-11-02
   details: >
-    Quarterly counts of "hacking/IT incident" breaches affecting 500+ people and people
-    affected, from the public HHS OCR portal; beside T6 (SEC 8-K filings). Aggregates only.
+    Probe 25 Oct: the portal answers, but its CSV export is a form the probe did not trigger.
+    Second attempt with the form's real fields; if it still fails, the public research copies
+    of the same register are checked for terms. Quarterly counts of "hacking/IT incident"
+    breaches of 500+ people; aggregates only, beside T6.
 
 - id: watch-case-pick
   owner: claude

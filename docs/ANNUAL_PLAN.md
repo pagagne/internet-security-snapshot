@@ -33,22 +33,27 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | Who is responsible | What |
 |---|---|---|
+| Sun 25 Oct 2026 | Claude | Patch-adoption prototype from deps.dev (open-source flaws) - snapshot run |
+| Sun 25 Oct 2026 | Claude | Weekly honeypot capture (SANS ISC), aggregates only - built |
+| Sun 25 Oct 2026 | Claude | Linux kernel fix dates - probe run |
+| Sun 25 Oct 2026 | Claude | Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io - first run |
 | Sun 25 Oct 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 26 Oct 2026 | Claude | Continue the research window |
+| Tue 27 Oct 2026, 10:00 ET | Paul | Send the GreyNoise research request and the CrowdSec question |
 | Wed 28 Oct 2026, 10:00 ET | Paul | Call the UGA Career Center about the reviewer posting |
-| Mon 02 Nov 2026 | Claude | Daily honeypot capture (SANS ISC / DShield web honeypot), aggregates only |
+| Wed 28 Oct 2026, 14:00 ET | Paul | Write and send the Censys research-access application |
+| Thu 29 Oct 2026, 10:00 ET | Paul | Create a free Google Cloud project for BigQuery (HTTP Archive, deps.dev history) |
+| Mon 02 Nov 2026 | Claude | HHS OCR health-breach series - second attempt at the export |
+| Mon 02 Nov 2026 | Claude | HTTP Archive test - are software versions recorded? (after the BigQuery project) |
+| Mon 02 Nov 2026 | Claude | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill |
 | Mon 02 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Fri 06 Nov 2026 | Paul | Create the project email address |
-| Mon 09 Nov 2026 | Claude | Linux kernel and distribution fix dates in the pre-fill |
-| Mon 09 Nov 2026 | Claude | Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io (Q2-Q3 2026) |
 | Mon 09 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Tue 10 Nov 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 12 Nov 2026, 10:00 ET | Paul | Review research results; decide race fix-date effort |
-| Mon 16 Nov 2026 | Claude | HTTP Archive test - are software versions recorded? |
 | Mon 16 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 16 Nov 2026, 10:00 ET | Paul | Validation fix dates, then spot-check references |
 | Tue 17 Nov 2026 | Claude | Run the validation and report pass/fail |
-| Tue 17 Nov 2026, 10:00 ET | Paul | Write and send the Censys research-access application |
 | Wed 18 Nov 2026 | Paul | Ask Georgia State Career Services about the reviewer posting |
 | Fri 20 Nov 2026 | Claude | Draft the permission follow-ups and update the log |
 | Fri 20 Nov 2026, 09:00 ET | Paul | Data-permission follow-ups |
@@ -66,7 +71,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 03 Dec 2026, 10:00 ET | Paul | Move the quarterly pull into the container (if the dry run passed) |
 | Fri 04 Dec 2026, 10:00 ET | Paul | Landing page, Discussions, Zenodo |
 | Sat 05 Dec 2026 | Paul | Register on Handshake and connect the approved schools |
-| Mon 07 Dec 2026 | Claude | Patch-adoption prototype from deps.dev (open-source flaws) |
 | Thu 10 Dec 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 14 Dec 2026 | Claude | Document and test every GitHub workflow; draft the lock list |
 | Fri 18 Dec 2026, 10:00 ET | Paul | Review the workflow page and the lock list |
@@ -81,11 +85,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 04 Jan 2027 | Paul | Post the reviewer ad; email statistics department coordinators |
 | Wed 06 Jan 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Sun 10 Jan 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
-| Mon 11 Jan 2027, 10:00 ET | Paul | Apply for GreyNoise research access; ask CrowdSec about research use |
 | Tue 12 Jan 2027, 10:00 ET | Paul | Line up the external reviewer and second coder |
-| Mon 18 Jan 2027 | Claude | HHS OCR health-breach series as exploratory harm data |
 | Wed 20 Jan 2027 | Claude | Build the figure worksheets for the reviewer's spot check |
-| Mon 25 Jan 2027 | Claude | AI labs' published finding lists against our AI-credit counts |
+| Mon 25 Jan 2027 | Claude | Outside AI-found CVE lists against our AI-credit counts, on pilot data |
 | Mon 25 Jan 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Mon 01 Feb 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
 | Mon 01 Feb 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
@@ -190,11 +192,13 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | What | Details |
 |---|---|---|
+| Tue 27 Oct 2026, 10:00 ET | Send the GreyNoise research request and the CrowdSec question | Drafts from Claude (chat, 25 Oct). GreyNoise: research (VIP) access for work that is shared publicly. CrowdSec: whether research use and publishing aggregates are allowed. Use the project email if it exists by then. Claude logs both in docs/PERMISSIONS.md. |
 | Wed 28 Oct 2026, 10:00 ET | Call the UGA Career Center about the reviewer posting | Employer relations, (706) 542-3375. Ask whether an independent researcher can post an unpaid, remote research role on hireUGA (Handshake), and whether it is better listed as an unpaid internship with course credit. Note who you spoke with. |
+| Wed 28 Oct 2026, 14:00 ET | Write and send the Censys research-access application | Moved from 15 Feb 2027 (17 Nov, then 28 Oct at the author's choice). In your own words: Censys rejects requests written with AI tools, and the standing rules say you write it. Their form asks for: a 3-4 sentence project description with the research question and where results are published; your background (public profile or past work); how Censys helps and which access (BigQuery; delayed data is fine); how recent the data must be; confirmation of non-commercial use and citing Censys; agreement to the terms; your Censys username (make an account first). Log it in docs/PERMISSIONS.md (Claude can do the log). |
+| Thu 29 Oct 2026, 10:00 ET | Create a free Google Cloud project for BigQuery (HTTP Archive, deps.dev history) | console.cloud.google.com: new project "internet-security-snapshot"; enable the BigQuery API; no billing needed (the BigQuery sandbox includes 1 TB of queries a month); if you ever link billing, add a budget alert at $1; IAM > Service accounts > create "snapshot-bq" with the role BigQuery Job User; Keys > Add key > JSON; in GitHub > Settings > Secrets and variables > Actions, add GCP_SA_KEY (paste the whole file) and GCP_PROJECT (the project ID). Never paste the key into chat. Delete the downloaded file afterwards. |
 | Fri 06 Nov 2026 | Create the project email address | For university postings and the reviewer invitation (instead of a personal address). |
-| Thu 12 Nov 2026, 10:00 ET | Review research results; decide race fix-date effort | Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by half) is on the agenda. docs/RESEARCH_PLAN.md. |
+| Thu 12 Nov 2026, 10:00 ET | Review research results; decide race fix-date effort | Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux fix dates, honeypot first-seen dates and the AI-list check. docs/RESEARCH_PLAN.md. |
 | Mon 16 Nov 2026, 10:00 ET | Validation fix dates, then spot-check references | In the Hand Check app, list "Validation: reference cases": record the fix dates BEFORE opening prereg/ground_truth_reference.csv. Then tell Claude. |
-| Tue 17 Nov 2026, 10:00 ET | Write and send the Censys research-access application | Moved from 15 Feb 2027. In your own words: Censys rejects requests written with AI tools, and the standing rules say you write it. Their form asks for: a 3-4 sentence project description with the research question and where results are published; your background (public profile or past work); how Censys helps and which access (BigQuery, delayed data is fine); how recent the data must be; confirmation of non-commercial use and citing Censys; agreement to the terms; your Censys username (make an account first). Log it in docs/PERMISSIONS.md. |
 | Wed 18 Nov 2026 | Ask Georgia State Career Services about the reviewer posting | Same question as UGA; the Handshake account carries over. |
 | Fri 20 Nov 2026, 09:00 ET | Data-permission follow-ups | Claude drafts follow-ups for any of ransomware.live (ticket #3425), VulnCheck (community@vulncheck.com) and Shadowserver (ticket pqaytmyy) that have not replied; you send them. Log in docs/PERMISSIONS.md. Cutoff: the 21 Dec session. |
 | Mon 23 Nov 2026, 10:00 ET | Baseline-year hand check, part 1 of 2 | AI-credit spot checks and edge cases, then cohort fix dates. docs/HAND_CHECK.md. |
@@ -208,7 +212,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 21 Dec 2026, 10:00 ET | Core-freeze decision session | docs/CORE_FREEZE_DECISIONS.md items 0-22 (confirm 0, 7, 12; decide 1-3, 9-11, 13-22, including the companion label check, X13 and hand-check reliability, the 2028 closing re-run, and the workflow lock). Any source without a written yes runs without it for the pilot. |
 | Tue 29 Dec 2026, 10:00 ET | Freeze the core (core-v1.2) and update OSF | Publish release core-v1.2 on GitHub (scored rules and the locked workflows); file the OSF update (Claude gives you the text). |
 | Mon 04 Jan 2027 | Post the reviewer ad; email statistics department coordinators | On each approved board (UGA first); applications close 15 Feb. |
-| Mon 11 Jan 2027, 10:00 ET | Apply for GreyNoise research access; ask CrowdSec about research use | After the lock, as exploratory sources. GreyNoise: research (VIP) access for work that is shared publicly. CrowdSec: whether research use and publishing aggregates are allowed. Claude drafts the CrowdSec question; you send both. Log in docs/PERMISSIONS.md. |
 | Tue 12 Jan 2027, 10:00 ET | Line up the external reviewer and second coder | Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer") with the sample spot-check worksheet (docs/reviewer/sample-worksheet); candidates from the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March. |
 | Mon 08 Feb 2027, 10:00 ET | Evaluate the AI-credit rule on pilot data; PHP2Shell case | Outcome goes to the 15 March review. |
 | Mon 15 Feb 2027 | Reviewer applications close; schedule calls | Calls with finalists 16-26 Feb, with the three-item fix-date trial. |
@@ -232,14 +235,17 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | What | Details |
 |---|---|---|
+| Sun 25 Oct 2026 | Patch-adoption prototype from deps.dev (open-source flaws) - snapshot run | Research probe depsdev_adoption, 25 Oct: today's share of dependents on affected versions for attacked open-source flaws (deps.dev free API). History over time needs deps.dev's BigQuery tables (httparchive-test, after the BigQuery project). |
+| Sun 25 Oct 2026 | Weekly honeypot capture (SANS ISC), aggregates only - built | Built and first run 25 Oct (exploratory X14; .github/workflows/honeypot.yml, Sundays; data/isc-honeypot/ on run-reports). First capture: 10.2 million URLs, 304 attack categories, 241 CVEs with first-seen dates. The files keep first-seen dates back to 2012, so a weekly capture loses no first-attempt dates. |
+| Sun 25 Oct 2026 | Linux kernel fix dates - probe run | Probe 25 Oct: 5 of 8 kernel flaws added to KEV in Jan-Sep 2026 are dated from fixing commits, a median 22 days before CVE publication (the 3 others are older Red Hat records without commits). Follow-up: kernel-fixdates-prefill. |
+| Sun 25 Oct 2026 | Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io - first run | Research probe kev_lag (KEV additions Jan-Sep 2026), first runs 25 Oct; results and their limits go to the 12 Nov research review. |
 | Sun 25 Oct 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Mon 26 Oct 2026 | Continue the research window | docs/RESEARCH_PLAN.md: item 5 (an on/off switch per permissioned source in config), then item 4 (remaining evaluation code: labels T2, T4-T6; X6-X12; NVD root-cause fill; draft evaluation page); consider CISA's active-exploitation assessment date as a research-flag T_exploit candidate; then Plan 1 / Plan 2 research. Report to the author only findings worth knowing. |
-| Mon 02 Nov 2026 | Daily honeypot capture (SANS ISC / DShield web honeypot), aggregates only | A daily workflow that saves the ISC web-honeypot URL summary and categories as aggregates (first and last seen, counts per URL category; no IP addresses), at most one download a day, credited "SANS Technology Institute, Internet Storm Center". Map categories to CVEs for an exploratory first-attempt date beside T_exploit. Record the terms in docs/PERMISSIONS.md; register the measure in config/exploratory.yaml first. |
+| Mon 02 Nov 2026 | HHS OCR health-breach series - second attempt at the export | Probe 25 Oct: the portal answers, but its CSV export is a form the probe did not trigger. Second attempt with the form's real fields; if it still fails, the public research copies of the same register are checked for terms. Quarterly counts of "hacking/IT incident" breaches of 500+ people; aggregates only, beside T6. |
+| Mon 02 Nov 2026 | HTTP Archive test - are software versions recorded? (after the BigQuery project) | One small BigQuery query within the free tier, with a per-query byte cap. If versions are recorded, propose an exploratory patch-adoption measure for web software (share of sites on the fixed version, 30 and 90 days after the fix). WordPress.org version statistics work (probe 25 Oct: version shares per plugin, today only), so they need weekly capture to build history. Also deps.dev's BigQuery history for the patch-adoption prototype. |
+| Mon 02 Nov 2026 | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill | snapshot.fixdates.prefill_exploited: fixing commits from kernel CVE records dated through the GitHub mirrors; Debian/Ubuntu trackers as a cross-check; CSAF feeds of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws. Measure the drop in "assumed" dates on the 175-flaw probe. Code change by pull request, before the 14 Dec review. |
 | Mon 02 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
-| Mon 09 Nov 2026 | Linux kernel and distribution fix dates in the pre-fill | Fixing commits and fixed versions from kernel CVE records; Debian and Ubuntu tracker dates. Measure on the 175-flaw probe how many "assumed" fix dates disappear. Also add CSAF feeds of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws. |
-| Mon 09 Nov 2026 | Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io (Q2-Q3 2026) | Exploratory: earliest-evidence date per flaw from KEV, CISA's flag, EUVD "exploited since", Project Zero's 0day In the Wild sheet and inthewild.io; size of the gap to KEV and effect on the X10 zero-day share. Check what EUVD's field means first. For the 12 Nov review. |
 | Mon 09 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
-| Mon 16 Nov 2026 | HTTP Archive test - are software versions recorded? | One small BigQuery query within the free tier. If versions are recorded, propose an exploratory patch-adoption measure for web software (share of sites on the fixed version, 30 and 90 days after the fix). Check the WordPress.org version statistics too. |
 | Mon 16 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Tue 17 Nov 2026 | Run the validation and report pass/fail | snapshot.validate against prereg/ground_truth_reference.csv (pass = 4 of 5 cases). |
 | Fri 20 Nov 2026 | Draft the permission follow-ups and update the log | docs/PERMISSIONS.md; decision item 16 sets the 21 Dec cutoff. |
@@ -249,12 +255,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 30 Nov 2026 | Cutover check (study no longer depends on one Claude chat) | Confirm: the Schedule workflow has run green for 7 days; the author has subscribed to the calendar feed; the Claude work-queue scheduled task is live; docs/OPERATIONS.md is current. Then retire any remaining one-off check-ins in the old chat. docs/OPERATIONS.md. |
 | Mon 30 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Tue 01 Dec 2026 | Read the dry-run quality report; prepare the hand-check lists | Load the review lists (including the race list) into the Hand Check app. |
-| Mon 07 Dec 2026 | Patch-adoption prototype from deps.dev (open-source flaws) | Share of dependents on the fixed version 30 and 90 days after the fix, for attacked open-source flaws (npm, PyPI, Maven, Go, Cargo); PyPI downloads by version as a second view. Plan 2 substitute for exposure on open-source software. Ready for the 14 Dec review. |
 | Mon 14 Dec 2026 | Document and test every GitHub workflow; draft the lock list | docs/WORKFLOWS.md: for each workflow, what starts it, its permissions and secrets, inputs and outputs, what happens on failure and who notices, and its latest successful run (link). Run any workflow without a successful run since its last change (rebuild check on the dry run's bundle; quarterly pull inside the container; the daily honeypot collector). Draft the lock list for decision item 22: data workflows (quarterly pull, rebuild check, daily collectors, Dockerfile) locked like the core; support workflows (Checks, Schedule, Diagrams, Research, Pages) under a change log. |
 | Tue 22 Dec 2026 | Prepare the core freeze (core-v1.2) | Deviation rows, LOCKED.yaml checksums (including the workflows locked under decision item 22), freeze summary and the OSF update text. |
-| Mon 18 Jan 2027 | HHS OCR health-breach series as exploratory harm data | Quarterly counts of "hacking/IT incident" breaches affecting 500+ people and people affected, from the public HHS OCR portal; beside T6 (SEC 8-K filings). Aggregates only. |
 | Wed 20 Jan 2027 | Build the figure worksheets for the reviewer's spot check | Extend the sample (docs/reviewer/sample-worksheet, snapshot.worksheet race-sample) to a worksheet per headline figure (T1-T7), generated with every release: the plan's definition in plain words, the inputs as a CSV a spreadsheet opens, the steps from inputs to figure, and the published value to match, listed in site/reviewer/worksheets.json for the Reviewer's Desk (whose seeded draw picks three). Test on the Q4 2026 pilot (provisional 1 Jan) so a worksheet can be tried in the practice round. Check that each worksheet can be followed in a spreadsheet with no code. |
-| Mon 25 Jan 2027 | AI labs' published finding lists against our AI-credit counts | Google's Big Sleep issue-tracker list first, then OpenAI-funded audits and similar: which of their CVEs our headline and narrow counts catch. For the 8 Feb AI-credit session. |
+| Mon 25 Jan 2027 | Outside AI-found CVE lists against our AI-credit counts, on pilot data | Prototype 25 Oct (research probe ai_lists): of 5 outside AI-found CVEs with records, the headline rule caught 3, the narrow 0, and 2 (Microsoft, Apple) have empty credit fields: those vendors credit finders only in their own advisories. For 8 Feb: rerun on the pilot, and test vendor acknowledgments (Microsoft's update guide, Apple's security notes) as an exploratory source for T7. |
 | Wed 03 Feb 2027 | Prepare the 8 Feb session | AI-credit rule evaluation on the pilot's final data (headline vs narrow count, a sample of lab-affiliation-only credits, spot checks) and the PHP2Shell case note docs/cases/php2shell.md. Send the author a heads-up. |
 | Tue 02 Mar 2027 | Record the confirmed reviewer | Add the reviewer as a contributor (name or initials as they asked, ORCID) to .zenodo.json and the report template; record their disclosed ties for publication beside the review. Never put their email or phone in the public repository. |
 | Tue 02 Mar 2027 | Send the reviewer the practice second-coder sheet (pilot quarter) | python -m snapshot.agreement sample --batch 2026Q4; send the sheet (not the weights file) and the written rules. Unscored practice; score it only to discuss on the onboarding call. |
