@@ -119,6 +119,23 @@ Skipped: Shodan (needs a university email; host-level) and commercial search eng
 3. **Inquiry log:** started (`docs/INQUIRIES.md`), PHP2Shell first.
 4. **Watch cases:** chosen by rule from Q1 2027: CVSS 9.0 or more plus a national CERT alert, at most two a quarter by the seeded draw.
 
+## What the probes found (25 Oct, same day)
+
+Tested on GitHub against the 246 flaws CISA added in Jan-Sep 2026. Two sources work well, three disappoint, and one changes the AI-credit picture.
+
+| Source | Result | Verdict |
+| --- | --- | --- |
+| Linux kernel commits | 5 of 8 kernel flaws dated from fixing commits, a median 22 days before the CVE was published | Build into the pre-fill (2 Nov) |
+| Outside AI-found lists | Of 5 outside AI-found CVEs: headline count caught 3, narrow 0; 2 (Microsoft, Apple) have empty credit fields because those vendors credit finders only in their own advisories | Key point for 8 Feb |
+| Project Zero sheet | Current; 24 of its zero-days are in the window; discovery dates mostly unknown | Zero-day check X15 (decided 25 Oct) |
+| SANS ISC honeypot | Capture works (10.2 million URLs, 241 CVEs), but only 2 of the 246 flaws appear, and first-seen dates belong to URLs, not flaws | Context only, captured monthly (decided 25 Oct); about 40 KB saved per capture |
+| ENISA EUVD | Mirrors CISA's list; earlier for 10 of 246, by a median 4.5 days | Dropped (decided 25 Oct) |
+| inthewild.io | No exploitation reports since Dec 2024 | Dropped (decided 25 Oct) |
+| HHS OCR | Portal reachable; export form not yet triggered | Retry 2 Nov |
+| WordPress.org statistics | Version shares per plugin, today only | Capture weekly with the HTTP Archive test |
+
+Correction to the ground rules above: the honeypot files keep first-seen dates back to 2012, so waiting does not lose them; a weekly capture is enough.
+
 ## Sources
 
 Pages opened on 25 Oct 2026: [Censys research access](https://docs.censys.com/docs/research-access-to-censys-data) · [Shodan academic upgrade](https://help.shodan.io/the-basics/academic-upgrade) · [GreyNoise Community](https://www.greynoise.io/plans/community) · [HTTP Archive on BigQuery](https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md) · [Shadowserver dashboard help](https://dashboard.shadowserver.org/help/) · [EUVD API notes](https://github.com/cku-heise/euvd-api-doc) · [Project Zero 0day In the Wild](https://securityaffairs.com/85668/security/google-project-zero-days.html) · [SANS ISC feeds](https://isc.sans.edu/feeds_doc.html) · [inthewild.io database](https://github.com/gmatuz/inthewilddb) · [CrowdSec CVE tracker](https://docs.crowdsec.net/u/tracker_api/intro) · [deps.dev BigQuery](https://docs.deps.dev/bigquery/) · [Big Sleep list](https://www.techradar.com/pro/security/googles-new-ai-powered-bug-hunting-tool-finds-major-issues-in-open-source-software) · [HHS OCR breach portal fields](https://www.accountablehq.com/post/hhs-ocr-breach-portal-search-reported-hipaa-data-breaches). Not verified: the WordPress.org version-statistics endpoint (not reachable from here) and whether HTTP Archive records version numbers.
