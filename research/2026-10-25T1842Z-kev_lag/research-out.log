@@ -1,0 +1,41 @@
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py:111: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  "p0_discovered": pd.to_datetime(t[disc], errors="coerce") if disc else pd.NaT,
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py:158: PerformanceWarning: Adding/subtracting object-dtype array to DatetimeArray not vectorized.
+  d["days_before_kev"] = (d["kev_added"] - d["earliest_other"]).dt.days
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py", line 193, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py", line 184, in main
+    d = probe(a.start, a.end)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/kev_lag.py", line 158, in probe
+    d["days_before_kev"] = (d["kev_added"] - d["earliest_other"]).dt.days
+                            ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/ops/common.py", line 140, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/arraylike.py", line 219, in __sub__
+    return self._arith_method(other, operator.sub)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/series.py", line 7388, in _arith_method
+    return base.IndexOpsMixin._arith_method(self, other, op)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/base.py", line 1717, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/ops/array_ops.py", line 282, in arithmetic_op
+    res_values = op(left, right)
+                 ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/ops/common.py", line 140, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py", line 1425, in __sub__
+    result = self._addsub_object_array(other, operator.sub)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py", line 1306, in _addsub_object_array
+    res_values = op(self.astype("O"), np.asarray(other))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for -: 'Timestamp' and 'NoneType'
