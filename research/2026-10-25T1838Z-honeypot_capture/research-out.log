@@ -1,0 +1,13 @@
+{
+ "captured_utc": "2026-10-25T18:38:38+00:00",
+ "credit": "SANS Technology Institute, Internet Storm Center, https://isc.sans.edu",
+ "sources": [
+  "https://isc.sans.edu/feeds/urlcategories.txt",
+  "https://isc.sans.edu/feeds/urlsummary.txt"
+ ],
+ "categorised_urls": 1254815,
+ "summary_urls": 10199500,
+ "summary_urls_categorised": 1233792,
+ "categories": 304,
+ "cves": 241
+}
