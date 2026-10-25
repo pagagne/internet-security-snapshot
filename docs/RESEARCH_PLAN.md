@@ -129,6 +129,6 @@ sources handle them.
     only drawn if the seeded draw picks it.
   - *Follow-up:* reviewed with the author on 8 Feb 2027, after the pilot's final report (same
     session as the AI-credit rule evaluation). Claude writes the case note to
-    `docs/cases/php2shell.md` by 3 Feb: what each step recorded, and anything to change before
+    `docs/cases/php2shell.md` by 3 Feb (points collected so far are already in that file): what each step recorded, and anything to change before
     the first scored quarter.
 

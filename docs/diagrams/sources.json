@@ -104,10 +104,10 @@
     "docs/RESEARCH_PLAN.md"
    ],
    "fingerprints": {
-    "docs/RESEARCH_PLAN.md": "52f9eadfd984b62a",
+    "docs/RESEARCH_PLAN.md": "8aa63d59f6704b9e",
     "docs/diagrams/build_plan.mmd": "302bb753442aa851"
    },
-   "reviewed_on": "2026-10-24"
+   "reviewed_on": "2026-10-25"
   },
   "freeze_year": {
    "doc": "docs/CORE_FREEZE_DECISIONS.md",
