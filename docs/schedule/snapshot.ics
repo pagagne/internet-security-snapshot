@@ -187,6 +187,24 @@ DESCRIPTION:Responsible: Claude (claude)\n\nList builder in snapshot.review
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:pages-build@2026-11-27@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the project website and its publishing wor
+ kflow (ready for 4 Dec)
+DESCRIPTION:Responsible: Claude (claude)\n\nsite/index.html (landing page: 
+ what the study is\, links to the plan\, reports and the Reviewer's Desk at
+  site/reviewer/) and .github/workflows/pages.yml (publishes the site/ fold
+ er with GitHub's official Pages actions\, pinned by commit\, on pushes to 
+ main that touch site/ and by hand). Test the pages locally\; the workflow 
+ is switched on by the author on 4 Dec (Settings > Pages > Source: GitHub A
+ ctions). Address: https://pagagne.github.io/internet-security-snapshot/ \;
+  the Desk at .../reviewer/.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:cutover@2026-11-30@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261130
@@ -256,11 +274,12 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261204T150000Z
 DTEND:20261204T160000Z
 SUMMARY:[Paul] Snapshot: Landing page\, Discussions\, Zenodo
-DESCRIPTION:Responsible: Paul (author)\n\nClaude builds the GitHub Pages la
- nding page and Discussions welcome post\; you switch on Discussions and Pa
- ges\, and Zenodo archiving (zenodo.org\, sign in with GitHub). Project lin
- ks may be shared publicly from today.\n\nSource: docs/schedule/schedule.ya
- ml
+DESCRIPTION:Responsible: Paul (author)\n\nClaude has built the landing page
+ \, the publishing workflow (27 Nov) and the Discussions welcome post. You:
+  Settings > Pages > Source: GitHub Actions\, then run the Pages workflow o
+ nce from the Actions tab\; switch on Discussions\; and Zenodo archiving (z
+ enodo.org\, sign in with GitHub). Project links may be shared publicly fro
+ m today.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

@@ -184,6 +184,18 @@ items:
     workflow (2026Q4, dry-run) to test it before 1 Jan. If the dry run failed, leave it for
     the 21 Dec session.
 
+- id: pages-build
+  owner: claude
+  title: Build the project website and its publishing workflow (ready for 4 Dec)
+  date: 2026-11-27
+  details: >
+    site/index.html (landing page: what the study is, links to the plan, reports and the
+    Reviewer's Desk at site/reviewer/) and .github/workflows/pages.yml (publishes the site/
+    folder with GitHub's official Pages actions, pinned by commit, on pushes to main that
+    touch site/ and by hand). Test the pages locally; the workflow is switched on by the author
+    on 4 Dec (Settings > Pages > Source: GitHub Actions). Address:
+    https://pagagne.github.io/internet-security-snapshot/ ; the Desk at .../reviewer/.
+
 - id: landing-page
   owner: author
   title: Landing page, Discussions, Zenodo
@@ -191,8 +203,9 @@ items:
   time: "10:00"
   minutes: 60
   details: >
-    Claude builds the GitHub Pages landing page and Discussions welcome post; you switch on
-    Discussions and Pages, and Zenodo archiving (zenodo.org, sign in with GitHub). Project
+    Claude has built the landing page, the publishing workflow (27 Nov) and the Discussions
+    welcome post. You: Settings > Pages > Source: GitHub Actions, then run the Pages workflow
+    once from the Actions tab; switch on Discussions; and Zenodo archiving (zenodo.org, sign in with GitHub). Project
     links may be shared publicly from today.
 
 - id: handshake-register

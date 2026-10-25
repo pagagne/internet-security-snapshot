@@ -45,6 +45,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 24 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 2 of 2 |
 | Wed 25 Nov 2026 | Paul | Ask Georgia Tech College of Computing about a research internship posting |
 | Wed 25 Nov 2026 | Claude | Race fix-date list ready in the Hand Check app |
+| Fri 27 Nov 2026 | Claude | Build the project website and its publishing workflow (ready for 4 Dec) |
 | Mon 30 Nov 2026 | Claude | Cutover check (study no longer depends on one Claude chat) |
 | Tue 01 Dec 2026 | Claude | Read the dry-run quality report; prepare the hand-check lists |
 | Tue 01 Dec 2026, 11:00 UTC | GitHub | Dry run of the quarterly pull (Oct-Nov data) |
@@ -172,7 +173,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 25 Nov 2026 | Ask Georgia Tech College of Computing about a research internship posting | Main board (CareerBuzz) does not accept unpaid remote roles; ask the College of Computing Career Center whether an unpaid remote research internship for course credit qualifies. If no, drop Georgia Tech. |
 | Wed 02 Dec 2026, 10:00 ET | Hand check on the dry run | AI-credit spot checks, slot (c) checks, fix dates (cohort and race list). First real test of the race list: note anything awkward. Approve or hold the dry-run page. |
 | Thu 03 Dec 2026, 10:00 ET | Move the quarterly pull into the container (if the dry run passed) | Claude opens the pull request; you review and merge; then Actions > Quarterly pull > Run workflow (2026Q4, dry-run) to test it before 1 Jan. If the dry run failed, leave it for the 21 Dec session. |
-| Fri 04 Dec 2026, 10:00 ET | Landing page, Discussions, Zenodo | Claude builds the GitHub Pages landing page and Discussions welcome post; you switch on Discussions and Pages, and Zenodo archiving (zenodo.org, sign in with GitHub). Project links may be shared publicly from today. |
+| Fri 04 Dec 2026, 10:00 ET | Landing page, Discussions, Zenodo | Claude has built the landing page, the publishing workflow (27 Nov) and the Discussions welcome post. You: Settings > Pages > Source: GitHub Actions, then run the Pages workflow once from the Actions tab; switch on Discussions; and Zenodo archiving (zenodo.org, sign in with GitHub). Project links may be shared publicly from today. |
 | Sat 05 Dec 2026 | Register on Handshake and connect the approved schools | Organization: "Internet Security Snapshot (independent research project)", the project email, the GitHub page as website. Approvals arrive during the RV trip. |
 | Mon 21 Dec 2026, 10:00 ET | Core-freeze decision session | docs/CORE_FREEZE_DECISIONS.md items 0-21 (confirm 0, 7, 12; decide 1-3, 9-11, 13-21, including the companion label check, X13 and hand-check reliability, the 2028 closing re-run). Any source without a written yes runs without it for the pilot. |
 | Tue 29 Dec 2026, 10:00 ET | Freeze the core (core-v1.2) and update OSF | Publish release core-v1.2 on GitHub; file the OSF update (Claude gives you the text). |
@@ -204,6 +205,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 17 Nov 2026 | Run the validation and report pass/fail | snapshot.validate against prereg/ground_truth_reference.csv (pass = 4 of 5 cases). |
 | Fri 20 Nov 2026 | Draft the permission follow-ups and update the log | docs/PERMISSIONS.md; decision item 16 sets the 21 Dec cutoff. |
 | Wed 25 Nov 2026 | Race fix-date list ready in the Hand Check app | List builder in snapshot.review, report table and time estimate, alongside snapshot.race.t1_kev_race and X10; read the app artifact before republishing. Tell the author only if something will not be ready for 1-2 Dec. |
+| Fri 27 Nov 2026 | Build the project website and its publishing workflow (ready for 4 Dec) | site/index.html (landing page: what the study is, links to the plan, reports and the Reviewer's Desk at site/reviewer/) and .github/workflows/pages.yml (publishes the site/ folder with GitHub's official Pages actions, pinned by commit, on pushes to main that touch site/ and by hand). Test the pages locally; the workflow is switched on by the author on 4 Dec (Settings > Pages > Source: GitHub Actions). Address: https://pagagne.github.io/internet-security-snapshot/ ; the Desk at .../reviewer/. |
 | Mon 30 Nov 2026 | Cutover check (study no longer depends on one Claude chat) | Confirm: the Schedule workflow has run green for 7 days; the author has subscribed to the calendar feed; the Claude work-queue scheduled task is live; docs/OPERATIONS.md is current. Then retire any remaining one-off check-ins in the old chat. docs/OPERATIONS.md. |
 | Tue 01 Dec 2026 | Read the dry-run quality report; prepare the hand-check lists | Load the review lists (including the race list) into the Hand Check app. |
 | Tue 22 Dec 2026 | Prepare the core freeze (core-v1.2) | Deviation rows, LOCKED.yaml checksums, freeze summary and the OSF update text. |
