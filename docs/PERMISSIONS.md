@@ -23,9 +23,9 @@ without it for the Q4 2026 pilot (decision item 16); a later yes is switched on 
 
 | Source | Terms that matter | How the project complies |
 |---|---|---|
-| SANS Internet Storm Center web-honeypot files | Attribution required ("SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"); no reselling; the site carries a non-commercial licence; at most one download an hour | One download a week; aggregates only (no URLs, no IP addresses); credited on every output |
-| ENISA EU Vulnerability Database | Public EU service | Dates only; cited |
-| Google Project Zero "0day In the Wild" sheet | Public community resource | Dates only; cited |
+| SANS Internet Storm Center web-honeypot files | Attribution required ("SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"); no reselling; the site carries a non-commercial licence; at most one download an hour | One download a month; aggregates only (no URLs, no IP addresses); credited on every output |
+| ENISA EU Vulnerability Database | Public EU service | Dropped 25 Oct: its exploited list mirrors KEV |
+| Google Project Zero "0day In the Wild" sheet | Public community resource | Zero-day check (X15); cited |
 | deps.dev | Generated data under CC-BY 4.0 | Aggregates; credited |
 | OSV and GitHub advisories | Public; OSV data CC-BY 4.0 | Version lists only; credited |
 | WordPress.org plugin statistics | Public API | Version shares only |

@@ -29,14 +29,13 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261025
 DTEND;VALUE=DATE:20261026
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Weekly honeypot capture (SANS ISC)\, aggregates 
- only - built
+SUMMARY:[Claude] Snapshot: Monthly honeypot capture (SANS ISC)\, aggregates
+  only - built
 DESCRIPTION:Responsible: Claude (claude)\n\nBuilt and first run 25 Oct (exp
- loratory X14\; .github/workflows/honeypot.yml\, Sundays\; data/isc-honeypo
- t/ on run-reports). First capture: 10.2 million URLs\, 304 attack categori
- es\, 241 CVEs with first-seen dates. The files keep first-seen dates back 
- to 2012\, so a weekly capture loses no first-attempt dates.\n\nSource: doc
- s/schedule/schedule.yaml
+ loratory X14\, context only\; .github/workflows/honeypot.yml\, first Sunda
+ y of each month\; data/isc-honeypot/ on run-reports\, about 40 KB a captur
+ e). First capture: 10.2 million URLs\, 304 attack categories\, 241 CVEs.\n
+ \nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

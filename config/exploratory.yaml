@@ -163,31 +163,33 @@ measures:
   # Defined on 25 Oct; the research probes that tested whether each source works ran the same
   # day on 2026 data, before any quarterly figure is computed with them.
   - id: X14
-    name: First honeypot attempt per CVE (SANS ISC)
-    question: For flaws in the race, did honeypots see attack attempts before CISA listed them, and how much earlier?
+    name: Honeypot attack activity by category (SANS ISC), context only
+    question: Which kinds of web attacks do honeypots see each quarter, and which named CVEs?
     sources: [isc_honeypot]
     added: 2026-10-25
     feeds_labels: false
     status: active
     method: >
-      Weekly capture of the SANS Internet Storm Center web-honeypot files as aggregates
-      (src/snapshot/collect/isc_honeypot.py). Per CVE named in a URL or its category: earliest
-      first-seen date. Reported beside T_exploit: share of the quarter's KEV additions with an
-      earlier honeypot date, and the median gap. An attempt is not a confirmed exploitation.
-      Credit: SANS Technology Institute, Internet Storm Center.
+      Monthly capture of the SANS Internet Storm Center web-honeypot files as aggregates
+      (src/snapshot/collect/isc_honeypot.py): requests and URLs per attack category, and per
+      CVE named in a URL or category. Context only (author's decision, 25 Oct 2026): not used
+      as a first-attack date, because the probe found only 2 of 246 KEV additions in the data
+      and first-seen dates belong to URLs, not flaws. Credit: SANS Technology Institute,
+      Internet Storm Center.
 
   - id: X15
-    name: Earliest exploitation evidence and KEV's lag
-    question: How much later does CISA KEV list newly attacked flaws than the earliest free evidence?
-    sources: [kev, vulnrichment, euvd, p0_itw, inthewild, isc_honeypot]
+    name: Zero-day check against Project Zero's list
+    question: Of the zero-days Google Project Zero lists, how many does the study's free data also class as zero-days?
+    sources: [kev, p0_itw]
     added: 2026-10-25
     feeds_labels: false
     status: planned
     method: >
-      Per KEV addition in the quarter: earliest date among CISA's active-exploitation flag,
-      ENISA EUVD "exploited since", Google Project Zero's 0day In the Wild sheet, inthewild.io
-      exploitation reports and X14; the gap to the KEV date, reported as a distribution. The
-      scored T_exploit is unchanged.
+      Each quarter: KEV additions that appear in Project Zero's public "0day In the Wild" sheet
+      (24 of 246 in Jan-Sep 2026), and the share of them that X10 classes as exploited on or
+      before the fix. A low share shows how far the free data understates zero-days. ENISA EUVD
+      and inthewild.io were tested as earlier-attack sources on 25 Oct and dropped (EUVD mirrors
+      KEV; inthewild.io has no reports after Dec 2024).
 
   - id: X16
     name: Patch adoption for open-source flaws (deps.dev)

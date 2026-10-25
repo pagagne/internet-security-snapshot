@@ -159,13 +159,12 @@ items:
 
 - id: honeypot-capture
   owner: claude
-  title: Weekly honeypot capture (SANS ISC), aggregates only - built
+  title: Monthly honeypot capture (SANS ISC), aggregates only - built
   date: 2026-10-25
   details: >
-    Built and first run 25 Oct (exploratory X14; .github/workflows/honeypot.yml, Sundays;
-    data/isc-honeypot/ on run-reports). First capture: 10.2 million URLs, 304 attack categories,
-    241 CVEs with first-seen dates. The files keep first-seen dates back to 2012, so a weekly
-    capture loses no first-attempt dates.
+    Built and first run 25 Oct (exploratory X14, context only; .github/workflows/honeypot.yml,
+    first Sunday of each month; data/isc-honeypot/ on run-reports, about 40 KB a capture).
+    First capture: 10.2 million URLs, 304 attack categories, 241 CVEs.
 
 - id: kev-lag-backtest
   owner: claude

@@ -34,7 +34,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | When | Who is responsible | What |
 |---|---|---|
 | Sun 25 Oct 2026 | Claude | Patch-adoption prototype from deps.dev (open-source flaws) - snapshot run |
-| Sun 25 Oct 2026 | Claude | Weekly honeypot capture (SANS ISC), aggregates only - built |
+| Sun 25 Oct 2026 | Claude | Monthly honeypot capture (SANS ISC), aggregates only - built |
 | Sun 25 Oct 2026 | Claude | Linux kernel fix dates - probe run |
 | Sun 25 Oct 2026 | Claude | Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io - first run |
 | Sun 25 Oct 2026 | Claude | Sync review (three passes; findings to the author) |
@@ -236,7 +236,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | When | What | Details |
 |---|---|---|
 | Sun 25 Oct 2026 | Patch-adoption prototype from deps.dev (open-source flaws) - snapshot run | Research probe depsdev_adoption, 25 Oct: today's share of dependents on affected versions for attacked open-source flaws (deps.dev free API). History over time needs deps.dev's BigQuery tables (httparchive-test, after the BigQuery project). |
-| Sun 25 Oct 2026 | Weekly honeypot capture (SANS ISC), aggregates only - built | Built and first run 25 Oct (exploratory X14; .github/workflows/honeypot.yml, Sundays; data/isc-honeypot/ on run-reports). First capture: 10.2 million URLs, 304 attack categories, 241 CVEs with first-seen dates. The files keep first-seen dates back to 2012, so a weekly capture loses no first-attempt dates. |
+| Sun 25 Oct 2026 | Monthly honeypot capture (SANS ISC), aggregates only - built | Built and first run 25 Oct (exploratory X14, context only; .github/workflows/honeypot.yml, first Sunday of each month; data/isc-honeypot/ on run-reports, about 40 KB a capture). First capture: 10.2 million URLs, 304 attack categories, 241 CVEs. |
 | Sun 25 Oct 2026 | Linux kernel fix dates - probe run | Probe 25 Oct: 5 of 8 kernel flaws added to KEV in Jan-Sep 2026 are dated from fixing commits, a median 22 days before CVE publication (the 3 others are older Red Hat records without commits). Follow-up: kernel-fixdates-prefill. |
 | Sun 25 Oct 2026 | Back-test KEV's lag against EUVD, Project Zero's sheet and inthewild.io - first run | Research probe kev_lag (KEV additions Jan-Sep 2026), first runs 25 Oct; results and their limits go to the 12 Nov research review. |
 | Sun 25 Oct 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |

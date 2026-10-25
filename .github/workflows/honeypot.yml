@@ -1,13 +1,14 @@
 name: Honeypot capture
 
-# Weekly capture of the SANS Internet Storm Center web-honeypot files as aggregates only
-# (exploratory X14, src/snapshot/collect/isc_honeypot.py). The files keep first-seen dates
-# back to 2012, so a weekly capture loses no first-attempt dates. Results go to the
+# Monthly capture of the SANS Internet Storm Center web-honeypot files as aggregates only
+# (exploratory X14, context only, src/snapshot/collect/isc_honeypot.py). The two files (about
+# 1 GB) are summarised on the runner and discarded; each capture saves about 40 KB of counts,
+# never a URL or IP address. Monthly, to keep the load on ISC low (author's decision, 25 Oct). Results go to the
 # run-reports branch under data/isc-honeypot/. Credit: SANS Technology Institute, Internet
 # Storm Center, https://isc.sans.edu (attribution required, no reselling).
 on:
   schedule:
-    - cron: "43 9 * * 0"   # Sundays 09:43 UTC, after ISC's daily update
+    - cron: "43 9 1-7 * 0"   # first Sunday of each month, 09:43 UTC, after ISC's daily update
   workflow_dispatch:
 
 permissions:

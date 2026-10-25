@@ -125,10 +125,10 @@ branch). Window: KEV additions Jan-Sep 2026 (246 flaws).
 
 | Source | What the probe found | Verdict |
 |---|---|---|
-| SANS ISC web honeypot (X14) | Capture works: 10.2 million URLs, 304 categories, 241 CVEs with first-seen dates (since 2012). But only 2 of the 246 KEV additions appear, and first-seen dates belong to URLs, not to a flaw (a SharePoint path "first seen" in 2012 for a 2025 flaw). | Weak as a first-attempt date; decision below |
-| ENISA EUVD | Its exploited list (1,772 entries) mirrors KEV: "exploited since" mostly equals the KEV date; earlier than KEV for 10 of 246, by a median 4.5 days. | Adds almost nothing; drop as an earlier date |
-| Project Zero 0day In the Wild | Current (2026 tab, 25 rows); 24 of its 2023-2026 zero-days are among the 246. Discovery dates are mostly "???"; patch dates present. | Use as an independent check of X10's zero-day classification, not for dates |
-| inthewild.io | No exploitation reports after Dec 2024. | Drop |
+| SANS ISC web honeypot (X14) | Capture works: 10.2 million URLs, 304 categories, 241 CVEs with first-seen dates (since 2012). But only 2 of the 246 KEV additions appear, and first-seen dates belong to URLs, not to a flaw (a SharePoint path "first seen" in 2012 for a 2025 flaw). | Kept as context only, captured monthly (author, 25 Oct) |
+| ENISA EUVD | Its exploited list (1,772 entries) mirrors KEV: "exploited since" mostly equals the KEV date; earlier than KEV for 10 of 246, by a median 4.5 days. | Dropped (author, 25 Oct) |
+| Project Zero 0day In the Wild | Current (2026 tab, 25 rows); 24 of its 2023-2026 zero-days are among the 246. Discovery dates are mostly "???"; patch dates present. | Zero-day check X15 (author, 25 Oct) |
+| inthewild.io | No exploitation reports after Dec 2024. | Dropped (author, 25 Oct) |
 | Linux kernel commits | 5 of 8 kernel flaws in the window dated from fixing commits, a median 22 days before CVE publication (3 older Red Hat records have none). | Build into the pre-fill (2 Nov) |
 | Outside AI-found lists (X18) | Of 5 outside AI-found CVEs with records: headline rule caught 3, narrow 0; 2 (Microsoft, Apple) have empty credit fields because those vendors credit finders only in their own advisories. | For 8 Feb; test vendor acknowledgments as a T7 source |
 | deps.dev (X16) | See below once the run finishes. | |
