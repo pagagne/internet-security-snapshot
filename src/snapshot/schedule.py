@@ -71,8 +71,8 @@ def load(path: Path = SOURCE) -> list[dict]:
         seen.add(it["id"])
         if it["owner"] not in OWNERS:
             raise ValueError(f"{it['id']}: owner must be one of {OWNERS}")
-        if ("date" in it) == ("repeat" in it):
-            raise ValueError(f"{it['id']}: give exactly one of date or repeat")
+        if sum(k in it for k in ("date", "dates", "repeat")) != 1:
+            raise ValueError(f"{it['id']}: give exactly one of date, dates or repeat")
         if "dispatch" in it and it["owner"] != "github":
             raise ValueError(f"{it['id']}: only github items can dispatch a workflow")
     return items
@@ -95,6 +95,8 @@ def expand(items: list[dict]) -> list[dict]:
         if "date" in it:
             d = it["date"] if isinstance(it["date"], dt.date) else dt.date.fromisoformat(str(it["date"]))
             dates = [d]
+        elif "dates" in it:
+            dates = [d if isinstance(d, dt.date) else dt.date.fromisoformat(str(d)) for d in it["dates"]]
         else:
             r = it["repeat"]
             dates = [dt.date(y, m, r["day"]) for y, m in _months(str(r["from"]), str(r["until"])) if m in r["months"]]

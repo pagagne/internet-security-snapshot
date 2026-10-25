@@ -21,6 +21,7 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
 | Claude | Score the second coder's sheet; publish agreement | day 13, Feb, May, Aug, Nov, 2027-05 to 2028-02 |
 | Claude | Draft the annual check against reference data (previous year) | day 1, Mar, 2029-03 to 2030-03 |
+| Claude | Sync review before the provisional report (three passes; findings to the author) | day 28, Mar, Jun, Sep, Dec, 2026-12 to 2027-12 |
 | GitHub (automatic) | Quarterly pull, provisional run | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 06:00 UTC |
 | GitHub (automatic) | Rebuild check of the latest frozen bundle | day 10, every month, 2026-11 to 2028-04, 07:17 UTC |
 | GitHub (automatic) | Quarterly pull, final run | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02, 06:00 UTC |
@@ -31,22 +32,28 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | Who is responsible | What |
 |---|---|---|
+| Sun 25 Oct 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 26 Oct 2026 | Claude | Continue the research window |
 | Wed 28 Oct 2026, 10:00 ET | Paul | Call the UGA Career Center about the reviewer posting |
+| Mon 02 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Fri 06 Nov 2026 | Paul | Create the project email address |
+| Mon 09 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Tue 10 Nov 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 12 Nov 2026, 10:00 ET | Paul | Review research results; decide race fix-date effort |
+| Mon 16 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 16 Nov 2026, 10:00 ET | Paul | Validation fix dates, then spot-check references |
 | Tue 17 Nov 2026 | Claude | Run the validation and report pass/fail |
 | Wed 18 Nov 2026 | Paul | Ask Georgia State Career Services about the reviewer posting |
 | Fri 20 Nov 2026 | Claude | Draft the permission follow-ups and update the log |
 | Fri 20 Nov 2026, 09:00 ET | Paul | Data-permission follow-ups |
+| Mon 23 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 23 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 1 of 2 |
 | Tue 24 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 2 of 2 |
 | Wed 25 Nov 2026 | Paul | Ask Georgia Tech College of Computing about a research internship posting |
 | Wed 25 Nov 2026 | Claude | Race fix-date list ready in the Hand Check app |
 | Fri 27 Nov 2026 | Claude | Build the project website and its publishing workflow (ready for 4 Dec) |
 | Mon 30 Nov 2026 | Claude | Cutover check (study no longer depends on one Claude chat) |
+| Mon 30 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Tue 01 Dec 2026 | Claude | Read the dry-run quality report; prepare the hand-check lists |
 | Tue 01 Dec 2026, 11:00 UTC | GitHub | Dry run of the quarterly pull (Oct-Nov data) |
 | Wed 02 Dec 2026, 10:00 ET | Paul | Hand check on the dry run |
@@ -54,8 +61,11 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 04 Dec 2026, 10:00 ET | Paul | Landing page, Discussions, Zenodo |
 | Sat 05 Dec 2026 | Paul | Register on Handshake and connect the approved schools |
 | Thu 10 Dec 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Mon 14 Dec 2026 | Claude | Document and test every GitHub workflow; draft the lock list |
+| Fri 18 Dec 2026, 10:00 ET | Paul | Review the workflow page and the lock list |
 | Mon 21 Dec 2026, 10:00 ET | Paul | Core-freeze decision session |
 | Tue 22 Dec 2026 | Claude | Prepare the core freeze (core-v1.2) |
+| Mon 28 Dec 2026 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Tue 29 Dec 2026, 10:00 ET | Paul | Freeze the core (core-v1.2) and update OSF |
 | Fri 01 Jan 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Jan 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -83,6 +93,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 10 Mar 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Mar 2027, 11:00 ET | Paul | Annual review and change window |
 | Mon 15 Mar 2027, 11:00 ET | Reviewer | Optional - join the 2027 annual review |
+| Sun 28 Mar 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Apr 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Apr 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
 | Fri 02 Apr 2027 | Claude | Send the reviewer the Q1 2027 review packet |
@@ -102,6 +113,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 10 May 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 13 May 2027 | Claude | Score the second coder's sheet; publish agreement |
 | Thu 10 Jun 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Mon 28 Jun 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Jul 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
 | Fri 02 Jul 2027, 10:00 ET | Paul | Approve the provisional draft |
@@ -116,6 +128,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 10 Aug 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Fri 13 Aug 2027 | Claude | Score the second coder's sheet; publish agreement |
 | Fri 10 Sep 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Tue 28 Sep 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Oct 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
 | Sat 02 Oct 2027, 10:00 ET | Paul | Approve the provisional draft |
@@ -130,6 +143,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 10 Nov 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Sat 13 Nov 2027 | Claude | Score the second coder's sheet; publish agreement |
 | Fri 10 Dec 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Tue 28 Dec 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Sat 01 Jan 2028, 06:00 UTC | GitHub | Quarterly pull, provisional run |
 | Sun 02 Jan 2028, 10:00 ET | Paul | Approve the provisional draft |
@@ -149,6 +163,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 10 Mar 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Wed 15 Mar 2028, 11:00 ET | Paul | Annual review and change window |
 | Sat 01 Apr 2028 | Claude | 2027 closing re-run with full follow-up |
+| Mon 03 Apr 2028, 10:00 ET | Paul | Approve the 2027 closing re-run addendum |
 | Mon 10 Apr 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Wed 31 Jan 2029 | Paul | Confirm whether scan data was obtained for the annual check |
 | Thu 01 Mar 2029 | Claude | Draft the annual check against reference data (previous year) |
@@ -174,8 +189,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 03 Dec 2026, 10:00 ET | Move the quarterly pull into the container (if the dry run passed) | Claude opens the pull request; you review and merge; then Actions > Quarterly pull > Run workflow (2026Q4, dry-run) to test it before 1 Jan. If the dry run failed, leave it for the 21 Dec session. |
 | Fri 04 Dec 2026, 10:00 ET | Landing page, Discussions, Zenodo | Claude has built the landing page, the publishing workflow (27 Nov) and the Discussions welcome post. You: Settings > Pages > Source: GitHub Actions, then run the Pages workflow once from the Actions tab; switch on Discussions; and Zenodo archiving (zenodo.org, sign in with GitHub). Project links may be shared publicly from today. |
 | Sat 05 Dec 2026 | Register on Handshake and connect the approved schools | Organization: "Internet Security Snapshot (independent research project)", the project email, the GitHub page as website. Approvals arrive during the RV trip. |
-| Mon 21 Dec 2026, 10:00 ET | Core-freeze decision session | docs/CORE_FREEZE_DECISIONS.md items 0-21 (confirm 0, 7, 12; decide 1-3, 9-11, 13-21, including the companion label check, X13 and hand-check reliability, the 2028 closing re-run). Any source without a written yes runs without it for the pilot. |
-| Tue 29 Dec 2026, 10:00 ET | Freeze the core (core-v1.2) and update OSF | Publish release core-v1.2 on GitHub; file the OSF update (Claude gives you the text). |
+| Fri 18 Dec 2026, 10:00 ET | Review the workflow page and the lock list | docs/WORKFLOWS.md and the draft lock list (decision item 22), for the 21 Dec session. |
+| Mon 21 Dec 2026, 10:00 ET | Core-freeze decision session | docs/CORE_FREEZE_DECISIONS.md items 0-22 (confirm 0, 7, 12; decide 1-3, 9-11, 13-22, including the companion label check, X13 and hand-check reliability, the 2028 closing re-run, and the workflow lock). Any source without a written yes runs without it for the pilot. |
+| Tue 29 Dec 2026, 10:00 ET | Freeze the core (core-v1.2) and update OSF | Publish release core-v1.2 on GitHub (scored rules and the locked workflows); file the OSF update (Claude gives you the text). |
 | Mon 04 Jan 2027 | Post the reviewer ad; email statistics department coordinators | On each approved board (UGA first); applications close 15 Feb. |
 | Tue 12 Jan 2027, 10:00 ET | Line up the external reviewer and second coder | Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer") with the sample spot-check worksheet (docs/reviewer/sample-worksheet); candidates from the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March. |
 | Mon 08 Feb 2027, 10:00 ET | Evaluate the AI-credit rule on pilot data; PHP2Shell case | Outcome goes to the 15 March review. |
@@ -185,6 +201,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 04 Mar 2027, 10:00 ET | Onboarding call with the external reviewer | Walk through the repository, the hand-check rules and the second-coder sheet; answer questions; go over the practice round if done. Move the time to suit the reviewer. |
 | Thu 15 Apr 2027, 10:00 ET | Optional mid-review check-in with the reviewer | Answer questions; confirm the review will arrive by 28 April or agree a new date. |
 | Thu 29 Apr 2027 | Write the response to the external review | Point by point; anything accepted becomes a deviations-log row or an item for the next annual review. The review itself is published unedited. |
+| Mon 03 Apr 2028, 10:00 ET | Approve the 2027 closing re-run addendum | Read Claude's summary of what changed against each 2027 quarter's final report (scored labels do not change; decision item 21) and approve publishing it as an addendum to the annual check, with its Zenodo archive. |
 
 ## External reviewer: dated items
 
@@ -200,14 +217,21 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | What | Details |
 |---|---|---|
+| Sun 25 Oct 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Mon 26 Oct 2026 | Continue the research window | docs/RESEARCH_PLAN.md: item 5 (an on/off switch per permissioned source in config), then item 4 (remaining evaluation code: labels T2, T4-T6; X6-X12; NVD root-cause fill; draft evaluation page); consider CISA's active-exploitation assessment date as a research-flag T_exploit candidate; then Plan 1 / Plan 2 research. Report to the author only findings worth knowing. |
+| Mon 02 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
+| Mon 09 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
+| Mon 16 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Tue 17 Nov 2026 | Run the validation and report pass/fail | snapshot.validate against prereg/ground_truth_reference.csv (pass = 4 of 5 cases). |
 | Fri 20 Nov 2026 | Draft the permission follow-ups and update the log | docs/PERMISSIONS.md; decision item 16 sets the 21 Dec cutoff. |
+| Mon 23 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Wed 25 Nov 2026 | Race fix-date list ready in the Hand Check app | List builder in snapshot.review, report table and time estimate, alongside snapshot.race.t1_kev_race and X10; read the app artifact before republishing. Tell the author only if something will not be ready for 1-2 Dec. |
 | Fri 27 Nov 2026 | Build the project website and its publishing workflow (ready for 4 Dec) | site/index.html (landing page: what the study is, links to the plan, reports and the Reviewer's Desk at site/reviewer/) and .github/workflows/pages.yml (publishes the site/ folder with GitHub's official Pages actions, pinned by commit, on pushes to main that touch site/ and by hand). Test the pages locally; the workflow is switched on by the author on 4 Dec (Settings > Pages > Source: GitHub Actions). Address: https://pagagne.github.io/internet-security-snapshot/ ; the Desk at .../reviewer/. |
 | Mon 30 Nov 2026 | Cutover check (study no longer depends on one Claude chat) | Confirm: the Schedule workflow has run green for 7 days; the author has subscribed to the calendar feed; the Claude work-queue scheduled task is live; docs/OPERATIONS.md is current. Then retire any remaining one-off check-ins in the old chat. docs/OPERATIONS.md. |
+| Mon 30 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Tue 01 Dec 2026 | Read the dry-run quality report; prepare the hand-check lists | Load the review lists (including the race list) into the Hand Check app. |
-| Tue 22 Dec 2026 | Prepare the core freeze (core-v1.2) | Deviation rows, LOCKED.yaml checksums, freeze summary and the OSF update text. |
+| Mon 14 Dec 2026 | Document and test every GitHub workflow; draft the lock list | docs/WORKFLOWS.md: for each workflow, what starts it, its permissions and secrets, inputs and outputs, what happens on failure and who notices, and its latest successful run (link). Run any workflow without a successful run since its last change (rebuild check on the dry run's bundle; quarterly pull inside the container). Draft the lock list for decision item 22: data workflows (quarterly pull, rebuild check, Dockerfile) locked like the core; support workflows (Checks, Schedule, Diagrams, Research, Pages) under a change log. |
+| Tue 22 Dec 2026 | Prepare the core freeze (core-v1.2) | Deviation rows, LOCKED.yaml checksums (including the workflows locked under decision item 22), freeze summary and the OSF update text. |
 | Wed 20 Jan 2027 | Build the figure worksheets for the reviewer's spot check | Extend the sample (docs/reviewer/sample-worksheet, snapshot.worksheet race-sample) to a worksheet per headline figure (T1-T7), generated with every release: the plan's definition in plain words, the inputs as a CSV a spreadsheet opens, the steps from inputs to figure, and the published value to match, listed in site/reviewer/worksheets.json for the Reviewer's Desk (whose seeded draw picks three). Test on the Q4 2026 pilot (provisional 1 Jan) so a worksheet can be tried in the practice round. Check that each worksheet can be followed in a spreadsheet with no code. |
 | Wed 03 Feb 2027 | Prepare the 8 Feb session | AI-credit rule evaluation on the pilot's final data (headline vs narrow count, a sample of lab-affiliation-only credits, spot checks) and the PHP2Shell case note docs/cases/php2shell.md. Send the author a heads-up. |
 | Tue 02 Mar 2027 | Record the confirmed reviewer | Add the reviewer as a contributor (name or initials as they asked, ORCID) to .zenodo.json and the report template; record their disclosed ties for publication beside the review. Never put their email or phone in the public repository. |

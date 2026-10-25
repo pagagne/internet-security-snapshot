@@ -67,12 +67,12 @@ Session 1's check-ins fired into session 1 and were removed when it was retired.
   tool-named count is kept as the low end; trend only when both agree; re-evaluated 8 Feb 2027 (23 Oct).
 - Provisional reports: drafted on the 1st, published after the author's review within two days;
   hand-check window 4th-28th (23 Oct).
-- External reviewer for Q1 2027 (decision item 17; confirm by 15 Mar, review 3-28 Apr).
+- External reviewer for Q1 2027 (decision item 17; confirm by 1 Mar (was 15 Mar; moved 24 Oct), review 3-28 Apr).
 - Decided items 0, 7 and 12 only need confirming at the 21 Dec session.
 
 ## Open for the author
 - 12 Nov: every flagged race fix date or a sample (sets the quarterly and baseline workload).
-- 21 Dec agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-21).
+- 21 Dec agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-22; 22 = the workflow lock, added 25 Oct).
 
 ## Standing rules (unchanged)
 Never paste keys or tokens into chat (GitHub secrets only); VulnCheck-derived data private until

@@ -10,7 +10,7 @@
 #   id      unique slug; with the date it names the issue and the calendar entry
 #   owner   author | reviewer | claude | github  (reviewer = the independent external reviewer)
 #   title   short, starts with a verb where possible
-#   date    YYYY-MM-DD (local date, America/New_York), or use `repeat`
+#   date    YYYY-MM-DD (local date, America/New_York), or use `dates` (a list) or `repeat`
 #   time    HH:MM local (America/New_York); omit for an all-day item
 #   utc     true when `time` is UTC (GitHub cron times)
 #   minutes duration (default 30)
@@ -136,6 +136,24 @@ items:
     Career Center whether an unpaid remote research internship for course credit qualifies.
     If no, drop Georgia Tech.
 
+- id: sync-review
+  owner: claude
+  title: Sync review (three passes; findings to the author)
+  dates: [2026-10-25, 2026-11-02, 2026-11-09, 2026-11-16, 2026-11-23, 2026-11-30]
+  details: >
+    docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
+    scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed /
+    Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.
+
+- id: sync-review-quarterly
+  owner: claude
+  title: Sync review before the provisional report (three passes; findings to the author)
+  repeat: {months: [3, 6, 9, 12], day: 28, from: 2026-12, until: 2027-12}
+  details: >
+    docs/SYNC_REVIEW.md, three days before each provisional report so it starts from a
+    consistent state. Findings to the author as Confirmed / Fixed / Conflicts resolved /
+    Still for you.
+
 - id: cutover
   owner: claude
   title: Cutover check (study no longer depends on one Claude chat)
@@ -217,6 +235,26 @@ items:
     Organization: "Internet Security Snapshot (independent research project)", the project
     email, the GitHub page as website. Approvals arrive during the RV trip.
 
+- id: workflows-doc
+  owner: claude
+  title: Document and test every GitHub workflow; draft the lock list
+  date: 2026-12-14
+  details: >
+    docs/WORKFLOWS.md: for each workflow, what starts it, its permissions and secrets, inputs
+    and outputs, what happens on failure and who notices, and its latest successful run (link).
+    Run any workflow without a successful run since its last change (rebuild check on the dry
+    run's bundle; quarterly pull inside the container). Draft the lock list for decision item
+    22: data workflows (quarterly pull, rebuild check, Dockerfile) locked like the core;
+    support workflows (Checks, Schedule, Diagrams, Research, Pages) under a change log.
+
+- id: workflows-review
+  owner: author
+  title: Review the workflow page and the lock list
+  date: 2026-12-18
+  time: "10:00"
+  minutes: 30
+  details: docs/WORKFLOWS.md and the draft lock list (decision item 22), for the 21 Dec session.
+
 - id: freeze-session
   owner: author
   title: Core-freeze decision session
@@ -224,15 +262,17 @@ items:
   time: "10:00"
   minutes: 90
   details: >
-    docs/CORE_FREEZE_DECISIONS.md items 0-21 (confirm 0, 7, 12; decide 1-3, 9-11, 13-21,
+    docs/CORE_FREEZE_DECISIONS.md items 0-22 (confirm 0, 7, 12; decide 1-3, 9-11, 13-22,
     including the companion label check, X13 and hand-check reliability, the 2028 closing
-    re-run). Any source without a written yes runs without it for the pilot.
+    re-run, and the workflow lock). Any source without a written yes runs without it for the pilot.
 
 - id: freeze-prep
   owner: claude
   title: Prepare the core freeze (core-v1.2)
   date: 2026-12-22
-  details: Deviation rows, LOCKED.yaml checksums, freeze summary and the OSF update text.
+  details: >
+    Deviation rows, LOCKED.yaml checksums (including the workflows locked under decision item
+    22), freeze summary and the OSF update text.
 
 - id: freeze
   owner: author
@@ -240,7 +280,9 @@ items:
   date: 2026-12-29
   time: "10:00"
   minutes: 45
-  details: Publish release core-v1.2 on GitHub; file the OSF update (Claude gives you the text).
+  details: >
+    Publish release core-v1.2 on GitHub (scored rules and the locked workflows); file the OSF
+    update (Claude gives you the text).
 
 # ---------------------------------------------------------------- 2027-2028
 - id: reviewer-post
@@ -359,6 +401,17 @@ items:
     Re-run all four 2027 quarters once every 2027 cohort CVE has its 90-day follow-up; publish
     as a completeness addendum to the annual check. Labels unchanged (decision item 21). The
     author approves.
+
+- id: closing-rerun-approve
+  owner: author
+  title: Approve the 2027 closing re-run addendum
+  date: 2028-04-03
+  time: "10:00"
+  minutes: 30
+  details: >
+    Read Claude's summary of what changed against each 2027 quarter's final report (scored
+    labels do not change; decision item 21) and approve publishing it as an addendum to the
+    annual check, with its Zenodo archive.
 
 # ---------------------------------------------------------------- every quarter
 - id: pull-provisional

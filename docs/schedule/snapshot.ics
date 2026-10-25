@@ -9,6 +9,21 @@ X-WR-CALDESC:Every action item of the study: author\, external reviewer\, C
  thub.com/pagagne/internet-security-snapshot
 X-WR-TIMEZONE:America/New_York
 BEGIN:VEVENT
+UID:sync-review@2026-10-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
+ or)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
+ \, sync between repository\, Claude docs\, calendars and scheduled tasks\,
+  and everything that runs on its own. Findings to the author as Confirmed 
+ / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
+ ver.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:research-window@2026-10-26@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261026
@@ -39,6 +54,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nEmployer relations\, (706) 542-33
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:sync-review@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
+ or)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
+ \, sync between repository\, Claude docs\, calendars and scheduled tasks\,
+  and everything that runs on its own. Findings to the author as Confirmed 
+ / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
+ ver.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:project-email@2026-11-06@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261106
@@ -49,6 +79,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
  eviewer invitation (instead of a personal address).\n\nSource: docs/schedu
  le/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-review@2026-11-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
+ or)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
+ \, sync between repository\, Claude docs\, calendars and scheduled tasks\,
+  and everything that runs on its own. Findings to the author as Confirmed 
+ / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
+ ver.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2026-11-10@internet-security-snapshot
@@ -74,6 +119,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nEvery flagged race fix date (abou
  is on the agenda. docs/RESEARCH_PLAN.md.\n\nSource: docs/schedule/schedule
  .yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-review@2026-11-16@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
+ or)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
+ \, sync between repository\, Claude docs\, calendars and scheduled tasks\,
+  and everything that runs on its own. Findings to the author as Confirmed 
+ / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
+ ver.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:validation-fix-dates@2026-11-16@internet-security-snapshot
@@ -135,6 +195,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nClaude drafts follow-ups for any
  g in docs/PERMISSIONS.md. Cutoff: the 21 Dec session.\n\nSource: docs/sche
  dule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-review@2026-11-23@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
+ or)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
+ \, sync between repository\, Claude docs\, calendars and scheduled tasks\,
+  and everything that runs on its own. Findings to the author as Confirmed 
+ / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
+ ver.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:baseline-hand-check-1@2026-11-23@internet-security-snapshot
@@ -217,6 +292,21 @@ DESCRIPTION:Responsible: Claude (claude)\n\nConfirm: the Schedule workflow
  ; the Claude work-queue scheduled task is live\; docs/OPERATIONS.md is cur
  rent. Then retire any remaining one-off check-ins in the old chat. docs/OP
  ERATIONS.md.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-review@2026-11-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
+ or)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
+ \, sync between repository\, Claude docs\, calendars and scheduled tasks\,
+  and everything that runs on its own. Findings to the author as Confirmed 
+ / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
+ ver.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -308,16 +398,46 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:workflows-doc@2026-12-14@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Document and test every GitHub workflow\; draft 
+ the lock list
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/WORKFLOWS.md: for each wor
+ kflow\, what starts it\, its permissions and secrets\, inputs and outputs\
+ , what happens on failure and who notices\, and its latest successful run 
+ (link). Run any workflow without a successful run since its last change (r
+ ebuild check on the dry run's bundle\; quarterly pull inside the container
+ ). Draft the lock list for decision item 22: data workflows (quarterly pul
+ l\, rebuild check\, Dockerfile) locked like the core\; support workflows (
+ Checks\, Schedule\, Diagrams\, Research\, Pages) under a change log.\n\nSo
+ urce: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:workflows-review@2026-12-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261218T150000Z
+DTEND:20261218T153000Z
+SUMMARY:[Paul] Snapshot: Review the workflow page and the lock list
+DESCRIPTION:Responsible: Paul (author)\n\ndocs/WORKFLOWS.md and the draft l
+ ock list (decision item 22)\, for the 21 Dec session.\n\nSource: docs/sche
+ dule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:freeze-session@2026-12-21@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261221T150000Z
 DTEND:20261221T163000Z
 SUMMARY:[Paul] Snapshot: Core-freeze decision session
 DESCRIPTION:Responsible: Paul (author)\n\ndocs/CORE_FREEZE_DECISIONS.md ite
- ms 0-21 (confirm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-21\, including the co
+ ms 0-22 (confirm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-22\, including the co
  mpanion label check\, X13 and hand-check reliability\, the 2028 closing re
- -run). Any source without a written yes runs without it for the pilot.\n\n
- Source: docs/schedule/schedule.yaml
+ -run\, and the workflow lock). Any source without a written yes runs witho
+ ut it for the pilot.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -328,8 +448,22 @@ DTEND;VALUE=DATE:20261223
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the core freeze (core-v1.2)
 DESCRIPTION:Responsible: Claude (claude)\n\nDeviation rows\, LOCKED.yaml ch
- ecksums\, freeze summary and the OSF update text.\n\nSource: docs/schedule
- /schedule.yaml
+ ecksums (including the workflows locked under decision item 22)\, freeze s
+ ummary and the OSF update text.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-review-quarterly@2026-12-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261229
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
+  passes\; findings to the author)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md\, three day
+ s before each provisional report so it starts from a consistent state. Fin
+ dings to the author as Confirmed / Fixed / Conflicts resolved / Still for 
+ you.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -339,8 +473,8 @@ DTSTART:20261229T150000Z
 DTEND:20261229T154500Z
 SUMMARY:[Paul] Snapshot: Freeze the core (core-v1.2) and update OSF
 DESCRIPTION:Responsible: Paul (author)\n\nPublish release core-v1.2 on GitH
- ub\; file the OSF update (Claude gives you the text).\n\nSource: docs/sche
- dule/schedule.yaml
+ ub (scored rules and the locked workflows)\; file the OSF update (Claude g
+ ives you the text).\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -674,6 +808,20 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nVideo call\; the o
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
+UID:sync-review-quarterly@2027-03-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270328
+DTEND;VALUE=DATE:20270329
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
+  passes\; findings to the author)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md\, three day
+ s before each provisional report so it starts from a consistent state. Fin
+ dings to the author as Confirmed / Fixed / Conflicts resolved / Still for 
+ you.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:draft-provisional@2027-04-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270401
@@ -920,6 +1068,20 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:sync-review-quarterly@2027-06-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270628
+DTEND;VALUE=DATE:20270629
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
+  passes\; findings to the author)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md\, three day
+ s before each provisional report so it starts from a consistent state. Fin
+ dings to the author as Confirmed / Fixed / Conflicts resolved / Still for 
+ you.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:draft-provisional@2027-07-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270701
@@ -1091,6 +1253,20 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:sync-review-quarterly@2027-09-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270928
+DTEND;VALUE=DATE:20270929
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
+  passes\; findings to the author)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md\, three day
+ s before each provisional report so it starts from a consistent state. Fin
+ dings to the author as Confirmed / Fixed / Conflicts resolved / Still for 
+ you.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:draft-provisional@2027-10-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271001
@@ -1260,6 +1436,20 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
  kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
  ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-review-quarterly@2027-12-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271228
+DTEND;VALUE=DATE:20271229
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
+  passes\; findings to the author)
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md\, three day
+ s before each provisional report so it starts from a consistent state. Fin
+ dings to the author as Confirmed / Fixed / Conflicts resolved / Still for 
+ you.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:draft-provisional@2028-01-01@internet-security-snapshot
@@ -1500,6 +1690,18 @@ DESCRIPTION:Responsible: Claude (claude)\n\nRe-run all four 2027 quarters o
  ness addendum to the annual check. Labels unchanged (decision item 21). Th
  e author approves.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:closing-rerun-approve@2028-04-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20280403T140000Z
+DTEND:20280403T143000Z
+SUMMARY:[Paul] Snapshot: Approve the 2027 closing re-run addendum
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of what cha
+ nged against each 2027 quarter's final report (scored labels do not change
+ \; decision item 21) and approve publishing it as an addendum to the annua
+ l check\, with its Zenodo archive.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2028-04-10@internet-security-snapshot

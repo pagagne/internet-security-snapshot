@@ -94,3 +94,9 @@ def test_reviewer_desk_tasks_match_feed():
     tasks = json.loads(S.REVIEWER_JSON.read_text())["tasks"]
     assert [t["uid"] for t in tasks] == [o["uid"] for o in S.reviewer_occ(S.expand(S.load()))]
     assert all(t["title"][:1].isupper() for t in tasks)
+
+
+def test_items_with_a_list_of_dates():
+    occ = [o for o in S.expand(S.load()) if o["id"] == "sync-review"]
+    assert [o["date"].isoformat() for o in occ][:2] == ["2026-10-25", "2026-11-02"]
+    assert len({o["uid"] for o in occ}) == len(occ)

@@ -7,6 +7,8 @@ name: Schedule
 on:
   schedule:
     - cron: "7 12 * * *"   # 12:07 UTC = 07:07 ET (08:07 in summer)
+    - cron: "37 15 * * *"  # backup: GitHub can drop scheduled runs (it skipped 25 Oct); the job
+                           # opens each issue only once, so a second run changes nothing
   workflow_dispatch:
     inputs:
       date:

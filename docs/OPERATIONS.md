@@ -20,7 +20,8 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
   feeds `docs/schedule/snapshot.ics` and `docs/schedule/reviewer.ics` and the Schedule table in `README.md` (from the
   `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
-- **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC. It opens each due
+- **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC, with a backup run at
+  15:37 UTC because GitHub sometimes drops scheduled runs (it skipped the first one, 25 Oct). It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never
   duplicate) and starts any `dispatch:` run that has no cron of its own, such as the 1 Dec dry
   run. If a day is missed, the next run catches up on anything from the previous 6 days.
@@ -37,6 +38,12 @@ send results by copying or saving them. It goes live with GitHub Pages on 4 Dec 
 then, a private preview is a Claude artifact. Worksheets are listed in
 `site/reviewer/worksheets.json`; its `draw_from` list (the headline figures reported that
 quarter) is what the reviewer's seeded draw picks from.
+
+## Sync review
+`docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
+scheduled tasks and the Reviewer's Desk in step: weekly until the cutover, then three days
+before each provisional report, and on request. Questions for the author are always asked
+together, in one list.
 
 ## Checking progress
 - **Run log:** the Schedule and Rebuild check workflows add a line to
