@@ -139,8 +139,15 @@ DESCRIPTION:Responsible: Paul (author)\n\nMoved from 15 Feb 2027 (17 Nov\,
   past work)\; how Censys helps and which access (BigQuery\; delayed data i
  s fine)\; how recent the data must be\; confirmation of non-commercial use
   and citing Censys\; agreement to the terms\; your Censys username (make a
- n account first). Log it in docs/PERMISSIONS.md (Claude can do the log).\n
- \nSource: docs/schedule/schedule.yaml
+ n account first). Log it in docs/PERMISSIONS.md (Claude can do the log). A
+ ccess to choose: option 2\, additional API endpoints and Censys credits (c
+ ounts by software version or CVE without host data\; enough credits for we
+ ekly counts on about 80-100 flaws a quarter\, a few hundred count queries 
+ a month). Not raw Parquet downloads (too large\; host data). Platform UI o
+ ptional. Two things to ask: (1) can count queries be run as of past dates\
+ , back to late 2025\, for a baseline year? (2) is BigQuery access also ava
+ ilable? It would run in the Google Cloud project set up on 29 Oct.\n\nSour
+ ce: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
