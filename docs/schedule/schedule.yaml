@@ -291,13 +291,15 @@ items:
 - id: annual-review
   owner: author
   title: Annual review and change window
-  repeat: {months: [3], day: 15, from: 2027-03, until: 2028-03}
+  repeat: {months: [3], day: 15, from: 2027-03, until: 2030-03}
   time: "11:00"
   minutes: 90
   details: >
     The one time each year core rules may change (docs/CHANGE_POLICY.md). Promotion
-    candidates; the AI-credit rule; any change run side by side for four quarters. From 2028:
-    approve the annual check against reference data.
+    candidates; the AI-credit rule; any change run side by side for four quarters. From 2028
+    (the annual wrap-up): review the annual check of the previous year's free results against
+    reference scan data and published insurance-claims and ransom-payment figures
+    (pre-registration section 13), and approve it for publishing.
 
 - id: external-review
   owner: reviewer
@@ -319,6 +321,22 @@ items:
   details: >
     prereg section 13: exposure reference if scan data was obtained by 31 Jan, harm reference
     always. For the author's approval at the 15 March 2028 review.
+
+- id: scan-data-confirm
+  owner: author
+  title: Confirm whether scan data was obtained for the annual check
+  repeat: {months: [1], day: 31, from: 2028-01, until: 2030-01}
+  details: >
+    Censys research access or a one-off licence, by 31 January. Tell Claude either way: it
+    decides whether the annual check includes the exposure reference.
+
+- id: annual-check-later
+  owner: claude
+  title: Draft the annual check against reference data (previous year)
+  repeat: {months: [3], day: 1, from: 2029-03, until: 2030-03}
+  details: >
+    As in 2028 (prereg section 13), for the previous year; for the author's approval at the
+    15 March annual review.
 
 - id: closing-rerun
   owner: claude

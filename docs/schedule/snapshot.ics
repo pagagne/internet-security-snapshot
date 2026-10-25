@@ -647,9 +647,11 @@ DTEND:20270315T163000Z
 SUMMARY:[Paul] Snapshot: Annual review and change window
 DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
- rule\; any change run side by side for four quarters. From 2028: approve t
- he annual check against reference data.\n\nSource: docs/schedule/schedule.
- yaml
+ rule\; any change run side by side for four quarters. From 2028 (the annua
+ l wrap-up): review the annual check of the previous year's free results ag
+ ainst reference scan data and published insurance-claims and ransom-paymen
+ t figures (pre-registration section 13)\, and approve it for publishing.\n
+ \nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1346,6 +1348,20 @@ DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:scan-data-confirm@2028-01-31@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280131
+DTEND;VALUE=DATE:20280201
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Confirm whether scan data was obtained for the ann
+ ual check
+DESCRIPTION:Responsible: Paul (author)\n\nCensys research access or a one-o
+ ff licence\, by 31 January. Tell Claude either way: it decides whether the
+  annual check includes the exposure reference.\n\nSource: docs/schedule/sc
+ hedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:final-summary@2028-02-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20280201
@@ -1452,9 +1468,11 @@ DTEND:20280315T163000Z
 SUMMARY:[Paul] Snapshot: Annual review and change window
 DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
- rule\; any change run side by side for four quarters. From 2028: approve t
- he annual check against reference data.\n\nSource: docs/schedule/schedule.
- yaml
+ rule\; any change run side by side for four quarters. From 2028 (the annua
+ l wrap-up): review the annual check of the previous year's free results ag
+ ainst reference scan data and published insurance-claims and ransom-paymen
+ t figures (pre-registration section 13)\, and approve it for publishing.\n
+ \nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1480,5 +1498,89 @@ DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in .github/wor
  kflows/rebuild-check.yml\; fails visibly if a file or figure differs.\n\nS
  ource: docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:scan-data-confirm@2029-01-31@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20290131
+DTEND;VALUE=DATE:20290201
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Confirm whether scan data was obtained for the ann
+ ual check
+DESCRIPTION:Responsible: Paul (author)\n\nCensys research access or a one-o
+ ff licence\, by 31 January. Tell Claude either way: it decides whether the
+  annual check includes the exposure reference.\n\nSource: docs/schedule/sc
+ hedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:annual-check-later@2029-03-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20290301
+DTEND;VALUE=DATE:20290302
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the annual check against reference data (p
+ revious year)
+DESCRIPTION:Responsible: Claude (claude)\n\nAs in 2028 (prereg section 13)\
+ , for the previous year\; for the author's approval at the 15 March annual
+  review.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:annual-review@2029-03-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20290315T150000Z
+DTEND:20290315T163000Z
+SUMMARY:[Paul] Snapshot: Annual review and change window
+DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
+  may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
+ rule\; any change run side by side for four quarters. From 2028 (the annua
+ l wrap-up): review the annual check of the previous year's free results ag
+ ainst reference scan data and published insurance-claims and ransom-paymen
+ t figures (pre-registration section 13)\, and approve it for publishing.\n
+ \nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:scan-data-confirm@2030-01-31@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20300131
+DTEND;VALUE=DATE:20300201
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Confirm whether scan data was obtained for the ann
+ ual check
+DESCRIPTION:Responsible: Paul (author)\n\nCensys research access or a one-o
+ ff licence\, by 31 January. Tell Claude either way: it decides whether the
+  annual check includes the exposure reference.\n\nSource: docs/schedule/sc
+ hedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:annual-check-later@2030-03-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20300301
+DTEND;VALUE=DATE:20300302
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the annual check against reference data (p
+ revious year)
+DESCRIPTION:Responsible: Claude (claude)\n\nAs in 2028 (prereg section 13)\
+ , for the previous year\; for the author's approval at the 15 March annual
+  review.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:annual-review@2030-03-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20300315T150000Z
+DTEND:20300315T163000Z
+SUMMARY:[Paul] Snapshot: Annual review and change window
+DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
+  may change (docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit 
+ rule\; any change run side by side for four quarters. From 2028 (the annua
+ l wrap-up): review the annual check of the previous year's free results ag
+ ainst reference scan data and published insurance-claims and ransom-paymen
+ t figures (pre-registration section 13)\, and approve it for publishing.\n
+ \nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 END:VCALENDAR

@@ -12,13 +12,15 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Author | Approve the provisional draft | day 2, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 10:00 ET |
 | Author | Quarterly hand-check window | day 4, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 (25 days) |
 | Author | Hand-check answers due by the 28th | day 25, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 10:00 ET |
+| Author | Confirm whether scan data was obtained for the annual check | day 31, Jan, 2028-01 to 2030-01 |
 | Author | Final-run check and approve the final results | day 2, Feb, May, Aug, Nov, 2027-02 to 2028-02, 10:00 ET |
-| Author | Annual review and change window | day 15, Mar, 2027-03 to 2028-03, 11:00 ET |
+| Author | Annual review and change window | day 15, Mar, 2027-03 to 2030-03, 11:00 ET |
 | External reviewer | Second coder - 20 blinded items | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 (14 days) |
 | Claude | Draft the provisional evaluation; load the hand-check lists | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
 | Claude | Score the second coder's sheet; publish agreement | day 13, Feb, May, Aug, Nov, 2027-05 to 2028-02 |
+| Claude | Draft the annual check against reference data (previous year) | day 1, Mar, 2029-03 to 2030-03 |
 | GitHub (automatic) | Quarterly pull, provisional run | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01, 06:00 UTC |
 | GitHub (automatic) | Rebuild check of the latest frozen bundle | day 10, every month, 2026-11 to 2028-04, 07:17 UTC |
 | GitHub (automatic) | Quarterly pull, final run | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02, 06:00 UTC |
@@ -136,6 +138,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 25 Jan 2028, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Sat 29 Jan 2028 to 11 Feb | Reviewer | Second coder - 20 blinded items |
 | Sat 29 Jan 2028 | Claude | Send the second coder this quarter's blinded sample |
+| Mon 31 Jan 2028 | Paul | Confirm whether scan data was obtained for the annual check |
 | Tue 01 Feb 2028 | Claude | Summarize provisional-to-final changes; prepare the release |
 | Tue 01 Feb 2028, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Wed 02 Feb 2028, 10:00 ET | Paul | Final-run check and approve the final results |
@@ -147,6 +150,12 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 15 Mar 2028, 11:00 ET | Paul | Annual review and change window |
 | Sat 01 Apr 2028 | Claude | 2027 closing re-run with full follow-up |
 | Mon 10 Apr 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Wed 31 Jan 2029 | Paul | Confirm whether scan data was obtained for the annual check |
+| Thu 01 Mar 2029 | Claude | Draft the annual check against reference data (previous year) |
+| Thu 15 Mar 2029, 11:00 ET | Paul | Annual review and change window |
+| Thu 31 Jan 2030 | Paul | Confirm whether scan data was obtained for the annual check |
+| Fri 01 Mar 2030 | Claude | Draft the annual check against reference data (previous year) |
+| Fri 15 Mar 2030, 11:00 ET | Paul | Annual review and change window |
 
 ## Author: dated items
 
