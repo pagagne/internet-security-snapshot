@@ -50,3 +50,39 @@ Until then this file collects the points to review. Nothing here changes a rule.
 [Implicator](https://www.implicator.ai/amazon-logged-a-php2shell-exploit-attempt-four-days-before-disclosure/),
 [Wiz CVE-2026-109618](https://www.wiz.io/vulnerability-database/cve/cve-2026-109618),
 [SecurityWeek headline](https://www.securityweek.com/php2shell-patches-land-as-first-exploitation-attempts-hit-sensors/amp/) (page not readable 25 Oct).
+
+## Patch information flow (added 26 Oct 2026, from TechCrunch 24 Oct, at the author's request)
+
+How knowledge of the flaws and of the fix spread, as reported (sources disagree where noted):
+
+| When | What | Who knew |
+|---|---|---|
+| 2024 (TechCrunch only) | Bugs first found, judged not exploitable, left unpatched. Conflicts with the other accounts (Calif found the first bug in Aug 2026 in an audit); unreconciled | Finders |
+| Aug 2026 | Calif finds the first bug in the OpenAI-funded audit; Wiz finds them independently | Finders, OpenAI, Wiz |
+| Date not reported | Calif alerts the PHP Foundation; coordinated disclosure under embargo; **patches given early to some large internet companies and web hosts** | Vendor + selected large operators |
+| From 17 Oct | Amazon's honeypots log exploitation attempts; Amazon tells defenders to check from 17 Oct. How the attacker learned of the bugs is unknown | Attackers (at least one) |
+| Days before 21 Oct | Details leak (Hacker News, reportedly the WSJ); **an unnamed company releases patches hours before the embargo ends** (PHP Foundation's complaint); release brought forward; Cloudflare WAF rules about 9 hours before | Anyone watching the leak or the early patch |
+| 21 Oct | PHP Foundation publishes patches; CISA alert the same day; CERT-EU and NCSC advise taking unpatched systems offline; outages (e.g. Belgium's Smartschool) | Everyone |
+| Late 23 Oct | Trail of Bits reports working exploits (two days after the public patch) | Researchers; exploit code not public |
+| 24 Oct | Cloudflare sees an exponential rise in attempts after disclosure; no mass exploitation yet | |
+
+**What it means for the study (points for 8 Feb; no rule change)**
+- **"Fix date" has three candidates here:** the embargoed early patch to selected operators
+  (date unknown), the leaked early release (hours before), and the public release (21 Oct).
+  The study's fix date is the public vendor release, which is right for the internet at
+  large, but the big operators were fixed earlier. Worth a hand-check note field "patched
+  early for selected parties (embargo)" and, where a date is known, recording it beside the
+  public date, so the race is not read as the same for everyone. The interval dates
+  (`fix_lo`/`fix_hi`, decision item 20) could carry it if the 21 Dec session agrees.
+- **Attack before the public fix:** attempts from 17 Oct, four days before 21 Oct, possibly
+  from the embargo leaking. A negative race value against the public fix; against an early
+  private patch it may not be. Free data still dates the first attack at the KEV listing.
+- **Patch to working exploit in two days** (Trail of Bits, by studying the fix): the
+  "patch to public exploit code" fingerprint (X6-X11) would show it only if code is
+  published to Exploit-DB, Metasploit or Nuclei.
+- **Embargo leaks as an attack path:** the early, uneven spread of patch information is
+  itself a risk the race measure cannot see; note it in the case note as context.
+- **Discovery date disputed** (2024 or Aug 2026): no measure uses discovery dates, so no
+  effect; record both.
+
+**Source:** [TechCrunch, 24 Oct 2026](https://techcrunch.com/2026/10/24/php-ocalypse-how-two-critical-web-bugs-almost-broke-the-internet/)
