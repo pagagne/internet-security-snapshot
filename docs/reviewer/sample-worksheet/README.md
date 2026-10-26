@@ -1,5 +1,9 @@
 # Sample spot-check worksheet: the race measure T1(a), Q3 2026
 
+> **New to the project?** Start with the [project README](../../../README.md) (what the study is, its
+> data sources and schedule) and the plain-language [How It Works](../../HOW_IT_WORKS.md). This
+> worksheet assumes you have read them.
+
 **This is a sample.** It shows exactly what a spot check of one headline figure involves. It
 uses real public data for Q3 2026 (100 flaws first added to CISA's Known Exploited
 Vulnerabilities list), but the fix dates are the automatic first pass, before the hand check
