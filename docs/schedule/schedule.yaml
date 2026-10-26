@@ -137,7 +137,9 @@ items:
   owner: claude
   title: Draft the permission follow-ups and update the log
   date: 2026-11-20
-  details: docs/PERMISSIONS.md; decision item 16 sets the 21 Dec cutoff.
+  details: >
+    docs/PERMISSIONS.md (request texts as sent, and the points for the Shadowserver
+    follow-up, including the hand-read fallback); decision item 16 sets the 21 Dec cutoff.
 
 - id: baseline-hand-check-1
   owner: author

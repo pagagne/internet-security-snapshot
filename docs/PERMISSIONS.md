@@ -62,6 +62,19 @@ of 26 Oct, although the confirmation promised one within 2 business days):
 **Shadowserver** (web contact form, topic "Dashboard Data/Visualization", ticket pqaytmyy):
 text not kept; no copy in the author's mail. What was asked is in the table above.
 
+**Points for the 20 Nov Shadowserver follow-up** (reply to contact@shadowserver.org with
+"[Ticket #pqaytmyy]" in the subject; Claude drafts, the author sends):
+- Recap: free, non-commercial, pre-registered study (OSF DOI 10.17605/OSF.IO/3XT82); aggregate
+  country- and CVE-level figures only, credited; no host-level data, nothing resold.
+- The specific ask: may the study download the public dashboard series for a short list of
+  named CVEs (about 12-100 a quarter) once a quarter, by a script or an API key, and publish
+  derived figures (exposure half-life, share still exposed) with credit?
+- The fallback, stated openly: if automated access isn't possible, the study would read those
+  few series by hand from the public dashboard each quarter and cite them; does that fit the
+  dashboard's terms?
+- Attribution: ask for their preferred credit wording.
+- Timing: decisions are fixed on 21 Dec 2026; a later yes is switched on the next quarter.
+
 ## Requests planned (25 Oct 2026 brainstorm)
 
 | Source | When | Channel | What will be asked | Status |

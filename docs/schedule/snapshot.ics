@@ -451,9 +451,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
  og
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/PERMISSIONS.md\; decision item 16 sets the 21
-  Dec cutoff.\n\nSource: https://github.com/pagagne/internet-security-snaps
- hot/blob/main/docs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/PERMISSIONS.md (request texts as sent\, and t
+ he points for the Shadowserver follow-up\, including the hand-read fallbac
+ k)\; decision item 16 sets the 21 Dec cutoff.\n\nSource: https://github.co
+ m/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

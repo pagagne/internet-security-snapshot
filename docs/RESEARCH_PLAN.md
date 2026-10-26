@@ -39,10 +39,18 @@ Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for
   (Exploit-DB, Metasploit, Nuclei) as an earlier "attack possible" date (exploratory X7).
 - Patch speed without exposure scans: for open-source flaws, share of downloads/dependents on
   the fixed version over time (npm, PyPI, deps.dev). Feasibility research.
-- Other exposure options: see the 25 Oct brainstorm (below). Censys application moved to
-  17 Nov 2026 (author's decision, 25 Oct); Shodan's academic tier needs a university email.
+- Other exposure options: see the 25 Oct brainstorm (below). Censys application on
+  28 Oct 2026, written by the author (decided 25 Oct); Shodan's academic tier needs a university email.
 - Free substitutes if a permission is refused: Shadowserver -> SANS ISC honeypot data plus
   HTTP Archive and deps.dev for patch adoption; VulnCheck -> EUVD plus inthewild.io.
+- **Shadowserver read by hand (added 26 Oct).** The public dashboard is free to use with
+  credit for research; only scraping and resale are forbidden. If no permission arrives, each
+  quarter the author (or Claude in a browser, never a script) looks up the dashboard series
+  for the cohort and race flaws that Shadowserver tracks, records the counts with the
+  dashboard link and date in a small credited table, and T1b/T2 are reported for those flaws
+  alone, marked "hand-read, coverage n of N". About 15-30 minutes a quarter; no automated
+  download. Mentioned in the 20 Nov follow-up so it is not mistaken for scraping, and logged
+  in `prereg/DEVIATIONS.md` if adopted for the pilot.
 - Fallback wording for core-v1.2: T1b and T2 "not measured" with the reason; T1(a) under
   option (a) becomes the headline race measure.
 

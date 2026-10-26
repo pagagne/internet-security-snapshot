@@ -132,7 +132,7 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "b618ba98fed19998",
+    "docs/PERMISSIONS.md": "2fc1a58fd5ccbcf9",
     ".github/workflows/quarterly-pull.yml": "3d3f388226a029cb",
     "tools/architecture_svg.py": "7cfa07300af7bf8c",
     "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
