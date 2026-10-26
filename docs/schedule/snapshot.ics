@@ -81,6 +81,21 @@ DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:ccri-draft@2026-10-26@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the CCRI outreach email and the second-cod
+ er role summary - done
+DESCRIPTION:Responsible: Claude (claude)\n\ndocs/reviewer/ccri-outreach.md 
+ (draft for the author to rewrite) and docs/reviewer/SECOND_CODER.md (one-p
+ age role summary). Author's decision\, 26 Oct: approach CCRI (the author's
+  alma mater\; NSA CAE in Cyber Defense) mainly for the second coder.\n\nSo
+ urce: docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:research-window@2026-10-26@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261026
@@ -259,6 +274,22 @@ DESCRIPTION:Responsible: Claude (claude)\n\ndocs/SYNC_REVIEW.md: repository
  / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cuto
  ver.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:ccri-email@2026-11-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261109T150000Z
+DTEND:20261109T152000Z
+SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
+ i route\, second coder)
+DESCRIPTION:Responsible: Paul (author)\n\nRewrite docs/reviewer/ccri-outrea
+ ch.md in your own words and send it to the program director (Michael Kelly
+  per CCRI's 2023 news)\, with docs/reviewer/SECOND_CODER.md. Mainly for th
+ e second coder\; also asks about CCRI graduates now in a bachelor's progra
+ mme for the full review. Disclose your alumni tie if a CCRI candidate is c
+ hosen (the invitation's conflict-of-interest section). Tell Claude\, who l
+ ogs it.\n\nSource: docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2026-11-10@internet-security-snapshot
@@ -740,8 +771,9 @@ SUMMARY:[Paul] Snapshot: Line up the external reviewer and second coder
 DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (docs/reviewe
  r/INVITATION.md\; edit the claude.ai doc "Invitation: Independent Reviewer
  ") with the sample spot-check worksheet (docs/reviewer/sample-worksheet)\;
-  candidates from the 21 Dec shortlist. The second coder can be the same pe
- rson. Confirm by 1 March.\n\nSource: docs/schedule/schedule.yaml
+  candidates from the 21 Dec shortlist\, including any CCRI candidates (sec
+ ond coder\; outreach 9 Nov). The second coder can be the same person. Conf
+ irm by 1 March.\n\nSource: docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

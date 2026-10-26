@@ -46,6 +46,28 @@ items:
     unpaid, remote research role on hireUGA (Handshake), and whether it is better listed as an
     unpaid internship with course credit. Note who you spoke with.
 
+- id: ccri-draft
+  owner: claude
+  title: Draft the CCRI outreach email and the second-coder role summary - done
+  date: 2026-10-26
+  details: >
+    docs/reviewer/ccri-outreach.md (draft for the author to rewrite) and
+    docs/reviewer/SECOND_CODER.md (one-page role summary). Author's decision, 26 Oct: approach
+    CCRI (the author's alma mater; NSA CAE in Cyber Defense) mainly for the second coder.
+
+- id: ccri-email
+  owner: author
+  title: Email CCRI's cybersecurity program director (alumni route, second coder)
+  date: 2026-11-09
+  time: "10:00"
+  minutes: 20
+  details: >
+    Rewrite docs/reviewer/ccri-outreach.md in your own words and send it to the program
+    director (Michael Kelly per CCRI's 2023 news), with docs/reviewer/SECOND_CODER.md. Mainly
+    for the second coder; also asks about CCRI graduates now in a bachelor's programme for the
+    full review. Disclose your alumni tie if a CCRI candidate is chosen (the invitation's
+    conflict-of-interest section). Tell Claude, who logs it.
+
 - id: project-email
   owner: author
   title: Create the project email address
@@ -440,7 +462,8 @@ items:
   minutes: 60
   details: >
     Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer") with the sample spot-check worksheet (docs/reviewer/sample-worksheet); candidates from
-    the 21 Dec shortlist. The second coder can be the same person. Confirm by 1 March.
+    the 21 Dec shortlist, including any CCRI candidates (second coder; outreach 9 Nov). The
+    second coder can be the same person. Confirm by 1 March.
 
 - id: ai-rule-prep
   owner: claude
