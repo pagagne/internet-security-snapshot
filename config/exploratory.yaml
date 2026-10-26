@@ -173,6 +173,20 @@ measures:
     feeds_labels: false
     status: active
     method: Dated log of open-weight model releases with strong coding or security ability (name, lab, country, licence, size, runs on a laptop). Used only as a timeline for reading changes in other measures.
+    amended_2026-10-26: >
+      Author's request: measure how fast capable open-weight models are being released
+      worldwide, automatically. Added, if the 27 Oct probe shows the data holds up:
+      (1) a monthly capture of new model repositories from a fixed list of major labs on the
+      Hugging Face Hub (public API: model name, lab, creation date, size; base and instruct
+      releases only, community fine-tunes excluded), each lab tagged with its country;
+      (2) Epoch AI's public model database (release date, country, open weights) as an
+      independent check; (3) a capability bar fixed before the 29 Dec freeze: a model
+      counts as "capable" when it scores at or above a set threshold on a public coding or
+      security benchmark. Reported each quarter: releases and capable releases per quarter by
+      country/region, the cumulative curve and its doubling time, and the gap in months
+      between the best open-weight model and the best closed model on the same benchmark.
+      Measures supply only: who downloads these models and what they do with them cannot be
+      seen; changes are read next to the attack-speed fingerprints (X6-X11), never as cause.
 
   - id: X13
     name: AI-credited versus other serious flaws, whole population

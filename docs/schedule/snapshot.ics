@@ -138,8 +138,10 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 26 Oct (https://gith
  the eight languages and fix them in https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/exploratory.yaml. Findings go to the 12 N
  ov research review\; any source that holds up becomes active before the 29
-  Dec freeze.\n\nSource: https://github.com/pagagne/internet-security-snaps
- hot/blob/main/docs/schedule/schedule.yaml
+  Dec freeze. Also the X12 amendment of 26 Oct (open-weight release rate): 
+ Hugging Face Hub API by lab\, Epoch AI's model database\, and candidate be
+ nchmarks for the "capable" bar.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
