@@ -389,7 +389,7 @@ The study costs nothing in cash. It runs on free services and free data, plus th
 ## Open questions
 
 1. **Substack.** Will posts about the study be free or paid? Free, or paid posts that only link to the site, keep the non-commercial sources usable. Project links are not shared publicly before 4 December 2026.
-2. **External reviewer.** Answered in part: the author has a candidate (a physics graduate with data-science experience) and plans to recruit an undergraduate from Georgia universities, starting with the University of Georgia. To confirm by 15 March 2027; the review window is 3–28 April 2027.
+2. **External reviewer.** Answered in part: a colleague in a related doctoral program is under consideration (the relationship would be disclosed), alongside students or graduates recruited through university postings (University of Georgia first) and the author's alma mater, CCRI (mainly for the second coder). To confirm by 1 March 2027; the review window is 3–28 April 2027.
 3. **Institutional home.** Publishing under your name, an organization or a university partner affects how the results are received, which free research programmes you qualify for, and whether university career boards accept a posting.
 
 Settled since 19 October: the GitHub repository is live (github.com/pagagne/internet-security-snapshot); Q4 2026 runs as the pilot and Q1 2027 as the first scored quarter; quarterly check-ins are on the author's calendar (approve the draft on the 2nd, hand checks from the 4th to the 28th, final-run check on the 2nd of the following month).

@@ -6,7 +6,7 @@
 
 Dear \[Name\],
 
-I'd like to ask you to be the independent reviewer for a research project I'm running through 2027: about 15 to 19 hours over roughly 14 months, more than half of it in April 2027. You're the person I thought of first. The job needs someone who reads data and calculations skeptically, cares more about whether a number is right than whether it tells a good story, and has no stake in the outcome. Your physics training and your data-science work are exactly that combination; no security background is needed.
+I'd like to ask you to be the independent reviewer for a research project I'm running through 2027: about 15 to 19 hours over roughly 14 months, more than half of it in April 2027. The job needs someone who reads data and calculations skeptically, cares more about whether a number is right than whether it tells a good story, and has no stake in the outcome. \[One sentence on why you thought of this person.\] No security background is needed.
 
 **The project in one paragraph.** The Internet Security Snapshot asks, every quarter, whether defenders are fixing exploitable software flaws faster than attackers start using them, and how artificial intelligence is changing that race on both sides. It uses only free public data: the public list of software flaws (CVE records), the U.S. government's list of flaws known to be attacked (CISA KEV), daily attack-likelihood scores, and company breach filings. The plan was registered publicly in advance on the Open Science Framework (DOI 10.17605/OSF.IO/3XT82, 20 October 2026), so the results cannot be bent to fit a story. A pilot quarter is reported in January 2027, the first scored quarter in April 2027, and a full year of comparable evidence by early 2028. All code and data are public on GitHub: github.com/pagagne/internet-security-snapshot.
 
@@ -78,7 +78,7 @@ The study uses only public data. You won't handle anything confidential or perso
 
 ## Next steps
 
-1. If you're interested, or want to know more first, reply to this message or call me. A no is completely fine.
+1. If you're interested, or want to know more first, reply to this message or call me. A no is completely fine. If your employer has rules on outside activities (government and many university employers do), please check them before agreeing; the review would be done in your personal capacity.
 2. We set up a one-hour call in January or February. I'll send the overview beforehand and answer anything you want to ask about the study or the commitment.
 3. If it still suits you after the call, I'll ask for your confirmation by 1 March 2027, so you can be named before the 15 March annual review.
 
