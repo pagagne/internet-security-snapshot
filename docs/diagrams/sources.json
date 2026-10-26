@@ -90,12 +90,12 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "b18bd6fa0ec3b193",
+    "README.md": "56a8bec0b654fb9d",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
-   "reviewed_on": "2026-10-25"
+   "reviewed_on": "2026-10-26"
   },
   "build_plan": {
    "doc": "docs/BUILD_PLAN.md",
