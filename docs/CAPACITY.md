@@ -47,8 +47,14 @@ under 1 MB of logs.
   ransomware.live aggregates only once permitted): about 2.6 GB for 2027, well inside Zenodo's
   50 GB per record.
 - **Logs and reports:** the run-reports branch, a few MB a year.
+- **Private backup:** the author's Google Drive (decided 26 Oct; `docs/BACKUP.md`): every
+  pull's full bundle, including private data and dry runs, and a monthly copy of the
+  repository; about 3 GB for 2027.
 
 ## Limits and risks
+Found on 26 Oct: nothing runs out of capacity in 2027. Two gaps, both closed by the Drive
+backup: full raw data (provisional runs, dry runs, private VulnCheck data) had no lasting home
+after GitHub's 90 days, and everything sat in one GitHub account.
 - Memory and disk are not a constraint: the largest step uses under a tenth of the runner's
   memory, and a full pull writes 0.2 GB against 92 GB free.
 - The real limits are outside GitHub: BigQuery's free 1 TB a month (each query capped in bytes),

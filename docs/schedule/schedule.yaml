@@ -81,6 +81,26 @@ items:
     a second coder. Disclose that you worked at SANS and that the study uses Internet Storm
     Center data; ask for someone you did not work with. Tell Claude, who logs it.
 
+- id: drive-backup-setup
+  owner: author
+  title: Set up the private Google Drive backup (rclone token into GitHub secrets)
+  date: 2026-11-10
+  time: "11:00"
+  minutes: 20
+  details: >
+    docs/BACKUP.md, steps 1-5, on your own computer: rclone remote "gdrive" (scope drive.file),
+    then its configuration into the GitHub secret RCLONE_CONF. Never paste the token in chat.
+    Tell Claude when done.
+
+- id: drive-backup-test
+  owner: claude
+  title: Test the Drive backup (repository copy and a pull bundle)
+  date: 2026-11-11
+  details: >
+    Run the Backup workflow by hand; confirm the repository bundle arrived and restores; check
+    it runs after the 1 Dec dry run. Add it to docs/WORKFLOWS.md and the lock list (support
+    workflow). Tell the author if the secret is missing.
+
 - id: project-email
   owner: author
   title: Create the project email address
@@ -510,7 +530,7 @@ items:
     run's bundle; quarterly pull inside the container; the daily honeypot collector). Draft the
     lock list for decision item 22: data workflows (quarterly pull, rebuild check, daily
     collectors, Dockerfile) locked like the core;
-    support workflows (Checks, Schedule, Diagrams, Research, Pages) under a change log.
+    support workflows (Checks, Schedule, Diagrams, Research, Pages, Backup) under a change log.
 
 - id: workflows-review
   owner: author
