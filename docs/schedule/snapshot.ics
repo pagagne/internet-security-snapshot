@@ -251,8 +251,13 @@ DESCRIPTION:Responsible: Claude\n\nOne small BigQuery query within the free
  fixed version\, 30 and 90 days after the fix). WordPress.org version stati
  stics work (probe 25 Oct: version shares per plugin\, today only)\, so the
  y need weekly capture to build history. Also deps.dev's BigQuery history f
- or the patch-adoption prototype.\n\nSource: https://github.com/pagagne/int
- ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or the patch-adoption prototype. First test case: PHP2Shell (fixed 21 Oct 
+ 2026\; author's concern of 26 Oct that many servers will stay unpatched): 
+ from the X-Powered-By PHP versions in the September\, October and November
+  crawls\, the share of PHP-reporting sites on a fixed release\, and the sh
+ are on releases that will never get a fix (PHP 5.4-7.3). Sites that hide t
+ heir version are not counted.\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

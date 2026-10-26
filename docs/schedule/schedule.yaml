@@ -260,7 +260,11 @@ items:
     recorded, propose an exploratory patch-adoption measure for web software (share of sites
     on the fixed version, 30 and 90 days after the fix). WordPress.org version statistics work
     (probe 25 Oct: version shares per plugin, today only), so they need weekly capture to build
-    history. Also deps.dev's BigQuery history for the patch-adoption prototype.
+    history. Also deps.dev's BigQuery history for the patch-adoption prototype. First test
+    case: PHP2Shell (fixed 21 Oct 2026; author's concern of 26 Oct that many servers will stay
+    unpatched): from the X-Powered-By PHP versions in the September, October and November
+    crawls, the share of PHP-reporting sites on a fixed release, and the share on releases
+    that will never get a fix (PHP 5.4-7.3). Sites that hide their version are not counted.
 
 - id: deps-dev-prototype
   owner: claude

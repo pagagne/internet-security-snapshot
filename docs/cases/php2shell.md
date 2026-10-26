@@ -43,7 +43,10 @@ Until then this file collects the points to review. Nothing here changes a rule.
 - X7: if the proof of concept reaches Exploit-DB, Metasploit or Nuclei, an earlier
   "attack possible" date.
 - T1b/T2 exposure: the defender side (PHP on about 70% of websites) needs scan data
-  (Shadowserver or Censys); not measured under Plan 2.
+  (Shadowserver or Censys); not measured under Plan 2. Without scans, HTTP Archive's monthly
+  crawl may show the share of sites reporting a fixed PHP version (test 2 Nov; author's
+  concern of 26 Oct that many servers will stay unpatched, above all those on end-of-life
+  PHP 5.4-7.3, which get no fix).
 - T5 +2 CVEs; T4 not an old flaw; T6 outages were defensive, not ransomware or 8-K.
 
 **Sources:** [The Next Web](https://thenextweb.com/news/php2shell-php-rce-ai-openai-wiz),
