@@ -185,7 +185,8 @@ measures:
       security benchmark. Reported each quarter: releases and capable releases per quarter by
       country/region, the cumulative curve and its doubling time, and the gap in months
       between the best open-weight model and the best closed model on the same benchmark.
-      Measures supply only: who downloads these models and what they do with them cannot be
+      History backfilled to January 2023 (author's choice, 26 Oct), so the curve and its
+      doubling time are known before the first 2027 report. Measures supply only: who downloads these models and what they do with them cannot be
       seen; changes are read next to the attack-speed fingerprints (X6-X11), never as cause.
 
   - id: X13
