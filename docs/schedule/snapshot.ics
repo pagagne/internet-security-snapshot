@@ -410,6 +410,37 @@ DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:drive-backup-setup@2026-11-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261110T160000Z
+DTEND:20261110T162000Z
+SUMMARY:[Paul] Snapshot: Set up the private Google Drive backup (rclone tok
+ en into GitHub secrets)
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/BACKUP.md\, steps 1-5\, on your own co
+ mputer: rclone remote "gdrive" (scope drive.file)\, then its configuration
+  into the GitHub secret RCLONE_CONF. Never paste the token in chat. Tell C
+ laude when done.\n\nSource: https://github.com/pagagne/internet-security-s
+ napshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:drive-backup-test@2026-11-11@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Test the Drive backup (repository copy and a pul
+ l bundle)
+DESCRIPTION:Responsible: Claude\n\nRun the Backup workflow by hand\; confir
+ m the repository bundle arrived and restores\; check it runs after the 1 D
+ ec dry run. Add it to https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/WORKFLOWS.md and the lock list (support workflow). Tell t
+ he author if the secret is missing.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:research-review-prep@2026-11-11@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261111
@@ -792,8 +823,8 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ot collector). Draft the lock list for decision item 22: data workflows (q
  uarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked like
   the core\; support workflows (Checks\, Schedule\, Diagrams\, Research\, P
- ages) under a change log.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+ ages\, Backup) under a change log.\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
