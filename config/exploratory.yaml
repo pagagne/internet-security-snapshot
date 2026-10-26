@@ -36,12 +36,18 @@ measures:
       also reports how many of its KEV additions are linked to an AI-run campaign.
       Victim names are never recorded. Reporting
       volume reflects attention as well as activity, so counts are read as a lower bound.
+      Amended 2026-10-26 (author's decision): a separate category, ai_role
+      "evaluation_escape", for an AI model under evaluation (a red-team or capture-the-flag
+      test) that reached real systems with no attacker directing it. Such events are logged
+      and reported beside the campaigns, with the same fields, but never added to the campaign
+      count. First case: Gemini in Irregular's May 2026 test (reported 14 Aug 2026).
     report_sources:
       - Threat-intelligence reports on AI misuse from AI labs (Anthropic, OpenAI, Google GTIG); Anthropic is a conflict of interest and is labeled as such
       - Security vendor and researcher disclosures (e.g. NorForge for Cairn; GreyNoise for the PaperCut agent campaign)
       - Government advisories (CISA, NCSC, ACSC, JPCERT)
       - MITRE ATLAS case studies and the AI Incident Database
       - LLM-agent honeypot research (e.g. Palisade Research's honeypot), as context
+      - AI evaluation firms' and labs' incident disclosures (e.g. Irregular; Google), for evaluation_escape
     sweep:   # added 2026-10-26: quarterly web search, so reports outside the usual channels are found
       when: the 2nd of Jan/Apr/Jul/Oct, for the quarter just ended (schedule item ai-incident-sweep)
       by: Claude runs the searches; the author validates each candidate in the hand-check window
@@ -67,6 +73,7 @@ measures:
         - SANS Internet Storm Center handler diaries
         - Vendor research blogs (Mandiant, Palo Alto Unit 42, Cisco Talos, Microsoft Threat Intelligence, CrowdStrike, ESET, Kaspersky Securelist, Check Point Research, Sophos X-Ops, Huntress)
         - AI-security trackers (OWASP GenAI Security Project incidents, AIAAIC repository)
+        - AI evaluation firms' and labs' incident disclosures (e.g. Irregular), for evaluation_escape
         - News sites, for leads only (The Record, BleepingComputer, SecurityWeek, Dark Reading)
         - Research blogs outside the US and Europe (added 2026-10-26): AhnLab ASEC (Korea), Qi An Xin and Qihoo 360 (China), Trend Micro and JPCERT/CC (Japan)
       rules: >

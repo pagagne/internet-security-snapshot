@@ -45,7 +45,8 @@ def test_ai_attack_campaign_log_is_well_formed():
     import csv
     rows = list(csv.DictReader((ROOT / "exploratory/ai_attack_campaigns.csv").open()))
     vectors = {"known_cve", "zero_day", "web_app_unknown", "credentials", "misconfiguration", "supply_chain", "phishing", "unknown"}
-    roles = {"agents_operated_intrusion", "ai_assisted_operator", "ai_generated_malware", "ai_enabled_fraud"}
+    roles = {"agents_operated_intrusion", "ai_assisted_operator", "ai_generated_malware", "ai_enabled_fraud",
+             "evaluation_escape"}   # logged beside campaigns, never counted as one (amended 2026-10-26)
     for r in rows:
         assert r["entry_vector"] in vectors, r["campaign"]
         assert r["ai_role"] in roles, r["campaign"]
