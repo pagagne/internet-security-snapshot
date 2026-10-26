@@ -25,6 +25,48 @@ and reports seven pre-registered tracking questions. A provisional evaluation is
   [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
   [`config/root_cause_map.yaml`](config/root_cause_map.yaml)
 
+## Data sources
+
+Status as of 26 Oct 2026. Terms, requests and replies are logged in
+[`docs/PERMISSIONS.md`](docs/PERMISSIONS.md); this table is updated with it. "Core" sources feed
+the pre-registered measures; "exploratory" ones are reported separately and never decide a label
+([`config/exploratory.yaml`](config/exploratory.yaml)).
+
+### In use: free and public, no permission needed
+
+| Source | What it gives the study | Role |
+|---|---|---|
+| CVE.org records (CVEProject/cvelistV5) | New flaws (T5), finder credits for AI involvement (T7), cohort dates and bug types | Core |
+| CISA Known Exploited Vulnerabilities (KEV) | First-attack dates for the race (T1a), time to exploitation (T3), age of exploited flaws (T4) | Core |
+| CISA Vulnrichment | CISA's "active exploitation" flag; bug type and severity where the CVE record lacks them | Core |
+| NVD API 2.0 | Severity, bug type and product matching (fallback) | Core |
+| FIRST EPSS | Daily exploitation-likelihood scores | Context |
+| SEC EDGAR | Breach filings, 8-K Item 1.05 (T6b) | Core |
+| Cloudflare Radar | Internet-wide attack and traffic trends | Context |
+| Vendor advisories and GitHub/OSV (Microsoft, Cisco, Palo Alto, GitHub advisories) | Fix dates for the race | Core |
+| Exploit-DB, Metasploit, Nuclei, GitHub | Dates public exploit code appeared | Core (cohort), exploratory (X7) |
+| Linux kernel commits | Fix dates for Linux flaws (being added, Nov 2026) | Core (fix-date pre-fill) |
+| Google Project Zero "0day In the Wild" | Independent check of the zero-day share | Exploratory (X15) |
+| SANS Internet Storm Center web honeypot | Attack activity by category, monthly, aggregates only | Exploratory, context (X14) |
+| deps.dev and OSV | Patch adoption for open-source packages (in testing) | Exploratory (X16) |
+| HTTP Archive and WordPress.org statistics | Patch adoption on websites (in testing) | Exploratory |
+| HHS OCR breach register | Health-sector hacking breaches (in testing) | Exploratory (X17) |
+
+### Awaiting permission or access
+
+| Source | What it would give the study | Request | Status |
+|---|---|---|---|
+| Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | Awaiting reply; follow-up 20 Nov |
+| VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Awaiting written permission; used privately only until then |
+| ransomware.live | Ransomware leak-site postings, aggregates only (T6a) | Asked 20 Oct 2026 | Awaiting reply |
+| Censys | Internet exposure counts (T1b, T2) and the annual check | Application 28 Oct 2026 | To send |
+| GreyNoise | Attack activity by CVE | Request 27 Oct 2026 | To send |
+| CrowdSec | Exploitation timelines by CVE | Question 27 Oct 2026 | To send |
+
+A source without a written yes by the 21 Dec 2026 decision session runs without it for the
+Q4 2026 pilot; a later yes is switched on at the next quarter's run. Gaps are never filled by
+estimation.
+
 ## Schedule
 
 <!-- schedule:begin -->

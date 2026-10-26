@@ -35,15 +35,16 @@ cannot see.
    `docs/OPERATIONS.md`; one-off check-ins are still needed, and none duplicate a schedule item
    after the cutover.
 9. GitHub issues: open `schedule` issues match what is due; done work is closed with a comment.
-10. Claude project docs (`claude/operations.md`, `claude/annual-plan.md`,
+10. The README's data-source tables match `docs/PERMISSIONS.md` (status of every request).
+11. Claude project docs (`claude/operations.md`, `claude/annual-plan.md`,
     `claude/handover-session-1.md`): re-upload any whose repository file changed.
 
 ## Pass 3: things that run on their own
-11. Workflow runs since the last review (Actions API and `reports/log/` on the `run-reports`
+12. Workflow runs since the last review (Actions API and `reports/log/` on the `run-reports`
     branch): every scheduled run happened and passed; any failure explained.
-12. The next automatic events (the next dispatched run, the next cron run): their inputs,
+13. The next automatic events (the next dispatched run, the next cron run): their inputs,
     permissions and dates are right.
-13. The Reviewer's Desk: open it in a browser, exercise each tab, check the task list and the
+14. The Reviewer's Desk: open it in a browser, exercise each tab, check the task list and the
     worksheets list; republish the private preview if `site/reviewer/` changed.
 
 ## Findings

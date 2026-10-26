@@ -118,10 +118,10 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "c8fb231e3fd9119c",
-    "README.md": "b18bd6fa0ec3b193",
+    "README.md": "56a8bec0b654fb9d",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-10-25"
+   "reviewed_on": "2026-10-26"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
@@ -132,12 +132,12 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "3f1ced1165d19414",
+    "docs/PERMISSIONS.md": "bef57bfe7a5659f7",
     ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
     "tools/architecture_svg.py": "7cfa07300af7bf8c",
     "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
    },
-   "reviewed_on": "2026-10-24"
+   "reviewed_on": "2026-10-26"
   }
  }
 }
