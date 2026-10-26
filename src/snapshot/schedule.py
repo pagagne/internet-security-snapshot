@@ -160,7 +160,8 @@ def _linked(text: str) -> str:
 
 
 def _description(o: dict) -> str:
-    parts = [f"Responsible: {RESPONSIBLE[o['owner']]} ({OWNER_NAME[o['owner']].lower()})", _linked(o["details"])]
+    who, role = RESPONSIBLE[o["owner"]], OWNER_NAME[o["owner"]]
+    parts = [f"Responsible: {who}" + ("" if role.lower().startswith(who.lower()) else f" ({role.lower()})"), _linked(o["details"])]
     if o["owner"] == "reviewer" or "reviewer" in o["feeds"]:
         parts.append(f"Reviewer's Desk (tasks, worksheets, second-coder rounds): {DESK_URL} (live from 4 Dec 2026)")
     parts.append(f"Source: {REPO_URL}/blob/main/docs/schedule/schedule.yaml")

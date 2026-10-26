@@ -201,19 +201,19 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
   <section class="panel" id="coder" role="tabpanel" aria-labelledby="tab-coder" hidden>
     <div class="box">
       <h2>Second-coder round</h2>
-      <p>Each quarter you receive a sheet of 20 items with Paul's answers removed. Open it here to work through the items one at a time with the written rule beside each, then save the completed sheet and send it back. About 45 minutes; the window is two weeks.</p>
+      <p>Each quarter you receive an answer file (CSV) of 20 items with Paul's answers removed. Open it here to work through the items one at a time with the written rule beside each, then save the completed file and send it back. About 45 minutes; the window is two weeks.</p>
       <div class="controls">
-        <label class="field" for="sheet"><span>Open your sheet (.csv)</span><input type="file" id="sheet" accept=".csv,text/csv"></label>
-        <button class="btn ghost" id="example" type="button">Try the example sheet</button>
+        <label class="field" for="sheet"><span>Open your answer file (.csv)</span><input type="file" id="sheet" accept=".csv,text/csv"></label>
+        <button class="btn ghost" id="example" type="button">Try the example file</button>
       </div>
-      <p class="note" id="sheetinfo">No sheet open.</p>
+      <p class="note" id="sheetinfo">No answer file open.</p>
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
     </div>
     <div class="box item" id="itembox" hidden></div>
     <div class="box" id="exportbox" hidden>
-      <h3>Send the completed sheet back</h3>
+      <h3>Send the completed answer file back</h3>
       <p class="small">Save the file and email it to Paul. Your answers never change his; they measure how often two careful people agree.</p>
-      <div class="controls"><button class="btn" id="dl" type="button">Save completed sheet</button><button class="btn ghost" id="copycsv" type="button">Copy as text</button></div>
+      <div class="controls"><button class="btn" id="dl" type="button">Save completed answer file</button><button class="btn ghost" id="copycsv" type="button">Copy as text</button></div>
       <div class="flash" id="csvflash"></div>
     </div>
   </section>
@@ -473,7 +473,7 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
   }).join(","))).join("\n") + "\n";
   async function openSheet(text, name) {
     const items = parseCSV(text);
-    if (!items.length || !("item_id" in items[0])) { $("#sheetinfo").textContent = "That file doesn't look like a second-coder sheet (no item_id column)."; return; }
+    if (!items.length || !("item_id" in items[0])) { $("#sheetinfo").textContent = "That file doesn't look like a second-coder answer file (no item_id column)."; return; }
     key = "coder:" + (await sha(items.map((r) => r.item_id).join("|"))).slice(0, 16);
     const saved = store.get(key, {});
     items.forEach((r) => Object.assign(r, saved[r.item_id] || {}));
@@ -527,8 +527,8 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
     const rd = new FileReader(); rd.onload = () => openSheet(String(rd.result), f.name); rd.readAsText(f);
   });
   $("#example").addEventListener("click", async () => {
-    try { const t = await (await fetch("second-coder-example.csv")).text(); openSheet(t, "Example sheet (7 practice items)"); }
-    catch (e) { $("#sheetinfo").textContent = "The example sheet could not be loaded."; }
+    try { const t = await (await fetch("second-coder-example.csv")).text(); openSheet(t, "Example file (7 practice items)"); }
+    catch (e) { $("#sheetinfo").textContent = "The example file could not be loaded."; }
   });
   $("#dl").addEventListener("click", () => {
     if (!sheet) return;

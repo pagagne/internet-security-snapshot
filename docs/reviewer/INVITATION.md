@@ -31,7 +31,7 @@ The role has two parts. You can say yes to both, or only the first.
 - Look at a sample of my hand decisions and their written rules.
 - Write a short review (two to five pages is plenty): what holds up, what doesn't, what you'd change. It is published as you write it, beside the final report on 1 May, with my response.
 
-**2. Second coder, each quarter (20 items).** After each quarter's hand check, a seeded sample of 20 of my decisions is sent to you with my answers removed. Most are fix dates: open the vendor's advisory and record when the fix was released, about one to two minutes each. A few ask whether a product is reachable from the internet, or whether a credit line says an AI tool helped find the flaw. You answer in a spreadsheet; written rules cover each case. Your answers never change mine; they measure how often two careful people agree, and the agreement rates are published every quarter.
+**2. Second coder, each quarter (20 items).** After each quarter's hand check, a seeded sample of 20 of my decisions is sent to you with my answers removed. Most are fix dates: open the vendor's advisory and record when the fix was released, about one to two minutes each. A few ask whether a product is reachable from the internet, or whether a credit line says an AI tool helped find the flaw. You answer on a web page, the Reviewer's Desk, which shows the written rule for each case and saves your answers to send back. Your answers never change mine; they measure how often two careful people agree, and the agreement rates are published every quarter.
 
 **Also welcome, never required:** a comment on any statistical method at any time (the project's labelling rule, its handling of uncertain dates, its interval estimates), and a seat at the 15 March 2027 annual review, the one time each year the scored rules may change.
 
@@ -57,7 +57,7 @@ Each second-coder round has a two-week window and can be done in one sitting, at
 
 - Comfort with spreadsheets and careful arithmetic. Reading Python helps but is not needed: every figure you check will come with a spreadsheet worksheet.
 - A free GitHub account, to leave comments and download the quarterly data bundles (reading the code needs no account).
-- A spreadsheet program (Excel, Google Sheets or similar) for the worksheets and the second-coder rounds.
+- A spreadsheet program (Excel, Google Sheets or similar) for the worksheets, if you recompute in your own tool; a guided option on the Reviewer's Desk works without one.
 - No cybersecurity background. Everything the role touches is explained in the project's documents, and I'll walk you through it on our first call.
 
 The study uses only public data. You won't handle anything confidential or personal.

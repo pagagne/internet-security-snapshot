@@ -52,15 +52,18 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270302
 DTEND;VALUE=DATE:20270303
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Send the reviewer the practice second-coder shee
- t (pilot quarter)
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch 2026Q4\; send the sheet (not the weights file) and the writte
- n rules. Unscored practice\; score it only to discuss on the onboarding ca
- ll.\n\nReviewer's Desk (tasks\, worksheets\, second-coder rounds): https:/
- /pagagne.github.io/internet-security-snapshot/reviewer/ (live from 4 Dec 2
- 026)\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
- /main/docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Send the reviewer the practice second-coder answ
+ er file (pilot quarter)
+DESCRIPTION:Responsible: Claude\n\nClaude emails the reviewer a small answe
+ r file (CSV) with 20 items from the pilot quarter\, Paul's answers removed
+ . Open it in the Reviewer's Desk (Second coder tab)\, work through the ite
+ ms with the written rules shown there\, then save the completed file and s
+ end it back. Practice only\, not scored\; discussed on the onboarding call
+ . (Claude: python -m snapshot.agreement sample --batch 2026Q4\; never send
+  the weights file.)\n\nReviewer's Desk (tasks\, worksheets\, second-coder 
+ rounds): https://pagagne.github.io/internet-security-snapshot/reviewer/ (l
+ ive from 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-securi
+ ty-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -70,12 +73,12 @@ DTSTART:20270304T150000Z
 DTEND:20270304T160000Z
 SUMMARY:[Paul] Snapshot: Onboarding call with the external reviewer
 DESCRIPTION:Responsible: Paul (author)\n\nWalk through the repository\, the
-  hand-check rules and the second-coder sheet\; answer questions\; go over 
- the practice round if done. Move the time to suit the reviewer.\n\nReviewe
- r's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.githu
- b.io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource
- : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
- edule/schedule.yaml
+  hand-check rules and the second-coder answer file in the Reviewer's Desk\
+ ; answer questions\; go over the practice round if done. Move the time to 
+ suit the reviewer.\n\nReviewer's Desk (tasks\, worksheets\, second-coder r
+ ounds): https://pagagne.github.io/internet-security-snapshot/reviewer/ (li
+ ve from 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -99,20 +102,20 @@ DTSTART;VALUE=DATE:20270402
 DTEND;VALUE=DATE:20270403
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the reviewer the Q1 2027 review packet
-DESCRIPTION:Responsible: Claude (claude)\n\nOnce the provisional Q1 2027 re
- port is approved: links to the report\, the registered plan\, https://gith
- ub.com/pagagne/internet-security-snapshot/blob/main/prereg/DEVIATIONS.md\,
-  the data bundle and the exact code commit\; the worksheet for every headl
- ine figure\; the sample of hand decisions with their rules\; a short revie
- w template (holds up / doesn't / would change). Before sending\, list in h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/site/review
- er/worksheets.json ("draw_from") the headline figures actually reported th
- is quarter and add their worksheets\; the reviewer draws three on the Revi
- ewer's Desk with a seed of their own (anyone can repeat it). Never choose 
- the figures.\n\nReviewer's Desk (tasks\, worksheets\, second-coder rounds)
- : https://pagagne.github.io/internet-security-snapshot/reviewer/ (live fro
- m 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-snap
- shot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nOnce the provisional Q1 2027 report is a
+ pproved: links to the report\, the registered plan\, https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/prereg/DEVIATIONS.md\, the data
+  bundle and the exact code commit\; the worksheet for every headline figur
+ e\; the sample of hand decisions with their rules\; a short review templat
+ e (holds up / doesn't / would change). Before sending\, list in https://gi
+ thub.com/pagagne/internet-security-snapshot/blob/main/site/reviewer/worksh
+ eets.json ("draw_from") the headline figures actually reported this quarte
+ r and add their worksheets\; the reviewer draws three on the Reviewer's De
+ sk with a seed of their own (anyone can repeat it). Never choose the figur
+ es.\n\nReviewer's Desk (tasks\, worksheets\, second-coder rounds): https:/
+ /pagagne.github.io/internet-security-snapshot/reviewer/ (live from 4 Dec 2
+ 026)\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -175,14 +178,16 @@ DTEND;VALUE=DATE:20270430
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -193,12 +198,12 @@ DTEND;VALUE=DATE:20270502
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Publish the external review beside the Q1 2027 f
  inal report
-DESCRIPTION:Responsible: Claude (claude)\n\nReview unedited\, the author's 
- response\, the reviewer's disclosed ties and credit\; archived with the re
- lease (Zenodo). Send the reviewer the link.\n\nReviewer's Desk (tasks\, wo
- rksheets\, second-coder rounds): https://pagagne.github.io/internet-securi
- ty-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nReview unedited\, the author's response\
+ , the reviewer's disclosed ties and credit\; archived with the release (Ze
+ nodo). Send the reviewer the link.\n\nReviewer's Desk (tasks\, worksheets\
+ , second-coder rounds): https://pagagne.github.io/internet-security-snapsh
+ ot/reviewer/ (live from 4 Dec 2026)\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -225,14 +230,16 @@ DTEND;VALUE=DATE:20270730
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -259,14 +266,16 @@ DTEND;VALUE=DATE:20271030
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -293,14 +302,16 @@ DTEND;VALUE=DATE:20280130
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

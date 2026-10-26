@@ -16,12 +16,12 @@ DTEND;VALUE=DATE:20261026
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Patch-adoption prototype from deps.dev (open-sou
  rce flaws) - snapshot run
-DESCRIPTION:Responsible: Claude (claude)\n\nResearch probe depsdev_adoption
- \, 25 Oct: today's share of dependents on affected versions for attacked o
- pen-source flaws (deps.dev free API). History over time needs deps.dev's B
- igQuery tables (httparchive-test\, after the BigQuery project).\n\nSource:
-  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
- dule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nResearch probe depsdev_adoption\, 25 Oct
+ : today's share of dependents on affected versions for attacked open-sourc
+ e flaws (deps.dev free API). History over time needs deps.dev's BigQuery t
+ ables (httparchive-test\, after the BigQuery project).\n\nSource: https://
+ github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -32,13 +32,12 @@ DTEND;VALUE=DATE:20261026
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Monthly honeypot capture (SANS ISC)\, aggregates
   only - built
-DESCRIPTION:Responsible: Claude (claude)\n\nBuilt and first run 25 Oct (exp
- loratory X14\, context only\; https://github.com/pagagne/internet-security
- -snapshot/blob/main/.github/workflows/honeypot.yml\, 2nd of each month\; d
- ata/isc-honeypot/ on run-reports\, about 40 KB a capture). First capture: 
- 10.2 million URLs\, 304 attack categories\, 241 CVEs.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
+DESCRIPTION:Responsible: Claude\n\nBuilt and first run 25 Oct (exploratory 
+ X14\, context only\; https://github.com/pagagne/internet-security-snapshot
+ /blob/main/.github/workflows/honeypot.yml\, 2nd of each month\; data/isc-h
+ oneypot/ on run-reports\, about 40 KB a capture). First capture: 10.2 mill
+ ion URLs\, 304 attack categories\, 241 CVEs.\n\nSource: https://github.com
+ /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -48,12 +47,11 @@ DTSTART;VALUE=DATE:20261025
 DTEND;VALUE=DATE:20261026
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Linux kernel fix dates - probe run
-DESCRIPTION:Responsible: Claude (claude)\n\nProbe 25 Oct: 5 of 8 kernel fla
- ws added to KEV in Jan-Sep 2026 are dated from fixing commits\, a median 2
- 2 days before CVE publication (the 3 others are older Red Hat records with
- out commits). Follow-up: kernel-fixdates-prefill.\n\nSource: https://githu
- b.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.
- yaml
+DESCRIPTION:Responsible: Claude\n\nProbe 25 Oct: 5 of 8 kernel flaws added 
+ to KEV in Jan-Sep 2026 are dated from fixing commits\, a median 22 days be
+ fore CVE publication (the 3 others are older Red Hat records without commi
+ ts). Follow-up: kernel-fixdates-prefill.\n\nSource: https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -64,10 +62,10 @@ DTEND;VALUE=DATE:20261026
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Back-test KEV's lag against EUVD\, Project Zero'
  s sheet and inthewild.io - first run
-DESCRIPTION:Responsible: Claude (claude)\n\nResearch probe kev_lag (KEV add
- itions Jan-Sep 2026)\, first runs 25 Oct\; results and their limits go to 
- the 12 Nov research review.\n\nSource: https://github.com/pagagne/internet
- -security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nResearch probe kev_lag (KEV additions Ja
+ n-Sep 2026)\, first runs 25 Oct\; results and their limits go to the 12 No
+ v research review.\n\nSource: https://github.com/pagagne/internet-security
+ -snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -78,13 +76,13 @@ DTEND;VALUE=DATE:20261026
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync be
- tween repository\, Claude docs\, calendars and scheduled tasks\, and every
- thing that runs on its own. Findings to the author as Confirmed / Fixed / 
- Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -95,14 +93,13 @@ DTEND;VALUE=DATE:20261027
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the CCRI outreach email and the second-cod
  er role summary - done
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/reviewer/ccri-outreach.md (draft for
-  the author to rewrite) and https://github.com/pagagne/internet-security-s
- napshot/blob/main/docs/reviewer/SECOND_CODER.md (one-page role summary). A
- uthor's decision\, 26 Oct: approach CCRI (the author's alma mater\; NSA CA
- E in Cyber Defense) mainly for the second coder.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/reviewer/ccri-outreach.md (draft for the auth
+ or to rewrite) and https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/reviewer/SECOND_CODER.md (one-page role summary). Author's d
+ ecision\, 26 Oct: approach CCRI (the author's alma mater\; NSA CAE in Cybe
+ r Defense) mainly for the second coder.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -112,14 +109,14 @@ DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Continue the research window
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/RESEARCH_PLAN.md: item 5 (an on/off 
- switch per permissioned source in config)\, then item 4 (remaining evaluat
- ion code: labels T2\, T4-T6\; X6-X12\; NVD root-cause fill\; draft evaluat
- ion page)\; consider CISA's active-exploitation assessment date as a resea
- rch-flag T_exploit candidate\; then Plan 1 / Plan 2 research. Report to th
- e author only findings worth knowing.\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/RESEARCH_PLAN.md: item 5 (an on/off switch pe
+ r permissioned source in config)\, then item 4 (remaining evaluation code:
+  labels T2\, T4-T6\; X6-X12\; NVD root-cause fill\; draft evaluation page)
+ \; consider CISA's active-exploitation assessment date as a research-flag 
+ T_exploit candidate\; then Plan 1 / Plan 2 research. Report to the author 
+ only findings worth knowing.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -208,13 +205,13 @@ DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: HHS OCR health-breach series - second attempt at
   the export
-DESCRIPTION:Responsible: Claude (claude)\n\nProbe 25 Oct: the portal answer
- s\, but its CSV export is a form the probe did not trigger. Second attempt
-  with the form's real fields\; if it still fails\, the public research cop
- ies of the same register are checked for terms. Quarterly counts of "hacki
- ng/IT incident" breaches of 500+ people\; aggregates only\, beside T6.\n\n
- Source: https://github.com/pagagne/internet-security-snapshot/blob/main/do
- cs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nProbe 25 Oct: the portal answers\, but i
+ ts CSV export is a form the probe did not trigger. Second attempt with the
+  form's real fields\; if it still fails\, the public research copies of th
+ e same register are checked for terms. Quarterly counts of "hacking/IT inc
+ ident" breaches of 500+ people\; aggregates only\, beside T6.\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -225,14 +222,14 @@ DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: HTTP Archive test - are software versions record
  ed? (after the BigQuery project)
-DESCRIPTION:Responsible: Claude (claude)\n\nOne small BigQuery query within
-  the free tier\, with a per-query byte cap. If versions are recorded\, pro
- pose an exploratory patch-adoption measure for web software (share of site
- s on the fixed version\, 30 and 90 days after the fix). WordPress.org vers
- ion statistics work (probe 25 Oct: version shares per plugin\, today only)
- \, so they need weekly capture to build history. Also deps.dev's BigQuery 
- history for the patch-adoption prototype.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nOne small BigQuery query within the free
+  tier\, with a per-query byte cap. If versions are recorded\, propose an e
+ xploratory patch-adoption measure for web software (share of sites on the 
+ fixed version\, 30 and 90 days after the fix). WordPress.org version stati
+ stics work (probe 25 Oct: version shares per plugin\, today only)\, so the
+ y need weekly capture to build history. Also deps.dev's BigQuery history f
+ or the patch-adoption prototype.\n\nSource: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -243,13 +240,13 @@ DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Add kernel commit dates (and more CSAF vendors) 
  to the fix-date pre-fill
-DESCRIPTION:Responsible: Claude (claude)\n\nsnapshot.fixdates.prefill_explo
- ited: fixing commits from kernel CVE records dated through the GitHub mirr
- ors\; Debian/Ubuntu trackers as a cross-check\; CSAF feeds of further vend
- ors (Siemens\, Red Hat\, SUSE) where they cover attacked flaws. Measure th
- e drop in "assumed" dates on the 175-flaw probe. Code change by pull reque
- st\, before the 14 Dec review.\n\nSource: https://github.com/pagagne/inter
- net-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nsnapshot.fixdates.prefill_exploited: fix
+ ing commits from kernel CVE records dated through the GitHub mirrors\; Deb
+ ian/Ubuntu trackers as a cross-check\; CSAF feeds of further vendors (Siem
+ ens\, Red Hat\, SUSE) where they cover attacked flaws. Measure the drop in
+  "assumed" dates on the 175-flaw probe. Code change by pull request\, befo
+ re the 14 Dec review.\n\nSource: https://github.com/pagagne/internet-secur
+ ity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -260,13 +257,13 @@ DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync be
- tween repository\, Claude docs\, calendars and scheduled tasks\, and every
- thing that runs on its own. Findings to the author as Confirmed / Fixed / 
- Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -290,13 +287,13 @@ DTEND;VALUE=DATE:20261110
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync be
- tween repository\, Claude docs\, calendars and scheduled tasks\, and every
- thing that runs on its own. Findings to the author as Confirmed / Fixed / 
- Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -324,11 +321,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261110T071700Z
 DTEND:20261110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -356,13 +352,13 @@ DTEND;VALUE=DATE:20261117
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync be
- tween repository\, Claude docs\, calendars and scheduled tasks\, and every
- thing that runs on its own. Findings to the author as Confirmed / Fixed / 
- Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -385,10 +381,10 @@ DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Run the validation and report pass/fail
-DESCRIPTION:Responsible: Claude (claude)\n\nsnapshot.validate against https
- ://github.com/pagagne/internet-security-snapshot/blob/main/prereg/ground_t
- ruth_reference.csv (pass = 4 of 5 cases).\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nsnapshot.validate against https://github
+ .com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_refe
+ rence.csv (pass = 4 of 5 cases).\n\nSource: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -412,10 +408,10 @@ DTEND;VALUE=DATE:20261121
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
  og
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/PERMISSIONS.md\; decision item 16 se
- ts the 21 Dec cutoff.\n\nSource: https://github.com/pagagne/internet-secur
- ity-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/PERMISSIONS.md\; decision item 16 sets the 21
+  Dec cutoff.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -440,13 +436,13 @@ DTEND;VALUE=DATE:20261124
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync be
- tween repository\, Claude docs\, calendars and scheduled tasks\, and every
- thing that runs on its own. Findings to the author as Confirmed / Fixed / 
- Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -494,11 +490,11 @@ DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Race fix-date list ready in the Hand Check app
-DESCRIPTION:Responsible: Claude (claude)\n\nList builder in snapshot.review
- \, report table and time estimate\, alongside snapshot.race.t1_kev_race an
- d X10\; read the app artifact before republishing. Tell the author only if
-  something will not be ready for 1-2 Dec.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nList builder in snapshot.review\, report
+  table and time estimate\, alongside snapshot.race.t1_kev_race and X10\; r
+ ead the app artifact before republishing. Tell the author only if somethin
+ g will not be ready for 1-2 Dec.\n\nSource: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -509,20 +505,19 @@ DTEND;VALUE=DATE:20261128
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Build the project website and its publishing wor
  kflow (ready for 4 Dec)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/site/index.html (landing page: what the s
- tudy is\, links to the plan\, reports and the Reviewer's Desk at https://g
- ithub.com/pagagne/internet-security-snapshot/tree/main/site/reviewer) and 
- https://github.com/pagagne/internet-security-snapshot/blob/main/.github/wo
- rkflows/pages.yml (publishes the https://github.com/pagagne/internet-secur
- ity-snapshot/tree/main/site folder with GitHub's official Pages actions\, 
- pinned by commit\, on pushes to main that touch https://github.com/pagagne
- /internet-security-snapshot/tree/main/site and by hand). Test the pages lo
- cally\; the workflow is switched on by the author on 4 Dec (Settings > Pag
- es > Source: GitHub Actions). Address: https://pagagne.github.io/internet-
- security-snapshot/ \; the Desk at .../reviewer/.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/site/index.html (landing page: what the study is\,
+  links to the plan\, reports and the Reviewer's Desk at https://github.com
+ /pagagne/internet-security-snapshot/tree/main/site/reviewer) and https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/p
+ ages.yml (publishes the https://github.com/pagagne/internet-security-snaps
+ hot/tree/main/site folder with GitHub's official Pages actions\, pinned by
+  commit\, on pushes to main that touch https://github.com/pagagne/internet
+ -security-snapshot/tree/main/site and by hand). Test the pages locally\; t
+ he workflow is switched on by the author on 4 Dec (Settings > Pages > Sour
+ ce: GitHub Actions). Address: https://pagagne.github.io/internet-security-
+ snapshot/ \; the Desk at .../reviewer/.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -533,14 +528,14 @@ DTEND;VALUE=DATE:20261201
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Cutover check (study no longer depends on one Cl
  aude chat)
-DESCRIPTION:Responsible: Claude (claude)\n\nConfirm: the Schedule workflow 
- has run green for 7 days\; the author has subscribed to the calendar feed\
- ; the Claude work-queue scheduled task is live\; https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/OPERATIONS.md is current. Then
-  retire any remaining one-off check-ins in the old chat. https://github.co
- m/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md.\n\nSour
- ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
- chedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
+ reen for 7 days\; the author has subscribed to the calendar feed\; the Cla
+ ude work-queue scheduled task is live\; https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/OPERATIONS.md is current. Then retire a
+ ny remaining one-off check-ins in the old chat. https://github.com/pagagne
+ /internet-security-snapshot/blob/main/docs/OPERATIONS.md.\n\nSource: https
+ ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
+ chedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -551,13 +546,13 @@ DTEND;VALUE=DATE:20261201
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync be
- tween repository\, Claude docs\, calendars and scheduled tasks\, and every
- thing that runs on its own. Findings to the author as Confirmed / Fixed / 
- Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -568,9 +563,9 @@ DTEND;VALUE=DATE:20261202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the dry-run quality report\; prepare the ha
  nd-check lists
-DESCRIPTION:Responsible: Claude (claude)\n\nLoad the review lists (includin
- g the race list) into the Hand Check app.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nLoad the review lists (including the rac
+ e list) into the Hand Check app.\n\nSource: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -579,10 +574,9 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261201T110000Z
 DTEND:20261201T114000Z
 SUMMARY:[GitHub] Snapshot: Dry run of the quarterly pull (Oct-Nov data)
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nStarted by the Sche
- dule workflow (December has no cron). Unscored.\n\nSource: https://github.
- com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
- ml
+DESCRIPTION:Responsible: GitHub\n\nStarted by the Schedule workflow (Decemb
+ er has no cron). Unscored.\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -648,11 +642,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261210T071700Z
 DTEND:20261210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -663,17 +656,17 @@ DTEND;VALUE=DATE:20261215
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Document and test every GitHub workflow\; draft 
  the lock list
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/WORKFLOWS.md: for each workflow\, wh
- at starts it\, its permissions and secrets\, inputs and outputs\, what hap
- pens on failure and who notices\, and its latest successful run (link). Ru
- n any workflow without a successful run since its last change (rebuild che
- ck on the dry run's bundle\; quarterly pull inside the container\; the dai
- ly honeypot collector). Draft the lock list for decision item 22: data wor
- kflows (quarterly pull\, rebuild check\, daily collectors\, Dockerfile) lo
- cked like the core\; support workflows (Checks\, Schedule\, Diagrams\, Res
- earch\, Pages) under a change log.\n\nSource: https://github.com/pagagne/i
- nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/WORKFLOWS.md: for each workflow\, what starts
+  it\, its permissions and secrets\, inputs and outputs\, what happens on f
+ ailure and who notices\, and its latest successful run (link). Run any wor
+ kflow without a successful run since its last change (rebuild check on the
+  dry run's bundle\; quarterly pull inside the container\; the daily honeyp
+ ot collector). Draft the lock list for decision item 22: data workflows (q
+ uarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked like
+  the core\; support workflows (Checks\, Schedule\, Diagrams\, Research\, P
+ ages) under a change log.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -710,10 +703,10 @@ DTSTART;VALUE=DATE:20261222
 DTEND;VALUE=DATE:20261223
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the core freeze (core-v1.2)
-DESCRIPTION:Responsible: Claude (claude)\n\nDeviation rows\, LOCKED.yaml ch
- ecksums (including the workflows locked under decision item 22)\, freeze s
- ummary and the OSF update text.\n\nSource: https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nDeviation rows\, LOCKED.yaml checksums (
+ including the workflows locked under decision item 22)\, freeze summary an
+ d the OSF update text.\n\nSource: https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -724,12 +717,12 @@ DTEND;VALUE=DATE:20261229
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before e
- ach provisional report so it starts from a consistent state. Findings to t
- he author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -752,10 +745,10 @@ DTEND;VALUE=DATE:20270102
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
- nly\; read the data-quality report\; load the quarter's review lists (with
-  20 re-shown items) into the Hand Check app.\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nFrom the run's frozen outputs only\; rea
+ d the data-quality report\; load the quarter's review lists (with 20 re-sh
+ own items) into the Hand Check app.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -764,11 +757,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270101T060000Z
 DTEND:20270101T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource: https://
- github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
- dule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -816,16 +808,16 @@ DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch case
- s": every flaw published in the quarter just ended with CVSS 9.0 or more t
- hat at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, C
- ERT-In) issued an alert or advisory for\; if more than two\, two by the se
- eded draw. Each gets an inquiry-log entry (https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/INQUIRIES.md) and a case note in htt
- ps://github.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch cases": every
+  flaw published in the quarter just ended with CVSS 9.0 or more that at le
+ ast one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, CERT-In) i
+ ssued an alert or advisory for\; if more than two\, two by the seeded draw
+ . Each gets an inquiry-log entry (https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/INQUIRIES.md) and a case note in https://gith
+ ub.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -834,11 +826,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270110T071700Z
 DTEND:20270110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -866,18 +857,18 @@ DTEND;VALUE=DATE:20270121
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Build the figure worksheets for the reviewer's s
  pot check
-DESCRIPTION:Responsible: Claude (claude)\n\nExtend the sample (https://gith
- ub.com/pagagne/internet-security-snapshot/tree/main/docs/reviewer/sample-w
- orksheet\, snapshot.worksheet race-sample) to a worksheet per headline fig
- ure (T1-T7)\, generated with every release: the plan's definition in plain
-  words\, the inputs as a CSV a spreadsheet opens\, the steps from inputs t
- o figure\, and the published value to match\, listed in https://github.com
- /pagagne/internet-security-snapshot/blob/main/site/reviewer/worksheets.jso
- n for the Reviewer's Desk (whose seeded draw picks three). Test on the Q4 
- 2026 pilot (provisional 1 Jan) so a worksheet can be tried in the practice
-  round. Check that each worksheet can be followed in a spreadsheet with no
-  code.\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
- ob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nExtend the sample (https://github.com/pa
+ gagne/internet-security-snapshot/tree/main/docs/reviewer/sample-worksheet\
+ , snapshot.worksheet race-sample) to a worksheet per headline figure (T1-T
+ 7)\, generated with every release: the plan's definition in plain words\, 
+ the inputs as a CSV a spreadsheet opens\, the steps from inputs to figure\
+ , and the published value to match\, listed in https://github.com/pagagne/
+ internet-security-snapshot/blob/main/site/reviewer/worksheets.json for the
+  Reviewer's Desk (whose seeded draw picks three). Test on the Q4 2026 pilo
+ t (provisional 1 Jan) so a worksheet can be tried in the practice round. C
+ heck that each worksheet can be followed in a spreadsheet with no code.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -888,14 +879,14 @@ DTEND;VALUE=DATE:20270126
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Outside AI-found CVE lists against our AI-credit
   counts\, on pilot data
-DESCRIPTION:Responsible: Claude (claude)\n\nPrototype 25 Oct (research prob
- e ai_lists): of 5 outside AI-found CVEs with records\, the headline rule c
- aught 3\, the narrow 0\, and 2 (Microsoft\, Apple) have empty credit field
- s: those vendors credit finders only in their own advisories. For 8 Feb: r
- erun on the pilot\, and test vendor acknowledgments (Microsoft's update gu
- ide\, Apple's security notes) as an exploratory source for T7.\n\nSource: 
- https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
- ule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nPrototype 25 Oct (research probe ai_list
+ s): of 5 outside AI-found CVEs with records\, the headline rule caught 3\,
+  the narrow 0\, and 2 (Microsoft\, Apple) have empty credit fields: those 
+ vendors credit finders only in their own advisories. For 8 Feb: rerun on t
+ he pilot\, and test vendor acknowledgments (Microsoft's update guide\, App
+ le's security notes) as an exploratory source for T7.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -917,10 +908,10 @@ DTEND;VALUE=DATE:20270202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
-  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
- hedule.yaml
+DESCRIPTION:Responsible: Claude\n\nLate KEV listings and credits\, hand-che
+ ck answers\, agreement scores\; Zenodo archive.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -929,11 +920,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270201T060000Z
 DTEND:20270201T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-final.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -955,12 +945,12 @@ DTSTART;VALUE=DATE:20270203
 DTEND;VALUE=DATE:20270204
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the 8 Feb session
-DESCRIPTION:Responsible: Claude (claude)\n\nAI-credit rule evaluation on th
- e pilot's final data (headline vs narrow count\, a sample of lab-affiliati
- on-only credits\, spot checks) and the PHP2Shell case note https://github.
- com/pagagne/internet-security-snapshot/blob/main/docs/cases/php2shell.md. 
- Send the author a heads-up.\n\nSource: https://github.com/pagagne/internet
- -security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nAI-credit rule evaluation on the pilot's
+  final data (headline vs narrow count\, a sample of lab-affiliation-only c
+ redits\, spot checks) and the PHP2Shell case note https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/cases/php2shell.md. Send the 
+ author a heads-up.\n\nSource: https://github.com/pagagne/internet-security
+ -snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -981,11 +971,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270210T071700Z
 DTEND:20270210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1064,12 +1053,12 @@ DTSTART;VALUE=DATE:20270302
 DTEND;VALUE=DATE:20270303
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Record the confirmed reviewer
-DESCRIPTION:Responsible: Claude (claude)\n\nAdd the reviewer as a contribut
- or (name or initials as they asked\, ORCID) to .zenodo.json and the report
-  template\; record their disclosed ties for publication beside the review.
-  Never put their email or phone in the public repository.\n\nSource: https
- ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
- chedule.yaml
+DESCRIPTION:Responsible: Claude\n\nAdd the reviewer as a contributor (name 
+ or initials as they asked\, ORCID) to .zenodo.json and the report template
+ \; record their disclosed ties for publication beside the review. Never pu
+ t their email or phone in the public repository.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1078,15 +1067,18 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270302
 DTEND;VALUE=DATE:20270303
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Send the reviewer the practice second-coder shee
- t (pilot quarter)
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch 2026Q4\; send the sheet (not the weights file) and the writte
- n rules. Unscored practice\; score it only to discuss on the onboarding ca
- ll.\n\nReviewer's Desk (tasks\, worksheets\, second-coder rounds): https:/
- /pagagne.github.io/internet-security-snapshot/reviewer/ (live from 4 Dec 2
- 026)\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
- /main/docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Send the reviewer the practice second-coder answ
+ er file (pilot quarter)
+DESCRIPTION:Responsible: Claude\n\nClaude emails the reviewer a small answe
+ r file (CSV) with 20 items from the pilot quarter\, Paul's answers removed
+ . Open it in the Reviewer's Desk (Second coder tab)\, work through the ite
+ ms with the written rules shown there\, then save the completed file and s
+ end it back. Practice only\, not scored\; discussed on the onboarding call
+ . (Claude: python -m snapshot.agreement sample --batch 2026Q4\; never send
+  the weights file.)\n\nReviewer's Desk (tasks\, worksheets\, second-coder 
+ rounds): https://pagagne.github.io/internet-security-snapshot/reviewer/ (l
+ ive from 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-securi
+ ty-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1096,12 +1088,12 @@ DTSTART:20270304T150000Z
 DTEND:20270304T160000Z
 SUMMARY:[Paul] Snapshot: Onboarding call with the external reviewer
 DESCRIPTION:Responsible: Paul (author)\n\nWalk through the repository\, the
-  hand-check rules and the second-coder sheet\; answer questions\; go over 
- the practice round if done. Move the time to suit the reviewer.\n\nReviewe
- r's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.githu
- b.io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource
- : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
- edule/schedule.yaml
+  hand-check rules and the second-coder answer file in the Reviewer's Desk\
+ ; answer questions\; go over the practice round if done. Move the time to 
+ suit the reviewer.\n\nReviewer's Desk (tasks\, worksheets\, second-coder r
+ ounds): https://pagagne.github.io/internet-security-snapshot/reviewer/ (li
+ ve from 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1110,11 +1102,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270310T071700Z
 DTEND:20270310T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1158,12 +1149,12 @@ DTEND;VALUE=DATE:20270329
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before e
- ach provisional report so it starts from a consistent state. Findings to t
- he author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1174,10 +1165,10 @@ DTEND;VALUE=DATE:20270402
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
- nly\; read the data-quality report\; load the quarter's review lists (with
-  20 re-shown items) into the Hand Check app.\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nFrom the run's frozen outputs only\; rea
+ d the data-quality report\; load the quarter's review lists (with 20 re-sh
+ own items) into the Hand Check app.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1186,11 +1177,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270401T060000Z
 DTEND:20270401T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource: https://
- github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
- dule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1200,20 +1190,20 @@ DTSTART;VALUE=DATE:20270402
 DTEND;VALUE=DATE:20270403
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the reviewer the Q1 2027 review packet
-DESCRIPTION:Responsible: Claude (claude)\n\nOnce the provisional Q1 2027 re
- port is approved: links to the report\, the registered plan\, https://gith
- ub.com/pagagne/internet-security-snapshot/blob/main/prereg/DEVIATIONS.md\,
-  the data bundle and the exact code commit\; the worksheet for every headl
- ine figure\; the sample of hand decisions with their rules\; a short revie
- w template (holds up / doesn't / would change). Before sending\, list in h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/site/review
- er/worksheets.json ("draw_from") the headline figures actually reported th
- is quarter and add their worksheets\; the reviewer draws three on the Revi
- ewer's Desk with a seed of their own (anyone can repeat it). Never choose 
- the figures.\n\nReviewer's Desk (tasks\, worksheets\, second-coder rounds)
- : https://pagagne.github.io/internet-security-snapshot/reviewer/ (live fro
- m 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-snap
- shot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nOnce the provisional Q1 2027 report is a
+ pproved: links to the report\, the registered plan\, https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/prereg/DEVIATIONS.md\, the data
+  bundle and the exact code commit\; the worksheet for every headline figur
+ e\; the sample of hand decisions with their rules\; a short review templat
+ e (holds up / doesn't / would change). Before sending\, list in https://gi
+ thub.com/pagagne/internet-security-snapshot/blob/main/site/reviewer/worksh
+ eets.json ("draw_from") the headline figures actually reported this quarte
+ r and add their worksheets\; the reviewer draws three on the Reviewer's De
+ sk with a seed of their own (anyone can repeat it). Never choose the figur
+ es.\n\nReviewer's Desk (tasks\, worksheets\, second-coder rounds): https:/
+ /pagagne.github.io/internet-security-snapshot/reviewer/ (live from 4 Dec 2
+ 026)\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1270,16 +1260,16 @@ DTSTART;VALUE=DATE:20270406
 DTEND;VALUE=DATE:20270407
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch case
- s": every flaw published in the quarter just ended with CVSS 9.0 or more t
- hat at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, C
- ERT-In) issued an alert or advisory for\; if more than two\, two by the se
- eded draw. Each gets an inquiry-log entry (https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/INQUIRIES.md) and a case note in htt
- ps://github.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch cases": every
+  flaw published in the quarter just ended with CVSS 9.0 or more that at le
+ ast one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, CERT-In) i
+ ssued an alert or advisory for\; if more than two\, two by the seeded draw
+ . Each gets an inquiry-log entry (https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/INQUIRIES.md) and a case note in https://gith
+ ub.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1288,11 +1278,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270410T071700Z
 DTEND:20270410T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1357,14 +1346,16 @@ DTEND;VALUE=DATE:20270430
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1375,10 +1366,10 @@ DTEND;VALUE=DATE:20270502
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
-  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
- hedule.yaml
+DESCRIPTION:Responsible: Claude\n\nLate KEV listings and credits\, hand-che
+ ck answers\, agreement scores\; Zenodo archive.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1389,12 +1380,12 @@ DTEND;VALUE=DATE:20270502
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Publish the external review beside the Q1 2027 f
  inal report
-DESCRIPTION:Responsible: Claude (claude)\n\nReview unedited\, the author's 
- response\, the reviewer's disclosed ties and credit\; archived with the re
- lease (Zenodo). Send the reviewer the link.\n\nReviewer's Desk (tasks\, wo
- rksheets\, second-coder rounds): https://pagagne.github.io/internet-securi
- ty-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nReview unedited\, the author's response\
+ , the reviewer's disclosed ties and credit\; archived with the release (Ze
+ nodo). Send the reviewer the link.\n\nReviewer's Desk (tasks\, worksheets\
+ , second-coder rounds): https://pagagne.github.io/internet-security-snapsh
+ ot/reviewer/ (live from 4 Dec 2026)\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1403,11 +1394,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270501T060000Z
 DTEND:20270501T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-final.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1428,11 +1418,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270510T071700Z
 DTEND:20270510T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1441,14 +1430,14 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270513
 DTEND;VALUE=DATE:20270514
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
- nt
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
- ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
- next report. If the sheet has not come back\, comment on the issue so the 
- author can send a reminder\; do not contact the reviewer directly.\n\nSour
- ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
- chedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Score the second coder's answer file\; publish a
+ greement
+DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
+ e returned answer file\; agreement rates (with Gwet's AC1) go into the nex
+ t report. If the file has not come back\, comment on the issue so the auth
+ or can send a reminder\; do not contact the reviewer directly.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1457,11 +1446,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270610T071700Z
 DTEND:20270610T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1472,12 +1460,12 @@ DTEND;VALUE=DATE:20270629
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before e
- ach provisional report so it starts from a consistent state. Findings to t
- he author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1488,10 +1476,10 @@ DTEND;VALUE=DATE:20270702
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
- nly\; read the data-quality report\; load the quarter's review lists (with
-  20 re-shown items) into the Hand Check app.\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nFrom the run's frozen outputs only\; rea
+ d the data-quality report\; load the quarter's review lists (with 20 re-sh
+ own items) into the Hand Check app.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1500,11 +1488,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270701T060000Z
 DTEND:20270701T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource: https://
- github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
- dule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1539,16 +1526,16 @@ DTSTART;VALUE=DATE:20270706
 DTEND;VALUE=DATE:20270707
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch case
- s": every flaw published in the quarter just ended with CVSS 9.0 or more t
- hat at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, C
- ERT-In) issued an alert or advisory for\; if more than two\, two by the se
- eded draw. Each gets an inquiry-log entry (https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/INQUIRIES.md) and a case note in htt
- ps://github.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch cases": every
+  flaw published in the quarter just ended with CVSS 9.0 or more that at le
+ ast one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, CERT-In) i
+ ssued an alert or advisory for\; if more than two\, two by the seeded draw
+ . Each gets an inquiry-log entry (https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/INQUIRIES.md) and a case note in https://gith
+ ub.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1557,11 +1544,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270710T071700Z
 DTEND:20270710T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1599,14 +1585,16 @@ DTEND;VALUE=DATE:20270730
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1617,10 +1605,10 @@ DTEND;VALUE=DATE:20270802
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
-  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
- hedule.yaml
+DESCRIPTION:Responsible: Claude\n\nLate KEV listings and credits\, hand-che
+ ck answers\, agreement scores\; Zenodo archive.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1629,11 +1617,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270801T060000Z
 DTEND:20270801T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-final.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1654,11 +1641,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270810T071700Z
 DTEND:20270810T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1667,14 +1653,14 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270813
 DTEND;VALUE=DATE:20270814
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
- nt
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
- ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
- next report. If the sheet has not come back\, comment on the issue so the 
- author can send a reminder\; do not contact the reviewer directly.\n\nSour
- ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
- chedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Score the second coder's answer file\; publish a
+ greement
+DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
+ e returned answer file\; agreement rates (with Gwet's AC1) go into the nex
+ t report. If the file has not come back\, comment on the issue so the auth
+ or can send a reminder\; do not contact the reviewer directly.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1683,11 +1669,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270910T071700Z
 DTEND:20270910T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1698,12 +1683,12 @@ DTEND;VALUE=DATE:20270929
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before e
- ach provisional report so it starts from a consistent state. Findings to t
- he author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1714,10 +1699,10 @@ DTEND;VALUE=DATE:20271002
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
- nly\; read the data-quality report\; load the quarter's review lists (with
-  20 re-shown items) into the Hand Check app.\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nFrom the run's frozen outputs only\; rea
+ d the data-quality report\; load the quarter's review lists (with 20 re-sh
+ own items) into the Hand Check app.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1726,11 +1711,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271001T060000Z
 DTEND:20271001T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource: https://
- github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
- dule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1765,16 +1749,16 @@ DTSTART;VALUE=DATE:20271006
 DTEND;VALUE=DATE:20271007
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch case
- s": every flaw published in the quarter just ended with CVSS 9.0 or more t
- hat at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, C
- ERT-In) issued an alert or advisory for\; if more than two\, two by the se
- eded draw. Each gets an inquiry-log entry (https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/INQUIRIES.md) and a case note in htt
- ps://github.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch cases": every
+  flaw published in the quarter just ended with CVSS 9.0 or more that at le
+ ast one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, CERT-In) i
+ ssued an alert or advisory for\; if more than two\, two by the seeded draw
+ . Each gets an inquiry-log entry (https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/INQUIRIES.md) and a case note in https://gith
+ ub.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1783,11 +1767,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271010T071700Z
 DTEND:20271010T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1825,14 +1808,16 @@ DTEND;VALUE=DATE:20271030
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1843,10 +1828,10 @@ DTEND;VALUE=DATE:20271102
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
-  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
- hedule.yaml
+DESCRIPTION:Responsible: Claude\n\nLate KEV listings and credits\, hand-che
+ ck answers\, agreement scores\; Zenodo archive.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1855,11 +1840,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271101T060000Z
 DTEND:20271101T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-final.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1880,11 +1864,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271110T071700Z
 DTEND:20271110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1893,14 +1876,14 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271113
 DTEND;VALUE=DATE:20271114
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
- nt
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
- ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
- next report. If the sheet has not come back\, comment on the issue so the 
- author can send a reminder\; do not contact the reviewer directly.\n\nSour
- ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
- chedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Score the second coder's answer file\; publish a
+ greement
+DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
+ e returned answer file\; agreement rates (with Gwet's AC1) go into the nex
+ t report. If the file has not come back\, comment on the issue so the auth
+ or can send a reminder\; do not contact the reviewer directly.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1909,11 +1892,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20271210T071700Z
 DTEND:20271210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1924,12 +1906,12 @@ DTEND;VALUE=DATE:20271229
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before e
- ach provisional report so it starts from a consistent state. Findings to t
- he author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1940,10 +1922,10 @@ DTEND;VALUE=DATE:20280102
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the provisional evaluation\; load the hand
  -check lists
-DESCRIPTION:Responsible: Claude (claude)\n\nFrom the run's frozen outputs o
- nly\; read the data-quality report\; load the quarter's review lists (with
-  20 re-shown items) into the Hand Check app.\n\nSource: https://github.com
- /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nFrom the run's frozen outputs only\; rea
+ d the data-quality report\; load the quarter's review lists (with 20 re-sh
+ own items) into the Hand Check app.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1952,11 +1934,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280101T060000Z
 DTEND:20280101T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, provisional run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-provisional.\n\nSource: https://
- github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
- dule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1991,16 +1972,16 @@ DTSTART;VALUE=DATE:20280106
 DTEND;VALUE=DATE:20280107
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Choose this quarter's watch cases by the rule
-DESCRIPTION:Responsible: Claude (claude)\n\nhttps://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch case
- s": every flaw published in the quarter just ended with CVSS 9.0 or more t
- hat at least one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, C
- ERT-In) issued an alert or advisory for\; if more than two\, two by the se
- eded draw. Each gets an inquiry-log entry (https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/INQUIRIES.md) and a case note in htt
- ps://github.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/RESEARCH_PLAN.md\, "Pilot watch cases": every
+  flaw published in the quarter just ended with CVSS 9.0 or more that at le
+ ast one national CERT (CISA\, NCSC UK\, CERT-EU\, BSI\, ANSSI\, CERT-In) i
+ ssued an alert or advisory for\; if more than two\, two by the seeded draw
+ . Each gets an inquiry-log entry (https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/INQUIRIES.md) and a case note in https://gith
+ ub.com/pagagne/internet-security-snapshot/tree/main/docs/cases.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2009,11 +1990,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280110T071700Z
 DTEND:20280110T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -2051,14 +2031,16 @@ DTEND;VALUE=DATE:20280130
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Send the second coder this quarter's blinded sam
  ple
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sa
- mple --batch <quarter>\; send the coder the sheet (not the weights file)\,
-  which they open in the Reviewer's Desk\; scored on the 13th of the next m
- onth (second-coder-score). The pilot quarter's sheet is the practice round
-  (2 Mar 2027).\n\nReviewer's Desk (tasks\, worksheets\, second-coder round
- s): https://pagagne.github.io/internet-security-snapshot/reviewer/ (live f
- rom 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nClaude emails the second coder this quar
+ ter's answer file (CSV\, 20 items\, Paul's answers removed)\, to open in t
+ he Reviewer's Desk (Second coder tab) and send back within two weeks. Scor
+ ed on the 13th of the next month (second-coder-score). The pilot quarter's
+  file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agre
+ ement sample --batch <quarter>\; never send the weights file.)\n\nReviewer
+ 's Desk (tasks\, worksheets\, second-coder rounds): https://pagagne.github
+ .io/internet-security-snapshot/reviewer/ (live from 4 Dec 2026)\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2084,10 +2066,10 @@ DTEND;VALUE=DATE:20280202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Summarize provisional-to-final changes\; prepare
   the release
-DESCRIPTION:Responsible: Claude (claude)\n\nLate KEV listings and credits\,
-  hand-check answers\, agreement scores\; Zenodo archive.\n\nSource: https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
- hedule.yaml
+DESCRIPTION:Responsible: Claude\n\nLate KEV listings and credits\, hand-che
+ ck answers\, agreement scores\; Zenodo archive.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2096,11 +2078,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280201T060000Z
 DTEND:20280201T064000Z
 SUMMARY:[GitHub] Snapshot: Quarterly pull\, final run
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/qua
- rterly-pull.yml\; tags snapshot-<quarter>-final.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
+ s snapshot-<quarter>-final.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -2121,11 +2102,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280210T071700Z
 DTEND:20280210T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -2134,14 +2114,14 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20280213
 DTEND;VALUE=DATE:20280214
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Score the second coder's sheet\; publish agreeme
- nt
-DESCRIPTION:Responsible: Claude (claude)\n\npython -m snapshot.agreement sc
- ore on the returned sheet\; agreement rates (with Gwet's AC1) go into the 
- next report. If the sheet has not come back\, comment on the issue so the 
- author can send a reminder\; do not contact the reviewer directly.\n\nSour
- ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
- chedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Score the second coder's answer file\; publish a
+ greement
+DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
+ e returned answer file\; agreement rates (with Gwet's AC1) go into the nex
+ t report. If the file has not come back\, comment on the issue so the auth
+ or can send a reminder\; do not contact the reviewer directly.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2152,11 +2132,10 @@ DTEND;VALUE=DATE:20280302
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the first annual check against reference d
  ata (2027)
-DESCRIPTION:Responsible: Claude (claude)\n\nprereg section 13: exposure ref
- erence if scan data was obtained by 31 Jan\, harm reference always. For th
- e author's approval at the 15 March 2028 review.\n\nSource: https://github
- .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
- aml
+DESCRIPTION:Responsible: Claude\n\nprereg section 13: exposure reference if
+  scan data was obtained by 31 Jan\, harm reference always. For the author'
+ s approval at the 15 March 2028 review.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2181,11 +2160,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280310T071700Z
 DTEND:20280310T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -2214,11 +2192,11 @@ DTSTART;VALUE=DATE:20280401
 DTEND;VALUE=DATE:20280402
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: 2027 closing re-run with full follow-up
-DESCRIPTION:Responsible: Claude (claude)\n\nRe-run all four 2027 quarters o
- nce every 2027 cohort CVE has its 90-day follow-up\; publish as a complete
- ness addendum to the annual check. Labels unchanged (decision item 21). Th
- e author approves.\n\nSource: https://github.com/pagagne/internet-security
- -snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nRe-run all four 2027 quarters once every
+  2027 cohort CVE has its 90-day follow-up\; publish as a completeness adde
+ ndum to the annual check. Labels unchanged (decision item 21). The author 
+ approves.\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2240,11 +2218,10 @@ DTSTAMP:20261024T000000Z
 DTSTART:20280410T071700Z
 DTEND:20280410T073200Z
 SUMMARY:[GitHub] Snapshot: Rebuild check of the latest frozen bundle
-DESCRIPTION:Responsible: GitHub (github (automatic))\n\nCron in https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/.github/workflows/reb
- uild-check.yml\; fails visibly if a file or figure differs.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/.github/workflows/rebuild-check.yml\; fail
+ s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -2270,10 +2247,10 @@ DTEND;VALUE=DATE:20290302
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the annual check against reference data (p
  revious year)
-DESCRIPTION:Responsible: Claude (claude)\n\nAs in 2028 (prereg section 13)\
- , for the previous year\; for the author's approval at the 15 March annual
-  review.\n\nSource: https://github.com/pagagne/internet-security-snapshot/
- blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nAs in 2028 (prereg section 13)\, for the
+  previous year\; for the author's approval at the 15 March annual review.\
+ n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2318,10 +2295,10 @@ DTEND;VALUE=DATE:20300302
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Draft the annual check against reference data (p
  revious year)
-DESCRIPTION:Responsible: Claude (claude)\n\nAs in 2028 (prereg section 13)\
- , for the previous year\; for the author's approval at the 15 March annual
-  review.\n\nSource: https://github.com/pagagne/internet-security-snapshot/
- blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nAs in 2028 (prereg section 13)\, for the
+  previous year\; for the author's approval at the 15 March annual review.\
+ n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
