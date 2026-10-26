@@ -1,0 +1,43 @@
+[pull] kev -> /tmp/profile-data/kev/2026Q3/dry-run
+::notice title=pull kev::ok in 7s
+[pull] manifest: /tmp/profile-data/kev/2026Q3/dry-run/manifest.json (0 gap(s))
+[pull] cve -> /tmp/profile-data/cve/2026Q3/dry-run
+::notice title=pull cve::ok in 98s
+[pull] manifest: /tmp/profile-data/cve/2026Q3/dry-run/manifest.json (0 gap(s))
+[pull] nvd -> /tmp/profile-data/nvd/2026Q3/dry-run
+::notice title=pull nvd::ok in 105s
+[pull] manifest: /tmp/profile-data/nvd/2026Q3/dry-run/manifest.json (0 gap(s))
+[pull] epss -> /tmp/profile-data/epss/2026Q3/dry-run
+::notice title=pull epss::ok in 79s
+[pull] manifest: /tmp/profile-data/epss/2026Q3/dry-run/manifest.json (0 gap(s))
+Traceback (most recent call last):
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 214, in main
+    PULLERS[name](out, manifest, Path(tmp))
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/pull.py", line 121, in pull_sec
+    table = sec.filings_105(start, end)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/sec.py", line 36, in filings_105
+    frames = [_search(q, start, end, form) for q in QUERIES for form in ("8-K", "8-K/A")]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/sec.py", line 46, in _search
+    data = get(SEARCH, params=params, headers=_headers(), pause=0.2).json()
+                                              ^^^^^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/sec.py", line 25, in _headers
+    raise RuntimeError("SEC_USER_AGENT not set (the SEC requires a contact User-Agent)")
+RuntimeError: SEC_USER_AGENT not set (the SEC requires a contact User-Agent)
+[pull] sec -> /tmp/profile-data/sec/2026Q3/dry-run
+::error title=pull sec::gap after 0s: RuntimeError: SEC_USER_AGENT not set (the SEC requires a contact User-Agent)
+[pull] manifest: /tmp/profile-data/sec/2026Q3/dry-run/manifest.json (1 gap(s))
+{
+ "captured_utc": "2026-10-26T23:39:58+00:00",
+ "credit": "SANS Technology Institute, Internet Storm Center, https://isc.sans.edu",
+ "sources": [
+  "https://isc.sans.edu/feeds/urlcategories.txt",
+  "https://isc.sans.edu/feeds/urlsummary.txt"
+ ],
+ "categorised_urls": 1254838,
+ "summary_urls": 10204421,
+ "summary_urls_categorised": 1233815,
+ "categories": 304,
+ "cves": 241
+}

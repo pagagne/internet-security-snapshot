@@ -1,0 +1,56 @@
+kev {'seconds': 7.9, 'peak_rss_mb': 152.2, 'exit': 0, 'bytes_written': 1862729}
+cve {'seconds': 135.1, 'peak_rss_mb': 1470.2, 'exit': 0, 'bytes_written': 37305080}
+nvd {'seconds': 108.7, 'peak_rss_mb': 379.5, 'exit': 0, 'bytes_written': 1087123}
+epss {'seconds': 79.6, 'peak_rss_mb': 1105.9, 'exit': 0, 'bytes_written': 74321443}
+sec {'seconds': 0.5, 'peak_rss_mb': 119.6, 'exit': 1, 'bytes_written': 1347}
+honeypot {'seconds': 71.0, 'peak_rss_mb': 767.4, 'exit': 0, 'bytes_written': 39348}
+{
+  "quarter": "2026Q3",
+  "runner": {
+    "cpus": 4,
+    "mem_total_mb": 15989,
+    "disk_free_gb_before": 92.0,
+    "disk_free_gb_after": 91.9
+  },
+  "steps": {
+    "pull:kev": {
+      "seconds": 7.9,
+      "peak_rss_mb": 152.2,
+      "exit": 0,
+      "bytes_written": 1862729
+    },
+    "pull:cve": {
+      "seconds": 135.1,
+      "peak_rss_mb": 1470.2,
+      "exit": 0,
+      "bytes_written": 37305080
+    },
+    "pull:nvd": {
+      "seconds": 108.7,
+      "peak_rss_mb": 379.5,
+      "exit": 0,
+      "bytes_written": 1087123
+    },
+    "pull:epss": {
+      "seconds": 79.6,
+      "peak_rss_mb": 1105.9,
+      "exit": 0,
+      "bytes_written": 74321443
+    },
+    "pull:sec": {
+      "seconds": 0.5,
+      "peak_rss_mb": 119.6,
+      "exit": 1,
+      "bytes_written": 1347
+    },
+    "honeypot_monthly": {
+      "seconds": 71.0,
+      "peak_rss_mb": 767.4,
+      "exit": 0,
+      "bytes_written": 39348
+    }
+  },
+  "total_seconds": 402.8,
+  "total_bytes": 114617070,
+  "max_peak_rss_mb": 1470.2
+}
