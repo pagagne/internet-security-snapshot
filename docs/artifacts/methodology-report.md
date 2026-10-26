@@ -179,6 +179,7 @@ Together, these answer the report's original question with evidence rather than 
 ### Known limitations
 
 - **Exposure coverage:** free exposure data covers only the vulnerabilities Shadowserver tracks, and depends on its permission.
+- **A mostly US view:** the attack list (CISA KEV), NVD and the harm series (SEC, HHS) are US sources. Views from other countries (exploratory X19–X22) are being tested, and each finding states what it covers.
 - **What exploitation data can see:** opportunistic, automated attacks are visible; targeted intrusions are not.
 - **Attack dates are late:** CISA lists a flaw only after it is attacked and guidance exists, so the zero-day share is a minimum and the race median overstates the days from fix to first attack. Fix and attack dates are carried as ranges to show how much this matters.
 - **Small samples:** at most twelve cohort vulnerabilities a quarter, so cohort results are noisy; the race therefore uses every newly attacked flaw instead. The two-quarter rule labels pure noise in about half of quarters, so each label carries a companion test and confidence intervals so readers can judge.
