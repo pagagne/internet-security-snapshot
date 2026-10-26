@@ -397,22 +397,43 @@ DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:research-review-prep@2026-11-11@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Fill in the 12 Nov decision sheet with the probe
+  and trial results
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/decisions/2026-11-12-research-review.md: the 
+ Evidence line under each decision (27 Oct global probes\, 2 Nov tests\, 5 
+ Nov trial sweep)\; change a recommendation only if the evidence says so\, 
+ and say why. On 12 Nov before 10:00\, ask the same decisions in chat as op
+ tion cards with the recommendation first.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:research-review@2026-11-12@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261112T150000Z
-DTEND:20261112T153000Z
-SUMMARY:[Paul] Snapshot: Review research results\; decide race fix-date eff
- ort
-DESCRIPTION:Responsible: Paul (author)\n\nEvery flagged race fix date (abou
- t 1½ h a quarter\; the author's leaning on 24 Oct) or a sample (about 50 
- min). The CISA-flag preview (zero-day share possibly understated by half) 
- is on the agenda\, with the 25 Oct probes: KEV's lag against other sources
- \, Linux fix dates\, honeypot first-seen dates and the AI-list check\; and
-  the 27 Oct global probes (X19-X22: which non-US sources to adopt before t
- he freeze)\, the X12 capability bar\, and the trial AI-attack sweep (searc
- hes to keep or change). https://github.com/pagagne/internet-security-snaps
- hot/blob/main/docs/RESEARCH_PLAN.md.\n\nSource: https://github.com/pagagne
- /internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DTEND:20261112T160000Z
+SUMMARY:[Paul] Snapshot: Research review - 11 decisions (sheet with options
+  and recommendations)
+DESCRIPTION:Responsible: Paul (author)\n\nDecision sheet: https://github.co
+ m/pagagne/internet-security-snapshot/blob/main/docs/decisions/2026-11-12-r
+ esearch-review.md (each question with options and a recommendation\; Claud
+ e also asks them in chat as option cards that morning). 1 race fix-date ef
+ fort (rec. every flagged case)\; 2 CISA active-exploitation date (rec. exp
+ loratory now\, core proposal on 21 Dec)\; 3 X19 other countries' attack al
+ erts\; 4 X20 DNSSEC and RPKI by country\; 5 X21 regional splits\; 6 X22 br
+ each counts outside the US\; 7 X12 release-curve sources\; 8 X12 capable b
+ ar (rec. coding and security\, separately)\; 9 AI-attack sweep searches af
+ ter the trial\; 10 HTTP Archive web patch adoption\, PHP2Shell first\; 11 
+ X16 and X17. For information: KEV lag\, kernel fix dates\, honeypot\, AI-l
+ ist check\, Gemini/Irregular\, PHP2Shell patch flow.\n\nSource: https://gi
+ thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -830,9 +851,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  onfirm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-22\, including the companion la
  bel check\, X13 and hand-check reliability\, the 2028 closing re-run\, and
   the workflow lock)\, with the findings of the 15 Dec full dry run. Any so
- urce without a written yes runs without it for the pilot.\n\nSource: https
- ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
- chedule.yaml
+ urce without a written yes runs without it for the pilot. Added 26 Oct: it
+ em 16\, the Shadowserver hand-read fallback for the pilot (rec. yes if no 
+ permission)\; item 20\, the early-patch (embargo) note on fix dates (rec. 
+ yes)\; the CISA active-exploitation date as T_exploit (12 Nov decision 2)\
+ ; item 8\, fixing the sweep's searches and the X12 capable bar and the ado
+ pted X19-X22 before the freeze. Claude asks these as option cards with rec
+ ommendations\, as on 12 Nov.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

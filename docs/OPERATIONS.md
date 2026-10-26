@@ -85,6 +85,13 @@ The author subscribed on 24 Oct 2026, and the older hand-made "Snapshot: ..." ev
 removed from the author's own calendar the same day (all of them are in the feed). Add new
 dates to the schedule file, never as hand-made calendar events, so the calendars cannot drift.
 
+## How decisions are put to the author
+(Author's preference, 26 Oct 2026.) Questions go together, never spread across messages: as
+option cards in chat (two to four options, the recommendation first and marked), and for a
+meeting as a decision sheet in `docs/decisions/` (question, options, recommendation, evidence)
+linked from the calendar entry. News and ideas the author raises go to `docs/INQUIRIES.md`
+the same day, and anything needing a decision is added to the next meeting's sheet.
+
 ## How a Claude session picks up work
 (In a Claude session GitHub's GraphQL API is blocked, so use `gh api` REST calls rather than
 `gh issue`, `gh pr` or `gh workflow run`. The Schedule workflow itself runs on GitHub and is
