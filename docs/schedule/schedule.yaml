@@ -412,6 +412,54 @@ items:
     Organization: "Internet Security Snapshot (independent research project)", the project
     email, the GitHub page as website. Approvals arrive during the RV trip.
 
+- id: dry-run-full-prep
+  owner: claude
+  title: Get every available source ready for the full dry run
+  date: 2026-12-11
+  details: >
+    Author's request of 26 Oct: a second dry run before the pilot using all available data.
+    By 14 Dec every source in use is collected by the quarterly pull or by its own workflow,
+    with the exploratory ones adopted so far (honeypot series, Project Zero, kernel fix dates,
+    deps.dev, HHS, and the global sources adopted on 12 Nov); config/sources.yaml switched on
+    for any permission granted by then. Check the evaluation steps run end to end (labels,
+    draft page, hand-check lists, reviewer worksheets). Note anything not ready in the run's
+    issue, so its absence is a known gap rather than a surprise.
+
+- id: dry-run-full
+  owner: github
+  title: Full dry run with all available sources (1 Oct-14 Dec data)
+  date: 2026-12-15
+  time: "11:00"
+  utc: true
+  minutes: 60
+  dispatch:
+    workflow: quarterly-pull.yml
+    inputs: {quarter: 2026Q4, run: dry-run}
+  details: >
+    Started by the Schedule workflow. Second dry run, the closest test of the 1 Jan pilot:
+    every source switched on in config/sources.yaml, in the container if container-pull is
+    done. Unscored; nothing published.
+
+- id: dry-run-full-review
+  owner: claude
+  title: Review the full dry run; findings for the 21 Dec session
+  date: 2026-12-15
+  details: >
+    Quality report, gaps per source, the exploratory collectors' outputs and the full
+    evaluation (labels, draft page, review lists, worksheets). Compare with the 1 Dec dry run.
+    Load the hand-check lists into the Hand Check app; write the findings as one list for the
+    author with anything that needs a decision on 21 Dec.
+
+- id: dry-run-full-hand-check
+  owner: author
+  title: Hand check on the full dry run; read the findings
+  date: 2026-12-16
+  time: "10:00"
+  minutes: 60
+  details: >
+    A shorter pass than 2 Dec (only items new since then), then Claude's findings. Anything
+    to fix goes in before the 29 Dec freeze; anything to decide goes to the 21 Dec session.
+
 - id: workflows-doc
   owner: claude
   title: Document and test every GitHub workflow; draft the lock list
@@ -442,7 +490,8 @@ items:
   details: >
     docs/CORE_FREEZE_DECISIONS.md items 0-22 (confirm 0, 7, 12; decide 1-3, 9-11, 13-22,
     including the companion label check, X13 and hand-check reliability, the 2028 closing
-    re-run, and the workflow lock). Any source without a written yes runs without it for the pilot.
+    re-run, and the workflow lock), with the findings of the 15 Dec full dry run. Any source
+    without a written yes runs without it for the pilot.
 
 - id: freeze-prep
   owner: claude
@@ -860,6 +909,8 @@ milestones:
   text: Cutover - the repository's schedule runs the study (docs/OPERATIONS.md)
 - at: [dry-run]
   text: Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow)
+- at: [dry-run-full]
+  text: Full dry run with all available sources (1 Oct-14 Dec data; unscored)
 - at: [landing-page]
   text: Public landing page (GitHub Pages) and Discussions opened; project links shared from here on
 - at: [freeze-session]

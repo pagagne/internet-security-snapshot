@@ -167,6 +167,7 @@ Together, these answer the report's original question with evidence rather than 
 | 15 Mar 2027 | Annual review: the one time each year the scored rules may change |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional and final |
 | 21 / 29 Dec 2026 | Decision session, then the core freeze (core-v1.2) and an OSF update |
+| 15–16 Dec 2026 | Full dry run with all available sources (1 October to 14 December data), unscored, and its hand check |
 | 1–2 Dec 2026 | Dry run on October–November data, unscored, and its hand check |
 | 23–24 Nov 2026 | Hand check of the baseline year (Q4 2025 to Q3 2026) |
 | 20 Nov 2026 | Follow-ups to any data provider that hasn't replied |

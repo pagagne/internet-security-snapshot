@@ -33,7 +33,8 @@ review on 15 March; any core item changed there (or on 21 Dec) is reported in ol
 form side by side for four quarters. The exploratory layer can change at any time.
 
 Each item: decide **promote to core**, **keep exploratory**, or **drop**. Evidence comes
-from the December dry run and the test runs.
+from the two December dry runs (1 Dec, and the full run with all available sources on 15 Dec)
+and the test runs.
 
 | # | Item | Now | Question for the session | Evidence to bring |
 |---|---|---|---|---|

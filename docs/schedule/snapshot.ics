@@ -692,6 +692,27 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:dry-run-full-prep@2026-12-11@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Get every available source ready for the full dr
+ y run
+DESCRIPTION:Responsible: Claude\n\nAuthor's request of 26 Oct: a second dry
+  run before the pilot using all available data. By 14 Dec every source in 
+ use is collected by the quarterly pull or by its own workflow\, with the e
+ xploratory ones adopted so far (honeypot series\, Project Zero\, kernel fi
+ x dates\, deps.dev\, HHS\, and the global sources adopted on 12 Nov)\; htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/config/source
+ s.yaml switched on for any permission granted by then. Check the evaluatio
+ n steps run end to end (labels\, draft page\, hand-check lists\, reviewer 
+ worksheets). Note anything not ready in the run's issue\, so its absence i
+ s a known gap rather than a surprise.\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:workflows-doc@2026-12-14@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261214
@@ -711,6 +732,51 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ages) under a change log.\n\nSource: https://github.com/pagagne/internet-s
  ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:dry-run-full-review@2026-12-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Review the full dry run\; findings for the 21 De
+ c session
+DESCRIPTION:Responsible: Claude\n\nQuality report\, gaps per source\, the e
+ xploratory collectors' outputs and the full evaluation (labels\, draft pag
+ e\, review lists\, worksheets). Compare with the 1 Dec dry run. Load the h
+ and-check lists into the Hand Check app\; write the findings as one list f
+ or the author with anything that needs a decision on 21 Dec.\n\nSource: ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
+ e/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:dry-run-full@2026-12-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261215T110000Z
+DTEND:20261215T120000Z
+SUMMARY:[GitHub] Snapshot: Full dry run with all available sources (1 Oct-1
+ 4 Dec data)
+DESCRIPTION:Responsible: GitHub\n\nStarted by the Schedule workflow. Second
+  dry run\, the closest test of the 1 Jan pilot: every source switched on i
+ n https://github.com/pagagne/internet-security-snapshot/blob/main/config/s
+ ources.yaml\, in the container if container-pull is done. Unscored\; nothi
+ ng published.\n\nSource: https://github.com/pagagne/internet-security-snap
+ shot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:dry-run-full-hand-check@2026-12-16@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261216T150000Z
+DTEND:20261216T160000Z
+SUMMARY:[Paul] Snapshot: Hand check on the full dry run\; read the findings
+DESCRIPTION:Responsible: Paul (author)\n\nA shorter pass than 2 Dec (only i
+ tems new since then)\, then Claude's findings. Anything to fix goes in bef
+ ore the 29 Dec freeze\; anything to decide goes to the 21 Dec session.\n\n
+ Source: https://github.com/pagagne/internet-security-snapshot/blob/main/do
+ cs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:workflows-review@2026-12-18@internet-security-snapshot
@@ -734,9 +800,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/CORE_FREEZE_DECISIONS.md items 0-22 (c
  onfirm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-22\, including the companion la
  bel check\, X13 and hand-check reliability\, the 2028 closing re-run\, and
-  the workflow lock). Any source without a written yes runs without it for 
- the pilot.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  the workflow lock)\, with the findings of the 15 Dec full dry run. Any so
+ urce without a written yes runs without it for the pilot.\n\nSource: https
+ ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
+ chedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

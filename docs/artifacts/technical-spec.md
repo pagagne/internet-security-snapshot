@@ -371,6 +371,7 @@ The study costs nothing in cash. It runs on free services and free data, plus th
 - [x] Public repository with pinned environment, and the scheduled workflow tested (test runs 21–22 October; environment pinned 24 October)
 - [ ] Baselines backfilled, frozen and checksummed, including the retrospective cohort for Q4 2025 to Q3 2026
 - [ ] Dry run on October–November data published by 1 December 2026, marked unscored
+- [ ] Full dry run with every available source on 15 December 2026, its findings taken to the 21 December session
 - [ ] Ground-truth test passed (at least four of five cases); the author records the fix dates on 16 November 2026
 - [ ] Terms confirmed in writing for Shadowserver, VulnCheck and ransomware.live by the 21 December 2026 session, or the source excluded from the pilot
 

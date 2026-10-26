@@ -91,6 +91,7 @@ estimation.
 | 30 Nov 2026 | Cutover - the repository's schedule runs the study (docs/OPERATIONS.md) |
 | 1 Dec 2026 | Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow) |
 | 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |
+| 15 Dec 2026 | Full dry run with all available sources (1 Oct-14 Dec data; unscored) |
 | 21 Dec 2026 | Core-freeze decision session (docs/CORE_FREEZE_DECISIONS.md) |
 | 29 Dec 2026 | Final core freeze: tag core-v1.2, OSF update |
 | 1 Jan / 1 Feb 2027 | Q4 2026 pilot: provisional / final |
