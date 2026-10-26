@@ -305,13 +305,13 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Recheck the trial AI-attack sweep's open items
 DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
   at the author's request (https://github.com/pagagne/internet-security-sna
- pshot/blob/main/exploratory/sweep-trial-2026.md\; 10 kept\, log 13 -> 23).
-  Read the primary reports behind the kept entries (Sysdig\, GTIG\, CrowdSt
- rike\, GMO) and the 8 "recheck" rows in https://github.com/pagagne/interne
- t-security-snapshot/blob/main/exploratory/ai_attack_sweeps.csv\; correct t
- he log\; final list of proposed search changes for decision 9 on 12 Nov.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+ pshot/blob/main/exploratory/sweep-trial-2026.md\; 15 kept after the China 
+ and Russia retry\, log 13 -> 28). Read the primary reports behind the kept
+  entries (Sysdig\, GTIG\, CrowdStrike\, GMO) and the 8 "recheck" rows in h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/exploratory
+ /ai_attack_sweeps.csv\; correct the log\; final list of proposed search ch
+ anges for decision 9 on 12 Nov.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -367,12 +367,12 @@ BEGIN:VEVENT
 UID:ai-sweep-author-check@2026-11-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261109T160000Z
-DTEND:20261109T162500Z
-SUMMARY:[Paul] Snapshot: Check the 10 AI-attack entries from the trial swee
+DTEND:20261109T163500Z
+SUMMARY:[Paul] Snapshot: Check the 15 AI-attack entries from the trial swee
  p
 DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
- et-security-snapshot/blob/main/exploratory/ai_attack_campaigns.csv\, rows 
- marked "awaiting author check" (summary table in https://github.com/pagagn
+ et-security-snapshot/blob/main/exploratory/ai_attack_campaigns.csv\, the 1
+ 5 rows marked "awaiting author check" (tables in https://github.com/pagagn
  e/internet-security-snapshot/blob/main/exploratory/sweep-trial-2026.md): k
  eep or exclude each\; two questions there (Shai-Hulud: X3 or X5? keep the 
  single-source Brazil case?).\n\nSource: https://github.com/pagagne/interne

@@ -102,13 +102,13 @@ Evidence: _to fill_ (candidate benchmarks, threshold, how many open models clear
 - B Keep the list as written on 26 Oct.
 - C Change it in another way (say how).
 
-Evidence (trial run early, 26 Oct, on Jul-Oct 2026; `exploratory/sweep-trial-2026.md`): 33
-candidates, 10 kept (log 13 -> 23, awaiting your check), 6 of them found first or only outside
-English. Proposed changes: add a named watch list of offensive agent frameworks (ARTEX, Cairn,
+Evidence (trial run early, 26 Oct, on Jul-Oct 2026; `exploratory/sweep-trial-2026.md`): 50
+candidates, 15 kept (log 13 -> 28, awaiting your check), 11 of them found first or only outside
+English; Chinese and Russian work only when searched on those countries' own security sites. Proposed changes: add a named watch list of offensive agent frameworks (ARTEX, Cairn,
 Hexstrike, Strix, OpenClaw, Hermes, Manus) and an "AI penetration tool used by attackers"
 search; move the prompt-injection and MCP searches to X5; add GMO, CrowdStrike, Sysdig,
 Cybernews and Trend Micro pages; replace Chinese and Russian searches with fixed native-language
-pages. About 1½ h for the trial; 3-4 h a quarter for the full sweep.
+pages, searched by site. About 2 h for the trial; 3-4 h a quarter for the full sweep.
 
 ## 10. Web patch adoption from HTTP Archive (PHP2Shell first)
 - **A ★ Adopt as exploratory if the crawl records PHP versions:** share of PHP-reporting sites

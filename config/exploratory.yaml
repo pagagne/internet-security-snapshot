@@ -65,6 +65,7 @@ measures:
         - AI coding assistant supply chain attack
         - AI model escaped sandbox OR evaluation environment
       languages: [en, zh, ja, ko, ru, es, pt, de, fr]   # added 2026-10-26: each query also run in
+        # (zh and ru searched on those countries' security sites in the page list, not the open web: trial 26 Oct)
         # these languages (translated once and kept fixed); each candidate records the language found in
       also_check:   # fixed pages read every sweep (list fixed 26 Oct 2026; later additions are dated)
         - AI-lab threat reports (Anthropic, OpenAI, Google GTIG, Microsoft)
@@ -76,6 +77,8 @@ measures:
         - AI evaluation firms' and labs' incident disclosures (e.g. Irregular), for evaluation_escape
         - News sites, for leads only (The Record, BleepingComputer, SecurityWeek, Dark Reading)
         - Research blogs outside the US and Europe (added 2026-10-26): AhnLab ASEC (Korea), Qi An Xin and Qihoo 360 (China), Trend Micro and JPCERT/CC (Japan)
+        - Chinese security sites (added 2026-10-26 after the trial): FreeBuf, Anquanke, Security Insight (secrss.com), 4hou
+        - Russian security sites (added 2026-10-26 after the trial): Securelist.ru, Habr, BI.ZONE, F6, Kaspersky.ru, Anti-Malware, SecurityLab, Xakep (Positive Technologies research read only; it is under US sanctions)
       rules: >
         A candidate is logged in ai_attack_campaigns.csv only if a named organisation or
         researcher reports real (not simulated) attacker use of AI, with a link; news stories

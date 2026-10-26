@@ -93,18 +93,18 @@ items:
   date: 2026-11-05
   details: >
     The trial itself ran early, on 26 Oct, at the author's request (exploratory/sweep-trial-2026.md;
-    10 kept, log 13 -> 23). Read the primary reports behind the kept entries (Sysdig, GTIG,
+    15 kept after the China and Russia retry, log 13 -> 28). Read the primary reports behind the kept entries (Sysdig, GTIG,
     CrowdStrike, GMO) and the 8 "recheck" rows in exploratory/ai_attack_sweeps.csv; correct the
     log; final list of proposed search changes for decision 9 on 12 Nov.
 
 - id: ai-sweep-author-check
   owner: author
-  title: Check the 10 AI-attack entries from the trial sweep
+  title: Check the 15 AI-attack entries from the trial sweep
   date: 2026-11-09
   time: "11:00"
-  minutes: 25
+  minutes: 35
   details: >
-    exploratory/ai_attack_campaigns.csv, rows marked "awaiting author check" (summary table in
+    exploratory/ai_attack_campaigns.csv, the 15 rows marked "awaiting author check" (tables in
     exploratory/sweep-trial-2026.md): keep or exclude each; two questions there (Shai-Hulud: X3
     or X5? keep the single-source Brazil case?).
 

@@ -5,7 +5,7 @@ are fixed for 2027 (`config/exploratory.yaml`, X3 `sweep`). Every candidate is i
 `exploratory/ai_attack_sweeps.csv` (`sweep_quarter` = `trial-2026`); kept ones were added to
 `exploratory/ai_attack_campaigns.csv`, each marked "awaiting author check".
 
-## Result
+## Result (first pass, before the China and Russia retry below)
 - **33 candidates screened:** 10 kept (9 in the window plus 1 earlier backfill), 9 duplicates
   of entries already logged, 6 excluded, 8 to recheck (page unreadable from here, or the
   primary report not yet read).
@@ -19,7 +19,34 @@ are fixed for 2027 (`config/exploratory.yaml`, X3 `sweep`). Every candidate is i
   the open-source agent systems Hermes and OpenClaw (Taiwan), OpenClaw artifacts (GTIG),
   Cairn (already logged). Evidence for X12.
 
-## Kept (awaiting the author's check)
+## China and Russia retry (26 Oct evening, at the author's request)
+The first pass sent Chinese and Russian searches to a general web search, which favours US
+results, so it found almost nothing. The retry searched each country's own security sites:
+FreeBuf, Anquanke, Qi An Xin, Security Insight (secrss.com), 360 and 4hou for Chinese;
+Securelist.ru, Habr, BI.ZONE, F6, Kaspersky.ru, Anti-Malware, SecurityLab and Xakep for Russian.
+17 more candidates, **5 more kept** (log 23 -> 28):
+
+| Reported | Case | Reported by | Language found |
+|---|---|---|---|
+| 2026-10-23 | "Skynet" agent hijacks exposed AI servers (seen by a honeypot) | security.com threat research | ru |
+| 2026-10-17 | CERT-In advisory: AI agents reached live Indian systems undetected | CERT-In | zh |
+| 2026-10-15 | AI-written scripts on compromised government servers | Gridinsoft; Kaspersky | ru |
+| 2026-07-30 | Hermes Agent + DeepSeek against Langflow and n8n (agent got no breaches) | Unit 42 | ru |
+| 2026-05-15 | Leek Likho: LLM-generated scripts against Russian organisations (backfill) | Kaspersky | ru |
+
+- **Chinese sites mostly republish Western reports** (PaperCut, OpenAI/Hugging Face,
+  JADEPUFFER) but add detail: PaperCut's agents ran on OpenAI Codex with DeepSeek models.
+  They led to India's CERT-In advisory, a non-Five-Eyes government source. No Chinese
+  source reported an AI-run attack on China; two articles could not be read from here.
+- **Russian sites report attacks on Russia** that English coverage rarely carries (Leek
+  Likho) and statistics: Positive Technologies counted 1.7 million LLM-assisted attacks on
+  Russian websites in Q3 2026 (context, not a campaign). Several finds were tools or
+  honeypot sightings rather than confirmed intrusions.
+- **Search method fixed:** Chinese and Russian searches are run against those named sites
+  (the X3 page list), not the open web. Positive Technologies is read as published research
+  only (it is under US sanctions; no account or contact).
+
+## Kept in the first pass (awaiting the author's check)
 | Reported | Case | Reported by | Entry | Language found |
 |---|---|---|---|---|
 | 2026-10-19 | ARTEX against ~20 Japanese companies (8 leaks) | GMO Cybersecurity | unknown | ja |
