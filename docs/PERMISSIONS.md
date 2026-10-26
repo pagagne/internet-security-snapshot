@@ -14,6 +14,54 @@ status below changes, change the matching switch in the same commit; a test chec
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply | — |
 | Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow up by reply to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject if no answer by 20 Nov 2026 | — |
 
+## Request texts as sent (20 Oct 2026)
+Kept so follow-ups can quote them exactly. Copied 26 Oct from the author's sent mail and the
+ransomware.live ticket page; contact details removed.
+
+**VulnCheck** (email to community@vulncheck.com, 20 Oct 2026 18:12 UTC; subject "Derived
+statistics from VulnCheck KEV in a non-commercial research project"; no reply as of 26 Oct):
+
+> Hello,
+>
+> I'm setting up a free, non-commercial, pre-registered research project that tracks how
+> quickly vulnerabilities are exploited compared with how quickly they are patched:
+> https://github.com/pagagne/internet-security-snapshot.
+>
+> I plan to use VulnCheck KEV through a community account. I'd publish only derived
+> statistics: agreement scores between VulnCheck KEV, CISA KEV, and Shadowserver, and median
+> reporting lags. I'd label every chart and table "VulnCheck KEV," as your attribution notice
+> requires. I would not republish the entries themselves.
+>
+> Could you confirm that publishing these derived statistics is fine under the community
+> terms? If you need anything else from me, please let me know.
+>
+> Thank you,
+>
+> Paul A. Gagne
+
+**ransomware.live** (support ticket #3425, category Other, 20 Oct 2026 18:29; title
+"Permission for non-commercial research use of aggregate counts"; still open with no reply as
+of 26 Oct, although the confirmation promised one within 2 business days):
+
+> Hello,
+>
+> I run a free, non-commercial research project that tracks visible ransomware harm each
+> quarter: https://github.com/pagagne/internet-security-snapshot. The research plan is
+> pre-registered on OSF.
+>
+> I've registered for a free PRO API key and would like to use it to collect posting counts
+> by date, group, sector and country, once per quarter. I would publish only aggregate counts,
+> credited to ransomware.live, and drop victim names when collecting so they are never stored
+> or published.
+>
+> Could you confirm this use is acceptable under your terms for a non-commercial research
+> project?
+>
+> Thank you,
+
+**Shadowserver** (web contact form, topic "Dashboard Data/Visualization", ticket pqaytmyy):
+text not kept; no copy in the author's mail. What was asked is in the table above.
+
 ## Requests planned (25 Oct 2026 brainstorm)
 
 | Source | When | Channel | What will be asked | Status |
