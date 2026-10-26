@@ -6,9 +6,13 @@ name: Schedule
 # author and by any Claude session, so nothing depends on one chat (docs/OPERATIONS.md).
 on:
   schedule:
-    - cron: "7 12 * * *"   # 12:07 UTC = 07:07 ET (08:07 in summer)
-    - cron: "37 15 * * *"  # backup: GitHub can drop scheduled runs (it skipped 25 Oct); the job
-                           # opens each issue only once, so a second run changes nothing
+    - cron: "23 10 * * *"  # 10:23 UTC = 06:23 ET (05:23 in winter time)
+    - cron: "7 12 * * *"   # 12:07 UTC = 07:07 ET
+    - cron: "37 15 * * *"  # 15:37 UTC = 10:37 ET
+    # Three timers because GitHub drops scheduled runs at busy times (it skipped the 12:07 run
+    # on 25 and 26 Oct 2026). The job opens each issue only once, so extra runs change nothing.
+    # Last safety net: the daily Claude work queue (08:32 ET) starts this workflow by hand if
+    # no run has succeeded that day (docs/OPERATIONS.md).
   workflow_dispatch:
     inputs:
       date:

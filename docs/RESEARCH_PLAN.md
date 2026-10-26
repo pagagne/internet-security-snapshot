@@ -19,7 +19,11 @@ Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for
 4. **Remaining evaluation code**: labels T2, T4-T6; exploratory X6-X12; NVD root-cause fill;
    first draft of the evaluation page.
 5. **One switch per permissioned source** (Shadowserver, VulnCheck, ransomware.live) in config,
-   so either plan is a settings change.
+   so either plan is a settings change. *Done 26 Oct:* `config/sources.yaml` (permission,
+   collect, publish per source; read by `snapshot.sources` and the quarterly pull, recorded in
+   each manifest; tests refuse publish without a granted permission and check the file against
+   `docs/PERMISSIONS.md`). VulnCheck and Shadowserver have no collector yet; switching either on
+   also needs one.
 
 ## Plan 1: permissions approved
 - Shadowserver: data formats; how many cohort picks it tracks (coverage decides whether T1b/T2

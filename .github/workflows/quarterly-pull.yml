@@ -17,9 +17,9 @@ on:
         options: [dry-run, provisional, final]
         default: dry-run
       sources:
-        description: "Comma-separated sources"
+        description: "Comma-separated sources; blank = every source switched on in config/sources.yaml"
         required: false
-        default: "kev,cve,nvd,epss,sec,radar,ransomware"
+        default: ""
       epss_step:
         description: "Days between EPSS samples (1 = daily, as in quarterly runs)"
         required: false

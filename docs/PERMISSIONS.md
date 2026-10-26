@@ -5,6 +5,9 @@ derived results from their data. Any source that declines is dropped and the cha
 logged in `prereg/DEVIATIONS.md`. A source without a written yes by the 21 December 2026 decision session runs
 without it for the Q4 2026 pilot (decision item 16); a later yes is switched on at the next quarter's run.
 
+The switches are in `config/sources.yaml` (permission, collect, publish per source). When a
+status below changes, change the matching switch in the same commit; a test checks the two agree.
+
 | Source | Asked | Channel | Reference | What was asked | Status | Reply |
 |---|---|---|---|---|---|---|
 | ransomware.live | 2026-10-20 | Support form ("Other") | Ticket #3425 | Aggregate posting counts only, credited; victim names dropped at capture; no raw data published | Awaiting reply | — |
