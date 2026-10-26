@@ -302,19 +302,16 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Trial AI-attack sweep on Jul-Oct 2026 (tests the
-  searches before the freeze)
-DESCRIPTION:Responsible: Claude\n\nAuthor's choice of 26 Oct. Run the full 
- X3 sweep once (10 searches in nine languages\, the regular pages in https:
- //github.com/pagagne/internet-security-snapshot/blob/main/config/explorato
- ry.yaml) on reports dated July-October 2026. Log every candidate in https:
- //github.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_a
- ttack_sweeps.csv (sweep_quarter "trial-2026")\; add kept ones to the campa
- ign log marked for the author's check. Report for the 12 Nov review: hits 
- and noise per search and page\, time taken\, incidents the log had missed\
- , and proposed changes to the searches (approved by the author before the 
- 29 Dec freeze).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Recheck the trial AI-attack sweep's open items
+DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
+  at the author's request (https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/exploratory/sweep-trial-2026.md\; 10 kept\, log 13 -> 23).
+  Read the primary reports behind the kept entries (Sysdig\, GTIG\, CrowdSt
+ rike\, GMO) and the 8 "recheck" rows in https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/exploratory/ai_attack_sweeps.csv\; correct t
+ he log\; final list of proposed search changes for decision 9 on 12 Nov.\n
+ \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
+ docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -364,6 +361,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
  n's conflict-of-interest section). Tell Claude\, who logs it.\n\nSource: h
  ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
  le/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-sweep-author-check@2026-11-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261109T160000Z
+DTEND:20261109T162500Z
+SUMMARY:[Paul] Snapshot: Check the 10 AI-attack entries from the trial swee
+ p
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
+ et-security-snapshot/blob/main/exploratory/ai_attack_campaigns.csv\, rows 
+ marked "awaiting author check" (summary table in https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/exploratory/sweep-trial-2026.md): k
+ eep or exclude each\; two questions there (Shai-Hulud: X3 or X5? keep the 
+ single-source Brazil case?).\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
