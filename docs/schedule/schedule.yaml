@@ -508,7 +508,8 @@ items:
   details: >
     The one time each year core rules may change (docs/CHANGE_POLICY.md). Promotion
     candidates; the AI-credit rule; the inquiry log (docs/INQUIRIES.md) and the year's
-    exploratory additions; any change run side by side for four quarters. From 2028
+    exploratory additions; the year's four AI-attack sweeps compared (what each found that
+    the usual channels missed, and incidents reported late); any change run side by side for four quarters. From 2028
     (the annual wrap-up): review the annual check of the previous year's free results against
     reference scan data and published insurance-claims and ransom-payment figures
     (pre-registration section 13), and approve it for publishing.
@@ -596,6 +597,17 @@ items:
   minutes: 60
   details: Read Claude's draft and approve it for publishing (by the 3rd at the latest).
 
+- id: ai-incident-sweep
+  owner: claude
+  title: Quarterly web sweep for AI-run attack reports (X3)
+  repeat: {months: [1, 4, 7, 10], day: 2, from: 2027-01, until: 2028-01}
+  details: >
+    Run the fixed searches and pages in the X3 entry of config/exploratory.yaml for reports
+    dated in the quarter just ended. Log every candidate in exploratory/ai_attack_sweeps.csv
+    (kept or excluded, with the reason) and add the kept ones to
+    exploratory/ai_attack_campaigns.csv marked for the author's check. Finds incidents reported
+    outside the AI-lab and vendor channels; it cannot find what nobody reports.
+
 - id: hand-check-window
   owner: author
   title: Quarterly hand-check window
@@ -604,7 +616,8 @@ items:
   open: 0
   details: >
     About 1½ hours in the Hand Check app at any time from the 4th to the 28th: fix dates for
-    the cohort and the race list, slot (c) checks, AI-credit spot checks, re-shown items.
+    the cohort and the race list, slot (c) checks, AI-credit spot checks, re-shown items, and the AI-attack candidates from the
+    quarter's web sweep (keep or exclude each).
 
 - id: hand-check-reminder
   owner: author

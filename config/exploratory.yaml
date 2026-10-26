@@ -42,6 +42,32 @@ measures:
       - Government advisories (CISA, NCSC, ACSC, JPCERT)
       - MITRE ATLAS case studies and the AI Incident Database
       - LLM-agent honeypot research (e.g. Palisade Research's honeypot), as context
+    sweep:   # added 2026-10-26: quarterly web search, so reports outside the usual channels are found
+      when: the 2nd of Jan/Apr/Jul/Oct, for the quarter just ended (schedule item ai-incident-sweep)
+      by: Claude runs the searches; the author validates each candidate in the hand-check window
+      log: exploratory/ai_attack_sweeps.csv   # every candidate found, kept or not, with the reason
+      window: reports dated in the quarter; earlier incidents first reported in it count in it
+      queries:   # run every quarter unchanged, so sweeps are comparable; additions are dated
+        - AI agent cyberattack intrusion
+        - attackers used AI agent to exploit vulnerability
+        - LLM generated exploit used in the wild
+        - autonomous AI hacking campaign
+        - AI-assisted ransomware attack
+        - threat actors misuse Claude OR Gemini OR ChatGPT OR Copilot report
+        - MCP server OR AI agent compromised attack
+        - prompt injection attack in the wild data stolen
+        - AI coding assistant supply chain attack
+        - AI model escaped sandbox OR evaluation environment
+      also_check:   # fixed pages read every sweep
+        - AI-lab threat reports (Anthropic, OpenAI, Google GTIG, Microsoft)
+        - CISA, NCSC, ACSC and JPCERT advisories mentioning AI
+        - MITRE ATLAS case studies and AI Incident Database entries added in the quarter
+      rules: >
+        A candidate is logged in ai_attack_campaigns.csv only if a named organisation or
+        researcher reports real (not simulated) attacker use of AI, with a link; news stories
+        count only through the report they cite. Excluded candidates stay in the sweep log
+        with the reason (demo or research only, no AI role, duplicate, no primary source).
+        What no one reports stays invisible: counts remain a lower bound.
 
   - id: X4
     name: Automated and AI traffic against websites (Cloudflare Radar)
