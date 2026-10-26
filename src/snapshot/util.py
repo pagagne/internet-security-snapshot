@@ -90,6 +90,7 @@ class Manifest:
         self.run = run
         self.out_dir = out_dir
         self.entries: list[dict] = []
+        self.switches: dict = {}   # config/sources.yaml as it stood for this run
         self.started_at = utcnow()
 
     def add_file(self, source: str, path: Path, source_version: str, status: str = "ok", note: str = "") -> None:
@@ -129,6 +130,7 @@ class Manifest:
             "finished_at": utcnow(),
             "environment": environment(),
             "files": self.entries,
+            "source_switches": self.switches,
         }
         path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
         return path

@@ -24,6 +24,7 @@ from pathlib import Path
 import json
 import os
 
+from . import sources as switches
 from .collect import cve, epss, kev, nvd, radar, ransomware, sec
 from .util import Manifest, Quarter, utcnow
 
@@ -178,7 +179,8 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--quarter", help="e.g. 2026Q4 (default: previous quarter)")
     ap.add_argument("--run", choices=["provisional", "final", "dry-run"], help="default: inferred from today")
-    ap.add_argument("--sources", default=",".join(SOURCES), help=f"comma list from {SOURCES}")
+    ap.add_argument("--sources", default="", help=f"comma list from {SOURCES} (default: all whose "
+                    "switch in config/sources.yaml is on)")
     ap.add_argument("--out", default="data/raw", help="output root")
     ap.add_argument("--epss-step", type=int, default=1, help="days between EPSS samples (default 1 = daily)")
     args = ap.parse_args(argv)
@@ -190,13 +192,22 @@ def main(argv: list[str] | None = None) -> int:
     out = Path(args.out) / str(quarter) / run
     out.mkdir(parents=True, exist_ok=True)
     manifest = Manifest(quarter, run, out)
+    manifest.switches = {k: {f: v[f] for f in ("permission", "collect", "publish")}
+                         for k, v in switches.load().items()}
+    off = switches.disabled_pulls()
+    names = [s.strip() for s in args.sources.split(",") if s.strip()] or list(SOURCES)
+    for name in names:
+        if name not in PULLERS:
+            print(f"unknown source: {name}", file=sys.stderr)
+            return 2
 
     failures = 0
     with tempfile.TemporaryDirectory() as tmp:
-        for name in [s.strip() for s in args.sources.split(",") if s.strip()]:
-            if name not in PULLERS:
-                print(f"unknown source: {name}", file=sys.stderr)
-                return 2
+        for name in names:
+            if name in off:  # switched off in config/sources.yaml: recorded, not a gap
+                print(f"[pull] {name}: switched off in config/sources.yaml; skipped")
+                _annotate("notice", name, "switched off in config/sources.yaml; not collected")
+                continue
             print(f"[pull] {name} -> {out}")
             t0 = time.monotonic()
             try:

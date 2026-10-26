@@ -35,7 +35,8 @@ cannot see.
    `docs/OPERATIONS.md`; one-off check-ins are still needed, and none duplicate a schedule item
    after the cutover.
 9. GitHub issues: open `schedule` issues match what is due; done work is closed with a comment.
-10. The README's data-source tables match `docs/PERMISSIONS.md` (status of every request).
+10. The README's data-source tables match `docs/PERMISSIONS.md` (status of every request) and the
+    switches in `config/sources.yaml` (a test checks the switches against PERMISSIONS.md).
 11. Claude project docs (`claude/operations.md`, `claude/annual-plan.md`,
     `claude/handover-session-1.md`): re-upload any whose repository file changed.
 

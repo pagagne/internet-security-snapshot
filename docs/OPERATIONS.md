@@ -20,8 +20,10 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
   feeds `docs/schedule/snapshot.ics` and `docs/schedule/reviewer.ics` and the Schedule table in `README.md` (from the
   `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
-- **Daily job:** `.github/workflows/schedule.yml` runs at 12:07 UTC, with a backup run at
-  15:37 UTC because GitHub sometimes drops scheduled runs (it skipped the first one, 25 Oct). It opens each due
+- **Daily job:** `.github/workflows/schedule.yml` runs at 10:23, 12:07 and 15:37 UTC, because
+  GitHub drops scheduled runs at busy times (it skipped the 12:07 run on 25 and 26 Oct 2026).
+  As a last safety net the daily Claude work queue (08:32 ET) starts it by hand if no run has
+  succeeded that day. It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never
   duplicate) and starts any `dispatch:` run that has no cron of its own, such as the 1 Dec dry
   run. If a day is missed, the next run catches up on anything from the previous 6 days.
@@ -89,12 +91,15 @@ dates to the schedule file, never as hand-made calendar events, so the calendars
 not affected.)
 
 1. Read this file, then `docs/HANDOVER.md` (repository rules and standing rules).
-2. List open issues labelled `owner:claude`, oldest first. Each says what to do and points at
+2. If the Schedule workflow has no successful run today, start it
+   (`gh api -X POST repos/pagagne/internet-security-snapshot/actions/workflows/schedule.yml/dispatches -f ref=main`)
+   so today's issues exist.
+3. List open issues labelled `owner:claude`, oldest first. Each says what to do and points at
    the files involved. Do it, commit (small doc fixes to `main`; code by one pull request at a
    time), comment with what was done, and close the issue.
-3. If an item needs the author, comment on the issue and, for anything time-critical, tell the
+4. If an item needs the author, comment on the issue and, for anything time-critical, tell the
    author directly. Never guess at a decision listed for the author.
-4. New work or changed dates go into `docs/schedule/schedule.yaml` (then `build`), not into a
+5. New work or changed dates go into `docs/schedule/schedule.yaml` (then `build`), not into a
    chat reminder.
 
 The daily **Claude work-queue** scheduled task (on the author's Claude account) does exactly

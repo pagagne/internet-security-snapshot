@@ -23,7 +23,7 @@ Every number in the report travels the same path, left to right: free sources, a
 5. **Analysis.** The author's hand checks are added. Claude drafts the analysis and the author approves it before anything is published.
 6. **Publish.** The evaluation page, a quarter-by-quarter archive, timelines for the sampled flaws, and a citable Zenodo bundle of data and code.
 
-**Three sources are placeholders for now.** Shadowserver (internet exposure counts and honeypot attack data), VulnCheck KEV (earlier attack dates) and ransomware.live (leak-site post counts) were asked for permission on 20 October 2026. Follow-ups go out on 20 November, and replies are hoped for by 1 January 2027, before the pilot report. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly.
+**Three sources are placeholders for now.** Shadowserver (internet exposure counts and honeypot attack data), VulnCheck KEV (earlier attack dates) and ransomware.live (leak-site post counts) were asked for permission on 20 October 2026. Follow-ups go out on 20 November, and replies are hoped for by 1 January 2027, before the pilot report. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly. Each has its own on/off switch in the study's settings, so including or leaving one out is a settings change, not a code change.
 
 ## What the study looks at: flaws and four tracks
 
@@ -87,9 +87,11 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 **Attacker side: AI-assisted attacks (exploratory, clearly labelled, never deciding a label).**
 
 - **Speed in the tail:** the share of newly attacked flaws hit within 1 day and within 7 days of going public, and the share attacked before any fix existed. Faster exploitation is the first place AI-built attacks would show.
-- **A log of publicly reported AI-operated attack campaigns:** what they targeted, and whether they used known flaws or bugs that never got a CVE.
+- **A log of publicly reported AI-operated attack campaigns:** what they targeted, and whether they used known flaws or bugs that never got a CVE. Each quarter the log is topped up by a fixed web search in nine languages across about 20 regular sources, so reports outside the usual channels are found. Attacks nobody reports stay invisible, so the count is a minimum.
 - **AI software as a target:** flaws in model servers, agent platforms and AI gateways, and self-hosted AI servers left exposed on the internet.
 - **Capable models attackers can run privately:** a log of open-weight model releases, to line up with any change in attack speed.
+
+**Beyond the US (being tested).** The main attack list (CISA's) and the harm data (SEC, HHS) see the internet mostly from the US. Four exploratory additions are being tested in autumn 2026: other countries' attack alerts (France, Japan, Germany, Korea) compared with CISA's list; how widely basic internet protections (DNSSEC and route checking) are used, country by country; attack, bot and ransomware trends by region; and data-breach counts from other countries' regulators.
 
 **How the year builds.** The Q4 2026 pilot (January) gives the first look. Q1 2027 (April) is the first scored quarter. At the March 2027 annual review, an exploratory AI measure that has proved reliable can be promoted into the scored core. By Q3 2027 (November) there are four comparable quarters, enough to see whether AI-credited discovery and the attacker's clock are moving together. The first check against better reference data, covering 2027, follows in March 2028.
 

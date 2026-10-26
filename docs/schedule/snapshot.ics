@@ -120,6 +120,29 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:global-probes@2026-10-27@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261028
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Probe the global sources (X19-X22) and translate
+  the sweep searches
+DESCRIPTION:Responsible: Claude\n\nAuthor's request of 26 Oct (https://gith
+ ub.com/pagagne/internet-security-snapshot/blob/main/docs/INQUIRIES.md). Qu
+ ick tests through the Research probe workflow: can each national alert fee
+ d (CERT-FR\, JPCERT/CC\, BSI\, KrCERT/CC) be read and dated\, what do APNI
+ C Labs and RIPE NCC publish per country\, can Radar and ransomware.live be
+  split by region\, and what the breach regulators publish. Terms of use re
+ ad for each and logged in https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/PERMISSIONS.md. Translate the X3 sweep searches into 
+ the eight languages and fix them in https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/exploratory.yaml. Findings go to the 12 N
+ ov research review\; any source that holds up becomes active before the 29
+  Dec freeze.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:later-applications@2026-10-27@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261027T140000Z
@@ -338,10 +361,11 @@ DESCRIPTION:Responsible: Paul (author)\n\nEvery flagged race fix date (abou
  t 1½ h a quarter\; the author's leaning on 24 Oct) or a sample (about 50 
  min). The CISA-flag preview (zero-day share possibly understated by half) 
  is on the agenda\, with the 25 Oct probes: KEV's lag against other sources
- \, Linux fix dates\, honeypot first-seen dates and the AI-list check. http
- s://github.com/pagagne/internet-security-snapshot/blob/main/docs/RESEARCH_
- PLAN.md.\n\nSource: https://github.com/pagagne/internet-security-snapshot/
- blob/main/docs/schedule/schedule.yaml
+ \, Linux fix dates\, honeypot first-seen dates and the AI-list check\; and
+  the 27 Oct global probes (X19-X22: which non-US sources to adopt before t
+ he freeze). https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/docs/RESEARCH_PLAN.md.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -764,6 +788,26 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-incident-sweep@2027-01-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
+ 3)
+DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
+ X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Log
+  every candidate in https://github.com/pagagne/internet-security-snapshot/
+ blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
+ ason) and add the kept ones to https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
+ thor's check. Finds incidents reported outside the AI-lab and vendor chann
+ els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:approve-provisional@2027-01-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270102T150000Z
@@ -783,9 +827,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Quarterly hand-check window
 DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
   app at any time from the 4th to the 28th: fix dates for the cohort and th
- e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items\, a
+ nd the AI-attack candidates from the quarter's web sweep (keep or exclude 
+ each).\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1118,13 +1163,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (https://github.com/pagagne/internet-security-snapshot/blob/ma
  in/docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit rule\; the
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
- ain/docs/INQUIRIES.md) and the year's exploratory additions\; any change r
- un side by side for four quarters. From 2028 (the annual wrap-up): review 
- the annual check of the previous year's free results against reference sca
- n data and published insurance-claims and ransom-payment figures (pre-regi
- stration section 13)\, and approve it for publishing.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
+ ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
+ our AI-attack sweeps compared (what each found that the usual channels mis
+ sed\, and incidents reported late)\; any change run side by side for four 
+ quarters. From 2028 (the annual wrap-up): review the annual check of the p
+ revious year's free results against reference scan data and published insu
+ rance-claims and ransom-payment figures (pre-registration section 13)\, an
+ d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1182,6 +1228,26 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
  ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-incident-sweep@2027-04-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270402
+DTEND;VALUE=DATE:20270403
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
+ 3)
+DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
+ X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Log
+  every candidate in https://github.com/pagagne/internet-security-snapshot/
+ blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
+ ason) and add the kept ones to https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
+ thor's check. Finds incidents reported outside the AI-lab and vendor chann
+ els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-packet@2027-04-02@internet-security-snapshot
@@ -1248,9 +1314,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Quarterly hand-check window
 DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
   app at any time from the 4th to the 28th: fix dates for the cohort and th
- e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items\, a
+ nd the AI-attack candidates from the quarter's web sweep (keep or exclude 
+ each).\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1495,6 +1562,26 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-incident-sweep@2027-07-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270702
+DTEND;VALUE=DATE:20270703
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
+ 3)
+DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
+ X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Log
+  every candidate in https://github.com/pagagne/internet-security-snapshot/
+ blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
+ ason) and add the kept ones to https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
+ thor's check. Finds incidents reported outside the AI-lab and vendor chann
+ els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:approve-provisional@2027-07-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270702T140000Z
@@ -1514,9 +1601,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Quarterly hand-check window
 DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
   app at any time from the 4th to the 28th: fix dates for the cohort and th
- e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items\, a
+ nd the AI-attack candidates from the quarter's web sweep (keep or exclude 
+ each).\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1718,6 +1806,26 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-incident-sweep@2027-10-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271002
+DTEND;VALUE=DATE:20271003
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
+ 3)
+DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
+ X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Log
+  every candidate in https://github.com/pagagne/internet-security-snapshot/
+ blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
+ ason) and add the kept ones to https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
+ thor's check. Finds incidents reported outside the AI-lab and vendor chann
+ els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:approve-provisional@2027-10-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271002T140000Z
@@ -1737,9 +1845,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Quarterly hand-check window
 DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
   app at any time from the 4th to the 28th: fix dates for the cohort and th
- e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items\, a
+ nd the AI-attack candidates from the quarter's web sweep (keep or exclude 
+ each).\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1941,6 +2050,26 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-incident-sweep@2028-01-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280102
+DTEND;VALUE=DATE:20280103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
+ 3)
+DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
+ X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Log
+  every candidate in https://github.com/pagagne/internet-security-snapshot/
+ blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
+ ason) and add the kept ones to https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
+ thor's check. Finds incidents reported outside the AI-lab and vendor chann
+ els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:approve-provisional@2028-01-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20280102T150000Z
@@ -1960,9 +2089,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Quarterly hand-check window
 DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
   app at any time from the 4th to the 28th: fix dates for the cohort and th
- e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ e race list\, slot (c) checks\, AI-credit spot checks\, re-shown items\, a
+ nd the AI-attack candidates from the quarter's web sweep (keep or exclude 
+ each).\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2176,13 +2306,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (https://github.com/pagagne/internet-security-snapshot/blob/ma
  in/docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit rule\; the
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
- ain/docs/INQUIRIES.md) and the year's exploratory additions\; any change r
- un side by side for four quarters. From 2028 (the annual wrap-up): review 
- the annual check of the previous year's free results against reference sca
- n data and published insurance-claims and ransom-payment figures (pre-regi
- stration section 13)\, and approve it for publishing.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
+ ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
+ our AI-attack sweeps compared (what each found that the usual channels mis
+ sed\, and incidents reported late)\; any change run side by side for four 
+ quarters. From 2028 (the annual wrap-up): review the annual check of the p
+ revious year's free results against reference scan data and published insu
+ rance-claims and ransom-payment figures (pre-registration section 13)\, an
+ d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2263,13 +2394,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (https://github.com/pagagne/internet-security-snapshot/blob/ma
  in/docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit rule\; the
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
- ain/docs/INQUIRIES.md) and the year's exploratory additions\; any change r
- un side by side for four quarters. From 2028 (the annual wrap-up): review 
- the annual check of the previous year's free results against reference sca
- n data and published insurance-claims and ransom-payment figures (pre-regi
- stration section 13)\, and approve it for publishing.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
+ ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
+ our AI-attack sweeps compared (what each found that the usual channels mis
+ sed\, and incidents reported late)\; any change run side by side for four 
+ quarters. From 2028 (the annual wrap-up): review the annual check of the p
+ revious year's free results against reference scan data and published insu
+ rance-claims and ransom-payment figures (pre-registration section 13)\, an
+ d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2311,13 +2443,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   may change (https://github.com/pagagne/internet-security-snapshot/blob/ma
  in/docs/CHANGE_POLICY.md). Promotion candidates\; the AI-credit rule\; the
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
- ain/docs/INQUIRIES.md) and the year's exploratory additions\; any change r
- un side by side for four quarters. From 2028 (the annual wrap-up): review 
- the annual check of the previous year's free results against reference sca
- n data and published insurance-claims and ransom-payment figures (pre-regi
- stration section 13)\, and approve it for publishing.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
+ ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
+ our AI-attack sweeps compared (what each found that the usual channels mis
+ sed\, and incidents reported late)\; any change run side by side for four 
+ quarters. From 2028 (the annual wrap-up): review the annual check of the p
+ revious year's free results against reference scan data and published insu
+ rance-claims and ransom-payment figures (pre-registration section 13)\, an
+ d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 END:VCALENDAR

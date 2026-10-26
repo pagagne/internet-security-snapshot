@@ -90,9 +90,9 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "56a8bec0b654fb9d",
+    "README.md": "934fdf4fe596ad8a",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
+    ".github/workflows/quarterly-pull.yml": "3d3f388226a029cb",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
    "reviewed_on": "2026-10-26"
@@ -104,10 +104,10 @@
     "docs/RESEARCH_PLAN.md"
    ],
    "fingerprints": {
-    "docs/RESEARCH_PLAN.md": "c8a29b17ec4fcec8",
+    "docs/RESEARCH_PLAN.md": "9d86792d04dc2e55",
     "docs/diagrams/build_plan.mmd": "80ce08dd83793675"
    },
-   "reviewed_on": "2026-10-25"
+   "reviewed_on": "2026-10-26"
   },
   "freeze_year": {
    "doc": "docs/CORE_FREEZE_DECISIONS.md",
@@ -118,7 +118,7 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "c8fb231e3fd9119c",
-    "README.md": "56a8bec0b654fb9d",
+    "README.md": "934fdf4fe596ad8a",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
    "reviewed_on": "2026-10-26"
@@ -132,8 +132,8 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "bef57bfe7a5659f7",
-    ".github/workflows/quarterly-pull.yml": "92be6e23d986be3c",
+    "docs/PERMISSIONS.md": "b618ba98fed19998",
+    ".github/workflows/quarterly-pull.yml": "3d3f388226a029cb",
     "tools/architecture_svg.py": "7cfa07300af7bf8c",
     "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
    },

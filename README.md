@@ -60,6 +60,19 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 | VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Awaiting written permission; used privately only until then |
 | ransomware.live | Ransomware leak-site postings, aggregates only (T6a) | Asked 20 Oct 2026 | Awaiting reply |
 | Censys | Internet exposure counts (T1b, T2) and the annual check | Application 28 Oct 2026 | To send |
+
+Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived
+from one is published until its permission is granted.
+
+### Being tested: views beyond the US (added 26 Oct 2026)
+
+| Source | What it would give the study | Role |
+|---|---|---|
+| CERT-FR, JPCERT/CC, BSI, KrCERT/CC alerts | Other countries' active-exploitation alerts, compared with CISA KEV | Exploratory (X19) |
+| APNIC Labs and RIPE NCC | DNSSEC validation and RPKI route checking by country | Exploratory (X20) |
+| Cloudflare Radar and ransomware.live by region | Attack, bot and ransomware trends by world region | Exploratory (X21) |
+| UK ICO, OAIC, PDPC, ENISA | Data-breach notifications outside the US | Exploratory (X22) |
+| Quarterly web sweep, nine languages | AI-run attack reports outside the usual channels | Exploratory (X3) |
 | GreyNoise | Attack activity by CVE | Request 27 Oct 2026 | To send |
 | CrowdSec | Exploitation timelines by CVE | Question 27 Oct 2026 | To send |
 

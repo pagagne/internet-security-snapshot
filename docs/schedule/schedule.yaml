@@ -84,7 +84,8 @@ items:
     Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a
     sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by
     half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux
-    fix dates, honeypot first-seen dates and the AI-list check. docs/RESEARCH_PLAN.md.
+    fix dates, honeypot first-seen dates and the AI-list check; and the 27 Oct global probes
+    (X19-X22: which non-US sources to adopt before the freeze). docs/RESEARCH_PLAN.md.
 
 - id: validation-fix-dates
   owner: author
@@ -508,7 +509,8 @@ items:
   details: >
     The one time each year core rules may change (docs/CHANGE_POLICY.md). Promotion
     candidates; the AI-credit rule; the inquiry log (docs/INQUIRIES.md) and the year's
-    exploratory additions; any change run side by side for four quarters. From 2028
+    exploratory additions; the year's four AI-attack sweeps compared (what each found that
+    the usual channels missed, and incidents reported late); any change run side by side for four quarters. From 2028
     (the annual wrap-up): review the annual check of the previous year's free results against
     reference scan data and published insurance-claims and ransom-payment figures
     (pre-registration section 13), and approve it for publishing.
@@ -596,6 +598,30 @@ items:
   minutes: 60
   details: Read Claude's draft and approve it for publishing (by the 3rd at the latest).
 
+- id: global-probes
+  owner: claude
+  title: Probe the global sources (X19-X22) and translate the sweep searches
+  date: 2026-10-27
+  details: >
+    Author's request of 26 Oct (docs/INQUIRIES.md). Quick tests through the Research probe
+    workflow: can each national alert feed (CERT-FR, JPCERT/CC, BSI, KrCERT/CC) be read and
+    dated, what do APNIC Labs and RIPE NCC publish per country, can Radar and ransomware.live
+    be split by region, and what the breach regulators publish. Terms of use read for each
+    and logged in docs/PERMISSIONS.md. Translate the X3 sweep searches into the eight languages
+    and fix them in config/exploratory.yaml. Findings go to the 12 Nov research review; any
+    source that holds up becomes active before the 29 Dec freeze.
+
+- id: ai-incident-sweep
+  owner: claude
+  title: Quarterly web sweep for AI-run attack reports (X3)
+  repeat: {months: [1, 4, 7, 10], day: 2, from: 2027-01, until: 2028-01}
+  details: >
+    Run the fixed searches and pages in the X3 entry of config/exploratory.yaml for reports
+    dated in the quarter just ended. Log every candidate in exploratory/ai_attack_sweeps.csv
+    (kept or excluded, with the reason) and add the kept ones to
+    exploratory/ai_attack_campaigns.csv marked for the author's check. Finds incidents reported
+    outside the AI-lab and vendor channels; it cannot find what nobody reports.
+
 - id: hand-check-window
   owner: author
   title: Quarterly hand-check window
@@ -604,7 +630,8 @@ items:
   open: 0
   details: >
     About 1½ hours in the Hand Check app at any time from the 4th to the 28th: fix dates for
-    the cohort and the race list, slot (c) checks, AI-credit spot checks, re-shown items.
+    the cohort and the race list, slot (c) checks, AI-credit spot checks, re-shown items, and the AI-attack candidates from the
+    quarter's web sweep (keep or exclude each).
 
 - id: hand-check-reminder
   owner: author

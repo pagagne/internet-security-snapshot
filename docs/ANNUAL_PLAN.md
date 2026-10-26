@@ -17,6 +17,7 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Author | Annual review and change window | day 15, Mar, 2027-03 to 2030-03, 11:00 ET |
 | External reviewer | Second coder - 20 blinded items | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 (14 days) |
 | Claude | Draft the provisional evaluation; load the hand-check lists | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
+| Claude | Quarterly web sweep for AI-run attack reports (X3) | day 2, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Choose this quarter's watch cases by the rule | day 6, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
@@ -40,6 +41,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 25 Oct 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 26 Oct 2026 | Claude | Draft the CCRI outreach email and the second-coder role summary - done |
 | Mon 26 Oct 2026 | Claude | Continue the research window |
+| Tue 27 Oct 2026 | Claude | Probe the global sources (X19-X22) and translate the sweep searches |
 | Tue 27 Oct 2026, 10:00 ET | Paul | Send the GreyNoise research request and the CrowdSec question |
 | Wed 28 Oct 2026, 10:00 ET | Paul | Call the UGA Career Center about the reviewer posting |
 | Wed 28 Oct 2026, 14:00 ET | Paul | Write and send the Censys research-access application |
@@ -82,6 +84,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 29 Dec 2026, 10:00 ET | Paul | Freeze the core (core-v1.2) and update OSF |
 | Fri 01 Jan 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Jan 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sat 02 Jan 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sat 02 Jan 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Mon 04 Jan 2027 to 28 Jan | Paul | Quarterly hand-check window |
 | Mon 04 Jan 2027 | Paul | Post the reviewer ad; email statistics department coordinators |
@@ -110,6 +113,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 28 Mar 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Apr 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Apr 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Fri 02 Apr 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Fri 02 Apr 2027 | Claude | Send the reviewer the Q1 2027 review packet |
 | Fri 02 Apr 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Sat 03 Apr 2027 to 28 Apr | Reviewer | Independent review of the Q1 2027 provisional report |
@@ -131,6 +135,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 28 Jun 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Jul 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Fri 02 Jul 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Fri 02 Jul 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Sun 04 Jul 2027 to 28 Jul | Paul | Quarterly hand-check window |
 | Tue 06 Jul 2027 | Claude | Choose this quarter's watch cases by the rule |
@@ -147,6 +152,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 28 Sep 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Oct 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sat 02 Oct 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sat 02 Oct 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Mon 04 Oct 2027 to 28 Oct | Paul | Quarterly hand-check window |
 | Wed 06 Oct 2027 | Claude | Choose this quarter's watch cases by the rule |
@@ -163,6 +169,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 28 Dec 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Sat 01 Jan 2028, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sun 02 Jan 2028 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sun 02 Jan 2028, 10:00 ET | Paul | Approve the provisional draft |
 | Tue 04 Jan 2028 to 28 Jan | Paul | Quarterly hand-check window |
 | Thu 06 Jan 2028 | Claude | Choose this quarter's watch cases by the rule |
@@ -200,7 +207,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 29 Oct 2026, 10:00 ET | Create a free Google Cloud project for BigQuery (HTTP Archive, deps.dev history) | console.cloud.google.com: new project "internet-security-snapshot"; enable the BigQuery API; no billing needed (the BigQuery sandbox includes 1 TB of queries a month); if you ever link billing, add a budget alert at $1; IAM > Service accounts > create "snapshot-bq" with the role BigQuery Job User; Keys > Add key > JSON; in GitHub > Settings > Secrets and variables > Actions, add GCP_SA_KEY (paste the whole file) and GCP_PROJECT (the project ID). Never paste the key into chat. Delete the downloaded file afterwards. |
 | Fri 06 Nov 2026 | Create the project email address | For university postings and the reviewer invitation (instead of a personal address). |
 | Mon 09 Nov 2026, 10:00 ET | Email CCRI's cybersecurity program director (alumni route, second coder) | Rewrite docs/reviewer/ccri-outreach.md in your own words and send it to the program director (Michael Kelly per CCRI's 2023 news), with docs/reviewer/SECOND_CODER.md. Mainly for the second coder; also asks about CCRI graduates now in a bachelor's programme for the full review. Disclose your alumni tie if a CCRI candidate is chosen (the invitation's conflict-of-interest section). Tell Claude, who logs it. |
-| Thu 12 Nov 2026, 10:00 ET | Review research results; decide race fix-date effort | Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux fix dates, honeypot first-seen dates and the AI-list check. docs/RESEARCH_PLAN.md. |
+| Thu 12 Nov 2026, 10:00 ET | Review research results; decide race fix-date effort | Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux fix dates, honeypot first-seen dates and the AI-list check; and the 27 Oct global probes (X19-X22: which non-US sources to adopt before the freeze). docs/RESEARCH_PLAN.md. |
 | Mon 16 Nov 2026, 10:00 ET | Validation fix dates, then spot-check references | In the Hand Check app, list "Validation: reference cases": record the fix dates BEFORE opening prereg/ground_truth_reference.csv. Then tell Claude. |
 | Wed 18 Nov 2026 | Ask Georgia State Career Services about the reviewer posting | Same question as UGA; the Handshake account carries over. |
 | Fri 20 Nov 2026, 09:00 ET | Data-permission follow-ups | Claude drafts follow-ups for any of ransomware.live (ticket #3425), VulnCheck (community@vulncheck.com) and Shadowserver (ticket pqaytmyy) that have not replied; you send them. Log in docs/PERMISSIONS.md. Cutoff: the 21 Dec session. |
@@ -245,6 +252,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 25 Oct 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Mon 26 Oct 2026 | Draft the CCRI outreach email and the second-coder role summary - done | docs/reviewer/ccri-outreach.md (draft for the author to rewrite) and docs/reviewer/SECOND_CODER.md (one-page role summary). Author's decision, 26 Oct: approach CCRI (the author's alma mater; NSA CAE in Cyber Defense) mainly for the second coder. |
 | Mon 26 Oct 2026 | Continue the research window | docs/RESEARCH_PLAN.md: item 5 (an on/off switch per permissioned source in config), then item 4 (remaining evaluation code: labels T2, T4-T6; X6-X12; NVD root-cause fill; draft evaluation page); consider CISA's active-exploitation assessment date as a research-flag T_exploit candidate; then Plan 1 / Plan 2 research. Report to the author only findings worth knowing. |
+| Tue 27 Oct 2026 | Probe the global sources (X19-X22) and translate the sweep searches | Author's request of 26 Oct (docs/INQUIRIES.md). Quick tests through the Research probe workflow: can each national alert feed (CERT-FR, JPCERT/CC, BSI, KrCERT/CC) be read and dated, what do APNIC Labs and RIPE NCC publish per country, can Radar and ransomware.live be split by region, and what the breach regulators publish. Terms of use read for each and logged in docs/PERMISSIONS.md. Translate the X3 sweep searches into the eight languages and fix them in config/exploratory.yaml. Findings go to the 12 Nov research review; any source that holds up becomes active before the 29 Dec freeze. |
 | Mon 02 Nov 2026 | HHS OCR health-breach series - second attempt at the export | Probe 25 Oct: the portal answers, but its CSV export is a form the probe did not trigger. Second attempt with the form's real fields; if it still fails, the public research copies of the same register are checked for terms. Quarterly counts of "hacking/IT incident" breaches of 500+ people; aggregates only, beside T6. |
 | Mon 02 Nov 2026 | HTTP Archive test - are software versions recorded? (after the BigQuery project) | One small BigQuery query within the free tier, with a per-query byte cap. If versions are recorded, propose an exploratory patch-adoption measure for web software (share of sites on the fixed version, 30 and 90 days after the fix). WordPress.org version statistics work (probe 25 Oct: version shares per plugin, today only), so they need weekly capture to build history. Also deps.dev's BigQuery history for the patch-adoption prototype. |
 | Mon 02 Nov 2026 | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill | snapshot.fixdates.prefill_exploited: fixing commits from kernel CVE records dated through the GitHub mirrors; Debian/Ubuntu trackers as a cross-check; CSAF feeds of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws. Measure the drop in "assumed" dates on the 175-flaw probe. Code change by pull request, before the 14 Dec review. |
