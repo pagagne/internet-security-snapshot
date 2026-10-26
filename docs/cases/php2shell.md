@@ -76,7 +76,8 @@ How knowledge of the flaws and of the fix spread, as reported (sources disagree 
   large, but the big operators were fixed earlier. Worth a hand-check note field "patched
   early for selected parties (embargo)" and, where a date is known, recording it beside the
   public date, so the race is not read as the same for everyone. The interval dates
-  (`fix_lo`/`fix_hi`, decision item 20) could carry it if the 21 Dec session agrees.
+  (`fix_lo`/`fix_hi`) could carry it: added to decision item 20 for the 21 Dec session
+  (author, 26 Oct).
 - **Attack before the public fix:** attempts from 17 Oct, four days before 21 Oct, possibly
   from the embargo leaking. A negative race value against the public fix; against an early
   private patch it may not be. Free data still dates the first attack at the KEV listing.

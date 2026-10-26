@@ -87,6 +87,18 @@ items:
   date: 2026-11-06
   details: For university postings and the reviewer invitation (instead of a personal address).
 
+- id: ai-sweep-trial
+  owner: claude
+  title: Trial AI-attack sweep on Jul-Oct 2026 (tests the searches before the freeze)
+  date: 2026-11-05
+  details: >
+    Author's choice of 26 Oct. Run the full X3 sweep once (10 searches in nine languages, the
+    regular pages in config/exploratory.yaml) on reports dated July-October 2026. Log every
+    candidate in exploratory/ai_attack_sweeps.csv (sweep_quarter "trial-2026"); add kept ones
+    to the campaign log marked for the author's check. Report for the 12 Nov review: hits and
+    noise per search and page, time taken, incidents the log had missed, and proposed changes
+    to the searches (approved by the author before the 29 Dec freeze).
+
 - id: research-review
   owner: author
   title: Review research results; decide race fix-date effort
@@ -98,7 +110,8 @@ items:
     sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by
     half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux
     fix dates, honeypot first-seen dates and the AI-list check; and the 27 Oct global probes
-    (X19-X22: which non-US sources to adopt before the freeze). docs/RESEARCH_PLAN.md.
+    (X19-X22: which non-US sources to adopt before the freeze), the X12 capability bar, and
+    the trial AI-attack sweep (searches to keep or change). docs/RESEARCH_PLAN.md.
 
 - id: validation-fix-dates
   owner: author
