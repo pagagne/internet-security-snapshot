@@ -18,7 +18,15 @@
      "value": 22,
      "optional": true
     }
-   ]
+   ],
+   "guided": {
+    "kind": "median_days",
+    "id": "cve",
+    "from": "fix_date",
+    "to": "attack_date_kev_added",
+    "source": "fix_date_source",
+    "link": "check_fix_date_at"
+   }
   }
  ]
 }

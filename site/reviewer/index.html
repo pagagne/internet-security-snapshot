@@ -118,6 +118,17 @@ ol.check input { margin-top: 5px; }
 .note { font-size: .86rem; color: var(--muted); }
 .flash { font-size: .86rem; color: var(--ok); min-height: 1.2em; }
 .sample-flag { border-left: 3px solid var(--due); padding-left: 10px; }
+.guided, .guided ol.steps > li, .guided .answer .field { min-width: 0; }
+.guided { display: grid; gap: 12px; border: 1px solid var(--line); border-radius: 4px; padding: 12px; background: var(--paper); }
+.guided h4 { margin: 0; font: 600 .95rem var(--f-body); }
+.guided ol.steps { margin: 0; padding-left: 1.2rem; display: grid; gap: 14px; }
+.gtable { max-width: 100%; max-height: 16rem; overflow: auto; border: 1px solid var(--line); border-radius: 4px; }
+.gtable table { border-collapse: collapse; width: 100%; font: 12.5px/1.4 var(--f-mono); }
+.gtable th, .gtable td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.gtable th { position: sticky; top: 0; background: var(--paper); }
+.gtable tr.mid td { background: var(--accent-soft); font-weight: 600; }
+.sorted { font: 12.5px/1.7 var(--f-mono); overflow-wrap: anywhere; }
+.sorted b { background: var(--accent-soft); color: var(--accent); padding: 0 3px; border-radius: 3px; }
 pre.out { margin: 0; overflow-x: auto; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 10px; font: 12.5px/1.45 var(--f-mono); }
 footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
 </style>
@@ -332,6 +343,69 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
   $("#drawbtn").addEventListener("click", renderDraw);
   $("#seed").value = store.get("seed", "");
   const drafts = {};   // typed but not yet checked; kept across re-renders
+  const openGuided = {};
+  const guidedChecks = store.get("guided", {});   // row checks against sources, per worksheet
+  const CSVCACHE = {};
+  const dayDiffIso = (a, b) => Math.round((Date.parse(b + "T00:00:00Z") - Date.parse(a + "T00:00:00Z")) / 86400000);
+  /* Guided check: the page shows each step of the arithmetic, written separately from the
+     study's own code (Python). Less independent than a spreadsheet, and labelled so. */
+  async function renderGuided(w) {
+    const box = $(`#g-${w.id}`); if (!box) return;
+    const g = w.guided;
+    if (!CSVCACHE[w.id]) {
+      box.innerHTML = `<p class="note">Loading the inputs...</p>`;
+      try { CSVCACHE[w.id] = parseCSV(await (await fetch(w.inputs)).text()); }
+      catch (e) { box.innerHTML = `<p class="note">Couldn't load the inputs. Use the spreadsheet route above.</p>`; return; }
+    }
+    const rows = CSVCACHE[w.id];
+    const seed = store.get("seed", "") || "practice";
+    const picks = (await draw("rows|" + seed, rows.map((r) => r[g.id]), 3));
+    const mine = guidedChecks[w.id] || {};
+    const withDays = rows.map((r) => ({ ...r, _days: dayDiffIso(r[g.from], r[g.to]) }));
+    const sorted = withDays.map((r) => r._days).sort((x, y) => x - y);
+    const n = sorted.length, lo = Math.floor((n - 1) / 2), hi = Math.ceil((n - 1) / 2);
+    const median = (sorted[lo] + sorted[hi]) / 2;
+    const nonpos = sorted.filter((d) => d <= 0).length;
+    const sortedHtml = sorted.map((d, i) => (i === lo || i === hi) ? `<b>${d}</b>` : String(d)).join(", ");
+    box.innerHTML = `<div class="guided">
+      <h4>Guided check</h4>
+      <p class="note sample-flag">This page does the arithmetic for you, one visible step at a time, with code written separately from the study's own. It is less independent than recomputing in your own spreadsheet; your result is recorded as "guided".</p>
+      <ol class="steps">
+        <li><strong>Look at the inputs.</strong> ${n} flaws, one row each: the fix date, the date it was added to CISA's list (the first known attack), and where the fix date came from.
+          <div class="gtable"><table><thead><tr><th>Flaw</th><th>Fix date</th><th>Attack date</th><th>Fix date from</th></tr></thead><tbody>
+          ${rows.map((r) => `<tr><td>${esc(r[g.id])}</td><td>${esc(r[g.from])}</td><td>${esc(r[g.to])}</td><td>${esc(r[g.source])}</td></tr>`).join("")}
+          </tbody></table></div></li>
+        <li><strong>Check three inputs against their sources.</strong> Picked by your seed (${esc(seed)}). Open each link, find when the fix was first released, and enter that date.
+          ${picks.map((id) => { const r = rows.find((x) => x[g.id] === id); const v = mine[id] || "";
+            const st = v ? (v === r[g.from] ? `<span class="chip ok">Matches</span>` : `<span class="chip bad">Differs: input says ${esc(r[g.from])}</span>`) : "";
+            return `<div class="answer"><label class="field"><span>${esc(id)} &middot; <a href="${esc(r[g.link])}" target="_blank" rel="noopener">source</a></span>
+              <input type="date" data-gcheck="${esc(id)}" value="${esc(v)}"></label>${st}</div>`; }).join("")}</li>
+        <li><strong>Days from fix to attack, for every flaw:</strong> attack date minus fix date. A negative number means the attack came before any fix.
+          <div class="gtable"><table><thead><tr><th>Flaw</th><th>Attack date &minus; fix date</th><th>Days</th></tr></thead><tbody>
+          ${withDays.map((r) => `<tr><td>${esc(r[g.id])}</td><td>${esc(r[g.to])} &minus; ${esc(r[g.from])}</td><td>${r._days}</td></tr>`).join("")}
+          </tbody></table></div>
+          <p class="note">Spot-check any row on a calendar if you like.</p></li>
+        <li><strong>Sort the ${n} numbers and take the middle.</strong> With ${n} values the middle ${lo === hi ? `is value ${lo + 1}` : `is the average of values ${lo + 1} and ${hi + 1}`} (highlighted).
+          <p class="sorted">${sortedHtml}</p>
+          <p>Median = ${lo === hi ? sorted[lo] : `(${sorted[lo]} + ${sorted[hi]}) &divide; 2`} = <strong>${median}</strong> days.
+          Flaws with 0 days or fewer (attacked on or before the fix): <strong>${nonpos}</strong> of ${n}.</p></li>
+        <li><strong>Compare with the published value.</strong>
+          <div class="answer">${median === w.answers[0].value ? `<span class="chip ok">Matches the published ${esc(w.answers[0].value)}</span>` : `<span class="chip bad">Differs from the published ${esc(w.answers[0].value)}</span>`}
+          <button class="btn" type="button" id="grec-${esc(w.id)}">Record this guided result</button></div></li>
+      </ol></div>`;
+    box.querySelectorAll("input[data-gcheck]").forEach((el) => el.addEventListener("change", () => {
+      (guidedChecks[w.id] = guidedChecks[w.id] || {})[el.dataset.gcheck] = el.value;
+      store.set("guided", guidedChecks); renderGuided(w);
+    }));
+    $(`#grec-${w.id}`).addEventListener("click", () => {
+      const checks = Object.entries(guidedChecks[w.id] || {}).filter(([id]) => picks.includes(id))
+        .map(([id, v]) => `${id} ${v === rows.find((x) => x[g.id] === id)[g.from] ? "matches" : "differs (" + v + ")"}`);
+      const rec = results[w.id] = results[w.id] || {};
+      rec[0] = { mine: median, match: median === w.answers[0].value, at: todayIso(), method: "guided", checks };
+      if (w.answers[1]) rec[1] = { mine: nonpos, match: nonpos === w.answers[1].value, at: todayIso(), method: "guided" };
+      store.set("spot", results); renderWS(); renderSpotOut();
+    });
+  }
   function renderWS() {
     $("#wslist").innerHTML = WS.map((w) => `
       <div class="ws">
@@ -345,7 +419,13 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
             <input type="number" step="any" class="mono" id="a-${w.id}-${i}" value="${r ? esc(r.mine) : esc(drafts[`a-${w.id}-${i}`] ?? "")}"></label>
             <button class="btn ghost" type="button" data-ws="${esc(w.id)}" data-i="${i}">Check</button>${chip}</div>`;
         }).join("")}</div>
+        ${w.guided ? `<div><button class="btn ghost" type="button" data-guided="${esc(w.id)}">${openGuided[w.id] ? "Hide the guided check" : "Guided check, no spreadsheet"}</button></div>
+        <div id="g-${esc(w.id)}" ${openGuided[w.id] ? "" : "hidden"}></div>` : ""}
       </div>`).join("") || `<p class="muted">No worksheets published yet.</p>`;
+    $("#wslist").querySelectorAll("button[data-guided]").forEach((b) => b.addEventListener("click", () => {
+      openGuided[b.dataset.guided] = !openGuided[b.dataset.guided]; renderWS();
+    }));
+    WS.filter((w) => w.guided && openGuided[w.id]).forEach(renderGuided);
     $("#wslist").querySelectorAll("input[type=number]").forEach((el) => el.addEventListener("input", () => { drafts[el.id] = el.value; }));
     $("#wslist").querySelectorAll("button[data-ws]").forEach((b) => b.addEventListener("click", () => {
       const w = WS.find((x) => x.id === b.dataset.ws), i = +b.dataset.i, a = w.answers[i];
@@ -359,7 +439,7 @@ footer { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
     const lines = [];
     WS.forEach((w) => w.answers.forEach((a, i) => {
       const r = (results[w.id] || {})[i];
-      if (r) lines.push(`${w.id}${w.sample ? " (sample)" : ""} | ${a.label}: mine ${r.mine}, published ${a.value} | ${r.match ? "match" : "DIFFERS"} | ${r.at}`);
+      if (r) lines.push(`${w.id}${w.sample ? " (sample)" : ""} | ${a.label}: mine ${r.mine}, published ${a.value} | ${r.match ? "match" : "DIFFERS"} | ${r.method === "guided" ? "guided" : "own spreadsheet"} | ${r.at}` + (r.checks && r.checks.length ? ` | inputs checked: ${r.checks.join("; ")}` : ""));
     }));
     const seed = store.get("seed", "");
     $("#spotout").textContent = lines.length ? (seed ? `Seed: ${seed}\n` : "") + lines.join("\n") : "No results yet.";
