@@ -58,6 +58,8 @@ measures:
         - prompt injection attack in the wild data stolen
         - AI coding assistant supply chain attack
         - AI model escaped sandbox OR evaluation environment
+      languages: [en, zh, ja, ko, ru, es, pt, de, fr]   # added 2026-10-26: each query also run in
+        # these languages (translated once and kept fixed); each candidate records the language found in
       also_check:   # fixed pages read every sweep (list fixed 26 Oct 2026; later additions are dated)
         - AI-lab threat reports (Anthropic, OpenAI, Google GTIG, Microsoft)
         - Government advisories mentioning AI (CISA, NCSC, ACSC, JPCERT, CERT-EU, ENISA)
@@ -66,6 +68,7 @@ measures:
         - Vendor research blogs (Mandiant, Palo Alto Unit 42, Cisco Talos, Microsoft Threat Intelligence, CrowdStrike, ESET, Kaspersky Securelist, Check Point Research, Sophos X-Ops, Huntress)
         - AI-security trackers (OWASP GenAI Security Project incidents, AIAAIC repository)
         - News sites, for leads only (The Record, BleepingComputer, SecurityWeek, Dark Reading)
+        - Research blogs outside the US and Europe (added 2026-10-26): AhnLab ASEC (Korea), Qi An Xin and Qihoo 360 (China), Trend Micro and JPCERT/CC (Japan)
       rules: >
         A candidate is logged in ai_attack_campaigns.csv only if a named organisation or
         researcher reports real (not simulated) attacker use of AI, with a link; news stories
@@ -257,3 +260,61 @@ measures:
       empty credit fields (vendors that credit only in their own advisories). Read with the
       list's own selection bias in mind.
 
+
+  # Added 26 Oct 2026 at the author's request: views from outside the US and the Five Eyes,
+  # because the core sources (CISA KEV, NVD, SEC, HHS) see the internet mostly from the US.
+  # Each starts with a probe of the data (schedule item global-probes); status becomes
+  # active only if the data holds up.
+  - id: X19
+    name: National exploitation alerts against CISA KEV
+    question: Do other national cyber agencies flag attacked flaws that CISA's list misses, or flag them earlier?
+    sources: [national_alerts, kev]
+    added: 2026-10-26
+    feeds_labels: false
+    status: planned
+    method: >
+      Each quarter: CVEs named in active-exploitation alerts from CERT-FR (France), JPCERT/CC
+      (Japan), BSI (Germany) and KrCERT/CC (Korea), each with its alert date. Reported: how many
+      each agency flagged, the share also in CISA KEV, the share flagged before KEV listed them
+      (and by how many days), and those never in KEV. An earlier alert date is also a candidate
+      T_exploit date (snapshot.events other_exploit), compared side by side with KEV-only dates;
+      it does not replace them in the core.
+
+  - id: X20
+    name: Internet routing and naming hygiene by country (APNIC Labs, RIPE NCC)
+    question: Are the internet's basic protections (DNSSEC validation, RPKI route checking) spreading, country by country and region by region?
+    sources: [apnic_labs, ripe_ncc]
+    added: 2026-10-26
+    feeds_labels: false
+    status: planned
+    method: >
+      Quarterly snapshot of the public per-country measurements: share of users behind
+      resolvers that validate DNSSEC, and share of routes covered by RPKI and of networks
+      that drop invalid routes. Reported by region with a world figure weighted by users. A
+      measure of the internet's own health, independent of any government's list.
+
+  - id: X21
+    name: Regional splits of attack, bot and ransomware series
+    question: Do the attack and harm trends differ by world region?
+    sources: [radar, ransomware]
+    added: 2026-10-26
+    feeds_labels: false
+    status: planned
+    method: >
+      Cloudflare Radar layer-7 attack and bot-traffic series by region, and ransomware.live
+      monthly posting counts by victim country grouped into regions (aggregates only, as
+      the standing rules require; ransomware.live figures published only once permission is
+      granted, config/sources.yaml). Shadowserver per-country series are added if approved.
+
+  - id: X22
+    name: Breach notifications outside the US
+    question: Is reported breach harm rising outside the US too?
+    sources: [uk_ico, oaic, enisa, sg_pdpc]
+    added: 2026-10-26
+    feeds_labels: false
+    status: planned
+    method: >
+      Published counts of reported data breaches from the UK ICO, Australia's OAIC (twice a
+      year), Singapore's PDPC and ENISA's EU reports, shown next to HHS OCR (X17) and SEC
+      Item 1.05. Each regulator's rules on what must be reported differ, so each series is
+      read as its own trend, never added together. Lower priority: after X19-X21.

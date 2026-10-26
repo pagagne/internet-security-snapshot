@@ -84,7 +84,8 @@ items:
     Every flagged race fix date (about 1½ h a quarter; the author's leaning on 24 Oct) or a
     sample (about 50 min). The CISA-flag preview (zero-day share possibly understated by
     half) is on the agenda, with the 25 Oct probes: KEV's lag against other sources, Linux
-    fix dates, honeypot first-seen dates and the AI-list check. docs/RESEARCH_PLAN.md.
+    fix dates, honeypot first-seen dates and the AI-list check; and the 27 Oct global probes
+    (X19-X22: which non-US sources to adopt before the freeze). docs/RESEARCH_PLAN.md.
 
 - id: validation-fix-dates
   owner: author
@@ -596,6 +597,19 @@ items:
   time: "10:00"
   minutes: 60
   details: Read Claude's draft and approve it for publishing (by the 3rd at the latest).
+
+- id: global-probes
+  owner: claude
+  title: Probe the global sources (X19-X22) and translate the sweep searches
+  date: 2026-10-27
+  details: >
+    Author's request of 26 Oct (docs/INQUIRIES.md). Quick tests through the Research probe
+    workflow: can each national alert feed (CERT-FR, JPCERT/CC, BSI, KrCERT/CC) be read and
+    dated, what do APNIC Labs and RIPE NCC publish per country, can Radar and ransomware.live
+    be split by region, and what the breach regulators publish. Terms of use read for each
+    and logged in docs/PERMISSIONS.md. Translate the X3 sweep searches into the eight languages
+    and fix them in config/exploratory.yaml. Findings go to the 12 Nov research review; any
+    source that holds up becomes active before the 29 Dec freeze.
 
 - id: ai-incident-sweep
   owner: claude

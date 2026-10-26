@@ -139,6 +139,21 @@ branch). Window: KEV additions Jan-Sep 2026 (246 flaws).
 | HHS OCR (X17) | Portal reachable; its CSV export is a form the probe did not trigger. | Second attempt 2 Nov |
 | WordPress.org statistics | Work: version shares per plugin (today only; needs weekly capture for history). | With the HTTP Archive test |
 
+## Widening beyond the US (26 Oct)
+The author asked whether sources that lean on the US and the Five Eyes are too narrow for a
+study of the internet's security posture. They are: CISA KEV, NVD, SEC and HHS see it
+from the US. Adopted (all four options, `docs/INQUIRIES.md`), as exploratory measures that
+leave the registered core unchanged:
+- **X19** national exploitation alerts (CERT-FR, JPCERT/CC, BSI, KrCERT/CC) against KEV: what
+  KEV misses and how much earlier others flag; earlier dates tested as T_exploit candidates.
+- **X20** DNSSEC validation and RPKI route checking by country (APNIC Labs, RIPE NCC).
+- **X21** Radar and ransomware.live series by region.
+- **X22** breach notifications from the UK ICO, OAIC, PDPC and ENISA (lower priority).
+- **X3 sweep** in nine languages, with research blogs from Korea, China and Japan.
+
+Probes on 27 Oct (`global-probes`); decisions at the 12 Nov review; anything adopted is active
+before the 29 Dec freeze. The final report states what each finding covers.
+
 ## Pilot watch cases
 Real cases to follow through the Q4 2026 pilot, to see how the study's rules and free
 sources handle them.
