@@ -32,8 +32,9 @@ Plus a one-hour introductory video call before the first round. About **4 hours 
 
 ## What you need
 - Comfort reading vendor security advisories and CVE records (a cybersecurity course is plenty).
-- A web browser and a spreadsheet program. The Reviewer's Desk page walks through each item,
-  shows the rule and the links, and saves the completed sheet.
+- A web browser. Each round arrives as a small answer file (CSV); the Reviewer's Desk page
+  opens it, walks through each item with the rule and the links, and saves the completed file
+  for you to send back. No spreadsheet needed.
 - No programming, and nothing confidential: the study uses only public data.
 
 ## What you get

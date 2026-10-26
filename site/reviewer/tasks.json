@@ -10,7 +10,7 @@
    "end": "2027-03-14",
    "when": "Tue 02 Mar 2027 to 14 Mar",
    "minutes": null,
-   "details": "About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the overview), the registered plan (OSF DOI 10.17605/OSF.IO/3XT82, and prereg/ in the repository), docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in February if you confirm early."
+   "details": "About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the overview), the registered plan (https://doi.org/10.17605/OSF.IO/3XT82, and prereg/ in the repository), docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in February if you confirm early."
   },
   {
    "uid": "reviewer-practice@2027-03-02",
@@ -25,14 +25,14 @@
   },
   {
    "uid": "reviewer-practice-send@2027-03-02",
-   "title": "Send the reviewer the practice second-coder sheet (pilot quarter)",
+   "title": "Send the reviewer the practice second-coder answer file (pilot quarter)",
    "optional": false,
    "who": "Claude",
    "start": "2027-03-02",
    "end": "2027-03-02",
    "when": "Tue 02 Mar 2027",
    "minutes": null,
-   "details": "python -m snapshot.agreement sample --batch 2026Q4; send the sheet (not the weights file) and the written rules. Unscored practice; score it only to discuss on the onboarding call."
+   "details": "Claude emails the reviewer a small answer file (CSV) with 20 items from the pilot quarter, Paul's answers removed. Open it in the Reviewer's Desk (Second coder tab), work through the items with the written rules shown there, then save the completed file and send it back. Practice only, not scored; discussed on the onboarding call. (Claude: python -m snapshot.agreement sample --batch 2026Q4; never send the weights file.)"
   },
   {
    "uid": "reviewer-onboarding@2027-03-04",
@@ -43,7 +43,7 @@
    "end": "2027-03-04",
    "when": "Thu 04 Mar 2027, 10:00 ET",
    "minutes": 60,
-   "details": "Walk through the repository, the hand-check rules and the second-coder sheet; answer questions; go over the practice round if done. Move the time to suit the reviewer."
+   "details": "Walk through the repository, the hand-check rules and the second-coder answer file in the Reviewer's Desk; answer questions; go over the practice round if done. Move the time to suit the reviewer."
   },
   {
    "uid": "reviewer-annual-review@2027-03-15",
@@ -109,7 +109,7 @@
    "end": "2027-04-29",
    "when": "Thu 29 Apr 2027",
    "minutes": null,
-   "details": "python -m snapshot.agreement sample --batch <quarter>; send the coder the sheet (not the weights file), which they open in the Reviewer's Desk; scored on the 13th of the next month (second-coder-score). The pilot quarter's sheet is the practice round (2 Mar 2027)."
+   "details": "Claude emails the second coder this quarter's answer file (CSV, 20 items, Paul's answers removed), to open in the Reviewer's Desk (Second coder tab) and send back within two weeks. Scored on the 13th of the next month (second-coder-score). The pilot quarter's file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agreement sample --batch <quarter>; never send the weights file.)"
   },
   {
    "uid": "review-publish@2027-05-01",
@@ -142,7 +142,7 @@
    "end": "2027-07-29",
    "when": "Thu 29 Jul 2027",
    "minutes": null,
-   "details": "python -m snapshot.agreement sample --batch <quarter>; send the coder the sheet (not the weights file), which they open in the Reviewer's Desk; scored on the 13th of the next month (second-coder-score). The pilot quarter's sheet is the practice round (2 Mar 2027)."
+   "details": "Claude emails the second coder this quarter's answer file (CSV, 20 items, Paul's answers removed), to open in the Reviewer's Desk (Second coder tab) and send back within two weeks. Scored on the 13th of the next month (second-coder-score). The pilot quarter's file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agreement sample --batch <quarter>; never send the weights file.)"
   },
   {
    "uid": "reviewer-second-coder@2027-10-29",
@@ -164,7 +164,7 @@
    "end": "2027-10-29",
    "when": "Fri 29 Oct 2027",
    "minutes": null,
-   "details": "python -m snapshot.agreement sample --batch <quarter>; send the coder the sheet (not the weights file), which they open in the Reviewer's Desk; scored on the 13th of the next month (second-coder-score). The pilot quarter's sheet is the practice round (2 Mar 2027)."
+   "details": "Claude emails the second coder this quarter's answer file (CSV, 20 items, Paul's answers removed), to open in the Reviewer's Desk (Second coder tab) and send back within two weeks. Scored on the 13th of the next month (second-coder-score). The pilot quarter's file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agreement sample --batch <quarter>; never send the weights file.)"
   },
   {
    "uid": "reviewer-second-coder@2028-01-29",
@@ -186,7 +186,7 @@
    "end": "2028-01-29",
    "when": "Sat 29 Jan 2028",
    "minutes": null,
-   "details": "python -m snapshot.agreement sample --batch <quarter>; send the coder the sheet (not the weights file), which they open in the Reviewer's Desk; scored on the 13th of the next month (second-coder-score). The pilot quarter's sheet is the practice round (2 Mar 2027)."
+   "details": "Claude emails the second coder this quarter's answer file (CSV, 20 items, Paul's answers removed), to open in the Reviewer's Desk (Second coder tab) and send back within two weeks. Scored on the 13th of the next month (second-coder-score). The pilot quarter's file is the practice round (2 Mar 2027). (Claude: python -m snapshot.agreement sample --batch <quarter>; never send the weights file.)"
   },
   {
    "uid": "reviewer-annual-check@2028-03-02",

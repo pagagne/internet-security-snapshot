@@ -32,7 +32,7 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 ## The Reviewer's Desk
 `site/reviewer/index.html` is the external reviewer's own page: what is due (from the same
 schedule as the calendars, via `site/reviewer/tasks.json`), the spot-check draw and worksheets
-with an automatic match check, a guided second-coder round that saves a completed sheet, and
+with an automatic match check (and, for a reviewer who prefers it, a guided check that shows every step of the arithmetic, recorded as "guided"), a guided second-coder round that opens the quarter's answer file (CSV) and saves the completed file to send back, and
 the April review steps with a draft template. Progress stays in the reviewer's browser; they
 send results by copying or saving them. It goes live with GitHub Pages on 4 Dec 2026; until
 then, a private preview is a Claude artifact. Worksheets are listed in

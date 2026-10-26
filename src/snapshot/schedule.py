@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -144,6 +145,29 @@ def reviewer_occ(occ: list[dict]) -> list[dict]:
     return [o for o in occ if o["owner"] == "reviewer" or "reviewer" in o["feeds"]]
 
 
+REPO_URL = "https://github.com/pagagne/internet-security-snapshot"
+DESK_URL = "https://pagagne.github.io/internet-security-snapshot/reviewer/"
+_PATH = re.compile(r"(?<![\w/.:-])((?:docs|prereg|site|config|src|apps|tools|exploratory|\.github)/(?:[\w./-]*[\w/])?)")
+
+
+def _linked(text: str) -> str:
+    """Repository paths become full GitHub links, so they open from a calendar app."""
+    def url(m):
+        path = m.group(1)
+        kind = "tree" if path.endswith("/") or "." not in path.rsplit("/", 1)[-1] else "blob"
+        return f"{REPO_URL}/{kind}/main/{path.rstrip('/')}"
+    return _PATH.sub(url, text)
+
+
+def _description(o: dict) -> str:
+    who, role = RESPONSIBLE[o["owner"]], OWNER_NAME[o["owner"]]
+    parts = [f"Responsible: {who}" + ("" if role.lower().startswith(who.lower()) else f" ({role.lower()})"), _linked(o["details"])]
+    if o["owner"] == "reviewer" or "reviewer" in o["feeds"]:
+        parts.append(f"Reviewer's Desk (tasks, worksheets, second-coder rounds): {DESK_URL} (live from 4 Dec 2026)")
+    parts.append(f"Source: {REPO_URL}/blob/main/docs/schedule/schedule.yaml")
+    return "\n\n".join(parts)
+
+
 def ics(occ: list[dict], feed: tuple[str, str] = ALL_FEED) -> str:
     name, desc = feed
     L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//internet-security-snapshot//schedule//EN",
@@ -161,7 +185,7 @@ def ics(occ: list[dict], feed: tuple[str, str] = ALL_FEED) -> str:
                   f"DTEND;VALUE=DATE:{o['date'] + dt.timedelta(days=o['days']):%Y%m%d}",
                   "TRANSP:TRANSPARENT"]
         L += [f"SUMMARY:{_ics_text(f'{tag} Snapshot: ' + o['title'])}",
-              f"DESCRIPTION:{_ics_text('Responsible: ' + RESPONSIBLE[o['owner']] + ' (' + OWNER_NAME[o['owner']].lower() + ')' + chr(10) + chr(10) + o['details'] + chr(10) + chr(10) + 'Source: docs/schedule/schedule.yaml')}",
+              f"DESCRIPTION:{_ics_text(_description(o))}",
               f"CATEGORIES:{OWNER_NAME[o['owner']]}", "END:VEVENT"]
     L.append("END:VCALENDAR")
     return "\r\n".join(x for line in L for x in _fold(line)) + "\r\n"

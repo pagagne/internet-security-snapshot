@@ -100,3 +100,13 @@ def test_items_with_a_list_of_dates():
     occ = [o for o in S.expand(S.load()) if o["id"] == "sync-review"]
     assert [o["date"].isoformat() for o in occ][:2] == ["2026-10-25", "2026-11-02"]
     assert len({o["uid"] for o in occ}) == len(occ)
+
+
+def test_calendar_links_are_full_urls():
+    t = S._linked("see docs/HOW_IT_WORKS.md, prereg/ and https://github.com/x/blob/main/docs/a.md.")
+    assert "https://github.com/pagagne/internet-security-snapshot/blob/main/docs/HOW_IT_WORKS.md" in t
+    assert "https://github.com/pagagne/internet-security-snapshot/tree/main/prereg" in t
+    assert t.count("https://github.com/x/blob/main/docs/a.md") == 1          # existing URLs untouched
+    rev = S.REVIEWER_ICS.read_bytes().decode().replace("\r\n ", "")
+    assert rev.count("BEGIN:VEVENT") == rev.count("pagagne.github.io/internet-security-snapshot/reviewer/")
+    assert "doi.org/10.17605/OSF.IO/3XT82" in rev

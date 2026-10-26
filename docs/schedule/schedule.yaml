@@ -621,9 +621,11 @@ items:
   repeat: {months: [1, 4, 7, 10], day: 29, from: 2027-04, until: 2028-01}
   feeds: [reviewer]
   details: >
-    python -m snapshot.agreement sample --batch <quarter>; send the coder the sheet (not the
-    weights file), which they open in the Reviewer's Desk; scored on the 13th of the next month
-    (second-coder-score). The pilot quarter's sheet is the practice round (2 Mar 2027).
+    Claude emails the second coder this quarter's answer file (CSV, 20 items, Paul's answers
+    removed), to open in the Reviewer's Desk (Second coder tab) and send back within two weeks.
+    Scored on the 13th of the next month (second-coder-score). The pilot quarter's file is the
+    practice round (2 Mar 2027). (Claude: python -m snapshot.agreement sample --batch
+    <quarter>; never send the weights file.)
 
 - id: pull-final
   owner: github
@@ -686,12 +688,15 @@ items:
 
 - id: reviewer-practice-send
   owner: claude
-  title: Send the reviewer the practice second-coder sheet (pilot quarter)
+  title: Send the reviewer the practice second-coder answer file (pilot quarter)
   date: 2027-03-02
   feeds: [reviewer]
   details: >
-    python -m snapshot.agreement sample --batch 2026Q4; send the sheet (not the weights file)
-    and the written rules. Unscored practice; score it only to discuss on the onboarding call.
+    Claude emails the reviewer a small answer file (CSV) with 20 items from the pilot quarter,
+    Paul's answers removed. Open it in the Reviewer's Desk (Second coder tab), work through
+    the items with the written rules shown there, then save the completed file and send it
+    back. Practice only, not scored; discussed on the onboarding call. (Claude: python -m
+    snapshot.agreement sample --batch 2026Q4; never send the weights file.)
 
 - id: reviewer-orientation
   owner: reviewer
@@ -700,7 +705,7 @@ items:
   days: 13
   details: >
     About 3-4 hours including the call. docs/HOW_IT_WORKS.md (the overview), the registered
-    plan (OSF DOI 10.17605/OSF.IO/3XT82, and prereg/ in the repository),
+    plan (https://doi.org/10.17605/OSF.IO/3XT82, and prereg/ in the repository),
     docs/STATISTICAL_REVIEW_2026-10-24.md. Can start in February if you confirm early.
 
 - id: reviewer-practice
@@ -720,7 +725,8 @@ items:
   minutes: 60
   feeds: [reviewer]
   details: >
-    Walk through the repository, the hand-check rules and the second-coder sheet; answer
+    Walk through the repository, the hand-check rules and the second-coder answer file in the
+    Reviewer's Desk; answer
     questions; go over the practice round if done. Move the time to suit the reviewer.
 
 - id: reviewer-annual-review
@@ -784,11 +790,11 @@ items:
 
 - id: second-coder-score
   owner: claude
-  title: Score the second coder's sheet; publish agreement
+  title: Score the second coder's answer file; publish agreement
   repeat: {months: [2, 5, 8, 11], day: 13, from: 2027-05, until: 2028-02}
   details: >
-    python -m snapshot.agreement score on the returned sheet; agreement rates (with Gwet's AC1)
-    go into the next report. If the sheet has not come back, comment on the issue so the
+    python -m snapshot.agreement score on the returned answer file; agreement rates (with
+    Gwet's AC1) go into the next report. If the file has not come back, comment on the issue so the
     author can send a reminder; do not contact the reviewer directly.
 
 - id: reviewer-annual-check
