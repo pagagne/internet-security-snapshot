@@ -1,6 +1,6 @@
 # Internet Security Snapshot
 
-The Quarterly Internet Security Snapshot is a free, independent study project that takes quarterly measurements of whether internet security
+The Internet Security Snapshot is a free, independent study project that takes quarterly measurements of whether internet security
 is getting better or worse, and how AI is involved. The central question: are defenders closing
 internet-exposed vulnerabilities faster than attackers start exploiting them?
 
