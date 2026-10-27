@@ -1,0 +1,73 @@
+{
+  "quarter": "2026Q3",
+  "run": "dry-run",
+  "started_at": "2026-10-27T13:56:20Z",
+  "finished_at": "2026-10-27T13:56:40Z",
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "requirements_lock_sha256": "0e71de9205abf1674abb255055869c65537ca2fd4c5b700b360e414006f56dd0",
+    "packages": {
+      "duckdb": "2.0.0",
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.0",
+      "scipy": "1.18.1",
+      "lifelines": "0.30.0",
+      "statsmodels": "0.15.0",
+      "ruptures": "1.1.10"
+    },
+    "git_commit": "587fd762ef9c34797c6aec8554a09bcec879ab23",
+    "runner_image": "ubuntu24 20261023.334.3"
+  },
+  "files": [
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/known_exploited_vulnerabilities.json",
+      "sha256": "653c72ea869cbca7a9198b5e17b97bef516b67494e89bb919a9639d4eedbfa13",
+      "bytes": 1810928,
+      "source_version": "cisagov/kev-data@e7b48852252704fb12c28f1c9fc656dc99286c27",
+      "retrieved_at": "2026-10-27T13:56:21Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/kev_entries.parquet",
+      "sha256": "cb5c0ed5c23e3c3adb314759fd6e71f029bcc6cf5d3f2c573e5bf906f9a30340",
+      "bytes": 53770,
+      "source_version": "cisagov/kev-data@e7b48852252704fb12c28f1c9fc656dc99286c27",
+      "retrieved_at": "2026-10-27T13:56:27Z",
+      "status": "ok",
+      "note": "1758 entries"
+    },
+    {
+      "source": "ransomware_live",
+      "file_path": "ransomware/ransomware_counts.parquet",
+      "sha256": "eedfde6b9a2df3eb74194e27f6526c6e9803fe9a9560227816c7403367e29ce8",
+      "bytes": 5997,
+      "source_version": "ransomware.live API, retrieved 2026-10-27T13:56:40Z",
+      "retrieved_at": "2026-10-27T13:56:40Z",
+      "status": "ok",
+      "note": "aggregate counts only, no victim names; 539 rows",
+      "kept_privately": true
+    }
+  ],
+  "source_switches": {
+    "ransomware_live": {
+      "permission": "awaiting",
+      "collect": true,
+      "publish": false
+    },
+    "vulncheck": {
+      "permission": "awaiting",
+      "collect": false,
+      "publish": false
+    },
+    "shadowserver": {
+      "permission": "awaiting",
+      "collect": false,
+      "publish": false
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "quarter": "2026Q3",
+  "run": "dry-run",
+  "gaps": [],
+  "counts": {
+    "kev/kev_entries.parquet": 1758
+  },
+  "fields": {
+    "kev/kev_entries.parquet": {
+      "cve_id": "ok",
+      "date_added": "ok",
+      "vendor": "ok",
+      "product": "ok"
+    }
+  },
+  "drift_flags": []
+}

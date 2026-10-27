@@ -1,0 +1,5 @@
+[pull] kev -> data/raw/2026Q3/dry-run
+::notice title=pull kev::ok in 7s
+[pull] ransomware -> data/raw/2026Q3/dry-run
+::notice title=pull ransomware::ok in 13s
+[pull] manifest: data/raw/2026Q3/dry-run/manifest.json (0 gap(s))
