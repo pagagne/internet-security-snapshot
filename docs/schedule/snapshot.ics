@@ -207,19 +207,21 @@ BEGIN:VEVENT
 UID:gcp-setup@2026-10-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261029T140000Z
-DTEND:20261029T142000Z
+DTEND:20261029T143000Z
 SUMMARY:[Paul] Snapshot: Create a free Google Cloud project for BigQuery (H
  TTP Archive\, deps.dev history)
-DESCRIPTION:Responsible: Paul (author)\n\nconsole.cloud.google.com: new pro
- ject "internet-security-snapshot"\; enable the BigQuery API\; no billing n
- eeded (the BigQuery sandbox includes 1 TB of queries a month)\; if you eve
- r link billing\, add a budget alert at $1\; IAM > Service accounts > creat
- e "snapshot-bq" with the role BigQuery Job User\; Keys > Add key > JSON\; 
- in GitHub > Settings > Secrets and variables > Actions\, add GCP_SA_KEY (p
- aste the whole file) and GCP_PROJECT (the project ID). Never paste the key
-  into chat. Delete the downloaded file afterwards.\n\nSource: https://gith
- ub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule
- .yaml
+DESCRIPTION:Responsible: Paul (author)\n\nAlso the Drive backup's own clien
+ t ID (rclone's shared one is being retired during 2026\; https://github.co
+ m/pagagne/internet-security-snapshot/blob/main/docs/BACKUP.md\, "Own clien
+ t ID"). console.cloud.google.com: new project "internet-security-snapshot"
+ \; enable the BigQuery API\; no billing needed (the BigQuery sandbox inclu
+ des 1 TB of queries a month)\; if you ever link billing\, add a budget ale
+ rt at $1\; IAM > Service accounts > create "snapshot-bq" with the role Big
+ Query Job User\; Keys > Add key > JSON\; in GitHub > Settings > Secrets an
+ d variables > Actions\, add GCP_SA_KEY (paste the whole file) and GCP_PROJ
+ ECT (the project ID). Never paste the key into chat. Delete the downloaded
+  file afterwards.\n\nSource: https://github.com/pagagne/internet-security-
+ snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

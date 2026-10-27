@@ -37,6 +37,22 @@ file in the repository.
 6. Tell Claude; it runs the Backup workflow once by hand (a connection-test file in `tests/`
    and a repository copy in `repository/`) and checks in Drive that they arrived.
 
+## Own client ID (Thu 29 Oct 2026, with the Google Cloud project)
+rclone's shared Google sign-in is being retired during 2026 (rclone notice, 27 Oct), so the
+backup gets its own:
+1. In the Google Cloud project: APIs & Services > Library > enable the **Google Drive API**.
+2. OAuth consent screen: type External; app name "Snapshot backup"; your email as support and
+   developer contact; add the scope `.../auth/drive`; add yourself as a test user; then
+   **Publish app** so the status is **In production**. In "Testing" the sign-in expires every
+   7 days and the backups would silently stop. Google will warn that the app is unverified;
+   it is only for you, so that is fine.
+3. Credentials > Create credentials > OAuth client ID > Desktop app. Keep the client ID and
+   secret on your computer only.
+4. `rclone config update gdrive client_id <id> client_secret <secret>`, then
+   `rclone config reconnect gdrive:` (sign in, click through the unverified-app warning).
+5. Copy the new `[gdrive]` section into the GitHub secret `RCLONE_CONF` (replace the old
+   value). Tell Claude, who reruns the connection test.
+
 ## Restoring
 - A run: download its folder from `runs/` and check it with `sha256sum -c SHA256SUMS`.
 - The repository: `git clone internet-security-snapshot-YYYY-MM-DD.bundle`.
