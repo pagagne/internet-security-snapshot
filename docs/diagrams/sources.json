@@ -92,7 +92,7 @@
    "fingerprints": {
     "README.md": "7be0e9820ec93161",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "e7af7a3be229a9a3",
+    ".github/workflows/quarterly-pull.yml": "ac164756bb924d6f",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
    "reviewed_on": "2026-10-27"
@@ -133,7 +133,7 @@
    ],
    "fingerprints": {
     "docs/PERMISSIONS.md": "78bb9738c5dfc7ee",
-    ".github/workflows/quarterly-pull.yml": "e7af7a3be229a9a3",
+    ".github/workflows/quarterly-pull.yml": "ac164756bb924d6f",
     "tools/architecture_svg.py": "7cfa07300af7bf8c",
     "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
    },

@@ -28,9 +28,14 @@ permissions:
   issues: write
   actions: write
 
+concurrency:
+  group: schedule   # the three daily timers can arrive together when GitHub runs late; one at a time
+  cancel-in-progress: false
+
 jobs:
   act:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
@@ -48,11 +53,14 @@ jobs:
       - name: Open due issues and start due runs
         env:
           GH_TOKEN: ${{ github.token }}
+          IN_DATE: ${{ inputs.date }}
+          IN_DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          ARGS=""
-          if [ -n "${{ inputs.date }}" ]; then ARGS="$ARGS --date ${{ inputs.date }}"; fi
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          python -m snapshot.schedule act $ARGS | tee act.txt | tee -a "$GITHUB_STEP_SUMMARY"
+          ARGS=()
+          [[ -z "$IN_DATE" || "$IN_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "bad date"; exit 2; }
+          [ -n "$IN_DATE" ] && ARGS+=(--date "$IN_DATE")
+          [ "$IN_DRY_RUN" = "true" ] && ARGS+=(--dry-run)
+          python -m snapshot.schedule act "${ARGS[@]}" | tee act.txt | tee -a "$GITHUB_STEP_SUMMARY"
           grep -qx "nothing due" act.txt && : > act.txt || true
       - name: Record the run (run-reports branch)
         if: always()

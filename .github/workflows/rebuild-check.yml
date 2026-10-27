@@ -28,9 +28,11 @@ jobs:
         id: find
         env:
           GH_TOKEN: ${{ github.token }}
+          IN_RUN_ID: ${{ inputs.run_id }}
         run: |
-          if [ -n "${{ inputs.run_id }}" ]; then
-            run="${{ inputs.run_id }}"
+          if [ -n "$IN_RUN_ID" ]; then
+            [[ "$IN_RUN_ID" =~ ^[0-9]+$ ]] || { echo "bad run id"; exit 2; }
+            run="$IN_RUN_ID"
           else
             run=$(gh api "repos/${{ github.repository }}/actions/artifacts?per_page=100" \
               --jq '[.artifacts[] | select(.name|startswith("snapshot-")) | select(.expired|not)][0].workflow_run.id')

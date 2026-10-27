@@ -11,6 +11,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
@@ -29,6 +30,7 @@ jobs:
     # Builds the pinned analysis container and runs the test suite inside it, so the image
     # the rebuild check uses is known to work on every change.
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
       - name: Build

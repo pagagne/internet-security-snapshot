@@ -10,6 +10,7 @@ data), so the private files can still be verified.
 """
 from __future__ import annotations
 
+import json
 import shutil
 import sys
 from pathlib import Path
@@ -30,7 +31,21 @@ def split(raw: Path, private: Path) -> list[Path]:
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 shutil.move(str(src), str(dest))
                 moved.append(dest)
+                _mark(src.parent, name)
     return moved
+
+
+def _mark(bundle: Path, name: str) -> None:
+    """Mark the moved files in the bundle's manifest as kept privately, so the rebuild check
+    knows they are absent on purpose (checksums stay, for checking the private copy)."""
+    man = bundle / "manifest.json"
+    if not man.exists():
+        return
+    doc = json.loads(man.read_text())
+    for e in doc.get("files", []):
+        if (e.get("file_path") or "").startswith(f"{name}/"):
+            e["kept_privately"] = True
+    man.write_text(json.dumps(doc, indent=2) + "\n")
 
 
 if __name__ == "__main__":

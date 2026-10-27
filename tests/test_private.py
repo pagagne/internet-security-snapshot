@@ -33,3 +33,17 @@ def test_quality_report_withholds_ransomware_figures(tmp_path):
 def test_pull_note_has_no_figures():
     src = open(private.__file__.replace("private.py", "pull.py")).read()
     assert "monthly totals" not in src
+
+
+def test_split_marks_manifest_and_rebuild_accepts_it(tmp_path):
+    from snapshot import rebuild
+    raw, priv = tmp_path / "raw", tmp_path / "private"
+    b = raw / "2026Q4/dry-run"
+    (b / "ransomware").mkdir(parents=True)
+    (b / "ransomware/ransomware_counts.parquet").write_text("x")
+    (b / "manifest.json").write_text(json.dumps({"files": [
+        {"source": "ransomware_live", "file_path": "ransomware/ransomware_counts.parquet", "sha256": "abc"}]}))
+    private.split(raw, priv)
+    m = json.loads((b / "manifest.json").read_text())
+    assert m["files"][0]["kept_privately"] is True
+    assert rebuild.verify_files(b) == []

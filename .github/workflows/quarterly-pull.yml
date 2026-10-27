@@ -28,6 +28,10 @@ on:
 permissions:
   contents: write   # to tag each provisional/final run
 
+concurrency:
+  group: quarterly-pull   # one pull at a time; a second waits rather than racing on tags or reports
+  cancel-in-progress: false
+
 jobs:
   pull:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
@@ -52,35 +56,31 @@ jobs:
           RANSOMWARE_LIVE_KEY: ${{ secrets.RANSOMWARE_LIVE_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           # VULNCHECK_TOKEN is not passed: VulnCheck data stays private until they confirm in writing.
+          # Inputs arrive as environment variables, never pasted into the script (no injection).
+          IN_QUARTER: ${{ inputs.quarter }}
+          IN_RUN: ${{ inputs.run }}
+          IN_SOURCES: ${{ inputs.sources }}
+          IN_EPSS_STEP: ${{ inputs.epss_step }}
         run: |
-          ARGS="--out data/raw"
-          if [ -n "${{ inputs.quarter }}" ]; then ARGS="$ARGS --quarter ${{ inputs.quarter }}"; fi
-          if [ -n "${{ inputs.run }}" ]; then ARGS="$ARGS --run ${{ inputs.run }}"; fi
-          if [ -n "${{ inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ inputs.sources }}"; fi
-          if [ -n "${{ inputs.epss_step }}" ]; then ARGS="$ARGS --epss-step ${{ inputs.epss_step }}"; fi
+          ARGS=(--out data/raw)
+          [[ -z "$IN_QUARTER" || "$IN_QUARTER" =~ ^20[0-9]{2}Q[1-4]$ ]] || { echo "bad quarter"; exit 2; }
+          [[ -z "$IN_SOURCES" || "$IN_SOURCES" =~ ^[a-z,]+$ ]] || { echo "bad sources"; exit 2; }
+          [[ -z "$IN_EPSS_STEP" || "$IN_EPSS_STEP" =~ ^[0-9]+$ ]] || { echo "bad epss_step"; exit 2; }
+          [ -n "$IN_QUARTER" ] && ARGS+=(--quarter "$IN_QUARTER")
+          [ -n "$IN_RUN" ] && ARGS+=(--run "$IN_RUN")
+          [ -n "$IN_SOURCES" ] && ARGS+=(--sources "$IN_SOURCES")
+          [ -n "$IN_EPSS_STEP" ] && ARGS+=(--epss-step "$IN_EPSS_STEP")
           set -o pipefail
           mkdir -p data/raw
-          python -m snapshot.pull $ARGS 2>&1 | tee data/raw/pull.log
+          python -m snapshot.pull "${ARGS[@]}" 2>&1 | tee data/raw/pull.log
 
       - name: Keep private data out of public outputs
         if: always()
         # Sources whose publish switch is off (config/sources.yaml) leave the public bundle,
         # run log and quality report; they go only to the author's private Drive backup.
-        env:
-          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
-        run: |
-          python -m snapshot.private data/raw data/private
-          if [ -d data/private ]; then
-            if [ -n "$RCLONE_CONF" ]; then
-              sudo apt-get install -y -qq rclone >/dev/null
-              mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
-              rclone copy data/private "gdrive:private/$(date -u +%Y-%m-%d)-run${{ github.run_id }}"
-              rm -f ~/.config/rclone/rclone.conf
-            else
-              echo "::warning title=Private data not kept::RCLONE_CONF missing; private sources were collected but not saved (docs/BACKUP.md)"
-            fi
-            rm -rf data/private
-          fi
+        # data/private is outside data/raw, so it is never uploaded or published; the backup
+        # step at the end sends it to Drive.
+        run: python -m snapshot.private data/raw data/private
 
       - name: Data quality report
         if: always()
@@ -150,6 +150,7 @@ jobs:
           S3: ${{ secrets.RANSOMWARE_LIVE_KEY }}
           S4: ${{ secrets.SEC_USER_AGENT }}
           S5: ${{ secrets.VULNCHECK_TOKEN }}
+          S6: ${{ secrets.RCLONE_CONF }}
         run: |
           dest="reports/$(date -u +%Y-%m-%dT%H%MZ)-run${{ github.run_id }}"
           git fetch origin run-reports:run-reports 2>/dev/null || true
@@ -165,7 +166,7 @@ jobs:
           done
           python - "/tmp/rr/$dest" <<'PY'
           import os, pathlib, sys
-          secrets = [os.environ.get(k) for k in ("S1", "S2", "S3", "S4", "S5")]
+          secrets = [os.environ.get(k) for k in ("S1", "S2", "S3", "S4", "S5", "S6")]
           for p in pathlib.Path(sys.argv[1]).iterdir():
               t = p.read_text(errors="replace")
               for s in secrets:
@@ -176,5 +177,27 @@ jobs:
           cd /tmp/rr
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A && git commit -qm "Run report ${{ github.run_id }}" && git push -q origin run-reports
+          git add -A && git commit -qm "Run report ${{ github.run_id }}"
+          for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1
 
+      - name: Backup to the private Drive folder
+        # The full bundle (public part, plus the private part kept out of every public output)
+        # goes to the author's Drive (docs/BACKUP.md). Done here rather than by a separate
+        # workflow, so it also happens for runs started by the Schedule workflow.
+        if: always()
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          if [ -z "$RCLONE_CONF" ]; then
+            echo "::warning title=Backup not configured::RCLONE_CONF missing; this run's full bundle (and any private data) was not backed up (docs/BACKUP.md)"
+            exit 0
+          fi
+          sudo apt-get install -y -qq rclone >/dev/null
+          mkdir -p ~/.config/rclone && printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf && chmod 600 ~/.config/rclone/rclone.conf
+          dest="runs/$(date -u +%Y-%m-%d)-run$GITHUB_RUN_ID"
+          find data -type f | sort | xargs sha256sum > SHA256SUMS
+          rclone copy data/raw "gdrive:$dest/public"
+          [ -d data/private ] && rclone copy data/private "gdrive:$dest/private"
+          rclone copyto SHA256SUMS "gdrive:$dest/SHA256SUMS"
+          rm -f ~/.config/rclone/rclone.conf
+          echo "Backed up to Drive: $dest ($(du -sh data | cut -f1))"
