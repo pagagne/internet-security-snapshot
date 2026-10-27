@@ -25,6 +25,26 @@ workflow lock (decision item 22).
 - Schedule, dry run for 15 Dec: lists the full dry run and its three items, as planned.
 - Research probe and Backup: passed (Backup: "not configured" until the author's token).
 
+## Full dry run of every workflow (27 Oct, 21:00 UTC, after the settings changes)
+Asked by the author. All passed:
+- Quarterly pull (Q3 2026, dry run, every switched-on source): 9.7 min; ransomware.live kept
+  out of the public bundle (manifest `kept_privately`, no figures in the run or quality
+  report); full bundle, private part and checksums arrived in Drive under
+  `runs/2026-10-27-run40583009106/` (first end-to-end Drive backup of a pull).
+- Rebuild check on that bundle: "frozen files and recomputed figures match".
+- Schedule, dry run as 1 Jan 2027: lists the four items due; daily privacy scan clean, no issue.
+- Backup: connection test and repository copy in Drive.
+- Research probe (fix-date sources): results on run-reports.
+- Diagrams: rendered; push to main refused by the new ruleset, PNGs attached as a download,
+  as decided.
+- Checks: passed on the test push under the new ruleset.
+- Honeypot not run: it downloads about 1 GB from SANS ISC, kept monthly by the author's
+  decision; it runs on 2 Nov.
+
+Two follow-ups: `actions/upload-artifact` is pinned to a version GitHub now flags as Node.js 20
+(deprecated; update the pin before the 14 Dec workflow review), and Dependabot alerts are
+still off (author).
+
 ## Confirmed sound
 - Every action pinned by commit SHA; Python packages installed with hashes; runner image pinned.
 - Each workflow sets its own minimal permissions; secrets only where used; GitHub masks them
