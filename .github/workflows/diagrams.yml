@@ -40,7 +40,7 @@ jobs:
           if git diff --cached --quiet; then echo "PNGs already up to date."; exit 0; fi
           git commit -qm "Redraw diagram PNGs from Mermaid source"
           git push -q origin HEAD:main || echo "::warning title=Diagram PNGs not pushed::The push to main was refused (ruleset?). Download the 'diagram-pngs' artifact instead."
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6 (same pin as the quarterly pull; v4 ran on deprecated Node.js 20)
         if: always()
         with:
           name: diagram-pngs

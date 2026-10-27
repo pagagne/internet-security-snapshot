@@ -41,9 +41,9 @@ Asked by the author. All passed:
 - Honeypot not run: it downloads about 1 GB from SANS ISC, kept monthly by the author's
   decision; it runs on 2 Nov.
 
-Two follow-ups: `actions/upload-artifact` is pinned to a version GitHub now flags as Node.js 20
-(deprecated; update the pin before the 14 Dec workflow review), and Dependabot alerts are
-still off (author).
+Two follow-ups: `actions/upload-artifact` in Diagrams was pinned to v4, which GitHub flags as
+Node.js 20 (deprecated); updated the same evening to the v6 pin the quarterly pull already uses
+(author's request). Dependabot alerts are still off (author).
 
 ## Confirmed sound
 - Every action pinned by commit SHA; Python packages installed with hashes; runner image pinned.
