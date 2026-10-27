@@ -104,6 +104,10 @@ decided and done, with the day's workflow runs) and copies it to the Claude proj
    Claude project or Drive; repository documents describe people by role.
 3. Embargoed or not-yet-public vulnerability information never enters the repository.
 
+Periodic checks (27 Oct 2026): the privacy scan (`snapshot.privacy`) runs on every push
+(Checks), every day on `main` and `run-reports` (Schedule; findings open a `privacy` issue),
+and in each sync review together with a reading of new logs for what patterns cannot catch.
+
 ## How a Claude session picks up work
 (In a Claude session GitHub's GraphQL API is blocked, so use `gh api` REST calls rather than
 `gh issue`, `gh pr` or `gh workflow run`. The Schedule workflow itself runs on GitHub and is

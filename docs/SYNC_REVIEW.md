@@ -37,6 +37,9 @@ cannot see.
 9. GitHub issues: open `schedule` issues match what is due; done work is closed with a comment.
 10. The README's data-source tables match `docs/PERMISSIONS.md` (status of every request) and the
     switches in `config/sources.yaml` (a test checks the switches against PERMISSIONS.md).
+10b. Privacy: `python -m snapshot.privacy` and `python -m snapshot.privacy --ref origin/run-reports`
+    both clean (the daily scan does this too); read the newest session logs and decision sheets
+    for names, contacts or not-yet-public information the patterns cannot catch.
 11. Claude project docs (`claude/operations.md`, `claude/annual-plan.md`,
     `claude/handover-session-1.md`): re-upload any whose repository file changed.
 

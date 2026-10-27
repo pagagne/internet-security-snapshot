@@ -22,6 +22,10 @@ jobs:
       - name: Schedule outputs up to date?
         # docs/ANNUAL_PLAN.md and the calendar feed must match docs/schedule/schedule.yaml.
         run: python -m snapshot.schedule check
+      - name: Privacy scan
+        # Fails if a key, token, personal contact detail or not-yet-publishable figure is in the
+        # repository (docs/OPERATIONS.md, "Private by design").
+        run: python -m snapshot.privacy
       - name: Diagrams up to date?
         # Warns (never fails) when a file a diagram depends on changed since it was reviewed.
         run: python -m snapshot.diagrams check
