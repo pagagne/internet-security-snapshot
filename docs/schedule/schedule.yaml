@@ -81,6 +81,18 @@ items:
     a second coder. Disclose that you worked at SANS and that the study uses Internet Storm
     Center data; ask for someone you did not work with. Tell Claude, who logs it.
 
+- id: drive-to-claude-copy
+  owner: claude
+  title: Copy the Drive backup's inventory and small private data into the Claude project
+  repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 4, from: 2026-11, until: 2027-12}
+  details: >
+    Author's request of 27 Oct: what is kept privately in Drive is also backed up in Claude.
+    Through the Google Drive connector: list the folder Internet-Security-Snapshot-2027
+    (files, sizes, dates, IDs) into the project doc claude/private-backup-inventory.md, and
+    copy the small private data in private/ (aggregate tables, as text) into
+    claude/private-data-copy.md. Large bundles (runs/, repository/) stay in Drive and GitHub
+    only; the inventory records their checksums. Never copy into the repository.
+
 - id: drive-backup-test
   owner: claude
   title: Restore test of the Drive backup

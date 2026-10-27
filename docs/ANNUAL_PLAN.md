@@ -18,6 +18,7 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | External reviewer | Second coder - 20 blinded items | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 (14 days) |
 | Claude | Draft the provisional evaluation; load the hand-check lists | day 1, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Quarterly web sweep for AI-run attack reports (X3) | day 2, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
+| Claude | Copy the Drive backup's inventory and small private data into the Claude project | day 4, every month, 2026-11 to 2027-12 |
 | Claude | Choose this quarter's watch cases by the rule | day 6, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
@@ -50,6 +51,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 02 Nov 2026 | Claude | HTTP Archive test - are software versions recorded? (after the BigQuery project) |
 | Mon 02 Nov 2026 | Claude | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill |
 | Mon 02 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
+| Wed 04 Nov 2026 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Thu 05 Nov 2026 | Claude | Recheck the trial AI-attack sweep's open items |
 | Fri 06 Nov 2026 | Paul | Create the project email address |
 | Mon 09 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
@@ -78,6 +80,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 01 Dec 2026, 11:00 UTC | GitHub | Dry run of the quarterly pull (Oct-Nov data) |
 | Wed 02 Dec 2026, 10:00 ET | Paul | Hand check on the dry run |
 | Thu 03 Dec 2026, 10:00 ET | Paul | Move the quarterly pull into the container (if the dry run passed) |
+| Fri 04 Dec 2026 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Fri 04 Dec 2026, 10:00 ET | Paul | Landing page, Discussions, Zenodo |
 | Sat 05 Dec 2026 | Paul | Register on Handshake and connect the approved schools |
 | Thu 10 Dec 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
@@ -97,6 +100,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sat 02 Jan 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Mon 04 Jan 2027 to 28 Jan | Paul | Quarterly hand-check window |
 | Mon 04 Jan 2027 | Paul | Post the reviewer ad; email statistics department coordinators |
+| Mon 04 Jan 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 06 Jan 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Sun 10 Jan 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Tue 12 Jan 2027, 10:00 ET | Paul | Line up the external reviewer and second coder |
@@ -108,6 +112,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 02 Feb 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Wed 03 Feb 2027 | Claude | Prepare the 8 Feb session |
 | Wed 03 Feb 2027 | Claude | Compare the pilot with what we expected (docs/PILOT_EXPECTATIONS.md) |
+| Thu 04 Feb 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Mon 08 Feb 2027, 10:00 ET | Paul | Evaluate the AI-credit rule on pilot data; PHP2Shell case |
 | Wed 10 Feb 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Feb 2027 | Paul | Reviewer applications close; schedule calls |
@@ -116,6 +121,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 02 Mar 2027 to 14 Mar | Reviewer | Optional - practice round as second coder (pilot quarter) |
 | Tue 02 Mar 2027 | Claude | Record the confirmed reviewer |
 | Tue 02 Mar 2027 | Claude | Send the reviewer the practice second-coder answer file (pilot quarter) |
+| Thu 04 Mar 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Thu 04 Mar 2027, 10:00 ET | Paul | Onboarding call with the external reviewer |
 | Wed 10 Mar 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Mar 2027, 11:00 ET | Paul | Annual review and change window |
@@ -128,6 +134,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 02 Apr 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Sat 03 Apr 2027 to 28 Apr | Reviewer | Independent review of the Q1 2027 provisional report |
 | Sun 04 Apr 2027 to 28 Apr | Paul | Quarterly hand-check window |
+| Sun 04 Apr 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Tue 06 Apr 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Sat 10 Apr 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 15 Apr 2027, 10:00 ET | Paul | Optional mid-review check-in with the reviewer |
@@ -139,8 +146,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sat 01 May 2027 | Claude | Publish the external review beside the Q1 2027 final report |
 | Sat 01 May 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Sun 02 May 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Tue 04 May 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Mon 10 May 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 13 May 2027 | Claude | Score the second coder's answer file; publish agreement |
+| Fri 04 Jun 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Thu 10 Jun 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 28 Jun 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
@@ -148,6 +157,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 02 Jul 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Fri 02 Jul 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Sun 04 Jul 2027 to 28 Jul | Paul | Quarterly hand-check window |
+| Sun 04 Jul 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Tue 06 Jul 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Sat 10 Jul 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Sun 25 Jul 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
@@ -156,8 +166,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 01 Aug 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
 | Sun 01 Aug 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Mon 02 Aug 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Wed 04 Aug 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Tue 10 Aug 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Fri 13 Aug 2027 | Claude | Score the second coder's answer file; publish agreement |
+| Sat 04 Sep 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Fri 10 Sep 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Tue 28 Sep 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
@@ -165,6 +177,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sat 02 Oct 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sat 02 Oct 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Mon 04 Oct 2027 to 28 Oct | Paul | Quarterly hand-check window |
+| Mon 04 Oct 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 06 Oct 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Sun 10 Oct 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 25 Oct 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
@@ -173,8 +186,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 01 Nov 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
 | Mon 01 Nov 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Tue 02 Nov 2027, 10:00 ET | Paul | Final-run check and approve the final results |
+| Thu 04 Nov 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 10 Nov 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Sat 13 Nov 2027 | Claude | Score the second coder's answer file; publish agreement |
+| Sat 04 Dec 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Fri 10 Dec 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Tue 28 Dec 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |

@@ -53,6 +53,13 @@ backup gets its own:
 5. Copy the new `[gdrive]` section into the GitHub secret `RCLONE_CONF` (replace the old
    value). Tell Claude, who reruns the connection test.
 
+## Copy in Claude (decided 27 Oct 2026)
+On the 4th of each month a Claude session copies, into the Claude project "AI Internet Security
+2027 Research Project": an inventory of this Drive folder (`claude/private-backup-inventory.md`)
+and the small private data from `private/` as text tables (`claude/private-data-copy.md`). The
+large bundles stay in Drive (and GitHub for 90 days): project documents are text, not bulk
+storage. Nothing private is ever copied into the repository.
+
 ## Restoring
 - A run: download its folder from `runs/` and check it with `sha256sum -c SHA256SUMS`.
 - The repository: `git clone internet-security-snapshot-YYYY-MM-DD.bundle`.
