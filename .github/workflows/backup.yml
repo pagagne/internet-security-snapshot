@@ -1,6 +1,7 @@
 name: Backup to Google Drive
 
-# Private backup in the author's Google Drive (docs/BACKUP.md): the full bundle of every
+# Private backup in the author's Google Drive folder Internet-Security-Snapshot-2027
+# (docs/BACKUP.md; the rclone remote's root_folder_id points at it): the full bundle of every
 # quarterly pull (including private data that may never be published, such as VulnCheck), and
 # a monthly copy of the whole repository. Needs the RCLONE_CONF secret (set up by the author);
 # without it the job only reports that the backup is not configured.
@@ -50,13 +51,19 @@ jobs:
           mkdir -p bundle
           gh run download "$RUN_ID" -R "$GITHUB_REPOSITORY" -D bundle
           sha256sum $(find bundle -type f | sort) > bundle/SHA256SUMS
-          rclone copy bundle "gdrive:internet-security-snapshot-backup/runs/$(date -u +%Y-%m-%d)-run$RUN_ID" --transfers 4
+          rclone copy bundle "gdrive:runs/$(date -u +%Y-%m-%d)-run$RUN_ID" --transfers 4
           echo "Backed up run $RUN_ID: $(du -sh bundle | cut -f1)"
+      - name: Connection test
+        if: env.HAVE_CONF == 'true' && github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Backup connection test from run $GITHUB_RUN_ID at $(date -u +%FT%TZ)" > connection-test.txt
+          rclone copyto connection-test.txt "gdrive:tests/connection-test-$(date -u +%Y-%m-%dT%H%MZ).txt"
+          rclone lsf -R gdrive: | head -50
       - name: Repository copy
         if: env.HAVE_CONF == 'true' && github.event_name != 'workflow_run'
         run: |
           git fetch -q origin '+refs/heads/*:refs/remotes/origin/*'
           name="internet-security-snapshot-$(date -u +%Y-%m-%d).bundle"
           git bundle create "$name" --all
-          rclone copy "$name" gdrive:internet-security-snapshot-backup/repository/
+          rclone copy "$name" gdrive:repository/
           echo "Repository copy $name: $(du -h "$name" | cut -f1)"
