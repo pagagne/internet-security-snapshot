@@ -699,9 +699,13 @@ DTEND;VALUE=DATE:20261202
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the dry-run quality report\; prepare the ha
  nd-check lists
-DESCRIPTION:Responsible: Claude\n\nLoad the review lists (including the rac
- e list) into the Hand Check app.\n\nSource: https://github.com/pagagne/int
- ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nFirst check that the Schedule workflow r
+ eally started the quarterly pull (first end-to-end test\, https://github.c
+ om/pagagne/internet-security-snapshot/blob/main/docs/WORKFLOW_REVIEW_2026-
+ 10-27.md item 4)\; if not\, start it by hand. Then load the review lists (
+ including the race list) into the Hand Check app.\n\nSource: https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.
+ yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -814,16 +818,18 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Document and test every GitHub workflow\; draft 
  the lock list
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/WORKFLOWS.md: for each workflow\, what starts
-  it\, its permissions and secrets\, inputs and outputs\, what happens on f
- ailure and who notices\, and its latest successful run (link). Run any wor
- kflow without a successful run since its last change (rebuild check on the
-  dry run's bundle\; quarterly pull inside the container\; the daily honeyp
- ot collector). Draft the lock list for decision item 22: data workflows (q
- uarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked like
-  the core\; support workflows (Checks\, Schedule\, Diagrams\, Research\, P
- ages\, Backup) under a change log.\n\nSource: https://github.com/pagagne/i
- nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/WORKFLOWS.md (start from https://github.com/p
+ agagne/internet-security-snapshot/blob/main/docs/WORKFLOW_REVIEW_2026-10-2
+ 7.md\, open items 1-7): for each workflow\, what starts it\, its permissio
+ ns and secrets\, inputs and outputs\, what happens on failure and who noti
+ ces\, and its latest successful run (link). Run any workflow without a suc
+ cessful run since its last change (rebuild check on the dry run's bundle\;
+  quarterly pull inside the container\; the daily honeypot collector). Draf
+ t the lock list for decision item 22: data workflows (quarterly pull\, reb
+ uild check\, daily collectors\, Dockerfile) locked like the core\; support
+  workflows (Checks\, Schedule\, Diagrams\, Research\, Pages\, Backup) unde
+ r a change log.\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

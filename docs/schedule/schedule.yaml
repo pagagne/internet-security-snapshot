@@ -415,7 +415,10 @@ items:
   owner: claude
   title: Read the dry-run quality report; prepare the hand-check lists
   date: 2026-12-01
-  details: Load the review lists (including the race list) into the Hand Check app.
+  details: >
+    First check that the Schedule workflow really started the quarterly pull (first end-to-end
+    test, docs/WORKFLOW_REVIEW_2026-10-27.md item 4); if not, start it by hand. Then load the
+    review lists (including the race list) into the Hand Check app.
 
 - id: dry-run-hand-check
   owner: author
@@ -524,7 +527,8 @@ items:
   title: Document and test every GitHub workflow; draft the lock list
   date: 2026-12-14
   details: >
-    docs/WORKFLOWS.md: for each workflow, what starts it, its permissions and secrets, inputs
+    docs/WORKFLOWS.md (start from docs/WORKFLOW_REVIEW_2026-10-27.md, open items 1-7): for each
+    workflow, what starts it, its permissions and secrets, inputs
     and outputs, what happens on failure and who notices, and its latest successful run (link).
     Run any workflow without a successful run since its last change (rebuild check on the dry
     run's bundle; quarterly pull inside the container; the daily honeypot collector). Draft the
