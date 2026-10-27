@@ -16,7 +16,7 @@
 | cloudflare_radar | ok |  |
 | cloudflare_radar | ok |  |
 | cloudflare_radar | ok |  |
-| ransomware_live | ok | aggregate counts only, no victim names; monthly totals [{'month': '2026-07', 'count': 952}, {'month': '2026-08', 'count': 1146}, {'month': ' |
+| ransomware_live | ok | aggregate counts only, no victim names; monthly totals withheld (scrubbed 27 Oct 2026) |
 
 ## 2. CVE records published in the quarter
 

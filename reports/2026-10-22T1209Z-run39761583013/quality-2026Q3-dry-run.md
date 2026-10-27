@@ -12,7 +12,7 @@
 | sec_edgar | ok | 4 filings |
 | sec_edgar | ok | 8029 registrants |
 | radar | gap | RuntimeError: Cloudflare Radar rejected CLOUDFLARE_TOKEN: line 1 (length 64): HTTP 400 ['9106:Authentication failed (status: 400)']; line 2  |
-| ransomware_live | ok | aggregate counts only, no victim names; monthly totals [{'month': '2026-07', 'count': 952}, {'month': '2026-08', 'count': 1146}, {'month': ' |
+| ransomware_live | ok | aggregate counts only, no victim names; monthly totals withheld (scrubbed 27 Oct 2026) |
 
 ## 2. CVE records published in the quarter
 
