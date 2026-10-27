@@ -662,8 +662,15 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  -security-snapshot/tree/main/site and by hand). Test the pages locally\; t
  he workflow is switched on by the author on 4 Dec (Settings > Pages > Sour
  ce: GitHub Actions). Address: https://pagagne.github.io/internet-security-
- snapshot/ \; the Desk at .../reviewer/.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ snapshot/ \; the Desk at .../reviewer/. Plus the run-health status page (d
+ ecided 27 Oct\; mock-up approved first\, Claude Design artifact "Run-Healt
+ h Dashboard Mock-up"): a build step reads the run-reports branch and rende
+ rs last run\, next pull\, quarter stage\, source health with pushback and 
+ permission state\, rebuild verdict\, integrity checks\, evaluations list a
+ nd recent runs. Health only\, no findings or counts (those follow the auth
+ or's review on the evaluation page)\; covered by the daily privacy scan. R
+ ebuilt after every workflow run.\n\nSource: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

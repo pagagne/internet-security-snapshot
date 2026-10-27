@@ -458,6 +458,12 @@ items:
     touch site/ and by hand). Test the pages locally; the workflow is switched on by the author
     on 4 Dec (Settings > Pages > Source: GitHub Actions). Address:
     https://pagagne.github.io/internet-security-snapshot/ ; the Desk at .../reviewer/.
+    Plus the run-health status page (decided 27 Oct; mock-up approved first, Claude Design
+    artifact "Run-Health Dashboard Mock-up"): a build step reads the run-reports branch and
+    renders last run, next pull, quarter stage, source health with pushback and permission
+    state, rebuild verdict, integrity checks, evaluations list and recent runs. Health only, no
+    findings or counts (those follow the author's review on the evaluation page); covered by
+    the daily privacy scan. Rebuilt after every workflow run.
 
 - id: landing-page
   owner: author
