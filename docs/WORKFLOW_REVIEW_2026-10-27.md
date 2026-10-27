@@ -53,5 +53,7 @@ workflow lock (decision item 22).
 6. **Not built yet:** the Pages workflow (by 27 Nov) and the Zenodo release (by 31 Dec).
 7. Done 27 Oct: the architecture diagram shows the private Drive backup.
 8. Done 27 Oct (author): the eight 22 Oct Quarterly pull test runs, whose bundles held the
-   ransomware.live file, were deleted with their artifacts (logs saved to the private Drive
-   first); checked through the API the same day. Their cleaned reports stay on run-reports.
+   ransomware.live file, were deleted with their artifacts; checked through the API the same day.
+   Their logs were not saved (GitHub's download option could not be found) and are gone; the
+   cleaned run reports, manifests and quality reports stay on run-reports, which is what the
+   record needs.
