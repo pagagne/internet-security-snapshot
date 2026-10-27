@@ -1,0 +1,77 @@
+{
+  "quarter": "2026Q3",
+  "run": "dry-run",
+  "gaps": [],
+  "pushback": 0,
+  "cve_published": 36952,
+  "cvss_rate": 0.9337248322147651,
+  "cwe_rate": 0.8850129898246374,
+  "pools": {
+    "2026-07": {
+      "a_edge": 20,
+      "b_web_collab": 42,
+      "c_other": 2480,
+      "d": 7
+    },
+    "2026-08": {
+      "a_edge": 19,
+      "b_web_collab": 80,
+      "c_other": 3512,
+      "d": 41
+    },
+    "2026-09": {
+      "a_edge": 58,
+      "b_web_collab": 87,
+      "c_other": 3584,
+      "d": 33
+    }
+  },
+  "counts": {
+    "cve/cve_records.parquet": 415399,
+    "nvd/nvd_cves.parquet": 37369,
+    "kev/kev_entries.parquet": 1760,
+    "epss/epss_scores.parquet": 11135867,
+    "sec/sec_8k_item105.parquet": 11,
+    "radar/series_ok": 5
+  },
+  "fields": {
+    "cve/cve_records.parquet": {
+      "cve_id": "ok",
+      "state": "ok",
+      "date_published": "ok",
+      "cvss_base": "ok",
+      "cwe_ids": "ok",
+      "affected": "ok",
+      "credit_values": "ok",
+      "has_cisa_adp": "ok",
+      "ssvc_exploitation": "ok"
+    },
+    "nvd/nvd_cves.parquet": {
+      "cve_id": "ok",
+      "nvd_published": "ok",
+      "nvd_status": "ok",
+      "nvd_cvss31": "ok",
+      "nvd_cwe_ids": "ok",
+      "nvd_products": "ok"
+    },
+    "kev/kev_entries.parquet": {
+      "cve_id": "ok",
+      "date_added": "ok",
+      "vendor": "ok",
+      "product": "ok"
+    },
+    "epss/epss_scores.parquet": {
+      "cve": "ok",
+      "date": "ok",
+      "epss": "ok",
+      "percentile": "ok"
+    },
+    "sec/sec_8k_item105.parquet": {
+      "accession": "ok",
+      "form": "ok",
+      "file_date": "ok",
+      "items": "ok"
+    }
+  },
+  "drift_flags": []
+}
