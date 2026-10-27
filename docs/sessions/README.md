@@ -21,3 +21,4 @@ project documents; later logs are written at the end of each working day.
 |---|---|
 | [Sun 25 Oct](2026-10-25_to_2026-10-31/2026-10-25.md) | Workflow lock; sync review; brainstorm of new sources; probes and decisions |
 | [Mon 26 Oct](2026-10-25_to_2026-10-31/2026-10-26.md) | Source switches; global widening; AI-attack sweep; dry run 2; capacity; Drive backup |
+| [Tue 27 Oct](2026-10-25_to_2026-10-31/2026-10-27.md) | Drive backup live; private by design; Censys guide; rulesets; every workflow tested; pushback logging; status page; review moved up |

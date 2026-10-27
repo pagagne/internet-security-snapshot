@@ -94,6 +94,9 @@ the same day, and anything needing a decision is added to the next meeting's she
 At the end of each working day the session writes a log in `docs/sessions/<week>/` (weekly folders,
 Sunday to Saturday, named like `2026-10-25_to_2026-10-31`; what was asked,
 decided and done, with the day's workflow runs) and copies it to the Claude project.
+When the author is next online (usually the following morning), the session opens by
+presenting that report in chat: what was accomplished, what carried over, and what is due
+that day (author's request, 27 Oct).
 
 ## Private by design
 (Decided 27 Oct 2026.) The repository stays public. Three rules keep private material out of it:
