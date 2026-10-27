@@ -1,0 +1,173 @@
+{
+  "quarter": "2026Q3",
+  "run": "dry-run",
+  "started_at": "2026-10-27T21:01:18Z",
+  "finished_at": "2026-10-27T21:08:56Z",
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "requirements_lock_sha256": "0e71de9205abf1674abb255055869c65537ca2fd4c5b700b360e414006f56dd0",
+    "packages": {
+      "duckdb": "2.0.0",
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.0",
+      "scipy": "1.18.1",
+      "lifelines": "0.30.0",
+      "statsmodels": "0.15.0",
+      "ruptures": "1.1.10"
+    },
+    "git_commit": "797cef4816845039f18107aa157680440ddd7cdb",
+    "runner_image": "ubuntu24 20261026.354.1"
+  },
+  "files": [
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/known_exploited_vulnerabilities.json",
+      "sha256": "2d9931c086e42d05425c2da924299c8d9b7ff836de373f981668b7ef5f6f0fd7",
+      "bytes": 1814644,
+      "source_version": "cisagov/kev-data@30a09b6f3f7e2f03618cc8c95d212966d3c14e6e",
+      "retrieved_at": "2026-10-27T21:01:20Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/kev_entries.parquet",
+      "sha256": "1eaabddf8a43e7842561f2405b2c2a69d0954062d31198fa19728080fee590f5",
+      "bytes": 53976,
+      "source_version": "cisagov/kev-data@30a09b6f3f7e2f03618cc8c95d212966d3c14e6e",
+      "retrieved_at": "2026-10-27T21:01:26Z",
+      "status": "ok",
+      "note": "1760 entries"
+    },
+    {
+      "source": "cve_org",
+      "file_path": "cve/cve_records.parquet",
+      "sha256": "bb351e4589f2db9d49ec3f937d8b24d8f9bc49916d3a4de7f8e35ea3a9a7b3eb",
+      "bytes": 37334279,
+      "source_version": "CVEProject/cvelistV5@d113247549f50792f241b1872a8a06a13f1f1482",
+      "retrieved_at": "2026-10-27T21:04:11Z",
+      "status": "ok",
+      "note": "415387 records; raw JSON pinned by commit, not copied"
+    },
+    {
+      "source": "nvd",
+      "file_path": "nvd/nvd_cves.parquet",
+      "sha256": "a287e99a48af6804aa55cefdbd83d7707fb58bb67346403c48cc4cebee267605",
+      "bytes": 1087034,
+      "source_version": "fkie-cad/nvd-json-data-feeds@b86b3ac8f20ffa69a0ab1c3d12def679448df023",
+      "retrieved_at": "2026-10-27T21:06:12Z",
+      "status": "ok",
+      "note": "37369 CVEs published 2026-07-01..2026-09-30; key=yes"
+    },
+    {
+      "source": "epss",
+      "file_path": "epss/epss_scores.parquet",
+      "sha256": "6a163e8d519681d307f414357f6f715ebe29b3061d329c6a9a2797a23980a636",
+      "bytes": 75064161,
+      "source_version": "FIRST EPSS model v2026.06.15",
+      "retrieved_at": "2026-10-27T21:07:38Z",
+      "status": "ok",
+      "note": "118 days 2026-07-01..2026-10-26, step 1d; CVE IDs from 2025 on; 0 day(s) missing"
+    },
+    {
+      "source": "sec_edgar",
+      "file_path": "sec/sec_8k_item105.parquet",
+      "sha256": "85e4e377b30f1918a22556c9d7c0f6b9384be0d1d522e666d4bbd8d1ed25e1ce",
+      "bytes": 3666,
+      "source_version": "EDGAR full-text search, retrieved 2026-10-27T21:07:41Z",
+      "retrieved_at": "2026-10-27T21:07:41Z",
+      "status": "ok",
+      "note": "11 filings"
+    },
+    {
+      "source": "sec_edgar",
+      "file_path": "sec/sec_summary.json",
+      "sha256": "bffd6c19c814720a105ccb09ddba98bd436f898c21d5d4c54de42d950967b9f8",
+      "bytes": 906,
+      "source_version": "company_tickers.json, retrieved 2026-10-27T21:07:41Z",
+      "retrieved_at": "2026-10-27T21:07:41Z",
+      "status": "ok",
+      "note": "8024 registrants"
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer7_timeseries.json",
+      "sha256": "1d22cab6c90ef2589cc404cb804287af480dae72bcbb600f706a08b11beac86a",
+      "bytes": 1102,
+      "source_version": "Radar API, retrieved 2026-10-27T21:08:09Z",
+      "retrieved_at": "2026-10-27T21:08:09Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer3_timeseries.json",
+      "sha256": "3cb274b9e37c179150a326aff697333d2d64432ba98ee2e0c75f5b2e19dfdb07",
+      "bytes": 1104,
+      "source_version": "Radar API, retrieved 2026-10-27T21:08:09Z",
+      "retrieved_at": "2026-10-27T21:08:09Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer7_by_vertical.json",
+      "sha256": "3c37a814fc160ecf292055a051a87feba49c520bba0dae119a33939e67b81e34",
+      "bytes": 801,
+      "source_version": "Radar API, retrieved 2026-10-27T21:08:09Z",
+      "retrieved_at": "2026-10-27T21:08:09Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/http_bot_class_timeseries.json",
+      "sha256": "e81b8606c5d18f3989416b890f806e986199b01b8c89809f696b39e2a87f8a83",
+      "bytes": 1658,
+      "source_version": "Radar API, retrieved 2026-10-27T21:08:09Z",
+      "retrieved_at": "2026-10-27T21:08:09Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/ai_bots_by_user_agent_timeseries.json",
+      "sha256": "b9206e3da5bd645a37437732173d9d8b474e9a867f4dfbfaec9a618de294e213",
+      "bytes": 3379,
+      "source_version": "Radar API, retrieved 2026-10-27T21:08:09Z",
+      "retrieved_at": "2026-10-27T21:08:09Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "ransomware_live",
+      "file_path": "ransomware/ransomware_counts.parquet",
+      "sha256": "eedfde6b9a2df3eb74194e27f6526c6e9803fe9a9560227816c7403367e29ce8",
+      "bytes": 5997,
+      "source_version": "ransomware.live API, retrieved 2026-10-27T21:08:23Z",
+      "retrieved_at": "2026-10-27T21:08:23Z",
+      "status": "ok",
+      "note": "aggregate counts only, no victim names; 539 rows",
+      "kept_privately": true
+    }
+  ],
+  "source_switches": {
+    "ransomware_live": {
+      "permission": "awaiting",
+      "collect": true,
+      "publish": false
+    },
+    "vulncheck": {
+      "permission": "awaiting",
+      "collect": false,
+      "publish": false
+    },
+    "shadowserver": {
+      "permission": "awaiting",
+      "collect": false,
+      "publish": false
+    }
+  }
+}
