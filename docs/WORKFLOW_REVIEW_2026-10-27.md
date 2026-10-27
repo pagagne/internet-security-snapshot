@@ -38,8 +38,9 @@ Asked by the author. All passed:
 - Diagrams: rendered; push to main refused by the new ruleset, PNGs attached as a download,
   as decided.
 - Checks: passed on the test push under the new ruleset.
-- Honeypot not run: it downloads about 1 GB from SANS ISC, kept monthly by the author's
-  decision; it runs on 2 Nov.
+- Honeypot capture (run at the author's request, 21:24 UTC): passed in 2.3 min; counts by
+  category and CVE saved to run-reports under `data/isc-honeypot/2026-10-27/`, no IP addresses
+  (the only links are ISC's public signature references). The scheduled 2 Nov run follows.
 
 Two follow-ups: `actions/upload-artifact` in Diagrams was pinned to v4, which GitHub flags as
 Node.js 20 (deprecated); updated the same evening to the v6 pin the quarterly pull already uses
