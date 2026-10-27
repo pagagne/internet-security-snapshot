@@ -64,9 +64,7 @@ Slot c still needs the internet-facing hand check, slot d the AI-credit check.
 
 ## 8. Ransomware leak-site counts (aggregates)
 
-- 2026-07: 952 postings, 62 groups; unknown country 4.0%, unknown sector 5.6%
-- 2026-08: 1,146 postings, 85 groups; unknown country 8.3%, unknown sector 9.5%
-- 2026-09: 847 postings, 78 groups; unknown country 10.2%, unknown sector 10.9%
+- Figures withheld until ransomware.live permits publication (scrubbed 27 Oct 2026).
 
 ## 9. SEC 8-K Item 1.05
 

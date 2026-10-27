@@ -92,7 +92,7 @@
       "source_version": "ransomware.live API, retrieved 2026-10-22T02:49:42Z",
       "retrieved_at": "2026-10-22T02:49:42Z",
       "status": "ok",
-      "note": "aggregate counts only, no victim names; monthly totals [{'month': '2026-07', 'count': 952}, {'month': '2026-08', 'count': 1146}, {'month': '2026-09', 'count': 847}]"
+      "note": "aggregate counts only, no victim names; monthly totals withheld until ransomware.live permits publication (scrubbed 27 Oct 2026)"
     }
   ]
 }
