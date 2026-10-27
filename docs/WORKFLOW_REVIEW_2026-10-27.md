@@ -52,3 +52,6 @@ workflow lock (decision item 22).
    (pinned version), could be pinned by lockfile.
 6. **Not built yet:** the Pages workflow (by 27 Nov) and the Zenodo release (by 31 Dec).
 7. Done 27 Oct: the architecture diagram shows the private Drive backup.
+8. Done 27 Oct (author): the eight 22 Oct Quarterly pull test runs, whose bundles held the
+   ransomware.live file, were deleted with their artifacts (logs saved to the private Drive
+   first); checked through the API the same day. Their cleaned reports stay on run-reports.
