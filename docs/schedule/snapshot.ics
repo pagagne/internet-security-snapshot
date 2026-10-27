@@ -1184,6 +1184,22 @@ DESCRIPTION:Responsible: Claude\n\nAI-credit rule evaluation on the pilot's
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:pilot-expectations-check@2027-02-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270203
+DTEND;VALUE=DATE:20270204
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Compare the pilot with what we expected (docs/PI
+ LOT_EXPECTATIONS.md)
+DESCRIPTION:Responsible: Claude\n\nAfter the Q4 2026 final run: put each re
+ ading next to the expectation written on 26 Oct 2026\, mark hits and surpr
+ ises in one short table\, and add it to the pilot report's notes for the a
+ uthor. Nothing in the comparison changes a rule.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-rule-session@2027-02-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270208T150000Z
