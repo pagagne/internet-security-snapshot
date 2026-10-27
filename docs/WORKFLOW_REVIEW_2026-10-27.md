@@ -48,5 +48,4 @@ workflow lock (decision item 22).
 5. **Diagrams installs the Mermaid renderer from npm** with write access to `main`; low risk
    (pinned version), could be pinned by lockfile.
 6. **Not built yet:** the Pages workflow (by 27 Nov) and the Zenodo release (by 31 Dec).
-7. The architecture diagram does not yet show the private Drive backup; update with
-   `docs/WORKFLOWS.md` on 14 Dec.
+7. Done 27 Oct: the architecture diagram shows the private Drive backup.

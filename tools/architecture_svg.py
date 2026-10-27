@@ -21,7 +21,8 @@ BOXES = [
     ("vulncheck", "src", 368, 58, "pending", [("vc-1", "VulnCheck KEV", 0), ("vc-2", "(community tier)", 0), ("vc-3", "hoped for by 1 Jan 2027", 0)]),
     ("ransom", "src", 436, 58, "pending", [("rl-1", "Harm: ransomware.live", 0), ("rl-2", "leak-site post counts", 0), ("rl-3", "hoped for by 1 Jan 2027", 0)]),
     ("pull", "pull", 76, 418, "box", [("pull-1", "Quarterly pull", 1), ("pull-2", "GitHub Actions,", 0), ("pull-3", "1 Jan, Apr,", 0), ("pull-4", "Jul, Oct", 0), ("pull-5", "", 0), ("pull-6", "final re-run", 0), ("pull-7", "one month later", 0)]),
-    ("store", "store", 76, 418, "box", [("store-1", "Frozen bundles", 1), ("store-2", "repo releases", 0), ("store-3", "+ Zenodo;", 0), ("store-4", "git pinned", 0), ("store-5", "by commit", 0)]),
+    ("store", "store", 76, 296, "box", [("store-1", "Frozen bundles", 1), ("store-2", "repo releases", 0), ("store-3", "+ Zenodo;", 0), ("store-4", "git pinned", 0), ("store-5", "by commit", 0)]),
+    ("private", "store", 382, 112, "box", [("pv-1", "Private backup", 1), ("pv-2", "author's Drive:", 0), ("pv-3", "full data, incl.", 0), ("pv-4", "not yet", 0), ("pv-5", "publishable", 0)]),
     ("normalize", "proc", 76, 96, "box", [("norm-1", "Normalize", 1), ("norm-2", "data checks,", 0), ("norm-3", "cohort rule", 0)]),
     ("analysis", "proc", 196, 160, "box", [("ana-1", "Analysis", 1), ("ana-2", "timing, baselines,", 0), ("ana-3", "uncertainty ranges", 0), ("ana-4", "", 0), ("ana-5", "Claude drafts,", 0), ("ana-6", "author approves", 0)]),
     ("hand", "proc", 380, 114, "hand", [("hand-1", "Hand Check app", 1), ("hand-2", "author's checks:", 0), ("hand-3", "fix dates,", 0), ("hand-4", "AI credits", 0)]),
@@ -56,7 +57,9 @@ def arrows():
         if b[1] == "src":
             x, y, w, h = geom(b[1], b[2], b[3])
             a.append((f"M{x + w} {y + h / 2}H{px - 2}", b[4] == "pending"))
-    a.append((f"M{COLS['pull'][0] + COLS['pull'][1]} 285H{COLS['store'][0] - 2}", False))
+    a.append((f"M{COLS['pull'][0] + COLS['pull'][1]} 224H{COLS['store'][0] - 2}", False))
+    pv = by("private")
+    a.append((f"M{COLS['pull'][0] + COLS['pull'][1]} {pv[2] + pv[3] / 2}H{COLS['store'][0] - 2}", False))
     n = by("normalize")
     a.append((f"M{COLS['store'][0] + COLS['store'][1]} {n[2] + n[3] / 2}H{COLS['proc'][0] - 2}", False))
     cx = COLS["proc"][0] + COLS["proc"][1] / 2

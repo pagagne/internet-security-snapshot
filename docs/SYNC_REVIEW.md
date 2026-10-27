@@ -40,8 +40,10 @@ cannot see.
 10b. Privacy: `python -m snapshot.privacy` and `python -m snapshot.privacy --ref origin/run-reports`
     both clean (the daily scan does this too); read the newest session logs and decision sheets
     for names, contacts or not-yet-public information the patterns cannot catch.
-11. Claude project docs (`claude/operations.md`, `claude/annual-plan.md`,
-    `claude/handover-session-1.md`): re-upload any whose repository file changed.
+11. Claude project docs (map: `docs/artifacts/README.md`; `claude/operations.md`,
+    `claude/annual-plan.md`, `claude/handover-session-1.md`, `claude/session-logs.md`,
+    `claude/pilot-expectations.md`): re-upload any whose repository file changed; the private
+    inventory matches the Drive folder.
 
 ## Pass 3: things that run on their own
 12. Workflow runs since the last review (Actions API and `reports/log/` on the `run-reports`

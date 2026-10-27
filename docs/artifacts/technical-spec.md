@@ -204,7 +204,7 @@ The raw layer stores files exactly as retrieved. The tables below form the norma
 | context\_radar | date, bot\_share, verified\_bot\_share\_of\_bots | One row per day |
 | metric\_result | quarter, release (provisional, final), metric\_id, value, ci\_low, ci\_high, baseline, status, code\_version, approved\_by | One row per metric per release |
 
-**Privacy by design.** The study handles no host-level data at all: exposure comes only as aggregate counts that Shadowserver has already published. Ransomware victim names are dropped before storage.
+**Privacy by design.** The study handles no host-level data at all: exposure comes only as aggregate counts that Shadowserver has already published. Ransomware victim names are dropped before storage. Data from a source that has not yet allowed publication (its switch in `config/sources.yaml`) is moved out of every public output and kept only in the author's private Google Drive backup; a privacy scan runs on every change and every day (27 October 2026).
 
 ## Evaluation pages
 

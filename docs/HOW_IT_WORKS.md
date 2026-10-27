@@ -18,7 +18,7 @@ Every number in the report travels the same path, left to right: free sources, a
 
 1. **Free sources.** Public records of software flaws (CVE records), CISA's list of flaws known to be attacked, CISA's added analysis (Vulnrichment), daily attack-likelihood scores (EPSS), NVD, vendor advisories, company breach filings with the SEC, and Cloudflare Radar's internet traffic data.
 2. **Quarterly pull.** GitHub Actions collects everything at 06:00 UTC on 1 January, April, July and October, and again one month later for the final report.
-3. **Frozen bundles.** An exact copy of every input is kept with checksums and archived on Zenodo, so anyone can recompute any number later.
+3. **Frozen bundles.** An exact copy of every input is kept with checksums and archived on Zenodo, so anyone can recompute any number later. A private backup in the author's Google Drive also keeps the full data, including anything not yet allowed to be published.
 4. **Normalize.** Automatic data checks flag missing fields or sudden changes in a source, then the fixed rules pick which flaws to study.
 5. **Analysis.** The author's hand checks are added. Claude drafts the analysis and the author approves it before anything is published.
 6. **Publish.** The evaluation page, a quarter-by-quarter archive, timelines for the sampled flaws, and a citable Zenodo bundle of data and code.

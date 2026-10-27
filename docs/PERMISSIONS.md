@@ -20,8 +20,10 @@ aggregate totals from the 22 Oct test run (postings for Jul-Sep 2026, no victim 
 written into the public run report on the `run-reports` branch, the public run download and the
 public data-quality notice. Fixed the same day: the manifest note carries no figures, the
 quality report withholds them, and non-publishable sources are moved out of every public output
-and kept only in the author's private Drive backup (`snapshot.private`). The branch history was
-left as it is (author's decision); this note records it. To be mentioned in the 20 Nov
+and kept only in the author's private Drive backup (`snapshot.private`). The figures were also
+removed from the current files of the six 22 Oct run reports on `run-reports`; the branch
+history was left as it is (author's decision); this note records it. A privacy scan now checks
+`main` and `run-reports` every day. To be mentioned in the 20 Nov
 follow-up to ransomware.live.
 
 ## Request texts as sent (20 Oct 2026)

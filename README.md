@@ -110,6 +110,10 @@ estimation.
 - Raw inputs frozen with checksums; every published number reproducible with one command.
 - All seven tracking questions reported every quarter, whatever the result.
 - No scanning, no exploitation, no host-level data, no victim names.
+- Private by design: data a provider has not yet allowed us to publish, and personal details,
+  never appear in this repository or its public run outputs. They are kept in a private backup
+  ([`docs/BACKUP.md`](docs/BACKUP.md)); a scan on every change and every day checks this
+  ([`docs/OPERATIONS.md`](docs/OPERATIONS.md), "Private by design").
 
 ## AI involvement and conflict of interest
 
