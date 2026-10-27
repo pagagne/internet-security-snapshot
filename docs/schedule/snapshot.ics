@@ -208,20 +208,23 @@ BEGIN:VEVENT
 UID:gcp-setup@2026-10-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261029T140000Z
-DTEND:20261029T141500Z
+DTEND:20261029T142000Z
 SUMMARY:[Paul] Snapshot: Set up BigQuery in the Google Cloud project (HTTP 
- Archive\, deps.dev history)
-DESCRIPTION:Responsible: Paul (author)\n\nThe project "internet-security-sn
- apshot" already exists (made 27 Oct for the Drive backup's client ID). con
- sole.cloud.google.com\, that project: enable the BigQuery API\; no billing
-  needed (the BigQuery sandbox includes 1 TB of queries a month)\; if you e
- ver link billing\, add a budget alert at $1\; IAM > Service accounts > cre
- ate "snapshot-bq" with the role BigQuery Job User\; Keys > Add key > JSON\
- ; in GitHub > Settings > Secrets and variables > Actions\, add GCP_SA_KEY 
- (paste the whole file) and GCP_PROJECT (the project ID). Never paste the k
- ey into chat. Delete the downloaded file afterwards.\n\nSource: https://gi
- thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
- le.yaml
+ Archive\, deps.dev history)\; turn on Dependabot alerts
+DESCRIPTION:Responsible: Paul (author)\n\nFirst\, one minute in GitHub (ste
+ p 3 of the 27 Oct settings PDF): Settings > Advanced Security > Dependabot
+  alerts > Enable (dependency graph on\; security and version updates left 
+ off)\; tell Claude\, who checks it. The project "internet-security-snapsho
+ t" already exists (made 27 Oct for the Drive backup's client ID). console.
+ cloud.google.com\, that project: enable the BigQuery API\; no billing need
+ ed (the BigQuery sandbox includes 1 TB of queries a month)\; if you ever l
+ ink billing\, add a budget alert at $1\; IAM > Service accounts > create "
+ snapshot-bq" with the role BigQuery Job User\; Keys > Add key > JSON\; in 
+ GitHub > Settings > Secrets and variables > Actions\, add GCP_SA_KEY (past
+ e the whole file) and GCP_PROJECT (the project ID). Never paste the key in
+ to chat. Delete the downloaded file afterwards.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

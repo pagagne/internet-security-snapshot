@@ -15,7 +15,8 @@ cannot see.
    left to delete).
 2. `pytest -q`, `python -m snapshot.schedule check`, `python -m snapshot.diagrams check`: all clean.
    For a diagram warning, compare the diagram with the files it depends on, fix, redraw
-   (Diagrams workflow) and re-stamp.
+   (render the PNG in the workspace with `mmdc` and commit it with the source; the Diagrams
+   workflow only attaches a cross-check copy) and re-stamp.
 3. Search the docs for statements that may have gone stale: dates that differ from
    `docs/ANNUAL_PLAN.md`, "by hand", "goes public", "not yet", "to do" items that are done,
    names of files or tasks that no longer exist.

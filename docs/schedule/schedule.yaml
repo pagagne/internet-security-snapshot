@@ -296,11 +296,14 @@ items:
 
 - id: gcp-setup
   owner: author
-  title: Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history)
+  title: Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts
   date: 2026-10-29
   time: "10:00"
-  minutes: 15
+  minutes: 20
   details: >
+    First, one minute in GitHub (step 3 of the 27 Oct settings PDF): Settings > Advanced
+    Security > Dependabot alerts > Enable (dependency graph on; security and version updates
+    left off); tell Claude, who checks it.
     The project "internet-security-snapshot" already exists (made 27 Oct for the Drive backup's
     client ID). console.cloud.google.com, that project: enable the BigQuery
     API; no billing needed (the BigQuery sandbox includes 1 TB of queries a month); if you

@@ -1,7 +1,9 @@
 name: Diagrams
 
-# Redraws the PNG copies in docs/diagrams/ whenever a diagram's Mermaid source changes,
-# so the pictures always match the version GitHub shows in docs/EVALUATION_FLOW.md.
+# Renders the PNG copies of docs/diagrams/*.mmd whenever a Mermaid source changes and attaches
+# them to the run as a download, as a cross-check. It no longer pushes: main requires passing
+# Checks (ruleset of 27 Oct) and workflows cannot bypass it on a personal repository, so the
+# PNGs are rendered and committed together with the source change (author's decision, 27 Oct).
 on:
   push:
     branches: [main]
@@ -9,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: diagrams
@@ -32,14 +34,6 @@ jobs:
           for f in docs/diagrams/*.mmd; do
             mmdc -i "$f" -o "${f%.mmd}.png" -s 2 -b white -p /tmp/pp.json
           done
-      - name: Commit if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/diagrams/*.png
-          if git diff --cached --quiet; then echo "PNGs already up to date."; exit 0; fi
-          git commit -qm "Redraw diagram PNGs from Mermaid source"
-          git push -q origin HEAD:main || echo "::warning title=Diagram PNGs not pushed::The push to main was refused (ruleset?). Download the 'diagram-pngs' artifact instead."
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6 (same pin as the quarterly pull; v4 ran on deprecated Node.js 20)
         if: always()
         with:

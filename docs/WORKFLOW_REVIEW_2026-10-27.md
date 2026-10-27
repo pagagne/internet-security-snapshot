@@ -43,7 +43,9 @@ Asked by the author. All passed:
 
 Two follow-ups: `actions/upload-artifact` in Diagrams was pinned to v4, which GitHub flags as
 Node.js 20 (deprecated); updated the same evening to the v6 pin the quarterly pull already uses
-(author's request). Dependabot alerts are still off (author).
+(author's request). Dependabot alerts: author, Thu 29 Oct with the Google Cloud setup.
+Diagrams changed the same evening to render and attach only (no push, read-only permission):
+PNGs are rendered in the workspace and committed with the Mermaid source (author's choice).
 
 ## Confirmed sound
 - Every action pinned by commit SHA; Python packages installed with hashes; runner image pinned.
