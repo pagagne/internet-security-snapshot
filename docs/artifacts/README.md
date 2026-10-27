@@ -18,6 +18,7 @@ When one changes, change the other in the same session (`docs/OPERATIONS.md`).
 | `docs/HANDOVER.md` | Claude project doc `claude/handover-session-1.md` | Re-upload after changes |
 | `docs/sessions/` (all days) | Claude project doc `claude/session-logs.md` | Combined copy, by week; re-upload after each day's log |
 | `docs/PILOT_EXPECTATIONS.md` | Claude project doc `claude/pilot-expectations.md` | Fixed record of 26 Oct |
+| `docs/WORKFLOWS.md` | Claude project doc `claude/workflows.md`; PDF copy sent 27 Oct | Re-upload after changes (extended at the 14 Dec workflow review) |
 | (private; never in the repository) | Claude project doc `claude/private-backup-inventory.md` (and `claude/private-data-copy.md` from Dec) | Monthly from the Drive folder (`docs/BACKUP.md`) |
 | `docs/reviewer/INVITATION.md` | [Invitation: Independent Reviewer](https://claude.ai/artifact/VJaEuiADo22MGeEGadAGnm) | Edited in the doc; re-export here (no personal details in the repository copy) |
 | `docs/artifacts/brainstorm-data-sources-2026-10-25.md` | [Brainstorm: Data Sources and Process](https://claude.ai/artifact/MjibikbMynnVW7KXGWwPJe) | Edited in the doc; re-export here |

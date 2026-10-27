@@ -847,18 +847,18 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Document and test every GitHub workflow\; draft 
  the lock list
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/WORKFLOWS.md (start from https://github.com/p
- agagne/internet-security-snapshot/blob/main/docs/WORKFLOW_REVIEW_2026-10-2
- 7.md\, open items 1-7): for each workflow\, what starts it\, its permissio
- ns and secrets\, inputs and outputs\, what happens on failure and who noti
- ces\, and its latest successful run (link). Run any workflow without a suc
- cessful run since its last change (rebuild check on the dry run's bundle\;
-  quarterly pull inside the container\; the daily honeypot collector). Draf
- t the lock list for decision item 22: data workflows (quarterly pull\, reb
- uild check\, daily collectors\, Dockerfile) locked like the core\; support
-  workflows (Checks\, Schedule\, Diagrams\, Research\, Pages\, Backup) unde
- r a change log.\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/WORKFLOWS.md (written 27 Oct in plain languag
+ e\; extend it from https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/WORKFLOW_REVIEW_2026-10-27.md): for each workflow\, what sta
+ rts it\, its permissions and secrets\, inputs and outputs\, what happens o
+ n failure and who notices\, and its latest successful run (link). Run any 
+ workflow without a successful run since its last change (rebuild check on 
+ the dry run's bundle\; quarterly pull inside the container\; the daily hon
+ eypot collector). Draft the lock list for decision item 22: data workflows
+  (quarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked l
+ ike the core\; support workflows (Checks\, Schedule\, Diagrams\, Research\
+ , Pages\, Backup) under a change log.\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

@@ -533,7 +533,7 @@ items:
   title: Document and test every GitHub workflow; draft the lock list
   date: 2026-12-14
   details: >
-    docs/WORKFLOWS.md (start from docs/WORKFLOW_REVIEW_2026-10-27.md, open items 1-7): for each
+    docs/WORKFLOWS.md (written 27 Oct in plain language; extend it from docs/WORKFLOW_REVIEW_2026-10-27.md): for each
     workflow, what starts it, its permissions and secrets, inputs
     and outputs, what happens on failure and who notices, and its latest successful run (link).
     Run any workflow without a successful run since its last change (rebuild check on the dry
