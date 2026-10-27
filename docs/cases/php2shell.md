@@ -68,6 +68,7 @@ How knowledge of the flaws and of the fix spread, as reported (sources disagree 
 | 21 Oct | PHP Foundation publishes patches; CISA alert the same day; CERT-EU and NCSC advise taking unpatched systems offline; outages (e.g. Belgium's Smartschool) | Everyone |
 | Late 23 Oct | Trail of Bits reports working exploits (two days after the public patch) | Researchers; exploit code not public |
 | 24 Oct | Cloudflare sees an exponential rise in attempts after disclosure; no mass exploitation yet | |
+| 26 Oct | CISA adds CVE-2026-109618 and CVE-2026-109619 to KEV (catalogue release of 26 Oct): both enter Q4 2026 free data; first known attack dated 26 Oct for T1(a) | |
 
 **What it means for the study (points for 8 Feb; no rule change)**
 - **"Fix date" has three candidates here:** the embargoed early patch to selected operators
