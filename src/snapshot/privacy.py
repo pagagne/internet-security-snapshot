@@ -43,6 +43,7 @@ ALLOW = {
     "41898282+github-actions[bot]@users.noreply.github.com": "GitHub bot",
     "community@vulncheck.com": "VulnCheck's public request address",
     "contact@shadowserver.org": "Shadowserver's public contact address",
+    "research-access-request@censys.com": "Censys's public research-access address",
     "psirt@cisco.com": "Cisco's public security address (vendor advisory sample)",
     "(706) 542-3375": "UGA Career Center employer-relations office line (public)",
 }
