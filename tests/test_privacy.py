@@ -6,7 +6,15 @@ def test_repository_is_clean():
     assert privacy.scan() == []
 
 
-def test_finds_secrets_personal_details_and_private_figures():
+def test_finds_secrets_personal_details_and_private_figures(monkeypatch):
+    # ransomware.live has been publishable since 27 Oct; pretend it is not, to test the figure check.
+    from snapshot import sources
+    real = sources.load
+    def as_before():
+        cfg = real()
+        cfg["ransomware_live"] = {**cfg["ransomware_live"], "publish": False, "permission": "awaiting"}
+        return cfg
+    monkeypatch.setattr(sources, "load", as_before)
     sample = "\n".join([
         "client GOCSPX-abcdefghijklmnop",
         '{"refresh_token": "1//0abcdefghijklmnopqrstuvwxyz"}',

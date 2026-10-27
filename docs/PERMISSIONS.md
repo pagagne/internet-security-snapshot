@@ -10,9 +10,25 @@ status below changes, change the matching switch in the same commit; a test chec
 
 | Source | Asked | Channel | Reference | What was asked | Status | Reply |
 |---|---|---|---|---|---|---|
-| ransomware.live | 2026-10-20 | Support form ("Other") | Ticket #3425 | Aggregate posting counts only, credited; victim names dropped at capture; no raw data published | Awaiting reply | — |
+| ransomware.live | 2026-10-20 | Support form ("Other") | Ticket #3425 | Aggregate posting counts only, credited; victim names dropped at capture; no raw data published | **Granted** 2026-10-27 (Julien, 06:16 UTC) on seven conditions, below; publishing switched on the same day (author) | Conditions accepted by use; thank-you reply drafted for the author |
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply | — |
 | Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow up by reply to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject if no answer by 20 Nov 2026 | — |
+
+## ransomware.live conditions (ticket #3425, 27 Oct 2026)
+Authorized for this non-commercial research use on these conditions, which the study meets:
+1. **Access** only through the dedicated api-pro endpoint with a personal token (free). The
+   collector has no fallback to any other endpoint and records a gap without the token.
+2. **Fair usage:** no excessive polling or abusive request volumes. Three requests a pull, 5 s
+   apart; the study's own rule of no more than one call every 30 minutes; server pushback logged.
+3. **Attribution:** ransomware.live named as the source on any page, dashboard, interface,
+   report, publication or deliverable using its data (quality report, README, evaluation page,
+   status page, Zenodo archive).
+4. **No SLA or warranty;** data to be independently verified before critical decisions.
+5. **No continuity guarantee:** the service may change or stop without notice (a gap is
+   recorded; Plan 2 covers running without it).
+6. **No publishing of raw data** in any form (API, file or otherwise): only counts by month,
+   group, country and sector are kept; victim records never reach disk.
+7. **No cloning** of the ransomware.live website's look, layout or branding.
 
 ## Exposure note (27 Oct 2026)
 Found in the public/private review of 27 Oct: before ransomware.live had replied, three monthly
@@ -23,8 +39,9 @@ quality report withholds them, and non-publishable sources are moved out of ever
 and kept only in the author's private Drive backup (`snapshot.private`). The figures were also
 removed from the current files of the six 22 Oct run reports on `run-reports`; the branch
 history was left as it is (author's decision); this note records it. A privacy scan now checks
-`main` and `run-reports` every day. To be mentioned in the 20 Nov
-follow-up to ransomware.live.
+`main` and `run-reports` every day. Later the same day it emerged that ransomware.live's written
+yes had arrived at 06:16 UTC, before the clean-up, so the figures were in fact permitted; the
+clean-up stands as the template for sources still awaiting permission.
 
 ## Request texts as sent (20 Oct 2026)
 Kept so follow-ups can quote them exactly. Copied 26 Oct from the author's sent mail and the

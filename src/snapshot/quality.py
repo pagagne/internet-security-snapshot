@@ -187,7 +187,8 @@ def build(bundle: Path) -> tuple[str, dict]:
               f"- Collected ({len(rw):,} aggregate rows); figures withheld until ransomware.live gives written permission (config/sources.yaml).", ""]
         rw = None
     if rw is not None:
-        L += ["## 8. Ransomware leak-site counts (aggregates)", ""]
+        L += ["## 8. Ransomware leak-site counts (aggregates)", "",
+              "_Source: ransomware.live (https://www.ransomware.live), used with permission; aggregate counts only._", ""]
         for m, g in rw.groupby("month"):
             tot = int(g.query("dimension == 'all'")["count"].sum())
             unk_c = int(g.query("dimension == 'country' and value in ['UNKNOWN', '']")["count"].sum())

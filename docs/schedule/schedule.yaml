@@ -189,8 +189,8 @@ items:
   time: "09:00"
   minutes: 30
   details: >
-    Claude drafts follow-ups for any of ransomware.live (ticket #3425), VulnCheck
-    (community@vulncheck.com) and Shadowserver (ticket pqaytmyy) that have not replied; you
+    Claude drafts follow-ups for VulnCheck (community@vulncheck.com) and Shadowserver (ticket
+    pqaytmyy) if they have not replied (ransomware.live granted 27 Oct); you
     send them. Log in docs/PERMISSIONS.md. Cutoff: the 21 Dec session.
 
 - id: permission-drafts

@@ -15,9 +15,9 @@
 permissioned:
   ransomware_live:
     name: ransomware.live
-    permission: awaiting
-    collect: true     # aggregate counts only, under the accepted Fair Usage Policy (20 Oct 2026)
-    publish: false    # aggregates published only after a written yes
+    permission: granted   # written yes, ticket #3425, 27 Oct 2026 (seven conditions in docs/PERMISSIONS.md)
+    collect: true     # aggregate counts only, api-pro endpoint with the author's token (condition 1)
+    publish: true     # aggregates only, credited to ransomware.live; never raw data (conditions 3, 6)
     pull: ransomware
   vulncheck:
     name: VulnCheck KEV (community)

@@ -11,8 +11,8 @@ It answers with free public data only, on a plan registered in advance (OSF, DOI
 cannot be bent to fit a story. The sources are public records of software flaws (CVE), CISA's
 list of flaws known to be attacked (KEV) and its added analysis (Vulnrichment), NVD, daily
 exploitation-likelihood scores (EPSS), vendor fix dates, company breach filings with the SEC and
-Cloudflare Radar's internet traffic data. Shadowserver, VulnCheck, ransomware.live and Censys
-join only once each grants permission or access.
+Cloudflare Radar's internet traffic data. ransomware.live joined with written permission on 27 October 2026; Shadowserver, VulnCheck and
+Censys join only once each grants permission or access.
 
 Each quarter an automatic job freezes an exact copy of the data, the author hand-checks what a
 computer cannot judge, and seven pre-registered questions are reported: a provisional evaluation
@@ -43,7 +43,7 @@ Status as of 26 Oct 2026. Terms, requests and replies are logged in
 the pre-registered measures; "exploratory" ones are reported separately and never decide a label
 ([`config/exploratory.yaml`](config/exploratory.yaml)).
 
-### In use: free and public, no permission needed
+### In use: free and public (ransomware.live with written permission)
 
 | Source | What it gives the study | Role |
 |---|---|---|
@@ -62,6 +62,7 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 | deps.dev and OSV | Patch adoption for open-source packages (in testing) | Exploratory (X16) |
 | HTTP Archive and WordPress.org statistics | Patch adoption on websites (in testing) | Exploratory |
 | HHS OCR breach register | Health-sector hacking breaches (in testing) | Exploratory (X17) |
+| [ransomware.live](https://www.ransomware.live) (with permission, 27 Oct 2026) | Ransomware leak-site postings, aggregate counts only, credited (T6a) | Core |
 
 ### Awaiting permission or access
 
@@ -69,7 +70,6 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 |---|---|---|---|
 | Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | Awaiting reply; follow-up 20 Nov |
 | VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Awaiting written permission; used privately only until then |
-| ransomware.live | Ransomware leak-site postings, aggregates only (T6a) | Asked 20 Oct 2026 | Awaiting reply |
 | Censys | Internet exposure counts (T1b, T2) and the annual check | Application 28 Oct 2026 | To send |
 
 Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived

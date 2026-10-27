@@ -570,12 +570,12 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261120T140000Z
 DTEND:20261120T143000Z
 SUMMARY:[Paul] Snapshot: Data-permission follow-ups
-DESCRIPTION:Responsible: Paul (author)\n\nClaude drafts follow-ups for any 
- of ransomware.live (ticket #3425)\, VulnCheck (community@vulncheck.com) an
- d Shadowserver (ticket pqaytmyy) that have not replied\; you send them. Lo
- g in https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
- PERMISSIONS.md. Cutoff: the 21 Dec session.\n\nSource: https://github.com/
- pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nClaude drafts follow-ups for Vuln
+ Check (community@vulncheck.com) and Shadowserver (ticket pqaytmyy) if they
+  have not replied (ransomware.live granted 27 Oct)\; you send them. Log in
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/PERM
+ ISSIONS.md. Cutoff: the 21 Dec session.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

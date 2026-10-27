@@ -6,12 +6,23 @@ import pandas as pd
 from snapshot import private, quality, sources
 
 
-def test_ransomware_is_private_until_permitted():
-    assert "ransomware" in private.private_pulls()
-    assert not sources.may_publish("ransomware_live")
+import pytest
 
 
-def test_split_moves_private_folders_only(tmp_path):
+@pytest.fixture
+def ransomware_private(monkeypatch):
+    """Pretend ransomware.live is not yet publishable (as before its 27 Oct permission)."""
+    monkeypatch.setattr(private, "private_pulls", lambda: {"ransomware"})
+    real = sources.may_publish
+    monkeypatch.setattr(sources, "may_publish", lambda k: False if k == "ransomware_live" else real(k))
+
+
+def test_ransomware_published_after_permission():
+    assert sources.may_publish("ransomware_live")
+    assert "ransomware" not in private.private_pulls()
+
+
+def test_split_moves_private_folders_only(tmp_path, ransomware_private):
     raw, priv = tmp_path / "raw", tmp_path / "private"
     for d in ["2026Q4/dry-run/ransomware", "2026Q4/dry-run/kev"]:
         (raw / d).mkdir(parents=True)
@@ -21,7 +32,7 @@ def test_split_moves_private_folders_only(tmp_path):
     assert not (raw / "2026Q4/dry-run/ransomware").exists() and (raw / "2026Q4/dry-run/kev").exists()
 
 
-def test_quality_report_withholds_ransomware_figures(tmp_path):
+def test_quality_report_withholds_ransomware_figures(tmp_path, ransomware_private):
     (tmp_path / "manifest.json").write_text(json.dumps({"quarter": "2026Q3", "run": "dry-run", "files": []}))
     d = tmp_path / "ransomware"; d.mkdir()
     pd.DataFrame({"month": ["2026-07"], "dimension": ["all"], "value": ["all"], "count": [952]}) \
@@ -35,7 +46,7 @@ def test_pull_note_has_no_figures():
     assert "monthly totals" not in src
 
 
-def test_split_marks_manifest_and_rebuild_accepts_it(tmp_path):
+def test_split_marks_manifest_and_rebuild_accepts_it(tmp_path, ransomware_private):
     from snapshot import rebuild
     raw, priv = tmp_path / "raw", tmp_path / "private"
     b = raw / "2026Q4/dry-run"
@@ -47,3 +58,12 @@ def test_split_marks_manifest_and_rebuild_accepts_it(tmp_path):
     m = json.loads((b / "manifest.json").read_text())
     assert m["files"][0]["kept_privately"] is True
     assert rebuild.verify_files(b) == []
+
+
+def test_quality_report_credits_ransomware_live(tmp_path):
+    (tmp_path / "manifest.json").write_text(json.dumps({"quarter": "2026Q3", "run": "dry-run", "files": []}))
+    d = tmp_path / "ransomware"; d.mkdir()
+    pd.DataFrame({"month": ["2026-07"], "dimension": ["all"], "value": ["all"], "count": [952]}) \
+        .to_parquet(d / "ransomware_counts.parquet", index=False)
+    text, _ = quality.build(tmp_path)
+    assert "Source: ransomware.live" in text and "952" in text

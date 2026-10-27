@@ -23,7 +23,7 @@ Every number in the report travels the same path, left to right: free sources, a
 5. **Analysis.** The author's hand checks are added. Claude drafts the analysis and the author approves it before anything is published.
 6. **Publish.** The evaluation page, a quarter-by-quarter archive, timelines for the sampled flaws, and a citable Zenodo bundle of data and code.
 
-**Three sources are placeholders for now.** Shadowserver (internet exposure counts and honeypot attack data), VulnCheck KEV (earlier attack dates) and ransomware.live (leak-site post counts) were asked for permission on 20 October 2026. Follow-ups go out on 20 November, and replies are hoped for by 1 January 2027, before the pilot report. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly. Each has its own on/off switch in the study's settings, so including or leaving one out is a settings change, not a code change.
+**ransomware.live said yes on 27 October 2026,** so its leak-site post counts are used and published as aggregates, credited to ransomware.live. **Two sources are placeholders for now.** Shadowserver (internet exposure counts and honeypot attack data) and VulnCheck KEV (earlier attack dates) were asked for permission on 20 October 2026. Follow-ups go out on 20 November, and replies are hoped for by 1 January 2027, before the pilot report. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly. Each has its own on/off switch in the study's settings, so including or leaving one out is a settings change, not a code change.
 
 ## What the study looks at: flaws and four tracks
 
