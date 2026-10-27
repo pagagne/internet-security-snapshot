@@ -57,7 +57,13 @@ def _files(ref: str | None) -> list[tuple[str, str]]:
         read = lambda n: subprocess.run(["git", "show", f"{ref}:{n}"], capture_output=True,
                                         text=True, errors="replace").stdout
     else:
-        names = subprocess.run(["git", "ls-files"], capture_output=True, text=True, check=True).stdout.split("\n")
+        try:
+            names = subprocess.run(["git", "ls-files"], capture_output=True, text=True,
+                                   check=True).stdout.split("\n")
+        except (OSError, subprocess.CalledProcessError):
+            # no git (e.g. inside the analysis container): every file under the current folder
+            names = [p.as_posix() for p in Path(".").rglob("*")
+                     if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts]
         read = lambda n: Path(n).read_text(errors="replace") if Path(n).is_file() else ""
     return [(n, read(n)) for n in names if n and not n.endswith(SKIP_SUFFIX) and n not in SKIP_PATHS]
 
