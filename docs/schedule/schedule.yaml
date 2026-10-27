@@ -137,16 +137,19 @@ items:
   details: >
     docs/decisions/2026-11-12-research-review.md: the Evidence line under each decision (27 Oct
     global probes, 2 Nov tests, 5 Nov trial sweep); change a recommendation only if the
-    evidence says so, and say why. On 12 Nov before 10:00, ask the same decisions in chat as
+    evidence says so, and say why. Since 27 Oct: apply each conditionally approved item
+    (#3-8, #10, #11) whose evidence meets its condition, and list the exceptions for 12 Nov. On 12 Nov before 10:00, ask the same decisions in chat as
     option cards with the recommendation first.
 
 - id: research-review
   owner: author
-  title: Research review - 11 decisions (sheet with options and recommendations)
+  title: Research review - exceptions only (8 of 11 approved conditionally on 27 Oct; 1, 2, 9 decided)
   date: 2026-11-12
   time: "10:00"
-  minutes: 60
+  minutes: 20
   details: >
+    Since 27 Oct: #1, #2 and #9 decided; #3-8, #10, #11 approved on their stated conditions,
+    so only those whose evidence fails a condition come back as option cards. Original list:
     Decision sheet: docs/decisions/2026-11-12-research-review.md (each question with options
     and a recommendation; Claude also asks them in chat as option cards that morning).
     1 race fix-date effort (rec. every flagged case); 2 CISA active-exploitation date (rec.

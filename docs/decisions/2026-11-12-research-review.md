@@ -6,7 +6,18 @@ fills in the **Evidence** lines by 11 Nov from the probes (27 Oct global probes,
 5 Nov trial sweep) and, on the morning of 12 Nov, asks the same questions in chat as option
 cards. Anything decided here that touches the core is confirmed at the 21 Dec freeze session.
 
-**Quick list (11 decisions, about 60 minutes)**
+**Decided early, 27 Oct 2026 (author, option cards):**
+- #1 **A**, every flagged fix date checked each quarter (about 1½ hours).
+- #2 **A**, CISA's "active exploitation" date reported beside the KEV-based figures as
+  exploratory from the pilot; proposed for the core at the 21 Dec session (CORE_FREEZE item 23).
+- #9 **B**, the sweep keeps the list as written on 26 Oct (including the Chinese and Russian
+  sites added that day); the trial's other proposed changes are not adopted. The 9 Nov check of
+  the 15 trial entries still stands.
+- #3-8, #10, #11 **approved on their stated conditions (★)**: Claude applies each once its
+  test meets the condition, records the evidence here, and brings back on 12 Nov only those
+  that fail or need a choice the condition does not settle.
+
+**Quick list (11 decisions; since 27 Oct only exceptions remain for 12 Nov)**
 
 | # | Decision | ★ Recommendation |
 |---|---|---|
