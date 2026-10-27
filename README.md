@@ -2,9 +2,9 @@
 
 ## Mission
 
-The Internet Security Snapshot asks one question every quarter: are defenders closing
-internet-exposed software flaws faster than attackers start exploiting them, and how is AI
-changing that race?
+The Internet Security Snapshot is a study of the internet's security through the year 2027.
+Every quarter it asks one question: are defenders closing internet-exposed software flaws
+faster than attackers start exploiting them, and how is AI changing that race?
 
 It answers with free public data only, on a plan registered in advance (OSF, DOI
 [10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82), 20 October 2026), so the results
