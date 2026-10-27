@@ -91,6 +91,8 @@ option cards in chat (two to four options, the recommendation first and marked),
 meeting as a decision sheet in `docs/decisions/` (question, options, recommendation, evidence)
 linked from the calendar entry. News and ideas the author raises go to `docs/INQUIRIES.md`
 the same day, and anything needing a decision is added to the next meeting's sheet.
+At the end of each working day the session writes a log in `docs/sessions/` (what was asked,
+decided and done, with the day's workflow runs) and copies it to the Claude project.
 
 ## How a Claude session picks up work
 (In a Claude session GitHub's GraphQL API is blocked, so use `gh api` REST calls rather than
