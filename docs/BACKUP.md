@@ -16,7 +16,7 @@ About 3 GB for 2027 (`docs/CAPACITY.md`). The folder stays private: nothing in i
 published, and it holds data the standing rules keep private. Victim names are never in it
 (ransomware.live is reduced to counts at collection).
 
-## Setup (the author, about 20 minutes; schedule item `drive-backup-setup`)
+## Setup (done 27 Oct 2026; tested the same day: connection test and repository copy arrived)
 Done on your own computer. The token goes only into GitHub secrets, never into chat, email or a
 file in the repository.
 
@@ -37,7 +37,7 @@ file in the repository.
 6. Tell Claude; it runs the Backup workflow once by hand (a connection-test file in `tests/`
    and a repository copy in `repository/`) and checks in Drive that they arrived.
 
-## Own client ID (Thu 29 Oct 2026, with the Google Cloud project)
+## Own client ID (done 27 Oct 2026, Google Cloud project `internet-security-snapshot`)
 rclone's shared Google sign-in is being retired during 2026 (rclone notice, 27 Oct), so the
 backup gets its own:
 1. In the Google Cloud project: APIs & Services > Library > enable the **Google Drive API**.

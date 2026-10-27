@@ -138,7 +138,7 @@ confirms it can see the queue; the original chat's check-ins handle 26 Oct, 20 N
 - [ ] Schedule workflow green for 7 days in a row.
 - [x] Author subscribed to the calendar feed (24 Oct 2026).
 - [ ] Claude work-queue task live and has confirmed it can see the queue.
-- [ ] Private Google Drive backup configured and tested (`docs/BACKUP.md`).
+- [x] Private Google Drive backup configured and tested (`docs/BACKUP.md`; 27 Oct 2026).
 - [ ] This file current.
 - [ ] Remaining one-off check-ins in the original chat retired.
 

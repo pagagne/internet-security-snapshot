@@ -207,21 +207,20 @@ BEGIN:VEVENT
 UID:gcp-setup@2026-10-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261029T140000Z
-DTEND:20261029T143000Z
-SUMMARY:[Paul] Snapshot: Create a free Google Cloud project for BigQuery (H
- TTP Archive\, deps.dev history)
-DESCRIPTION:Responsible: Paul (author)\n\nAlso the Drive backup's own clien
- t ID (rclone's shared one is being retired during 2026\; https://github.co
- m/pagagne/internet-security-snapshot/blob/main/docs/BACKUP.md\, "Own clien
- t ID"). console.cloud.google.com: new project "internet-security-snapshot"
- \; enable the BigQuery API\; no billing needed (the BigQuery sandbox inclu
- des 1 TB of queries a month)\; if you ever link billing\, add a budget ale
- rt at $1\; IAM > Service accounts > create "snapshot-bq" with the role Big
- Query Job User\; Keys > Add key > JSON\; in GitHub > Settings > Secrets an
- d variables > Actions\, add GCP_SA_KEY (paste the whole file) and GCP_PROJ
- ECT (the project ID). Never paste the key into chat. Delete the downloaded
-  file afterwards.\n\nSource: https://github.com/pagagne/internet-security-
- snapshot/blob/main/docs/schedule/schedule.yaml
+DTEND:20261029T141500Z
+SUMMARY:[Paul] Snapshot: Set up BigQuery in the Google Cloud project (HTTP 
+ Archive\, deps.dev history)
+DESCRIPTION:Responsible: Paul (author)\n\nThe project "internet-security-sn
+ apshot" already exists (made 27 Oct for the Drive backup's client ID). con
+ sole.cloud.google.com\, that project: enable the BigQuery API\; no billing
+  needed (the BigQuery sandbox includes 1 TB of queries a month)\; if you e
+ ver link billing\, add a budget alert at $1\; IAM > Service accounts > cre
+ ate "snapshot-bq" with the role BigQuery Job User\; Keys > Add key > JSON\
+ ; in GitHub > Settings > Secrets and variables > Actions\, add GCP_SA_KEY 
+ (paste the whole file) and GCP_PROJECT (the project ID). Never paste the k
+ ey into chat. Delete the downloaded file afterwards.\n\nSource: https://gi
+ thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
+ le.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -411,34 +410,20 @@ DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:drive-backup-setup@2026-11-10@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261110T160000Z
-DTEND:20261110T162000Z
-SUMMARY:[Paul] Snapshot: Set up the private Google Drive backup (rclone tok
- en into GitHub secrets)
-DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/BACKUP.md\, steps 1-5\, on your own co
- mputer: rclone remote "gdrive" (scope drive.file)\, then its configuration
-  into the GitHub secret RCLONE_CONF. Never paste the token in chat. Tell C
- laude when done.\n\nSource: https://github.com/pagagne/internet-security-s
- napshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:drive-backup-test@2026-11-11@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Test the Drive backup (repository copy and a pul
- l bundle)
-DESCRIPTION:Responsible: Claude\n\nRun the Backup workflow by hand\; confir
- m the repository bundle arrived and restores\; check it runs after the 1 D
- ec dry run. Add it to https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/WORKFLOWS.md and the lock list (support workflow). Tell t
- he author if the secret is missing.\n\nSource: https://github.com/pagagne/
- internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Restore test of the Drive backup
+DESCRIPTION:Responsible: Claude\n\nThe backup was set up and tested on 27 O
+ ct (own Google client ID\; connection test and a 7 MB repository copy arri
+ ved in the Drive folder). Now restore: clone the newest repository bundle 
+ and confirm it matches main\; after the 1 Dec dry run\, check its bundle a
+ nd private part arrived. Add the Backup workflow to https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/WORKFLOWS.md and the lock l
+ ist.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
