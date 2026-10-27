@@ -37,11 +37,14 @@ workflow lock (decision item 22).
 1. **Locked-core guard only warns.** CODEOWNERS has no effect without a "require code owner
    review" rule, and a direct push to `main` is not blocked by a failing Checks run. Option: a
    ruleset requiring the Checks status on `main`, with the author and the workflows as bypass.
-   A settings change for the author; decide with the workflow lock (21 Dec).
-2. **`run-reports` branch unprotected.** Add it to the "protect main" ruleset (deletion and
+   Decided 27 Oct (author): added now as a separate ruleset "require checks on main" (jobs
+   `test` and `container`) with the repository admin as bypass, so direct pushes continue and
+   the Diagrams PNG push falls back to its artifact. Whether to drop the bypass is reviewed at
+   the workflow lock (21 Dec).
+2. **`run-reports` branch unprotected** (author adding it to "protect main", 27 Oct). Add it to the "protect main" ruleset (deletion and
    force push blocked); every workflow already pushes fast-forward only. One-minute settings
    change for the author.
-3. **Dependabot alerts are off.** Turning on alerts (not automatic updates) warns of a
+3. **Dependabot alerts are off** (author turning alerts on, 27 Oct; no automatic updates). Turning on alerts (not automatic updates) warns of a
    vulnerable pinned package. Settings change for the author.
 4. **Schedule starting the quarterly pull is untested end to end** (first real case: the
    1 Dec dry run). The 1 Dec Claude item checks it started and starts it by hand if not.
