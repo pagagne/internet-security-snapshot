@@ -25,7 +25,7 @@ import json
 import os
 
 from . import sources as switches
-from .collect import cve, epss, kev, nvd, radar, ransomware, sec
+from .collect import cve, epss, http, kev, nvd, radar, ransomware, sec
 from .util import Manifest, Quarter, utcnow
 
 SOURCES = ("kev", "cve", "nvd", "epss", "sec", "radar", "ransomware")
@@ -211,6 +211,7 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             print(f"[pull] {name} -> {out}")
             t0 = time.monotonic()
+            http.PUSHBACK.clear()
             try:
                 PULLERS[name](out, manifest, Path(tmp))
                 _annotate("notice", name, f"ok in {time.monotonic() - t0:.0f}s")
@@ -219,6 +220,9 @@ def main(argv: list[str] | None = None) -> int:
                 traceback.print_exc()
                 manifest.add_gap(name, f"{type(exc).__name__}: {exc}")
                 _annotate("error", name, f"gap after {time.monotonic() - t0:.0f}s: {type(exc).__name__}: {str(exc)[:500]}")
+            if http.PUSHBACK:  # 429/403 replies: an early sign of throttling or a block
+                manifest.pushback[name] = dict(http.PUSHBACK)
+                print(f"[pull] {name} server pushback: {dict(http.PUSHBACK)}")
     path = manifest.write()
     print(f"[pull] manifest: {path} ({failures} gap(s))")
     return 1 if failures else 0

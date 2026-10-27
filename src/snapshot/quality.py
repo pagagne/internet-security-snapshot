@@ -53,6 +53,17 @@ def build(bundle: Path) -> tuple[str, dict]:
         L.append(f"| {e['source']} | {e['status']} | {(e.get('note') or '')[:140]} |")
     M["gaps"] = [e["source"] for e in man["files"] if e["status"] != "ok"]
     L.append("")
+    pb = man.get("server_pushback")
+    if pb is not None:  # manifests from 27 Oct 2026 on record 429/403 replies per source
+        if pb:
+            L.append("**Server pushback** (\"too many requests\" 429 or \"forbidden\" 403 replies; an early "
+                     "sign of throttling or a block):")
+            for src, counts in pb.items():
+                L.append(f"- {src}: " + ", ".join(f"{k} x{v}" for k, v in sorted(counts.items())))
+        else:
+            L.append("Server pushback: none (no 429 or 403 replies from any source).")
+        L.append("")
+    M["pushback"] = sum(sum(c.values()) for c in (pb or {}).values())
 
     cve = _read(bundle / "cve/cve_records.parquet")
     nvd = _read(bundle / "nvd/nvd_cves.parquet")

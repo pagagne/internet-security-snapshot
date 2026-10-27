@@ -24,7 +24,7 @@ from pathlib import Path
 
 import requests
 
-from .http import UA
+from .http import UA, note_status
 
 CATEGORIES = "https://isc.sans.edu/feeds/urlcategories.txt"
 SUMMARY = "https://isc.sans.edu/feeds/urlsummary.txt"
@@ -34,6 +34,7 @@ CREDIT = "SANS Technology Institute, Internet Storm Center, https://isc.sans.edu
 
 def _lines(url: str):
     with requests.get(url, headers={"User-Agent": UA}, stream=True, timeout=600) as r:
+        note_status(url, r.status_code)
         r.raise_for_status()
         for raw in r.iter_lines():
             line = raw.decode("utf-8", "replace")

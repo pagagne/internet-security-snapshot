@@ -91,6 +91,7 @@ class Manifest:
         self.out_dir = out_dir
         self.entries: list[dict] = []
         self.switches: dict = {}   # config/sources.yaml as it stood for this run
+        self.pushback: dict = {}   # per source: {"host code": count} of 429/403 replies
         self.started_at = utcnow()
 
     def add_file(self, source: str, path: Path, source_version: str, status: str = "ok", note: str = "") -> None:
@@ -131,6 +132,7 @@ class Manifest:
             "environment": environment(),
             "files": self.entries,
             "source_switches": self.switches,
+            "server_pushback": self.pushback,
         }
         path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
         return path

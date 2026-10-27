@@ -2,11 +2,31 @@
 
 from __future__ import annotations
 
+import collections
+import os
 import time
+from urllib.parse import urlsplit
 
 import requests
 
 UA = "internet-security-snapshot/0.1 (+https://github.com/pagagne/internet-security-snapshot)"
+
+# Replies that can be the first sign of being throttled or blocked: "too many requests" (429)
+# and "forbidden" (403). Counted per host and code, posted as a run warning, and recorded per
+# source in the manifest and quality report, so a dry run shows them (author's decision, 27 Oct).
+PUSHBACK_CODES = (403, 429)
+PUSHBACK: collections.Counter = collections.Counter()
+
+
+def note_status(url: str, status: int) -> None:
+    """Count a 429/403 reply and post a warning on the run (GitHub Actions)."""
+    if status not in PUSHBACK_CODES:
+        return
+    host = urlsplit(url).hostname or "?"
+    PUSHBACK[f"{host} {status}"] += 1
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        what = "too many requests" if status == 429 else "forbidden"
+        print(f"::warning title=Server pushback::{host} replied {status} ({what})", flush=True)
 
 
 def get(url: str, *, params=None, headers=None, timeout=60, tries=4, pause=0.0, stream=False):
@@ -16,6 +36,7 @@ def get(url: str, *, params=None, headers=None, timeout=60, tries=4, pause=0.0, 
     for i in range(tries):
         try:
             r = requests.get(url, params=params, headers=h, timeout=timeout, stream=stream)
+            note_status(r.url or url, r.status_code)
             if r.status_code in (429, 500, 502, 503, 504):
                 last = requests.HTTPError(f"{r.status_code} for {r.url}")
                 time.sleep(min(60, 5 * 2 ** i))
@@ -41,6 +62,7 @@ def download(url: str, *, max_resumes: int = 200, timeout: int = 120) -> bytes:
             h["Range"] = f"bytes={len(buf)}-"
         try:
             with requests.get(url, headers=h, timeout=timeout, stream=True) as r:
+                note_status(url, r.status_code)
                 if r.status_code not in (200, 206):
                     r.raise_for_status()
                 if r.status_code == 200 and buf:  # server ignored Range: start over

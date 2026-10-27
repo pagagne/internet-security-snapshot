@@ -26,7 +26,8 @@ def _keep(df: pd.DataFrame, min_year: int) -> pd.DataFrame:
 
 
 def day_from_csv(day: dt.date) -> tuple[pd.DataFrame, str]:
-    r = get(CSV_URL.format(d=day.isoformat()), headers={"Accept": "*/*"}, timeout=120, tries=2)
+    r = get(CSV_URL.format(d=day.isoformat()), headers={"Accept": "*/*"}, timeout=120, tries=2,
+            pause=1.0)  # 1 s between daily files (author, 27 Oct): the busiest burst a pull makes
     raw = gzip.decompress(r.content).decode()
     first, _, rest = raw.partition("\n")
     model = first.lstrip("#").strip() if first.startswith("#") else ""
