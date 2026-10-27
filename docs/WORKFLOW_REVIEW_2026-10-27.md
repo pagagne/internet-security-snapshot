@@ -80,3 +80,10 @@ PNGs are rendered in the workspace and committed with the Mermaid source (author
    Their logs were not saved (GitHub's download option could not be found) and are gone; the
    cleaned run reports, manifests and quality reports stay on run-reports, which is what the
    record needs.
+9. Done 27 Oct (author's question: could our downloads look like an attack?): every source is read
+   at or below its published pace (NVD with key, SEC 10 a second with a declared user agent, SANS
+   ISC at most hourly, Cloudflare API limits) and every request names the study. Two changes:
+   429/403 replies are now counted per source, posted as run warnings and shown in the quality
+   report ("Server pushback"); EPSS daily files are fetched 1 s apart. Confirmed by a dry run
+   (run 40592012598, 14.9 min, no pushback, no drift). Not coded, by the author's choice:
+   ransomware.live's 30-minute spacing between runs is kept by care, not by a guard.
