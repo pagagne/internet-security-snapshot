@@ -51,6 +51,17 @@ under 1 MB of logs.
   pull's full bundle, including private data and dry runs, and a monthly copy of the
   repository; about 3 GB for 2027.
 
+## GitHub's free allowance (checked 27 Oct 2026)
+- GitHub Actions on standard runners is free and uncounted for public repositories, which
+  this one is. The study never touches the paid allowance.
+- The "120 core hours a month" (60 hours on 2 cores, 30 on 4) is GitHub Codespaces, the
+  cloud editor, which the study does not use.
+- If the repository were ever made private, the free plan gives 2,000 Actions minutes and
+  500 MB of artifact storage a month. Minutes would still fit (about 150-250 a quiet month,
+  400-600 a busy one: daily Schedule runs, Checks on each push, the quarterly pull, monthly
+  honeypot and backup); artifact storage would not (one pull bundle is about 200 MB), so bundles
+  would move to the Drive backup with short GitHub retention.
+
 ## Limits and risks
 Found on 26 Oct: nothing runs out of capacity in 2027. Two gaps, both closed by the Drive
 backup: full raw data (provisional runs, dry runs, private VulnCheck data) had no lasting home
