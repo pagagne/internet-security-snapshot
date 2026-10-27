@@ -39,8 +39,8 @@ def verify_files(bundle: Path) -> list[str]:
     problems = []
     for e in json.loads(man.read_text()).get("files", []):
         rel, want = e.get("file_path"), e.get("sha256")
-        if not rel or not want:
-            continue
+        if not rel or not want or e.get("kept_privately"):
+            continue   # private files are kept in the author's Drive backup, not the public bundle
         p = bundle / rel
         if not p.exists():
             problems.append(f"{rel}: missing")

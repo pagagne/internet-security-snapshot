@@ -1,21 +1,17 @@
 name: Backup to Google Drive
 
 # Private backup in the author's Google Drive folder Internet-Security-Snapshot-2027
-# (docs/BACKUP.md; the rclone remote's root_folder_id points at it): the full bundle of every
-# quarterly pull (including private data that may never be published, such as VulnCheck), and
-# a monthly copy of the whole repository. Needs the RCLONE_CONF secret (set up by the author);
+# (docs/BACKUP.md; the rclone remote's root_folder_id points at it): a monthly copy of the whole
+# repository, and a connection test when run by hand. Each quarterly pull backs up its own full
+# bundle (including private data) in its last step. Needs the RCLONE_CONF secret (set up by the author);
 # without it the job only reports that the backup is not configured.
 on:
-  workflow_run:
-    workflows: ["Quarterly pull"]
-    types: [completed]
   schedule:
     - cron: "17 10 3 * *"   # monthly repository copy, the 3rd at 10:17 UTC
   workflow_dispatch:
 
 permissions:
   contents: read
-  actions: read
 
 jobs:
   backup:
@@ -42,25 +38,14 @@ jobs:
           mkdir -p ~/.config/rclone
           printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
           chmod 600 ~/.config/rclone/rclone.conf
-      - name: Quarterly pull bundle
-        if: env.HAVE_CONF == 'true' && github.event_name == 'workflow_run'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          RUN_ID: ${{ github.event.workflow_run.id }}
-        run: |
-          mkdir -p bundle
-          gh run download "$RUN_ID" -R "$GITHUB_REPOSITORY" -D bundle
-          sha256sum $(find bundle -type f | sort) > bundle/SHA256SUMS
-          rclone copy bundle "gdrive:runs/$(date -u +%Y-%m-%d)-run$RUN_ID" --transfers 4
-          echo "Backed up run $RUN_ID: $(du -sh bundle | cut -f1)"
       - name: Connection test
         if: env.HAVE_CONF == 'true' && github.event_name == 'workflow_dispatch'
         run: |
           echo "Backup connection test from run $GITHUB_RUN_ID at $(date -u +%FT%TZ)" > connection-test.txt
           rclone copyto connection-test.txt "gdrive:tests/connection-test-$(date -u +%Y-%m-%dT%H%MZ).txt"
-          rclone lsf -R gdrive: | head -50
+          rclone lsf gdrive:   # top-level folder names only
       - name: Repository copy
-        if: env.HAVE_CONF == 'true' && github.event_name != 'workflow_run'
+        if: env.HAVE_CONF == 'true'
         run: |
           git fetch -q origin '+refs/heads/*:refs/remotes/origin/*'
           name="internet-security-snapshot-$(date -u +%Y-%m-%d).bundle"

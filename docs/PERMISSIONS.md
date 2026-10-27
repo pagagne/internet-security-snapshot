@@ -14,6 +14,16 @@ status below changes, change the matching switch in the same commit; a test chec
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply | — |
 | Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow up by reply to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject if no answer by 20 Nov 2026 | — |
 
+## Exposure note (27 Oct 2026)
+Found in the public/private review of 27 Oct: before ransomware.live had replied, three monthly
+aggregate totals from the 22 Oct test run (postings for Jul-Sep 2026, no victim names) were
+written into the public run report on the `run-reports` branch, the public run download and the
+public data-quality notice. Fixed the same day: the manifest note carries no figures, the
+quality report withholds them, and non-publishable sources are moved out of every public output
+and kept only in the author's private Drive backup (`snapshot.private`). The branch history was
+left as it is (author's decision); this note records it. To be mentioned in the 20 Nov
+follow-up to ransomware.live.
+
 ## Request texts as sent (20 Oct 2026)
 Kept so follow-ups can quote them exactly. Copied 26 Oct from the author's sent mail and the
 ransomware.live ticket page; contact details removed.

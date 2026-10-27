@@ -95,6 +95,15 @@ At the end of each working day the session writes a log in `docs/sessions/<week>
 Sunday to Saturday, named like `2026-10-25_to_2026-10-31`; what was asked,
 decided and done, with the day's workflow runs) and copies it to the Claude project.
 
+## Private by design
+(Decided 27 Oct 2026.) The repository stays public. Three rules keep private material out of it:
+1. A source whose `publish` switch is off (`config/sources.yaml`) never appears in a public
+   run download, run report or quality report; the quarterly pull moves it to the author's
+   private Drive backup (`snapshot.private`, `docs/BACKUP.md`).
+2. Personal and third-party details (candidates, contacts, family, private emails) stay in the
+   Claude project or Drive; repository documents describe people by role.
+3. Embargoed or not-yet-public vulnerability information never enters the repository.
+
 ## How a Claude session picks up work
 (In a Claude session GitHub's GraphQL API is blocked, so use `gh api` REST calls rather than
 `gh issue`, `gh pr` or `gh workflow run`. The Schedule workflow itself runs on GitHub and is

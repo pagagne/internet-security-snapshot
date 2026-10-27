@@ -8,7 +8,7 @@ website opens; before then, offer to send the registered plan on request.
 
 **Subject:** A volunteer research role for a CCRI cybersecurity student or graduate
 
-Dear Professor Kelly,
+Dear Professor [name],
 
 I'm a CCRI alumnus, and I'm running an independent, unfunded research study, the Internet
 Security Snapshot, pre-registered on the Open Science Framework in October. Each quarter it
