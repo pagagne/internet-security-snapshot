@@ -91,7 +91,8 @@ option cards in chat (two to four options, the recommendation first and marked),
 meeting as a decision sheet in `docs/decisions/` (question, options, recommendation, evidence)
 linked from the calendar entry. News and ideas the author raises go to `docs/INQUIRIES.md`
 the same day, and anything needing a decision is added to the next meeting's sheet.
-At the end of each working day the session writes a log in `docs/sessions/` (what was asked,
+At the end of each working day the session writes a log in `docs/sessions/<week>/` (weekly folders,
+Sunday to Saturday, named like `2026-10-25_to_2026-10-31`; what was asked,
 decided and done, with the day's workflow runs) and copies it to the Claude project.
 
 ## How a Claude session picks up work
