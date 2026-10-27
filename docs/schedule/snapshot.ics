@@ -184,23 +184,24 @@ SUMMARY:[Paul] Snapshot: Write and send the Censys research-access applicat
  ion
 DESCRIPTION:Responsible: Paul (author)\n\nMoved from 15 Feb 2027 (17 Nov\, 
  then 28 Oct at the author's choice). In your own words: Censys rejects req
- uests written with AI tools\, and the standing rules say you write it. The
- ir form asks for: a 3-4 sentence project description with the research que
- stion and where results are published\; your background (public profile or
-  past work)\; how Censys helps and which access (BigQuery\; delayed data i
- s fine)\; how recent the data must be\; confirmation of non-commercial use
-  and citing Censys\; agreement to the terms\; your Censys username (make a
- n account first). Log it in https://github.com/pagagne/internet-security-s
- napshot/blob/main/docs/PERMISSIONS.md (Claude can do the log). Access to c
- hoose: option 2\, additional API endpoints and Censys credits (counts by s
- oftware version or CVE without host data\; enough credits for weekly count
- s on about 80-100 flaws a quarter\, a few hundred count queries a month). 
- Not raw Parquet downloads (too large\; host data). Platform UI optional. T
- wo things to ask: (1) can count queries be run as of past dates\, back to 
- late 2025\, for a baseline year? (2) is BigQuery access also available? It
-  would run in the Google Cloud project set up on 29 Oct.\n\nSource: https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
- hedule.yaml
+ uests written with AI tools\, and the standing rules say you write it. It 
+ is an email to research-access-request@censys.com (no web form) covering: 
+ a 3-4 sentence project description with the research question and where re
+ sults are published\; your background (public profile or past work)\; how 
+ Censys helps and which access (BigQuery\; delayed data is fine)\; how rece
+ nt the data must be\; confirmation of non-commercial use and citing Censys
+ \; agreement to the terms\; your Censys username (make an account first). 
+ Guide: Claude doc "Censys Research Access: Application Guide". Log it in h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/PERMIS
+ SIONS.md (Claude can do the log). Access to choose: option 3 on their page
+ \, additional API endpoints and Censys credits (counts by software version
+  or CVE without host data\; enough credits for weekly counts on about 80-1
+ 00 flaws a quarter\, a few hundred count queries a month). Not raw Parquet
+  downloads (too large\; host data). Platform UI optional. Two things to as
+ k: (1) can count queries be run as of past dates\, back to late 2025\, for
+  a baseline year? (2) is BigQuery access also available? It would run in t
+ he Google Cloud project set up on 29 Oct.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

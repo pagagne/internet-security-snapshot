@@ -246,12 +246,12 @@ items:
   details: >
     Moved from 15 Feb 2027 (17 Nov, then 28 Oct at the author's choice). In your own words:
     Censys rejects requests written with AI tools, and the standing rules say you write it.
-    Their form asks for: a 3-4 sentence project description with the research question and
+    It is an email to research-access-request@censys.com (no web form) covering: a 3-4 sentence project description with the research question and
     where results are published; your background (public profile or past work); how Censys
     helps and which access (BigQuery; delayed data is fine); how recent the data must be;
     confirmation of non-commercial use and citing Censys; agreement to the terms; your Censys
-    username (make an account first). Log it in docs/PERMISSIONS.md (Claude can do the log).
-    Access to choose: option 2, additional API endpoints and Censys credits (counts by software
+    username (make an account first). Guide: Claude doc "Censys Research Access: Application Guide". Log it in docs/PERMISSIONS.md (Claude can do the log).
+    Access to choose: option 3 on their page, additional API endpoints and Censys credits (counts by software
     version or CVE without host data; enough credits for weekly counts on about 80-100 flaws a
     quarter, a few hundred count queries a month). Not raw Parquet downloads (too large; host
     data). Platform UI optional. Two things to ask: (1) can count queries be run as of past
