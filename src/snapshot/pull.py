@@ -159,9 +159,10 @@ def pull_ransomware(out: Path, manifest: Manifest, work: Path) -> None:
     dest.mkdir(parents=True, exist_ok=True)
     pq = dest / "ransomware_counts.parquet"
     table.to_parquet(pq, index=False)
-    totals = table[table["dimension"] == "all"][["month", "count"]].to_dict("records")
+    # No figures in the note: the manifest is published with the run report, and nothing
+    # derived from ransomware.live is published before its permission (config/sources.yaml).
     manifest.add_file("ransomware_live", pq, f"ransomware.live API, retrieved {utcnow()}",
-                      note=f"aggregate counts only, no victim names; monthly totals {totals}")
+                      note=f"aggregate counts only, no victim names; {len(table)} rows")
 
 
 PULLERS = {"kev": pull_kev, "cve": pull_cve, "nvd": pull_nvd, "epss": pull_epss,

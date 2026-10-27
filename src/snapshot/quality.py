@@ -18,6 +18,7 @@ from pathlib import Path
 import pandas as pd
 
 from .classify import is_ai_software, lab_name_only, product_category, unmatched_ai_signals
+from . import sources as switches
 from .util import Quarter, load_config
 
 
@@ -169,6 +170,11 @@ def build(bundle: Path) -> tuple[str, dict]:
 
     # 8. Harm data -----------------------------------------------------------------
     rw = _read(bundle / "ransomware/ransomware_counts.parquet")
+    if rw is not None and not switches.may_publish("ransomware_live"):
+        # The quality report is public; figures wait for written permission.
+        L += ["## 8. Ransomware leak-site counts (aggregates)", "",
+              f"- Collected ({len(rw):,} aggregate rows); figures withheld until ransomware.live gives written permission (config/sources.yaml).", ""]
+        rw = None
     if rw is not None:
         L += ["## 8. Ransomware leak-site counts (aggregates)", ""]
         for m, g in rw.groupby("month"):

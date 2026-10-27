@@ -9,6 +9,7 @@ monthly copy of the whole repository in case the GitHub account is ever lost or 
 | Folder inside Internet-Security-Snapshot-2027 | What | When | Size |
 |---|---|---|---|
 | `runs/` | Full bundle of every quarterly pull (provisional, final, dry runs), with checksums | After each pull | about 200 MB a pull |
+| `private/` | Sources not yet allowed to be published (ransomware.live until it agrees; VulnCheck once collected), kept out of every public output | After each pull | under 1 MB a pull |
 | `repository/` | `git bundle` of every branch (code, schedule, run logs) | The 3rd of each month | a few MB |
 
 About 3 GB for 2027 (`docs/CAPACITY.md`). The folder stays private: nothing in it is
@@ -25,7 +26,7 @@ file in the repository.
    see a folder you created yourself); **root_folder_id `1vcBEDbuFu9-KeCDxOH8vrwWHDdjbawvc`** (the
    author's folder "Internet-Security-Snapshot-2027", created 27 Oct; rclone then works only
    inside it); no service account; no advanced config; let it open the browser and sign in
-   with pagagne@gmail.com; not a shared drive.
+   with your own Google account; not a shared drive.
 3. Test the sign-in: `rclone lsd gdrive:` should finish without an error (the folder is empty
    at first).
 4. Run `rclone config file` to find the configuration file; open it and copy the whole

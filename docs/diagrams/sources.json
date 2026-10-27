@@ -132,12 +132,12 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "2fc1a58fd5ccbcf9",
-    ".github/workflows/quarterly-pull.yml": "3d3f388226a029cb",
+    "docs/PERMISSIONS.md": "78bb9738c5dfc7ee",
+    ".github/workflows/quarterly-pull.yml": "e7af7a3be229a9a3",
     "tools/architecture_svg.py": "7cfa07300af7bf8c",
     "docs/diagrams/architecture.svg": "6c704b1705bea3ff"
    },
-   "reviewed_on": "2026-10-26"
+   "reviewed_on": "2026-10-27"
   }
  }
 }
