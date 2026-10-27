@@ -1,14 +1,25 @@
 # Internet Security Snapshot
 
-The Internet Security Snapshot is a free, independent study project that takes quarterly measurements of whether internet security
-is getting better or worse, and how AI is involved. The central question: are defenders closing
-internet-exposed vulnerabilities faster than attackers start exploiting them?
+## Mission
 
-Each quarter, an automated job pulls free, versioned public data (CVE, CISA KEV,
-Vulnrichment, EPSS, NVD, SEC EDGAR, Cloudflare Radar and others; Shadowserver, VulnCheck
-and ransomware.live once each confirms permission), freezes it,
-and reports seven pre-registered tracking questions. A provisional evaluation is drafted automatically on the
-1st of January, April, July and October and published once the author has reviewed it (within two days); the final one follows a month later.
+The Internet Security Snapshot asks one question every quarter: are defenders closing
+internet-exposed software flaws faster than attackers start exploiting them, and how is AI
+changing that race?
+
+It answers with free public data only, on a plan registered in advance (OSF, DOI
+[10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82), 20 October 2026), so the results
+cannot be bent to fit a story. The sources are public records of software flaws (CVE), CISA's
+list of flaws known to be attacked (KEV) and its added analysis (Vulnrichment), NVD, daily
+exploitation-likelihood scores (EPSS), vendor fix dates, company breach filings with the SEC and
+Cloudflare Radar's internet traffic data. Shadowserver, VulnCheck, ransomware.live and Censys
+join only once each grants permission or access.
+
+Each quarter an automatic job freezes an exact copy of the data, the author hand-checks what a
+computer cannot judge, and seven pre-registered questions are reported: a provisional evaluation
+on the 1st of January, April, July and October, and a final one a month later. Q4 2026 is a
+labelled pilot; Q1 2027 is the first scored quarter.
+
+## Key documents
 
 - **How it works (plain-language overview with diagrams):** [`docs/HOW_IT_WORKS.md`](docs/HOW_IT_WORKS.md)
 - **Pre-registration:** [`prereg/PREREGISTRATION.md`](prereg/PREREGISTRATION.md)
