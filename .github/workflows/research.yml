@@ -8,7 +8,7 @@ on:
       task:
         description: "Probe to run"
         type: choice
-        options: [fixdate_probe, source_scout, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists, resource_profile]
+        options: [fixdate_probe, source_scout, global_probe, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists, resource_profile]
         default: fixdate_probe
       start:
         description: "First KEV date-added (YYYY-MM-DD)"
