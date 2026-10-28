@@ -603,7 +603,10 @@ items:
   title: Post the reviewer ad; email statistics department coordinators
   date: 2027-01-04
   minutes: 60
-  details: On each approved board (UGA first); applications close 15 Feb.
+  details: >
+    On each approved board (UGA first); applications close 15 Feb. The UGA posting is already
+    written and saved in Handshake as a draft (28 Oct; text in docs/reviewer/HANDSHAKE_POSTING.md):
+    check the links work (the site opens 4 Dec) and set it live today.
 
 - id: reviewer-line-up
   owner: author
