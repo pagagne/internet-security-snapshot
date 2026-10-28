@@ -1,7 +1,8 @@
 # Handshake posting: Independent Reviewer (Experiential Learning)
 
 Written 28 Oct 2026 with the author; the first two paragraphs are the author's. Saved in
-Handshake as a draft, set to go live on **4 Jan 2027** and close on **15 Feb 2027** (author's
+Handshake as a draft on 28 Oct (author); he activates it by hand on **4 Jan 2027** (own calendar
+reminder plus the schedule item) and it closes on **15 Feb 2027** (author's
 decision, 28 Oct: full project links, published only after the 4 Dec landing-page launch).
 Position type: Experiential Learning (UGA could not say whether an internship for credit fits
 better). Position dates: start 2 Mar 2027, end 11 Feb 2028 (last required second-coder round).
