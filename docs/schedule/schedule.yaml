@@ -37,11 +37,14 @@ items:
 
 - id: uga-call
   owner: author
-  title: Call the UGA Career Center about the reviewer posting
+  title: Call the UGA Career Center about the reviewer posting - done
   date: 2026-10-28
   time: "10:00"
   minutes: 20
   details: >
+    Done 28 Oct (author, before 9:00): the call went well; an independent researcher can
+    register on Handshake; the Career Center could not say whether an unpaid internship with
+    course credit is the better listing, so the role is listed as Experiential Learning. Original:
     Employer relations, (706) 542-3375. Ask whether an independent researcher can post an
     unpaid, remote research role on hireUGA (Handshake), and whether it is better listed as an
     unpaid internship with course credit. Note who you spoke with.
@@ -482,7 +485,7 @@ items:
 
 - id: handshake-register
   owner: author
-  title: Register on Handshake and connect the approved schools
+  title: Register on Handshake and connect the approved schools - started early, 28 Oct
   date: 2026-12-05
   minutes: 45
   details: >

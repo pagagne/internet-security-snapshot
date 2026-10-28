@@ -166,13 +166,16 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261028T140000Z
 DTEND:20261028T142000Z
 SUMMARY:[Paul] Snapshot: Call the UGA Career Center about the reviewer post
- ing
-DESCRIPTION:Responsible: Paul (author)\n\nEmployer relations\, (706) 542-33
- 75. Ask whether an independent researcher can post an unpaid\, remote rese
- arch role on hireUGA (Handshake)\, and whether it is better listed as an u
- npaid internship with course credit. Note who you spoke with.\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ ing - done
+DESCRIPTION:Responsible: Paul (author)\n\nDone 28 Oct (author\, before 9:00
+ ): the call went well\; an independent researcher can register on Handshak
+ e\; the Career Center could not say whether an unpaid internship with cour
+ se credit is the better listing\, so the role is listed as Experiential Le
+ arning. Original: Employer relations\, (706) 542-3375. Ask whether an inde
+ pendent researcher can post an unpaid\, remote research role on hireUGA (H
+ andshake)\, and whether it is better listed as an unpaid internship with c
+ ourse credit. Note who you spoke with.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -808,7 +811,7 @@ DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
 TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Register on Handshake and connect the approved sch
- ools
+ ools - started early\, 28 Oct
 DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security 
  Snapshot (independent research project)"\, the project email\, the GitHub 
  page as website. Approvals arrive during the RV trip.\n\nSource: https://g
