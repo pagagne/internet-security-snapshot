@@ -305,6 +305,11 @@ measures:
       (and by how many days), and those never in KEV. An earlier alert date is also a candidate
       T_exploit date (snapshot.events other_exploit), compared side by side with KEV-only dates;
       it does not replace them in the core.
+    agencies_2026_10_28: >
+      Research review #3 (approved on its condition 27 Oct): CERT-FR adopted 28 Oct (alert feed
+      readable and dated; Licence ouverte). JPCERT/CC adopted once its terms are read (by 11 Nov).
+      BSI WID and KrCERT/CC not adopted: their feeds carry advisories and vendor notices, not
+      exploitation alerts with an attack date. Collector to build before the 14 Dec review.
 
   - id: X20
     name: Internet routing and naming hygiene by country (APNIC Labs, RIPE NCC)
