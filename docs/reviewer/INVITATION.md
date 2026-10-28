@@ -67,6 +67,7 @@ The study uses only public data. You won't handle anything confidential or perso
 - **Credit.** You're named as the independent reviewer in the Q1 2027 report and in every quarterly report that uses your second-coder answers. You're also listed as a contributor on the archived, citable releases (Zenodo; with your ORCID if you have one). Your written review is a citable document in its own right.
 - **A real dataset and a real design problem.** Pre-registered, quarterly, open, with genuine statistical questions: rare events, censored and uncertain dates, small samples, a labelling rule that has to resist noise. If anything here sparks a paper or a talk of your own, you're welcome to it.
 - **Influence.** Your comments go into the open record, and the March review is where well-argued changes get made.
+- **A reference.** On request, a reference letter or LinkedIn recommendation from me after the April 2027 review.
 - A volunteer role: I can't offer pay; the return is the credit, the experience and the record above.
 
 ## Independence and conflicts of interest

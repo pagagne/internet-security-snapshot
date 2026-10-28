@@ -4,7 +4,10 @@ Written 28 Oct 2026 with the author; the first two paragraphs are the author's. 
 Handshake as a draft, set to go live on **4 Jan 2027** and close on **15 Feb 2027** (author's
 decision, 28 Oct: full project links, published only after the 4 Dec landing-page launch).
 Position type: Experiential Learning (UGA could not say whether an internship for credit fits
-better). Same text for UGA first, then Georgia State and any other approved board.
+better). Position dates: start 2 Mar 2027, end 11 Feb 2028 (last required second-coder round).
+Schools (author, 28 Oct): UGA, Georgia State, Georgia Tech, Clemson, University of South
+Carolina, College of Charleston, The Citadel, Emory and MIT; each approves the employer
+separately. Same text on every board.
 
 ---
 
@@ -43,6 +46,8 @@ advance, so the results cannot be bent to fit a story.
 - About 15 to 19 hours over 14 months; 8 to 12 of them between 3 and 28 April 2027.
 - Getting started in early March 2027 (3 to 4 hours, including one video call).
 - Fully remote; work at any time of day within each window.
+- Runs from 2 March 2027 to 11 February 2028 (an optional comment on the annual check until
+  14 March 2028).
 
 **Who should apply**
 
@@ -54,8 +59,9 @@ than any security knowledge.
 
 This is an unpaid volunteer role. You will be named as the independent reviewer in the published
 reports and listed as a contributor on the archived, citable releases (Zenodo, with your ORCID
-iD if you have one). Your written review is a citable document. Course credit may be possible
-through your own department.
+iD if you have one). Your written review is a citable document. A reference letter or LinkedIn
+recommendation on request after the April 2027 review. Course credit may be possible through
+your own department.
 
 **How to apply**
 

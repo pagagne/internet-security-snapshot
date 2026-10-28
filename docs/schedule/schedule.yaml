@@ -490,7 +490,10 @@ items:
   minutes: 45
   details: >
     Organization: "Internet Security Snapshot (independent research project)", the project
-    email, the GitHub page as website. Approvals arrive during the RV trip.
+    email, the GitHub page as website. Approvals arrive during the RV trip. Started 28 Oct;
+    schools requested: UGA, Georgia State, Georgia Tech, Clemson, University of South Carolina,
+    College of Charleston, The Citadel, Emory, MIT. Posting saved as a draft
+    (docs/reviewer/HANDSHAKE_POSTING.md), live 4 Jan - 15 Feb 2027.
 
 - id: dry-run-full-prep
   owner: claude
