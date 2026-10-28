@@ -1,0 +1,79 @@
+<!doctype html>
+<!--[if lte IE 8 ]><html lang="en" class="ie8"><![endif]-->
+<!--[if lte IE 9 ]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Data security incident trends | ICO</title>
+    
+
+<meta name="DC.Subject" content="Data security incident trends" />
+<meta name="DC.Date" content="Wednesday, March 11, 2026" />
+<meta name="DC.Creator" content="" />
+<meta name="DC.Publisher" content="ICO" />
+<meta name="DC.Title" content="Data security incident trends" />
+<meta name="DC.PageID" content="13634" />
+
+<meta property="og:title" content="Data security incident trends" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ico.org.uk/action-weve-taken/complaints-and-concerns-data-sets/data-security-incident-trends/" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+
+<meta name="twitter:title" content="Data security incident trends" />
+<meta name="twitter:description" content="" />
+
+<meta name="description" content="" />
+
+
+    
+
+<meta name="robots" content="index" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="/media2/lhphq55z/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/site.css?v=0MCHJLz1mLyP9Mf9JU-lmpw9JsNIPZLjVUwbmWztk1M" />
+    
+    
+</head>
+<body id="top" class="bg-white min-h-screen ">
+    
+
+    <a class="flex items-center justify-center px-3 py-2 bg-secondary text-white text-xl sr-only focus:relative focus:w-full focus:h-fit" href="#main-content">
+        <span class="font-serif text-serif-base pr-2">Skip to main content</span>
+        <span class="icon icon-arrow-down"></span>
+    </a>
+    <header class="sticky top-0 md:static z-10 md:z-auto print:hidden">
+        <div class="bg-primary">
+            <div class="lg:container px-4 py-3.5 md:flex">
+                <div class="md:pr-8">
+                    
+    <a href="/">
+            <img src="/media2/qkcg1rdf/logo-small.svg?width=80&amp;height=32&amp;v=1db03b868bf60c0" width="80" height="32" alt="" class="inline-block md:hidden" />
+            <img src="/media2/0usjoz4z/ico-header-logo-2026.svg?width=160&amp;height=96&amp;v=1dd4218f9e89300" width="160" height="96" alt="" class="hidden md:inline-block" />
+        <span class="sr-only">Home</span>
+    </a>
+
+                </div>
+                <div class="grow items-stretch hidden md:flex">
+                    
+    <div class="font-serif text-center md:text-left text-white text-serif-base md:flex items-end md:pl-8 border-secondary border-dotted md:border-l-2">
+        <span>The ICO exists to empower you through information.</span>
+    </div>
+
+                </div>
+                <div class="flex flex-col items-end md:pl-8">
+                    
+
+
+
+    <script type="application/json" id="language-settings">
+        {"cookieDomain":"ico.org.uk","options":[{"text":"English","href":"https://ico.org.uk/action-weve-taken/complaints-and-concerns-data-sets/data-security-incident-trends/","icon":"icon-lang-en","value":"English"},{"text":"Cymraeg","href":"https://cy.ico.org.uk/action-weve-taken/complaints-and-concerns-data-sets/data-security-incident-trends/","icon":"icon-lang-cy","value":"Welsh"}]}
+    </script>
+    <div id="language-toggle"></div>
+
+                    <div class="grow flex items-end">
+                        
+

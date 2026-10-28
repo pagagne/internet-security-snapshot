@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>BSI Warn- und Informationsdienst (WID): Schwachstellen-Informationen (Security Advisories)</title>
+    <link>https://wid.cert-bund.de/portal/wid/securityadvisory</link>
+    <description>BSI Warn- und Informationsdienst (WID) RSS Feed zur Verteilung Schwachstellen-Informationen (Security Advisories)</description>
+    <pubDate>Wed, 28 Oct 2026 11:02:03 GMT</pubDate>
+    <item>
+      <title>[UPDATE] [hoch] Node.js: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4117</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Node.js ausnutzen, um einen Denial of Service Angriff durchzuführen, um Sicherheitsvorkehrungen zu umgehen und um beliebigen Programmcode auszuführen.</description>
+      <category>hoch</category>
+      <pubDate>Wed, 28 Oct 2026 07:55:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [kritisch] Adobe Magento: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-2367</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Adobe Magento ausnutzen, um seine Privilegien zu erhöhen, beliebigen Code auszuführen, Sicherheitsmaßnahmen zu umgehen, Cross-Site-Scripting-Angriffe durchzuführen und vertrauliche Informationen offenzulegen.</description>
+      <category>kritisch</category>
+      <pubDate>Wed, 28 Oct 2026 07:50:34 GMT</pubDate>
+    </item>
+    <item>
+      <title>[NEU] [mittel] Nextcloud (Server, Tables, Whiteboard, Files Confidential, Collectives, Richdocuments): Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4185</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Nextcloud ausnutzen, um Sicherheitsvorkehrungen zu umgehen, Daten zu manipulieren oder offenzulegen sowie Denial-of-Service-Zustände auszulösen.</description>
+      <category>mittel</category>
+      <pubDate>Tue, 27 Oct 2026 13:26:33 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Google Chrome / Microsoft Edge: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4067</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Google Chrome / Microsoft Edge ausnutzen, um beliebigen Code auszuführen, Berechtigungen zu erweitern, Sicherheitsmaßnahmen zu umgehen, Daten offenzulegen oder zu manipulieren, einen Denial-of-Service-Zustand auszulösen oder andere, nicht näher spezifizierte Angriffe durchzuführen.</description>
+      <category>hoch</category>
+      <pubDate>Tue, 27 Oct 2026 13:26:32 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] OpenSSL: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-3638</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in OpenSSL ausnutzen, um Sicherheitsvorkehrungen zu umgehen, vertrauliche Informationen offenzulegen, Daten zu manipulieren und einen Denial-of-Service-Zustand zu verursachen.</description>
+      <category>hoch</category>
+      <pubDate>Tue, 27 Oct 2026 13:26:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Linux Kernel: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2025-0844</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Linux Kernel ausnutzen, um einen Denial of Service Angriff durchzuführen oder andere, nicht genauer beschriebene Auswirkungen erzielen.</description>
+      <category>hoch</category>
+      <pubDate>Tue, 27 Oct 2026 13:26:29 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Linux Kernel: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-1279</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen im Linux Kernel ausnutzen, um nicht näher spezifizierte Angriffe durchzuführen, welche zu einem Denial-of-Service-Zustand, einer Rechteausweitung, der Ausführung von Code oder einer Speicherbeschädigung führen könnten.</description>
+      <category>hoch</category>
+      <pubDate>Tue, 27 Oct 2026 13:21:37 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] xz: Schwachstelle ermöglicht Codeausführung</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-0942</link>
+      <description>Ein entfernter, anonymer Angreifer kann eine Schwachstelle in xz ausnutzen, um beliebigen Programmcode auszuführen.</description>
+      <category>hoch</category>
+      <pubDate>Tue, 27 Oct 2026 13:21:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [mittel] Linux Kernel: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2025-1452</link>
+      <description>Ein lokaler Angreifer kann mehrere Schwachstellen in Linux Kernel ausnutzen, um einen Denial of Service Angriff durchzuführen und andere, nicht spezifizierte Auswirkungen zu verursachen.</description>
+      <category>mittel</category>
+      <pubDate>Tue, 27 Oct 2026 13:21:35 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Linux Kernel: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-2056</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen im Linux Kernel ausnutzen, um einen Denial-of-Service-Angriff  auszulösen oder andere, nicht näher spezifizierte Angriffe durchzuführen.</description>
+      <category>hoch</category>
+      <pubDate>Tue, 27 Oct 2026 13:21:31 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [mittel] Linux Kernel: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-2527</link>

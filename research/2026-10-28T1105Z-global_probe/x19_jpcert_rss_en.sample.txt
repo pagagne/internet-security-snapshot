@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rdf:RDF
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xml:lang="ja">
+
+  <channel rdf:about="http://www.jpcert.or.jp/english/rss/jpcert-en.rdf">
+    <title>JPCERT/CC RSS Feed</title>
+    <link>https://www.jpcert.or.jp/</link>
+    <description>Security Alerts and Advisories</description>
+    <dc:publisher>JPCERT/CC</dc:publisher>
+    <dc:creator>[email]</dc:creator>
+    <items>
+      <rdf:Seq>
+      	
+      	<rdf:li rdf:resource="https://www.jpcert.or.jp/english/at/2026/at260031.html" />
+      	<rdf:li rdf:resource="https://www.jpcert.or.jp/english/at/2026/at260026.html" />
+      	<rdf:li rdf:resource="https://www.jpcert.or.jp/english/at/2026/at260025.html" />
+      	<rdf:li rdf:resource="https://www.jpcert.or.jp/english/at/2026/at260022.html" />
+      	<rdf:li rdf:resource="https://www.jpcert.or.jp/english/at/2026/at260020.html" />
+      	<rdf:li rdf:resource="https://www.jpcert.or.jp/english/at/2026/at260018.html" />
+      </rdf:Seq>
+
+    </items>
+  </channel>
+  
+  <item rdf:about="https://www.jpcert.or.jp/english/at/2026/at260031.html">
+    <title>Security Alert: Microsoft Releases October 2026 Security Updates</title>
+    
+    <link>https://www.jpcert.or.jp/english/at/2026/at260031.html</link>
+    <dc:date>2026-10-14T11:25+09:00</dc:date>
+  </item>
+  
+  <item rdf:about="https://www.jpcert.or.jp/english/at/2026/at260026.html">
+    <title>Security Alert: Alert Regarding Vulnerabilities in Adobe Acrobat and Reader (APSB26-141)</title>
+    
+    <link>https://www.jpcert.or.jp/english/at/2026/at260026.html</link>
+    <dc:date>2026-09-09T11:36+09:00</dc:date>
+  </item>
+  
+  <item rdf:about="https://www.jpcert.or.jp/english/at/2026/at260025.html">
+    <title>Security Alert: Microsoft Releases September 2026 Security Updates</title>
+    
+    <link>https://www.jpcert.or.jp/english/at/2026/at260025.html</link>
+    <dc:date>2026-09-09T11:36+09:00</dc:date>
+  </item>
+  
+  <item rdf:about="https://www.jpcert.or.jp/english/at/2026/at260022.html">
+    <title>Security Alert: Microsoft Releases August 2026 Security Updates</title>
+    
+    <link>https://www.jpcert.or.jp/english/at/2026/at260022.html</link>
+    <dc:date>2026-08-12T11:27+09:00</dc:date>
+  </item>
+  
+  <item rdf:about="https://www.jpcert.or.jp/english/at/2026/at260020.html">
+    <title>Security Alert: [Updated] Microsoft Releases July 2026 Security Updates</title>
+    
+    <link>https://www.jpcert.or.jp/english/at/2026/at260020.html</link>
+    <dc:date>2026-07-31T18:00+09:00</dc:date>
+  </item>
+  
+  <item rdf:about="https://www.jpcert.or.jp/english/at/2026/at260018.html">
+    <title>Security Alert: Alert Regarding Vulnerabilities in Adobe Acrobat and Reader (APSB26-63)</title>
+    
+    <link>https://www.jpcert.or.jp/english/at/2026/at260018.html</link>
+    <dc:date>2026-06-10T13:50+09:00</dc:date>
+  </item>
+  
+</rdf:RDF>
