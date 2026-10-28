@@ -65,6 +65,7 @@ measures:
         - AI coding assistant supply chain attack
         - AI model escaped sandbox OR evaluation environment
       languages: [en, zh, ja, ko, ru, es, pt, de, fr]   # added 2026-10-26: each query also run in
+      queries_translated: config/sweep_queries.yaml   # 2026-10-28: the ten queries in each language, fixed
         # (zh and ru searched on those countries' security sites in the page list, not the open web: trial 26 Oct)
         # these languages (translated once and kept fixed); each candidate records the language found in
       also_check:   # fixed pages read every sweep (list fixed 26 Oct 2026; later additions are dated)

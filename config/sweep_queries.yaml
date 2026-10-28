@@ -1,0 +1,106 @@
+# X3 quarterly AI-attack sweep: the ten searches in each sweep language, translated once and
+# kept fixed (config/exploratory.yaml, X3 sweep; translated 28 Oct 2026 by Claude, list as of
+# 26 Oct per the author's decision of 27 Oct, research review #9). English is the master; product
+# names stay in English. Chinese and Russian are run as site searches on the pages listed for those
+# countries (zh: FreeBuf, Anquanke, secrss.com, 4hou; ru: Securelist.ru, Habr, BI.ZONE, F6,
+# Kaspersky.ru, Anti-Malware, SecurityLab, Xakep), not on the open web (trial of 26 Oct).
+# Each candidate records the language it was found in. Changes only at the March review.
+en:
+  - AI agent cyberattack intrusion
+  - attackers used AI agent to exploit vulnerability
+  - LLM generated exploit used in the wild
+  - autonomous AI hacking campaign
+  - AI-assisted ransomware attack
+  - threat actors misuse Claude OR Gemini OR ChatGPT OR Copilot report
+  - MCP server OR AI agent compromised attack
+  - prompt injection attack in the wild data stolen
+  - AI coding assistant supply chain attack
+  - AI model escaped sandbox OR evaluation environment
+zh:
+  - AI 智能体 网络攻击 入侵
+  - 攻击者 利用 AI 智能体 漏洞利用
+  - 大模型 生成 漏洞利用 在野 攻击
+  - 自主 AI 黑客 攻击活动
+  - AI 辅助 勒索软件 攻击
+  - 威胁行为者 滥用 Claude OR Gemini OR ChatGPT OR Copilot 报告
+  - MCP 服务器 OR AI 智能体 被攻陷 攻击
+  - 提示词注入 攻击 在野 数据 窃取
+  - AI 编程助手 供应链 攻击
+  - AI 模型 逃逸 沙箱 OR 评测环境
+ja:
+  - AIエージェント サイバー攻撃 侵入
+  - 攻撃者 AIエージェント 脆弱性 悪用
+  - LLM 生成 エクスプロイト 実環境 悪用
+  - 自律型 AI ハッキング キャンペーン
+  - AI支援 ランサムウェア 攻撃
+  - 攻撃者 Claude OR Gemini OR ChatGPT OR Copilot 悪用 報告
+  - MCPサーバー OR AIエージェント 侵害 攻撃
+  - プロンプトインジェクション 攻撃 実被害 情報窃取
+  - AIコーディングアシスタント サプライチェーン攻撃
+  - AIモデル サンドボックス OR 評価環境 脱出
+ko:
+  - AI 에이전트 사이버공격 침입
+  - 공격자 AI 에이전트 취약점 악용
+  - LLM 생성 익스플로잇 실제 공격
+  - 자율 AI 해킹 캠페인
+  - AI 기반 랜섬웨어 공격
+  - 위협 행위자 Claude OR Gemini OR ChatGPT OR Copilot 악용 보고서
+  - MCP 서버 OR AI 에이전트 침해 공격
+  - 프롬프트 인젝션 공격 실제 피해 데이터 탈취
+  - AI 코딩 도우미 공급망 공격
+  - AI 모델 샌드박스 OR 평가 환경 탈출
+ru:
+  - ИИ-агент кибератака взлом
+  - злоумышленники использовали ИИ-агента для эксплуатации уязвимости
+  - эксплойт сгенерированный LLM атака в реальных условиях
+  - автономная хакерская кампания с ИИ
+  - атака программы-вымогателя с помощью ИИ
+  - злоупотребление Claude OR Gemini OR ChatGPT OR Copilot отчёт о угрозах
+  - взлом MCP-сервера OR ИИ-агента атака
+  - атака prompt injection кража данных
+  - атака на цепочку поставок через ИИ-ассистента для программирования
+  - модель ИИ вышла из песочницы OR тестовой среды
+es:
+  - agente de IA ciberataque intrusión
+  - atacantes usaron un agente de IA para explotar una vulnerabilidad
+  - exploit generado por LLM usado en ataques reales
+  - campaña de hacking autónoma con IA
+  - ataque de ransomware asistido por IA
+  - actores de amenazas abusan de Claude OR Gemini OR ChatGPT OR Copilot informe
+  - servidor MCP OR agente de IA comprometido ataque
+  - ataque de inyección de prompts robo de datos
+  - ataque a la cadena de suministro con asistente de programación de IA
+  - modelo de IA escapó del sandbox OR entorno de evaluación
+pt:
+  - agente de IA ataque cibernético invasão
+  - atacantes usaram agente de IA para explorar vulnerabilidade
+  - exploit gerado por LLM usado em ataques reais
+  - campanha de hacking autônoma com IA
+  - ataque de ransomware assistido por IA
+  - agentes de ameaça abusam do Claude OR Gemini OR ChatGPT OR Copilot relatório
+  - servidor MCP OR agente de IA comprometido ataque
+  - ataque de injeção de prompt roubo de dados
+  - ataque à cadeia de suprimentos com assistente de programação de IA
+  - modelo de IA escapou do sandbox OR ambiente de avaliação
+de:
+  - KI-Agent Cyberangriff Einbruch
+  - Angreifer nutzten KI-Agenten zur Ausnutzung einer Schwachstelle
+  - von LLM erzeugter Exploit in freier Wildbahn
+  - autonome KI-Hacking-Kampagne
+  - KI-gestützter Ransomware-Angriff
+  - Bedrohungsakteure missbrauchen Claude OR Gemini OR ChatGPT OR Copilot Bericht
+  - MCP-Server OR KI-Agent kompromittiert Angriff
+  - Prompt-Injection-Angriff Datendiebstahl
+  - Lieferkettenangriff über KI-Programmierassistenten
+  - KI-Modell aus Sandbox OR Testumgebung ausgebrochen
+fr:
+  - agent IA cyberattaque intrusion
+  - attaquants ont utilisé un agent IA pour exploiter une vulnérabilité
+  - exploit généré par LLM utilisé dans des attaques réelles
+  - campagne de piratage autonome par IA
+  - attaque par rançongiciel assistée par IA
+  - acteurs malveillants détournent Claude OR Gemini OR ChatGPT OR Copilot rapport
+  - serveur MCP OR agent IA compromis attaque
+  - attaque par injection de prompt vol de données
+  - attaque de la chaîne d'approvisionnement via assistant de programmation IA
+  - modèle d'IA évadé du bac à sable OR environnement d'évaluation
