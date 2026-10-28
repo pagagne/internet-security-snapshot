@@ -66,14 +66,25 @@ Which of CERT-FR, JPCERT/CC, BSI and KrCERT/CC to add?
 - B Only the two easiest (fewest gaps), the others at the March review.
 - C None for now.
 
-Evidence (27 Oct probe): _to fill_.
+Evidence (28 Oct probe, research/2026-10-28T1105Z-global_probe on run-reports): **CERT-FR** alert feed readable and dated (RSS, alert
+dates back to 2015); ANSSI content is under the Licence ouverte, commercial use only needs
+leave: **meets the condition, applied 28 Oct.** **JPCERT/CC** 注意喚起 alerts readable and dated,
+with CVE IDs (already lists PHP2Shell, 26 Oct): meets the condition once its site terms are
+read (to do by 11 Nov). **BSI WID** feed readable and dated but carries every security advisory,
+not exploitation alerts; **KrCERT/CC** notices readable but are vendor-update notices; neither
+gives an attack date, so under ★A they are not adopted (no exception needed). An exception only
+if JPCERT/CC's terms forbid use.
 
 ## 4. X20: DNSSEC validation and RPKI route checking by country
 - **A ★ Adopt** (APNIC Labs and RIPE NCC, quarterly, by region with a world figure).
 - B Adopt one of the two measures only.
 - C Not now.
 
-Evidence: _to fill_.
+Evidence (28 Oct probe): APNIC Labs' DNSSEC and route-origin (RoV) pages answer for the world
+and by country, with the figures inside the page's chart data (to be parsed); RIPEstat's JSON API
+answers (country resource lists); the NIST RPKI Monitor answers, updated daily. Pending by 11 Nov:
+a parser that reads one country's quarterly figure from APNIC, and both terms pages (the RIPEstat
+terms address tried was out of date).
 
 ## 5. X21: regional splits of Cloudflare Radar and ransomware.live
 - **A ★ Adopt;** ransomware.live regional figures published only once permission is granted
@@ -81,7 +92,10 @@ Evidence: _to fill_.
 - B Radar only.
 - C Not now.
 
-Evidence: _to fill_.
+Evidence (28 Oct): ransomware.live: the collector already keeps counts by country, so regional
+figures need no new requests (and are publishable since 27 Oct). Cloudflare Radar by region:
+not tested yet (the research workflow has no Radar token); to test in a pull dry run before
+11 Nov.
 
 ## 6. X22: breach notifications outside the US
 UK ICO, Australia's OAIC, Singapore's PDPC, ENISA.
@@ -89,7 +103,12 @@ UK ICO, Australia's OAIC, Singapore's PDPC, ENISA.
 - B Adopt all four now.
 - C Defer all to the March review.
 
-Evidence: _to fill_ (publication frequency and format of each).
+Evidence (28 Oct probe): **UK ICO** data-security incident trends page answers (moved to a
+"complaints and concerns data sets" address; downloadable data sets to confirm). **OAIC**
+(Australia) publications page answers (half-yearly reports). **PDPC** (Singapore) answered 202
+with an empty page, the sign of a bot check: not readable by the workflow as is. **ENISA**: the
+address tried was out of date (404). Pending by 11 Nov: ICO and OAIC formats and frequency, a
+second address for ENISA. Likely exception: PDPC (no automated access).
 
 ## 7. X12: open-weight release curve, sources
 - **A ★ Hugging Face Hub by a fixed list of major labs (base and instruct releases only),
@@ -97,7 +116,11 @@ Evidence: _to fill_ (publication frequency and format of each).
 - B Epoch AI only (curated, fewer models, slower to update).
 - C Hugging Face only.
 
-Evidence: _to fill_ (lab list proposed for approval, counts per quarter since 2023).
+Evidence (28 Oct probe): Hugging Face Hub API answers by lab with creation dates (DeepSeek,
+Qwen, Meta, Mistral tested; e.g. DeepSeek-V4.1-Flash, 17 Oct 2026); listings include image models
+and helper files, so the base-and-instruct filter in ★A is needed. Epoch AI's model databases
+download as CSV (all models 6.9 MB, notable models 2.3 MB). Pending by 11 Nov: the lab list for
+approval and counts per quarter since January 2023.
 
 ## 8. X12: the "capable" bar
 A model counts as capable when it reaches a fixed score on a public benchmark.
@@ -106,7 +129,8 @@ A model counts as capable when it reaches a fixed score on a public benchmark.
 - B Coding benchmark only.
 - C Security benchmark only.
 
-Evidence: _to fill_ (candidate benchmarks, threshold, how many open models clear each).
+Evidence (28 Oct probe): Epoch AI's benchmark data downloads (2.4 MB). Pending by 11 Nov:
+candidate coding and security benchmarks, thresholds, and how many open models clear each.
 
 ## 9. AI-attack sweep: searches and pages
 - **A ★ Adopt the trial's proposed changes, then fix the list for 2027.**

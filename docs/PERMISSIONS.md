@@ -124,6 +124,14 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
 | WordPress.org plugin statistics | Public API | Version shares only |
 | inthewild.io | Apache 2.0 | Dropped 25 Oct: no exploitation reports after Dec 2024 |
 
+## Terms read for the global sources (28 Oct 2026)
+- **CERT-FR (ANSSI):** site content under the Licence ouverte / open licence (Etalab), unless
+  stated otherwise; commercial exploitation needs ANSSI's prior leave; no framing of pages; no
+  logos (cyber.gouv.fr legal notice). The study uses alert titles, CVE IDs and dates, credited.
+- **JPCERT/CC, APNIC Labs, RIPEstat, UK ICO, OAIC, ENISA:** terms still to read (by 11 Nov).
+- **PDPC (Singapore):** its site answered the workflow with a bot check (HTTP 202, empty page);
+  not to be worked around.
+
 ## Terms already accepted
 
 - **ransomware.live Fair Usage Policy** (accepted 2026-10-20 when generating the PRO API
