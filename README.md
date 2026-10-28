@@ -70,7 +70,7 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 |---|---|---|---|
 | Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | Awaiting reply; follow-up 20 Nov |
 | VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Awaiting written permission; used privately only until then |
-| Censys | Internet exposure counts (T1b, T2) and the annual check | Application 28 Oct 2026 | To send |
+| Censys | Internet exposure counts (T1b, T2) and the annual check | Applied 28 Oct 2026 | Awaiting reply |
 
 Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived
 from one is published until its permission is granted.

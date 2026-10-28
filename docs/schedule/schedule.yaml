@@ -245,7 +245,7 @@ items:
 # are built and tested before the 14 Dec workflow review.
 - id: censys
   owner: author
-  title: Write and send the Censys research-access application
+  title: Write and send the Censys research-access application - sent 28 Oct
   date: 2026-10-28
   time: "14:00"
   minutes: 60

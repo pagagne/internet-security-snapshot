@@ -108,7 +108,7 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
 
 | Source | When | Channel | What will be asked | Status |
 |---|---|---|---|---|
-| Censys research access | 28 Oct 2026 | Censys research-access request (written by the author, no AI tools, as Censys requires) | Free research access (BigQuery, delayed data) for published, non-commercial results that cite Censys | To send |
+| Censys research access | 28 Oct 2026 | Email to research-access-request@censys.com (written by the author, no AI tools, as Censys requires), sent 20:29 UTC | Research access for the exposure reference (annual check) and exposure counts; aggregates only, no host-level data, no scanning | Sent; reply expected within a few days (reminder 4 Nov). Not yet stated: access type, Google account, recency, non-commercial and citation, Terms of Service, Censys username |
 | GreyNoise research (VIP) access | 27 Oct 2026 | GreyNoise research programme form | Research access for an open, published study; aggregates only | To send |
 | CrowdSec CVE tracker | 27 Oct 2026 | Email to the CrowdSec team | Whether research use and publishing aggregate figures are allowed, and an API key | To send |
 
