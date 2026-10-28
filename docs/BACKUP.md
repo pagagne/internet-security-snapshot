@@ -11,6 +11,7 @@ monthly copy of the whole repository in case the GitHub account is ever lost or 
 | `runs/` | Full bundle of every quarterly pull (provisional, final, dry runs), with checksums | After each pull | about 200 MB a pull |
 | `private/` | Sources not yet allowed to be published (ransomware.live until it agrees; VulnCheck once collected), kept out of every public output | After each pull | under 1 MB a pull |
 | `repository/` | `git bundle` of every branch (code, schedule, run logs) | The 3rd of each month | a few MB |
+| `correspondence/` | Full text of every email with outside organisations (permissions, reviewers), one file per thread; filed by Claude the day it arrives | As it happens | small |
 
 About 3 GB for 2027 (`docs/CAPACITY.md`). The folder stays private: nothing in it is
 published, and it holds data the standing rules keep private. Victim names are never in it
