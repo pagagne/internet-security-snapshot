@@ -91,3 +91,32 @@ How knowledge of the flaws and of the fix spread, as reported (sources disagree 
   effect; record both.
 
 **Source:** [TechCrunch, 24 Oct 2026](https://techcrunch.com/2026/10/24/php-ocalypse-how-two-critical-web-bugs-almost-broke-the-internet/)
+
+## Who fixed which versions (added 28 Oct 2026, from HeroDevs, 23 Oct, at the author's request)
+Source caveat: a HeroDevs blog post by its chief operating officer; HeroDevs sells support for
+end-of-life software, so its framing of unsupported versions is not neutral. Few exact dates.
+
+| PHP branches | Fix | From whom |
+|---|---|---|
+| 8.2-8.5 | Official releases | PHP project |
+| 7.4-8.1 | Minimal source backports | PHP security team |
+| 5.4-7.3 | Nothing upstream (the vulnerable code dates from 5.4) | – |
+| 5.6, 7.1-8.1 | Packaged backports ("Backported from 8.2.35"), reportedly the same afternoon | Ondřej Surý's volunteer repository for Debian and Ubuntu (deb.sury.org) |
+
+- Finders named as Calif, OpenAI and Wiz, "with the help of AI" (consistent with the T7 points
+  above); Linux distributions and packagers received patches early under the embargo; Amazon
+  logged attempts four days before disclosure (the 17 Oct date above).
+- Mallory counted about 1.9 million internet-facing services still reporting PHP 8.1 or older.
+
+**What it adds for the study (no rule change)**
+- **A fourth fix-date candidate:** packaged backports for distributions, the same day as the
+  public release or close to it, for branches with no upstream fix. The race uses the vendor's
+  public release; packaged fixes matter for exposure, not for T1(a).
+- **A caveat for web patch adoption (research review #10):** a server running a packaged
+  backport still reports its old version number (for example 7.4.x), so a version-based measure
+  from HTTP Archive counts it as unfixed. Version shares give an upper bound on unpatched sites,
+  never an exact share; "never fixed" must mean "no upstream fix", stated as such.
+- **An exposure reference point:** Mallory's 1.9 million figure is the kind of count Censys
+  access would let the study make itself (T1b, T2; Censys application 28 Oct).
+
+**Source:** [HeroDevs, 23 Oct 2026](https://www.herodevs.com/blog-posts/the-php2shell-story-the-manwho-keeps-php-running)

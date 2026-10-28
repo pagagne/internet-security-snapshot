@@ -151,7 +151,10 @@ pages, searched by site. About 2 h for the trial; 3-4 h a quarter for the full s
 - B Run PHP2Shell as a one-off case study only.
 - C Not now.
 
-Evidence (2 Nov test, needs the author's Google Cloud project): _to fill_.
+Evidence (2 Nov test, needs the author's Google Cloud project): _to fill_. Caveat known since
+28 Oct (HeroDevs, `docs/cases/php2shell.md`): distribution backports keep the old version number,
+so version shares are an upper bound on unpatched sites and "never fixed" means "no upstream fix";
+the measure is adopted only with that wording.
 
 ## 11. X16 open-source patch adoption and X17 health-sector breaches
 - **A ★ Adopt whichever has run cleanly; retry the other once before 11 Dec.**
