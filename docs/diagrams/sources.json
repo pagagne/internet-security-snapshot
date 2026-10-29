@@ -152,6 +152,20 @@
     "docs/diagrams/workflow_runs.dot": "3f4631492d16f9af"
    },
    "reviewed_on": "2026-10-29"
+  },
+  "indicator_sources": {
+   "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",
+   "source": "docs/diagrams/indicator_sources.dot",
+   "depends_on": [
+    "prereg/PREREGISTRATION.md",
+    "config/sources.yaml"
+   ],
+   "fingerprints": {
+    "prereg/PREREGISTRATION.md": "53131e11644b13c4",
+    "config/sources.yaml": "153fcf62e6420560",
+    "docs/diagrams/indicator_sources.dot": "6e52fc810f97ded6"
+   },
+   "reviewed_on": "2026-10-29"
   }
  }
 }

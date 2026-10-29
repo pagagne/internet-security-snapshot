@@ -28,6 +28,7 @@ parts:
   - name: "Appendix A. Records: inquiries, cases, reviews and session logs"
     docs: [docs/INQUIRIES.md, "docs/cases/*.md", docs/RECONCILIATION_2026-10.md,
            docs/STATISTICAL_REVIEW_2026-10-24.md, docs/WORKFLOW_REVIEW_2026-10-27.md,
+           docs/INDICATOR_REVIEW_2026-10-29.md,
            docs/sessions/README.md, "docs/sessions/*/*.md"]
   - name: "Appendix B. Report and artifact sources"
     docs: [docs/artifacts/README.md, docs/artifacts/combined-report-2026.md,

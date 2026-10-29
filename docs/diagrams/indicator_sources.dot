@@ -1,0 +1,71 @@
+// Indicators I1-I8 and the data that feeds them, assuming every permission request is granted
+// (author's request, 29 Oct 2026). Registered sources: prereg/PREREGISTRATION.md sections 6 and 8.
+// Render: dot -Tpng -Gdpi=150 docs/diagrams/indicator_sources.dot -o docs/diagrams/indicator_sources.png
+digraph indicators {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=12, nodesep=0.18, ranksep=1.1, pad=0.3, newrank=true,
+         label="Solid line = registered source (pre-registration, 20 Oct 2026). Dashed grey = exploratory companion, shown beside the indicator, never replacing it.\nGreen = free and public. Blue = permission granted (ransomware.live, 27 Oct). Orange = permission requested, assumed granted here.",
+         labelloc=b];
+  node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", width=2.6];
+  edge  [color="#4a4a4a", arrowsize=0.6];
+
+  subgraph cluster_src {
+    label="DATA SOURCES"; style="rounded"; color="#888888"; fontcolor="#444444";
+    cve   [label="CVE.org records\n(publication date, credits)", fillcolor="#e3f4e1", color="#2e7d32"];
+    kev   [label="CISA KEV\n(attacked-flaw list)", fillcolor="#e3f4e1", color="#2e7d32"];
+    vrich [label="CISA Vulnrichment\n(CWE, CVSS; 'active' date*)", fillcolor="#e3f4e1", color="#2e7d32"];
+    nvd   [label="NVD\n(severity, product)", fillcolor="#e3f4e1", color="#2e7d32"];
+    epss  [label="FIRST EPSS\n(cohort draw)", fillcolor="#e3f4e1", color="#2e7d32"];
+    vend  [label="Vendor advisories\n(CSAF, MSRC, PSIRT): fix dates", fillcolor="#e3f4e1", color="#2e7d32"];
+    sec   [label="SEC EDGAR\n(8-K Item 1.05)", fillcolor="#e3f4e1", color="#2e7d32"];
+    rlive [label="ransomware.live\n(leak-site postings)", fillcolor="#dcebfa", color="#1f4e79"];
+    vchk  [label="VulnCheck KEV\n(earlier attack dates)", fillcolor="#fde9d6", color="#b85c1e"];
+    ssexp [label="Shadowserver\nexposure counts", fillcolor="#fde9d6", color="#b85c1e"];
+    sshp  [label="Shadowserver\nhoneypot statistics", fillcolor="#fde9d6", color="#b85c1e"];
+    cens  [label="Censys\n(internet scans)", fillcolor="#fde9d6", color="#b85c1e"];
+    gncs  [label="GreyNoise, CrowdSec\n(attack sightings)", fillcolor="#fde9d6", color="#b85c1e"];
+    isc   [label="SANS ISC honeypot\n(X14)", fillcolor="#e3f4e1", color="#2e7d32"];
+    natl  [label="National alerts\nCERT-FR, JPCERT/CC (X19)", fillcolor="#e3f4e1", color="#2e7d32"];
+  }
+
+  subgraph cluster_ind {
+    label="INDICATORS"; style="rounded"; color="#1f4e79"; fontcolor="#1f4e79";
+    node [fillcolor="#ffffff", color="#1f4e79", penwidth=2, width=2.4];
+    I1 [label="I1  Exposure half-life"];
+    I2 [label="I2  Disclosure to first attack"];
+    I3 [label="I3  The race: fix to attack"];
+    I4 [label="I4  Age of attacked flaws"];
+    I5 [label="I5  Growth in new CVEs"];
+    I6 [label="I6  Agreement between\nattack sources"];
+    I7 [label="I7  Visible harm\n(a) ransomware (b) SEC"];
+    I8 [label="I8  AI in discovery\n(credits)"];
+  }
+
+  subgraph cluster_q {
+    label="QUESTIONS"; style="rounded"; color="#888888"; fontcolor="#444444";
+    node [shape=box, style="rounded", color="#666666", width=2.2];
+    T1 [label="T1  The race (central)"];
+    T2 [label="T2  Patch speed"];
+    T3 [label="T3  Attack speed"];
+    T4 [label="T4  Age of attacked flaws"];
+    T5 [label="T5  Discovery pressure"];
+    T6 [label="T6  Visible harm"];
+    T7 [label="T7  AI in discovery"];
+    M  [label="Methods check\n(never labeled)"];
+  }
+
+  // registered feeds
+  cve -> {I2 I3 I5 I8};
+  kev -> {I2 I3 I4 I6};
+  vrich -> {I2 I3};
+  {nvd epss} -> I3;
+  vend -> {I1 I3};
+  vchk -> {I2 I3 I6};
+  ssexp -> {I1 I3};
+  sshp -> {I2 I3 I4 I6};
+  rlive -> I7; sec -> I7;
+  // exploratory companions
+  edge [style=dashed, color="#9a9a9a"];
+  cens -> I1; gncs -> {I2 I4}; isc -> I4; natl -> {I2 I6};
+  edge [style=solid, color="#1f4e79"];
+  I1 -> {T2 T1}; I2 -> T3; I3 -> T1; I4 -> T4; I5 -> T5; I6 -> M; I7 -> T6; I8 -> T7;
+}
