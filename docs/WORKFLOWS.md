@@ -99,7 +99,10 @@ with the author (repository admin) able to bypass it.
 **What it does:** saves a complete copy of the repository (every branch and all history) as one
 file in the author's Drive folder "Internet-Security-Snapshot-2027", under `repository/`. Started
 by hand, it also writes a small test file under `tests/` to prove the connection works. Each
-quarterly pull backs up its own data separately, as its last step. Setup: `docs/BACKUP.md`.
+quarterly pull backs up its own data separately, as its last step. Since 29 Oct it also builds
+both editions of The Snapshot manual as PDFs and saves them under `manual/`, replacing the
+previous copies (the private edition's appendix is read from Drive, never from the repository).
+Setup: `docs/BACKUP.md`.
 
 ## 6. Research probe: the testing bench
 

@@ -45,6 +45,28 @@ a { color: #1f4e79; text-decoration: none; }
 """
 
 
+SMALL = Path("/tmp/snapshot-manual-images")
+
+
+def small_image(src: Path, width: int = 1400) -> Path:
+    """A smaller copy of a picture for the PDF (author, 29 Oct: smallest file for Drive sync).
+    Diagrams become 256-colour PNGs at most `width` pixels wide; photos become JPEG quality 80."""
+    from PIL import Image
+    SMALL.mkdir(exist_ok=True)
+    if not src.exists() or src.suffix.lower() == ".svg":
+        return src
+    im = Image.open(src)
+    if im.width > width:
+        im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+    if src.suffix.lower() in (".jpg", ".jpeg"):
+        dest = SMALL / (src.stem + ".jpg")
+        im.convert("RGB").save(dest, quality=80, optimize=True)
+    else:
+        dest = SMALL / (src.stem + ".png")
+        im.convert("RGB").quantize(256).save(dest, optimize=True)
+    return dest
+
+
 def build(out: Path, private: Path | None, edition: str) -> None:
     text = SRC.read_text()
     if private:
@@ -58,7 +80,7 @@ def build(out: Path, private: Path | None, edition: str) -> None:
     html_body = markdown.markdown(rest, extensions=["tables", "fenced_code", "md_in_html"])
     html_body = re.sub(r"<h1>(Part [IVX]+\.|Appendix [A-C]\.)", r'<h1 class="part">\1', html_body)
     html_body = re.sub(r"(<h2>.*?</h2>\s*)<p><em>Source: (.*?)</em></p>", r'\1<p class="src">Source: \2</p>', html_body)
-    html_body = html_body.replace('src="../../', f'src="file://{ROOT}/')
+    html_body = re.sub(r'src="\.\./\.\./([^"]+)"', lambda m: f'src="file://{small_image(ROOT / m.group(1))}"', html_body)
     toc = markdown.markdown(toc_md)
     today = dt.date.today().strftime("%-d %B %Y")
     html = (f"<html><head><meta charset='utf-8'><style>{CSS}</style></head><body>"
@@ -88,7 +110,7 @@ def add_cover(out: Path, edition: str, today: str) -> None:
     html = f"""<html><head><meta charset='utf-8'><style>
 @page {{ size: Letter; margin: 0; }}
 html, body {{ margin: 0; height: 11in; width: 8.5in; }}
-body {{ background: #012c62 url('file://{COVER_IMG}') center 0% / cover no-repeat;
+body {{ background: #012c62 url('file://{small_image(COVER_IMG, 1300)}') center 0% / cover no-repeat;
        font-family: "DejaVu Sans", Helvetica, Arial, sans-serif; color: #e8f4ff; position: relative; }}
 .band {{ position: absolute; left: 0; right: 0; bottom: 0; padding: 0.35in 0 0.6in; text-align: center;
          background: linear-gradient(to bottom, rgba(1,30,70,0), rgba(1,30,70,0.85) 35%, rgba(1,30,70,0.95)); }}
@@ -114,8 +136,18 @@ github.com/pagagne/internet-security-snapshot<br/>Pre-registration: doi.org/10.1
     w = PdfWriter()
     w.append(str(cov_pdf), pages=(0, 1))
     w.append(str(out))
+    w.compress_identical_objects(remove_duplicates=True, remove_unreferenced=True)
     w.write(str(out))
     cov_html.unlink(); cov_pdf.unlink()
+    import shutil
+    import subprocess
+    if shutil.which("qpdf"):   # lossless recompression: smaller file for the Drive sync
+        tmp = out.with_suffix(".q.pdf")
+        subprocess.run(["qpdf", "--object-streams=generate", "--compress-streams=y", "--recompress-flate",
+                        "--compression-level=9", str(out), str(tmp)], check=False)
+        if tmp.exists() and tmp.stat().st_size < out.stat().st_size:
+            tmp.replace(out)
+        tmp.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

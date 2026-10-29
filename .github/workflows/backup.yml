@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       about:
-        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history) to your Google Drive folder Internet-Security-Snapshot-2027, plus a small test file proving the connection works. Contacts only your own Drive."
+        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history) and both editions of The Snapshot manual (PDF) to your Google Drive folder Internet-Security-Snapshot-2027, plus a small test file proving the connection works. Contacts only your own Drive."
         type: boolean
         default: true
 
@@ -57,3 +57,28 @@ jobs:
           git bundle create "$name" --all
           rclone copy "$name" gdrive:repository/
           echo "Repository copy $name: $(du -h "$name" | cut -f1)"
+      - name: Manual PDFs (The Snapshot)
+        # Added 29 Oct 2026 (author): keeps both editions of the study manual in Drive, replacing
+        # the previous copy. Public edition from docs/manual/THE_SNAPSHOT.md -> manual/. Private
+        # edition adds Appendix C, read from Drive (manual/private/appendix-c.md, never in the
+        # repository) -> manual/private/. Nothing private is printed or uploaded anywhere else.
+        if: env.HAVE_CONF == 'true'
+        run: |
+          set -euo pipefail
+          sudo apt-get install -y -qq qpdf >/dev/null
+          pip install -q --require-hashes -r requirements.lock
+          pip install -q markdown==3.11 pypdf==6.17.0 playwright==1.63.0   # PDF tools, pinned
+          python -m playwright install --with-deps chromium >/dev/null
+          python tools/manual_pdf.py "$RUNNER_TEMP/The-Snapshot.pdf" >/dev/null
+          rclone copyto "$RUNNER_TEMP/The-Snapshot.pdf" gdrive:manual/The-Snapshot.pdf
+          echo "Public edition: $(du -h "$RUNNER_TEMP/The-Snapshot.pdf" | cut -f1)"
+          if rclone copyto gdrive:manual/private/appendix-c.md "$RUNNER_TEMP/appendix-c.md" 2>/dev/null; then
+            python tools/manual_pdf.py "$RUNNER_TEMP/The-Snapshot-PRIVATE.pdf" --private "$RUNNER_TEMP/appendix-c.md" \
+              --edition "Private edition - not for publication" >/dev/null
+            rclone copyto "$RUNNER_TEMP/The-Snapshot-PRIVATE.pdf" gdrive:manual/private/The-Snapshot-PRIVATE.pdf
+            echo "Private edition saved to Drive (manual/private/)."
+            rm -f "$RUNNER_TEMP/appendix-c.md" "$RUNNER_TEMP/The-Snapshot-PRIVATE.pdf"
+          else
+            echo "::notice title=Private edition::No appendix in Drive (manual/private/appendix-c.md); public edition only"
+          fi
+

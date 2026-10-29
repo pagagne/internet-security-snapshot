@@ -20,9 +20,11 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 document in full, assembled by `python -m snapshot.manual build` from the list in
 `config/manual.yaml`. After changing any document (or the schedule, which rewrites
 ANNUAL_PLAN.md), run the build before pushing; Checks fails if the manual is stale or a new
-Markdown file is in neither the manual nor its `excluded` list. The PDF and the private edition
-(with the correspondence index, full bio and Drive inventory, kept only in Drive and the Claude
-project) are made by Claude from the same text.
+Markdown file is in neither the manual nor its `excluded` list. The PDFs are built by
+`tools/manual_pdf.py` and saved to Drive by the Backup workflow (monthly, or its Run button):
+the public edition to `manual/`, the private edition (adding Appendix C: full bio,
+correspondence index, Drive inventory, read from `manual/private/appendix-c.md` in Drive, never
+in the repository) to `manual/private/`. Claude keeps that appendix current in Drive.
 
 ## The schedule is code
 - **Source:** `docs/schedule/schedule.yaml`. Edit it, then run

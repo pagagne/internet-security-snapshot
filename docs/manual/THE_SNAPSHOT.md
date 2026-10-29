@@ -2157,9 +2157,11 @@ The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edi
 document in full, assembled by `python -m snapshot.manual build` from the list in
 `config/manual.yaml`. After changing any document (or the schedule, which rewrites
 ANNUAL_PLAN.md), run the build before pushing; Checks fails if the manual is stale or a new
-Markdown file is in neither the manual nor its `excluded` list. The PDF and the private edition
-(with the correspondence index, full bio and Drive inventory, kept only in Drive and the Claude
-project) are made by Claude from the same text.
+Markdown file is in neither the manual nor its `excluded` list. The PDFs are built by
+`tools/manual_pdf.py` and saved to Drive by the Backup workflow (monthly, or its Run button):
+the public edition to `manual/`, the private edition (adding Appendix C: full bio,
+correspondence index, Drive inventory, read from `manual/private/appendix-c.md` in Drive, never
+in the repository) to `manual/private/`. Claude keeps that appendix current in Drive.
 
 #### The schedule is code
 - **Source:** `docs/schedule/schedule.yaml`. Edit it, then run
@@ -2446,7 +2448,10 @@ with the author (repository admin) able to bypass it.
 **What it does:** saves a complete copy of the repository (every branch and all history) as one
 file in the author's Drive folder "Internet-Security-Snapshot-2027", under `repository/`. Started
 by hand, it also writes a small test file under `tests/` to prove the connection works. Each
-quarterly pull backs up its own data separately, as its last step. Setup: `docs/BACKUP.md`.
+quarterly pull backs up its own data separately, as its last step. Since 29 Oct it also builds
+both editions of The Snapshot manual as PDFs and saves them under `manual/`, replacing the
+previous copies (the private edition's appendix is read from Drive, never from the repository).
+Setup: `docs/BACKUP.md`.
 
 #### 6. Research probe: the testing bench
 
@@ -2662,8 +2667,9 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
 
 ##### Backup
 - **Does:** copies the whole repository, with history, to the Drive folder
-  Internet-Security-Snapshot-2027, plus a small file proving the connection works.
-- **Run it when:** after a decision session or freeze; before a report is published; after the
+  Internet-Security-Snapshot-2027, saves both editions of The Snapshot manual (PDF) under
+  `manual/`, and writes a small file proving the connection works.
+- **Run it when:** after the manual changes and you want the Drive PDFs current; after a decision session or freeze; before a report is published; after the
   Drive connection was renewed; before any risky repository change.
 - **Allowed:** outside the quiet periods; at most once a day (each run is a full copy and
   uses Drive space).
@@ -2765,6 +2771,7 @@ monthly copy of the whole repository in case the GitHub account is ever lost or 
 | `private/` | Sources not yet allowed to be published (ransomware.live until it agrees; VulnCheck once collected), kept out of every public output | After each pull | under 1 MB a pull |
 | `repository/` | `git bundle` of every branch (code, schedule, run logs) | The 3rd of each month | a few MB |
 | `correspondence/` | Full text of every email with outside organisations (permissions, reviewers), one file per thread; filed by Claude the day it arrives | As it happens | small |
+| `manual/` | The Snapshot manual: public edition `The-Snapshot.pdf`; `private/` holds the private edition and its Appendix C source (`appendix-c.md`, kept current by Claude) | Each Backup run (monthly, or Run button), replacing the previous copy | about 3 MB each |
 
 About 3 GB for 2027 (`docs/CAPACITY.md`). The folder stays private: nothing in it is
 published, and it holds data the standing rules keep private. Victim names are never in it
