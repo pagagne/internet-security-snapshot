@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>BSI Warn- und Informationsdienst (WID): Schwachstellen-Informationen (Security Advisories)</title>
+    <link>https://wid.cert-bund.de/portal/wid/securityadvisory</link>
+    <description>BSI Warn- und Informationsdienst (WID) RSS Feed zur Verteilung Schwachstellen-Informationen (Security Advisories)</description>
+    <pubDate>Thu, 29 Oct 2026 03:22:48 GMT</pubDate>
+    <item>
+      <title>[UPDATE] [mittel] Nextcloud (Server, Tables, Whiteboard, Files Confidential, Collectives, Richdocuments): Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4185</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Nextcloud ausnutzen, um Sicherheitsvorkehrungen zu umgehen, Daten zu manipulieren oder offenzulegen sowie Denial-of-Service-Zustände auszulösen.</description>
+      <category>mittel</category>
+      <pubDate>Wed, 28 Oct 2026 12:42:11 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Red Hat Enterprise Linux (xdg-dbus-proxy): Schwachstelle ermöglicht Umgehen von Sicherheitsvorkehrungen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4172</link>
+      <description>Ein entfernter, anonymer Angreifer kann eine Schwachstelle in Red Hat Enterprise Linux ausnutzen, um Sicherheitsvorkehrungen zu umgehen und so möglicherweise beliebigen Code auszuführen.</description>
+      <category>hoch</category>
+      <pubDate>Wed, 28 Oct 2026 12:42:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] QT: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4178</link>
+      <description>Ein entfernter, anonymer Angreifer kann mehrere Schwachstellen in QT ausnutzen, um einen Denial of Service Angriff durchzuführen und Daten offenzulegen oder zu manipulieren.</description>
+      <category>hoch</category>
+      <pubDate>Wed, 28 Oct 2026 12:42:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [mittel] WP Royal Royal Elementor Addons: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4184</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in WP Royal Royal Elementor Addons ausnutzen, um Sicherheitsvorkehrungen zu umgehen, Cross-Site-Scripting-Angriffe durchzuführen sowie Daten zu manipulieren oder offenzulegen.</description>
+      <category>mittel</category>
+      <pubDate>Wed, 28 Oct 2026 12:42:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Octopus Deploy: Mehrere Schwachstellen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4164</link>
+      <description>Ein Angreifer kann mehrere Schwachstellen in Octopus Deploy ausnutzen, um Sicherheitsvorkehrungen zu umgehen, um Informationen offenzulegen, um seine Privilegien zu erhöhen, um Dateien zu manipulieren, und um beliebigen Programmcode auszuführen.</description>
+      <category>hoch</category>
+      <pubDate>Wed, 28 Oct 2026 12:42:09 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [mittel] Red Hat Enterprise Linux Libreswan: Mehrere Schwachstellen ermöglichen Denial of Service</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4183</link>
+      <description>Ein entfernter, anonymer Angreifer kann mehrere Schwachstellen in Red Hat Enterprise Linux Libreswan ausnutzen, um einen Denial of Service Angriff durchzuführen.</description>
+      <category>mittel</category>
+      <pubDate>Wed, 28 Oct 2026 12:41:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [mittel] Microsoft .NET und ASP.NET: Schwachstelle ermöglicht Privilegieneskalation</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4162</link>
+      <description>Ein lokaler Angreifer kann eine Schwachstelle in Microsoft .NET und Microsoft ASP.NET ausnutzen, um die höchsten Berechtigungen auf dem System zu erlangen.</description>
+      <category>mittel</category>
+      <pubDate>Wed, 28 Oct 2026 12:41:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Oracle Java SE: Schwachstelle ermöglicht Offenlegung von Informationen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4154</link>
+      <description>Ein entfernter, anonymer Angreifer kann eine Schwachstelle in Oracle Java SE ausnutzen, um Informationen offenzulegen oder Daten zu manipulieren.</description>
+      <category>hoch</category>
+      <pubDate>Wed, 28 Oct 2026 12:41:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [hoch] Oracle Java SE and GraalVM, und OpenJDK: Schwachstelle ermöglicht Umgehen von Sicherheitsvorkehrungen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4139</link>
+      <description>Ein entfernter, anonymer Angreifer kann eine Schwachstelle in Oracle Java SE, Oracle GraalVM und OpenJDK ausnutzen, um Sicherheitsvorkehrungen zu umgehen und dadurch Daten offenzulegen oder zu verändern.</description>
+      <category>hoch</category>
+      <pubDate>Wed, 28 Oct 2026 12:41:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [niedrig] IBM SPSS Modeler: Schwachstelle ermöglicht Manipulation von Dateien</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4132</link>
+      <description>Ein entfernter, authentisierter Angreifer kann eine Schwachstelle in IBM SPSS ausnutzen, um Dateien zu manipulieren.</description>
+      <category>niedrig</category>
+      <pubDate>Wed, 28 Oct 2026 12:41:47 GMT</pubDate>
+    </item>
+    <item>
+      <title>[UPDATE] [mittel] Red Hat Enterprise Linux ca-certificates: Schwachstelle ermöglicht Umgehen von Sicherheitsvorkehrungen</title>
+      <link>https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-4120</link>

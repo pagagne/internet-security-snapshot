@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DNSSEC Validation Capability Metrics</title>
+<style type="text/css">
+<!--
+  body { font-family: "Trebuchet MS", "Bitstream Vera Sans", verdana, lucida, arial, helvetica, sans-serif;font-size: 0.9em;}
+  a:link {color: #660066; text-decoration: none}
+  a:active {color: #0000ee; text-decoration: none}
+  a:visited {color: #666633; text-decoration: none}
+#chart_div div {
+    background-color: transparent;
+    }
+#chart_div table {
+    background-color: transparent;
+    }
+#chart_div > div {
+    background: transparent url(/images/bg-watermark.png) no-repeat;
+}
+#Map_canvas > div > div > div {
+    background: transparent url(/images/bg-watermark.png) no-repeat;
+}
+#Map_canvas rect {
+    opacity: 0;
+}
+-->
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+  <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+  <script type='text/javascript'>
+   google.charts.load('current', {'packages': ['annotationchart']});
+   google.charts.setOnLoadCallback(drawLine);
+   google.charts.setOnLoadCallback(drawAds);
+  function drawLine() {
+      var data = new google.visualization.arrayToDataTable([
+        ['Date', 'Validating', 'Mixed', 'Total'],
+      [new Date('2013-10-15'),5.74,0.93,6.67],
+      [new Date('2013-10-15'),5.74,0.93,6.67],
+      [new Date('2013-10-15'),5.74,0.93,6.67],
+      [new Date('2013-10-16'),3.76,0.52,4.28],
+      [new Date('2013-10-16'),3.76,0.52,4.28],
+      [new Date('2013-10-16'),3.76,0.52,4.28],
+      [new Date('2013-10-17'),3.11,0.92,4.04],
+      [new Date('2013-10-17'),3.11,0.92,4.04],
+      [new Date('2013-10-17'),3.11,0.92,4.04],
+      [new Date('2013-10-18'),4.05,0.71,4.76],
+      [new Date('2013-10-18'),4.05,0.71,4.76],
+      [new Date('2013-10-18'),4.05,0.71,4.76],
+      [new Date('2013-10-19'),5.29,0.57,5.86],
+      [new Date('2013-10-19'),5.29,0.57,5.86],
+      [new Date('2013-10-19'),5.29,0.57,5.86],
+      [new Date('2013-10-20'),4.64,0.37,5.01],
+      [new Date('2013-10-20'),4.64,0.37,5.01],
+      [new Date('2013-10-20'),4.64,0.37,5.01],
+      [new Date('2013-10-21'),5.65,0.52,6.17],
+      [new Date('2013-10-21'),5.65,0.52,6.17],

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>注意喚起</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta property="og:locale" content="ja_JP" />
+	<meta property="og:site_name" content="JPCERT/CC" />
+	<meta property="og:url" content="https://www.jpcert.or.jp/at/2024.html">
+	<meta property="og:title" content="注意喚起">
+	
+	<meta property="og:image" content="https://www.jpcert.or.jp/common/image/ogp_image.jpg">
+	
+	<link rel="alternate" type="application/rss+xml" title="注意喚起、Weekly Report、脆弱性情報（JVN）、JPCERT/CCからのお知らせやイベントの新着情報をまとめて提供" href="/rss/jpcert-all.rdf" />
+	<link rel="alternate" type="application/rss+xml" title="注意喚起と緊急報告、Weekly Report の新着情報" href="/rss/jpcert.rdf" />
+	<link rel="alternate" type="application/rss+xml" title="JPCERT/CCからのお知らせ、イベントの新着情報" href="/rss/whatsnew.rdf" />
+	<link rel="stylesheet" href="/common/css/html5reset-1.6.1.css">
+	<link rel="stylesheet" href="/common/css/common.css">
+	<link rel="stylesheet" href="/common/css/page.css">
+	<link rel="stylesheet" href="/common/css/print.css" media="print" />
+	<link rel="stylesheet" href="/common/slide/slide.css"/>
+	
+</head>
+<body class="category_a">
+
+
+<!-- guidance_sp -->
+<div id="guidance_sp" style="display:none;">
+<div class="title"><img src="/common/guidance/g_guidance_title.png" alt="スマートフォン用で表示" /><a href="/m/at/2024.html" id="show_sp_site"><img src="/common/guidance/g_button_show.png" alt="" /></a></div>
+<div class="message"><a href="javascript:;" id="check_no_message"><img src="/common/guidance/g_check_off.png" alt="" /><img src="/common/guidance/g_guidance_message.png" alt="" /></a></div>
+</div>
+<!-- /guidance_sp -->
+
+<header class="sh_uoh">
+	<div class="top">
+		<h2><img src="/common/image/h2_image.png" width="330" height="25" alt="サイバーインシデントがなくなるその日まで" /></h2>
+		<ul>
+			<li><a href="/reference.html">お問い合わせ</a></li>
+			<li><a href="/recruit/index.html">採用情報</a></li>
+			<li><a href="/sitemap.html">サイトマップ</a></li>
+			<li><a href="/english/">English</a></li>
+		</ul>
+	</div>
+
+	<div class="main">
+		<h1><a href="/"><img src="/common/image/header_logo.svg" width="198" height="66" alt="JPCERT Coordination Center" /></a></h1>
+
+<!-- googlr search area
+		<div class="search_area">
+			<form id="cse-search-box" action="https://www.google.com/cse">
+				<input value="011276954563619633753:gam5ydxz2ni" name="cx" type="hidden">
+				<input value="UTF-8" name="ie" type="hidden">
+				<input name="q" id="q" value="" type="text" placeholder="検索キーワードを入力" /><input name="sa" id="sa" type="submit" value="検索" />
+			</form>
+		</div>
+-->
+		
+<!-- yahoo custom search area		
+		<div id="yahoo_search_area" class="watermark">
+
+			<form action="https://custom.search.yahoo.co.jp/search" method="get" id="srch">
+				<p id="srchForm">
+					<input type="text" name="p" id="srchInput">
+					<input type="submit" value="検索" id="srchBtn" onclick="document.getElementById('srchInput').focus();">
+					<input type="hidden" id="fr" name="fr" value="cse">
+					<input type="hidden" id="ei" name="ei" value="UTF-8">
+					<input type="hidden" id="csid" name="csid" value="YZgbsqsHFIwmPApo7sIjK_PtheLpmwnBs_eTDxVthQ--">
+				</p>
+				<input type="hidden" name="vs" value="www.jpcert.or.jp" id="yjInsite">
+			</form>
+		</div>
+-->
+		<div id="yahoo_search_new_area" style="width:396px;">
+			<form action="https://search.yahoo.co.jp/search" method="get" style="margin:0;padding:0;">
+			<p style="margin:0;padding:0;">
+				<a href="https://www.yahoo.co.jp/" target="_blank" style="font-size: 10px;">
+					powered by Yahoo! JAPAN

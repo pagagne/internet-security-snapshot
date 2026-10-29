@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/enisaweb/favicon.ico" type="image/png" />
+<link rel="canonical" href="https://www.enisa.europa.eu/topics/state-of-cybersecurity-in-the-eu/threats-and-incidents" />
+<link rel="shortlink" href="https://www.enisa.europa.eu/node/12583" />
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+
+    <meta content="ENISA: Every day we experience the Information Society. Interconnected networks touch our everyday lives, at home and at work. It is therefore vital that computers, mobile phones, banking, and the Internet  function, to support Europe’s digital economy. That is why ENISA is working with Cybersecurity for the EU and the Member States." name="DC.description">
+    <meta name="description" content="ENISA is the EU agency dedicated to enhancing cybersecurity in Europe. They offer guidance, tools, and resources to safeguard citizens and businesses from cyber threats.">
+    <meta name="keywords" content="Cybersecurity, EU, ENISA, computer security, Cyber Threats, EU Cyber Crisis, Incident Management, Market and Standards, Product Security, Security certification, Risk Management, Skills and competences, State of cybersecurity in the EU, Vulnerability Disclosure, Artificial Intelligence, Next Gen Technologies, Awareness, Cyber Hygiene, Digital Identity, Data Protection, Education and career path">    
+    <title>Threats and Incidents | ENISA</title>
+
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_tWa0WL8cHxtuXrbFELGKGHaX6D09N-yRN_TY7ImkLRw.css?delta=0&amp;language=en&amp;theme=enisaweb&amp;include=eJxtj-FuwyAMhF-IwCNFBq4ZCrYnTBZlTz_SdF2l7o91_nTWnSnnriRHoIfwt6bSXaya1k7RwlO5tCKXrm2mlLTlohKe6jqDZDcAgmhjquUbDlKMdsQQyV62pWqkOlk_apHljzPMaIE501SozjwiaR6e1cJtJAyTKcMn5U8VjKb_GN-R7x9gODusg68qXwW7hfv0rHmrcDvGzUIM2UZYY79jOsF0kun3wx9P1nft" />
+<link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_43B0hNLv7mgEf2I9Irthlx9JX3pyFKJaFHYibfHYcmw.css?delta=2&amp;language=en&amp;theme=enisaweb&amp;include=eJxtj-FuwyAMhF-IwCNFBq4ZCrYnTBZlTz_SdF2l7o91_nTWnSnnriRHoIfwt6bSXaya1k7RwlO5tCKXrm2mlLTlohKe6jqDZDcAgmhjquUbDlKMdsQQyV62pWqkOlk_apHljzPMaIE501SozjwiaR6e1cJtJAyTKcMn5U8VjKb_GN-R7x9gODusg68qXwW7hfv0rHmrcDvGzUIM2UZYY79jOsF0kun3wx9P1nft" />
+<link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/npm/[email]/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_PvMeROCA0p4MGBedKY00p0ydZm70SY2nhceIhA-SCWk.css?delta=4&amp;language=en&amp;theme=enisaweb&amp;include=eJxtj-FuwyAMhF-IwCNFBq4ZCrYnTBZlTz_SdF2l7o91_nTWnSnnriRHoIfwt6bSXaya1k7RwlO5tCKXrm2mlLTlohKe6jqDZDcAgmhjquUbDlKMdsQQyV62pWqkOlk_apHljzPMaIE501SozjwiaR6e1cJtJAyTKcMn5U8VjKb_GN-R7x9gODusg68qXwW7hfv0rHmrcDvGzUIM2UZYY79jOsF0kun3wx9P1nft" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_H9rhhGZMLD-lb-88eIhfOPJunoY1LFAt83ASgu22YzI.css?delta=5&amp;language=en&amp;theme=enisaweb&amp;include=eJxtj-FuwyAMhF-IwCNFBq4ZCrYnTBZlTz_SdF2l7o91_nTWnSnnriRHoIfwt6bSXaya1k7RwlO5tCKXrm2mlLTlohKe6jqDZDcAgmhjquUbDlKMdsQQyV62pWqkOlk_apHljzPMaIE501SozjwiaR6e1cJtJAyTKcMn5U8VjKb_GN-R7x9gODusg68qXwW7hfv0rHmrcDvGzUIM2UZYY79jOsF0kun3wx9P1nft" />
+
+    
+
+  </head>
+  <body class="path-node page-node-type-topics   d-flex flex-column h-100">
+
+    
+      <div class="dialog-off-canvas-main-canvas d-flex flex-column h-100" data-off-canvas-main-canvas>
+    
+
+
+<header>
+  <p class="sr-only"><a href="#main-content" accesskey="M">Go to the main content</a></p>
+  
+    <div class="navbar navbar-expand-lg navbar-dark text-light bg-primary header">
+    <div class="container logo-menu-wrapper d-flex">
+
+        <div class="region region-nav-branding">
+    <div id="block-enisaweb-branding" class="block block-system block-system-branding-block">
+  
+    
+  <div class="navbar-brand d-flex align-items-center">
+
+    <a href="/" title="Home" rel="home" class="site-logo d-block">
+    <img src="/sites/default/files/enisa-logo.svg" alt="Home" fetchpriority="high" />
+  </a>
+  
+  <div>
+    
+      </div>
+</div>
+</div>
+
+  </div>
+
+
+              <nav class="collapse navbar-collapse justify-content-end main-menu" id="navbarSupportedContent"  role="navigation"  aria-label="Main menu and Search box">
+            <div class="region region-nav-main">
+    <div id="block-enisaweb-mainnavigation-2" class="block block-we-megamenu block-we-megamenu-blockmain">
+  
+    
+      <div class="region-we-mega-menu">
+	<a href="#" class="navbar-toggle collapsed" aria-label="Open/close menu" aria-controls="mainMenuResponsive" name="menu-button" role="button">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	</a>
+	<nav  class="main navbar navbar-default navbar-we-mega-menu mobile-collapse hover-action" data-menu-name="main" data-block-theme="enisaweb" data-style="Default" data-animation="None" data-delay="" data-duration="" data-autoarrow="" data-alwayshowsubmenu="" data-action="hover" data-mobile-collapse="0" aria-label="ENISA main menu" id="mainMenuResponsive">
+	  <div class="container-fluid">
+	    <ul  class="we-mega-menu-ul nav nav-tabs">
+  <li class="we-mega-menu-li justify dropdown-menu" title="" data-level="0"  data-element-type=""  data-id="320e2c86-310b-4f7b-a4a9-188df34c3e43" data-submenu="1" data-hide-sub-when-collapse="" data-group="0" data-caption=""  data-alignsub="justify" data-target="" data-icon=""  >
+          <span class="we-megamenu-nolink">
+      Topics</span>
+        <div  class="we-mega-menu-submenu" data-element-type="we-mega-menu-submenu" data-submenu-width="" data-class="" style="width: px">
+  <div class="we-mega-menu-submenu-inner">
+    <div  class="we-mega-menu-row" data-element-type="we-mega-menu-row" data-custom-row="1">
+  <div  class="we-mega-menu-col span3" data-element-type="we-mega-menu-col" data-width="3" data-block="enisaweb_topics" data-blocktitle="0" data-hidewhencollapse="" data-class="">

@@ -1,0 +1,105 @@
+{
+ "x21_radar_by_continent": {
+  "attacks_layer7_AF": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_AS": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_EU": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_NA": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_OC": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_SA": {
+   "status": 200,
+   "points": 52
+  },
+  "bot_class_AF": {
+   "status": 500,
+   "points": 0
+  },
+  "bot_class_AS": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_EU": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_NA": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_OC": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_SA": {
+   "status": 200,
+   "points": 53
+  }
+ },
+ "x21_ransomware_country_coverage": {
+  "month": "2026-09",
+  "postings": 846,
+  "country_known_share": 0.898,
+  "distinct_countries": 92,
+  "credit": "Source: ransomware.live (https://www.ransomware.live), used with permission"
+ }
+}
+34 of 43 addresses answered 200
+{
+ "x19_certfr_alerts_rss": 200,
+ "x19_certfr_advisories_rss": 200,
+ "x19_certfr_terms": 200,
+ "x19_jpcert_rss_ja": 200,
+ "x19_jpcert_rss_en": 200,
+ "x19_jpcert_alerts_page": 200,
+ "x19_bsi_wid_rss": 200,
+ "x19_bsi_wid_page": 200,
+ "x19_krcert_notices_rss": 200,
+ "x19_krcert_knvd": 404,
+ "x19_certfr_alert_archive": 200,
+ "x19_certfr_alert_json": 200,
+ "x19_jpcert_alerts_2025": 200,
+ "x19_jpcert_alerts_2024": 200,
+ "x19_bsi_wid_api": 200,
+ "x19_krcert_knvd_root": 200,
+ "x19_jpcert_terms_ja": 404,
+ "x19_jpcert_terms_en": 404,
+ "x20_apnic_dnssec_world": 200,
+ "x20_apnic_rpki_world": 200,
+ "x20_ripestat_country_resources": 200,
+ "x20_ripestat_terms": 404,
+ "x20_nist_rpki_monitor": 200,
+ "x20_apnic_dnssec_fr": 200,
+ "x20_apnic_rpki_fr": 200,
+ "x20_apnic_dnssec_jp": 200,
+ "x20_apnic_labs_home": 200,
+ "x20_ripestat_terms_2": 200,
+ "x22_uk_ico_trends": 200,
+ "x22_au_oaic_ndb": 200,
+ "x22_sg_pdpc_decisions": 202,
+ "x22_enisa_incidents": 404,
+ "x22_enisa_threats": 200,
+ "x22_sg_pdpc_landscape": 202,
+ "x12_hf_deepseek": 200,
+ "x12_hf_qwen": 200,
+ "x12_hf_meta": 200,
+ "x12_hf_mistral": 200,
+ "x12_epoch_models_csv": 200,
+ "x12_epoch_notable_csv": 200,
+ "x12_epoch_benchmarks": 200,
+ "x21_radar_by_continent": null,
+ "x21_ransomware_country_coverage": null
+}

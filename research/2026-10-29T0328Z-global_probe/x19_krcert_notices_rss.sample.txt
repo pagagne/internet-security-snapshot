@@ -1,0 +1,75 @@
+
+
+<rss version="2.0">
+<channel>
+	<title>
+		<![CDATA[보호나라>알림마당>보안공지]]>
+	</title>
+	<description>
+		<![CDATA[보호나라>알림마당>보안공지]]>
+	</description>
+	<language>ko-kr</language>
+
+	<item>
+		<title><![CDATA[ JFrog 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72246 ]]></link>
+		<pubDate><![CDATA[ 2026-10-29 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Splunk 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72245 ]]></link>
+		<pubDate><![CDATA[ 2026-10-29 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Cisco 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72244 ]]></link>
+		<pubDate><![CDATA[ 2026-10-29 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Redis 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72243 ]]></link>
+		<pubDate><![CDATA[ 2026-10-29 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Google 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72238 ]]></link>
+		<pubDate><![CDATA[ 2026-10-26 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ PHP 신규 취약점(CVE-2026-115560) 임시 조치 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72237 ]]></link>
+		<pubDate><![CDATA[ 2026-10-24 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Node.js 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72236 ]]></link>
+		<pubDate><![CDATA[ 2026-10-23 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Laravel 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72235 ]]></link>
+		<pubDate><![CDATA[ 2026-10-23 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ Oracle 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72234 ]]></link>
+		<pubDate><![CDATA[ 2026-10-23 ]]></pubDate>
+	</item>
+
+	<item>
+		<title><![CDATA[ GitLab 제품 보안 업데이트 권고 ]]></title>
+		<link><![CDATA[ https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72232 ]]></link>
+		<pubDate><![CDATA[ 2026-10-22 ]]></pubDate>
+	</item>
+
+
+</channel>
+</rss>

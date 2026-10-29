@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system,
+        BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR",
+        "Segoe UI", "Malgun Gothic", "맑은 고딕", Roboto, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .layout-only-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 15px;
+      background-color: #f5f6f8;
+    }
+
+    .layout-only-content-logo__wrap {
+      width: 230px;
+      margin-bottom: 20px;
+    }
+
+    .layout-only-content-logo__wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 1200px) {
+      .layout-only-content-logo__wrap {
+        width: 200px;
+      }
+    }
+
+    .layout-only-content-main {
+      display: flex;
+      width: 100%;
+      min-height: auto;
+      padding: 0;
+    }
+
+    /* error card */
+    .error_card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 800px;
+      margin: 10px auto 0;
+      padding: 70px 0 80px;
+      background-color: #fff;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    /* responsive */
+    @media (max-width: 1200px) {
+      .error_card {
+        width: min(600px, 100%);
+        padding: 30px 15px 50px;
+      }
+    }

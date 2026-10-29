@@ -1,0 +1,849 @@
+{
+ "x19_certfr_alerts_rss": {
+  "url": "https://www.cert.ssi.gouv.fr/alerte/feed/",
+  "status": 200,
+  "bytes": 26115,
+  "content_type": "application/xml",
+  "last_modified": "Wed, 28 Oct 2026 14:57:35 GMT",
+  "lines": 1,
+  "distinct_cves": 29
+ },
+ "x19_certfr_advisories_rss": {
+  "url": "https://www.cert.ssi.gouv.fr/avis/feed/",
+  "status": 200,
+  "bytes": 22628,
+  "content_type": "application/xml",
+  "last_modified": "Wed, 28 Oct 2026 15:01:02 GMT",
+  "lines": 1,
+  "distinct_cves": 3
+ },
+ "x19_certfr_terms": {
+  "url": "https://www.cert.ssi.gouv.fr/mentions-legales/",
+  "status": 200,
+  "bytes": 23932,
+  "content_type": "text/html",
+  "last_modified": "Wed, 28 Oct 2026 15:01:16 GMT",
+  "lines": 506,
+  "distinct_cves": 0,
+  "data_links": [
+   "/uploads/20240408_ANSSI_SDO_CGRI.pdf",
+   "/uploads/CERT-FR_RFC2350_EN.pdf",
+   "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf"
+  ]
+ },
+ "x19_jpcert_rss_ja": {
+  "url": "https://www.jpcert.or.jp/rss/jpcert.rdf",
+  "status": 200,
+  "bytes": 14116,
+  "content_type": "application/rdf+xml",
+  "last_modified": "Wed, 28 Oct 2026 08:00:50 GMT",
+  "lines": 263,
+  "distinct_cves": 6
+ },
+ "x19_jpcert_rss_en": {
+  "url": "https://www.jpcert.or.jp/english/rss/jpcert-en.rdf",
+  "status": 200,
+  "bytes": 3205,
+  "content_type": "application/rdf+xml",
+  "last_modified": "Wed, 28 Oct 2026 07:25:29 GMT",
+  "lines": 73,
+  "distinct_cves": 0
+ },
+ "x19_jpcert_alerts_page": {
+  "url": "https://www.jpcert.or.jp/at/2026.html",
+  "status": 200,
+  "bytes": 34319,
+  "content_type": "text/html",
+  "last_modified": "Mon, 26 Oct 2026 07:49:44 GMT",
+  "lines": 779,
+  "distinct_cves": 20
+ },
+ "x19_bsi_wid_rss": {
+  "url": "https://wid.cert-bund.de/content/public/securityAdvisory/rss",
+  "status": 200,
+  "bytes": 134785,
+  "content_type": "application/rss+xml;charset=UTF-8",
+  "last_modified": "",
+  "lines": 1759,
+  "distinct_cves": 0
+ },
+ "x19_bsi_wid_page": {
+  "url": "https://wid.cert-bund.de/portal/wid/kurzinformationen",
+  "status": 200,
+  "bytes": 2731,
+  "content_type": "text/html;charset=UTF-8",
+  "last_modified": "",
+  "lines": 40,
+  "distinct_cves": 0
+ },
+ "x19_krcert_notices_rss": {
+  "url": "https://www.boho.or.kr/kr/rss.do?bbsId=B0000133",
+  "status": 200,
+  "bytes": 3246,
+  "content_type": "text/xml;charset=UTF-8",
+  "last_modified": "",
+  "lines": 74,
+  "distinct_cves": 1
+ },
+ "x19_krcert_knvd": {
+  "url": "https://knvd.krcert.or.kr/securityNotice.do",
+  "status": 404,
+  "bytes": 25062,
+  "content_type": "text/html",
+  "last_modified": "",
+  "lines": 279,
+  "distinct_cves": 0
+ },
+ "x19_certfr_alert_archive": {
+  "url": "https://www.cert.ssi.gouv.fr/alerte/",
+  "status": 200,
+  "bytes": 36592,
+  "content_type": "text/html",
+  "last_modified": "Wed, 28 Oct 2026 14:57:35 GMT",
+  "lines": 679,
+  "distinct_cves": 9,
+  "data_links": [
+   "/uploads/20240408_ANSSI_SDO_CGRI.pdf",
+   "/uploads/CERT-FR_RFC2350_EN.pdf"
+  ]
+ },
+ "x19_certfr_alert_json": {
+  "url": "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-001/json/",
+  "status": 200,
+  "bytes": 25244,
+  "content_type": "application/json",
+  "last_modified": "Wed, 28 Oct 2026 14:57:34 GMT",
+  "lines": 1,
+  "distinct_cves": 5
+ },
+ "x19_jpcert_alerts_2025": {
+  "url": "https://www.jpcert.or.jp/at/2025.html",
+  "status": 200,
+  "bytes": 32120,
+  "content_type": "text/html",
+  "last_modified": "Mon, 26 Oct 2026 07:49:44 GMT",
+  "lines": 737,
+  "distinct_cves": 9
+ },
+ "x19_jpcert_alerts_2024": {
+  "url": "https://www.jpcert.or.jp/at/2024.html",
+  "status": 200,
+  "bytes": 34470,
+  "content_type": "text/html",
+  "last_modified": "Mon, 26 Oct 2026 07:49:44 GMT",
+  "lines": 797,
+  "distinct_cves": 7
+ },
+ "x19_bsi_wid_api": {
+  "url": "https://wid.cert-bund.de/portal/api/securityadvisory?size=5&sort=published,desc",
+  "status": 200,
+  "bytes": 2731,
+  "content_type": "text/html;charset=UTF-8",
+  "last_modified": "",
+  "lines": 40,
+  "distinct_cves": 0
+ },
+ "x19_krcert_knvd_root": {
+  "url": "https://knvd.krcert.or.kr/",
+  "status": 200,
+  "bytes": 749,
+  "content_type": "text/html",
+  "last_modified": "Tue, 20 Oct 2026 04:41:07 GMT",
+  "lines": 0,
+  "distinct_cves": 0
+ },
+ "x19_jpcert_terms_ja": {
+  "url": "https://www.jpcert.or.jp/policy.html",
+  "status": 404,
+  "bytes": 20184,
+  "content_type": "text/html",
+  "last_modified": "Fri, 23 Oct 2026 04:06:53 GMT",
+  "lines": 476,
+  "distinct_cves": 0
+ },
+ "x19_jpcert_terms_en": {
+  "url": "https://www.jpcert.or.jp/english/policy.html",
+  "status": 404,
+  "bytes": 20184,
+  "content_type": "text/html",
+  "last_modified": "Fri, 23 Oct 2026 04:06:53 GMT",
+  "lines": 476,
+  "distinct_cves": 0
+ },
+ "x20_apnic_dnssec_world": {
+  "url": "https://stats.labs.apnic.net/dnssec/XA",
+  "status": 200,
+  "bytes": 533588,
+  "content_type": "text/html; charset=ISO-8859-1",
+  "last_modified": "",
+  "lines": 10654,
+  "distinct_cves": 0
+ },
+ "x20_apnic_rpki_world": {
+  "url": "https://stats.labs.apnic.net/rpki/XA",
+  "status": 200,
+  "bytes": 256026,
+  "content_type": "text/html; charset=ISO-8859-1",
+  "last_modified": "",
+  "lines": 5172,
+  "distinct_cves": 0
+ },
+ "x20_ripestat_country_resources": {
+  "url": "https://stat.ripe.net/data/country-resource-list/data.json?resource=fr",
+  "status": 200,
+  "bytes": 123343,
+  "content_type": "application/json; charset=utf-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0
+ },
+ "x20_ripestat_terms": {
+  "url": "https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripestat-terms-of-service/",
+  "status": 404,
+  "bytes": 107570,
+  "content_type": "text/html; charset=utf-8",
+  "last_modified": "",
+  "lines": 2399,
+  "distinct_cves": 0
+ },
+ "x20_nist_rpki_monitor": {
+  "url": "https://rpki-monitor.antd.nist.gov/",
+  "status": 200,
+  "bytes": 2907616,
+  "content_type": "text/html; charset=utf-8",
+  "last_modified": "",
+  "lines": 497,
+  "distinct_cves": 0
+ },
+ "x20_apnic_dnssec_fr": {
+  "url": "https://stats.labs.apnic.net/dnssec/FR",
+  "status": 200,
+  "bytes": 502639,
+  "content_type": "text/html; charset=ISO-8859-1",
+  "last_modified": "",
+  "lines": 10847,
+  "distinct_cves": 0
+ },
+ "x20_apnic_rpki_fr": {
+  "url": "https://stats.labs.apnic.net/rpki/FR",
+  "status": 200,
+  "bytes": 260672,
+  "content_type": "text/html; charset=ISO-8859-1",
+  "last_modified": "",
+  "lines": 5557,
+  "distinct_cves": 0
+ },
+ "x20_apnic_dnssec_jp": {
+  "url": "https://stats.labs.apnic.net/dnssec/JP",
+  "status": 200,
+  "bytes": 527081,
+  "content_type": "text/html; charset=ISO-8859-1",
+  "last_modified": "",
+  "lines": 10988,
+  "distinct_cves": 0
+ },
+ "x20_apnic_labs_home": {
+  "url": "https://labs.apnic.net/",
+  "status": 200,
+  "bytes": 8606,
+  "content_type": "text/html",
+  "last_modified": "Thu, 16 Apr 2026 07:58:42 GMT",
+  "lines": 160,
+  "distinct_cves": 0
+ },
+ "x20_ripestat_terms_2": {
+  "url": "https://www.ripe.net/about-us/legal/ripestat-service-terms-and-conditions/",
+  "status": 200,
+  "bytes": 123567,
+  "content_type": "text/html; charset=utf-8",
+  "last_modified": "",
+  "lines": 2599,
+  "distinct_cves": 0
+ },
+ "x22_uk_ico_trends": {
+  "url": "https://ico.org.uk/action-weve-taken/data-security-incident-trends/",
+  "status": 200,
+  "bytes": 48067,
+  "content_type": "text/html; charset=utf-8",
+  "last_modified": "",
+  "lines": 837,
+  "distinct_cves": 0,
+  "data_links": [
+   "/media2/iivgw0b0/data-security-incidents-trends-download-q1-2019-to-q3-2026.csv",
+   "https://www.instituteforgovernment.org.uk/sites/default/files/timeline-lockdown-web.pdf"
+  ]
+ },
+ "x22_au_oaic_ndb": {
+  "url": "https://www.oaic.gov.au/privacy/notifiable-data-breaches/notifiable-data-breaches-publications",
+  "status": 200,
+  "bytes": 70990,
+  "content_type": "text/html; charset=utf-8",
+  "last_modified": "",
+  "lines": 1063,
+  "distinct_cves": 0
+ },
+ "x22_sg_pdpc_decisions": {
+  "url": "https://www.pdpc.gov.sg/organisations/regulations-and-decisions",
+  "status": 202,
+  "bytes": 0,
+  "content_type": "text/html; charset=UTF-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0
+ },
+ "x22_enisa_incidents": {
+  "url": "https://www.enisa.europa.eu/topics/incident-reporting",
+  "status": 404,
+  "bytes": 36510,
+  "content_type": "text/html; charset=UTF-8",
+  "last_modified": "Thu, 29 Oct 2026 03:24:01 GMT",
+  "lines": 685,
+  "distinct_cves": 0
+ },
+ "x22_enisa_threats": {
+  "url": "https://www.enisa.europa.eu/topics/state-of-cybersecurity-in-the-eu/threats-and-incidents",
+  "status": 200,
+  "bytes": 53596,
+  "content_type": "text/html; charset=UTF-8",
+  "last_modified": "Thu, 29 Oct 2026 03:24:02 GMT",
+  "lines": 1014,
+  "distinct_cves": 0
+ },
+ "x22_sg_pdpc_landscape": {
+  "url": "https://www.pdpc.gov.sg/help-and-resources/2025/04/singapore-data-breach-landscape-20232024",
+  "status": 202,
+  "bytes": 0,
+  "content_type": "text/html; charset=UTF-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0
+ },
+ "x12_hf_deepseek": {
+  "url": "https://huggingface.co/api/models?author=deepseek-ai&sort=createdAt&direction=-1&limit=20",
+  "status": 200,
+  "bytes": 6626,
+  "content_type": "application/json; charset=utf-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0,
+  "models": [
+   {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "created": "2026-10-17",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "created": "2026-09-10",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+    "created": "2026-08-31",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+    "created": "2026-08-13",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "created": "2026-07-31",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "deepseek-ai/eagle3_gemma4_12b_ttt7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/eagle3_qwen3_14b_ttt7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/eagle3_qwen3_8b_ttt7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/eagle3_qwen3_4b_ttt7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dflash_gemma4_12b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dflash_qwen3_14b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dflash_qwen3_8b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dflash_qwen3_4b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dspark_gemma4_12b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dspark_qwen3_14b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dspark_qwen3_8b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/dspark_qwen3_4b_block7",
+    "created": "2026-06-28",
+    "pipeline": null
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Pro-DSpark",
+    "created": "2026-06-27",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+    "created": "2026-06-27",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "deepseek-ai/DeepSeek-V4-Pro",
+    "created": "2026-04-22",
+    "pipeline": "text-generation"
+   }
+  ]
+ },
+ "x12_hf_qwen": {
+  "url": "https://huggingface.co/api/models?author=Qwen&sort=createdAt&direction=-1&limit=20",
+  "status": 200,
+  "bytes": 9498,
+  "content_type": "application/json; charset=utf-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0,
+  "models": [
+   {
+    "id": "Qwen/Qwen-Image-2.1-Turbo",
+    "created": "2026-10-09",
+    "pipeline": "text-to-image"
+   },
+   {
+    "id": "Qwen/Qwen-Image-2.1-PE-I2I",
+    "created": "2026-09-20",
+    "pipeline": null
+   },
+   {
+    "id": "Qwen/Qwen-Image-2.1-PE-T2I",
+    "created": "2026-09-20",
+    "pipeline": "text-to-image"
+   },
+   {
+    "id": "Qwen/Qwen-Image-2.1",
+    "created": "2026-09-14",
+    "pipeline": "text-to-image"
+   },
+   {
+    "id": "Qwen/Qwen-Drive-1.0-4B",
+    "created": "2026-08-27",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "Qwen/Qwen3.8-Flash-Next-FP8",
+    "created": "2026-08-24",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "Qwen/Qwen3.8-Flash-Next",
+    "created": "2026-08-24",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "Qwen/Qwen3.8-27B-FP8",
+    "created": "2026-08-13",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "Qwen/Qwen3.8-2.4T-A95B",
+    "created": "2026-08-08",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "Qwen/Qwen3.8-2.4T-A95B-FP8",
+    "created": "2026-08-08",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "Qwen/Qwen3.8-27B",
+    "created": "2026-08-05",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "Qwen/Qwen3-ForcedAligner-0.6B-hf",
+    "created": "2026-06-26",
+    "pipeline": "token-classification"
+   },
+   {
+    "id": "Qwen/Qwen3-ASR-0.6B-hf",
+    "created": "2026-06-26",
+    "pipeline": "automatic-speech-recognition"
+   },
+   {
+    "id": "Qwen/Qwen3-ASR-1.7B-hf",
+    "created": "2026-06-26",
+    "pipeline": "automatic-speech-recognition"
+   },
+   {
+    "id": "Qwen/Qwen-AgentWorld-35B-A3B",
+    "created": "2026-06-22",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "Qwen/Qwen-Image-Bench",
+    "created": "2026-05-21",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "Qwen/SAE-Res-Qwen3.5-35B-A3B-Base-W128K-L0_100",
+    "created": "2026-04-27",
+    "pipeline": null
+   },
+   {
+    "id": "Qwen/SAE-Res-Qwen3.5-35B-A3B-Base-W32K-L0_50",
+    "created": "2026-04-27",
+    "pipeline": null
+   },
+   {
+    "id": "Qwen/SAE-Res-Qwen3-30B-A3B-Base-W128K-L0_100",
+    "created": "2026-04-27",
+    "pipeline": null
+   },
+   {
+    "id": "Qwen/SAE-Res-Qwen3-30B-A3B-Base-W32K-L0_50",
+    "created": "2026-04-27",
+    "pipeline": null
+   }
+  ]
+ },
+ "x12_hf_meta": {
+  "url": "https://huggingface.co/api/models?author=meta-llama&sort=createdAt&direction=-1&limit=20",
+  "status": 200,
+  "bytes": 11043,
+  "content_type": "application/json; charset=utf-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0,
+  "models": [
+   {
+    "id": "meta-llama/Llama-Prompt-Guard-2-86M",
+    "created": "2025-04-28",
+    "pipeline": "text-classification"
+   },
+   {
+    "id": "meta-llama/Llama-Prompt-Guard-2-22M",
+    "created": "2025-04-28",
+    "pipeline": "text-classification"
+   },
+   {
+    "id": "meta-llama/Llama-Guard-4-12B",
+    "created": "2025-04-23",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8-Original",
+    "created": "2025-04-04",
+    "pipeline": null
+   },
+   {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-Original",
+    "created": "2025-04-04",
+    "pipeline": null
+   },
+   {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E-Original",
+    "created": "2025-04-03",
+    "pipeline": null
+   },
+   {
+    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct-Original",
+    "created": "2025-04-03",
+    "pipeline": null
+   },
+   {
+    "id": "meta-llama/Llama-4-Scout-17B-16E-Original",
+    "created": "2025-04-03",
+    "pipeline": null
+   },
+   {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E",
+    "created": "2025-04-02",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "meta-llama/Llama-4-Scout-17B-16E",
+    "created": "2025-04-02",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "created": "2025-04-02",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+    "created": "2025-04-01",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "created": "2025-04-01",
+    "pipeline": "image-text-to-text"
+   },
+   {
+    "id": "meta-llama/Llama-3.3-70B-Instruct",
+    "created": "2024-11-26",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "meta-llama/Llama-3.2-3B-Instruct-SpinQuant_INT4_EO8",
+    "created": "2024-10-23",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "meta-llama/Llama-3.2-3B-Instruct-QLORA_INT4_EO8",
+    "created": "2024-10-23",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "meta-llama/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "created": "2024-10-23",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "meta-llama/Llama-3.2-1B-Instruct-QLORA_INT4_EO8",
+    "created": "2024-10-23",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "meta-llama/Llama-Guard-3-1B-INT4",
+    "created": "2024-09-20",
+    "pipeline": "text-generation"
+   },
+   {
+    "id": "meta-llama/Llama-Guard-3-1B",
+    "created": "2024-09-20",
+    "pipeline": "text-generation"
+   }
+  ]
+ },
+ "x12_hf_mistral": {
+  "url": "https://huggingface.co/api/models?author=mistralai&sort=createdAt&direction=-1&limit=20",
+  "status": 200,
+  "bytes": 9253,
+  "content_type": "application/json; charset=utf-8",
+  "last_modified": "",
+  "lines": 0,
+  "distinct_cves": 0,
+  "models": [
+   {
+    "id": "mistralai/Timestral-123M",
+    "created": "2026-10-14",
+    "pipeline": "time-series-forecasting"
+   },
+   {
+    "id": "mistralai/Timestral-28M",
+    "created": "2026-10-14",
+    "pipeline": "time-series-forecasting"
+   },
+   {
+    "id": "mistralai/Timestral-5M",
+    "created": "2026-10-14",
+    "pipeline": "time-series-forecasting"
+   },
+   {
+    "id": "mistralai/Timestral-209M",
+    "created": "2026-10-14",
+    "pipeline": "time-series-forecasting"
+   },
+   {
+    "id": "mistralai/LIDstral-Arabic",
+    "created": "2026-10-08",
+    "pipeline": "text-classification"
+   },
+   {
+    "id": "mistralai/Voxtral-Mini-4B-Realtime-Arabic",
+    "created": "2026-10-08",
+    "pipeline": "automatic-speech-recognition"
+   },
+   {
+    "id": "mistralai/Shieldstral-1.0-3B",
+    "created": "2026-07-16",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Leanstral-1.5-119B-A6B",
+    "created": "2026-07-01",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Medium-3.5-128B-EAGLE",
+    "created": "2026-04-27",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Medium-3.5-128B",
+    "created": "2026-03-31",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Leanstral-2603",
+    "created": "2026-03-11",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Small-4-119B-2603-eagle",
+    "created": "2026-03-04",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Small-4-119B-2603-NVFP4",
+    "created": "2026-03-03",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Small-4-119B-2603",
+    "created": "2026-01-23",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+    "created": "2026-01-21",
+    "pipeline": "automatic-speech-recognition"
+   },
+   {
+    "id": "mistralai/Mistral-Large-3-675B-Base-2512",
+    "created": "2025-11-30",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Large-3-675B-Instruct-2512",
+    "created": "2025-11-28",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Mistral-Large-3-675B-Instruct-2512-NVFP4",
+    "created": "2025-11-28",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Devstral-2-123B-Instruct-2512",
+    "created": "2025-11-28",
+    "pipeline": null
+   },
+   {
+    "id": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+    "created": "2025-11-28",
+    "pipeline": null
+   }
+  ]
+ },
+ "x12_epoch_models_csv": {
+  "url": "https://epoch.ai/data/all_ai_models.csv",
+  "status": 200,
+  "bytes": 6892520,
+  "content_type": "text/csv",
+  "last_modified": "",
+  "lines": 24301,
+  "distinct_cves": 0
+ },
+ "x12_epoch_notable_csv": {
+  "url": "https://epoch.ai/data/notable_ai_models.csv",
+  "status": 200,
+  "bytes": 2272506,
+  "content_type": "text/csv",
+  "last_modified": "",
+  "lines": 8486,
+  "distinct_cves": 0
+ },
+ "x12_epoch_benchmarks": {
+  "url": "https://epoch.ai/data/benchmark_data.zip",
+  "status": 200,
+  "bytes": 2362249,
+  "content_type": "application/zip",
+  "last_modified": "",
+  "lines": 8278,
+  "distinct_cves": 0
+ },
+ "x21_radar_by_continent": {
+  "attacks_layer7_AF": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_AS": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_EU": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_NA": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_OC": {
+   "status": 200,
+   "points": 52
+  },
+  "attacks_layer7_SA": {
+   "status": 200,
+   "points": 52
+  },
+  "bot_class_AF": {
+   "status": 500,
+   "points": 0
+  },
+  "bot_class_AS": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_EU": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_NA": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_OC": {
+   "status": 200,
+   "points": 53
+  },
+  "bot_class_SA": {
+   "status": 200,
+   "points": 53
+  }
+ },
+ "x21_ransomware_country_coverage": {
+  "month": "2026-09",
+  "postings": 846,
+  "country_known_share": 0.898,
+  "distinct_countries": 92,
+  "credit": "Source: ransomware.live (https://www.ransomware.live), used with permission"
+ }
+}

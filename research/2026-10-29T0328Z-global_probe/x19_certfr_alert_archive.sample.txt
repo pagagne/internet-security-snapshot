@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr" data-fr-scheme="system">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+
+    <meta name="theme-color" content="#000091">
+    <link rel="apple-touch-icon" href="/static/public/favicon/apple-touch-icon.png">
+    <link rel="icon" href="/static/public/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/static/public/favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/static/public/favicon/manifest.webmanifest" crossorigin="use-credentials">
+
+    <link rel="stylesheet" href="/static/public/dsfr/dsfr.min.css">
+    <link rel="stylesheet" href="/static/public/dsfr/utility/utility.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/public/css/main.css">
+
+    <script type="module">
+      const e="system",t="dark",c="dark",o="data-fr-theme",a="data-fr-scheme",r=`:root[${o}], :root[${a}]`,m=()=>{document.documentElement.setAttribute(o,c),document.documentElement.style.colorScheme="dark"},n=()=>{window.matchMedia("(prefers-color-scheme: dark)").matches&&m()};(()=>{if(document.documentElement.matches(r)){const c=(()=>{try{return"localStorage"in window&&null!==window.localStorage}catch(e){return!1}})()?localStorage.getItem("scheme"):"",o=document.documentElement.getAttribute(a);switch(!0){case c===t:m();break;case c===e:n();break;case o===t:m();break;case o===e:n()}}})();
+    </script>
+
+    <title>Alertes de sécurité - Page 1 - CERT-FR</title>
+  </head>
+  <body>
+
+    <div class="fr-skiplinks">
+    <nav role="navigation" aria-label="Accès rapide" class="fr-container">
+        <ul class="fr-skiplinks__list">
+            <li>
+                <a class="fr-link" href="#main-content">Contenu</a>
+            </li>
+            <li>
+                <a class="fr-link" href="#header-navigation">Menu</a>
+            </li>
+            <li>
+                <a class="fr-link" href="#footer">Pied de page</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<header role="banner" class="fr-header" id="header">
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+            <div class="fr-header__operator">
+              <img src="/static/public/icons/logo/bloc-marque.svg"
+                alt="République Française — ANSSI — CERT-FR" class="header-bloc-marque">
+            </div>
+            <div class="fr-header__navbar">
+              <button data-fr-opened="false" aria-controls="header-menu" title="Menu" type="button" id="header-menu-btn"
+                class="fr-btn--menu fr-btn">Menu</button>
+            </div>
+          </div>
+          <div class="fr-header__service">
+            <a href="/" title="Accueil - CERT-FR" aria-label="Accueil - CERT-FR"></a>
+          </div>
+        </div>
+        <div class="fr-header__tools">
+          <!-- Theme -->
+          <div class="fr-header__tools-links" data-fr-js-header-links="true">
+            <ul class="fr-btns-group">
+              <li>
+                <button aria-controls="footer-display" data-fr-opened="false"
+                  class="fr-icon-theme-fill fr-btn--icon-left fr-btn fr-btn--tertiary-no-outline fr-btn--sm"
+                  data-fr-js-modal-button="true">Paramètres d'affichage</button>
+              </li>
+            </ul>
+          </div>
+          <!-- Incident -->
+          <div class="fr-header__search fr-modal" id="modal-search" name="Incident">
+            <div class="fr-container fr-grid-row fr-grid-row--right search-container fr-pr-md-0">
+              <a href="/contact/" class="fr-btn fr-btn--incident fr-btn--icon-left fr-icon-warning-line">Déclarer un
+                incident</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

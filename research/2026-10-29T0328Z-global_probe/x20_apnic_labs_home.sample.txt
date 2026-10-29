@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Background - Labs.APNIC.net</title>
+        <link rel="stylesheet" type="text/css" href="https://labs.apnic.net/template-files/bootstrap/css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://labs.apnic.net/template-files/bootstrap/css/bootstrap-responsive.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://labs.apnic.net/template-files/bootstrap/css/bootstrap-labs.css" media="all" />
+
+        <script type='text/javascript' src='https://labs.apnic.net/js/lib/require-2.1.6.min.js'></script>
+        <script type='text/javascript' src='https://labs.apnic.net/js/lib/require-config.js'></script>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container nav-container">
+                        <nav role="navigation">
+                            <ul class="nav">
+                                <li><a href="//blabs.apnic.net/">Labs Blog Posts</a></li>
+                                <li><a href="//labs.apnic.net/presentations/">Labs Presentations</a></li>
+                                <li><a href="//labs.apnic.net/measurements/">Measurements and Data</a></li>
+                            </ul>
+                        </nav>
+                    </div> <!-- end .nav-container -->
+                </div> <!-- end .navbar-inner -->
+            </div> <!-- end .navbar -->
+            <header id="site-banner" class="container">
+               <h2 class="apnic"><span>APNIC</span></h2>
+               <h2 class="labs"><span>Labs</span></h2>
+           </header>
+           <div id="page-wrapper" class="container">
+               <div id="page">
+                    <div id="contents">
+
+
+<!-- Content goes here -->
+<h2>Measuring the Internet</h2>
+
+<p>This document outlines activity being undertaken by <a
+href="http://www.apnic.net">APNIC</a>, the Asia Pacific Network
+Information Centre. The aim of the activity is to conduct a broad
+based long term measurement of the level of uptake of various
+technologties across the public Internet by viewing the Internet from
+the perspecive of its user base.</p>
+
+<h2>Why are we doing this?</h2>
+
+<p>The Internet is a collection of providers of various services that work
+in concert to provide users with access to a rich collection of digital
+content, services and tools. There is no entity that is in charge of this
+envrionment, and the actions of all of these providers are orchestrated
+through the pressures of market forces and competition rather than by
+regulatory fiat.</p>
+
+<p>At the same time the Internet continues to grow in scope and intensity of
+use, and therre is constant pressure to evolve the technology base of the
+network to improve its efficiency, resilience and scalability. The result is
+a constant pressure to transition across technologies.</p>
+
+<p>One of the more longstanding such transitions is the adoption of version
+6 of the Internet Protocol. Of course that's not the only such transition
+underway, and other transition incluse the adoption of a secure framework
+for the DNS name system (DNSSEC), the adoption of the QUIC transport
+protocol, and the use of Expliciut Congestion Notification(ECN), to name a
+few.</p>
+
+<p>These transition represent a significant challenge, and require the
+coordinated actions of many actors within the Internet, including content
+providers, equipment vendors, application developers, Internet Service
+Providers, policy makers and many others. In the absence of coordinated
+regulatory oversight, one of the major inputs to this coordination process
+is good, reliable data. For example, with respect to the IPv6 transition,
+how well are we doing with IPv6 deployment? Which sectors are going well?
+What are our expectations about the time frame of transition? How can we
+help the Internet to transition to IPv6? Our response to such questions is
+to publish aggregate information that shows the uptake of IPv6 on a global
+basis, on a country-by-country basis, and provider-by-provider over time
+across as much of the Internet as we can encompass with these measurement
+tests. More generally, these transitions entail each provider making

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      
+        RIPEstat Service Terms and Conditions &mdash; RIPE Network Coordination Centre
+      
+    </title>
+    <meta name="viewport" content="width=device-width">
+    
+    <meta property="og:title" content="RIPEstat Service Terms and Conditions">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/static/images/logo.png">
+    <meta property="og:site_name" content="RIPE Network Coordination Center">
+    <meta property="og:url" content="https://www.ripe.net/about-us/legal/ripestat-service-terms-and-conditions/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ripencc">
+    <link rel="canonical" href="https://www.ripe.net/about-us/legal/ripestat-service-terms-and-conditions/">
+    
+<link rel="shortcut icon" href="/static/favicons/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+<link rel="manifest" href="/static/favicons/site.webmanifest">
+<link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color='#131f48'>
+<link rel="shortcut icon" href="/static/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="alternate" type="application/rss+xml" title="RIPE NCC News Feed" href="/news.xml">
+    <link rel="alternate" type="application/rss+xml" title="RIPE NCC Events Feed" href="/events.xml">
+    <link rel="alternate" type="application/rss+xml" title="RIPE NCC Member Updates Feed" href="/member_updates.xml">
+    <link rel="alternate" type="application/rss+xml" title="Hackathons Feed" href="/hackathons.xml">
+    <link rel="alternate" type="application/rss+xml" title="NOG Events Feed" href="/nog_events.xml">
+    
+    <link rel="me" href="https://mastodon.social/@ripencc">
+    <link rel="preload" href="/static/fonts/public-sans-latin-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <meta name="theme-color" content="#FFF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#303030" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/static/CACHE/css/style.6be2b5fa6221.css" type="text/css">
+    <script data-default-providers="brevo, carto, google, googlemaps, typeform, youtube" src="https://www-static.ripe.net/static/webcomponents/embed-consent-v1.1.6.min.js"></script>
+    
+    
+
+    
+    
+      <script>
+        var _paq = window._paq || [];
+        _paq.push(['requireCookieConsent']);
+        _paq.push(['trackPageView']);
+        (function() {
+          var u="https://www-analytics.ripe.net/";
+          _paq.push(['setTrackerUrl', u+'matomo.php']);
+          _paq.push(['setSiteId', '1']);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+      </script>
+    
+  </head>
+  <body>
+    
+
+    
+<header class="bg-white">
+  <a id="skip-nav" href="#content-core">Skip to main content</a>
+  <div class="flex justify-between h-16 text-small container">
+    <div class="flex items-center self-stretch justify-between w-full h-full" aria-label="Main navigation" role="navigation">
+
+      <nav class="flex gap-8 lg:gap-12 items-center self-stretch" aria-label="Main navigation">
+        <div class="header-logo">
+          
+            <a href="/" title="Go to homepage" class="block py-[1px]"><img class="h-7 my-1" src="/static/images/ripe-ncc-logo-2025.svg" alt="RIPE NCC logo"></a>
+          
+        </div>
+        <div id="desktop-megamenu" data-nosnippet class="hidden md:flex md:gap-1 lg:gap-3 md:self-stretch">
+          
+            
