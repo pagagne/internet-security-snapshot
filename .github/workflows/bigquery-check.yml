@@ -11,9 +11,13 @@ on:
   # e.g. from the Schedule workflow or Claude. See docs/WORKFLOWS.md.
   repository_dispatch:
     types: [bigquery-check]
+  # Payload field (optional): task = check (default; sign-in and a tiny capped query) or
+  # httparchive_versions (29 Oct 2026: are software versions recorded in HTTP Archive?
+  # schema, a dry-run cost estimate for one month, and a capped query on the 10,000-page
+  # sample; results saved to run-reports under research/).
 
 permissions:
-  contents: read
+  contents: write   # httparchive_versions saves its results on the run-reports branch only
   id-token: write   # lets GitHub issue the identity token Google checks; nothing else
 
 jobs:
@@ -21,6 +25,7 @@ jobs:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
     timeout-minutes: 15
     steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
       - name: Google Cloud sign-in (keyless)
         uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093  # v3.0.0
         with:
@@ -45,3 +50,50 @@ jobs:
           bq --project_id="$PROJECT" query --use_legacy_sql=false --maximum_bytes_billed=10000000 \
             "SELECT COUNT(*) AS rows_in_table FROM \`bigquery-public-data.samples.shakespeare\`"
           echo "::notice title=BigQuery check::Keyless sign-in and a capped query both worked"
+      - name: HTTP Archive version test (task httparchive_versions)
+        if: ${{ github.event.client_payload.task == 'httparchive_versions' }}
+        env:
+          PROJECT: ${{ vars.GCP_PROJECT }}
+        run: |
+          set -euo pipefail
+          out=research-out; mkdir -p "$out"
+          q() { bq --project_id="$PROJECT" query --use_legacy_sql=false --format=csv --max_rows=1000 "$@"; }
+          echo "## 1. Columns of httparchive.crawl.pages (capped at 100 MB)"
+          q --maximum_bytes_billed=100000000 \
+            "SELECT column_name, data_type FROM \`httparchive.crawl.INFORMATION_SCHEMA.COLUMNS\` WHERE table_name = 'pages'" \
+            > "$out/schema_pages.csv" 2>&1 || true
+          head -40 "$out/schema_pages.csv"
+          echo "## 2. Dry run: what one month of PHP version counts would scan (costs nothing)"
+          bq --project_id="$PROJECT" query --use_legacy_sql=false --dry_run \
+            "SELECT v AS version, COUNT(*) AS pages
+             FROM \`httparchive.crawl.pages\`, UNNEST(technologies) AS t, UNNEST(t.info) AS v
+             WHERE date = '2026-09-01' AND client = 'mobile' AND is_root_page AND t.technology = 'PHP'
+             GROUP BY 1" > "$out/dry_run_month.txt" 2>&1 || true
+          cat "$out/dry_run_month.txt"
+          echo "## 3. Versions on the 10,000-page sample (capped at 2 GB)"
+          q --maximum_bytes_billed=2000000000 \
+            "SELECT t.technology, v AS version, COUNT(*) AS pages
+             FROM \`httparchive.sample_data.pages_10k\`, UNNEST(technologies) AS t, UNNEST(t.info) AS v
+             WHERE t.technology IN ('PHP', 'WordPress', 'jQuery', 'Nginx', 'Apache HTTP Server', 'Drupal', 'Joomla')
+             GROUP BY 1, 2 ORDER BY 1, 3 DESC" > "$out/sample_versions.csv" 2>&1 || true
+          head -60 "$out/sample_versions.csv"
+          q --maximum_bytes_billed=2000000000 \
+            "SELECT t.technology, COUNTIF(ARRAY_LENGTH(t.info) > 0) AS with_version, COUNT(*) AS pages
+             FROM \`httparchive.sample_data.pages_10k\`, UNNEST(technologies) AS t
+             WHERE t.technology IN ('PHP', 'WordPress', 'jQuery', 'Nginx', 'Apache HTTP Server', 'Drupal', 'Joomla')
+             GROUP BY 1 ORDER BY 3 DESC" > "$out/sample_version_share.csv" 2>&1 || true
+          cat "$out/sample_version_share.csv"
+      - name: Publish (task httparchive_versions)
+        if: ${{ always() && github.event.client_payload.task == 'httparchive_versions' }}
+        run: |
+          dest="research/$(date -u +%Y-%m-%dT%H%MZ)-httparchive_versions"
+          git fetch origin run-reports:run-reports
+          git worktree add -q /tmp/rr run-reports
+          mkdir -p "/tmp/rr/$dest"
+          cp -r research-out/. "/tmp/rr/$dest/" 2>/dev/null || true
+          cd /tmp/rr
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Research httparchive_versions $GITHUB_RUN_ID"
+          for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1
+
