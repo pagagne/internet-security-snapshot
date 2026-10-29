@@ -76,6 +76,12 @@ falls due, for the author, for Claude, or for a review. On dry-run dates (1 Dec,
 the quarterly pull itself. (Until 29 Oct it also ran the daily privacy scan, now its own
 workflow: section 10.)
 
+**Watchdog (since 29 Oct, author's decision):** on each run it also checks that the essential
+timed workflows actually ran: the quarterly pull, honeypot capture, backup and rebuild check. If
+GitHub skipped one (no run four hours after it was due, looking back three days), it starts it
+once and opens a `watchdog` issue for the author. So the study keeps collecting even if no one,
+Claude included, is available (`src/snapshot/watchdog.py`; `docs/SOP_MANUAL_RUNS.md`, section 7).
+
 ## 4. Checks: the safety net on every change
 
 **When:** every push to main and every pull request, and by hand (Run button, since 29 Oct).
@@ -157,7 +163,8 @@ Claude work queue (08:32 ET, outside GitHub)
    └─ starts Schedule if it missed its daily run
 Schedule (3x daily)
    ├─ opens the day's issues
-   └─ 1 and 15 Dec: starts Quarterly pull (dry runs)
+   ├─ 1 and 15 Dec: starts Quarterly pull (dry runs)
+   └─ watchdog: restarts a skipped Quarterly pull, Honeypot, Backup or Rebuild check
 Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
    ├─ reads config/sources.yaml + the source keys (GitHub secrets)
    ├─ writes: tag, run report, 90-day bundle, Drive copy
@@ -179,7 +186,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Rebuild check | **Core**: proves the figures can be recomputed | Results still produced, but unverified; the reproducibility promise in the plan is broken. |
 | Checks | **Core safeguard**: guards the locked plan and every change | Errors and changes to the locked core could reach main unnoticed. |
 | Privacy scan | **Core safeguard**: keeps keys, personal details and unpublishable figures out of public view | A leak could stay public unnoticed until the next push (Checks scans every push, but not run-reports). |
-| Schedule | **Support**: runs the calendar and the dry runs | Reminders and dry runs stop; the Claude work queue restarts it. The quarterly pulls still run on their own timer. |
+| Schedule | **Support**: runs the calendar, the dry runs and the watchdog | Reminders, dry runs and the watchdog stop; the Claude work queue restarts it. The quarterly pulls still run on their own timer, but a skipped one would go unnoticed. |
 | Backup | **Support**: monthly private copy in Drive | One fewer copy; the pull still saves its own data to Drive. |
 | Diagrams | **Support**: cross-check of the pictures | None for the results; Checks still verifies the diagrams. |
 | Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |

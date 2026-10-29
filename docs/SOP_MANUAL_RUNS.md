@@ -107,7 +107,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 
 | Workflow | When a manual start is acceptable | Never |
 |---|---|---|
-| Quarterly pull | Dry runs (1 and 15 Dec 2026); re-running a failed official pull, with the author's yes, the same day, once | More than one re-run per quarter without a written reason; any change to its sources or settings after the 29 Dec freeze except by the change policy |
+| Quarterly pull | Dry runs (1 and 15 Dec 2026); re-running a failed official pull, with the author's yes, the same day, once (the author can also do this with the Re-run button, section 7) | More than one re-run per quarter without a written reason; any change to its sources or settings after the 29 Dec freeze except by the change policy |
 | Research probe | Testing a new or changed source the author asked about | More than once a day per source; any probe that scans hosts or collects personal data |
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
@@ -126,7 +126,29 @@ minutes; no scanning or host-level data; no keys in chat.
    "runner" error). Otherwise leave it red and tell Claude; never delete the run (its log is
    evidence).
 
-## 7. Changes to this procedure
+## 7. If Claude is unavailable
+
+Added 29 Oct 2026 (author's question: what if the Claude account limit is reached?). The study
+does not depend on Claude to keep collecting data.
+
+1. **Everything essential runs on GitHub's timers:** Quarterly pull, Rebuild check, Backup,
+   Honeypot capture, Privacy scan and Schedule. The December dry runs are started by Schedule.
+2. **The watchdog covers skipped timers.** Three times a day the Schedule workflow checks that
+   the quarterly pull (1st of Jan/Feb/Apr/May/Jul/Aug/Oct/Nov), honeypot capture (2nd), backup
+   (3rd) and rebuild check (10th) actually ran. If GitHub skipped one, it starts it itself within
+   about four to nine hours, only once, and opens a **watchdog** issue telling you. Check that run's
+   result, then close the issue.
+3. **If a run failed, rerun it yourself with GitHub's Re-run button.** This works for every
+   workflow, including those without a Run button, and repeats the run with exactly the same
+   settings:
+   1. Open the **Actions** tab and click the failed run (red cross).
+   2. At the top right, click **Re-run jobs**, then **Re-run all jobs**, and confirm.
+   3. Wait for the result. Rerun a failed quarterly pull once only, on the same day; if it fails
+      again, leave it red and note it in the session log for Claude to investigate later.
+4. **What waits for Claude:** research probes, the BigQuery check, fixes to failing code, and
+   the reports. None of these stops the data collection.
+
+## 8. Changes to this procedure
 
 Changes after 9 Feb 2027 follow `docs/CHANGE_POLICY.md` for support material: written here with
 the date and reason, noted in the session log, and raised at the next review.

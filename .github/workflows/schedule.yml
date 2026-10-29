@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       about:
-        description: "What this does (information only, leave ticked): Reads the study calendar, opens a GitHub issue for each item due today (never twice). On the dry-run dates (1 and 15 Dec) it also starts the quarterly pull. Tick 'dry run' below to only list what it would do."
+        description: "What this does (information only, leave ticked): Reads the study calendar, opens a GitHub issue for each item due today (never twice), and restarts any essential timed run GitHub skipped (watchdog). On the dry-run dates (1 and 15 Dec) it also starts the quarterly pull. Tick 'dry run' below to only list what it would do."
         type: boolean
         default: true
       date:
@@ -66,6 +66,13 @@ jobs:
           [ "$IN_DRY_RUN" = "true" ] && ARGS+=(--dry-run)
           python -m snapshot.schedule act "${ARGS[@]}" | tee act.txt | tee -a "$GITHUB_STEP_SUMMARY"
           grep -qx "nothing due" act.txt && : > act.txt || true
+      - name: Watchdog for skipped timed runs
+        # Author's decision, 29 Oct 2026: if GitHub skipped the quarterly pull, honeypot capture,
+        # backup or rebuild check, start it now and open a "watchdog" issue (src/snapshot/watchdog.py).
+        if: ${{ inputs.dry_run != true }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m snapshot.watchdog | tee -a act.txt | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Record the run (run-reports branch)
         if: always()
         run: tools/run_log.sh Schedule "${{ job.status }}" act.txt
