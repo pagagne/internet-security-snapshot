@@ -1,0 +1,41 @@
+{
+ "CyberStrikeAI in:name,description": {
+  "status": 200,
+  "total": 30
+ },
+ "topic:ai-pentest": {
+  "status": 200,
+  "total": 13
+ },
+ "topic:pentest-agent": {
+  "status": 200,
+  "total": 2
+ },
+ "topic:autonomous-pentesting": {
+  "status": 200,
+  "total": 8
+ },
+ "llm penetration testing agent in:description": {
+  "status": 200,
+  "total": 103
+ },
+ "ai red team agent exploit in:description": {
+  "status": 200,
+  "total": 27
+ }
+}
+   8220 stars   1756 forks  created 2025-11-08  releases 100  AIPentest/CyberStrikeAI
+   2208 stars   1061 forks  created 2026-10-08  releases 1  trhhubsd/ARTEX
+   1275 stars    244 forks  created 2026-03-13  releases 100  xalgorix/xalgorix
+   1164 stars    199 forks  created 2024-11-26  releases 9  ASCIT31/Dark-Moon
+    406 stars     48 forks  created 2026-06-11  releases 0  Yeti-791/Awesome-Offensive-AI-Agentic-Landscape
+    368 stars     41 forks  created 2026-05-20  releases 0  ok-helloworld/vibe-pentest
+    348 stars     73 forks  created 2026-08-02  releases 40  martian56/redcell
+    345 stars     95 forks  created 2026-07-15  releases 4  CyberSunil/LLMVault
+    319 stars     50 forks  created 2024-11-27  releases 0  aielte-research/HackSynth
+    223 stars    401 forks  created 2026-10-08  releases 0  kutukam/autonomous-pentest-agent
+    221 stars     33 forks  created 2026-02-27  releases 4  fzn0x/watchtower
+    172 stars     50 forks  created 2025-10-17  releases 0  Yenn503/Hexstrike-redteam
+    154 stars     29 forks  created 2026-03-20  releases 2  NeoTheCapt/RedteamAgent
+    132 stars     11 forks  created 2026-06-04  releases 16  langbyyi/CyberStrikeAI-SRC
+     34 stars     12 forks  created 2026-09-07  releases 0  Kxiandaoyan/CyberStrikeAI

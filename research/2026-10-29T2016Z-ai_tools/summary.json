@@ -1,0 +1,1068 @@
+{
+ "queries": {
+  "CyberStrikeAI in:name,description": {
+   "status": 200,
+   "total": 30
+  },
+  "topic:ai-pentest": {
+   "status": 200,
+   "total": 13
+  },
+  "topic:pentest-agent": {
+   "status": 200,
+   "total": 2
+  },
+  "topic:autonomous-pentesting": {
+   "status": 200,
+   "total": 8
+  },
+  "llm penetration testing agent in:description": {
+   "status": 200,
+   "total": 103
+  },
+  "ai red team agent exploit in:description": {
+   "status": 200,
+   "total": 27
+  }
+ },
+ "repositories": {
+  "AIPentest/CyberStrikeAI": {
+   "stars": 8220,
+   "forks": 1756,
+   "created": "2025-11-08",
+   "pushed": "2026-10-28",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ],
+   "releases": 100,
+   "first_release": "2026-04-13",
+   "latest_release": "2026-10-16"
+  },
+  "langbyyi/CyberStrikeAI-SRC": {
+   "stars": 132,
+   "forks": 11,
+   "created": "2026-06-04",
+   "pushed": "2026-10-24",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ],
+   "releases": 16,
+   "first_release": "2026-07-06",
+   "latest_release": "2026-10-16"
+  },
+  "Kxiandaoyan/CyberStrikeAI": {
+   "stars": 34,
+   "forks": 12,
+   "created": "2026-09-07",
+   "pushed": "2026-09-15",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "zwdemz/CyberStrikeAI-EV": {
+   "stars": 3,
+   "forks": 0,
+   "created": "2026-07-30",
+   "pushed": "2026-10-21",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "vtomasv/dvpe-cyberstrikeai-lab": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-05-15",
+   "pushed": "2026-06-19",
+   "language": "TypeScript",
+   "license": "NOASSERTION",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "ChuTM/CyberSync": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-08-29",
+   "pushed": "2026-08-29",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "Sycun/csai-decouple-refactor": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-10-05",
+   "pushed": "2026-10-17",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "moyuan10086/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-08-13",
+   "pushed": "2026-08-13",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "GetKlaros/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-10-09",
+   "pushed": "2026-10-09",
+   "language": null,
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "pbfochk/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-09-15",
+   "pushed": "2026-09-15",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "starscow/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-09-09",
+   "pushed": "2026-09-08",
+   "language": null,
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "Deeplemo/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-04-21",
+   "pushed": "2026-04-21",
+   "language": null,
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "xxMyLaDxx/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2025-12-02",
+   "pushed": "2025-12-02",
+   "language": null,
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "liuxinye23/CyberStrikeAI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-08-03",
+   "pushed": "2026-08-03",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "owenzhou999/cyberstrikeai-build": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-07-15",
+   "pushed": "2026-07-16",
+   "language": null,
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "whotfismichaelX/CyberStrikeAI-RU": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-07-17",
+   "pushed": "2026-07-17",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "Sakana-yuyu/CyberStrikeAI-Desktop": {
+   "stars": 0,
+   "forks": 1,
+   "created": "2026-09-22",
+   "pushed": "2026-09-28",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "jiangrun0213/cors-poc": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-07-29",
+   "pushed": "2026-07-29",
+   "language": "HTML",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "teodorbreajen/cyberstrikeai-poc": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-04-27",
+   "pushed": "2026-04-27",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "kush-coder/autopilot-cyberstrikeai": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-10-15",
+   "pushed": "2026-10-15",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "CyberStrikeAI in:name,description"
+   ]
+  },
+  "ok-helloworld/vibe-pentest": {
+   "stars": 368,
+   "forks": 41,
+   "created": "2026-05-20",
+   "pushed": "2026-09-21",
+   "language": "Python",
+   "license": "AGPL-3.0",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "zxq092/RedBee": {
+   "stars": 8,
+   "forks": 1,
+   "created": "2026-09-28",
+   "pushed": "2026-10-15",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "1ouxilisi/ai-security-agent-platform": {
+   "stars": 4,
+   "forks": 2,
+   "created": "2026-09-27",
+   "pushed": "2026-09-28",
+   "language": "HTML",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "Kerkov-Security/kerkov": {
+   "stars": 4,
+   "forks": 0,
+   "created": "2025-09-20",
+   "pushed": "2026-10-29",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "jeokeo011222/Autonomous-Security-Pentester": {
+   "stars": 2,
+   "forks": 0,
+   "created": "2026-10-08",
+   "pushed": "2026-10-16",
+   "language": "Go",
+   "license": "NOASSERTION",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "evkir/CyberAI": {
+   "stars": 2,
+   "forks": 2,
+   "created": "2026-04-13",
+   "pushed": "2026-10-29",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "Attaxium/ai-red-team-lab": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-08-08",
+   "pushed": "2026-08-09",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "sayan9168/Sayanox-One": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-06-20",
+   "pushed": "2026-06-22",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "Thamidu-Nadun/ai-pentest-agent": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-09-11",
+   "pushed": "2026-10-17",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "MHuzaifaJamil/Agentic-VAPT-Personal-Lab": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-08-31",
+   "pushed": "2026-10-14",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest",
+    "topic:autonomous-pentesting"
+   ]
+  },
+  "usethisname1419/LTH-Interceptor": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-07-27",
+   "pushed": "2026-07-27",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "DoctorGoz/grimnir": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-03-09",
+   "pushed": "2026-10-23",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "OseMultaharju/gemini-pentest-pro": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-06-21",
+   "pushed": "2026-08-16",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "archived": false,
+   "found_by": [
+    "topic:ai-pentest"
+   ]
+  },
+  "FLIAZ/SpiritScout": {
+   "stars": 12,
+   "forks": 2,
+   "created": "2026-10-10",
+   "pushed": "2026-10-29",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "topic:pentest-agent",
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "Little-H-lying-flat/72stack-sec": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-08-28",
+   "pushed": "2026-09-24",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "archived": false,
+   "found_by": [
+    "topic:pentest-agent"
+   ]
+  },
+  "xalgorix/xalgorix": {
+   "stars": 1275,
+   "forks": 244,
+   "created": "2026-03-13",
+   "pushed": "2026-10-29",
+   "language": "Go",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting"
+   ],
+   "releases": 100,
+   "first_release": "2026-09-08",
+   "latest_release": "2026-10-28"
+  },
+  "aielte-research/HackSynth": {
+   "stars": 319,
+   "forks": 50,
+   "created": "2024-11-27",
+   "pushed": "2025-06-24",
+   "language": "Python",
+   "license": "AGPL-3.0",
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting",
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "Adarsh1Y/kali-opencode-usb": {
+   "stars": 16,
+   "forks": 5,
+   "created": "2026-03-26",
+   "pushed": "2026-04-03",
+   "language": "TypeScript",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "Gerberayale521/pwnkit": {
+   "stars": 2,
+   "forks": 1,
+   "created": "2026-04-19",
+   "pushed": "2026-10-14",
+   "language": null,
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting"
+   ]
+  },
+  "schiste/automated-pentest-list": {
+   "stars": 1,
+   "forks": 1,
+   "created": "2026-10-03",
+   "pushed": "2026-10-26",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting"
+   ]
+  },
+  "api-evangelist/horizon3ai": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-07-27",
+   "pushed": "2026-10-26",
+   "language": null,
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting"
+   ]
+  },
+  "montgome753/LLM-Evaluation-Framework": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-05-23",
+   "pushed": "2026-10-14",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "topic:autonomous-pentesting"
+   ]
+  },
+  "trhhubsd/ARTEX": {
+   "stars": 2208,
+   "forks": 1061,
+   "created": "2026-10-08",
+   "pushed": "2026-10-19",
+   "language": "Go",
+   "license": "AGPL-3.0",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 1,
+   "first_release": "2026-10-18",
+   "latest_release": "2026-10-18"
+  },
+  "ASCIT31/Dark-Moon": {
+   "stars": 1164,
+   "forks": 199,
+   "created": "2024-11-26",
+   "pushed": "2026-10-27",
+   "language": "Python",
+   "license": "GPL-3.0",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 9,
+   "first_release": "2026-05-20",
+   "latest_release": "2026-10-25"
+  },
+  "Yeti-791/Awesome-Offensive-AI-Agentic-Landscape": {
+   "stars": 406,
+   "forks": 48,
+   "created": "2026-06-11",
+   "pushed": "2026-09-10",
+   "language": null,
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "martian56/redcell": {
+   "stars": 348,
+   "forks": 73,
+   "created": "2026-08-02",
+   "pushed": "2026-10-06",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 40,
+   "first_release": "2026-08-15",
+   "latest_release": "2026-10-06"
+  },
+  "CyberSunil/LLMVault": {
+   "stars": 345,
+   "forks": 95,
+   "created": "2026-07-15",
+   "pushed": "2026-10-20",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 4,
+   "first_release": "2026-07-15",
+   "latest_release": "2026-09-20"
+  },
+  "kutukam/autonomous-pentest-agent": {
+   "stars": 223,
+   "forks": 401,
+   "created": "2026-10-08",
+   "pushed": "2026-10-09",
+   "language": "Go",
+   "license": "AGPL-3.0",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "fzn0x/watchtower": {
+   "stars": 221,
+   "forks": 33,
+   "created": "2026-02-27",
+   "pushed": "2026-10-14",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 4,
+   "first_release": "2026-02-27",
+   "latest_release": "2026-10-14"
+  },
+  "Gach0ng/Hati": {
+   "stars": 15,
+   "forks": 0,
+   "created": "2026-06-01",
+   "pushed": "2026-06-01",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "firstsnowcg/SwarmPentest": {
+   "stars": 12,
+   "forks": 3,
+   "created": "2025-05-23",
+   "pushed": "2025-07-05",
+   "language": "Python",
+   "license": "AGPL-3.0",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "srinivasans13/burpai": {
+   "stars": 12,
+   "forks": 1,
+   "created": "2026-02-15",
+   "pushed": "2026-07-17",
+   "language": "Java",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 8,
+   "first_release": "2026-02-21",
+   "latest_release": "2026-03-03"
+  },
+  "gds-domingues/PentestIA": {
+   "stars": 11,
+   "forks": 1,
+   "created": "2024-10-29",
+   "pushed": "2024-10-29",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "C0rk1-AI/VulPentestBench": {
+   "stars": 9,
+   "forks": 0,
+   "created": "2026-08-30",
+   "pushed": "2026-10-01",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 2,
+   "first_release": "2026-09-10",
+   "latest_release": "2026-09-14"
+  },
+  "sickwell/PentestGPT-v2": {
+   "stars": 9,
+   "forks": 1,
+   "created": "2026-03-30",
+   "pushed": "2026-03-30",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "ptkvaibhav/clinkz": {
+   "stars": 8,
+   "forks": 2,
+   "created": "2026-03-03",
+   "pushed": "2026-10-15",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ]
+  },
+  "sw30labs/pentest-regulatory-intel": {
+   "stars": 7,
+   "forks": 1,
+   "created": "2026-03-29",
+   "pushed": "2026-09-16",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ]
+  },
+  "JakeClark-chan/AutoPentest-with-n8n": {
+   "stars": 6,
+   "forks": 2,
+   "created": "2025-06-07",
+   "pushed": "2025-06-07",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ]
+  },
+  "ZeeshanSultan/pentest-agent-vs-llm-benchmark-effectiveness": {
+   "stars": 6,
+   "forks": 0,
+   "created": "2026-06-25",
+   "pushed": "2026-10-29",
+   "language": "PHP",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ]
+  },
+  "lupingQAQ/inkblade": {
+   "stars": 4,
+   "forks": 1,
+   "created": "2026-10-28",
+   "pushed": "2026-10-28",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "archived": false,
+   "found_by": [
+    "llm penetration testing agent in:description"
+   ]
+  },
+  "Yenn503/Hexstrike-redteam": {
+   "stars": 172,
+   "forks": 50,
+   "created": "2025-10-17",
+   "pushed": "2025-11-27",
+   "language": "C++",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "NeoTheCapt/RedteamAgent": {
+   "stars": 154,
+   "forks": 29,
+   "created": "2026-03-20",
+   "pushed": "2026-08-02",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ],
+   "releases": 2,
+   "first_release": "2026-05-06",
+   "latest_release": "2026-05-06"
+  },
+  "KhitMinnyo/KMN-CyberSeek": {
+   "stars": 11,
+   "forks": 2,
+   "created": "2026-04-04",
+   "pushed": "2026-09-15",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ],
+   "releases": 0,
+   "first_release": null,
+   "latest_release": null
+  },
+  "xbtlin/Agent-Adversary": {
+   "stars": 3,
+   "forks": 1,
+   "created": "2026-02-23",
+   "pushed": "2026-02-25",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "desledishant10/vex": {
+   "stars": 2,
+   "forks": 1,
+   "created": "2026-05-13",
+   "pushed": "2026-10-25",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "kumar1shailesh/-Autonomous-AI-Red-Team-Agent": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-05-29",
+   "pushed": "2026-05-29",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "William2333ZZ/trustshell": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-07-20",
+   "pushed": "2026-07-21",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "emmanuelgjr/finagent-redrange": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-06-26",
+   "pushed": "2026-08-07",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "efij/AARF-Agentic-AI-Request-Forgery": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2025-05-12",
+   "pushed": "2025-05-12",
+   "language": null,
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "apifyforge/autonomous-cyber-red-team-mcp": {
+   "stars": 1,
+   "forks": 0,
+   "created": "2026-03-21",
+   "pushed": "2026-03-21",
+   "language": null,
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "yousefbassem95-lang/MARS-AI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-02-16",
+   "pushed": "2026-08-07",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "carrickcheah/human-ai-red-team": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-04-03",
+   "pushed": "2026-04-03",
+   "language": null,
+   "license": "Apache-2.0",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "Dhivyashri-26/AARTA": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-05-31",
+   "pushed": "2026-05-31",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "Forge1Group/teamred": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-03-31",
+   "pushed": "2026-03-31",
+   "language": "JavaScript",
+   "license": "AGPL-3.0",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "silentbiohack/chimera_AI": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-05-18",
+   "pushed": "2026-05-18",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "vrajjshah/agentforge": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-07-22",
+   "pushed": "2026-07-23",
+   "language": "Python",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "iamissifu/Red-Team-Harden-RAG-AI-Agent": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-08-09",
+   "pushed": "2026-08-09",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "antonyguedes/chaincode-carnival": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-04-07",
+   "pushed": "2026-05-24",
+   "language": "Go",
+   "license": "MIT",
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "atruong7-bot/agentforge": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-06-16",
+   "pushed": "2026-08-07",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  },
+  "frostbyte012/Camoflauge": {
+   "stars": 0,
+   "forks": 0,
+   "created": "2026-05-28",
+   "pushed": "2026-05-28",
+   "language": "Python",
+   "license": null,
+   "archived": false,
+   "found_by": [
+    "ai red team agent exploit in:description"
+   ]
+  }
+ }
+}
