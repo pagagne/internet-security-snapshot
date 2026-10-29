@@ -129,6 +129,9 @@ checks that Schedule ran (and starts it if not) and picks up the items assigned 
 **Also not a workflow:** Dependabot, GitHub's own watchman (switched on 29 Oct). It reads the
 study's package list (`requirements.txt`, an exact copy of `requirements.lock`, 61 packages) and
 raises an alert if any package gets a known security flaw. It only warns; automatic update
-proposals are off, so nothing changes without the author. Two repository rules protect main: "protect main" (no deleting or rewriting
+proposals are off, so nothing changes without the author. Turning it on added a tenth entry to the Actions
+tab, **Dependency Graph**: GitHub's own built-in job (it has no file in `.github/workflows/`) that
+re-reads the package list whenever `requirements.txt` changes; its runs are named "Graph Update:
+pip in /". Two repository rules protect main: "protect main" (no deleting or rewriting
 history; also on run-reports) and "require checks on main" (the Checks workflow must pass; the
 author can bypass it).
