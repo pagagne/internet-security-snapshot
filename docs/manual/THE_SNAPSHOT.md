@@ -5557,9 +5557,18 @@ author's unless marked. About 30 commits to main. Written the evening of 29 Oct.
   X23 (SANS ISC age mix) and X24 (free-source agreement); the registered plan evaluated after
   the pilot (10 and 17 Feb 2027). The "AI in attacks" panel (item 24) is decided on 21 Dec.
 
+#### Evening: planning ahead
+- Four items moved up (author): project email (done tonight), CCRI email 4 Nov, SANS email
+  5 Nov, AI-attack log check 6 Nov (Claude's recheck 2 Nov). Validation stays 16 Nov.
+- **Project email created:** `internetsecuritysnapshot@gmail.com`, 2-step verification on,
+  forwarding to the author's own Gmail confirmed. Recorded in `docs/OPERATIONS.md` and the
+  outreach notes; allowed in the privacy scan.
+- The Snapshot PDFs now go to Drive automatically with each Backup run (`manual/`, private
+  edition in `manual/private/`); first run 29 Oct.
+
 #### Carried over
 - 30 Oct: morning report, then the source-stability question (cards).
-- Author: save the two Snapshot PDFs in Drive; switch on Malware alerts.
+- Author: switch on Malware alerts; optional "Send mail as" for the project address.
 - 2 Nov: HTTP Archive query (BigQuery); 3 Nov: GreyNoise, CrowdSec and APNIC reply checks;
   4 Nov: Censys reply check; 6 Nov (moved up from 9 Nov): author's X3 check, including the three TrendAI rows and
   rating older rows confirmed or assessed.
