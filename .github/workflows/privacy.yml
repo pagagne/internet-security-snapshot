@@ -1,0 +1,63 @@
+name: Privacy scan
+
+# Looks through the public repository for anything that must never be public: keys and tokens,
+# private keys, personal email addresses and phone numbers, and figures from sources not yet
+# cleared for publishing (src/snapshot/privacy.py; docs/OPERATIONS.md, "Private by design").
+# Scans the current files of main and of run-reports (which automatic runs write without going
+# through Checks). Findings open, or add to, one "privacy" issue; only the kind and place of
+# each finding are reported, never the value. Its own workflow since 29 Oct 2026 (author's
+# request); until then a step of the Schedule workflow. Every push is also scanned by Checks.
+on:
+  schedule:
+    - cron: "47 11 * * *"   # 11:47 UTC = 07:47 ET daily
+    - cron: "13 21 * * *"   # 21:13 UTC = 17:13 ET; a second daily run in case GitHub skips one
+  workflow_dispatch:
+    inputs:
+      about:
+        description: "What this does (information only, leave ticked): Scans every file on main and on run-reports for keys, tokens, passwords, personal email addresses and phone numbers, and figures not yet cleared for publishing. Opens a 'privacy' issue if anything turns up (kind and place only, never the value). Reads the repository only; about 1 minute."
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # run log on the run-reports branch only
+  issues: write
+
+concurrency:
+  group: privacy
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Scan main and run-reports
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch -q origin run-reports || true
+          { python -m snapshot.privacy; python -m snapshot.privacy --ref FETCH_HEAD; } > privacy.txt || true
+          cat privacy.txt >> "$GITHUB_STEP_SUMMARY"
+          if grep -q "finding(s)" privacy.txt; then
+            title="Privacy scan found something to remove"
+            gh label create privacy --color b60205 --description "Privacy scan finding" --force
+            gh label create owner:author --color d93f0b --description "For the author" --force
+            gh label create owner:claude --color 0e8a16 --description "For a Claude session" --force
+            n=$(gh api "repos/$GITHUB_REPOSITORY/issues?state=open&labels=privacy" --jq 'length')
+            body=$(printf 'The privacy scan found items that must not be public (kinds and places only):\n\n%s\n\nSee docs/OPERATIONS.md, "Private by design".' "$(cat privacy.txt)")
+            if [ "$n" = "0" ]; then
+              gh api "repos/$GITHUB_REPOSITORY/issues" -f title="$title" -f body="$body" -f "labels[]=privacy" -f "labels[]=owner:author" -f "labels[]=owner:claude" >/dev/null
+            else
+              num=$(gh api "repos/$GITHUB_REPOSITORY/issues?state=open&labels=privacy" --jq '.[0].number')
+              gh api "repos/$GITHUB_REPOSITORY/issues/$num/comments" -f body="$body" >/dev/null
+            fi
+            echo "::warning title=Privacy scan::findings reported in an issue"
+          fi
+      - name: Record the run (run-reports branch)
+        if: always()
+        run: tools/run_log.sh "Privacy scan" "${{ job.status }}" privacy.txt

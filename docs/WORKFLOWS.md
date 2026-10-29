@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are nine, in
+something changes, or when the author or Claude starts it by hand. There are ten, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -18,7 +18,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check |
 
 ## At a glance
 
@@ -28,6 +28,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Rebuild check | `rebuild-check.yml` | 07:17 on the 10th of each month; Run button | run-reports | none | 27 Oct, run 40584529355 |
 | Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
+| Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
@@ -72,8 +73,8 @@ that day.
 
 **What it does:** reads `docs/schedule/schedule.yaml` and opens a GitHub issue for each item that
 falls due, for the author, for Claude, or for a review. On dry-run dates (1 Dec, 15 Dec) it starts
-the quarterly pull itself. It also runs the **daily privacy scan** of main and run-reports, and
-opens a `privacy` issue if anything private slips in.
+the quarterly pull itself. (Until 29 Oct it also ran the daily privacy scan, now its own
+workflow: section 10.)
 
 ## 4. Checks: the safety net on every change
 
@@ -133,6 +134,20 @@ and Google returns a pass valid for that run only, for the `snapshot-bq` service
 may only run BigQuery queries. It then runs a free dry run against HTTP Archive and one tiny real
 query capped at 10 MB. The same sign-in is used by the HTTP Archive and deps.dev work.
 
+## 10. Privacy scan: keeps private things out of the public repository
+
+**When:** twice a day, at 11:47 and 21:13 UTC (07:47 and 17:13 ET), and by hand (Run button).
+Its own workflow since 29 Oct 2026 at the author's request; before that it was a step inside
+Schedule. Checks also runs the same scan on every change.
+
+**What it does:** reads every file on main and on the run-reports branch and looks for anything
+that must never be public: keys, tokens and passwords (Google, GitHub, AWS and similar), private
+key files, personal email addresses and phone numbers, and figures from sources not yet cleared
+for publishing. A short list of public organisational addresses is allowed. If anything turns
+up it opens one `privacy` issue for the author and Claude, giving only the kind of finding and
+where it is, never the value itself. It scans the current files, not the old history: the
+author decided on 27 Oct to leave the history of run-reports as it was (docs/PERMISSIONS.md).
+
 ## How they depend on each other
 
 Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
@@ -141,7 +156,7 @@ Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec 
 Claude work queue (08:32 ET, outside GitHub)
    └─ starts Schedule if it missed its daily run
 Schedule (3x daily)
-   ├─ opens the day's issues + privacy scan
+   ├─ opens the day's issues
    └─ 1 and 15 Dec: starts Quarterly pull (dry runs)
 Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
    ├─ reads config/sources.yaml + the source keys (GitHub secrets)
@@ -150,7 +165,7 @@ Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
 Checks: the gate on every change; nothing reaches main unless it passes
 ```
 
-Standing alone (no other workflow depends on them): Backup, Diagrams, Honeypot capture,
+Standing alone (no other workflow depends on them): Privacy scan, Backup, Diagrams, Honeypot capture,
 Research probe, BigQuery check. Shared by several: the run-reports branch (five workflows write
 to it, each retrying if another writes at the same moment), the secrets, and the pinned
 Python, actions and packages.
@@ -163,7 +178,8 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Quarterly pull | **Core**: collects every quarter's data | No data for that quarter: the study's results stop. |
 | Rebuild check | **Core**: proves the figures can be recomputed | Results still produced, but unverified; the reproducibility promise in the plan is broken. |
 | Checks | **Core safeguard**: guards the locked plan and every change | Errors and changes to the locked core could reach main unnoticed. |
-| Schedule | **Support**: runs the calendar, privacy scan, dry runs | Reminders and dry runs stop; the Claude work queue restarts it. The quarterly pulls still run on their own timer. |
+| Privacy scan | **Core safeguard**: keeps keys, personal details and unpublishable figures out of public view | A leak could stay public unnoticed until the next push (Checks scans every push, but not run-reports). |
+| Schedule | **Support**: runs the calendar and the dry runs | Reminders and dry runs stop; the Claude work queue restarts it. The quarterly pulls still run on their own timer. |
 | Backup | **Support**: monthly private copy in Drive | One fewer copy; the pull still saves its own data to Drive. |
 | Diagrams | **Support**: cross-check of the pictures | None for the results; Checks still verifies the diagrams. |
 | Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |

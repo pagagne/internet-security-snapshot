@@ -123,7 +123,8 @@ that day (author's request, 27 Oct).
 3. Embargoed or not-yet-public vulnerability information never enters the repository.
 
 Periodic checks (27 Oct 2026): the privacy scan (`snapshot.privacy`) runs on every push
-(Checks), every day on `main` and `run-reports` (Schedule; findings open a `privacy` issue),
+(Checks), twice a day on `main` and `run-reports` (its own Privacy scan workflow since 29 Oct, with a Run
+button; findings open a `privacy` issue),
 and in each sync review together with a reading of new logs for what patterns cannot catch.
 
 ## How a Claude session picks up work

@@ -18,8 +18,8 @@ allowed, and when not to.
 
 ## 2. The two kinds of workflow
 
-**Run button (author or Claude, any time the rules below allow):** Checks, Schedule, Rebuild
-check, Diagrams, Backup. They work inside the repository or with the author's own Drive. The
+**Run button (author or Claude, any time the rules below allow):** Checks, Privacy scan,
+Schedule, Rebuild check, Diagrams, Backup. They work inside the repository or with the author's own Drive. The
 Run box opens with a sentence saying what the workflow does.
 
 **API only, no button (Claude only, and only when asked or scheduled):** Quarterly pull,
@@ -36,7 +36,7 @@ click must never start them. See section 5.
 4. **During a freeze or decision session** (for example 29 Dec 2026), unless the session asks
    for a run.
 
-## 4. The five Run-button workflows
+## 4. The six Run-button workflows
 
 ### Checks
 - **Does:** runs every test, including the guard on the locked study plan; changes nothing.
@@ -47,8 +47,17 @@ click must never start them. See section 5.
 - **Do not:** re-run a failed Checks run over and over to get a green result. If it fails
   twice, read the log and tell Claude; a real failure must be fixed, not retried.
 
+### Privacy scan
+- **Does:** scans every file on main and run-reports for keys, tokens, personal details and
+  figures not yet cleared; opens a `privacy` issue if anything turns up. Changes nothing else.
+- **Run it when:** after anything personal or secret may have been pasted into the repository
+  (an email, a key, a phone number); after a privacy issue was fixed, to confirm it is clean
+  before closing the issue; before a report or the website is published.
+- **Allowed:** any time, including during the quiet periods (it only reads).
+- **Do not:** close a `privacy` issue until a fresh scan comes back clean.
+
 ### Schedule
-- **Does:** opens the GitHub issues due today and runs the privacy scan; on 1 and 15 Dec it also
+- **Does:** opens the GitHub issues due today; on 1 and 15 Dec it also
   starts the dry runs.
 - **Run it when:** by 09:00 ET no issues for the day have appeared, or the Actions list shows no
   Schedule run that day; after the schedule was changed, with **dry run** ticked, to preview.
