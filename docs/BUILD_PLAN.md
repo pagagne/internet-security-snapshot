@@ -41,7 +41,7 @@ On GitHub the red line marks today.
 | 24 Oct | Statistical review response: companion check beside each label (item 19), interval dates and X13 (item 20), 2027 closing re-run (item 21) | done 2026-10-24; decisions on 21 Dec |
 | 24 Oct | Schedule as code: every action item in `docs/schedule/schedule.yaml`, generated annual plan and shared calendar feed, daily Schedule workflow opening issues and starting dispatched runs; runbook `docs/OPERATIONS.md`; project documents copied to `docs/artifacts/` | done 2026-10-24; cutover 30 Nov |
 | 15 Nov | Reference dates for five validation cases (`prereg/ground_truth_reference.csv`) | done 2026-10-22 |
-| 16 Nov | Validation batch in the Hand Check app: the author records fix dates for the reference CVEs before opening the reference file | batch loaded 2026-10-22; author step 16 Nov |
+| 3 Nov (moved up from 16 Nov, 29 Oct) | Validation batch in the Hand Check app: the author records fix dates for the reference CVEs before opening the reference file | batch loaded 2026-10-22; author step 16 Nov |
 | 20 Nov | Cohort draw over real data; `review/baseline.csv` and quarterly review files; `review/decisions.csv` carry-over | builder done (`snapshot.review`); carry-over to do |
 | 20 Nov | Drift checks in the quality report: expected fields present per source, counts compared with the previous run (from the `run-reports` branch), sharp changes flagged | done 2026-10-22 |
 | 20 Nov | Pre-filled fix dates in review lists: GitHub releases, advisories and commits (built 2026-10-22); for exploited CVEs also Microsoft's Update Guide, Cisco CSAF and Palo Alto advisories, then the CVE's disclosure date, else marked as assumed, with fix-later signals flagged for hand check (built 2026-10-23, `fixdates.prefill_exploited`) | built; first live test pending |
@@ -59,7 +59,7 @@ On GitHub the red line marks today.
 | 31 Dec | Cohort timelines: one timeline per sampled flaw (published, fixed, first attacked; exposure added once scan data arrives), linked from each quarter's report | to do |
 | 31 Dec | Review gate: the automatic run on the 1st produces a draft; the evaluation page is published only after the author's review (within two days) | to do |
 
-Author checkpoints: 16 Nov reference-date spot check, 23-24 Nov baseline-year hand check (two sessions),
+Author checkpoints: 3 Nov reference-date spot check (moved up from 16 Nov), 23-24 Nov baseline-year hand check (two sessions),
 1 Dec dry run, 2 Dec dry-run hand check, 4 Dec landing page, 4-18 Dec switch on Zenodo archiving,
 16 Dec full dry-run hand check.
 

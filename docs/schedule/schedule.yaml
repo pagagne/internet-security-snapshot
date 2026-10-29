@@ -61,7 +61,7 @@ items:
 - id: ccri-email
   owner: author
   title: Email CCRI's cybersecurity program director (alumni route, second coder)
-  date: 2026-11-09
+  date: 2026-11-04  # moved up 29 Oct (author; was 11-09)
   time: "10:00"
   minutes: 20
   details: >
@@ -74,7 +74,7 @@ items:
 - id: sans-email
   owner: author
   title: Email SANS asking them to suggest a reviewer (former-employer route)
-  date: 2026-11-10
+  date: 2026-11-05  # moved up 29 Oct (author; was 11-10)
   time: "10:00"
   minutes: 30
   details: >
@@ -109,7 +109,7 @@ items:
 - id: project-email
   owner: author
   title: Create the project email address
-  date: 2026-11-06
+  date: 2026-11-02  # moved up 29 Oct (author; was 11-06)
   details: For university postings and the reviewer invitation (instead of a personal address).
 
 - id: ai-sweep-trial
@@ -166,7 +166,7 @@ items:
 - id: validation-fix-dates
   owner: author
   title: Validation fix dates, then spot-check references
-  date: 2026-11-16
+  date: 2026-11-03  # moved up 29 Oct (author; was 11-16)
   time: "10:00"
   minutes: 45
   details: >

@@ -237,6 +237,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nDone 29 Oct (author): BigQuery AP
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:project-email@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Create the project email address
+DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
+ eviewer invitation (instead of a personal address).\n\nSource: https://git
+ hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
+ e.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:hhs-ocr-series@2026-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
@@ -311,6 +324,19 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:validation-fix-dates@2026-11-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261103T150000Z
+DTEND:20261103T154500Z
+SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
+DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Val
+ idation: reference cases": record the fix dates BEFORE opening https://git
+ hub.com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_r
+ eference.csv. Then tell Claude.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2026-11-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261104
@@ -328,6 +354,24 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:ccri-email@2026-11-04@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261104T150000Z
+DTEND:20261104T152000Z
+SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
+ i route\, second coder)
+DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/reviewer/ccri-outreach.md in y
+ our own words and send it to the program director\, with https://github.co
+ m/pagagne/internet-security-snapshot/blob/main/docs/reviewer/SECOND_CODER.
+ md. Mainly for the second coder\; also asks about CCRI graduates now in a 
+ bachelor's programme for the full review. Disclose your alumni tie if a CC
+ RI candidate is chosen (the invitation's conflict-of-interest section). Te
+ ll Claude\, who logs it.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:ai-sweep-trial@2026-11-05@internet-security-snapshot
@@ -348,16 +392,21 @@ DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:project-email@2026-11-06@internet-security-snapshot
+UID:sans-email@2026-11-05@internet-security-snapshot
 DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261106
-DTEND;VALUE=DATE:20261107
-TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Create the project email address
-DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
- eviewer invitation (instead of a personal address).\n\nSource: https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
- e.yaml
+DTSTART:20261105T150000Z
+DTEND:20261105T153000Z
+SUMMARY:[Paul] Snapshot: Email SANS asking them to suggest a reviewer (form
+ er-employer route)
+DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/reviewer/sans-outreach.md (
+ facts to cover\; your own words) and send to the SANS Technology Institute
+  or another SANS contact that reaches the right people\, with the invitati
+ on letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027)\; 
+ optional: a second coder. Disclose that you worked at SANS and that the st
+ udy uses Internet Storm Center data\; ask for someone you did not work wit
+ h. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -376,24 +425,6 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
  /schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:ccri-email@2026-11-09@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261109T150000Z
-DTEND:20261109T152000Z
-SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
- i route\, second coder)
-DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/reviewer/ccri-outreach.md in y
- our own words and send it to the program director\, with https://github.co
- m/pagagne/internet-security-snapshot/blob/main/docs/reviewer/SECOND_CODER.
- md. Mainly for the second coder\; also asks about CCRI graduates now in a 
- bachelor's programme for the full review. Disclose your alumni tie if a CC
- RI candidate is chosen (the invitation's conflict-of-interest section). Te
- ll Claude\, who logs it.\n\nSource: https://github.com/pagagne/internet-se
- curity-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:ai-sweep-author-check@2026-11-09@internet-security-snapshot
@@ -422,24 +453,6 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
-END:VEVENT
-BEGIN:VEVENT
-UID:sans-email@2026-11-10@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261110T150000Z
-DTEND:20261110T153000Z
-SUMMARY:[Paul] Snapshot: Email SANS asking them to suggest a reviewer (form
- er-employer route)
-DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
- agne/internet-security-snapshot/blob/main/docs/reviewer/sans-outreach.md (
- facts to cover\; your own words) and send to the SANS Technology Institute
-  or another SANS contact that reaches the right people\, with the invitati
- on letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027)\; 
- optional: a second coder. Disclose that you worked at SANS and that the st
- udy uses Internet Storm Center data\; ask for someone you did not work wit
- h. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:drive-backup-test@2026-11-11@internet-security-snapshot
@@ -518,19 +531,6 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
  /schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:validation-fix-dates@2026-11-16@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261116T150000Z
-DTEND:20261116T154500Z
-SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
-DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Val
- idation: reference cases": record the fix dates BEFORE opening https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_r
- eference.csv. Then tell Claude.\n\nSource: https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:validation-run@2026-11-17@internet-security-snapshot

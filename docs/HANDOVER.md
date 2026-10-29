@@ -40,7 +40,7 @@ new session needs. Read this first, then `docs/BUILD_PLAN.md`, `docs/RESEARCH_PL
 > Since 24 Oct the calendar is the subscribed feed generated from `docs/schedule/schedule.yaml`;
 > the hand-made events listed below were removed. Kept for the record.
 
-12 Nov research review (includes the decision on race hand-check effort) · 16 Nov validation ·
+12 Nov research review (includes the decision on race hand-check effort) · 3 Nov validation (moved up from 16 Nov, 29 Oct) ·
 20 Nov permission follow-ups · 23-24 Nov baseline hand check · 1 Dec dry run · 2 Dec dry-run hand
 check · 3 Dec move the pull into the container (added by the other session) · 4 Dec landing page,
 Discussions, Zenodo, delete leftover branch · 21 Dec decision session · 29 Dec freeze ·
