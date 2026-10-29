@@ -15,7 +15,7 @@ something changes, or when the author or Claude starts it by hand. There are nin
 | Quarterly pull | `quarterly-pull.yml` | 06:00 on 1 Jan/Apr/Jul/Oct (provisional) and 1 Feb/May/Aug/Nov (final); by hand | repository (tags, run-reports) | NVD, Cloudflare, SEC user agent, ransomware.live, VulnCheck, Drive | 27 Oct, run 40583009106 |
 | Rebuild check | `rebuild-check.yml` | 07:17 on the 10th of each month; by hand | run-reports | none | 27 Oct, run 40584529355 |
 | Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; by hand | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
-| Checks | `checks.yml` | every push and pull request | nothing (read only) | none | 27 Oct, test push |
+| Checks | `checks.yml` | every push and pull request; by hand | nothing (read only) | none | 27 Oct, test push |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; by hand | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | by hand only | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; by hand | run-reports | none | 27 Oct, run 40586462028 |
@@ -64,7 +64,8 @@ opens a `privacy` issue if anything private slips in.
 
 ## 4. Checks: the safety net on every change
 
-**When:** every push to main and every pull request.
+**When:** every push to main and every pull request, and by hand ("Run workflow" button, since
+29 Oct).
 
 **What it does:** runs all the tests (122 on 29 Oct). They include the test confirming the locked
 pre-registration core has not been altered, and checks that the schedule outputs are current,

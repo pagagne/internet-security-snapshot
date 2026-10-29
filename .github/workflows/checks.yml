@@ -1,9 +1,11 @@
 name: Checks
 
-# Runs the tests, including the locked-core guard, on every push and pull request.
+# Runs the tests, including the locked-core guard, on every push and pull request, and by hand
+# ("Run workflow" button, added 29 Oct 2026 at the author's request).
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
