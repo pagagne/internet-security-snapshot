@@ -1660,7 +1660,7 @@ and the test runs.
 | 21 | **2027 closing re-run, 1 April 2028** | Proposed 24 Oct 2026 | Re-run all four 2027 quarters once every 2027 cohort flaw has its full 90-day follow-up (the final run on the 1st of the following month allows only about a month for each quarter's last month), published as a completeness addendum to the March 2028 annual check. Scored labels are not changed | Calendar event 1 Apr 2028; `docs/STATISTICAL_REVIEW_2026-10-24.md` |
 | 22 | **Workflow lock** | Agreed 25 Oct 2026 (author): lock with the core on 29 Dec | Which GitHub workflows are locked and how they may change. Proposed: the data workflows (quarterly pull, rebuild check, the Dockerfile) are fingerprinted in `prereg/LOCKED.yaml` and change only at the March review or to fix a breakage, with a dated deviation row; the support workflows (Checks, Schedule, Diagrams, Research, Pages, Backup) may change with a change-log entry and passing Checks. Every workflow has a successful run since its last change before the lock | `docs/WORKFLOWS.md` (14 Dec), author review 18 Dec |
 | 23 | **CISA "active exploitation" date as an attack date** | Proposed 27 Oct 2026 (author, research review #2 decided early) | Make T_exploit the earlier of the KEV date and CISA Vulnrichment's first "active exploitation" date? Reported beside the KEV figures as exploratory from the Q4 2026 pilot meanwhile | `docs/RESEARCH_PLAN.md` item 3; whether the first "active" date can be read from the repository history (research-review-prep, 11 Nov) |
-| 24 | **"AI in attacks" context panel** | Proposed 29 Oct 2026 (indicator review, after TrendAI's "Not only ARTEX") | Report every quarter, beside I8 and never labeled: X3 reports in the quarter (all, and confirmed only), their entry routes (CVE or not), the AI attack-tool supply if 12 Nov decision 12 adopts it, and X12's model curve? Also under item 16: without Shadowserver, I1 hand-read or "not available", I4 its KEV version, I6 "not available", with substitutes only as exploratory companions | `docs/INDICATOR_REVIEW_2026-10-29.md` (map of indicators to sources) |
+| 24 | **"AI in attacks" context panel** | Proposed 29 Oct 2026 (indicator review, after TrendAI's "Not only ARTEX"); author: decide on 21 Dec with the X3 data then available | Report every quarter, beside I8 and never labeled: X3 reports in the quarter (all, and confirmed only), their entry routes (CVE or not), the AI attack-tool supply if 12 Nov decision 12 adopts it, and X12's model curve? Also under item 16: without Shadowserver, I1 hand-read or "not available", I4 its KEV version, I6 "not available", with substitutes only as exploratory companions | `docs/INDICATOR_REVIEW_2026-10-29.md` (map of indicators to sources) |
 
 Rules of thumb for promotion: computed from free data already collected; defined
 before seeing its trend; stable enough that two quarters running in one direction
@@ -4901,7 +4901,9 @@ Options weighed:
   among CISA KEV, EUVD and the X19 national alerts, beside I6).
 - **The registered plan is evaluated after the pilot** for justified changes: Claude's draft
   10 Feb 2027, author's review 17 Feb, changes only at the 15 Mar annual review.
-- **The "AI in attacks" panel (item 24):** the author asked for more context before deciding.
+- **The "AI in attacks" panel (item 24):** after more context (example: Q3 2026, 16 reported
+  AI attacks, 13 run by AI agents, 3 through a known CVE), the author chose to decide it at the
+  21 Dec freeze session, with the first X3 data in hand.
 
 
 <a id="doc-docs-sessions-readme-md"></a>

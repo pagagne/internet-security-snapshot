@@ -192,5 +192,7 @@ Options weighed:
   among CISA KEV, EUVD and the X19 national alerts, beside I6).
 - **The registered plan is evaluated after the pilot** for justified changes: Claude's draft
   10 Feb 2027, author's review 17 Feb, changes only at the 15 Mar annual review.
-- **The "AI in attacks" panel (item 24):** the author asked for more context before deciding.
+- **The "AI in attacks" panel (item 24):** after more context (example: Q3 2026, 16 reported
+  AI attacks, 13 run by AI agents, 3 through a known CVE), the author chose to decide it at the
+  21 Dec freeze session, with the first X3 data in hand.
 
