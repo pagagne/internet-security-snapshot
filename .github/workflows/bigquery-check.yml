@@ -1,0 +1,43 @@
+name: BigQuery check
+
+# Confirms the keyless Google Cloud sign-in (Workload Identity Federation, set up 29 Oct 2026)
+# and that BigQuery queries run within the free sandbox. No key is stored anywhere: GitHub proves
+# to Google that the run comes from this repository, and Google hands back a short-lived token
+# for the snapshot-bq service account (role BigQuery Job User only). Uses the repository
+# variables GCP_WIF_PROVIDER, GCP_SA_EMAIL and GCP_PROJECT (not secrets: none is sensitive).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # lets GitHub issue the identity token Google checks; nothing else
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 15
+    steps:
+      - name: Google Cloud sign-in (keyless)
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093  # v3.0.0
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_SA_EMAIL }}
+          project_id: ${{ vars.GCP_PROJECT }}
+      - name: Queries (dry run on HTTP Archive; one tiny real query)
+        env:
+          PROJECT: ${{ vars.GCP_PROJECT }}
+        run: |
+          set -euo pipefail
+          gcloud auth login --cred-file="$GOOGLE_GHA_CREDS_PATH" --quiet
+          gcloud config set project "$PROJECT" --quiet
+          echo "## Dry run (costs nothing): what one month of HTTP Archive PHP versions would scan"
+          bq --project_id="$PROJECT" query --use_legacy_sql=false --dry_run \
+            "SELECT t.version, COUNT(*) AS pages
+             FROM \`httparchive.crawl.pages\`, UNNEST(technologies) AS t
+             WHERE date = '2026-09-01' AND client = 'mobile' AND is_root_page
+               AND t.technology = 'PHP'
+             GROUP BY 1" 2>&1 | tail -3 || echo "::warning title=Dry run::HTTP Archive dry run failed (table or column names may have changed)"
+          echo "## Real query, capped at 10 MB: a small public table"
+          bq --project_id="$PROJECT" query --use_legacy_sql=false --maximum_bytes_billed=10000000 \
+            "SELECT COUNT(*) AS rows_in_table FROM \`bigquery-public-data.samples.shakespeare\`"
+          echo "::notice title=BigQuery check::Keyless sign-in and a capped query both worked"
