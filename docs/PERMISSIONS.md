@@ -142,8 +142,8 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   free, naming the source, document and URL; JPCERT/CC asks, as a courtesy, to be told by email
   to its PR office where, when and how it is quoted; reprinting or redistributing whole
   documents needs contacting them first; logos and trademarks need permission. The study uses
-  only alert titles, CVE IDs and dates, credited: **allowed**. Courtesy notice drafted for the
-  author (29 Oct). PR office address confirmed by the author from the English terms page
+  only alert titles, CVE IDs and dates, credited: **allowed**. Courtesy notice sent by the
+  author 29 Oct 18:21 UTC (covers quoting and linking; no reply needed). PR office address confirmed by the author from the English terms page
   (kept in the private correspondence index, not here). Two further conditions on the same page:
   linking is free, with the same courtesy email; and any email or communication that links to
   their site must tell readers they are being linked to JPCERT/CC's site. Their page addresses
