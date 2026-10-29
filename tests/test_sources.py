@@ -62,4 +62,7 @@ def test_pull_skips_switched_off_source_and_records_switches(tmp_path, monkeypat
 
 def test_workflow_default_leaves_choice_to_config():
     wf = (ROOT / ".github/workflows/quarterly-pull.yml").read_text()
-    assert re.search(r'sources:\n\s+description: [^\n]+\n\s+required: false\n\s+default: ""', wf)
+    # Since 29 Oct the pull has no Run button; an API start without "sources" passes nothing,
+    # so the switches in config/sources.yaml decide.
+    assert "IN_SOURCES: ${{ github.event.client_payload.sources }}" in wf
+    assert '[ -n "$IN_SOURCES" ] && ARGS+=(--sources' in wf

@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: "17 10 3 * *"   # monthly repository copy, the 3rd at 10:17 UTC
   workflow_dispatch:
+    inputs:
+      about:
+        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history) to your Google Drive folder Internet-Security-Snapshot-2027, plus a small test file proving the connection works. Contacts only your own Drive."
+        type: boolean
+        default: true
 
 permissions:
   contents: read

@@ -6,24 +6,13 @@ on:
     - cron: "0 6 1 1,4,7,10 *"
     # 06:00 UTC on 1 Feb/May/Aug/Nov: final run for the same quarter
     - cron: "0 6 1 2,5,8,11 *"
-  workflow_dispatch:
-    inputs:
-      quarter:
-        description: "Quarter to pull, e.g. 2026Q4 (blank = most recent ended quarter)"
-        required: false
-      run:
-        description: "Run type"
-        type: choice
-        options: [dry-run, provisional, final]
-        default: dry-run
-      sources:
-        description: "Comma-separated sources; blank = every source switched on in config/sources.yaml"
-        required: false
-        default: ""
-      epss_step:
-        description: "Days between EPSS samples (1 = daily, as in quarterly runs)"
-        required: false
-        default: "1"
+  # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
+  # repository, so it starts only on its timer or through GitHub's API (repository_dispatch),
+  # e.g. from the Schedule workflow or Claude. See docs/WORKFLOWS.md.
+  # Payload fields (all optional): quarter (e.g. 2026Q4), run (dry-run | provisional | final;
+  # default dry-run), sources (comma-separated), epss_step (days between EPSS samples, default 1).
+  repository_dispatch:
+    types: [quarterly-pull]
 
 permissions:
   contents: write   # to tag each provisional/final run
@@ -57,15 +46,16 @@ jobs:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           # VULNCHECK_TOKEN is not passed: VulnCheck data stays private until they confirm in writing.
           # Inputs arrive as environment variables, never pasted into the script (no injection).
-          IN_QUARTER: ${{ inputs.quarter }}
-          IN_RUN: ${{ inputs.run }}
-          IN_SOURCES: ${{ inputs.sources }}
-          IN_EPSS_STEP: ${{ inputs.epss_step }}
+          IN_QUARTER: ${{ github.event.client_payload.quarter }}
+          IN_RUN: ${{ github.event_name == 'repository_dispatch' && (github.event.client_payload.run || 'dry-run') || '' }}
+          IN_SOURCES: ${{ github.event.client_payload.sources }}
+          IN_EPSS_STEP: ${{ github.event_name == 'repository_dispatch' && (github.event.client_payload.epss_step || '1') || '' }}
         run: |
           ARGS=(--out data/raw)
           [[ -z "$IN_QUARTER" || "$IN_QUARTER" =~ ^20[0-9]{2}Q[1-4]$ ]] || { echo "bad quarter"; exit 2; }
           [[ -z "$IN_SOURCES" || "$IN_SOURCES" =~ ^[a-z,]+$ ]] || { echo "bad sources"; exit 2; }
           [[ -z "$IN_EPSS_STEP" || "$IN_EPSS_STEP" =~ ^[0-9]+$ ]] || { echo "bad epss_step"; exit 2; }
+          [[ -z "$IN_RUN" || "$IN_RUN" =~ ^(dry-run|provisional|final)$ ]] || { echo "bad run type"; exit 2; }
           [ -n "$IN_QUARTER" ] && ARGS+=(--quarter "$IN_QUARTER")
           [ -n "$IN_RUN" ] && ARGS+=(--run "$IN_RUN")
           [ -n "$IN_SOURCES" ] && ARGS+=(--sources "$IN_SOURCES")

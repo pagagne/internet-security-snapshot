@@ -9,7 +9,11 @@ name: Honeypot capture
 on:
   schedule:
     - cron: "43 9 2 * *"   # the 2nd of each month, 09:43 UTC, after ISC's daily update (one cron field only: day-of-month and day-of-week together would mean either)
-  workflow_dispatch:
+  # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
+  # repository, so it starts only on its timer or through GitHub's API (repository_dispatch),
+  # e.g. from the Schedule workflow or Claude. See docs/WORKFLOWS.md.
+  repository_dispatch:
+    types: [honeypot]
 
 permissions:
   contents: write   # run-reports branch only

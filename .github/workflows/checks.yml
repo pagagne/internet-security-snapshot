@@ -6,6 +6,11 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      about:
+        description: "What this does (information only, leave ticked): Runs all the study's tests, the locked-plan guard and the schedule, diagram and privacy checks, then builds the pinned container. Reads the repository only and contacts no outside source; about 2 minutes."
+        type: boolean
+        default: true
 
 permissions:
   contents: read

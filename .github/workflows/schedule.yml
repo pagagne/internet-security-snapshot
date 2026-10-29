@@ -15,6 +15,10 @@ on:
     # no run has succeeded that day (docs/OPERATIONS.md).
   workflow_dispatch:
     inputs:
+      about:
+        description: "What this does (information only, leave ticked): Reads the study calendar, opens a GitHub issue for each item due today (never twice) and runs the daily privacy scan. On the dry-run dates (1 and 15 Dec) it also starts the quarterly pull. Tick 'dry run' below to only list what it would do."
+        type: boolean
+        default: true
       date:
         description: "Pretend today is this date (YYYY-MM-DD); blank = today"
         required: false

@@ -248,6 +248,22 @@ def due(occ: list[dict], today: dt.date, catch_up: int = CATCH_UP_DAYS) -> dict:
     return {"date": today.isoformat(), "issues": [js(o) for o in issues], "runs": [js(o) for o in runs]}
 
 
+def dispatch_args(w: dict) -> list[str]:
+    """GitHub CLI arguments that start workflow `w` ({workflow, inputs}).
+
+    Workflows that contact anything outside the repository have no Run button (author, 29 Oct
+    2026): they listen for a repository_dispatch event named after their file, with the inputs
+    as client_payload. GitHub lets the Schedule workflow's own token start them this way.
+    """
+    import os
+    repo = os.environ.get("GITHUB_REPOSITORY", "pagagne/internet-security-snapshot")
+    event = w["workflow"].removesuffix(".yml")
+    args = ["api", "-X", "POST", f"repos/{repo}/dispatches", "-f", f"event_type={event}"]
+    for k, v in (w.get("inputs") or {}).items():
+        args += ["-f", f"client_payload[{k}]={v}"]
+    return args
+
+
 MARKER = "<!-- schedule-uid: {} -->"
 
 
@@ -285,7 +301,7 @@ def act(today: dt.date, dry: bool = False, gh=None) -> list[str]:
         w = o["dispatch"]
         log.append(f"run {o['uid']} ({w['workflow']})")
         if not dry:
-            gh(["workflow", "run", w["workflow"], *[x for k, v in (w.get("inputs") or {}).items() for x in ("-f", f"{k}={v}")]])
+            gh(dispatch_args(w))
             url = gh(["issue", "create", "--title", f"[GitHub] Started: {o['title']} ({o['when']})", "--label", "schedule",
                       "--label", "owner:github", "--body", issue_body(o) + "\n\nStarted automatically by the Schedule workflow."]).strip()
             gh(["issue", "close", url, "--comment", "Run started; see the Actions tab for its result."])

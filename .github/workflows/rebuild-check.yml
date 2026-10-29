@@ -9,6 +9,10 @@ on:
     - cron: "17 7 10 * *"
   workflow_dispatch:
     inputs:
+      about:
+        description: "What this does (information only, leave ticked): Takes a frozen quarterly bundle, rebuilds the pinned software from scratch, recomputes every figure and confirms it matches what was stored. Uses only the study's own saved data; writes a report to run-reports."
+        type: boolean
+        default: true
       run_id:
         description: "Quarterly pull run to check (blank = most recent with a bundle)"
         required: false

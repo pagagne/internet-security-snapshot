@@ -9,6 +9,11 @@ on:
     branches: [main]
     paths: ["docs/diagrams/*.mmd"]
   workflow_dispatch:
+    inputs:
+      about:
+        description: "What this does (information only, leave ticked): Redraws the diagram pictures from their Mermaid sources and attaches them to the run as a download, for comparison. Read only; changes nothing."
+        type: boolean
+        default: true
 
 permissions:
   contents: read

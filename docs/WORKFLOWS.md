@@ -8,24 +8,36 @@ A workflow is a script GitHub runs for the study on its own computers: on a time
 something changes, or when the author or Claude starts it by hand. There are nine, in
 `.github/workflows/`. All times are UTC.
 
+**Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
+(or with the author's own Drive) have a **Run workflow** button on the Actions page; clicking it
+opens a box whose first line says what the workflow does. Workflows that contact anything
+outside (data sources, SANS, Google BigQuery) have **no button**, so a stray click can never send
+the study's traffic to a source: they run on their timer, or are started through GitHub's API
+by the Schedule workflow (dry runs) or by Claude (probes). A test keeps it that way.
+
+| With a Run button | API only (no button) |
+|---|---|
+| Checks, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check |
+
 ## At a glance
 
 | Workflow | File | Starts | Can change | Secrets | Tested |
 |---|---|---|---|---|---|
-| Quarterly pull | `quarterly-pull.yml` | 06:00 on 1 Jan/Apr/Jul/Oct (provisional) and 1 Feb/May/Aug/Nov (final); by hand | repository (tags, run-reports) | NVD, Cloudflare, SEC user agent, ransomware.live, VulnCheck, Drive | 27 Oct, run 40583009106 |
-| Rebuild check | `rebuild-check.yml` | 07:17 on the 10th of each month; by hand | run-reports | none | 27 Oct, run 40584529355 |
-| Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; by hand | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
-| Checks | `checks.yml` | every push and pull request; by hand | nothing (read only) | none | 27 Oct, test push |
-| Backup | `backup.yml` | 10:17 on the 3rd of each month; by hand | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
-| Research probe | `research.yml` | by hand only | run-reports | GitHub token | 27 Oct, run 40583022560 |
-| Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; by hand | run-reports | none | 27 Oct, run 40586462028 |
-| Diagrams | `diagrams.yml` | when a diagram source changes; by hand | nothing (read only) | none | 27 Oct |
-| BigQuery check | `bigquery-check.yml` | by hand | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
+| Quarterly pull | `quarterly-pull.yml` | 06:00 on 1 Jan/Apr/Jul/Oct (provisional) and 1 Feb/May/Aug/Nov (final); Schedule (dry runs); no button | repository (tags, run-reports) | NVD, Cloudflare, SEC user agent, ransomware.live, VulnCheck, Drive | 27 Oct, run 40583009106 |
+| Rebuild check | `rebuild-check.yml` | 07:17 on the 10th of each month; Run button | run-reports | none | 27 Oct, run 40584529355 |
+| Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
+| Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
+| Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
+| Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
+| Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
+| Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
+| BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
 
 ## 1. Quarterly pull: the heart of the study
 
 **When:** 06:00 on 1 January, April, July and October (the provisional run), and again a month
-later (the final run). Also started by hand for dry runs.
+later (the final run). Dry runs (1 and 15 Dec) are started by the Schedule workflow through
+GitHub's API. No Run button: it contacts every data source.
 
 **What it does:**
 
@@ -45,7 +57,7 @@ author's Google Drive folder under `runs/`.
 
 ## 2. Rebuild check: proves the numbers can be recomputed
 
-**When:** monthly, and by hand after a pull.
+**When:** monthly, and by hand after a pull (Run button).
 
 **What it does:** takes a frozen bundle, builds the study's pinned software environment from
 scratch, recomputes everything, and confirms the result matches what was stored. This is the
@@ -64,8 +76,7 @@ opens a `privacy` issue if anything private slips in.
 
 ## 4. Checks: the safety net on every change
 
-**When:** every push to main and every pull request, and by hand ("Run workflow" button, since
-29 Oct).
+**When:** every push to main and every pull request, and by hand (Run button, since 29 Oct).
 
 **What it does:** runs all the tests (122 on 29 Oct). They include the test confirming the locked
 pre-registration core has not been altered, and checks that the schedule outputs are current,
@@ -75,7 +86,7 @@ with the author (repository admin) able to bypass it.
 
 ## 5. Backup: the private copy in Google Drive
 
-**When:** the 3rd of every month, and by hand.
+**When:** the 3rd of every month, and by hand (Run button).
 
 **What it does:** saves a complete copy of the repository (every branch and all history) as one
 file in the author's Drive folder "Internet-Security-Snapshot-2027", under `repository/`. Started
@@ -84,7 +95,8 @@ quarterly pull backs up its own data separately, as its last step. Setup: `docs/
 
 ## 6. Research probe: the testing bench
 
-**When:** by hand only.
+**When:** only when Claude starts it through GitHub's API (no Run button: probes contact
+outside sources).
 
 **What it does:** runs one small experiment from a fixed list. Examples: how many flaws a vendor's
 site gives fix dates for, how far CISA's list lags other lists, patch adoption from deps.dev, or
@@ -93,7 +105,8 @@ tried before it joins the study.
 
 ## 7. Honeypot capture: attack activity from SANS
 
-**When:** the 2nd of each month; monthly by the author's choice, to keep the load on SANS low.
+**When:** the 2nd of each month; monthly by the author's choice, to keep the load on SANS low. No
+Run button (it downloads from SANS).
 
 **What it does:** downloads the SANS Internet Storm Center web-honeypot files (about 1 GB) and
 reduces them to counts by attack category and by flaw. It then discards the raw files: no IP
@@ -102,7 +115,7 @@ addresses and no attacked URLs are kept. About 40 KB of counts are saved to run-
 
 ## 8. Diagrams: a cross-check for the pictures
 
-**When:** whenever a diagram's Mermaid source changes, and by hand.
+**When:** whenever a diagram's Mermaid source changes, and by hand (Run button).
 
 **What it does:** draws the diagram pictures and attaches them to the run as a download for
 comparison. It can read the repository but not change it (since 27 Oct). Claude renders and
@@ -110,7 +123,8 @@ commits the actual PNGs together with each diagram change.
 
 ## 9. BigQuery check: the keyless Google Cloud sign-in
 
-**When:** by hand only (added 29 Oct 2026).
+**When:** only when Claude starts it through GitHub's API (added 29 Oct 2026; no Run button:
+it contacts Google).
 
 **What it does:** signs in to the author's Google Cloud project **without any stored key**:
 GitHub proves to Google that the run comes from this repository (Workload Identity Federation),
