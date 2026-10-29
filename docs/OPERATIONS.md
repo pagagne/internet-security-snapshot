@@ -15,6 +15,15 @@ person, can pick up the work from the files and issues below.
 
 The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edit by hand).
 
+## The manual is generated
+"The Snapshot" (`docs/manual/THE_SNAPSHOT.md`, author's request 29 Oct 2026) holds every study
+document in full, assembled by `python -m snapshot.manual build` from the list in
+`config/manual.yaml`. After changing any document (or the schedule, which rewrites
+ANNUAL_PLAN.md), run the build before pushing; Checks fails if the manual is stale or a new
+Markdown file is in neither the manual nor its `excluded` list. The PDF and the private edition
+(with the correspondence index, full bio and Drive inventory, kept only in Drive and the Claude
+project) are made by Claude from the same text.
+
 ## The schedule is code
 - **Source:** `docs/schedule/schedule.yaml`. Edit it, then run
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar

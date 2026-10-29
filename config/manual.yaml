@@ -1,0 +1,43 @@
+# "The Snapshot": the study's single manual, assembled from its documents (author's request,
+# 29 Oct 2026). Every document appears in full, in this order; build with
+#   python -m snapshot.manual build      (Checks runs `check` and fails if it is out of date)
+# Paths may be globs (sorted). Every Markdown file in the repository must be listed here or in
+# `excluded` (with a reason); a test enforces it, so nothing new is left out by accident.
+title: "The Snapshot"
+subtitle: "The Internet Security Snapshot study manual"
+output: docs/manual/THE_SNAPSHOT.md
+parts:
+  - name: "Part I. The study"
+    docs: [README.md, prereg/PREREGISTRATION.md, prereg/DEVIATIONS.md, docs/HOW_IT_WORKS.md,
+           docs/RESEARCH_PLAN.md, docs/PILOT_EXPECTATIONS.md]
+  - name: "Part II. Methods"
+    docs: [docs/EVALUATION_FLOW.md, docs/HAND_CHECK.md, docs/HAND_CHECK_APP.md, docs/CHANGE_POLICY.md,
+           docs/CORE_FREEZE_DECISIONS.md, proposals/T1_OPTIONS.md, proposals/ROOT_CAUSE_MAP.md,
+           exploratory/README.md, exploratory/SOURCES.md, exploratory/credit_groups.md,
+           exploratory/sweep-trial-2026.md]
+  - name: "Part III. Operations"
+    docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
+           docs/BACKUP.md, docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, docs/BUILD_PLAN.md]
+  - name: "Part IV. Sources, permissions and publication"
+    docs: [docs/PERMISSIONS.md, docs/PUBLICATION_OPTIONS.md]
+  - name: "Part V. Schedule, reviews and the reviewer"
+    docs: [docs/ANNUAL_PLAN.md, "docs/decisions/*.md", docs/reviewer/INVITATION.md,
+           docs/reviewer/SECOND_CODER.md, docs/reviewer/sample-worksheet/README.md,
+           docs/reviewer/HANDSHAKE_POSTING.md, docs/reviewer/ccri-outreach.md,
+           docs/reviewer/sans-outreach.md]
+  - name: "Appendix A. Records: inquiries, cases, reviews and session logs"
+    docs: [docs/INQUIRIES.md, "docs/cases/*.md", docs/RECONCILIATION_2026-10.md,
+           docs/STATISTICAL_REVIEW_2026-10-24.md, docs/WORKFLOW_REVIEW_2026-10-27.md,
+           docs/sessions/README.md, "docs/sessions/*/*.md"]
+  - name: "Appendix B. Report and artifact sources"
+    docs: [docs/artifacts/README.md, docs/artifacts/combined-report-2026.md,
+           docs/artifacts/methodology-report.md, docs/artifacts/technical-spec.md,
+           docs/artifacts/october-assessment-full-report.md,
+           docs/artifacts/october-assessment-how-we-got-here.md,
+           docs/artifacts/statistical-review-2026-10-24.md,
+           docs/artifacts/statistical-review-2026-10-24-review-points.md,
+           docs/artifacts/brainstorm-data-sources-2026-10-25.md]
+excluded:
+  docs/manual/THE_SNAPSHOT.md: the manual itself
+  docs/artifacts/listening-version.md: spoken version of a report already included
+  docs/artifacts/october-assessment-listening-script.md: spoken version of a report already included
