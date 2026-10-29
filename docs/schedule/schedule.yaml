@@ -561,6 +561,8 @@ items:
     lock list for decision item 22: data workflows (quarterly pull, rebuild check, daily
     collectors, Dockerfile) locked like the core;
     support workflows (Checks, Schedule, Diagrams, Research, Pages, Backup) under a change log.
+    Evaluate each workflow's function and how critical it is to the study (author, 29 Oct): confirm
+    or change the role table in docs/WORKFLOWS.md, "How they depend on each other".
 
 - id: workflows-review
   owner: author

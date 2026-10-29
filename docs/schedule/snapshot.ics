@@ -881,8 +881,12 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  eypot collector). Draft the lock list for decision item 22: data workflows
   (quarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked l
  ike the core\; support workflows (Checks\, Schedule\, Diagrams\, Research\
- , Pages\, Backup) under a change log.\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ , Pages\, Backup) under a change log. Evaluate each workflow's function an
+ d how critical it is to the study (author\, 29 Oct): confirm or change the
+  role table in https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/WORKFLOWS.md\, "How they depend on each other".\n\nSource: https
+ ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
+ chedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

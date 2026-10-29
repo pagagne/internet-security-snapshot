@@ -132,6 +132,46 @@ and Google returns a pass valid for that run only, for the `snapshot-bq` service
 may only run BigQuery queries. It then runs a free dry run against HTTP Archive and one tiny real
 query capped at 10 MB. The same sign-in is used by the HTTP Archive and deps.dev work.
 
+## How they depend on each other
+
+Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
+
+```
+Claude work queue (08:32 ET, outside GitHub)
+   └─ starts Schedule if it missed its daily run
+Schedule (3x daily)
+   ├─ opens the day's issues + privacy scan
+   └─ 1 and 15 Dec: starts Quarterly pull (dry runs)
+Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
+   ├─ reads config/sources.yaml + the source keys (GitHub secrets)
+   ├─ writes: tag, run report, 90-day bundle, Drive copy
+   └─ its bundle feeds -> Rebuild check (the 10th): recomputes and must match
+Checks: the gate on every change; nothing reaches main unless it passes
+```
+
+Standing alone (no other workflow depends on them): Backup, Diagrams, Honeypot capture,
+Research probe, BigQuery check. Shared by several: the run-reports branch (five workflows write
+to it, each retrying if another writes at the same moment), the secrets, and the pinned
+Python, actions and packages.
+
+**What each one means to the study.** The author asked (29 Oct) that each workflow's function
+be judged by how critical it is to the study; the 14 Dec review confirms or changes this.
+
+| Workflow | Role | If it stopped working |
+|---|---|---|
+| Quarterly pull | **Core**: collects every quarter's data | No data for that quarter: the study's results stop. |
+| Rebuild check | **Core**: proves the figures can be recomputed | Results still produced, but unverified; the reproducibility promise in the plan is broken. |
+| Checks | **Core safeguard**: guards the locked plan and every change | Errors and changes to the locked core could reach main unnoticed. |
+| Schedule | **Support**: runs the calendar, privacy scan, dry runs | Reminders and dry runs stop; the Claude work queue restarts it. The quarterly pulls still run on their own timer. |
+| Backup | **Support**: monthly private copy in Drive | One fewer copy; the pull still saves its own data to Drive. |
+| Diagrams | **Support**: cross-check of the pictures | None for the results; Checks still verifies the diagrams. |
+| Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |
+| Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
+| BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
+
+The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with
+Checks guarding every change. If any of the other five failed, the pilot would still run.
+
 ## How they fit together
 
 Schedule keeps time, and Quarterly pull does the collecting. Rebuild check and Checks confirm
