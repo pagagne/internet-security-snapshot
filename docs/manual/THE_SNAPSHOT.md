@@ -2292,7 +2292,31 @@ not affected.)
 
 The daily **Claude work-queue** scheduled task (on the author's Claude account) does exactly
 this and ends silently when no `owner:claude` issue is open. Until the cutover it only
-confirms it can see the queue; the original chat's check-ins handle 26 Oct, 20 Nov and 25 Nov.
+confirms it can see the queue; the dated check-ins below do the work until then.
+
+#### Claude's scheduled tasks (outside GitHub)
+Listed 29 Oct 2026 at the author's request. These run on the author's Claude account, not on
+GitHub, so they stop if the account is unavailable; nothing in data collection depends on them
+(the GitHub workflows and the watchdog do; `docs/SOP_MANUAL_RUNS.md`, section 7). One-off
+check-ins are retired once they have run.
+
+| When (ET) | Task | Where it reports |
+|---|---|---|
+| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from 30 Nov does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
+| Daily, about 07:00 | Morning report: the previous day's session log, overnight failures, today's list; each run schedules the next | The original chat |
+| Fri 30 Oct, 07:30 | Source-stability question (option cards) | The original chat |
+| Mon 2 Nov, 09:00 | Weekly sync review and due `owner:claude` issues | The session created 28 Oct |
+| Tue 3 Nov, 09:00 | GreyNoise, CrowdSec and APNIC reply checks | The original chat |
+| Wed 4 Nov, 09:00 | Censys reply check | The session created 28 Oct |
+| Mon 9, 16 and 23 Nov, 09:00 | Weekly sync reviews and due issues | The session created 28 Oct |
+| Thu 12 Nov, 09:15 | Research review decision cards | The session created 28 Oct |
+| Fri 20 Nov, 09:00 | Data-permission follow-ups | The session created 28 Oct |
+| Wed 25 Nov, 09:00 | Race fix-date list ready for the dry run | The session created 28 Oct |
+
+Some one-off tasks are tied to the author's computer "Shofar" and wait until it is on. The
+eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). From the 30 Nov
+cutover the work queue takes over the dated work; new dates go into the schedule, not into
+chat reminders.
 
 #### Documents: repository first, artifacts as backup
 - The repository is the **source of truth** for every project document. The Claude artifacts
