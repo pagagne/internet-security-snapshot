@@ -649,6 +649,29 @@ items:
     docs/SOP_MANUAL_RUNS.md (drafted 29 Oct 2026, reviewed 18 Dec): adjust it from what the pilot
     taught (quiet periods, re-run rules), then adopt it; it governs manual runs from 9 Feb 2027.
 
+- id: plan-evaluation-prep
+  owner: claude
+  title: Evaluate the registered plan on the pilot's results (draft)
+  date: 2027-02-10
+  details: >
+    Author's request, 29 Oct 2026 (indicator review): after the Q4 2026 pilot's final run
+    (1 Feb), go through every tracking question and indicator (I1-I8) and write down what the
+    pilot showed: which could be computed, which sources were missing (Plan 2), how stable each
+    figure looks, and any change that is justified, with the reason and its cost to
+    comparability. Draft in docs/decisions/2027-02-17-plan-evaluation.md; nothing changes until
+    the 15 Mar annual review (docs/CHANGE_POLICY.md). Inputs: docs/INDICATOR_REVIEW_2026-10-29.md,
+    freeze items 16 and 24, the pilot report and the pilot-expectations check.
+
+- id: plan-evaluation
+  owner: author
+  title: Review the registered-plan evaluation (changes for the 15 Mar review)
+  date: 2027-02-17
+  time: "10:00"
+  minutes: 60
+  details: >
+    docs/decisions/2027-02-17-plan-evaluation.md: decide which proposed changes go to the
+    15 Mar 2027 annual review. Option cards in chat; recommendation first.
+
 - id: ai-rule-session
   owner: author
   title: Evaluate the AI-credit rule on pilot data; PHP2Shell case

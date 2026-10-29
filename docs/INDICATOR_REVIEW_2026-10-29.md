@@ -183,3 +183,14 @@ Options weighed:
 - Item 24 (new): the "AI in attacks" context panel, reported beside I8, never labeled.
 - Exploratory companions: an X14-based age mix beside I4; agreement among KEV, EUVD and the X19
   national alerts beside I6.
+
+## Author's decisions (29 Oct 2026)
+
+- **No substitutes** inside the registered indicators (freeze item 16): without Shadowserver,
+  I1 hand-read or "not available", I4 its KEV version, I6 "not available".
+- **Companions adopted** as exploratory: X23 (SANS ISC age mix, beside I4) and X24 (agreement
+  among CISA KEV, EUVD and the X19 national alerts, beside I6).
+- **The registered plan is evaluated after the pilot** for justified changes: Claude's draft
+  10 Feb 2027, author's review 17 Feb, changes only at the 15 Mar annual review.
+- **The "AI in attacks" panel (item 24):** the author asked for more context before deciding.
+

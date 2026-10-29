@@ -359,3 +359,30 @@ measures:
       year), Singapore's PDPC and ENISA's EU reports, shown next to HHS OCR (X17) and SEC
       Item 1.05. Each regulator's rules on what must be reported differ, so each series is
       read as its own trend, never added together. Lower priority: after X19-X21.
+
+  - id: X23
+    name: Age of attacked flaws seen by the SANS ISC honeypots (companion to I4)
+    question: What share of the CVE-labelled honeypot activity SANS ISC sees targets flaws more than 12 months old?
+    sources: [isc_honeypot, cve]
+    added: 2026-10-29
+    feeds_labels: false
+    status: planned   # author's decision 29 Oct (indicator review); first value with the Q4 2026 pilot
+    method: >
+      From the monthly X14 aggregates: requests per CVE named in the quarter, each CVE aged
+      from its CVE.org publication date; share older than 12 months, computed as I4 is. Reported
+      beside I4 (Shadowserver honeypots, or its registered KEV version) and never merged with
+      it or used in its place. Honeypots see automated scanning only; CVE names come from URLs.
+
+  - id: X24
+    name: Agreement between free exploitation signals (companion to I6)
+    question: How far do CISA KEV, the EU Vulnerability Database's exploited flag and the national alerts of X19 agree on which flaws are attacked, and how late is each?
+    sources: [kev, euvd, certfr, jpcert]
+    added: 2026-10-29
+    feeds_labels: false
+    status: planned   # author's decision 29 Oct (indicator review); first value with the Q4 2026 pilot
+    method: >
+      Same method as I6 (pairwise and multi-rater agreement, and each source's median lag
+      behind the earliest signal), on CVEs with any signal in the trailing two quarters, using
+      only free sources. Reported beside I6 and never in its place: I6 as registered needs
+      VulnCheck and Shadowserver. What EUVD's "exploited since" date means is checked first
+      (KEV-lag back-test, 9 Nov).

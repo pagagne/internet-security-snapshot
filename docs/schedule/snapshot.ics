@@ -1338,6 +1338,29 @@ DESCRIPTION:Responsible: Paul (author)\n\nOutcome goes to the 15 March revi
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:plan-evaluation-prep@2027-02-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270210
+DTEND;VALUE=DATE:20270211
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Evaluate the registered plan on the pilot's resu
+ lts (draft)
+DESCRIPTION:Responsible: Claude\n\nAuthor's request\, 29 Oct 2026 (indicato
+ r review): after the Q4 2026 pilot's final run (1 Feb)\, go through every 
+ tracking question and indicator (I1-I8) and write down what the pilot show
+ ed: which could be computed\, which sources were missing (Plan 2)\, how st
+ able each figure looks\, and any change that is justified\, with the reaso
+ n and its cost to comparability. Draft in https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/decisions/2027-02-17-plan-evaluation.
+ md\; nothing changes until the 15 Mar annual review (https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/CHANGE_POLICY.md). Inputs:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/INDI
+ CATOR_REVIEW_2026-10-29.md\, freeze items 16 and 24\, the pilot report and
+  the pilot-expectations check.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-02-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270210T071700Z
@@ -1359,6 +1382,20 @@ SUMMARY:[Paul] Snapshot: Reviewer applications close\; schedule calls
 DESCRIPTION:Responsible: Paul (author)\n\nCalls with finalists 16-26 Feb\, 
  with the three-item fix-date trial.\n\nSource: https://github.com/pagagne/
  internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:plan-evaluation@2027-02-17@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270217T150000Z
+DTEND:20270217T160000Z
+SUMMARY:[Paul] Snapshot: Review the registered-plan evaluation (changes for
+  the 15 Mar review)
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/decisions/2027-02-17-plan-evaluation.m
+ d: decide which proposed changes go to the 15 Mar 2027 annual review. Opti
+ on cards in chat\; recommendation first.\n\nSource: https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
