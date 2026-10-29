@@ -44,7 +44,7 @@ Asked by the author. All passed:
 
 Two follow-ups: `actions/upload-artifact` in Diagrams was pinned to v4, which GitHub flags as
 Node.js 20 (deprecated); updated the same evening to the v6 pin the quarterly pull already uses
-(author's request). Dependabot alerts: author, Thu 29 Oct with the Google Cloud setup.
+(author's request). Dependabot alerts: on since 29 Oct (author), with the dependency graph; GitHub reads 17 packages (the direct Python dependencies and the pinned actions), not the indirect ones in requirements.lock.
 Diagrams changed the same evening to render and attach only (no push, read-only permission):
 PNGs are rendered in the workspace and committed with the Mermaid source (author's choice).
 
@@ -67,7 +67,7 @@ PNGs are rendered in the workspace and committed with the Mermaid source (author
 2. **`run-reports` branch unprotected.** Done 27 Oct: added to "protect main" (checked). Add it to the "protect main" ruleset (deletion and
    force push blocked); every workflow already pushes fast-forward only. One-minute settings
    change for the author.
-3. **Dependabot alerts are off** (author turning alerts on, 27 Oct; no automatic updates). Turning on alerts (not automatic updates) warns of a
+3. **Dependabot alerts were off.** Done 29 Oct (author): alerts and dependency graph on; automatic updates left off. Turning on alerts (not automatic updates) warns of a
    vulnerable pinned package. Settings change for the author.
 4. **Schedule starting the quarterly pull is untested end to end** (first real case: the
    1 Dec dry run). The 1 Dec Claude item checks it started and starts it by hand if not.
