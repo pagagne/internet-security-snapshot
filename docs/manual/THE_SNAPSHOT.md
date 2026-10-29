@@ -66,6 +66,7 @@ Generated from the study's documents by `python -m snapshot.manual build` (confi
   - [Session log, Monday 26 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-26-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-26.md`)
   - [Session log, Tuesday 27 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-27-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-27.md`)
   - [Session log, Wednesday 28 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-28-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-28.md`)
+  - [Session log, Thursday 29 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-29-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-29.md`)
 - **Appendix B. Report and artifact sources**
   - [Project documents: repository copies and their Claude artifacts](#doc-docs-artifacts-readme-md) (`docs/artifacts/README.md`)
   - [AI and the Internet's Security Posture: Combined Report, 2026](#doc-docs-artifacts-combined-report-2026-md) (`docs/artifacts/combined-report-2026.md`)
@@ -4935,6 +4936,7 @@ project documents; later logs are written at the end of each working day.
 | [Mon 26 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-26-md) | Source switches; global widening; AI-attack sweep; dry run 2; capacity; Drive backup |
 | [Tue 27 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-27-md) | Drive backup live; private by design; Censys guide; rulesets; every workflow tested; pushback logging; status page; review moved up; ransomware.live permission |
 | [Wed 28 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-28-md) | Global probes; sweep translated; UGA call and reviewer role; Censys request sent; publication options; X19-X22 decided early; tasks moved off Shofar |
+| [Thu 29 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-29-md) | Keyless Google Cloud; Dependabot; JPCERT/CC adopted, APNIC asked; Run-button rules; Privacy scan workflow; watchdog; SOP; The Snapshot manual; TrendAI report; indicator review |
 
 
 <a id="doc-docs-sessions-2026-10-18-to-2026-10-24-2026-10-18-md"></a>
@@ -5453,6 +5455,74 @@ morning of 29 Oct from the commit history and the evening chat.
 - Author: GreyNoise form and CrowdSec email (drafted 28 Oct, his to send).
 - Thu 29 Oct 10:00: Dependabot alerts and BigQuery in the internet-security-snapshot Google
   Cloud project (20 min).
+
+
+<a id="doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-29-md"></a>
+
+## Session log, Thursday 29 October 2026
+
+*Source: [`docs/sessions/2026-10-25_to_2026-10-31/2026-10-29.md`](https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sessions/2026-10-25_to_2026-10-31/2026-10-29.md)*
+
+Work with the author (Paul Gagne) and Claude in the original chat session. Decisions are the
+author's unless marked. About 30 commits to main. Written the evening of 29 Oct.
+
+#### Morning: Google Cloud, Dependabot, outreach
+- Google Cloud project set up **keylessly** (Workload Identity Federation: GitHub proves the run
+  comes from this repository; no key stored anywhere). New workflow **BigQuery check**: sign-in
+  and a capped test query passed.
+- GreyNoise research form and CrowdSec email sent by the author; filed in Drive `correspondence/`.
+- Dependabot alerts on; `requirements.txt` added as an exact, tested copy of the lock file, so
+  GitHub's dependency graph sees all 61 packages (was 17). Malware alerts: the author's toggle.
+
+#### Early afternoon: JPCERT/CC and APNIC
+- New research task `terms_scout` found JPCERT/CC's terms (guide.html): quoting allowed with
+  credit and a courtesy email. **X19 now has CERT-FR and JPCERT/CC.**
+- Courtesy notice sent to JPCERT/CC Public Relations (18:21 UTC); its linking conditions logged.
+- APNIC Labs permission request sent via APNIC's helpdesk (18:35 UTC); X20 stays planned.
+  Reply check 3 Nov.
+- New inquiry: how to keep data sources stable through the year (JPCERT/CC warns its
+  addresses may change). Put to the author as option cards on 30 Oct after the morning report.
+
+#### Afternoon: workflows
+- Eight duplicate scheduled check-ins paused (copies of 28 Oct kept). Calendar feed confirmed
+  subscribed and syncing in Google Calendar.
+- **Run buttons (author's decision):** only repository-only workflows keep one, each explained
+  in its Run box (Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup). Workflows
+  that contact outside sources have none and start on their timer or through GitHub's API
+  (Quarterly pull, Research probe, Honeypot capture, BigQuery check). API start tested.
+- **Privacy scan** became its own workflow with a Run button, twice daily (still also in Checks).
+- **Watchdog:** Schedule now restarts a skipped quarterly pull, honeypot capture, backup or
+  rebuild check and opens a `watchdog` issue, so data collection does not depend on anyone,
+  Claude included, being available.
+- Workflows document extended: dependency map and each workflow's role (core, support,
+  exploratory); evaluated at the 14 Dec review (author: judge each by how critical it is).
+- **SOP for running workflows by hand** (`docs/SOP_MANUAL_RUNS.md`): draft, reviewed 18 Dec,
+  adopted 8 Feb 2027, in force 9 Feb. Includes quiet periods, a flowchart (internal, external,
+  proposed lock) and "If Claude is unavailable" (the Re-run button).
+- Replies are now written for listening; questions are also sent as plain text before cards.
+
+#### Late afternoon: The Snapshot manual
+- **"The Snapshot"**, the study manual: every document in full (about 107,000 words), built
+  automatically (`snapshot.manual`); Checks fails if it is stale or a document is missing.
+  PDF public edition (about 200 pages) and a private edition with Appendix C (full bio,
+  correspondence index, Drive inventory). Cover: the author's image, made with ChatGPT.
+
+#### Evening: TrendAI report and the indicator review
+- TrendAI (Trend Micro) "Not only ARTEX": three AI-using operations against Japan logged in X3.
+  Decisions: X3 `ai_evidence` field (confirmed / assessed); every recorded CVE ID checked
+  against CVE.org (all 10 exist); TrendAI Deep Research and Japan's NCO added to the sweep
+  pages; AI attack-tool probe run (CyberStrikeAI 8,220 stars, ARTEX 2,208): 12 Nov decision 12.
+- **Indicator review I1-I8** (`docs/INDICATOR_REVIEW_2026-10-29.md`) with a map of indicators to
+  data sources. Decisions: no substitutes inside registered indicators (item 16); companions
+  X23 (SANS ISC age mix) and X24 (free-source agreement); the registered plan evaluated after
+  the pilot (10 and 17 Feb 2027). The "AI in attacks" panel (item 24) is decided on 21 Dec.
+
+#### Carried over
+- 30 Oct: morning report, then the source-stability question (cards).
+- Author: save the two Snapshot PDFs in Drive; switch on Malware alerts.
+- 2 Nov: HTTP Archive query (BigQuery); 3 Nov: GreyNoise, CrowdSec and APNIC reply checks;
+  4 Nov: Censys reply check; 9 Nov: author's X3 check, including the three TrendAI rows and
+  rating older rows confirmed or assessed.
 
 
 # Appendix B. Report and artifact sources

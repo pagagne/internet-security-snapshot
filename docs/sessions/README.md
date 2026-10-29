@@ -23,3 +23,4 @@ project documents; later logs are written at the end of each working day.
 | [Mon 26 Oct](2026-10-25_to_2026-10-31/2026-10-26.md) | Source switches; global widening; AI-attack sweep; dry run 2; capacity; Drive backup |
 | [Tue 27 Oct](2026-10-25_to_2026-10-31/2026-10-27.md) | Drive backup live; private by design; Censys guide; rulesets; every workflow tested; pushback logging; status page; review moved up; ransomware.live permission |
 | [Wed 28 Oct](2026-10-25_to_2026-10-31/2026-10-28.md) | Global probes; sweep translated; UGA call and reviewer role; Censys request sent; publication options; X19-X22 decided early; tasks moved off Shofar |
+| [Thu 29 Oct](2026-10-25_to_2026-10-31/2026-10-29.md) | Keyless Google Cloud; Dependabot; JPCERT/CC adopted, APNIC asked; Run-button rules; Privacy scan workflow; watchdog; SOP; The Snapshot manual; TrendAI report; indicator review |
