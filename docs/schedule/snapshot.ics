@@ -250,6 +250,24 @@ DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-sweep-trial@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Recheck the trial AI-attack sweep's open items
+DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
+  at the author's request (https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/exploratory/sweep-trial-2026.md\; 15 kept after the China 
+ and Russia retry\, log 13 -> 28). Read the primary reports behind the kept
+  entries (Sysdig\, GTIG\, CrowdStrike\, GMO) and the 8 "recheck" rows in h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/exploratory
+ /ai_attack_sweeps.csv\; correct the log\; final list of proposed search ch
+ anges for decision 9 on 12 Nov.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:hhs-ocr-series@2026-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
@@ -324,19 +342,6 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:validation-fix-dates@2026-11-03@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261103T150000Z
-DTEND:20261103T154500Z
-SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
-DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Val
- idation: reference cases": record the fix dates BEFORE opening https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_r
- eference.csv. Then tell Claude.\n\nSource: https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:drive-to-claude-copy@2026-11-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261104
@@ -374,24 +379,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:ai-sweep-trial@2026-11-05@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261105
-DTEND;VALUE=DATE:20261106
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Recheck the trial AI-attack sweep's open items
-DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
-  at the author's request (https://github.com/pagagne/internet-security-sna
- pshot/blob/main/exploratory/sweep-trial-2026.md\; 15 kept after the China 
- and Russia retry\, log 13 -> 28). Read the primary reports behind the kept
-  entries (Sysdig\, GTIG\, CrowdStrike\, GMO) and the 8 "recheck" rows in h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/exploratory
- /ai_attack_sweeps.csv\; correct the log\; final list of proposed search ch
- anges for decision 9 on 12 Nov.\n\nSource: https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:sans-email@2026-11-05@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261105T150000Z
@@ -410,6 +397,25 @@ DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-sweep-author-check@2026-11-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261106T160000Z
+DTEND:20261106T163500Z
+SUMMARY:[Paul] Snapshot: Check the AI-attack entries awaiting review (trial
+  sweep\, Wiz\, TrendAI) and rate their evidence
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
+ et-security-snapshot/blob/main/exploratory/ai_attack_campaigns.csv\, the 1
+ 7 rows marked "awaiting author check" (the trial sweep's\, in https://gith
+ ub.com/pagagne/internet-security-snapshot/blob/main/exploratory/sweep-tria
+ l-2026.md\, plus Wiz and the three TrendAI cases): keep or exclude each\, 
+ and rate ai_evidence confirmed or assessed for every row still "unrated" (
+ added 29 Oct)\; two questions in the trial tables (Shai-Hulud: X3 or X5? k
+ eep the single-source Brazil case?). Claude's recheck of the primary repor
+ ts is done by 2 Nov.\n\nSource: https://github.com/pagagne/internet-securi
+ ty-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261109
@@ -425,22 +431,6 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
  /schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:ai-sweep-author-check@2026-11-09@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261109T160000Z
-DTEND:20261109T163500Z
-SUMMARY:[Paul] Snapshot: Check the 15 AI-attack entries from the trial swee
- p
-DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
- et-security-snapshot/blob/main/exploratory/ai_attack_campaigns.csv\, the 1
- 5 rows marked "awaiting author check" (tables in https://github.com/pagagn
- e/internet-security-snapshot/blob/main/exploratory/sweep-trial-2026.md): k
- eep or exclude each\; two questions there (Shai-Hulud: X3 or X5? keep the 
- single-source Brazil case?).\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2026-11-10@internet-security-snapshot
@@ -531,6 +521,19 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
  /schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:validation-fix-dates@2026-11-16@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261116T150000Z
+DTEND:20261116T154500Z
+SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
+DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Val
+ idation: reference cases": record the fix dates BEFORE opening https://git
+ hub.com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_r
+ eference.csv. Then tell Claude.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:validation-run@2026-11-17@internet-security-snapshot

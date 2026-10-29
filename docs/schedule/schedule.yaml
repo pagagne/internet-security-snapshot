@@ -115,7 +115,7 @@ items:
 - id: ai-sweep-trial
   owner: claude
   title: Recheck the trial AI-attack sweep's open items
-  date: 2026-11-05
+  date: 2026-11-02  # moved up 29 Oct, so the author's check can be on 6 Nov (was 11-05)
   details: >
     The trial itself ran early, on 26 Oct, at the author's request (exploratory/sweep-trial-2026.md;
     15 kept after the China and Russia retry, log 13 -> 28). Read the primary reports behind the kept entries (Sysdig, GTIG,
@@ -124,14 +124,16 @@ items:
 
 - id: ai-sweep-author-check
   owner: author
-  title: Check the 15 AI-attack entries from the trial sweep
-  date: 2026-11-09
+  title: Check the AI-attack entries awaiting review (trial sweep, Wiz, TrendAI) and rate their evidence
+  date: 2026-11-06  # moved up 29 Oct (author; was 11-09)
   time: "11:00"
   minutes: 35
   details: >
-    exploratory/ai_attack_campaigns.csv, the 15 rows marked "awaiting author check" (tables in
-    exploratory/sweep-trial-2026.md): keep or exclude each; two questions there (Shai-Hulud: X3
-    or X5? keep the single-source Brazil case?).
+    exploratory/ai_attack_campaigns.csv, the 17 rows marked "awaiting author check" (the trial
+    sweep's, in exploratory/sweep-trial-2026.md, plus Wiz and the three TrendAI cases): keep or
+    exclude each, and rate ai_evidence confirmed or assessed for every row still "unrated"
+    (added 29 Oct); two questions in the trial tables (Shai-Hulud: X3 or X5? keep the
+    single-source Brazil case?). Claude's recheck of the primary reports is done by 2 Nov.
 
 - id: research-review-prep
   owner: claude
@@ -166,7 +168,7 @@ items:
 - id: validation-fix-dates
   owner: author
   title: Validation fix dates, then spot-check references
-  date: 2026-11-03  # moved up 29 Oct (author; was 11-16)
+  date: 2026-11-16
   time: "10:00"
   minutes: 45
   details: >

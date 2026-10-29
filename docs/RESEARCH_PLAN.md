@@ -1,6 +1,6 @@
 # Research window, 23 Oct - 15 Nov 2026: improving the project under two plans
 
-Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 3 Nov validation (moved up from 16 Nov on 29 Oct).
+Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 16 Nov validation.
 Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for the
 21 Dec decisions. Nothing here changes the locked core; results feed decision items.
 
