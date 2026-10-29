@@ -855,6 +855,14 @@ chosen before the rule, meets it (CVSS 9.2; CERT-EU and NCSC advised).
     `docs/cases/php2shell.md` by 3 Feb (points collected so far are already in that file): what each step recorded, and anything to change before
     the first scored quarter.
 
+#### Fix-date pre-fill coverage after the kernel and CSAF additions (29 Oct 2026)
+Research task `prefill_coverage` on the 175 KEV additions of Apr-Sep 2026 (run-reports
+`research/2026-10-29T2345Z-prefill_coverage`): dated by Microsoft 21, GitHub 18, Cisco 13,
+Linux kernel commits 5 (new), Palo Alto 2, Red Hat 1 (new); CNA disclosure date 32; still
+assumed 83 (47%), down from 88 before the additions. Siemens added no dates in this window.
+130 of 175 still go to the hand check, as before; the gain is small, so the 12 Nov decision on
+hand-check effort (#1, decided early: every flagged date) stands.
+
 
 <a id="doc-docs-pilot-expectations-md"></a>
 
@@ -3449,9 +3457,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 29 Oct 2026, 10:00 ET | Paul | Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts - done |
 | Mon 02 Nov 2026 | Paul | Create the project email address - done 29 Oct (see docs/OPERATIONS.md) |
 | Mon 02 Nov 2026 | Claude | Recheck the trial AI-attack sweep's open items |
-| Mon 02 Nov 2026 | Claude | HHS OCR health-breach series - second attempt at the export |
-| Mon 02 Nov 2026 | Claude | HTTP Archive test - are software versions recorded? (after the BigQuery project) |
-| Mon 02 Nov 2026 | Claude | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill |
+| Mon 02 Nov 2026 | Claude | HHS OCR health-breach series - second attempt at the export - done 29 Oct (no export; decision 11) |
+| Mon 02 Nov 2026 | Claude | HTTP Archive test - are software versions recorded? - done 29 Oct (yes; decision 10) |
+| Mon 02 Nov 2026 | Claude | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill - done 29 Oct (#29) |
 | Mon 02 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Wed 04 Nov 2026 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 04 Nov 2026, 10:00 ET | Paul | Email CCRI's cybersecurity program director (alumni route, second coder) |
@@ -3690,9 +3698,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 26 Oct 2026 | Continue the research window | docs/RESEARCH_PLAN.md: item 5 (an on/off switch per permissioned source in config), then item 4 (remaining evaluation code: labels T2, T4-T6; X6-X12; NVD root-cause fill; draft evaluation page); consider CISA's active-exploitation assessment date as a research-flag T_exploit candidate; then Plan 1 / Plan 2 research. Report to the author only findings worth knowing. |
 | Tue 27 Oct 2026 | Probe the global sources (X19-X22) and translate the sweep searches | Author's request of 26 Oct (docs/INQUIRIES.md). Quick tests through the Research probe workflow: can each national alert feed (CERT-FR, JPCERT/CC, BSI, KrCERT/CC) be read and dated, what do APNIC Labs and RIPE NCC publish per country, can Radar and ransomware.live be split by region, and what the breach regulators publish. Terms of use read for each and logged in docs/PERMISSIONS.md. Translate the X3 sweep searches into the eight languages and fix them in config/exploratory.yaml. Findings go to the 12 Nov research review; any source that holds up becomes active before the 29 Dec freeze. Also the X12 amendment of 26 Oct (open-weight release rate): Hugging Face Hub API by lab, Epoch AI's model database, and candidate benchmarks for the "capable" bar. |
 | Mon 02 Nov 2026 | Recheck the trial AI-attack sweep's open items | The trial itself ran early, on 26 Oct, at the author's request (exploratory/sweep-trial-2026.md; 15 kept after the China and Russia retry, log 13 -> 28). Read the primary reports behind the kept entries (Sysdig, GTIG, CrowdStrike, GMO) and the 8 "recheck" rows in exploratory/ai_attack_sweeps.csv; correct the log; final list of proposed search changes for decision 9 on 12 Nov. |
-| Mon 02 Nov 2026 | HHS OCR health-breach series - second attempt at the export | Probe 25 Oct: the portal answers, but its CSV export is a form the probe did not trigger. Second attempt with the form's real fields; if it still fails, the public research copies of the same register are checked for terms. Quarterly counts of "hacking/IT incident" breaches of 500+ people; aggregates only, beside T6. |
-| Mon 02 Nov 2026 | HTTP Archive test - are software versions recorded? (after the BigQuery project) | One small BigQuery query within the free tier, with a per-query byte cap. If versions are recorded, propose an exploratory patch-adoption measure for web software (share of sites on the fixed version, 30 and 90 days after the fix). WordPress.org version statistics work (probe 25 Oct: version shares per plugin, today only), so they need weekly capture to build history. Also deps.dev's BigQuery history for the patch-adoption prototype. First test case: PHP2Shell (fixed 21 Oct 2026; author's concern of 26 Oct that many servers will stay unpatched): from the X-Powered-By PHP versions in the September, October and November crawls, the share of PHP-reporting sites on a fixed release, and the share on releases that will never get a fix (PHP 5.4-7.3). Sites that hide their version are not counted. |
-| Mon 02 Nov 2026 | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill | snapshot.fixdates.prefill_exploited: fixing commits from kernel CVE records dated through the GitHub mirrors; Debian/Ubuntu trackers as a cross-check; CSAF feeds of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws. Measure the drop in "assumed" dates on the 175-flaw probe. Code change by pull request, before the 14 Dec review. |
+| Mon 02 Nov 2026 | HHS OCR health-breach series - second attempt at the export - done 29 Oct (no export; decision 11) | Probe 25 Oct: the portal answers, but its CSV export is a form the probe did not trigger. Second attempt with the form's real fields; if it still fails, the public research copies of the same register are checked for terms. Quarterly counts of "hacking/IT incident" breaches of 500+ people; aggregates only, beside T6. |
+| Mon 02 Nov 2026 | HTTP Archive test - are software versions recorded? - done 29 Oct (yes; decision 10) | One small BigQuery query within the free tier, with a per-query byte cap. If versions are recorded, propose an exploratory patch-adoption measure for web software (share of sites on the fixed version, 30 and 90 days after the fix). WordPress.org version statistics work (probe 25 Oct: version shares per plugin, today only), so they need weekly capture to build history. Also deps.dev's BigQuery history for the patch-adoption prototype. First test case: PHP2Shell (fixed 21 Oct 2026; author's concern of 26 Oct that many servers will stay unpatched): from the X-Powered-By PHP versions in the September, October and November crawls, the share of PHP-reporting sites on a fixed release, and the share on releases that will never get a fix (PHP 5.4-7.3). Sites that hide their version are not counted. |
+| Mon 02 Nov 2026 | Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill - done 29 Oct (#29) | snapshot.fixdates.prefill_exploited: fixing commits from kernel CVE records dated through the GitHub mirrors; Debian/Ubuntu trackers as a cross-check; CSAF feeds of further vendors (Siemens, Red Hat, SUSE) where they cover attacked flaws. Measure the drop in "assumed" dates on the 175-flaw probe. Code change by pull request, before the 14 Dec review. |
 | Mon 02 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Mon 09 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Wed 11 Nov 2026 | Restore test of the Drive backup | The backup was set up and tested on 27 Oct (own Google client ID; connection test and a 7 MB repository copy arrived in the Drive folder). Now restore: clone the newest repository bundle and confirm it matches main; after the 1 Dec dry run, check its bundle and private part arrived. Add the Backup workflow to docs/WORKFLOWS.md and the lock list. |
@@ -3926,7 +3934,12 @@ the measure is adopted only with that wording.
 - B Adopt both regardless.
 - C Defer both to the March review.
 
-Evidence (2 Nov lighter deps.dev run, HHS retry): _to fill_.
+Evidence (HHS retry run early, 29 Oct; run-reports `research/2026-10-29T2337Z-hhs_breaches` and
+`T2345Z`): the portal address now serves a front page with no breach table and no export
+control; the list and its CSV button appear only after browsing in from that page, so no
+script can fetch it reliably. X17 options: the author downloads the public CSV by hand once a
+quarter in the hand-check window (about 5 minutes; counts only), or defer X17 to March.
+deps.dev: _to fill_ (lighter run, 2 Nov).
 
 #### 12. Open-source AI attack frameworks (added 29 Oct, author's request)
 Raised by TrendAI's "Not only ARTEX" report (`docs/INQUIRIES.md`, 29 Oct): attackers ran

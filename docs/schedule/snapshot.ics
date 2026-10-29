@@ -275,7 +275,7 @@ DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: HHS OCR health-breach series - second attempt at
-  the export
+  the export - done 29 Oct (no export\; decision 11)
 DESCRIPTION:Responsible: Claude\n\nProbe 25 Oct: the portal answers\, but i
  ts CSV export is a form the probe did not trigger. Second attempt with the
   form's real fields\; if it still fails\, the public research copies of th
@@ -292,7 +292,7 @@ DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: HTTP Archive test - are software versions record
- ed? (after the BigQuery project)
+ ed? - done 29 Oct (yes\; decision 10)
 DESCRIPTION:Responsible: Claude\n\nOne small BigQuery query within the free
   tier\, with a per-query byte cap. If versions are recorded\, propose an e
  xploratory patch-adoption measure for web software (share of sites on the 
@@ -315,7 +315,7 @@ DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Add kernel commit dates (and more CSAF vendors) 
- to the fix-date pre-fill
+ to the fix-date pre-fill - done 29 Oct (#29)
 DESCRIPTION:Responsible: Claude\n\nsnapshot.fixdates.prefill_exploited: fix
  ing commits from kernel CVE records dated through the GitHub mirrors\; Deb
  ian/Ubuntu trackers as a cross-check\; CSAF feeds of further vendors (Siem

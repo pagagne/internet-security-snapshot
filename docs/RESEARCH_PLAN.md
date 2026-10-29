@@ -193,3 +193,11 @@ chosen before the rule, meets it (CVSS 9.2; CERT-EU and NCSC advised).
     `docs/cases/php2shell.md` by 3 Feb (points collected so far are already in that file): what each step recorded, and anything to change before
     the first scored quarter.
 
+## Fix-date pre-fill coverage after the kernel and CSAF additions (29 Oct 2026)
+Research task `prefill_coverage` on the 175 KEV additions of Apr-Sep 2026 (run-reports
+`research/2026-10-29T2345Z-prefill_coverage`): dated by Microsoft 21, GitHub 18, Cisco 13,
+Linux kernel commits 5 (new), Palo Alto 2, Red Hat 1 (new); CNA disclosure date 32; still
+assumed 83 (47%), down from 88 before the additions. Siemens added no dates in this window.
+130 of 175 still go to the hand check, as before; the gain is small, so the 12 Nov decision on
+hand-check effort (#1, decided early: every flagged date) stands.
+

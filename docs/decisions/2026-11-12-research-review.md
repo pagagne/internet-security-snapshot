@@ -189,7 +189,12 @@ the measure is adopted only with that wording.
 - B Adopt both regardless.
 - C Defer both to the March review.
 
-Evidence (2 Nov lighter deps.dev run, HHS retry): _to fill_.
+Evidence (HHS retry run early, 29 Oct; run-reports `research/2026-10-29T2337Z-hhs_breaches` and
+`T2345Z`): the portal address now serves a front page with no breach table and no export
+control; the list and its CSV button appear only after browsing in from that page, so no
+script can fetch it reliably. X17 options: the author downloads the public CSV by hand once a
+quarter in the hand-check window (about 5 minutes; counts only), or defer X17 to March.
+deps.dev: _to fill_ (lighter run, 2 Nov).
 
 ## 12. Open-source AI attack frameworks (added 29 Oct, author's request)
 Raised by TrendAI's "Not only ARTEX" report (`docs/INQUIRIES.md`, 29 Oct): attackers ran

@@ -294,7 +294,7 @@ items:
 
 - id: kernel-fixdates-prefill
   owner: claude
-  title: Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill
+  title: Add kernel commit dates (and more CSAF vendors) to the fix-date pre-fill - done 29 Oct (#29)
   date: 2026-11-02
   details: >
     snapshot.fixdates.prefill_exploited: fixing commits from kernel CVE records dated through
@@ -327,7 +327,7 @@ items:
 
 - id: httparchive-test
   owner: claude
-  title: HTTP Archive test - are software versions recorded? (after the BigQuery project)
+  title: HTTP Archive test - are software versions recorded? - done 29 Oct (yes; decision 10)
   date: 2026-11-02
   details: >
     One small BigQuery query within the free tier, with a per-query byte cap. If versions are
@@ -373,7 +373,7 @@ items:
 
 - id: hhs-ocr-series
   owner: claude
-  title: HHS OCR health-breach series - second attempt at the export
+  title: HHS OCR health-breach series - second attempt at the export - done 29 Oct (no export; decision 11)
   date: 2026-11-02
   details: >
     Probe 25 Oct: the portal answers, but its CSV export is a form the probe did not trigger.
