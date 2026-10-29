@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are eight, in
+something changes, or when the author or Claude starts it by hand. There are nine, in
 `.github/workflows/`. All times are UTC.
 
 ## At a glance
@@ -20,6 +20,7 @@ something changes, or when the author or Claude starts it by hand. There are eig
 | Research probe | `research.yml` | by hand only | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; by hand | run-reports | none | 27 Oct, run 40586462028 |
 | Diagrams | `diagrams.yml` | when a diagram source changes; by hand | nothing (read only) | none | 27 Oct |
+| BigQuery check | `bigquery-check.yml` | by hand | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
 
 ## 1. Quarterly pull: the heart of the study
 
@@ -103,6 +104,16 @@ addresses and no attacked URLs are kept. About 40 KB of counts are saved to run-
 **What it does:** draws the diagram pictures and attaches them to the run as a download for
 comparison. It can read the repository but not change it (since 27 Oct). Claude renders and
 commits the actual PNGs together with each diagram change.
+
+## 9. BigQuery check: the keyless Google Cloud sign-in
+
+**When:** by hand only (added 29 Oct 2026).
+
+**What it does:** signs in to the author's Google Cloud project **without any stored key**:
+GitHub proves to Google that the run comes from this repository (Workload Identity Federation),
+and Google returns a pass valid for that run only, for the `snapshot-bq` service account, which
+may only run BigQuery queries. It then runs a free dry run against HTTP Archive and one tiny real
+query capped at 10 MB. The same sign-in is used by the HTTP Archive and deps.dev work.
 
 ## How they fit together
 

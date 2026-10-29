@@ -302,11 +302,16 @@ items:
 
 - id: gcp-setup
   owner: author
-  title: Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts
+  title: Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts - done
   date: 2026-10-29
   time: "10:00"
   minutes: 20
   details: >
+    Done 29 Oct (author): BigQuery API on; service account snapshot-bq (BigQuery Job User);
+    keyless sign-in from GitHub Actions (Workload Identity Federation: pool "github", provider
+    "github-repo", only pagagne/internet-security-snapshot) instead of a JSON key, so no key
+    exists anywhere; repository variables GCP_WIF_PROVIDER, GCP_SA_EMAIL, GCP_PROJECT. Tested
+    with the BigQuery check workflow (passed). No billing linked (sandbox). Original plan:
     First, one minute in GitHub (step 3 of the 27 Oct settings PDF): Settings > Advanced
     Security > Dependabot alerts > Enable (dependency graph on; security and version updates
     left off); tell Claude, who checks it.
