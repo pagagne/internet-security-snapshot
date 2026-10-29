@@ -143,7 +143,11 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   to its PR office where, when and how it is quoted; reprinting or redistributing whole
   documents needs contacting them first; logos and trademarks need permission. The study uses
   only alert titles, CVE IDs and dates, credited: **allowed**. Courtesy notice drafted for the
-  author (29 Oct).
+  author (29 Oct). PR office address confirmed by the author from the English terms page
+  (kept in the private correspondence index, not here). Two further conditions on the same page:
+  linking is free, with the same courtesy email; and any email or communication that links to
+  their site must tell readers they are being linked to JPCERT/CC's site. Their page addresses
+  may change without notice (see the 29 Oct inquiry on source stability).
 - **ENISA:** not used for now (no regular counts found; March review).
 - **PDPC (Singapore):** its site answered the workflow with a bot check (HTTP 202, empty page);
   not to be worked around.
