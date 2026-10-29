@@ -172,7 +172,14 @@ pages, searched by site. About 2 h for the trial; 3-4 h a quarter for the full s
 - B Run PHP2Shell as a one-off case study only.
 - C Not now.
 
-Evidence (2 Nov test, needs the author's Google Cloud project): _to fill_. Caveat known since
+Evidence (test run early, 29 Oct, keyless BigQuery; run-reports
+`research/2026-10-29T2336Z-httparchive_versions`): versions **are** recorded, in the
+`technologies[].info` field of `httparchive.crawl.pages`. On HTTP Archive's 10,000-page sample,
+a version was given for 19% of pages running PHP (most common 7.4.33, 8.3.35, 8.1.34, 5.6.40),
+49% of WordPress pages, 16-18% of Nginx and Apache pages, 64% of Drupal and 98% of jQuery; Joomla
+none. A version shows only where the server announces it, so the measure covers that subset and
+is reported as such. Cost: one month of PHP versions on the mobile root pages scans about 4.3 GB
+(dry run), well inside the free 1 TB a month, so a monthly capture costs nothing. Caveat known since
 28 Oct (HeroDevs, `docs/cases/php2shell.md`): distribution backports keep the old version number,
 so version shares are an upper bound on unpatched sites and "never fixed" means "no upstream fix";
 the measure is adopted only with that wording.
