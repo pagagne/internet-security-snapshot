@@ -4203,6 +4203,10 @@ reminder plus the schedule item) and it closes on **15 Feb 2027** (author's
 decision, 28 Oct: full project links, published only after the 4 Dec landing-page launch).
 Position type: Experiential Learning (UGA could not say whether an internship for credit fits
 better). Position dates: start 2 Mar 2027, end 11 Feb 2028 (last required second-coder round).
+**29 Oct: account suspended for review** by Handshake's Trust and Safety team (a possible terms
+issue; nothing posted; the organisation name also shows misspelled). The author asked them the
+same evening what is needed to restore it and to correct the name; reply awaited. The posting
+is not due until 4 Jan, so there is time.
 Schools (author, 28 Oct): UGA, Georgia State, Georgia Tech, Clemson, University of South
 Carolina, College of Charleston, The Citadel, Emory and MIT; each approves the employer
 separately. Same text on every board.
