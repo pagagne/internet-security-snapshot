@@ -664,8 +664,8 @@ items:
     Update docs/PUBLICATION_OPTIONS.md (written 28 Oct 2026): confirm the 2028 calls and dates
     (WEIS 2028 and the Journal of Cybersecurity special issue and its open-access fee; CVE/FIRST
     VulnCon 2028; IMC 2028; PAM 2029), check arXiv endorsement options, and what the Q1 and Q2
-    2027 results suggest is worth a paper. Ask the author whether an earlier figshare preprint
-    is his. Questions to the author as option cards on 12 Aug.
+    2027 results suggest is worth a paper (the author also has a figshare preprint, so a copy
+    there is an option). Questions to the author as option cards on 12 Aug.
 
 - id: publication-review
   owner: author

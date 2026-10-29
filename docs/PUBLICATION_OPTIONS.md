@@ -32,6 +32,10 @@ Suggested: Zenodo for data and code (already planned with each final release); O
 the written annual report (beside the registration); figshare only as an extra copy if the
 author already uses it; arXiv only with an endorser.
 
+The author already publishes on figshare (his preprint "The Unsecured Coordination Gap in
+Multi-Agent AI", confirmed 28 Oct 2026), so a figshare copy of the annual report would reach
+his existing readers; the official version stays on OSF beside the registration.
+
 ## Suggested order (to confirm in August 2027)
 1. Own annual report with a DOI, March 2028.
 2. WEIS 2028, then the journal special issue.
