@@ -96,6 +96,10 @@ option cards in chat (two to four options, the recommendation first and marked),
 meeting as a decision sheet in `docs/decisions/` (question, options, recommendation, evidence)
 linked from the calendar entry. News and ideas the author raises go to `docs/INQUIRIES.md`
 the same day, and anything needing a decision is added to the next meeting's sheet.
+The author listens to replies with a read-aloud tool (29 Oct): chat replies are written mostly in
+plain sentences, with tables, code and long links kept in the documents and PDFs. Option cards
+cannot be read aloud, so before each card the same questions and options, with the
+recommendation, are sent as a plain message he can listen to.
 Every email or form exchange with an outside organisation about the study (data sources,
 reviewers, universities) is recorded the day it is sent or received (author, 28 Oct): the full
 text in the private Drive folder `correspondence/`, an index in the Claude project
