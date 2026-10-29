@@ -13,7 +13,8 @@ something changes, or when the author or Claude starts it by hand. There are nin
 opens a box whose first line says what the workflow does. Workflows that contact anything
 outside (data sources, SANS, Google BigQuery) have **no button**, so a stray click can never send
 the study's traffic to a source: they run on their timer, or are started through GitHub's API
-by the Schedule workflow (dry runs) or by Claude (probes). A test keeps it that way.
+by the Schedule workflow (dry runs) or by Claude (probes). A test keeps it that way. When each may
+be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|

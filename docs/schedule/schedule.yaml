@@ -570,7 +570,9 @@ items:
   date: 2026-12-18
   time: "10:00"
   minutes: 30
-  details: docs/WORKFLOWS.md and the draft lock list (decision item 22), for the 21 Dec session.
+  details: >
+    docs/WORKFLOWS.md and the draft lock list (decision item 22), for the 21 Dec session; also the
+    draft SOP for manual runs after the pilot (docs/SOP_MANUAL_RUNS.md).
 
 - id: freeze-session
   owner: author
@@ -638,6 +640,14 @@ items:
     AI-credit rule evaluation on the pilot's final data (headline vs narrow count, a sample of
     lab-affiliation-only credits, spot checks) and the PHP2Shell case note
     docs/cases/php2shell.md. Send the author a heads-up.
+
+- id: sop-adopt
+  owner: author
+  title: Adopt the SOP for running workflows by hand (in force from 9 Feb)
+  date: 2027-02-08
+  details: >
+    docs/SOP_MANUAL_RUNS.md (drafted 29 Oct 2026, reviewed 18 Dec): adjust it from what the pilot
+    taught (quiet periods, re-run rules), then adopt it; it governs manual runs from 9 Feb 2027.
 
 - id: ai-rule-session
   owner: author

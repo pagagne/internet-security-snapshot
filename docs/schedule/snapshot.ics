@@ -942,8 +942,10 @@ DTEND:20261218T153000Z
 SUMMARY:[Paul] Snapshot: Review the workflow page and the lock list
 DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/WORKFLOWS.md and the draft lock list (
- decision item 22)\, for the 21 Dec session.\n\nSource: https://github.com/
- pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ decision item 22)\, for the 21 Dec session\; also the draft SOP for manual
+  runs after the pilot (https://github.com/pagagne/internet-security-snapsh
+ ot/blob/main/docs/SOP_MANUAL_RUNS.md).\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1304,6 +1306,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:sop-adopt@2027-02-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Adopt the SOP for running workflows by hand (in fo
+ rce from 9 Feb)
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/SOP_MANUAL_RUNS.md (drafted 29 Oct 202
+ 6\, reviewed 18 Dec): adjust it from what the pilot taught (quiet periods\
+ , re-run rules)\, then adopt it\; it governs manual runs from 9 Feb 2027.\
+ n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:ai-rule-session@2027-02-08@internet-security-snapshot
