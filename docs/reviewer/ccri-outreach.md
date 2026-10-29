@@ -1,6 +1,6 @@
 # Draft: email to the CCRI cybersecurity program director (for the author to rewrite)
 
-Send from the project address (planned 6 Nov) or your own; attach or link
+Send from the project address, internetsecuritysnapshot@gmail.com (created 29 Oct), or your own; attach or link
 `docs/reviewer/SECOND_CODER.md`. Project links can be shared freely from 4 Dec, when the
 website opens; before then, offer to send the registered plan on request.
 

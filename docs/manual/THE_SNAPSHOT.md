@@ -2238,6 +2238,13 @@ The author subscribed on 24 Oct 2026, and the older hand-made "Snapshot: ..." ev
 removed from the author's own calendar the same day (all of them are in the feed). Add new
 dates to the schedule file, never as hand-made calendar events, so the calendars cannot drift.
 
+#### The project's email address
+`internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)
+is the study's public contact: university postings, the reviewer invitation, outreach and, from
+4 Dec, the website. Its mail is forwarded to the author's own Gmail, so replies reach the same
+inbox Claude checks and are filed the same day (correspondence rule below). The password is
+the author's alone and never appears in chat or the repository.
+
 #### How decisions are put to the author
 (Author's preference, 26 Oct 2026.) Questions go together, never spread across messages: as
 option cards in chat (two to four options, the recommendation first and marked), and for a
@@ -3440,7 +3447,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 28 Oct 2026, 10:00 ET | Paul | Call the UGA Career Center about the reviewer posting - done |
 | Wed 28 Oct 2026, 14:00 ET | Paul | Write and send the Censys research-access application - sent 28 Oct |
 | Thu 29 Oct 2026, 10:00 ET | Paul | Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts - done |
-| Mon 02 Nov 2026 | Paul | Create the project email address |
+| Mon 02 Nov 2026 | Paul | Create the project email address - done 29 Oct (see docs/OPERATIONS.md) |
 | Mon 02 Nov 2026 | Claude | Recheck the trial AI-attack sweep's open items |
 | Mon 02 Nov 2026 | Claude | HHS OCR health-breach series - second attempt at the export |
 | Mon 02 Nov 2026 | Claude | HTTP Archive test - are software versions recorded? (after the BigQuery project) |
@@ -3628,7 +3635,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 28 Oct 2026, 10:00 ET | Call the UGA Career Center about the reviewer posting - done | Done 28 Oct (author, before 9:00): the call went well; an independent researcher can register on Handshake; the Career Center could not say whether an unpaid internship with course credit is the better listing, so the role is listed as Experiential Learning. Original: Employer relations, (706) 542-3375. Ask whether an independent researcher can post an unpaid, remote research role on hireUGA (Handshake), and whether it is better listed as an unpaid internship with course credit. Note who you spoke with. |
 | Wed 28 Oct 2026, 14:00 ET | Write and send the Censys research-access application - sent 28 Oct | Moved from 15 Feb 2027 (17 Nov, then 28 Oct at the author's choice). In your own words: Censys rejects requests written with AI tools, and the standing rules say you write it. It is an email to research-access-request@censys.com (no web form) covering: a 3-4 sentence project description with the research question and where results are published; your background (public profile or past work); how Censys helps and which access (BigQuery; delayed data is fine); how recent the data must be; confirmation of non-commercial use and citing Censys; agreement to the terms; your Censys username (make an account first). Guide: Claude doc "Censys Research Access: Application Guide". Log it in docs/PERMISSIONS.md (Claude can do the log). Access to choose: option 3 on their page, additional API endpoints and Censys credits (counts by software version or CVE without host data; enough credits for weekly counts on about 80-100 flaws a quarter, a few hundred count queries a month). Not raw Parquet downloads (too large; host data). Platform UI optional. Two things to ask: (1) can count queries be run as of past dates, back to late 2025, for a baseline year? (2) is BigQuery access also available? It would run in the Google Cloud project set up on 29 Oct. |
 | Thu 29 Oct 2026, 10:00 ET | Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts - done | Done 29 Oct (author): BigQuery API on; service account snapshot-bq (BigQuery Job User); keyless sign-in from GitHub Actions (Workload Identity Federation: pool "github", provider "github-repo", only pagagne/internet-security-snapshot) instead of a JSON key, so no key exists anywhere; repository variables GCP_WIF_PROVIDER, GCP_SA_EMAIL, GCP_PROJECT. Tested with the BigQuery check workflow (passed). No billing linked (sandbox). Original plan: First, one minute in GitHub (step 3 of the 27 Oct settings PDF): Settings > Advanced Security > Dependabot alerts > Enable (dependency graph on; security and version updates left off); tell Claude, who checks it. The project "internet-security-snapshot" already exists (made 27 Oct for the Drive backup's client ID). console.cloud.google.com, that project: enable the BigQuery API; no billing needed (the BigQuery sandbox includes 1 TB of queries a month); if you ever link billing, add a budget alert at $1; IAM > Service accounts > create "snapshot-bq" with the role BigQuery Job User; Keys > Add key > JSON; in GitHub > Settings > Secrets and variables > Actions, add GCP_SA_KEY (paste the whole file) and GCP_PROJECT (the project ID). Never paste the key into chat. Delete the downloaded file afterwards. |
-| Mon 02 Nov 2026 | Create the project email address | For university postings and the reviewer invitation (instead of a personal address). |
+| Mon 02 Nov 2026 | Create the project email address - done 29 Oct (see docs/OPERATIONS.md) | For university postings and the reviewer invitation (instead of a personal address). |
 | Wed 04 Nov 2026, 10:00 ET | Email CCRI's cybersecurity program director (alumni route, second coder) | Rewrite docs/reviewer/ccri-outreach.md in your own words and send it to the program director, with docs/reviewer/SECOND_CODER.md. Mainly for the second coder; also asks about CCRI graduates now in a bachelor's programme for the full review. Disclose your alumni tie if a CCRI candidate is chosen (the invitation's conflict-of-interest section). Tell Claude, who logs it. |
 | Thu 05 Nov 2026, 10:00 ET | Email SANS asking them to suggest a reviewer (former-employer route) | Write from docs/reviewer/sans-outreach.md (facts to cover; your own words) and send to the SANS Technology Institute or another SANS contact that reaches the right people, with the invitation letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027); optional: a second coder. Disclose that you worked at SANS and that the study uses Internet Storm Center data; ask for someone you did not work with. Tell Claude, who logs it. |
 | Fri 06 Nov 2026, 11:00 ET | Check the AI-attack entries awaiting review (trial sweep, Wiz, TrendAI) and rate their evidence | exploratory/ai_attack_campaigns.csv, the 17 rows marked "awaiting author check" (the trial sweep's, in exploratory/sweep-trial-2026.md, plus Wiz and the three TrendAI cases): keep or exclude each, and rate ai_evidence confirmed or assessed for every row still "unrated" (added 29 Oct); two questions in the trial tables (Shai-Hulud: X3 or X5? keep the single-source Brazil case?). Claude's recheck of the primary reports is done by 2 Nov. |
@@ -4246,7 +4253,7 @@ Applications close 15 February 2027; the reviewer is confirmed by 1 March 2027.
 
 *Source: [`docs/reviewer/ccri-outreach.md`](https://github.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/ccri-outreach.md)*
 
-Send from the project address (planned 6 Nov) or your own; attach or link
+Send from the project address, internetsecuritysnapshot@gmail.com (created 29 Oct), or your own; attach or link
 `docs/reviewer/SECOND_CODER.md`. Project links can be shared freely from 4 Dec, when the
 website opens; before then, offer to send the registered plan on request.
 
@@ -4285,6 +4292,8 @@ Paul Gagne
 ## Fact sheet: asking SANS to suggest a reviewer (for the author to write from)
 
 *Source: [`docs/reviewer/sans-outreach.md`](https://github.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/sans-outreach.md)*
+
+Send from the project address, internetsecuritysnapshot@gmail.com (created 29 Oct 2026).
 
 Planned for Tue 10 Nov 2026 (schedule item `sans-email`), the day after the CCRI email. The
 author writes the email in his own words; this sheet lists what it should cover.

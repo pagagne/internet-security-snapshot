@@ -101,6 +101,13 @@ The author subscribed on 24 Oct 2026, and the older hand-made "Snapshot: ..." ev
 removed from the author's own calendar the same day (all of them are in the feed). Add new
 dates to the schedule file, never as hand-made calendar events, so the calendars cannot drift.
 
+## The project's email address
+`internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)
+is the study's public contact: university postings, the reviewer invitation, outreach and, from
+4 Dec, the website. Its mail is forwarded to the author's own Gmail, so replies reach the same
+inbox Claude checks and are filed the same day (correspondence rule below). The password is
+the author's alone and never appears in chat or the repository.
+
 ## How decisions are put to the author
 (Author's preference, 26 Oct 2026.) Questions go together, never spread across messages: as
 option cards in chat (two to four options, the recommendation first and marked), and for a

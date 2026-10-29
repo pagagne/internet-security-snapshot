@@ -1,5 +1,7 @@
 # Fact sheet: asking SANS to suggest a reviewer (for the author to write from)
 
+Send from the project address, internetsecuritysnapshot@gmail.com (created 29 Oct 2026).
+
 Planned for Tue 10 Nov 2026 (schedule item `sans-email`), the day after the CCRI email. The
 author writes the email in his own words; this sheet lists what it should cover.
 

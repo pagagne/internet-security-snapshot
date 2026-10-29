@@ -46,6 +46,7 @@ ALLOW = {
     "research-access-request@censys.com": "Censys's public research-access address",
     "psirt@cisco.com": "Cisco's public security address (vendor advisory sample)",
     "(706) 542-3375": "UGA Career Center employer-relations office line (public)",
+    "internetsecuritysnapshot@gmail.com": "the study's own public contact address (created 29 Oct 2026)",
 }
 SKIP_SUFFIX = (".png", ".jpg", ".svg", ".ico", ".pdf", ".zip", ".parquet", ".gz", ".bundle", ".lock")
 SKIP_PATHS = ("src/snapshot/privacy.py", "tests/test_privacy.py")

@@ -108,7 +108,7 @@ items:
 
 - id: project-email
   owner: author
-  title: Create the project email address
+  title: Create the project email address - done 29 Oct (see docs/OPERATIONS.md)
   date: 2026-11-02  # moved up 29 Oct (author; was 11-06)
   details: For university postings and the reviewer invitation (instead of a personal address).
 

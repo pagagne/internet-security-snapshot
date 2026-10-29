@@ -242,7 +242,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Create the project email address
+SUMMARY:[Paul] Snapshot: Create the project email address - done 29 Oct (se
+ e docs/OPERATIONS.md)
 DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
  eviewer invitation (instead of a personal address).\n\nSource: https://git
  hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
