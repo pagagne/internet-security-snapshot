@@ -84,8 +84,8 @@ from one is published until its permission is granted.
 | Cloudflare Radar and ransomware.live by region | Attack, bot and ransomware trends by world region | Exploratory (X21) |
 | UK ICO, OAIC, PDPC, ENISA | Data-breach notifications outside the US | Exploratory (X22) |
 | Quarterly web sweep, nine languages | AI-run attack reports outside the usual channels | Exploratory (X3) |
-| GreyNoise | Attack activity by CVE | Request 27 Oct 2026 | To send |
-| CrowdSec | Exploitation timelines by CVE | Question 27 Oct 2026 | To send |
+| GreyNoise | Attack activity by CVE | Requested 29 Oct 2026 | Awaiting reply |
+| CrowdSec | Exploitation timelines by CVE | Requested 29 Oct 2026 | Awaiting reply |
 
 A source without a written yes by the 21 Dec 2026 decision session runs without it for the
 Q4 2026 pilot; a later yes is switched on at the next quarter's run. Gaps are never filled by
