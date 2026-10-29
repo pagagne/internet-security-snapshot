@@ -26,6 +26,15 @@ Run box opens with a sentence saying what the workflow does.
 Research probe, Honeypot capture, BigQuery check. They contact outside sources, so a stray
 click must never start them. See section 5.
 
+### The workflows at a glance
+
+![Workflows: internal with a Run button, external without one, and those proposed for locking](diagrams/workflow_runs.png)
+
+*Blue: internal, repository only, with a Run button. Orange: external, no Run button, started
+on a timer or by Claude through GitHub's API. Red with a thick border: proposed to be locked at
+the 29 Dec 2026 freeze (decision item 22), so they cannot change while the study runs; all
+others may change, with every change logged. Source: `docs/diagrams/workflow_runs.dot`.*
+
 ## 3. Quiet periods: when no workflow is run by hand
 
 1. **Pull days.** The 1st of January, February, April, May, July, August, October and

@@ -1,0 +1,50 @@
+// Workflows: internal (Run button) vs external (API only, no button), and the proposed lock at
+// the 29 Dec 2026 freeze (decision item 22: draft lock list 14 Dec, author's review 18 Dec,
+// decided 21 Dec). Source of truth: docs/WORKFLOWS.md and docs/SOP_MANUAL_RUNS.md.
+// Render: dot -Tpng -Gdpi=150 docs/diagrams/workflow_runs.dot -o docs/diagrams/workflow_runs.png
+digraph workflows {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=13, nodesep=0.25, ranksep=0.7, newrank=true, compound=true, pad=0.3,
+         label="Red, thick border = LOCKED at the 29 Dec freeze (proposed)    Blue / orange = may change, with every change logged\nLinks between workflows (Schedule starts the dry-run pulls; each pull feeds Rebuild check) are in docs/WORKFLOWS.md",
+         labelloc=b];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", width=2.2];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555"];
+
+  you    [label="You or Claude\n(Run button)", shape=oval, fillcolor="#ffffff"];
+  claude [label="Claude only\n(GitHub's API)", shape=oval, fillcolor="#ffffff"];
+
+  subgraph cluster_int {
+    label="INTERNAL: repository only, Run button"; style="rounded,filled"; fillcolor="#f4f8fd"; color="#1f4e79"; fontcolor="#1f4e79";
+    node [fillcolor="#e1ecf8", color="#1f4e79"];
+    checks  [label="Checks\nevery change"];
+    privacy [label="Privacy scan\ntwice daily"];
+    sched   [label="Schedule\n3x daily"];
+    rebuild [label="Rebuild check\n10th monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
+    diag    [label="Diagrams\nwhen a diagram changes"];
+    backup  [label="Backup\n3rd monthly"];
+  }
+
+  subgraph cluster_ext {
+    label="EXTERNAL: contacts outside sources, no Run button"; style="rounded,filled"; fillcolor="#fdf6f0"; color="#b85c1e"; fontcolor="#b85c1e";
+    node [fillcolor="#fbe7d6", color="#b85c1e"];
+    pull  [label="Quarterly pull\n1st of Jan/Apr/Jul/Oct\nand a month later\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
+    honey [label="Honeypot capture\n2nd monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
+    probe [label="Research probe\nwhen asked"];
+    bq    [label="BigQuery check\nwhen asked"];
+  }
+
+  subgraph cluster_out {
+    label="Outside the repository"; style="rounded,filled"; fillcolor="#f5f5f5"; color="#888888"; fontcolor="#555555";
+    node [shape=cylinder, fillcolor="#ececec", color="#888888", style=filled];
+    sources [label="Data sources\nCVE, KEV, NVD, EPSS,\nSEC, Cloudflare,\nransomware.live"];
+    sans    [label="SANS Internet\nStorm Center"];
+    gcp     [label="Your Google Cloud\n(BigQuery)"];
+    drive   [label="Your Google Drive\n(private copies)"];
+  }
+
+  // one column each: who starts it | the workflows | what they reach
+  { rank=same; you; claude; }
+    { rank=same; sources; sans; gcp; drive; }
+  you -> privacy [lhead=cluster_int, color="#1f4e79", label="any of these"];
+  claude -> probe [lhead=cluster_ext, color="#b85c1e", label="probes, checks"];
+  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive;
+}

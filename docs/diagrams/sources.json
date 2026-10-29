@@ -138,6 +138,20 @@
     "docs/diagrams/architecture.svg": "3e741b8366e559e5"
    },
    "reviewed_on": "2026-10-27"
+  },
+  "workflow_runs": {
+   "doc": "docs/SOP_MANUAL_RUNS.md",
+   "source": "docs/diagrams/workflow_runs.dot",
+   "depends_on": [
+    "docs/WORKFLOWS.md",
+    ".github/workflows/checks.yml"
+   ],
+   "fingerprints": {
+    "docs/WORKFLOWS.md": "6e5f15bfc67d8e95",
+    ".github/workflows/checks.yml": "e57e379b11047e66",
+    "docs/diagrams/workflow_runs.dot": "3f4631492d16f9af"
+   },
+   "reviewed_on": "2026-10-29"
   }
  }
 }
