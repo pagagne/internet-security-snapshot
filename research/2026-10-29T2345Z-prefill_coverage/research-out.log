@@ -1,0 +1,14 @@
+# Fix-date pre-fill coverage, KEV additions 2026-04-01 to 2026-09-30
+
+Flaws: 175
+
+- assumed: 83
+- CNA disclosure date: 32
+- Microsoft: 21
+- GitHub: 18
+- Cisco: 13
+- Linux kernel: 5
+- Palo Alto: 2
+- Red Hat: 1
+
+Assumed (no source found): 83 of 175 (47%); needing a hand check: 130
