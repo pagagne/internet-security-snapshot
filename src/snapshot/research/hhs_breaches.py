@@ -79,6 +79,17 @@ def fetch() -> tuple[pd.DataFrame | None, list[str]]:
     cands = candidates(r.text)
     notes.append(f"forms {forms}; export-like controls: " +
                  "; ".join(f"{c['tag']} {c['id']} '{c['title']}' {c['onclick'][:60]}" for c in cands[:12]))
+    # Page outline for diagnosis: element ids, control titles and script/link targets only
+    # (no visible text, so no entity names).
+    outline = []
+    for tag, attrs in TAG.findall(r.text):
+        at = _attrs(attrs)
+        if at.get("id") or at.get("title") or at.get("alt"):
+            outline.append(f"{tag} id={at.get('id', '')} title={at.get('title', '')[:40]} alt={at.get('alt', '')[:40]} "
+                           f"href={at.get('href', '')[:80]} src={at.get('src', '')[:80]}")
+    outline += [f"script {x[:120]}" for x in re.findall(r'<script[^>]*src="([^"]+)"', r.text)]
+    outline += [f"link {x[:120]}" for x in re.findall(r'<a[^>]*href="([^"#][^"]*)"', r.text)]
+    notes.append("OUTLINE\n" + "\n".join(outline[:150]))
     form = "ocrForm" if "ocrForm" in forms else (forms[-1] if forms else None)
     if not form:
         return None, notes
