@@ -1,0 +1,54 @@
+{
+ "jpcert_ja": {
+  "home": "https://www.jpcert.or.jp/",
+  "status": 200,
+  "links": [
+   {
+    "text": "ご利用にあたって",
+    "url": "https://www.jpcert.or.jp/guide.html"
+   },
+   {
+    "text": "プライバシーポリシー",
+    "url": "https://www.jpcert.or.jp/privacy.html"
+   }
+  ],
+  "pages": [
+   {
+    "text": "ご利用にあたって",
+    "url": "https://www.jpcert.or.jp/guide.html",
+    "status": 200,
+    "sample": "jpcert_ja_0.txt"
+   },
+   {
+    "text": "プライバシーポリシー",
+    "url": "https://www.jpcert.or.jp/privacy.html",
+    "status": 200,
+    "sample": "jpcert_ja_1.txt"
+   }
+  ]
+ },
+ "jpcert_en": {
+  "home": "https://www.jpcert.or.jp/english/",
+  "status": 200,
+  "links": [
+   {
+    "text": "Privacy Policy",
+    "url": "https://www.jpcert.or.jp/english/privacy.html"
+   }
+  ],
+  "pages": [
+   {
+    "text": "Privacy Policy",
+    "url": "https://www.jpcert.or.jp/english/privacy.html",
+    "status": 200,
+    "sample": "jpcert_en_0.txt"
+   }
+  ]
+ },
+ "apnic_labs": {
+  "home": "https://labs.apnic.net/",
+  "status": 200,
+  "links": [],
+  "pages": []
+ }
+}
