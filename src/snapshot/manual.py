@@ -118,7 +118,14 @@ def unlisted(root: Path | None = None) -> list[str]:
     import subprocess
     root = root or _repo_root()
     cfg = load(root)
-    files = subprocess.run(["git", "ls-files", "*.md"], cwd=root, capture_output=True, text=True).stdout.split()
+    try:
+        files = subprocess.run(["git", "ls-files", "*.md"], cwd=root, capture_output=True, text=True,
+                               check=True).stdout.split()
+    except (OSError, subprocess.CalledProcessError):   # no git (the analysis container): walk the tree
+        skip = {".git", "data", "build", "research-out", "__pycache__", ".venv"}
+        files = sorted(p.relative_to(root).as_posix() for p in root.rglob("*.md")
+                       if not skip & set(p.relative_to(root).parts) and ".egg-info" not in str(p)
+                       and not any(x.startswith(".") for x in p.relative_to(root).parts))
     known = set(all_docs(root, cfg)) | set(cfg.get("excluded", {}))
     return [f for f in files if f not in known and not f.startswith("tests/")]
 
