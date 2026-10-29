@@ -1,7 +1,8 @@
 name: Research probe
 
 # Manual research runs (docs/RESEARCH_PLAN.md). Results go to the run-reports branch under
-# research/. Uses only public sources; no secrets.
+# research/. Public sources; the only secrets are the Radar and ransomware.live keys, given
+# to global_probe alone for its X21 tests.
 on:
   workflow_dispatch:
     inputs:
@@ -33,6 +34,9 @@ jobs:
       - name: Probe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # global_probe only: X21 tests (Radar by continent; ransomware.live counts, api-pro as permitted)
+          CLOUDFLARE_TOKEN: ${{ inputs.task == 'global_probe' && secrets.CLOUDFLARE_TOKEN || '' }}
+          RANSOMWARE_LIVE_KEY: ${{ inputs.task == 'global_probe' && secrets.RANSOMWARE_LIVE_KEY || '' }}
           TASK: ${{ inputs.task }}
           START: ${{ inputs.start }}
           END: ${{ inputs.end }}
