@@ -830,6 +830,8 @@ items:
     (kept or excluded, with the reason) and add the kept ones to
     exploratory/ai_attack_campaigns.csv marked for the author's check. Finds incidents reported
     outside the AI-lab and vendor channels; it cannot find what nobody reports.
+    Then start the Research task cve_check: every CVE ID in the campaign and sweep logs must
+    exist (added 29 Oct 2026).
 
 - id: hand-check-window
   owner: author

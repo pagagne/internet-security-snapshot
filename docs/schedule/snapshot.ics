@@ -1052,8 +1052,10 @@ DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the
  ason) and add the kept ones to https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
  thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ els\; it cannot find what nobody reports. Then start the Research task cve
+ _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
+ ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1589,8 +1591,10 @@ DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the
  ason) and add the kept ones to https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
  thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ els\; it cannot find what nobody reports. Then start the Research task cve
+ _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
+ ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1978,8 +1982,10 @@ DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the
  ason) and add the kept ones to https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
  thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ els\; it cannot find what nobody reports. Then start the Research task cve
+ _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
+ ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2324,8 +2330,10 @@ DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the
  ason) and add the kept ones to https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
  thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ els\; it cannot find what nobody reports. Then start the Research task cve
+ _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
+ ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2625,8 +2633,10 @@ DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the
  ason) and add the kept ones to https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
  thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ els\; it cannot find what nobody reports. Then start the Research task cve
+ _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
+ ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

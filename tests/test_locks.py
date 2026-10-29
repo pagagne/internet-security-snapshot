@@ -3,6 +3,8 @@
 import hashlib
 from pathlib import Path
 
+import re
+
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,3 +55,7 @@ def test_ai_attack_campaign_log_is_well_formed():
         assert r["source_url"].startswith("https://")
         assert r["confirmed_by_second_source"] in {"yes", "no"}
         assert r["conflict_of_interest"] in {"yes", "no"}
+        # added 2026-10-29 (author): how strong the evidence of AI use is
+        assert r["ai_evidence"] in {"confirmed", "assessed", "unrated"}, r["campaign"]
+        for cid in filter(None, r["cve_ids"].split(";")):
+            assert re.fullmatch(r"CVE-\d{4}-\d{4,}", cid), (r["campaign"], cid)

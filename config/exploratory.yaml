@@ -41,6 +41,13 @@ measures:
       test) that reached real systems with no attacker directing it. Such events are logged
       and reported beside the campaigns, with the same fields, but never added to the campaign
       count. First case: Gemini in Irregular's May 2026 test (reported 14 Aug 2026).
+      Amended 2026-10-29 (author's decision, after TrendAI's "Not only ARTEX" report): each row
+      records ai_evidence, "confirmed" when the reporter shows attacker-side proof of AI use
+      (platform logs, prompts, AI-written plans) or "assessed" when it is judged from style or
+      indirect signs; rows logged before then are "unrated" until the author's check. Counts are
+      reported for all rows and for confirmed rows alone. Every CVE ID recorded in the campaign
+      and sweep logs is checked against CVE.org (snapshot.cvecheck, Research task cve_check)
+      when rows are added and at each sweep, because AI tools invent identifiers.
     report_sources:
       - Threat-intelligence reports on AI misuse from AI labs (Anthropic, OpenAI, Google GTIG); Anthropic is a conflict of interest and is labeled as such
       - Security vendor and researcher disclosures (e.g. NorForge for Cairn; GreyNoise for the PaperCut agent campaign)
@@ -79,6 +86,8 @@ measures:
         - News sites, for leads only (The Record, BleepingComputer, SecurityWeek, Dark Reading)
         - Research blogs outside the US and Europe (added 2026-10-26): AhnLab ASEC (Korea), Qi An Xin and Qihoo 360 (China), Trend Micro and JPCERT/CC (Japan)
         - Chinese security sites (added 2026-10-26 after the trial): FreeBuf, Anquanke, Security Insight (secrss.com), 4hou
+        - TrendAI (Trend Micro) Deep Research, English and Japanese editions (added 2026-10-29; the Japanese edition of "Not only ARTEX" came out four days before the English)
+        - Japan's National Cybersecurity Office (NCO) alerts and advisories (added 2026-10-29)
         - Russian security sites (added 2026-10-26 after the trial): Securelist.ru, Habr, BI.ZONE, F6, Kaspersky.ru, Anti-Malware, SecurityLab, Xakep (Positive Technologies research read only; it is under US sanctions)
       rules: >
         A candidate is logged in ai_attack_campaigns.csv only if a named organisation or

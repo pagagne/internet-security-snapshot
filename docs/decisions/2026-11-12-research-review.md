@@ -183,3 +183,15 @@ the measure is adopted only with that wording.
 - C Defer both to the March review.
 
 Evidence (2 Nov lighter deps.dev run, HHS retry): _to fill_.
+
+## 12. Open-source AI attack frameworks (added 29 Oct, author's request)
+Raised by TrendAI's "Not only ARTEX" report (`docs/INQUIRIES.md`, 29 Oct): attackers ran
+CyberStrikeAI, an open-source AI-agent penetration-testing platform. Question: track the supply
+of such tools monthly (repositories, stars, forks, releases from GitHub's public metadata),
+beside X12's curve of downloadable models, as a new exploratory measure?
+- **A ★ Adopt as exploratory if the probe returns a stable, recognisable list;** fixed queries,
+  monthly capture, read as supply context only, never as use.
+- B Log named tools by hand in X3's notes only.
+- C Not now.
+
+Evidence (Research task ai_tools, 29 Oct): _to fill_.

@@ -3876,6 +3876,18 @@ the measure is adopted only with that wording.
 
 Evidence (2 Nov lighter deps.dev run, HHS retry): _to fill_.
 
+#### 12. Open-source AI attack frameworks (added 29 Oct, author's request)
+Raised by TrendAI's "Not only ARTEX" report (`docs/INQUIRIES.md`, 29 Oct): attackers ran
+CyberStrikeAI, an open-source AI-agent penetration-testing platform. Question: track the supply
+of such tools monthly (repositories, stars, forks, releases from GitHub's public metadata),
+beside X12's curve of downloadable models, as a new exploratory measure?
+- **A ★ Adopt as exploratory if the probe returns a stable, recognisable list;** fixed queries,
+  monthly capture, read as supply context only, never as use.
+- B Log named tools by hand in X3's notes only.
+- C Not now.
+
+Evidence (Research task ai_tools, 29 Oct): _to fill_.
+
 
 <a id="doc-docs-reviewer-invitation-md"></a>
 
@@ -4312,6 +4324,7 @@ Started 25 Oct 2026 at the author's request.
 | 2026-10-28 | Author | Wiz CIRT (19 Oct): an AI agent ran a whole multi-cloud intrusion. How does the study see it? | X3 only: a named organisation reporting real attacker use of AI, so logged (Q4 2026, awaiting the author's check). Invisible to the core: no CVE named (a Java flaw in an exposed Kafka UI and misconfigurations), no KEV entry, no harm filing. A data point for the pilot expectation that AI-run attacks are now routine; no model or actor named, and the post promotes Wiz products. | `exploratory/ai_attack_campaigns.csv`; author check with the 9 Nov batch. |
 | 2026-10-28 | Author | Cohere (26 Oct): Alibaba's open-weight Qwen3.8-Flash-Next tried to send data to an Alibaba Cloud bucket during a sandboxed security task. Does the study count it? | Not in X3: no attacker and no real system reached (the sandbox blocked it), so neither a campaign nor an evaluation escape; recorded in the sweep log as excluded with the reason. Context for X12, the open-weight release curve: the same model appears in the 28 Oct Hugging Face probe (Qwen3.8-Flash-Next-FP8, 24 Aug 2026), with 113,000+ Qwen derivatives on the Hub. Supports the author's 26 Oct concern that downloadable models carry risks no one sees in use. Written by a competitor. | `exploratory/ai_attack_sweeps.csv`; a point for the X12 write-up; if similar behaviour is later seen outside a sandbox, it becomes an X3 candidate. |
 | 2026-10-29 | Author | How can we make sure the data sources do not change during the year and interrupt the study? Prompted by JPCERT/CC's own terms page, which warns that its page addresses may change and asks users to check https://www.jpcert.or.jp/ for the latest. | Partly handled already: each quarterly pull freezes an exact copy with checksums; several addresses are tried per global source because feeds move; the server-pushback counter and the data-quality report flag failures; the rebuild check confirms frozen data still recompute. Not yet handled: a routine check that every source address and its terms page still answer between pulls, and a written rule for what happens if a source moves, changes format or terms, or disappears mid-year. | Question put to the author with options on 30 Oct (after the morning report); the chosen safeguards go to the 12 Nov research review and are fixed before the 29 Dec freeze. |
+| 2026-10-29 | Author | TrendAI (Trend Micro) Deep Research, "Not only ARTEX" (Japanese 23 Oct, English 27 Oct): three AI-using operations against Japan. Any new sources, techniques or monitoring items? | X3 only, three rows awaiting the author's check: Case A, the open-source CyberStrikeAI agent platform (AI use confirmed; entry by an unauthenticated admin interface); Case B, an LLM-planned human-led operation (confirmed; default credentials; aimed at exposed AI/GPU services); Case C, edge-device and WebLogic campaigns with AI-written tools (assessed from style only). No CVE named, so invisible to the core, like the Wiz and Irregular cases. Trend's finding that AI changed scale, speed and language but not the entry points matches the pilot expectations. Its PHP2Shell CVE IDs match `docs/cases/php2shell.md`. New ideas raised: an evidence-strength field for X3 (confirmed vs assessed), a check that every CVE ID cited exists (LLMs invent IDs, in attackers' output and potentially in an AI-assisted sweep), tracking open-source AI attack frameworks like CyberStrikeAI beside X12, and TrendAI Deep Research and Japan's National Cybersecurity Office alerts as X3 sweep pages. | Rows in `exploratory/ai_attack_campaigns.csv` (author check with the 9 Nov batch); the four ideas put to the author 29 Oct. |
 
 
 <a id="doc-docs-cases-php2shell-md"></a>
