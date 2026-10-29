@@ -66,6 +66,12 @@ def prefill(links: list[str], cve_published: str) -> tuple[str, str]:
 MSRC_SUG = "https://api.msrc.microsoft.com/sug/v2.0/en-US/vulnerability?$filter=cveNumber eq '%s'"
 CISCO_CSAF = "https://sec.cloudapps.cisco.com/security/center/contentjson/CiscoSecurityAdvisory/{sa}/csaf/{sa}.json"
 PAN_JSON = "https://security.paloaltonetworks.com/json/{cve}"
+# Added 29 Oct 2026 (schedule item kernel-fixdates-prefill): Linux kernel fixing commits, Siemens
+# CSAF and Red Hat CSAF VEX. The 25 Oct probe dated 5 of 8 kernel KEV flaws from their commits.
+KERNEL_SHA = re.compile(r"git\.kernel\.org/.*?/c/([0-9a-f]{12,40})")
+SIEMENS_SSA = re.compile(r"cert-portal\.siemens\.com/productcert/\w+/(ssa-\d+)", re.I)
+SIEMENS_CSAF = "https://cert-portal.siemens.com/productcert/csaf/{ssa}.json"
+REDHAT_VEX = "https://security.access.redhat.com/data/csaf/v2/vex/{year}/{cve}.json"
 CISCO_SA = re.compile(r"(cisco-sa-[\w-]+)")
 FIX_LATER = re.compile(r"fix(ed)? release|fixed software|hotfix|fix release timeline|software fix|"
                        r"patch(es)? (is|are) now available|fixes? (is|are) now available", re.I)
@@ -90,7 +96,8 @@ def prefill_exploited(cve_id: str, refs: list[str], vendor: str, published: str,
     """Fix-date pre-fill for a CVE in the exploited set (option (a)).
 
     Returns (YYYY-MM-DD, source note, needs_hand_check). Order: GitHub links; Microsoft
-    Update Guide; Cisco CSAF; Palo Alto JSON; CNA datePublic; else publication (assumed).
+    Update Guide; Cisco CSAF; Linux kernel commits; Siemens CSAF; Red Hat VEX; Palo Alto JSON;
+    CNA datePublic; else publication (assumed).
     """
     d, src = prefill(refs, published)
     if not src.startswith("ASSUMED"):
@@ -108,6 +115,30 @@ def prefill_exploited(cve_id: str, refs: list[str], vendor: str, published: str,
             hist = [h.get("summary", "") for h in tr.get("revision_history") or []]
             later = fix_later_signal(hist)
             return tr["initial_release_date"][:10], f"Cisco advisory {m.group(1)}" + (" (fixed releases changed later)" if later else ""), later
+    if "linux" in v and "git.kernel.org" in joined:
+        dates = []
+        for sha in sorted({m.group(1) for r in refs for m in [KERNEL_SHA.search(r)] if m})[:8]:
+            for repo in ("torvalds/linux", "gregkh/linux"):
+                c = ((_get(f"/repos/{repo}/commits/{sha}") or {}).get("commit") or {})
+                date = (c.get("committer") or c.get("author") or {}).get("date")
+                if date:
+                    dates.append(date[:10])
+                    break
+        if dates:
+            return min(dates), "Linux kernel fixing commit (earliest of those named in the CVE record)", True
+    if m := SIEMENS_SSA.search(joined):
+        j = _vendor_json(SIEMENS_CSAF.format(ssa=m.group(1).lower())) or {}
+        tr = (j.get("document") or {}).get("tracking") or {}
+        if tr.get("initial_release_date"):
+            hist = [h.get("summary", "") for h in tr.get("revision_history") or []]
+            later = fix_later_signal(hist)
+            return tr["initial_release_date"][:10], f"Siemens advisory {m.group(1).upper()}" + (" (fixes changed later)" if later else ""), later
+    if "red hat" in v or "redhat" in v:
+        j = _vendor_json(REDHAT_VEX.format(year=cve_id.split("-")[1], cve=cve_id.lower())) or {}
+        fixes = [r.get("date", "")[:10] for vv in j.get("vulnerabilities") or []
+                 for r in vv.get("remediations") or [] if r.get("category") == "vendor_fix" and r.get("date")]
+        if fixes:
+            return min(fixes), "Red Hat CSAF VEX: earliest vendor fix", False
     if "palo alto" in v or "paloaltonetworks" in joined:
         j = _vendor_json(PAN_JSON.format(cve=cve_id)) or {}
         cna = (j.get("containers") or {}).get("cna") or {}
