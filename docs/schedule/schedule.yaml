@@ -609,7 +609,8 @@ items:
   details: >
     On each approved board (UGA first); applications close 15 Feb. The UGA posting is already
     written and saved in Handshake as a draft (28 Oct; text in docs/reviewer/HANDSHAKE_POSTING.md):
-    check the links work (the site opens 4 Dec) and set it live today.
+    check the links work (the site opens 4 Dec) and set it live today. First paste your bio
+    into the Handshake employer profile (short version, Claude project doc author-bio).
 
 - id: reviewer-line-up
   owner: author
@@ -618,7 +619,7 @@ items:
   time: "10:00"
   minutes: 60
   details: >
-    Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer") with the sample spot-check worksheet (docs/reviewer/sample-worksheet); candidates from
+    Add your bio (Claude project doc author-bio) to the invitation. Send the invitation (docs/reviewer/INVITATION.md; edit the claude.ai doc "Invitation: Independent Reviewer") with the sample spot-check worksheet (docs/reviewer/sample-worksheet); candidates from
     the 21 Dec shortlist, including any CCRI candidates (second coder; outreach 9 Nov). The
     second coder can be the same person. Confirm by 1 March.
 

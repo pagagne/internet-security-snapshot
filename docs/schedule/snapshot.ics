@@ -1082,9 +1082,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nOn each approved board (UGA first
  )\; applications close 15 Feb. The UGA posting is already written and save
  d in Handshake as a draft (28 Oct\; text in https://github.com/pagagne/int
  ernet-security-snapshot/blob/main/docs/reviewer/HANDSHAKE_POSTING.md): che
- ck the links work (the site opens 4 Dec) and set it live today.\n\nSource:
-  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
- dule/schedule.yaml
+ ck the links work (the site opens 4 Dec) and set it live today. First past
+ e your bio into the Handshake employer profile (short version\, Claude pro
+ ject doc author-bio).\n\nSource: https://github.com/pagagne/internet-secur
+ ity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1143,15 +1144,16 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270112T150000Z
 DTEND:20270112T160000Z
 SUMMARY:[Paul] Snapshot: Line up the external reviewer and second coder
-DESCRIPTION:Responsible: Paul (author)\n\nSend the invitation (https://gith
- ub.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/INVITATI
- ON.md\; edit the claude.ai doc "Invitation: Independent Reviewer") with th
- e sample spot-check worksheet (https://github.com/pagagne/internet-securit
- y-snapshot/tree/main/docs/reviewer/sample-worksheet)\; candidates from the
-  21 Dec shortlist\, including any CCRI candidates (second coder\; outreach
-  9 Nov). The second coder can be the same person. Confirm by 1 March.\n\nS
- ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
- s/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nAdd your bio (Claude project doc 
+ author-bio) to the invitation. Send the invitation (https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/reviewer/INVITATION.md\; ed
+ it the claude.ai doc "Invitation: Independent Reviewer") with the sample s
+ pot-check worksheet (https://github.com/pagagne/internet-security-snapshot
+ /tree/main/docs/reviewer/sample-worksheet)\; candidates from the 21 Dec sh
+ ortlist\, including any CCRI candidates (second coder\; outreach 9 Nov). T
+ he second coder can be the same person. Confirm by 1 March.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
