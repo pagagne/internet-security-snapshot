@@ -1,0 +1,9 @@
+Waiting on bqjob_r5272fb0091e7d856_000001a18a056a7f_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r5272fb0091e7d856_000001a18a056a7f_1 ... (1s) Current status: RUNNING                                                                                      Waiting on bqjob_r5272fb0091e7d856_000001a18a056a7f_1 ... (1s) Current status: DONE   
+technology,with_version,pages
+jQuery,12001,12001
+PHP,6075,6075
+Nginx,4649,4649
+WordPress,2057,2057
+Apache HTTP Server,1576,1576
+Drupal,259,259
+Joomla,39,39

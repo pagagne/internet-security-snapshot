@@ -1,0 +1,325 @@
+Waiting on bqjob_r1a9e5d8da2f1cfb0_000001a18a054e97_1 ... (0s) Current status: RUNNING                                                                                      Waiting on bqjob_r1a9e5d8da2f1cfb0_000001a18a054e97_1 ... (1s) Current status: RUNNING                                                                                      Waiting on bqjob_r1a9e5d8da2f1cfb0_000001a18a054e97_1 ... (1s) Current status: DONE   
+technology,version,pages
+Apache HTTP Server,,1288
+Apache HTTP Server,2.4.62,44
+Apache HTTP Server,2.4.68,24
+Apache HTTP Server,2.4.37,23
+Apache HTTP Server,2.4.6,21
+Apache HTTP Server,2.4.52,20
+Apache HTTP Server,2.4.41,18
+Apache HTTP Server,2.4.58,17
+Apache HTTP Server,2.2.15,12
+Apache HTTP Server,2.4.66,12
+Apache HTTP Server,2.4.18,10
+Apache HTTP Server,2.4.25,10
+Apache HTTP Server,2.4.38,9
+Apache HTTP Server,2,8
+Apache HTTP Server,2.4.65,8
+Apache HTTP Server,2.4.56,8
+Apache HTTP Server,2.4.67,4
+Apache HTTP Server,2.4.27,4
+Apache HTTP Server,2.4.29,4
+Apache HTTP Server,2.2.16,4
+Apache HTTP Server,2.4.55,4
+Apache HTTP Server,2.4.59,4
+Apache HTTP Server,2.4.34,4
+Apache HTTP Server,2.4.69,3
+Apache HTTP Server,2.4.54,3
+Apache HTTP Server,2.4.46,3
+Apache HTTP Server,2.2.31,2
+Apache HTTP Server,2.4.1,2
+Apache HTTP Server,2.4.57,2
+Apache HTTP Server,2.4.39,1
+Drupal,,92
+Drupal,10,75
+Drupal,11,51
+Drupal,9,16
+Drupal,7,13
+Drupal,8,12
+Joomla,,39
+Nginx,,7852
+Nginx,1.24.0,222
+Nginx,1.18.0,196
+Nginx,1.26.3,116
+Nginx,1.22.1,100
+Nginx,1.30.5,54
+Nginx,1.14.1,52
+Nginx,1.14.2,48
+Nginx,1.26.0,44
+Nginx,1.20.1,44
+Nginx,1.31.6,44
+Nginx,1.28.0,42
+Nginx,1.14.0,42
+Nginx,1.30.4,38
+Nginx,1.31.3,36
+Nginx,1.30.1,32
+Nginx,1.28.3,30
+Nginx,1.29.0,28
+Nginx,1.26.2,24
+Nginx,1.23.3,24
+Nginx,1.31.7,20
+Nginx,1.22.0,16
+Nginx,1.28.2,14
+Nginx,1.29.8,14
+Nginx,1.29.2,14
+Nginx,1.8.0,10
+Nginx,1.12.0,8
+Nginx,1.29.1,8
+Nginx,1.30.0,8
+Nginx,1.15.5,8
+Nginx,1.10.3,8
+Nginx,1.21.5,8
+Nginx,1.23.4,8
+Nginx,1.25.4,8
+Nginx,1.29.7,8
+Nginx,1.31.4,8
+Nginx,1.12.2,8
+Nginx,1.25.5,8
+Nginx,1.30.6,6
+Nginx,1.31.0,6
+Nginx,1.16.1,4
+Nginx,1.29.6,4
+Nginx,1.31.1,4
+Nginx,1.27.5,4
+Nginx,1.19.5,4
+Nginx,1.26.1,4
+Nginx,1.29.4,4
+Nginx,1.25.0,4
+Nginx,1.27.4,2
+PHP,,4912
+PHP,7.4.33,181
+PHP,8.3.35,97
+PHP,8.1.34,81
+PHP,5.6.40,70
+PHP,7.2.34,50
+PHP,8.4.26,44
+PHP,7.3.33,36
+PHP,8.5.11,35
+PHP,8.1.31,32
+PHP,8.1.33,26
+PHP,8.2.34,24
+PHP,8.0.30,24
+PHP,7.1.33,17
+PHP,5.4.45,16
+PHP,5.3.3,16
+PHP,5.4.16,13
+PHP,8.5.10,12
+PHP,8.2.30,11
+PHP,7.3.14,11
+PHP,7.4.30,11
+PHP,7.4.21,11
+PHP,8.2.33,10
+PHP,8.1.29,10
+PHP,8.2.29,10
+PHP,5.5.38,10
+PHP,7.3.12,8
+PHP,8.4.24,8
+PHP,8.3.32,8
+PHP,8.1.6,6
+PHP,7.2.24,6
+PHP,8.3.26,6
+PHP,5.5.26,6
+PHP,8.3.31,6
+PHP,8.4.20,5
+PHP,8.2.15,5
+PHP,5.6,4
+PHP,5.3.15,4
+PHP,7.1.17,4
+PHP,7.4.16,4
+PHP,8.4.19,4
+PHP,8.5.7,4
+PHP,8.3.27,4
+PHP,8.3.28,4
+PHP,5.3.29,4
+PHP,8.1.32,4
+PHP,8.3.6,4
+PHP,7.4.28,4
+PHP,7.3.28,4
+PHP,7.0.33,4
+PHP,7.3.25,4
+PHP,8.4.23,4
+PHP,8.3.29,4
+PHP,7.4.13,4
+PHP,5.4.28,4
+PHP,8.4.14,4
+PHP,7.3.31,4
+PHP,7.4.29,4
+PHP,7.2.17,4
+PHP,8.1.15,4
+PHP,8.1.26,4
+PHP,7.4,4
+PHP,7.3.26,4
+PHP,8.0.28,4
+PHP,7.2.25,4
+PHP,5.6.4,4
+PHP,8.2.31,4
+PHP,8.1.22,4
+PHP,7.3.18,4
+PHP,8.5.9,4
+PHP,7.0.13,4
+PHP,7.1.27,4
+PHP,7.4.1,4
+PHP,7.4.23,4
+PHP,7.4.15,4
+PHP,8.3.30,4
+PHP,8.4.3,4
+PHP,7.4.12,4
+PHP,8.4.11,4
+PHP,7.1.3,4
+PHP,8.3.33,4
+PHP,8.2.32,4
+PHP,7.3.10,4
+PHP,8.3.4,4
+PHP,7.2.6,4
+PHP,8.3.17,3
+PHP,7.2.31,3
+PHP,8.3.20,3
+PHP,8.1.3,3
+PHP,8.3.13,3
+PHP,8.1.25,2
+PHP,5.3.13,2
+PHP,7.4.27,2
+PHP,8.3.11,2
+PHP,7.2.18,2
+PHP,7.3.20,2
+PHP,8.4.25,2
+PHP,8.4.17,2
+PHP,7.4.14,2
+PHP,5.2.17,2
+PHP,8.2.28,2
+PHP,5.6.33,2
+PHP,8.2.11,1
+PHP,7.4.26,1
+PHP,8.2.27,1
+PHP,8.3.12,1
+PHP,8.4.21,1
+PHP,8.1.8,1
+WordPress,,2110
+WordPress,7.1.3,1206
+WordPress,7.0.7,100
+WordPress,6.9.10,76
+WordPress,6.8.11,58
+WordPress,6.8.3,56
+WordPress,7.1.2,40
+WordPress,7.0.2,26
+WordPress,7.0,26
+WordPress,7.1,22
+WordPress,7.0.4,20
+WordPress,6.7.2,20
+WordPress,6.8.2,20
+WordPress,6.0.17,18
+WordPress,6.2.6,16
+WordPress,6.1.15,16
+WordPress,6.4.3,16
+WordPress,6.7.10,16
+WordPress,6.6.10,16
+WordPress,7.1.1,12
+WordPress,6.9.4,12
+WordPress,6.8,12
+WordPress,6.4.1,10
+WordPress,6.6.2,10
+WordPress,6.8.5,8
+WordPress,6.8.6,8
+WordPress,5.2.11,8
+WordPress,5.4.2,8
+WordPress,6.8.1,8
+WordPress,5.4.1,8
+WordPress,6.7.1,8
+WordPress,5.9.19,8
+WordPress,6.0.12,8
+WordPress,5.4.24,8
+WordPress,4.9.34,8
+WordPress,4.9.8,8
+WordPress,5.8.2,8
+WordPress,6.2.2,8
+WordPress,5.2.7,8
+WordPress,4.8.25,8
+WordPress,5.3.26,6
+WordPress,6.9,6
+WordPress,6.4.13,4
+WordPress,4.9.26,4
+WordPress,6.1.1,4
+WordPress,5.7,4
+WordPress,4.7.28,4
+WordPress,6.3.1,4
+WordPress,6.9.1,4
+WordPress,7.0.6,4
+WordPress,6.7.5,4
+WordPress,5.3.4,2
+WordPress,6.0.2,2
+jQuery,3.7.1,3442
+jQuery,3.6.0,1113
+jQuery,3.5.1,797
+jQuery,1.12.4,620
+jQuery,1.9.1,482
+jQuery,3.4.1,472
+jQuery,3.3.1,434
+jQuery,2.2.4,402
+jQuery,3.2.1,297
+jQuery,3.6.4,294
+jQuery,1.11.1,293
+jQuery,3.7.0,291
+jQuery,1.11.3,229
+jQuery,3.6.1,206
+jQuery,,203
+jQuery,4.0.0,200
+jQuery,1.8.3,188
+jQuery,3.6.3,159
+jQuery,1.11.2,142
+jQuery,1.10.2,141
+jQuery,2.1.4,135
+jQuery,3.1.1,128
+jQuery,1.11.0,115
+jQuery,1.7.1,92
+jQuery,2.1.3,87
+jQuery,2.2.0,87
+jQuery,1.7.2,84
+jQuery,2.1.1,76
+jQuery,1.8.2,63
+jQuery,3.5.0,53
+jQuery,1.12.0,52
+jQuery,2.0.3,36
+jQuery,2.2.3,33
+jQuery,1.12.3,31
+jQuery,1.12.1,30
+jQuery,2.1.0,29
+jQuery,1.9.0,28
+jQuery,3.0.0,28
+jQuery,3.1.0,26
+jQuery,3.2.0,25
+jQuery,2.0.0,25
+jQuery,1.8.1,24
+jQuery,1.8.0,22
+jQuery,1.3.2,19
+jQuery,1.4.3,18
+jQuery,1.4.2,17
+jQuery,1.7,17
+jQuery,2.2.2,16
+jQuery,1.4.4,15
+jQuery,1.12.2,15
+jQuery,1.10.1,14
+jQuery,1.6.4,13
+jQuery,1.10.0,13
+jQuery,2.2.1,13
+jQuery,2.0.2,13
+jQuery,3.6.2,13
+jQuery,1.5.1,10
+jQuery,1.6.1,10
+jQuery,3.4.0,10
+jQuery,1.6.2,9
+jQuery,5.0.0,8
+jQuery,1.5.2,8
+jQuery,.,8
+jQuery,0,6
+jQuery,341,4
+jQuery,2.0.1,4
+jQuery,1.0.21,3
+jQuery,1.4.1,2
+jQuery,3.3.0,2
+jQuery,1.2,1
+jQuery,1.2.6,1
+jQuery,1.2.2,1
+jQuery,1.7.0,1
+jQuery,1.5,1
+jQuery,3.5.2,1
+jQuery,1.6.0,1

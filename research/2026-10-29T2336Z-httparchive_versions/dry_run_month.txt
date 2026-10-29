@@ -1,0 +1,1 @@
+Query successfully validated. Assuming the tables are not modified, running this query will process upper bound of 4315480235 bytes of data.

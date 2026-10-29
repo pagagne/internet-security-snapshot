@@ -1,0 +1,15 @@
+column_name,data_type
+date,DATE
+client,STRING
+page,STRING
+is_root_page,BOOL
+root_page,STRING
+rank,INT64
+wptid,STRING
+payload,JSON
+summary,JSON
+custom_metrics,"STRUCT<a11y JSON, cms JSON, cookies JSON, css_variables JSON, ecommerce JSON, element_count JSON, javascript JSON, markup JSON, media JSON, origin_trials JSON, performance JSON, privacy JSON, responsive_images JSON, robots_txt JSON, security JSON, structured_data JSON, third_parties JSON, well_known JSON, wpt_bodies JSON, other JSON>"
+lighthouse,JSON
+features,"ARRAY<STRUCT<feature STRING, id STRING, type STRING>>"
+technologies,"ARRAY<STRUCT<technology STRING, categories ARRAY<STRING>, info ARRAY<STRING>>>"
+metadata,JSON
