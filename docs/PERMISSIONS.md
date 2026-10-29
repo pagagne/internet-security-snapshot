@@ -135,8 +135,8 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
 - **OAIC (29 Oct):** site content under CC BY 4.0, credit "Office of the Australian Information
   Commissioner website - www.oaic.gov.au"; logos, coat of arms and images excluded.
 - **APNIC Labs (29 Oct):** no terms published for Labs measurement data (none on
-  stats.labs.apnic.net or labs.apnic.net either); written leave requested, draft for the author
-  (29 Oct).
+  stats.labs.apnic.net or labs.apnic.net either); written leave requested by the author 29 Oct
+  18:35 UTC through APNIC's helpdesk (Labs has no address of its own); awaiting reply.
 - **JPCERT/CC (29 Oct, found by the terms_scout probe):** "ご利用にあたってのお願い"
   (https://www.jpcert.or.jp/guide.html, updated 2026-10-05). Quoting its published documents is
   free, naming the source, document and URL; JPCERT/CC asks, as a courtesy, to be told by email
