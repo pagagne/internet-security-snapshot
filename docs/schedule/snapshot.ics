@@ -2133,6 +2133,25 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:publication-prep@2027-08-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270810
+DTEND;VALUE=DATE:20270811
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the publication decision (where to publi
+ sh the 2027 results)
+DESCRIPTION:Responsible: Claude\n\nUpdate https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/PUBLICATION_OPTIONS.md (written 28 Oct
+  2026): confirm the 2028 calls and dates (WEIS 2028 and the Journal of Cyb
+ ersecurity special issue and its open-access fee\; CVE/FIRST VulnCon 2028\
+ ; IMC 2028\; PAM 2029)\, check arXiv endorsement options\, and what the Q1
+  and Q2 2027 results suggest is worth a paper. Ask the author whether an e
+ arlier figshare preprint is his. Questions to the author as option cards o
+ n 12 Aug.\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-08-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270810T071700Z
@@ -2143,6 +2162,21 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:publication-review@2027-08-12@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270812T140000Z
+DTEND:20270812T143000Z
+SUMMARY:[Paul] Snapshot: Decide where to publish the 2027 results
+DESCRIPTION:Responsible: Paul (author)\n\nAsked 28 Oct 2026 to evaluate in 
+ Q3 2027. Options in https://github.com/pagagne/internet-security-snapshot/
+ blob/main/docs/PUBLICATION_OPTIONS.md: own report on OSF/Zenodo (March 202
+ 8)\, WEIS 2028 and the journal (paper written Nov 2027 - Jan 2028)\, a Vul
+ nCon 2028 talk (proposal ~Dec 2027)\, a PAM 2029 methods paper. The chosen
+  deadlines then go into this schedule.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:second-coder-score@2027-08-13@internet-security-snapshot

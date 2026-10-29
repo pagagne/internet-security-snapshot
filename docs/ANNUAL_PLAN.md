@@ -167,7 +167,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 01 Aug 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Mon 02 Aug 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Wed 04 Aug 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Tue 10 Aug 2027 | Claude | Prepare the publication decision (where to publish the 2027 results) |
 | Tue 10 Aug 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Thu 12 Aug 2027, 10:00 ET | Paul | Decide where to publish the 2027 results |
 | Fri 13 Aug 2027 | Claude | Score the second coder's answer file; publish agreement |
 | Sat 04 Sep 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Fri 10 Sep 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
@@ -257,6 +259,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 04 Mar 2027, 10:00 ET | Onboarding call with the external reviewer | Walk through the repository, the hand-check rules and the second-coder answer file in the Reviewer's Desk; answer questions; go over the practice round if done. Move the time to suit the reviewer. |
 | Thu 15 Apr 2027, 10:00 ET | Optional mid-review check-in with the reviewer | Answer questions; confirm the review will arrive by 28 April or agree a new date. |
 | Thu 29 Apr 2027 | Write the response to the external review | Point by point; anything accepted becomes a deviations-log row or an item for the next annual review. The review itself is published unedited. |
+| Thu 12 Aug 2027, 10:00 ET | Decide where to publish the 2027 results | Asked 28 Oct 2026 to evaluate in Q3 2027. Options in docs/PUBLICATION_OPTIONS.md: own report on OSF/Zenodo (March 2028), WEIS 2028 and the journal (paper written Nov 2027 - Jan 2028), a VulnCon 2028 talk (proposal ~Dec 2027), a PAM 2029 methods paper. The chosen deadlines then go into this schedule. |
 | Mon 03 Apr 2028, 10:00 ET | Approve the 2027 closing re-run addendum | Read Claude's summary of what changed against each 2027 quarter's final report (scored labels do not change; decision item 21) and approve publishing it as an addendum to the annual check, with its Zenodo archive. |
 
 ## External reviewer: dated items
@@ -310,6 +313,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 02 Mar 2027 | Send the reviewer the practice second-coder answer file (pilot quarter) | Claude emails the reviewer a small answer file (CSV) with 20 items from the pilot quarter, Paul's answers removed. Open it in the Reviewer's Desk (Second coder tab), work through the items with the written rules shown there, then save the completed file and send it back. Practice only, not scored; discussed on the onboarding call. (Claude: python -m snapshot.agreement sample --batch 2026Q4; never send the weights file.) |
 | Fri 02 Apr 2027 | Send the reviewer the Q1 2027 review packet | Once the provisional Q1 2027 report is approved: links to the report, the registered plan, prereg/DEVIATIONS.md, the data bundle and the exact code commit; the worksheet for every headline figure; the sample of hand decisions with their rules; a short review template (holds up / doesn't / would change). Before sending, list in site/reviewer/worksheets.json ("draw_from") the headline figures actually reported this quarter and add their worksheets; the reviewer draws three on the Reviewer's Desk with a seed of their own (anyone can repeat it). Never choose the figures. |
 | Sat 01 May 2027 | Publish the external review beside the Q1 2027 final report | Review unedited, the author's response, the reviewer's disclosed ties and credit; archived with the release (Zenodo). Send the reviewer the link. |
+| Tue 10 Aug 2027 | Prepare the publication decision (where to publish the 2027 results) | Update docs/PUBLICATION_OPTIONS.md (written 28 Oct 2026): confirm the 2028 calls and dates (WEIS 2028 and the Journal of Cybersecurity special issue and its open-access fee; CVE/FIRST VulnCon 2028; IMC 2028; PAM 2029), check arXiv endorsement options, and what the Q1 and Q2 2027 results suggest is worth a paper. Ask the author whether an earlier figshare preprint is his. Questions to the author as option cards on 12 Aug. |
 | Wed 01 Mar 2028 | Draft the first annual check against reference data (2027) | prereg section 13: exposure reference if scan data was obtained by 31 Jan, harm reference always. For the author's approval at the 15 March 2028 review. |
 | Sat 01 Apr 2028 | 2027 closing re-run with full follow-up | Re-run all four 2027 quarters once every 2027 cohort CVE has its 90-day follow-up; publish as a completeness addendum to the annual check. Labels unchanged (decision item 21). The author approves. |
 

@@ -656,6 +656,29 @@ items:
     want to be named (name or initials) and their ORCID. Send them the Reviewer's Desk link
     (site/reviewer/, it includes the calendar feed; docs/OPERATIONS.md). Then tell Claude, so the reviewer items below can start.
 
+- id: publication-prep
+  owner: claude
+  title: Prepare the publication decision (where to publish the 2027 results)
+  date: 2027-08-10
+  details: >
+    Update docs/PUBLICATION_OPTIONS.md (written 28 Oct 2026): confirm the 2028 calls and dates
+    (WEIS 2028 and the Journal of Cybersecurity special issue and its open-access fee; CVE/FIRST
+    VulnCon 2028; IMC 2028; PAM 2029), check arXiv endorsement options, and what the Q1 and Q2
+    2027 results suggest is worth a paper. Ask the author whether an earlier figshare preprint
+    is his. Questions to the author as option cards on 12 Aug.
+
+- id: publication-review
+  owner: author
+  title: Decide where to publish the 2027 results
+  date: 2027-08-12
+  time: "10:00"
+  minutes: 30
+  details: >
+    Asked 28 Oct 2026 to evaluate in Q3 2027. Options in docs/PUBLICATION_OPTIONS.md: own
+    report on OSF/Zenodo (March 2028), WEIS 2028 and the journal (paper written Nov 2027 - Jan
+    2028), a VulnCon 2028 talk (proposal ~Dec 2027), a PAM 2029 methods paper. The chosen
+    deadlines then go into this schedule.
+
 - id: annual-review
   owner: author
   title: Annual review and change window
