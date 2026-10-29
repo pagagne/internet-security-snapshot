@@ -672,13 +672,23 @@ items:
   title: Decide where to publish the 2027 results
   date: 2027-08-12
   time: "10:00"
-  minutes: 30
+  minutes: 45
   details: >
-    Asked 28 Oct 2026 to evaluate in Q3 2027. Options in docs/PUBLICATION_OPTIONS.md: own
-    report on OSF/Zenodo (March 2028), WEIS 2028 and the journal (paper written Nov 2027 - Jan
-    2028), a VulnCon 2028 talk (proposal ~Dec 2027), a PAM 2029 methods paper. The chosen
-    deadlines then go into this schedule.
-
+    Asked 28 Oct 2026 to evaluate in Q3 2027; nothing decided yet (figshare included). Every
+    option from 28 Oct, compared in docs/PUBLICATION_OPTIONS.md:
+    (1) Self-published report with a DOI, March 2028, on one or more of OSF Preprints (beside
+    the registration), Zenodo (data and code, already planned), figshare (where the author
+    already has a preprint) or arXiv (needs an endorser for a first-time independent author).
+    (2) WEIS 2028, Workshop on the Economics of Information Security (deadline ~1 Feb 2028,
+    workshop ~June; double-anonymous review), then the Journal of Cybersecurity special issue
+    (open-access fee to confirm); paper written Nov 2027 - Jan 2028.
+    (3) CVE/FIRST VulnCon 2028 talk (proposal ~Dec 2027, event ~April 2028).
+    (4) PAM 2029, Passive and Active Measurement, methods paper (deadline ~Oct 2028, online).
+    (5) IMC 2028, Internet Measurement Conference (deadline ~May 2028), only if findings are
+    striking.
+    (6) SANS Internet Storm Center diary (any time; former employer, disclose the tie).
+    (7) FIRST Conference talk (~June 2028).
+    The chosen deadlines then go into this schedule.
 - id: annual-review
   owner: author
   title: Annual review and change window

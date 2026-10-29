@@ -2167,15 +2167,26 @@ BEGIN:VEVENT
 UID:publication-review@2027-08-12@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270812T140000Z
-DTEND:20270812T143000Z
+DTEND:20270812T144500Z
 SUMMARY:[Paul] Snapshot: Decide where to publish the 2027 results
 DESCRIPTION:Responsible: Paul (author)\n\nAsked 28 Oct 2026 to evaluate in 
- Q3 2027. Options in https://github.com/pagagne/internet-security-snapshot/
- blob/main/docs/PUBLICATION_OPTIONS.md: own report on OSF/Zenodo (March 202
- 8)\, WEIS 2028 and the journal (paper written Nov 2027 - Jan 2028)\, a Vul
- nCon 2028 talk (proposal ~Dec 2027)\, a PAM 2029 methods paper. The chosen
-  deadlines then go into this schedule.\n\nSource: https://github.com/pagag
- ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ Q3 2027\; nothing decided yet (figshare included). Every option from 28 Oc
+ t\, compared in https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/PUBLICATION_OPTIONS.md: (1) Self-published report with a DOI\, 
+ March 2028\, on one or more of OSF Preprints (beside the registration)\, Z
+ enodo (data and code\, already planned)\, figshare (where the author alrea
+ dy has a preprint) or arXiv (needs an endorser for a first-time independen
+ t author). (2) WEIS 2028\, Workshop on the Economics of Information Securi
+ ty (deadline ~1 Feb 2028\, workshop ~June\; double-anonymous review)\, the
+ n the Journal of Cybersecurity special issue (open-access fee to confirm)\
+ ; paper written Nov 2027 - Jan 2028. (3) CVE/FIRST VulnCon 2028 talk (prop
+ osal ~Dec 2027\, event ~April 2028). (4) PAM 2029\, Passive and Active Mea
+ surement\, methods paper (deadline ~Oct 2028\, online). (5) IMC 2028\, Int
+ ernet Measurement Conference (deadline ~May 2028)\, only if findings are s
+ triking. (6) SANS Internet Storm Center diary (any time\; former employer\
+ , disclose the tie). (7) FIRST Conference talk (~June 2028). The chosen de
+ adlines then go into this schedule.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
