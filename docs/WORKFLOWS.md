@@ -31,11 +31,13 @@ later (the final run). Also started by hand for dry runs.
 
 1. Downloads every switched-on free source for the quarter (`config/sources.yaml`): CVE
    records, CISA's exploited list (KEV), Vulnrichment, NVD, EPSS, SEC breach filings,
-   Cloudflare Radar, and ransomware.live, which is collected while its permission is awaited.
+   Cloudflare Radar, and ransomware.live (permission granted 27 Oct; counts only).
 2. Freezes an exact copy with checksums.
-3. Moves anything not yet allowed to be published (ransomware.live today, VulnCheck later) out
-   of the public copy.
-4. Writes a data-quality report and the list for the author's hand check.
+3. Moves anything not yet allowed to be published (VulnCheck, once added, until it gives written
+   permission) out of the public copy.
+4. Counts any refusals from a source's server (HTTP 403 or 429, "server pushback") so the run
+   report shows at once if a source starts treating the study's downloads as unwelcome.
+5. Writes a data-quality report and the list for the author's hand check.
 
 **What it produces:** the public bundle (kept on GitHub for 90 days), a tag marking the run, a
 run report on the run-reports branch, and the full bundle, including the private part, in the
@@ -64,7 +66,7 @@ opens a `privacy` issue if anything private slips in.
 
 **When:** every push to main and every pull request.
 
-**What it does:** runs all the tests (116 on 27 Oct). They include the test confirming the locked
+**What it does:** runs all the tests (122 on 29 Oct). They include the test confirming the locked
 pre-registration core has not been altered, and checks that the schedule outputs are current,
 the diagrams match their sources, and the privacy scan is clean. A second job builds the pinned
 container. Since 27 Oct a ruleset requires both jobs to pass before a change lands on main,
@@ -123,3 +125,10 @@ probe and Honeypot capture feed the exploratory side.
 
 **Not a GitHub workflow:** Claude's daily work queue, a scheduled Claude task at 8:32 ET. It
 checks that Schedule ran (and starts it if not) and picks up the items assigned to Claude.
+
+**Also not a workflow:** Dependabot, GitHub's own watchman (switched on 29 Oct). It reads the
+study's package list (`requirements.txt`, an exact copy of `requirements.lock`, 61 packages) and
+raises an alert if any package gets a known security flaw. It only warns; automatic update
+proposals are off, so nothing changes without the author. Two repository rules protect main: "protect main" (no deleting or rewriting
+history; also on run-reports) and "require checks on main" (the Checks workflow must pass; the
+author can bypass it).
