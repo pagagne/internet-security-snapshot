@@ -17,6 +17,27 @@ cards. Anything decided here that touches the core is confirmed at the 21 Dec fr
   test meets the condition, records the evidence here, and brings back on 12 Nov only those
   that fail or need a choice the condition does not settle.
 
+**Applied 29 Oct 2026 (author's go-ahead of 28 Oct to proceed now; second probe round,
+`research/2026-10-29T0328Z-global_probe` on run-reports):**
+- #3 X19 **A applied:** CERT-FR adopted (per-alert JSON with CVE IDs and dates gives the full
+  history; Licence ouverte). JPCERT/CC adopted for data (yearly alert pages 2024-2026 carry CVE
+  IDs and dates) **pending its terms**: both policy addresses tried returned 404, so the author
+  checks the site's terms by hand. BSI and KrCERT/CC not adopted (no exploitation alerts; BSI's
+  data sits behind a script-only portal, KrCERT's portal likewise).
+- #4 X20 **exception, B applied (APNIC Labs only):** RIPEstat's terms (art. 3.3) forbid
+  re-packaging or re-distributing its data, so RIPE NCC is dropped. APNIC Labs per-country pages
+  work (FR, JP tested) but APNIC publishes no terms for Labs data: a short request for written
+  leave goes from the author (labs.apnic.net contact). Status stays planned until it arrives.
+- #5 X21 **A applied, active:** Radar layer-7 attacks and bot class split by all six continents
+  (52 weekly points each; one transient HTTP 500, Africa bot class, retried in the collector);
+  ransomware.live September 2026: 846 postings, country known for 89.8%, 92 countries
+  (counts only, credited).
+- #6 X22 **A applied:** UK ICO adopted (quarterly CSV, Q1 2019 to Q3 2026, Open Government
+  Licence v3.0); OAIC adopted (half-yearly reports, CC BY 4.0, credited "Office of the
+  Australian Information Commissioner website - www.oaic.gov.au"). PDPC (bot check, not to be
+  worked around) and ENISA (no regular counts found) go to the March review.
+Still for 12 Nov from these four: nothing, unless the JPCERT/CC terms or APNIC's answer say no.
+
 **Quick list (11 decisions; since 27 Oct only exceptions remain for 12 Nov)**
 
 | # | Decision | ★ Recommendation |

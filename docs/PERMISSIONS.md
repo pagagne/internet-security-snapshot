@@ -128,7 +128,17 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
 - **CERT-FR (ANSSI):** site content under the Licence ouverte / open licence (Etalab), unless
   stated otherwise; commercial exploitation needs ANSSI's prior leave; no framing of pages; no
   logos (cyber.gouv.fr legal notice). The study uses alert titles, CVE IDs and dates, credited.
-- **JPCERT/CC, APNIC Labs, RIPEstat, UK ICO, OAIC, ENISA:** terms still to read (by 11 Nov).
+- **RIPEstat (29 Oct):** research use allowed with notice to the RIPE NCC and credit to the RIPE
+  NCC, but art. 3.3 forbids re-packaging, compiling or re-distributing its data: **not used.**
+- **UK ICO (29 Oct):** text content under the Open Government Licence v3.0 unless stated
+  otherwise; the incident-trends CSV is used for counts, credited to the ICO.
+- **OAIC (29 Oct):** site content under CC BY 4.0, credit "Office of the Australian Information
+  Commissioner website - www.oaic.gov.au"; logos, coat of arms and images excluded.
+- **APNIC Labs (29 Oct):** no terms published for Labs measurement data; written leave to be
+  asked by the author before first use.
+- **JPCERT/CC (29 Oct):** terms page not found by the probe (both policy addresses 404); the
+  author checks the site's terms by hand.
+- **ENISA:** not used for now (no regular counts found; March review).
 - **PDPC (Singapore):** its site answered the workflow with a bot check (HTTP 202, empty page);
   not to be worked around.
 

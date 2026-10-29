@@ -297,7 +297,7 @@ measures:
     sources: [national_alerts, kev]
     added: 2026-10-26
     feeds_labels: false
-    status: planned
+    status: active   # 29 Oct: CERT-FR; JPCERT/CC once its terms are checked; BSI and KrCERT/CC not adopted
     method: >
       Each quarter: CVEs named in active-exploitation alerts from CERT-FR (France), JPCERT/CC
       (Japan), BSI (Germany) and KrCERT/CC (Korea), each with its alert date. Reported: how many
@@ -317,7 +317,7 @@ measures:
     sources: [apnic_labs, ripe_ncc]
     added: 2026-10-26
     feeds_labels: false
-    status: planned
+    status: planned   # 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution); waits for APNIC's written leave
     method: >
       Quarterly snapshot of the public per-country measurements: share of users behind
       resolvers that validate DNSSEC, and share of routes covered by RPKI and of networks
@@ -330,7 +330,7 @@ measures:
     sources: [radar, ransomware]
     added: 2026-10-26
     feeds_labels: false
-    status: planned
+    status: active   # 29 Oct: Radar by continent and ransomware.live by country both hold up
     method: >
       Cloudflare Radar layer-7 attack and bot-traffic series by region, and ransomware.live
       monthly posting counts by victim country grouped into regions (aggregates only, as
@@ -343,7 +343,7 @@ measures:
     sources: [uk_ico, oaic, enisa, sg_pdpc]
     added: 2026-10-26
     feeds_labels: false
-    status: planned
+    status: active   # 29 Oct: UK ICO and OAIC; PDPC and ENISA at the March review
     method: >
       Published counts of reported data breaches from the UK ICO, Australia's OAIC (twice a
       year), Singapore's PDPC and ENISA's EU reports, shown next to HHS OCR (X17) and SEC
