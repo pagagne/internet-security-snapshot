@@ -297,7 +297,7 @@ measures:
     sources: [national_alerts, kev]
     added: 2026-10-26
     feeds_labels: false
-    status: active   # 29 Oct: CERT-FR; JPCERT/CC once its terms are checked; BSI and KrCERT/CC not adopted
+    status: active   # 29 Oct: CERT-FR and JPCERT/CC (terms read); BSI and KrCERT/CC not adopted
     method: >
       Each quarter: CVEs named in active-exploitation alerts from CERT-FR (France), JPCERT/CC
       (Japan), BSI (Germany) and KrCERT/CC (Korea), each with its alert date. Reported: how many
@@ -307,7 +307,8 @@ measures:
       it does not replace them in the core.
     agencies_2026_10_28: >
       Research review #3 (approved on its condition 27 Oct): CERT-FR adopted 28 Oct (alert feed
-      readable and dated; Licence ouverte). JPCERT/CC adopted once its terms are read (by 11 Nov).
+      readable and dated; Licence ouverte). JPCERT/CC adopted 29 Oct: its terms allow quoting with source, document and URL (courtesy
+      email to its PR office, sent by the author).
       BSI WID and KrCERT/CC not adopted: their feeds carry advisories and vendor notices, not
       exploitation alerts with an attack date. Collector to build before the 14 Dec review.
 

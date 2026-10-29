@@ -134,10 +134,16 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   otherwise; the incident-trends CSV is used for counts, credited to the ICO.
 - **OAIC (29 Oct):** site content under CC BY 4.0, credit "Office of the Australian Information
   Commissioner website - www.oaic.gov.au"; logos, coat of arms and images excluded.
-- **APNIC Labs (29 Oct):** no terms published for Labs measurement data; written leave to be
-  asked by the author before first use.
-- **JPCERT/CC (29 Oct):** terms page not found by the probe (both policy addresses 404); the
-  author checks the site's terms by hand.
+- **APNIC Labs (29 Oct):** no terms published for Labs measurement data (none on
+  stats.labs.apnic.net or labs.apnic.net either); written leave requested, draft for the author
+  (29 Oct).
+- **JPCERT/CC (29 Oct, found by the terms_scout probe):** "ご利用にあたってのお願い"
+  (https://www.jpcert.or.jp/guide.html, updated 2026-10-05). Quoting its published documents is
+  free, naming the source, document and URL; JPCERT/CC asks, as a courtesy, to be told by email
+  to its PR office where, when and how it is quoted; reprinting or redistributing whole
+  documents needs contacting them first; logos and trademarks need permission. The study uses
+  only alert titles, CVE IDs and dates, credited: **allowed**. Courtesy notice drafted for the
+  author (29 Oct).
 - **ENISA:** not used for now (no regular counts found; March review).
 - **PDPC (Singapore):** its site answered the workflow with a bot check (HTTP 202, empty page);
   not to be worked around.
