@@ -194,4 +194,9 @@ beside X12's curve of downloadable models, as a new exploratory measure?
 - B Log named tools by hand in X3's notes only.
 - C Not now.
 
-Evidence (Research task ai_tools, 29 Oct): _to fill_.
+Evidence (Research task ai_tools, 29 Oct; run-reports `research/…-ai_tools`): GitHub's search
+answered all six fixed queries (2 to 103 repositories each). The tools named in reports are
+there and large: CyberStrikeAI (8,220 stars, 1,756 forks, created Nov 2025, 100+ releases, latest
+16 Oct 2026) and an ARTEX repository (2,208 stars, 1,061 forks, created 8 Oct 2026), plus copies
+and forks of both; about a dozen other agent frameworks have 150 to 1,300 stars. Stars and forks
+are popularity, not use. Release counts above 100 need paging if adopted.
