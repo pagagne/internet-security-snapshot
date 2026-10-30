@@ -28,6 +28,9 @@ def test_visible_text_ignores_scripts_and_layout():
 def test_shape():
     assert W.shape(b'{"b":1,"a":[]}', "application/json", "x") == "json keys: a,b"
     assert W.shape(b"cve,epss\nCVE-1,0.1\n", "text/csv", "x") == "text: cve,epss"
+    assert W.shape(b"lastModifiedDate:2026-10-30T08:00\nsize:5\n", "text/plain", "x") == "fields: lastModifiedDate,size"
+    assert W.shape(b'{"0":{"cik":1,"ticker":"A"},"1":{"cik":2,"ticker":"B"}}', "application/json", "x") \
+        == "json numbered entries of: cik,ticker"
 
 
 def _src(kind="data"):

@@ -60,8 +60,15 @@ def shape(body: bytes, ctype: str, url: str) -> str:
         except ValueError:
             return "json (unreadable)"
         if isinstance(j, dict):
+            if j and all(k.isdigit() for k in j):   # numbered entries (SEC company list)
+                first = next(iter(j.values()))
+                inner = ",".join(sorted(first)) if isinstance(first, dict) else type(first).__name__
+                return f"json numbered entries of: {inner}"[:300]
             return "json keys: " + ",".join(sorted(j))[:300]
         return f"json list of {type(j[0]).__name__ if j else 'nothing'}"
+    text = body[:4096].decode("utf-8", "replace")
+    if re.match(r"^[A-Za-z]+:", text):   # key:value metadata (NVD .meta): field names only
+        return "fields: " + ",".join(ln.split(":", 1)[0] for ln in text.splitlines() if ":" in ln)
     first = body.split(b"\n", 1)[0][:300].decode("utf-8", "replace").strip()
     if first.startswith("#"):     # comment lines: describe the first data line instead
         rest = [ln for ln in body.decode("utf-8", "replace").splitlines() if ln and not ln.startswith("#")]

@@ -37,7 +37,7 @@ sources:
   - {name: CISA KEV catalogue page, kind: terms, used_by: core kev, url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
   - {name: CISA kev-data repository (licence), kind: terms, used_by: core kev, url: "https://github.com/cisagov/kev-data"}
   - {name: FIRST EPSS page, kind: terms, used_by: core epss, url: "https://www.first.org/epss/"}
-  - {name: SEC accessing EDGAR data, kind: terms, used_by: core sec, url: "https://www.sec.gov/os/accessing-edgar-data", ua_env: SEC_USER_AGENT}
+  - {name: SEC accessing EDGAR data, kind: terms, used_by: core sec, url: "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data", ua_env: SEC_USER_AGENT}   # moved from /os/accessing-edgar-data (found 30 Oct)
   - {name: Red Hat security data, kind: terms, used_by: core fix dates, url: "https://access.redhat.com/security/data"}
   - {name: SANS ISC data feeds, kind: terms, used_by: companion X23 / honeypot, url: "https://isc.sans.edu/feeds_doc.html"}
   - {name: ransomware.live terms, kind: terms, used_by: permission (ticket 3425), url: "https://www.ransomware.live/t&c"}
