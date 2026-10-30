@@ -1,5 +1,5 @@
 # SEC accessing EDGAR data
-# https://www.sec.gov/os/accessing-edgar-data
+# https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data
 # copied 2026-10-30
 
 SEC.gov | Accessing EDGAR Data
