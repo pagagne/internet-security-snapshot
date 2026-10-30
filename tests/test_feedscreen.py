@@ -27,3 +27,9 @@ def test_whole_word_terms():
     ai = F._rx(["LLM", "Claude"])
     assert ai.search("an LLM agent")
     assert not ai.search("Claudette's bakery")
+
+
+def test_cyrillic_ai_term_is_a_whole_word():
+    ai = F._rx(["ИИ", "нейросет"])
+    assert ai.search("атака с помощью ИИ") and ai.search("нейросети")
+    assert not ai.search("кампании и операции")

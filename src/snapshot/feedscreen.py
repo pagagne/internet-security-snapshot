@@ -65,7 +65,13 @@ def parse(xml: bytes) -> list[dict]:
 
 
 def _rx(terms: list[str]) -> re.Pattern:
-    parts = [re.escape(t) if not t.isascii() else rf"(?<![A-Za-z]){re.escape(t)}(?![A-Za-z])" for t in terms]
+    def one(t: str) -> str:
+        if t.isascii():
+            return rf"(?<![A-Za-z]){re.escape(t)}(?![A-Za-z])"
+        if re.search(r"[\u0400-\u04FF]", t):   # Cyrillic: whole word, or "ИИ" matches inside words
+            return rf"(?<![\w]){re.escape(t)}" + ("" if len(t) > 3 else r"(?![\w])")
+        return re.escape(t)                    # Chinese and Japanese have no word spaces
+    parts = [one(t) for t in terms]
     return re.compile("|".join(parts), re.I)
 
 
