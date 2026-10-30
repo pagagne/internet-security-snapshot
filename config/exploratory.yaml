@@ -422,14 +422,18 @@ measures:
       (KEV-lag back-test, 9 Nov).
 
   - id: X25
-    name: Supply of AI attack tools on GitHub
-    question: How many open-source tools that let an AI agent attack systems are published on GitHub, how fast do new ones appear, which AI do they run on, and how many have safeguards?
+    name: Supply of AI attack and defence tools on GitHub
+    question: How many open-source tools that let an AI attack systems, and how many that let an AI defend them, are published on GitHub; how fast does each side grow, which AI does each build on, and how many attack tools have safeguards?
     sources: [github_search]
     added: 2026-10-30
     feeds_labels: false
     status: active   # author's decision 30 Oct 2026 (12 Nov review item 12, decided early, as a hand-run sweep)
     method: >
-      Run by hand only, never on a timer (Research task github_tools): a baseline in late
+      Defence tools added the same day (author, 30 Oct 2026): fixed defence queries beside the
+      attack ones, and every repository labelled by what it does (attack, defence, both, model
+      testing, unclear), first from its own words, then checked by Claude for every tool with
+      100+ stars and confirmed by the author; the two sides are compared by trend, since the
+      query lists differ. Run by hand only, never on a timer (Research task github_tools): a baseline in late
       October 2026, then at the start of 2027, mid-2027 and the end of 2027. Fixed queries
       (config/github_tool_queries.yaml) over GitHub's public search; per repository: maker
       (person or organisation), creation date, stars, forks, licence, the AI models or agent

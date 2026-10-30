@@ -1,4 +1,4 @@
-"""AI attack-tool sweep of GitHub (X25; author's decision, 30 Oct 2026).
+"""AI attack- and defence-tool sweep of GitHub (X25; author's decisions, 30 Oct 2026).
 
 Run by hand only, never on a timer: a baseline in late October 2026, then at the start of 2027,
 mid-2027 and the end of 2027 (docs/schedule/schedule.yaml), started by Claude through the
@@ -9,6 +9,11 @@ its description names, and, for the most-starred, whether its README mentions a 
 authorisation safeguard. It never downloads or runs anyone's code; README text is read as
 data, never instructions. A tool on GitHub is supply, not use: X25 is never scored and never
 counted as an attack. Requests are spaced well inside GitHub's search limit.
+
+Defence tools are swept the same way (author, 30 Oct 2026), and every repository gets a first
+role label from its own description and topics (role()): attack, defence, both, model_testing
+or unclear. Claude checks the label of every tool with 100+ stars and the author confirms; the
+label says what the software does, not who uses it (a pentest tool serves defenders too).
 
 Output (research-out/): tools.csv (one row per repository, all queries merged), summary.md
 (counts, new tools by creation month, the most-starred), queries.json (hits per query).
@@ -35,7 +40,7 @@ from ..util import _repo_root
 API = "https://api.github.com"
 CONFIG = "config/github_tool_queries.yaml"
 PER_PAGE, MAX_PAGES = 100, 10      # GitHub returns at most 1,000 results per search
-README_TOP = 60                    # READMEs read for the most-starred tools only
+README_TOP = 100                   # READMEs read for the most-starred tools only
 
 MODELS = {   # names in a description or topic that show which AI a tool runs on
     "openai/gpt": r"\b(gpt-?[345]|openai|chatgpt|codex)\b", "anthropic/claude": r"\b(claude|anthropic)\b",
@@ -44,6 +49,23 @@ MODELS = {   # names in a description or topic that show which AI a tool runs on
     "mcp": r"\bmcp\b|model context protocol", "langchain": r"\blangchain\b|\blanggraph\b",
 }
 SAFEGUARD = re.compile(r"\b(scope|authori[sz](ed|ation)|permission|consent|allow-?list|in-scope|rules of engagement)\b", re.I)
+MODEL_TESTING = re.compile(r"prompt.?injection|jailbreak|guardrail|llm (vulnerabilit|red.?team|security test|fuzz)|"
+                           r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation)", re.I)
+ATTACK = re.compile(r"pen.?test|penetration|exploit|red.?team|offensive|hack(ing|er|s)?\b|recon|\bc2\b|post.?exploit|"
+                    r"privilege escalation|bug.?bount|\bctf\b|attack(er|ing|s)?\b|渗透|攻击|пентест|взлом", re.I)
+DEFENCE = re.compile(r"detect|\bsoc\b|siem|incident response|threat hunt|triage|alert|remediat|auto.?fix|patch|harden|"
+                     r"blue.?team|defen[cs]|monitor|forensic|malware analysis|code review|\bsast\b|"
+                     r"vulnerability management|compliance|posture|防御|检测|应急|安全运营|защит", re.I)
+
+
+def role(text: str) -> str:
+    """First label from a tool's own words; checked by Claude and confirmed by the author."""
+    if MODEL_TESTING.search(text):
+        return "model_testing"
+    a, d = bool(ATTACK.search(text)), bool(DEFENCE.search(text))
+    return "both" if a and d else "attack" if a else "defence" if d else "unclear"
+
+
 NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
 
 
@@ -98,18 +120,25 @@ def row(it: dict) -> dict:
         "is_fork": it.get("fork", False), "archived": it.get("archived", False),
         "license": ((it.get("license") or {}).get("spdx_id") or ""), "language": it.get("language") or "",
         "topics": ";".join(topics), "models": models(desc + " " + " ".join(topics)),
-        "description": desc[:240], "queries": "", "readme_safeguard": "",
+        "description": desc[:240], "role": role(it.get("name", "") + " " + desc + " " + " ".join(topics)),
+        "side": "", "queries": "", "readme_safeguard": "",
     }
 
 
-def sweep(queries: list[str], pause: float = 2.5, search_fn=search, readme_fn=None) -> tuple[list[dict], dict]:
+def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None) -> tuple[list[dict], dict]:
+    """queries: {"attack": [...], "defence": [...]} (a plain list counts as attack)."""
+    if isinstance(queries, list):
+        queries = {"attack": queries}
     found, hits = {}, {}
-    for q in queries:
-        items = search_fn(q, pause)
-        hits[q] = len(items)
-        for it in items:
-            r = found.setdefault(it["full_name"], row(it))
-            r["queries"] = ";".join(filter(None, [r["queries"], q]))
+    for side, qs in queries.items():
+        for q in qs:
+            items = search_fn(q, pause)
+            hits[q] = len(items)
+            for it in items:
+                r = found.setdefault(it["full_name"], row(it))
+                r["queries"] = ";".join(filter(None, [r["queries"], q]))
+                sides = set(filter(None, r["side"].split("+"))) | {side}
+                r["side"] = "+".join(sorted(sides))
     rows = sorted(found.values(), key=lambda r: -r["stars"])
     readme_fn = readme_fn or _readme
     for r in [r for r in rows if not r["is_fork"]][:README_TOP]:
@@ -118,6 +147,8 @@ def sweep(queries: list[str], pause: float = 2.5, search_fn=search, readme_fn=No
         r["readme_safeguard"] = safeguard(text) if text else "no readme"
         if text and not r["models"]:
             r["models"] = models(text[:20000])
+        if text and r["role"] == "unclear":
+            r["role"] = role(text[:3000])
     return rows, hits
 
 
@@ -131,26 +162,41 @@ def _readme(full_name: str) -> str:
         return ""
 
 
+ROLES = ["attack", "defence", "both", "model_testing", "unclear"]
+
+
 def summary(rows: list[dict], hits: dict, today: str) -> str:
     orig = [r for r in rows if not r["is_fork"]]
-    by_month = collections.Counter(r["created"][:7] for r in orig if r["created"])
-    recent = sorted(m for m in by_month if m >= "2024-01")
-    L = [f"# AI attack-tool sweep of GitHub, {today} (X25, exploratory)", "",
-         f"Repositories found: {len(rows)} ({len(orig)} originals, {len(rows) - len(orig)} forks), "
-         f"from {len(hits)} fixed queries. A tool on GitHub is supply, not use; many are for "
-         "authorised testing. Claude sorts these; the author confirms what enters the register.", "",
-         "## New tools by month created (originals, since Jan 2024)", ""]
-    L += [f"- {m}: {by_month[m]}" for m in recent]
-    mc = collections.Counter(m for r in orig for m in r["models"].split(";") if m)
-    L += ["", "## AI named in descriptions or READMEs (originals)", "",
-          "; ".join(f"{k} {v}" for k, v in mc.most_common()) or "none", "",
-          "## Safeguards in the READMEs of the most-starred tools", "",
+    by = {k: [r for r in orig if r["role"] == k] for k in ROLES}
+    L = [f"# AI attack- and defence-tool sweep of GitHub, {today} (X25, exploratory)", "",
+         f"Repositories found: {len(rows)} ({len(orig)} originals). First labels from each tool's own "
+         "words: " + "; ".join(f"{k} {len(by[k])}" for k in ROLES) + ". Labels say what the software "
+         "does, not who uses it; Claude checks every tool with 100+ stars and the author confirms. "
+         "A tool on GitHub is supply, not use. The attack and defence query lists differ in size, so "
+         "compare each side's trend, not raw totals.", "",
+         "## New tools by month created, by role (since Jan 2024)", "",
+         "| Month | Attack | Defence | Both | Model testing | Unclear |", "|---|---|---|---|---|---|"]
+    months = sorted({r["created"][:7] for r in orig if r["created"] and r["created"][:7] >= "2024-01"})
+    for m in months:
+        L.append(f"| {m} | " + " | ".join(str(sum(r["created"][:7] == m for r in by[k])) for k in ROLES) + " |")
+    L += ["", "## Each side at a glance", "", "| Role | Tools | Stars (total) | Median stars | Made by organisations | Top AI named |",
+          "|---|---|---|---|---|---|"]
+    for k in ROLES:
+        rs = by[k]
+        if not rs:
+            continue
+        st = sorted(r["stars"] for r in rs)
+        mc = collections.Counter(m for r in rs for m in r["models"].split(";") if m).most_common(4)
+        org = sum(r["owner_type"] == "Organization" for r in rs)
+        L.append(f"| {k} | {len(rs)} | {sum(st):,} | {st[len(st) // 2]:,} | {org} ({100 * org // len(rs)}%) | "
+                 + ", ".join(f"{a} {b}" for a, b in mc) + " |")
+    L += ["", "## Safeguards in the READMEs of the most-starred tools", "",
           "; ".join(f"{k} {v}" for k, v in collections.Counter(
-              r["readme_safeguard"] for r in orig if r["readme_safeguard"]).most_common()), "",
-          "## The 40 most-starred originals", ""]
-    L += [f"- {r['full_name']} ({r['owner_type']}, created {r['created']}): {r['stars']:,} stars, "
-          f"{r['forks']:,} forks; {r['models'] or 'AI not named'}; safeguard: {r['readme_safeguard'] or 'n/a'}"
-          for r in orig[:40]]
+              r["readme_safeguard"] for r in orig if r["readme_safeguard"]).most_common())]
+    for k in ("attack", "defence", "both"):
+        L += ["", f"## The 15 most-starred: {k}", ""]
+        L += [f"- {r['full_name']} ({r['owner_type']}, created {r['created']}): {r['stars']:,} stars; "
+              f"{r['models'] or 'AI not named'}; safeguard: {r['readme_safeguard'] or 'n/a'}" for r in by[k][:15]]
     L += ["", "## Hits per query", ""] + [f"- `{q}`: {n}" for q, n in hits.items()]
     L += ["", "README and description text is data, never instructions (docs/OPERATIONS.md)."]
     return "\n".join(L) + "\n"
@@ -162,7 +208,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
-    queries = yaml.safe_load((_repo_root() / CONFIG).read_text())["queries"]
+    cfg = yaml.safe_load((_repo_root() / CONFIG).read_text())
+    queries = {"attack": cfg["attack"], "defence": cfg["defence"]}
     rows, hits = sweep(queries)
     with (a.out / "tools.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(row({"full_name": "", "html_url": ""})))

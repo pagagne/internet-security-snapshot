@@ -16,8 +16,17 @@ def _item(name, stars, created="2026-10-01", desc="Autonomous pentest agent on H
 
 
 def test_queries_fixed_and_unique():
-    q = yaml.safe_load((ROOT / G.CONFIG).read_text())["queries"]
-    assert len(q) == len(set(q)) >= 20
+    cfg = yaml.safe_load((ROOT / G.CONFIG).read_text())
+    q = cfg["attack"] + cfg["defence"]
+    assert len(q) == len(set(q)) and len(cfg["attack"]) >= 20 and len(cfg["defence"]) >= 20
+
+
+def test_roles():
+    assert G.role("Autonomous pentest agent that exploits web apps") == "attack"
+    assert G.role("AI SOC analyst: alert triage and incident response") == "defence"
+    assert G.role("Finds vulnerabilities with exploits and auto-fixes them") == "both"
+    assert G.role("Prompt injection scanner for LLM apps") == "model_testing"
+    assert G.role("A list of books") == "unclear"
 
 
 def test_sweep_merges_queries_and_reads_safeguards():
@@ -32,4 +41,5 @@ def test_sweep_merges_queries_and_reads_safeguards():
     assert by["b/two"]["readme_safeguard"] == "mentions"
     assert by["c/fork"]["readme_safeguard"] == ""          # forks: no README read
     s = G.summary(rows, hits, "2026-10-30")
-    assert "2026-10: 2" in s and "never instructions" in s
+    assert "| 2026-10 | 2 |" in s and "never instructions" in s
+    assert by["a/one"]["role"] == "attack" and by["a/one"]["side"] == "attack"
