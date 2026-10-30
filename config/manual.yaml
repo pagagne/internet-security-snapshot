@@ -14,7 +14,7 @@ parts:
     docs: [docs/EVALUATION_FLOW.md, docs/HAND_CHECK.md, docs/HAND_CHECK_APP.md, docs/CHANGE_POLICY.md,
            docs/CORE_FREEZE_DECISIONS.md, proposals/T1_OPTIONS.md, proposals/ROOT_CAUSE_MAP.md,
            exploratory/README.md, exploratory/SOURCES.md, exploratory/credit_groups.md,
-           exploratory/sweep-trial-2026.md]
+           exploratory/sweep-trial-2026.md, exploratory/ai_attack_catalogue.md]
   - name: "Part III. Operations"
     docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
            docs/BACKUP.md, docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, docs/BUILD_PLAN.md]

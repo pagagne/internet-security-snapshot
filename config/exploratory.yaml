@@ -48,6 +48,13 @@ measures:
       reported for all rows and for confirmed rows alone. Every CVE ID recorded in the campaign
       and sweep logs is checked against CVE.org (snapshot.cvecheck, Research task cve_check)
       when rows are added and at each sweep, because AI tools invent identifiers.
+      Amended 2026-10-29 (author's decision, review item 13, option B): each row also records
+      attack_method (a fixed list in src/snapshot/x3catalogue.py: autonomous_intrusion,
+      agent_recon, credential_harvest, ai_planned_human_led, ai_written_tooling,
+      ai_system_hijack, compute_theft, ai_social_engineering, evaluation_escape, other) and
+      found_via (author, quarterly_sweep, trial_sweep, claude_research). The catalogue of
+      attack methods and the register of resources (exploratory/ai_attack_catalogue.md) are
+      generated from the log; a test keeps them current.
     report_sources:
       - Threat-intelligence reports on AI misuse from AI labs (Anthropic, OpenAI, Google GTIG); Anthropic is a conflict of interest and is labeled as such
       - Security vendor and researcher disclosures (e.g. NorForge for Cairn; GreyNoise for the PaperCut agent campaign)

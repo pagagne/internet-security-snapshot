@@ -233,3 +233,6 @@ Cost: about an hour to classify the existing cases, a minute or two per forwarde
 Exploratory, never scored; the report states that the categories reflect what gets reported.
 Evidence: the author's 29 Oct evaluation request (chat); counts above from
 `exploratory/ai_attack_campaigns.csv`.
+
+**Decided 29 Oct (author): option B.** Columns added and the 32 cases classified the same
+evening; catalogue and register in `exploratory/ai_attack_catalogue.md` (generated).

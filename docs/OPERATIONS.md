@@ -101,6 +101,15 @@ The author subscribed on 24 Oct 2026, and the older hand-made "Snapshot: ..." ev
 removed from the author's own calendar the same day (all of them are in the feed). Add new
 dates to the schedule file, never as hand-made calendar events, so the calendars cannot drift.
 
+## Articles the author forwards
+(Author's request, 29 Oct 2026.) The author reads security news to find AI attack methods and
+resources the study does not yet catalogue. For each article Claude: logs any real AI-using
+attack in `exploratory/ai_attack_campaigns.csv` (with `attack_method`, `found_via: author`,
+`ai_evidence: unrated` until the author's check) or records why it is excluded in the sweep
+log; checks any CVE IDs (Research task `cve_check`); notes AI tools named in CVE credits on the
+watchlist; adds the inquiry to `docs/INQUIRIES.md`; and rebuilds the catalogue
+(`python -m snapshot.x3catalogue build`) and the manual.
+
 ## The project's email address
 `internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)
 is the study's public contact: university postings, the reviewer invitation, outreach and, from

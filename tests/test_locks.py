@@ -57,5 +57,9 @@ def test_ai_attack_campaign_log_is_well_formed():
         assert r["conflict_of_interest"] in {"yes", "no"}
         # added 2026-10-29 (author): how strong the evidence of AI use is
         assert r["ai_evidence"] in {"confirmed", "assessed", "unrated"}, r["campaign"]
+        # added 2026-10-29 (author, review item 13 option B): attack method and how it reached us
+        from snapshot.x3catalogue import FOUND_VIA, METHODS
+        assert r["attack_method"] in METHODS, r["campaign"]
+        assert r["found_via"] in FOUND_VIA, r["campaign"]
         for cid in filter(None, r["cve_ids"].split(";")):
             assert re.fullmatch(r"CVE-\d{4}-\d{4,}", cid), (r["campaign"], cid)
