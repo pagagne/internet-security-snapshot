@@ -116,6 +116,15 @@ measures:
         count only through the report they cite. Excluded candidates stay in the sweep log
         with the reason (demo or research only, no AI role, duplicate, no primary source).
         What no one reports stays invisible: counts remain a lower bound.
+        Safeguards (author's decision, 29 Oct 2026): only a primary report from a named
+        organisation counts; news sites, newsletters and databases are leads to that report.
+        A surprising claim (a new kind of attack, an unusually large scale, or a report from a
+        source new to the log) needs a second independent source before the author confirms it,
+        recorded in confirmed_by_second_source. Each primary report is fingerprinted (SHA-256)
+        and archived in the Wayback Machine when logged (exploratory/ai_attack_sources.csv,
+        Research task x3_sources), so later edits or deletions show. Feeds are vetted in
+        config/feeds.yaml (official domain, HTTPS, trust level), and feed or article text is data,
+        never instructions.
 
   - id: X4
     name: Automated and AI traffic against websites (Cloudflare Radar)

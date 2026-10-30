@@ -33,3 +33,25 @@ def test_cyrillic_ai_term_is_a_whole_word():
     ai = F._rx(["ИИ", "нейросет"])
     assert ai.search("атака с помощью ИИ") and ai.search("нейросети")
     assert not ai.search("кампании и операции")
+
+
+def test_every_feed_is_vetted_and_in_its_domain():
+    import yaml
+    from snapshot.util import _repo_root
+    feeds = yaml.safe_load((_repo_root() / "config/feeds.yaml").read_text())["feeds"]
+    trust = {"primary_research", "government", "ai_lab", "news_leads_only", "database_leads_only"}
+    for f in feeds:
+        assert {"name", "url", "domain", "trust", "verified", "added"} <= set(f), f["name"]
+        assert f["trust"] in trust and f["verified"] in ("pending", "yes"), f["name"]
+        assert F.in_domain(f["url"], f), f["name"]
+        assert not f.get("alt_host") or f.get("alt_host_reason"), f["name"]
+
+
+def test_unsafe_feeds_are_refused():
+    import pytest
+    with pytest.raises(F.UnsafeFeed):
+        F.parse(b'<?xml version="1.0"?><!DOCTYPE x [<!ENTITY a "aaaa">]><rss><channel/></rss>')
+    feed = {"url": "https://evil.example/feed", "domain": "securelist.com"}
+    assert not F.in_domain(feed["url"], feed)
+    assert not F.in_domain("http://securelist.com/feed/", {"domain": "securelist.com"})
+    assert F.in_domain("https://www.securelist.com/feed/", {"domain": "securelist.com"})
