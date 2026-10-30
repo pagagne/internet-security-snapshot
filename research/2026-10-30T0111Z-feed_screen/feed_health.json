@@ -1,0 +1,377 @@
+[
+ {
+  "feed": "Unit 42",
+  "status": 200,
+  "items": 15,
+  "candidates": 1
+ },
+ {
+  "feed": "Cisco Talos",
+  "status": 200,
+  "items": 15,
+  "candidates": 1
+ },
+ {
+  "feed": "Microsoft Security Blog",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Google Cloud Threat Intelligence",
+  "status": "error",
+  "items": 0,
+  "candidates": 0,
+  "error": "ParseError('syntax error: line 1, column 0')"
+ },
+ {
+  "feed": "ESET WeLiveSecurity",
+  "status": 200,
+  "items": 100,
+  "candidates": 0
+ },
+ {
+  "feed": "Kaspersky Securelist",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Check Point Research",
+  "status": 200,
+  "items": 15,
+  "candidates": 2
+ },
+ {
+  "feed": "Sophos X-Ops",
+  "status": 200,
+  "items": 15,
+  "candidates": 0
+ },
+ {
+  "feed": "Huntress",
+  "status": 200,
+  "items": 745,
+  "candidates": 4
+ },
+ {
+  "feed": "SentinelLabs",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Elastic Security Labs",
+  "status": 200,
+  "items": 308,
+  "candidates": 1
+ },
+ {
+  "feed": "Sysdig",
+  "status": 200,
+  "items": 100,
+  "candidates": 2
+ },
+ {
+  "feed": "Wiz",
+  "status": 200,
+  "items": 712,
+  "candidates": 2
+ },
+ {
+  "feed": "CrowdStrike",
+  "status": 200,
+  "items": 10,
+  "candidates": 1
+ },
+ {
+  "feed": "Trend Micro Research",
+  "status": 404,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "Zscaler ThreatLabz",
+  "status": 200,
+  "items": 50,
+  "candidates": 2
+ },
+ {
+  "feed": "Recorded Future",
+  "status": 200,
+  "items": 50,
+  "candidates": 1
+ },
+ {
+  "feed": "Rapid7",
+  "status": "error",
+  "items": 0,
+  "candidates": 0,
+  "error": "ParseError('not well-formed (invalid token): line 109, column 37')"
+ },
+ {
+  "feed": "Tenable",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Qualys",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Cloudflare",
+  "status": 200,
+  "items": 20,
+  "candidates": 0
+ },
+ {
+  "feed": "Bitdefender Labs",
+  "status": 404,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "Proofpoint",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Symantec Threat Hunter Team",
+  "status": 404,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "GreyNoise",
+  "status": 200,
+  "items": 100,
+  "candidates": 0
+ },
+ {
+  "feed": "AhnLab ASEC",
+  "status": 200,
+  "items": 30,
+  "candidates": 0
+ },
+ {
+  "feed": "SANS Internet Storm Center",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Schneier on Security",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Krebs on Security",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "CISA advisories",
+  "status": 200,
+  "items": 30,
+  "candidates": 0
+ },
+ {
+  "feed": "UK NCSC",
+  "status": 200,
+  "items": 20,
+  "candidates": 0
+ },
+ {
+  "feed": "CERT-FR",
+  "status": 200,
+  "items": 40,
+  "candidates": 0
+ },
+ {
+  "feed": "JPCERT/CC (English)",
+  "status": 200,
+  "items": 6,
+  "candidates": 0
+ },
+ {
+  "feed": "JPCERT/CC (Japanese)",
+  "status": 200,
+  "items": 21,
+  "candidates": 0
+ },
+ {
+  "feed": "CERT-EU",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "BSI (Germany)",
+  "status": 404,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "Singapore CSA",
+  "status": 404,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "OpenAI News",
+  "status": 200,
+  "items": 1337,
+  "candidates": 2
+ },
+ {
+  "feed": "AI Incident Database",
+  "status": 200,
+  "items": 100,
+  "candidates": 10
+ },
+ {
+  "feed": "BleepingComputer",
+  "status": 200,
+  "items": 15,
+  "candidates": 0
+ },
+ {
+  "feed": "The Hacker News",
+  "status": 200,
+  "items": 50,
+  "candidates": 4
+ },
+ {
+  "feed": "SecurityWeek",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "The Record",
+  "status": 200,
+  "items": 5,
+  "candidates": 0
+ },
+ {
+  "feed": "Dark Reading",
+  "status": 200,
+  "items": 50,
+  "candidates": 3
+ },
+ {
+  "feed": "The Register (security)",
+  "status": 200,
+  "items": 50,
+  "candidates": 3
+ },
+ {
+  "feed": "Security Affairs",
+  "status": 200,
+  "items": 10,
+  "candidates": 0
+ },
+ {
+  "feed": "Help Net Security",
+  "status": 200,
+  "items": 10,
+  "candidates": 2
+ },
+ {
+  "feed": "Infosecurity Magazine",
+  "status": 200,
+  "items": 250,
+  "candidates": 9
+ },
+ {
+  "feed": "Cybernews",
+  "status": 200,
+  "items": 50,
+  "candidates": 0
+ },
+ {
+  "feed": "Ars Technica (security)",
+  "status": 200,
+  "items": 20,
+  "candidates": 1
+ },
+ {
+  "feed": "Wired (security)",
+  "status": 200,
+  "items": 20,
+  "candidates": 1
+ },
+ {
+  "feed": "Security Boulevard",
+  "status": 403,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "FreeBuf (zh)",
+  "status": 405,
+  "items": 0,
+  "candidates": 0
+ },
+ {
+  "feed": "Habr infosecurity (ru)",
+  "status": 200,
+  "items": 40,
+  "candidates": 3
+ },
+ {
+  "feed": "Xakep (ru)",
+  "status": 200,
+  "items": 10,
+  "candidates": 2
+ },
+ {
+  "feed": "SecurityLab (ru)",
+  "status": 200,
+  "items": 120,
+  "candidates": 4
+ },
+ {
+  "feed": "Boan News (ko)",
+  "status": "error",
+  "items": 0,
+  "candidates": 0,
+  "error": "ParseError('syntax error: line 1, column 0')"
+ },
+ {
+  "feed": "heise Security (de)",
+  "status": 200,
+  "items": 20,
+  "candidates": 1
+ },
+ {
+  "feed": "Security NEXT (ja)",
+  "status": 200,
+  "items": 20,
+  "candidates": 0
+ },
+ {
+  "feed": "ITmedia Enterprise (ja)",
+  "status": 200,
+  "items": 50,
+  "candidates": 3
+ },
+ {
+  "feed": "LeMagIT (fr)",
+  "status": 200,
+  "items": 20,
+  "candidates": 0
+ },
+ {
+  "feed": "CISO Advisor (pt)",
+  "status": 403,
+  "items": 0,
+  "candidates": 0
+ }
+]
