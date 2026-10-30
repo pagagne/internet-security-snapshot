@@ -1,0 +1,209 @@
+# Red Hat security data
+# https://access.redhat.com/security/data
+# copied 2026-10-30
+
+Security Data | Red Hat Customer Portal
+-->
+-->
+-->
+-->
+-->
+-->
+Skip to navigation
+Skip to main content
+Utilities
+Subscriptions
+Downloads
+Red Hat Console
+Get Support
+Subscriptions
+Downloads
+Red Hat Console
+Get Support
+Products
+Top Products
+Red Hat Enterprise Linux
+Red Hat OpenShift
+Red Hat Ansible Automation Platform
+All Products
+Downloads and Containers
+Downloads
+Packages
+Containers
+Top Resources
+Documentation
+Product Life Cycles
+Product Compliance
+Errata
+Knowledge
+Red Hat Knowledge Center
+Knowledgebase Solutions
+Knowledgebase Articles
+Customer Portal Labs
+Errata
+Top Product Docs
+Red Hat Enterprise Linux
+Red Hat OpenShift
+Red Hat Ansible Automation Platform
+All Product Docs
+Training and Certification
+About
+Course Index
+Certification Index
+Skill Assessment
+Security
+Red Hat Product Security Center
+Security Updates
+Security Advisories
+Red Hat CVE Database
+Errata
+References
+Security Bulletins
+Severity Ratings
+Security Data
+Top Resources
+Security Labs
+Backporting Policies
+Security Blog
+Support
+Red Hat Support
+Support Cases
+Troubleshoot
+Get Support
+Contact Red Hat Support
+Red Hat Community Support
+Customer Portal Community
+Community Discussions
+Red Hat Accelerator Program
+Contribute
+-->
+Top Resources
+Product Life Cycles
+Customer Portal Labs
+Red Hat JBoss Supported Configurations
+Red Hat Lightspeed
+Or troubleshoot an issue .
+English
+Select Your Language
+English
+Français
+한국어
+日本語
+中文 (中国)
+Infrastructure and Management
+Red Hat Enterprise Linux
+Red Hat Satellite
+Red Hat Subscription Management
+Red Hat Lightspeed
+Red Hat Ansible Automation Platform
+Cloud Computing
+Red Hat OpenShift
+Red Hat OpenStack Platform
+Red Hat OpenShift
+Red Hat OpenShift AI
+Red Hat OpenShift Dedicated
+Red Hat Advanced Cluster Security for Kubernetes
+Red Hat Advanced Cluster Management for Kubernetes
+Red Hat Quay
+Red Hat OpenShift Dev Spaces
+Red Hat OpenShift Service on AWS
+Storage
+Red Hat Gluster Storage
+Red Hat Hyperconverged Infrastructure
+Red Hat Ceph Storage
+Red Hat OpenShift Data Foundation
+Runtimes
+Red Hat Runtimes
+Red Hat JBoss Enterprise Application Platform
+Red Hat Data Grid
+Red Hat JBoss Web Server
+Red Hat build of Keycloak
+Red Hat support for Spring Boot
+Red Hat build of Node.js
+Red Hat build of Quarkus
+Integration and Automation
+Red Hat Application Foundations
+Red Hat Fuse
+Red Hat AMQ
+Red Hat 3scale API Management
+All Products
+You are using an unsupported web browser. Update to a supported browser for the best experience. Read the announcement .
+As of March 1, 2016, the Red Hat Customer Portal will no longer support Internet Explorer 9. See our new browser support policy for more information.
+Security Data
+Red Hat Product Security is committed to providing tools and security data to help security measurement. A part of this commitment is our active participation in various projects such as the CVE Project, the OASIS CSAF technical committee, or SBOM/VEX forums. We provide the raw data below so customers and researchers can produce their own metrics, for their own unique situations, and hold us accountable. To receive notifications when we fix bugs and add new features, please follow the official Red Hat Security Data Changelog .
+The data resources linked on this page as well as their alternative representations available through the Security Data API are licensed under the Creative Commons Attribution 4.0 International License . If you distribute this content or a modified version of it, you must provide attribution to Red Hat and provide a link to the original.
+CSAF/VEX Documents
+The Common Security Advisory Framework (CSAF) standard enables organizations to share information about security issues using a consistent and common format. We provide Red Hat security advisories in CSAF format using the VEX profile as well as per-CVE VEX documents that contains information on both fixed and unfixed products/components.
+CSAF/VEX guidelines
+CSAF GA announcement post Link to CSAF advisories
+VEX files for CVEs GA announcement post Link to CSAF VEX per-CVE files
+OSV Records
+Red Hat / OSV.dev announcement on OpenSSF . The CSAF advisory data for RPMs is converted to OSV records and shared with OSV.dev. It is expected that customers will consume this data from OSV.dev not directly from this URL. This is the location OSV.dev consumes the data from.
+Link to Red Hat OSV data
+SBOM Documents
+Software Bill of Materials (SBOM) is a complete list of components, their versions, licensing information, provenance, and other metadata for a given product. Red Hat publishes SBOM documents for select products at:
+Link to SBOM documents
+OVAL Definitions
+Note: OVAL/DS v2 files are now in maintenance mode and will be deprecated in the future; see OVAL v2 announcement for more information.
+OVAL definitions are available for vulnerabilities that were addressed in errata for Red Hat Enterprise Linux and select additional products. To completely evaluate your system you will need to evaluate it against the streams for all products installed on that system.
+OVAL compatibility FAQ
+OVAL Streams directory
+SCAP source data stream files
+Vulnerability Metadata
+Repository to CPE Mapping
+Used for matching OVAL security data to installed RPMs . Each repository also includes a set of relative URLs from where the content of the repository can be downloaded.
+repository-to-cpe.json
+RHSA RSS feed
+An RSS feed that contains a list of Red Hat security advisories released in the last three days.
+rhsa.rss
+CPE Dictionary
+CPE is a structured naming scheme for information technology systems, software, and packages. For reference, we provide a dictionary mapping the CPE names we use, to Red Hat product descriptions. Some of these CPE names will be for new products that are not in the official CPE dictionary, and should therefore be treated as temporary CPE names:
+cpe-dictionary.xml
+Security Data Archive
+Security data files that have been retired are available in an archive. Each file is marked with a date (YYYYMMDD) when it was last updated:
+Link to Security Data archive
+Category:
+Secure
+LinkedIn
+YouTube
+Facebook
+X, formerly Twitter
+Quick Links
+Downloads
+Subscriptions
+Support Cases
+Customer Service
+Product Documentation
+Help
+Contact Us
+Customer Portal FAQ
+Log-in Assistance
+Site Info
+Trust Red Hat
+Browser Support Policy
+Accessibility
+Awards and Recognition
+Colophon
+Related Sites
+redhat.com
+developers.redhat.com
+connect.redhat.com
+cloud.redhat.com
+Red Hat legal and privacy
+links
+About Red Hat
+Jobs
+Events
+Locations
+Contact Red Hat
+Red Hat Blog
+Inclusion at Red Hat
+Cool Stuff Store
+Red Hat Summit
+© 2026 Red Hat
+Red Hat legal and
+privacy links
+Privacy statement
+Terms of use
+All policies and guidelines
+Digital accessibility

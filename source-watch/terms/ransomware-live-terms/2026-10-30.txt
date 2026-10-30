@@ -1,0 +1,125 @@
+# ransomware.live terms
+# https://www.ransomware.live/t&c
+# copied 2026-10-30
+
+Terms & Conditions | Ransomware.live
+ransomware .live
+leak-site monitoring
+Victims
+Groups
+Press
+Statistics
+Infostealer
+World Map
+Quadrants
+About
+Legend
+Search
+Negotiations
+Ransom Notes
+Arsenal
+YARA Rules
+TTPs Matrix
+KQL Queries
+IoCs
+Vulnerabilities
+Country Map
+Attack Map
+Disclosures
+8K (Item 1.05)
+UK ICO
+Notifications
+API
+Sponsored by Hudson Rock –
+Use Hudson Rock's free cybercrime intelligence tools to learn how Infostealer infections are leading to ransomware attacks
+Enjoying ransomware.live?
+Help us keep tracking ransomware gangs and shipping new features.
+Support us
+Terms & Conditions
+Updated on August 19, 2026
+1. Introduction
+By accessing or using the data provided by Ransomware.live ("the Data"), you agree to comply with and be bound by these Terms & Conditions ("T&C"). If you do not agree with any part of these T&C, you must refrain from using the Data.
+2. Definitions
+"the Data" means all content made available by Ransomware.live, including but not limited to victim and group listings, negotiation transcripts, ransom notes, YARA rules, IoCs, KQL queries, statistics, and any other intelligence published on the platform or served via the API. Different categories of Data may be subject to additional restrictions noted on their respective pages; where no additional restriction is noted, the general Fair Usage and Permitted Use rules below apply.
+3. Access
+Use the dedicated endpoint at api-pro.ransomware.live (free, and will remain free) with a personal token generated at my.ransomware.live .
+The legacy api.ransomware.live remains online for compatibility purposes only. It will not evolve further and is subject to additional restrictions; see ransomware.live/api for details.
+4. Fair Usage
+These Fair Usage rules apply to both commercial and non-commercial use:
+Queries must be made in a reasonable, fair manner : no excessive polling or abusive request volumes that could degrade service for other users. As an example, our Data is cached for 30 minutes; polling more frequently than that interval brings no fresher results and may be considered a breach of this Fair Usage policy.
+Do not relay your customers' queries directly to us. If you build a product or service on top of the Data, your own users must query your system, not Ransomware.live directly.
+Redistribution as an API: You are not allowed to redistribute the Data, in whole or in part, as if via an API, i.e. standing up your own API or feed that re-serves Ransomware.live Data to third parties.
+Quota circumvention: Registering or using multiple accounts, tokens, or API keys — whether under different identities/emails or otherwise — to bypass rate limits or quotas is prohibited.
+Raw data publishing: Not publishing our RAW data in any way (API, file, or otherwise).
+Website/dashboard cloning: Do not publish any website or dashboard that mimics the look, layout, or branding of Ransomware.live.
+These restrictions apply without prior written approval from the owner of Ransomware.live; exceptions may be granted at the owner's sole discretion.
+5. Permitted Use
+5.1 Non-Commercial Use
+The Data is freely available for non-commercial use. This includes personal research, academic purposes, cybersecurity awareness, open-source projects, and use by government and law-enforcement agencies. Users may utilize the Data without prior approval, provided that appropriate attribution is given to Ransomware.live and the Fair Usage rules in Section 4 are respected.
+5.2 Commercial Use
+Commercial use of the Data is strictly prohibited without prior written approval from the owner of Ransomware.live. Commercial use includes, but is not limited to:
+Incorporation of the Data into commercial products or services.
+Use of the Data for paid consultancy or cybersecurity services.
+Redistribution of the Data in a commercial capacity.
+Monetization of insights derived from the Data.
+Entities or individuals wishing to use the Data for commercial purposes must request explicit authorization from the owner of Ransomware.live by contacting the Ransomware.live team. Approval is granted at the sole discretion of the owner.
+6. Attribution
+Ransomware.live must be clearly named as the source, linking back to ransomware.live , on any page, dashboard, or interface where this data is displayed, and in any report, publication, or deliverable making use of our intelligence. The recommended citation is:
+"Source: Ransomware.live "
+7. No SLA / No Warranty
+This service is provided as-is, with no service level agreement and no guarantee of accuracy, completeness, or availability. Data should be independently verified before use in critical decisions. Inclusion of any entity, group, or incident in the Data does not constitute a determination or confirmation by Ransomware.live that a claimed event occurred as described.
+8. No Continuity Guarantee
+Ransomware.live is an independent personal project, not a commercial product. It may be modified, suspended, or discontinued at any time, without prior notice.
+9. Removal & Dispute Requests
+Requests to correct, remove, or dispute the inclusion of specific entries should be submitted via the contact channel in Section 11 and should identify the entry in question and the basis for the request. Requests are reviewed on a case-by-case, without-prejudice basis and at the owner's discretion; submission of a request does not obligate removal, and review timelines are not guaranteed given the No SLA provision in Section 7.
+10. Termination of Access
+Ransomware.live reserves the right to suspend or revoke API tokens and access, without prior notice, for any use that violates these T&C, including breaches of the Fair Usage rules in Section 4 or unauthorized commercial use under Section 5.2.
+11. Indemnification
+You agree to indemnify and hold harmless Ransomware.live and its owner from any claims, damages, or liabilities arising from your use of the Data, including any downstream product, service, or decision built upon it.
+12. Governing Law
+These T&C are governed by French law. Any dispute arising from or relating to these T&C or the use of the Data shall be subject to the exclusive jurisdiction of the competent French courts, without prejudice to any applicable source-protection framework, including Loi n° 2022-401 du 21 mars 2022 ("Loi Waserman"), which may apply to the platform's data collection methodology and sources.
+13. Amendments
+Ransomware.live reserves the right to update or modify these T&C at any time. Continued use of the Data constitutes acceptance of the latest version of these T&C.
+14. Contact Information
+For any inquiries regarding the use of the Data, please contact:
+https://ransomware.live/contact
+15. Keep the Service Free
+If you'd like to support the project's upkeep, coffees are always welcome: https://buymeacoffee.com/ransomwarelive . This is entirely optional, never a requirement for access.
+By using the data under these conditions, you acknowledge and accept them.
+ransomware .live
+Non nobis, sed securitati communi
+© 2022–2026 All rights reserved.
+Explore
+Victims
+Groups
+Statistics
+Worldmap
+Press
+Intelligence
+Negotiations
+Ransom Notes
+YARA Rules
+IoCs
+API
+Data
+Updated: 2026-10-30 11:50 UTC
+Logos provided by Logo.dev
+Terms & Conditions
+Disclaimer
+Support us
+Contact us
+Changelog
+Session: 057726c909af65969646b040bbbfa5c4df67f5166a33cbac6cd9e1302b0b3ca148
+Tox: 50DADDED26D859469371938B793456D8210A5AE02DD3C42979F5E52411BCB648F1CA68A5EDE5
+HudsonRock · Infostealer Intelligence
+—
+Employees
+—
+Users
+—
+Third Parties
+External Attack Surface
+—
+exposed credential URLs indexed
+Stealer Family Distribution
+Data provided by HudsonRock Cavalier

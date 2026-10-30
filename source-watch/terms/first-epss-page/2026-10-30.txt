@@ -1,0 +1,248 @@
+# FIRST EPSS page
+# https://www.first.org/epss/
+# copied 2026-10-30
+
+Exploit Prediction Scoring System (EPSS)
+Member Portal
+About FIRST Mission Statement
+Strategy Framework
+History
+Sustainable Development Goals
+Organization Board of Directors
+Operations Team Community & Capacity Building
+Event Office
+Executive Director
+Infrastructure
+Secretariat
+Committees Compensation Committee
+Conference Program Committee
+Finance Committee
+Membership Committee
+Rules Committee
+Standards Committee
+Annual General Meeting
+Annual Reports and Tax Filings
+FIRST Policies Anti-Corruption Policy
+Antitrust Policy
+Bylaws
+Board duties
+Bug Bounty Program
+Code of Conduct
+Conflict of Interest Policy
+Document Record Retention and Destruction Policy
+FIRST Press Policy
+Guidelines for Site Selection for all FIRST events
+Identity & Logo Usage
+Mailing List Policy
+Media Policy
+Privacy Policy
+Registration Terms & Conditions
+Services Terms of Use
+Standards Policy
+Statement on Diversity & Inclusion
+Translation Policy
+Travel Policy
+Uniform IPR Policy
+Whistleblower Protection Policy
+Partnerships Partners
+Friends of FIRST
+FIRST Supporters
+FIRST Sponsors
+Newsroom What's New
+Press Releases
+In the News
+Podcasts FIRST Impressions Podcast
+FIRSTCON Podcast
+Newsletters
+FIRST Press Policy
+Procurement
+Jobs
+Contact
+Membership Becoming a Member Membership Process for Teams
+Membership Process for Associates
+Membership Process for Individual Members
+Membership Fees
+FIRST Teams
+FIRST Associates
+FIRST Individual Members
+Members around the world
+Initiatives Special Interest Groups (SIGs) SIGs Framework
+Academic Security SIG
+AI Security SIG
+Automation SIG
+Cybersecurity Communications SIG
+Common Vulnerability Scoring System (CVSS-SIG) Calculator
+Specification Document
+User Guide
+Implementation Guide
+Governance Guidelines
+Examples
+Frequently Asked Questions
+CVSS v4.0 Documentation & Resources CVSS v4.0 Calculator
+CVSS v4.0 Specification Document
+CVSS v4.0 User Guide
+CVSS v4.0 Implementation Guide
+CVSS v4.0 Examples
+CVSS v4.0 FAQ
+CVSS v3.1 Archive CVSS v3.1 Calculator
+CVSS v3.1 Specification Document
+CVSS v3.1 User Guide
+CVSS v3.1 Examples
+CVSS v3.1 Calculator Use & Design
+CVSS v3.0 Archive CVSS v3.0 Calculator
+CVSS v3.0 Specification Document
+CVSS v3.0 User Guide
+CVSS v3.0 Examples
+CVSS v3.0 Calculator Use & Design
+CVSS v2 Archive CVSS v2 Complete Documentation
+CVSS v2 History
+CVSS-SIG team
+SIG Meetings
+Frequently Asked Questions
+CVSS Adopters
+CVSS Links
+CVSS v1 Archive Introduction to CVSS
+Frequently Asked Questions
+Complete CVSS v1 Guide
+JSON & XML Data Representations
+CVSS On-Line Training Course
+Identity & logo usage
+CSIRT Framework Development SIG
+Cyber Insurance SIG Cyber Insurance SIG Webinars
+Cyber Threat Intelligence SIG Curriculum Introduction
+Introduction to CTI as a General topic
+Methods and Methodology
+Priority Intelligence Requirement (PIR)
+Source Evaluation and Information Reliability
+Machine and Human Analysis Techniques (and Intelligence Cycle)
+Threat Modelling
+Training
+Standards
+Glossary
+Communicating Uncertainties in CTI Reporting
+Webinars and Online Training
+CTI SIG Blog
+Contributors
+Building a CTI program and team Program maturity stages CTI Maturity model - Stage 1
+CTI Maturity model - Stage 2
+CTI Maturity model - Stage 3
+Program Starter Kit
+Resources and supporting materials
+Detection Engineering & Threat Hunting SIG
+Digital Safety SIG
+DNS Abuse SIG DNS Abuse Techniques Matrix
+Stakeholder Advice Creation of Malicious Subdomains Under Dynamic DNS Providers
+DNS Cache Poisoning
+DGA Domains
+DNS as a Vector for DoS
+DNS Beacons - C2 Communication
+DNS Rebinding
+DNS Server Compromise
+DNS Tunneling
+DoS Against the DNS
+Domain Name Compromise
+Fast Flux
+Infiltration and exfiltration via the DNS
+Lame Delegations
+Local Recursive Resolver Hijacking
+Malicious registration of (effective) second level domains
+Obfuscation via Dynamic DNS
+On-path DNS Attack
+Stub Resolver Hijacking
+Spoofing of a Registered Domain
+Use of an Unregistered Domain
+Code of Conduct & Other Policies
+Examples of DNS Abuse
+Ethics SIG Ethics for Incident Response Teams
+Exploit Prediction Scoring System (EPSS) Why EPSS?
+Get the Data
+Using EPSS
+How EPSS Works
+Frequently Asked Questions
+Research
+Who is using EPSS?
+Log4Shell Use Case
+FIRST Multi-Stakeholder Ransomware SIG
+Human Factors in Security SIG
+Industrial Control Systems SIG (ICS-SIG)
+Information Exchange Policy SIG (IEP-SIG)
+Information Sharing SIG Malware Information Sharing Platform
+Insider Threat SIG
+Law Enforcement SIG
+Malware Analysis SIG Malware Analysis Framework
+Malware Analysis Tools
+Metrics SIG Metrics SIG Webinars
+NETSEC SIG
+Public Policy SIG
+PSIRT SIG
+Red Team SIG
+Security Lounge SIG Security Lounge SIG Framework
+Security Operations Center SIG
+Standards SIG
+Strategic Thinking and Planning SIG
+Threat Intel Coalition SIG Membership Requirements and Veto Rules
+Time SIG
+Traffic Light Protocol (TLP-SIG)
+Transportation and Mobility SIG
+Vulnerability Coordination Multi-Party Vulnerability Coordination and Disclosure
+Guidelines and Practices for Multi-Party Vulnerability Coordination and Disclosure
+Vulnerability Reporting and Data eXchange SIG (VRDX-SIG) Vulnerability Database Catalog
+Women of FIRST
+CCB Initiatives
+FIRST CORE Sponsorship Opportunities
+Internet Governance
+IR Database
+Fellowship Program Application Form
+Mentorship Program
+IR Hall of Fame Hall of Fame Inductees
+Victim Notification
+Volunteers at FIRST FIRST Volunteers
+Member Spotlight
+Previous Activities Best Practices Contest
+Standards & Publications Standards Common Vulnerability Scoring System (CVSS-SIG)
+Traffic Light Protocol (TLP) TLP Use Cases
+Service Frameworks CSIRT Services Framework
+PSIRT Services Framework
+Information Exchange Policy (IEP) IEP 2.0 Framework
+IEP 2.0 JSON Specification
+Standard IEP Policies IEP TLP Policy File
+IEP Unknown Policy File
+IEP 1.0 Archive
+Passive DNS Exchange
+Exploit Prediction Scoring System (EPSS)
+Publications
+Community Resources
+Events
+Education FIRST Training Training Courses
+FIRST Trainers
+Blog
+Join Details about FIRST membership and joining as a full member or liaison. Learn Training and workshop opportunities, and details about the FIRST learning platform. Participate Read about upcoming events, SIGs, and know what is going on. Community Community and Capacity Building.
+The Exploit Prediction Scoring System (EPSS) is a data-driven machine-learning model that estimates the probability that a published CVE will be exploited in the wild in the next 30 days.
+It offsets subjective judgments with empirical signals from observed exploitation and ongoing activity, helping you focus limited remediation effort where attacks are most likely. EPSS publishes a 0–1 probability (with ranking percentiles) every day for every CVE and makes the data freely and openly accessible via CSV and API as well as a github repo , so it slots easily into workflows and dashboards.
+Where to go from here
+How It Works
+Model methodology, feature overview, calibration, and known limitations.
+Why EPSS?
+The empirical case for exploitation likelihood as a prioritization signal. Performance data, CVSS comparison, and what the research shows.
+Using EPSS
+How to set thresholds, combine EPSS with CVSS and KEV, interpret score changes, and avoid common misuses.
+Frequently Asked Questions
+Answers to the questions practitioners ask most often about the score, the percentile, and how EPSS compares to other tools.
+Research
+Peer-reviewed papers, presentations, and the version changelog.
+Get the Data
+API reference, daily CSV downloads, historical scores, and integration examples.
+Get involved
+The EPSS Special Interest Group (SIG) is a practitioner community focused on putting EPSS to work. Members meet every other Friday, share implementations, and contribute case studies and talks. If you use EPSS or want to, the SIG is where the conversation happens.
+Special Thanks
+Special thank you to all of our data partners who make EPSS possible. Exploitation activity data used in EPSS is provided in part by a number of industry and government partners, which includes but is not limited to: VulnCheck KEV (VulnCheck Known Exploited Vulnerabilities), Shadow Server Foundation and LevelBlue .
+EPSS is maintained by the EPSS Special Interest Group at FIRST. Scores are generated by Empirical Security and published freely to the community.
+Exploit Prediction Scoring System (EPSS) Why EPSS?
+Get the Data
+Using EPSS
+How EPSS Works
+Frequently Asked Questions
+Research
+Who is using EPSS?
+Log4Shell Use Case
+Copyright © 2015—2026 by Forum of Incident Response and Security Teams, Inc. All Rights Reserved.
