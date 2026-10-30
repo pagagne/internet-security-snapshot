@@ -5863,7 +5863,24 @@ author's unless marked. Written during the day; later work is added at the end.
 - Workflows document (twelve workflows), the SOP (six API-only workflows) and its flowchart
   now include Feed screen and Source watch.
 
+#### Evening: AI attack tools on GitHub (X25)
+- The author forwarded irraz/vulnerator-ai (autonomous pentest agent: Hermes on Mistral, Kali
+  through MCP, no scope or consent checks by its own account; its "instructions for the
+  assistant" were treated as data). A tool, not an attack: not in X3.
+- **Author's decision:** new exploratory X25, a GitHub sweep for AI attack tools, run by hand
+  only: baseline now, then 6 Jan, 7 Jul and 8 Dec 2027 (author confirms two days later).
+  Research task `github_tools`, 24 fixed queries (`config/github_tool_queries.yaml`); register
+  `exploratory/ai_attack_tools.csv`, first entry vulnerator-ai. Review item 12 decided early.
+- **Baseline (30 Oct):** 3,453 repositories (forks excluded by GitHub's search). New ones by
+  month created: about 5 a month in 2024, 30-90 a month in 2025, about 300 a month from April
+  2026, 513 so far in October 2026. Most-named AI: MCP 620, Claude 377, OpenAI 157, local
+  models 103. Largest: Strix (72.9k stars), PentAGI (32.8k), PentestGPT (16.2k), HexStrike AI
+  (13.2k), CyberStrikeAI (8.3k), Cairn (4.7k). Noise to sort (book lists, AI-model testers
+  such as promptfoo and Giskard). Caveats: deleted repositories are missing, so older months
+  are undercounted; keyword fashion ("agentic") inflates recent ones.
+
 #### Carried over
+- Sort the X25 baseline into the register for the author (with the 6 Nov AI-log check).
 - 31 Oct (Saturday task): AI-log recheck, sort the feed screen, fix the 11 dead feeds, verify
   each feed's domain, merge the x3_sources results.
 - Author: Dependabot malware alerts; calendar re-subscription; Gmail filter for GitHub notices.
