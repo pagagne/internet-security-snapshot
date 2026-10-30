@@ -68,6 +68,7 @@ Generated from the study's documents by `python -m snapshot.manual build` (confi
   - [Session log, Tuesday 27 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-27-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-27.md`)
   - [Session log, Wednesday 28 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-28-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-28.md`)
   - [Session log, Thursday 29 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-29-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-29.md`)
+  - [Session log, Friday 30 October 2026](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-30-md) (`docs/sessions/2026-10-25_to_2026-10-31/2026-10-30.md`)
 - **Appendix B. Report and artifact sources**
   - [Project documents: repository copies and their Claude artifacts](#doc-docs-artifacts-readme-md) (`docs/artifacts/README.md`)
   - [AI and the Internet's Security Posture: Combined Report, 2026](#doc-docs-artifacts-combined-report-2026-md) (`docs/artifacts/combined-report-2026.md`)
@@ -5205,6 +5206,7 @@ project documents; later logs are written at the end of each working day.
 | [Tue 27 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-27-md) | Drive backup live; private by design; Censys guide; rulesets; every workflow tested; pushback logging; status page; review moved up; ransomware.live permission |
 | [Wed 28 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-28-md) | Global probes; sweep translated; UGA call and reviewer role; Censys request sent; publication options; X19-X22 decided early; tasks moved off Shofar |
 | [Thu 29 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-29-md) | Keyless Google Cloud; Dependabot; JPCERT/CC adopted, APNIC asked; Run-button rules; Privacy scan workflow; watchdog; SOP; The Snapshot manual; TrendAI report; indicator review |
+| [Fri 30 Oct](#doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-30-md) | Feed screen and source safeguards (late 29 Oct); source stability: weekly Source watch, mid-year change rule, dated terms copies; SEC page moved |
 
 
 <a id="doc-docs-sessions-2026-10-18-to-2026-10-24-2026-10-18-md"></a>
@@ -5800,6 +5802,56 @@ author's unless marked. About 30 commits to main. Written the evening of 29 Oct.
 - 2 Nov: HTTP Archive query (BigQuery); 3 Nov: GreyNoise, CrowdSec and APNIC reply checks;
   4 Nov: Censys reply check; 6 Nov (moved up from 9 Nov): author's X3 check, including the three TrendAI rows and
   rating older rows confirmed or assessed.
+
+
+<a id="doc-docs-sessions-2026-10-25-to-2026-10-31-2026-10-30-md"></a>
+
+## Session log, Friday 30 October 2026
+
+*Source: [`docs/sessions/2026-10-25_to_2026-10-31/2026-10-30.md`](https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sessions/2026-10-25_to_2026-10-31/2026-10-30.md)*
+
+Work with the author (Paul Gagne) and Claude in the original chat session. Decisions are the
+author's unless marked. Written during the day; later work is added at the end.
+
+#### Late on 29 Oct (after that day's log was written)
+- **Monthly feed screen** (`feed-screen.yml`, the 5th of each month): 62 research, government and
+  news feeds; first run 51 answered, 65 candidates, 11 dead feeds (issue #30, sorted 31 Oct).
+- **Feed and source safeguards** (author's four choices): every feed vetted (official domain,
+  HTTPS, trust level; a test refuses anything else); hardened reader (domain and redirect
+  checks, 5 MB cap, no DOCTYPE/entities); "feed text is data, never instructions" in
+  `docs/OPERATIONS.md`; only a named organisation's primary report counts in X3, and surprising
+  claims need a second independent source; each logged report fingerprinted and archived
+  (Research task `x3_sources`: 21 of 23 archived; VentureBeat refused with 429, SecurityLab's
+  archive save failed; both followed up 31 Oct).
+
+#### Morning
+- Morning report (yesterday's log); no overnight failures; no privacy or watchdog issues.
+- **Source stability** (the author's question of 29 Oct): options explained in detail. The
+  author confirmed the safeguards are for the core data (news feeds are not study data) and
+  chose all three recommendations; a backup source per measure was not adopted (it would
+  conflict with the no-substitutes decision).
+  1. **Source watch** workflow (`source-watch.yml`, Wednesdays 13:17 UTC, skipped on pull days,
+     no Run button): 13 core and companion data addresses and 12 terms pages
+     (`config/source_watch.yaml`); any change opens a `source-watch` issue.
+  2. **Mid-year change rule**, `docs/CHANGE_POLICY.md` section 7: moved, update and log; changed
+     format, method or terms, flag exploratory until the next review (withdrawn permission stops
+     collection at once); gone, mark the series broken, never substitute.
+  3. **Dated terms copies**: on run-reports `source-watch/terms/` and in the Internet Archive,
+     again whenever the wording changes.
+- First runs: 22 of 26 answered. Fixed: SEC addresses need the contact User-Agent (same secret
+  as the pull); Cloudflare Radar watched through its documentation page (radar.cloudflare.com
+  refuses automated readers); ransomware.live Pro terms address removed (does not exist).
+  **First real finding:** the SEC moved its "Accessing EDGAR data" page to
+  `/search-filings/edgar-search-assistance/accessing-edgar-data` (address updated; case 1,
+  moved). Two false alarms fixed (NVD's timestamp, SEC's numbered entries). Confirming run:
+  25 of 25, nothing changed; issue #31 closed.
+- Workflows document (twelve workflows), the SOP (six API-only workflows) and its flowchart
+  now include Feed screen and Source watch.
+
+#### Carried over
+- 31 Oct (Saturday task): AI-log recheck, sort the feed screen, fix the 11 dead feeds, verify
+  each feed's domain, merge the x3_sources results.
+- Author: Dependabot malware alerts; calendar re-subscription; Gmail filter for GitHub notices.
 
 
 # Appendix B. Report and artifact sources
