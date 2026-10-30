@@ -51,6 +51,7 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    import matplotlib.ticker
     out = root / FIGS
     out.mkdir(parents=True, exist_ok=True)
     names = []
@@ -67,17 +68,21 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
         ax.spines[side].set_visible(False)
     fig.tight_layout(); n = f"{date}-1-new-per-month.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
 
-    fig, ax = plt.subplots(figsize=(8, 4.5), dpi=130)
-    rl = ["attack", "defence", "both", "model_testing"]
-    x = range(len(rl))
-    ax.bar([i - .2 for i in x], [len(s["by"][k]) for k in rl], .4, color="#9fb8d6", label="Projects")
-    ax.bar([i + .2 for i in x], [s["stars"][k] for k in rl], .4, color="#e3a46f", label="Stars (total)")
-    ax.set_yscale("log"); ax.set_xticks(list(x), ["Attack", "Defence", "Both", "Model testing"])
-    ax.set_xlabel("Role (what the software does)"); ax.set_ylabel("Count (log scale)")
-    ax.set_title(f"How many projects, and how much attention (sweep of {date})")
-    ax.legend(frameon=False); ax.grid(axis="y", alpha=.3)
-    for side in ("top", "right"):
-        ax.spines[side].set_visible(False)
+    rl = ["attack", "defence", "both"]
+    names_ = ["Attack", "Defence", "Both"]
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(10, 4.5), dpi=130)
+    for ax, vals, title, ylab in (
+            (a1, [len(s["by"][k]) for k in rl], "How many projects", "Number of projects"),
+            (a2, [s["stars"][k] for k in rl], "How much attention", "GitHub stars, all projects added up")):
+        bars = ax.bar(names_, vals, color=[COLOURS[k] for k in rl], width=.6)
+        for b, v in zip(bars, vals):
+            ax.text(b.get_x() + b.get_width() / 2, v, f"{v:,}", ha="center", va="bottom", fontsize=10)
+        ax.set_title(title); ax.set_ylabel(ylab); ax.set_xlabel("Role (what the software does)")
+        ax.set_ylim(0, max(vals) * 1.15); ax.grid(axis="y", alpha=.3)
+        ax.yaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(lambda v, _: f"{v:,.0f}"))
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+    fig.suptitle(f"Projects and attention by role (sweep of {date})")
     fig.tight_layout(); n = f"{date}-2-projects-and-stars.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
 
     fig, ax = plt.subplots(figsize=(10, 4.5), dpi=130)
@@ -127,8 +132,9 @@ def build_text(root: Path | None = None) -> str:
               "*Chart 1. Horizontal: the month each project was created. Vertical: new projects that "
               "month. Lines: attack, defence, both.*", "",
               f"![Chart 2. Projects and stars by role, sweep of {date}](ai_tool_landscape/{date}-2-projects-and-stars.png)", "",
-              "*Chart 2. Horizontal: role. Vertical: count on a logarithmic scale. Bars: number of "
-              "projects and their stars in total.*", "",
+              "*Chart 2. Two panels. Left: how many projects each role has. Right: how much "
+              "attention they get, as GitHub stars (bookmarks people give a project) added up over all "
+              "of that role's projects. Horizontal: role; vertical: the count, written on each bar.*", "",
               f"![Chart 3. AI named by each side, sweep of {date}](ai_tool_landscape/{date}-3-ai-by-side.png)", "",
               "*Chart 3. Horizontal: the AI named in a project's description or instructions. "
               "Vertical: projects naming it. Bars: attack and defence.*", "",
