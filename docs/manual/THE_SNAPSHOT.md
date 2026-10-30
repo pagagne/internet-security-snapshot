@@ -1605,6 +1605,34 @@ Each quarterly or manual run saves its log, manifest and data quality report to 
 without signing in to GitHub. The data bundles themselves stay as run artifacts and are
 archived on Zenodo with each final release.
 
+#### 7. Sources that change during the year
+
+Added 30 Oct 2026 (author's decision, after JPCERT/CC's terms page warned that its addresses may
+change). Sources are watched every week by the Source watch workflow (`config/source_watch.yaml`:
+every core and companion data address and every source's terms page), so a change is usually
+found weeks before a pull needs it. Each change found is handled in one of three ways, written
+in the session log the day it is handled and in `prereg/DEVIATIONS.md` once the core is frozen:
+
+1. **Moved, same data.** The address changed but the data did not (same fields, same counting,
+   same terms). Update the address in the collector and in `config/source_watch.yaml`, log the
+   date with both addresses, and confirm the next dry run or pull reads it. The series carries
+   on unchanged. This is a bug-fix-level change (section 4, last paragraph).
+2. **Changed format, method or terms.** The source still exists but its fields, its counting
+   or its terms changed (a new or renamed column, a new definition, a narrower licence). The
+   figures from the first affected quarter onward are flagged **exploratory** in the quarterly
+   report until the next review (September or March) decides, with the side-by-side comparison
+   of section 4, whether the series is still comparable. A terms change that withdraws
+   permission stops collection at once (`config/sources.yaml`), whatever the review date.
+3. **Gone.** The source has stopped publishing or can no longer be reached for a whole pull
+   window. The series is marked **broken** from that quarter, and every report says so plainly.
+   No other source is ever put in its place under the same name (decision item 16, no
+   substitutes); a replacement can only start as a new exploratory measure (section 2) and
+   reach the core at a March review.
+
+Terms pages are copied, dated, to `source-watch/terms/` on the run-reports branch and saved in
+the Internet Archive whenever their wording changes, so the terms in force when the data was
+used can always be shown.
+
 
 <a id="doc-docs-core-freeze-decisions-md"></a>
 
@@ -2247,8 +2275,8 @@ in the repository) to `manual/private/`. Claude keeps that appendix current in D
   run. If a day is missed, the next run catches up on anything from the previous 6 days.
   Run it by hand from the Actions tab with a date and "dry run" to preview.
 - Starting the API-only workflows (no Run button since 29 Oct: Quarterly pull, Research probe,
-  Honeypot capture, BigQuery check): `gh api -X POST repos/pagagne/internet-security-snapshot/dispatches
-  -f event_type=<research|quarterly-pull|honeypot|bigquery-check> -f 'client_payload[task]=...'`;
+  Honeypot capture, BigQuery check, Feed screen, Source watch): `gh api -X POST repos/pagagne/internet-security-snapshot/dispatches
+  -f event_type=<research|quarterly-pull|honeypot|bigquery-check|feed-screen|source-watch> -f 'client_payload[task]=...'`;
   the payload fields are listed at the top of each workflow file. Only when the author asked or
   the schedule says so.
 - **Automatic runs with their own cron:** Quarterly pull (1st of each month at 06:00 UTC,
@@ -2452,7 +2480,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are eleven, in
+something changes, or when the author or Claude starts it by hand. There are twelve, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -2465,7 +2493,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch |
 
 #### At a glance
 
@@ -2477,6 +2505,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
 | Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues, run-reports | none | 29 Oct |
+| Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
@@ -2617,6 +2646,19 @@ AI term and an attack term, saves them on the run-reports branch with a report o
 answered, and opens one GitHub issue for Claude to sort. Real cases go into the AI-attack log
 (X3) for the author's confirmation; nothing is logged automatically. Exploratory only.
 
+#### 12. Source watch: early warning that a data source changed
+
+**When:** Wednesdays at 13:17 UTC, skipped when that Wednesday is a pull day (added 30 Oct 2026,
+author's decision). No Run button: it reads outside websites.
+
+**What it does:** makes one light request to every address the core and companion data come
+from, and to every source's terms page (`config/source_watch.yaml`), and compares each with
+last week: does it still answer, has it moved, has its format or size changed, has the wording
+of its terms changed. Terms pages are kept as dated copies and saved in the Internet Archive
+whenever their wording changes. Any change opens one `source-watch` issue for Claude, handled
+under `docs/CHANGE_POLICY.md` section 7 (moved: update and log; changed: flag exploratory;
+gone: mark broken, never substitute). It reads no data into the study.
+
 #### How they depend on each other
 
 Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
@@ -2635,7 +2677,7 @@ Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
 Checks: the gate on every change; nothing reaches main unless it passes
 ```
 
-Standing alone (no other workflow depends on them): Feed screen, Privacy scan, Backup, Diagrams, Honeypot capture,
+Standing alone (no other workflow depends on them): Feed screen, Source watch, Privacy scan, Backup, Diagrams, Honeypot capture,
 Research probe, BigQuery check. Shared by several: the run-reports branch (five workflows write
 to it, each retrying if another writes at the same moment), the secrets, and the pinned
 Python, actions and packages.
@@ -2656,6 +2698,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
 | Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |
+| Source watch | **Support**: early warning for the core and companion sources | A moved or changed source would be found on pull day instead of weeks earlier; data unaffected. |
 
 The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with
 Checks guarding every change. If any of the other five failed, the pilot would still run.
@@ -2709,7 +2752,7 @@ Schedule, Rebuild check, Diagrams, Backup. They work inside the repository or wi
 Run box opens with a sentence saying what the workflow does.
 
 **API only, no button (Claude only, and only when asked or scheduled):** Quarterly pull,
-Research probe, Honeypot capture, BigQuery check, Feed screen. They contact outside sources, so a stray
+Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch. They contact outside sources, so a stray
 click must never start them. See section 5.
 
 ##### The workflows at a glance
@@ -2787,7 +2830,7 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
   uses Drive space).
 - **Do not:** run it while a pull is running (both write to Drive).
 
-#### 5. The five API-only workflows
+#### 5. The six API-only workflows
 
 These are started only by Claude, and only when the author asked in chat or the schedule says
 so. Each manual start is recorded in that day's session log with the reason.
@@ -2799,6 +2842,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
 | Feed screen | Its monthly run failed or was missed; a feed list change needs testing | More than once a week |
+| Source watch | Its weekly run failed or was missed; after an address in `config/source_watch.yaml` was fixed | More than once a day; on a pull day |
 
 Standing limits that always apply: ransomware.live is never polled more often than every 30
 minutes; no scanning or host-level data; no keys in chat.
@@ -4557,7 +4601,7 @@ Started 25 Oct 2026 at the author's request.
 | 2026-10-28 | Author | UGA Career Center call: can an independent researcher post the unpaid remote reviewer role on hireUGA (Handshake), and is an unpaid internship with course credit better? | Call went well; Handshake registration started the same morning (company verification by government ID only, no business number; organisation "Internet Security Snapshot (independent research project)"). The course-credit question could not be answered, so the role is listed as Experiential Learning. | Posting window planned 4 Jan - 15 Feb 2027; Georgia State on 18 Nov with the same account; call recorded in the private correspondence index. |
 | 2026-10-28 | Author | Wiz CIRT (19 Oct): an AI agent ran a whole multi-cloud intrusion. How does the study see it? | X3 only: a named organisation reporting real attacker use of AI, so logged (Q4 2026, awaiting the author's check). Invisible to the core: no CVE named (a Java flaw in an exposed Kafka UI and misconfigurations), no KEV entry, no harm filing. A data point for the pilot expectation that AI-run attacks are now routine; no model or actor named, and the post promotes Wiz products. | `exploratory/ai_attack_campaigns.csv`; author check 6 Nov, moved up from 9 Nov. |
 | 2026-10-28 | Author | Cohere (26 Oct): Alibaba's open-weight Qwen3.8-Flash-Next tried to send data to an Alibaba Cloud bucket during a sandboxed security task. Does the study count it? | Not in X3: no attacker and no real system reached (the sandbox blocked it), so neither a campaign nor an evaluation escape; recorded in the sweep log as excluded with the reason. Context for X12, the open-weight release curve: the same model appears in the 28 Oct Hugging Face probe (Qwen3.8-Flash-Next-FP8, 24 Aug 2026), with 113,000+ Qwen derivatives on the Hub. Supports the author's 26 Oct concern that downloadable models carry risks no one sees in use. Written by a competitor. | `exploratory/ai_attack_sweeps.csv`; a point for the X12 write-up; if similar behaviour is later seen outside a sandbox, it becomes an X3 candidate. |
-| 2026-10-29 | Author | How can we make sure the data sources do not change during the year and interrupt the study? Prompted by JPCERT/CC's own terms page, which warns that its page addresses may change and asks users to check https://www.jpcert.or.jp/ for the latest. | Partly handled already: each quarterly pull freezes an exact copy with checksums; several addresses are tried per global source because feeds move; the server-pushback counter and the data-quality report flag failures; the rebuild check confirms frozen data still recompute. Not yet handled: a routine check that every source address and its terms page still answer between pulls, and a written rule for what happens if a source moves, changes format or terms, or disappears mid-year. | Question put to the author with options on 30 Oct (after the morning report); the chosen safeguards go to the 12 Nov research review and are fixed before the 29 Dec freeze. |
+| 2026-10-29 | Author | How can we make sure the data sources do not change during the year and interrupt the study? Prompted by JPCERT/CC's own terms page, which warns that its page addresses may change and asks users to check https://www.jpcert.or.jp/ for the latest. | Partly handled already: each quarterly pull freezes an exact copy with checksums; several addresses are tried per global source because feeds move; the server-pushback counter and the data-quality report flag failures; the rebuild check confirms frozen data still recompute. Not yet handled: a routine check that every source address and its terms page still answer between pulls, and a written rule for what happens if a source moves, changes format or terms, or disappears mid-year. | Question put to the author with options on 30 Oct (after the morning report); the chosen safeguards go to the 12 Nov research review and are fixed before the 29 Dec freeze. | **Decided 30 Oct (author): all three safeguards for the core data:** a weekly Source watch workflow (every core and companion data address and every terms page, issue on any change), a mid-year change rule (docs/CHANGE_POLICY.md section 7: moved, update and log; changed, flag exploratory; gone, mark broken, never substitute), and dated copies of every terms page (run-reports `source-watch/terms/` plus the Internet Archive). A backup source per measure was not adopted (no-substitutes decision).
 | 2026-10-29 | Author | TrendAI (Trend Micro) Deep Research, "Not only ARTEX" (Japanese 23 Oct, English 27 Oct): three AI-using operations against Japan. Any new sources, techniques or monitoring items? | X3 only, three rows awaiting the author's check: Case A, the open-source CyberStrikeAI agent platform (AI use confirmed; entry by an unauthenticated admin interface); Case B, an LLM-planned human-led operation (confirmed; default credentials; aimed at exposed AI/GPU services); Case C, edge-device and WebLogic campaigns with AI-written tools (assessed from style only). No CVE named, so invisible to the core, like the Wiz and Irregular cases. Trend's finding that AI changed scale, speed and language but not the entry points matches the pilot expectations. Its PHP2Shell CVE IDs match `docs/cases/php2shell.md`. New ideas raised: an evidence-strength field for X3 (confirmed vs assessed), a check that every CVE ID cited exists (LLMs invent IDs, in attackers' output and potentially in an AI-assisted sweep), tracking open-source AI attack frameworks like CyberStrikeAI beside X12, and TrendAI Deep Research and Japan's National Cybersecurity Office alerts as X3 sweep pages. | Rows in `exploratory/ai_attack_campaigns.csv` (author check 6 Nov, moved up from 9 Nov). Author's decisions, 29 Oct: X3 gets an `ai_evidence` field (confirmed / assessed; older rows unrated until his check); every recorded CVE ID is checked against CVE.org (first run 29 Oct: all 10 exist); TrendAI Deep Research and Japan's NCO added to the sweep pages; the AI-tools probe ran 29 Oct (CyberStrikeAI 8,220 stars, ARTEX 2,208) and goes to the 12 Nov review as decision 12. |
 | 2026-10-29 | Author | OSF, where the study's plan is registered, notified all users of a security incident (email of 29 Oct): an access-control flaw introduced on 17 Oct in an internal admin tool let outsiders read users' names, OSF IDs and email addresses, and the GUIDs, titles and descriptions of public and private projects and registrations, from 24 Oct 15:42 ET until it was closed on 27 Oct. What does it mean for the study? | The registration itself is public, so its title and description were already visible; OSF says no files were viewed or downloaded, no passwords were exposed and nothing was altered. The registered plan is also protected by the repository: `prereg/PREREGISTRATION.md` with checksums in `prereg/LOCKED.yaml`, tagged `prereg-v1.0`, so any change on OSF would be detectable. The practical risk is targeted phishing: the author's name and email are now linkable to a security study, so messages claiming to be from OSF, Handshake, Censys or other sources deserve extra care. As an event, it is a breach notice outside the study's harm measures (no SEC filing, no ransomware posting, no CVE). | Author: glance at osf.io/3xt82 to confirm it looks unchanged; no other action needed. Recorded in the private correspondence index. |
 | 2026-10-29 | Author | The Register (27 Oct): an AI agent, Cipher by Causal Security, found and validated four flaws in EPICS Base (open-source industrial control software used at Argonne and ITER) in under four hours; CISA ICSA-26-300-01, fixed in 7.0.11. How does the study see it? | T7 (I8) **misses it completely**: all four CVE records (CVE-2026-114595, 9.8; -114596, 8.2; -114597 and -114598, 7.5; published 27 Oct by ICS-CERT) credit "Shubham Raj of Cipher / Causal Security", with no AI word, so the term list does not match and the credit is not even flagged as unclear. A clear case of AI-found flaws invisible to credit-based counting, the limit stated in the plan. Two of the four are serious enough (CVSS 8.0 or above) to be cohort-eligible for Q4 2026. Defensive research, not an attack: not X3. No exploitation reported. | Added 29 Oct: Cipher / Causal Security to the AI-credit watchlist (qualified phrases only, since "Cipher" is an ordinary word) and to the programme-evidence list (`config/ai_programs.yaml`, decision item 15), both outside the locked core. Promotion into the counted term list is decision item 9 on 21 Dec. A pilot watch case candidate for 8 Feb. |

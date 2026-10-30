@@ -23,7 +23,7 @@ Schedule, Rebuild check, Diagrams, Backup. They work inside the repository or wi
 Run box opens with a sentence saying what the workflow does.
 
 **API only, no button (Claude only, and only when asked or scheduled):** Quarterly pull,
-Research probe, Honeypot capture, BigQuery check, Feed screen. They contact outside sources, so a stray
+Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch. They contact outside sources, so a stray
 click must never start them. See section 5.
 
 ### The workflows at a glance
@@ -101,7 +101,7 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
   uses Drive space).
 - **Do not:** run it while a pull is running (both write to Drive).
 
-## 5. The five API-only workflows
+## 5. The six API-only workflows
 
 These are started only by Claude, and only when the author asked in chat or the schedule says
 so. Each manual start is recorded in that day's session log with the reason.
@@ -113,6 +113,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
 | Feed screen | Its monthly run failed or was missed; a feed list change needs testing | More than once a week |
+| Source watch | Its weekly run failed or was missed; after an address in `config/source_watch.yaml` was fixed | More than once a day; on a pull day |
 
 Standing limits that always apply: ransomware.live is never polled more often than every 30
 minutes; no scanning or host-level data; no keys in chat.

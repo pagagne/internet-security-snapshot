@@ -1,0 +1,46 @@
+# Weekly source watch (author's decision, 30 Oct 2026): every address the core and companion
+# data depend on, and the terms-of-use page of every source we use or have permission from.
+# Read by snapshot.sourcewatch; run by the Source watch workflow (weekly, no Run button).
+#
+#   kind: data   the address a collector reads; the check records whether it answers, where it
+#                redirects, its content type, its shape (JSON keys or CSV header) and size.
+#   kind: terms  a terms, licence or usage page; the check also keeps a dated text copy and an
+#                Internet Archive copy whenever the wording changes.
+#   used_by:     the collector or measure it serves (core, companion or permission).
+#   expect:      the reply status the address normally gives (default 200).
+#
+# One light request per address per week, the study named in each. Addresses that need a key
+# (ransomware.live Pro, Cloudflare Radar API) are watched through their public pages only.
+# A change found here is handled by docs/CHANGE_POLICY.md section 7 (sources that change
+# during the year). Added addresses are dated; first checked by the 30 Oct 2026 run.
+
+sources:
+  # ---- data addresses (core) ----
+  - {name: CVE List (cvelistV5 repository), kind: data, used_by: core cve, url: "https://api.github.com/repos/CVEProject/cvelistV5"}
+  - {name: CISA KEV catalogue (CISA feed), kind: data, used_by: core kev, url: "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"}
+  - {name: CISA KEV repository (kev-data), kind: data, used_by: core kev, url: "https://api.github.com/repos/cisagov/kev-data"}
+  - {name: NVD API, kind: data, used_by: core nvd, url: "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1"}
+  - {name: NVD feed files, kind: data, used_by: core nvd, url: "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.meta"}
+  - {name: NVD mirror (fkie-cad), kind: data, used_by: core nvd fallback, url: "https://api.github.com/repos/fkie-cad/nvd-json-data-feeds"}
+  - {name: EPSS API, kind: data, used_by: core epss, url: "https://api.first.org/data/v1/epss?limit=1"}
+  - {name: EPSS daily file, kind: data, used_by: core epss, url: "https://epss.cyentia.com/epss_scores-current.csv.gz"}
+  - {name: SEC company list, kind: data, used_by: core sec, url: "https://www.sec.gov/files/company_tickers.json"}
+  - {name: Red Hat VEX (fix dates), kind: data, used_by: core fix dates, url: "https://security.access.redhat.com/data/csaf/v2/vex/2021/cve-2021-44228.json"}
+  - {name: Palo Alto advisories (fix dates), kind: data, used_by: core fix dates, url: "https://security.paloaltonetworks.com/json/CVE-2024-3400"}
+  # ---- data addresses (companion and exploratory measures) ----
+  - {name: SANS ISC honeypot URL summary, kind: data, used_by: companion X23 / honeypot, url: "https://isc.sans.edu/feeds/urlsummary.txt"}
+  - {name: SANS ISC honeypot URL categories, kind: data, used_by: companion X23 / honeypot, url: "https://isc.sans.edu/feeds/urlcategories.txt"}
+  # ---- terms, licence and usage pages ----
+  - {name: NVD terms of use, kind: terms, used_by: core nvd, url: "https://nvd.nist.gov/developers/terms-of-use"}
+  - {name: CVE Program terms of use, kind: terms, used_by: core cve, url: "https://www.cve.org/Legal/TermsOfUse"}
+  - {name: CISA KEV catalogue page, kind: terms, used_by: core kev, url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
+  - {name: CISA kev-data repository (licence), kind: terms, used_by: core kev, url: "https://github.com/cisagov/kev-data"}
+  - {name: FIRST EPSS page, kind: terms, used_by: core epss, url: "https://www.first.org/epss/"}
+  - {name: SEC accessing EDGAR data, kind: terms, used_by: core sec, url: "https://www.sec.gov/os/accessing-edgar-data"}
+  - {name: Red Hat security data, kind: terms, used_by: core fix dates, url: "https://access.redhat.com/security/data"}
+  - {name: SANS ISC data feeds, kind: terms, used_by: companion X23 / honeypot, url: "https://isc.sans.edu/feeds_doc.html"}
+  - {name: ransomware.live terms, kind: terms, used_by: permission (ticket 3425), url: "https://www.ransomware.live/t&c"}
+  - {name: ransomware.live Pro terms, kind: terms, used_by: permission (ticket 3425), url: "https://pro.ransomware.live/t&c"}
+  - {name: Cloudflare Radar about and licence, kind: terms, used_by: exploratory X4, url: "https://radar.cloudflare.com/about"}
+  - {name: JPCERT/CC site terms, kind: terms, used_by: companion X19, url: "https://www.jpcert.or.jp/guide.html"}
+  - {name: CERT-FR legal notice, kind: terms, used_by: companion X19, url: "https://www.cert.ssi.gouv.fr/mentions-legales/"}

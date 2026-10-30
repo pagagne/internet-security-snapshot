@@ -40,8 +40,8 @@ in the repository) to `manual/private/`. Claude keeps that appendix current in D
   run. If a day is missed, the next run catches up on anything from the previous 6 days.
   Run it by hand from the Actions tab with a date and "dry run" to preview.
 - Starting the API-only workflows (no Run button since 29 Oct: Quarterly pull, Research probe,
-  Honeypot capture, BigQuery check): `gh api -X POST repos/pagagne/internet-security-snapshot/dispatches
-  -f event_type=<research|quarterly-pull|honeypot|bigquery-check> -f 'client_payload[task]=...'`;
+  Honeypot capture, BigQuery check, Feed screen, Source watch): `gh api -X POST repos/pagagne/internet-security-snapshot/dispatches
+  -f event_type=<research|quarterly-pull|honeypot|bigquery-check|feed-screen|source-watch> -f 'client_payload[task]=...'`;
   the payload fields are listed at the top of each workflow file. Only when the author asked or
   the schedule says so.
 - **Automatic runs with their own cron:** Quarterly pull (1st of each month at 06:00 UTC,

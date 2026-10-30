@@ -1,0 +1,71 @@
+name: Source watch
+
+# Weekly source watch (author's decision, 30 Oct 2026). Checks every address the core and
+# companion data depend on, and every source's terms page (config/source_watch.yaml), against
+# last week's record, so a moved, changed or vanished source is found weeks before a pull
+# needs it. Terms pages get a dated text copy and an Internet Archive copy whenever their
+# wording changes. Results and the running record live on the run-reports branch under
+# source-watch/; any change opens (or adds to) one `source-watch` issue. Handling a change:
+# docs/CHANGE_POLICY.md section 7.
+on:
+  schedule:
+    - cron: "17 13 * * 3"   # Wednesdays 13:17 UTC; skipped when that Wednesday is a pull day (the 1st)
+  # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
+  # repository, so it starts only on its timer or through GitHub's API (repository_dispatch),
+  # e.g. by Claude. See docs/WORKFLOWS.md.
+  repository_dispatch:
+    types: [source-watch]
+
+permissions:
+  contents: write   # results on the run-reports branch only
+  issues: write
+
+concurrency:
+  group: source-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 30
+    steps:
+      - name: Skip pull days
+        id: day
+        run: |
+          if [ "$(date -u +%d)" = "01" ] && [ "${{ github.event_name }}" = "schedule" ]; then echo "skip=yes" >> "$GITHUB_OUTPUT"; echo "Pull day: skipped."; fi
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+        if: steps.day.outputs.skip != 'yes'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        if: steps.day.outputs.skip != 'yes'
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - if: steps.day.outputs.skip != 'yes'
+        run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Check the sources
+        if: steps.day.outputs.skip != 'yes'
+        run: |
+          git fetch origin run-reports:run-reports
+          git worktree add -q /tmp/rr run-reports
+          python -m snapshot.sourcewatch --state /tmp/rr/source-watch --out watch-out | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Save the record and report changes
+        if: steps.day.outputs.skip != 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          dest="source-watch/runs/$(date -u +%Y-%m-%d)"
+          mkdir -p "/tmp/rr/$dest" && cp watch-out/changes.md watch-out/records.json "/tmp/rr/$dest/"
+          ( cd /tmp/rr
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A && git commit -qm "Source watch $GITHUB_RUN_ID"
+            for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && break; sleep $((i * 4)); git pull -q --rebase origin run-reports; done )
+          [ "$(cat watch-out/changed)" = "yes" ] || grep -q "Not answering normally" watch-out/changes.md || exit 0
+          gh label create source-watch --color fbca04 --description "A data source or terms page changed" --force
+          body=$(printf 'The weekly source watch found a change. Handle it under docs/CHANGE_POLICY.md section 7 and note it in the session log. Full record: run-reports `%s`.\n\n%s' "$dest" "$(head -c 60000 watch-out/changes.md)")
+          open=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=source-watch&state=open" --jq '.[0].number // empty')
+          if [ -n "$open" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/issues/$open/comments" -f body="$body" >/dev/null
+          else
+            gh api "repos/$GITHUB_REPOSITORY/issues" -f title="[Claude] A data source changed ($(date -u +%-d\ %b\ %Y))" \
+              -f body="$body" -f "labels[]=source-watch" -f "labels[]=owner:claude" >/dev/null
+          fi

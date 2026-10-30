@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are eleven, in
+something changes, or when the author or Claude starts it by hand. There are twelve, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -18,7 +18,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch |
 
 ## At a glance
 
@@ -30,6 +30,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
 | Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues, run-reports | none | 29 Oct |
+| Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
@@ -170,6 +171,19 @@ AI term and an attack term, saves them on the run-reports branch with a report o
 answered, and opens one GitHub issue for Claude to sort. Real cases go into the AI-attack log
 (X3) for the author's confirmation; nothing is logged automatically. Exploratory only.
 
+## 12. Source watch: early warning that a data source changed
+
+**When:** Wednesdays at 13:17 UTC, skipped when that Wednesday is a pull day (added 30 Oct 2026,
+author's decision). No Run button: it reads outside websites.
+
+**What it does:** makes one light request to every address the core and companion data come
+from, and to every source's terms page (`config/source_watch.yaml`), and compares each with
+last week: does it still answer, has it moved, has its format or size changed, has the wording
+of its terms changed. Terms pages are kept as dated copies and saved in the Internet Archive
+whenever their wording changes. Any change opens one `source-watch` issue for Claude, handled
+under `docs/CHANGE_POLICY.md` section 7 (moved: update and log; changed: flag exploratory;
+gone: mark broken, never substitute). It reads no data into the study.
+
 ## How they depend on each other
 
 Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
@@ -188,7 +202,7 @@ Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
 Checks: the gate on every change; nothing reaches main unless it passes
 ```
 
-Standing alone (no other workflow depends on them): Feed screen, Privacy scan, Backup, Diagrams, Honeypot capture,
+Standing alone (no other workflow depends on them): Feed screen, Source watch, Privacy scan, Backup, Diagrams, Honeypot capture,
 Research probe, BigQuery check. Shared by several: the run-reports branch (five workflows write
 to it, each retrying if another writes at the same moment), the secrets, and the pinned
 Python, actions and packages.
@@ -209,6 +223,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
 | Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |
+| Source watch | **Support**: early warning for the core and companion sources | A moved or changed source would be found on pull day instead of weeks earlier; data unaffected. |
 
 The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with
 Checks guarding every change. If any of the other five failed, the pilot would still run.

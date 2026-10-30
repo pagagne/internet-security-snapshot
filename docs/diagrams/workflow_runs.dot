@@ -30,6 +30,8 @@ digraph workflows {
     honey [label="Honeypot capture\n2nd monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
     probe [label="Research probe\nwhen asked"];
     bq    [label="BigQuery check\nwhen asked"];
+    feeds [label="Feed screen\n5th monthly"];
+    watch [label="Source watch\nWednesdays"];
   }
 
   subgraph cluster_out {
@@ -39,12 +41,13 @@ digraph workflows {
     sans    [label="SANS Internet\nStorm Center"];
     gcp     [label="Your Google Cloud\n(BigQuery)"];
     drive   [label="Your Google Drive\n(private copies)"];
+    news    [label="Security research\nand news feeds"];
   }
 
   // one column each: who starts it | the workflows | what they reach
   { rank=same; you; claude; }
-    { rank=same; sources; sans; gcp; drive; }
+    { rank=same; sources; sans; gcp; drive; news; }
   you -> privacy [lhead=cluster_int, color="#1f4e79", label="any of these"];
   claude -> probe [lhead=cluster_ext, color="#b85c1e", label="probes, checks"];
-  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive;
+  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive; feeds -> news; watch -> sources [style=dashed, label="addresses\nand terms"]; watch -> sans [style=dashed];
 }

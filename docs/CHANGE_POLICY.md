@@ -67,3 +67,32 @@ Each quarterly or manual run saves its log, manifest and data quality report to 
 `run-reports` branch (secret values scrubbed, no data bundle), so problems can be diagnosed
 without signing in to GitHub. The data bundles themselves stay as run artifacts and are
 archived on Zenodo with each final release.
+
+## 7. Sources that change during the year
+
+Added 30 Oct 2026 (author's decision, after JPCERT/CC's terms page warned that its addresses may
+change). Sources are watched every week by the Source watch workflow (`config/source_watch.yaml`:
+every core and companion data address and every source's terms page), so a change is usually
+found weeks before a pull needs it. Each change found is handled in one of three ways, written
+in the session log the day it is handled and in `prereg/DEVIATIONS.md` once the core is frozen:
+
+1. **Moved, same data.** The address changed but the data did not (same fields, same counting,
+   same terms). Update the address in the collector and in `config/source_watch.yaml`, log the
+   date with both addresses, and confirm the next dry run or pull reads it. The series carries
+   on unchanged. This is a bug-fix-level change (section 4, last paragraph).
+2. **Changed format, method or terms.** The source still exists but its fields, its counting
+   or its terms changed (a new or renamed column, a new definition, a narrower licence). The
+   figures from the first affected quarter onward are flagged **exploratory** in the quarterly
+   report until the next review (September or March) decides, with the side-by-side comparison
+   of section 4, whether the series is still comparable. A terms change that withdraws
+   permission stops collection at once (`config/sources.yaml`), whatever the review date.
+3. **Gone.** The source has stopped publishing or can no longer be reached for a whole pull
+   window. The series is marked **broken** from that quarter, and every report says so plainly.
+   No other source is ever put in its place under the same name (decision item 16, no
+   substitutes); a replacement can only start as a new exploratory measure (section 2) and
+   reach the core at a March review.
+
+Terms pages are copied, dated, to `source-watch/terms/` on the run-reports branch and saved in
+the Internet Archive whenever their wording changes, so the terms in force when the data was
+used can always be shown.
+
