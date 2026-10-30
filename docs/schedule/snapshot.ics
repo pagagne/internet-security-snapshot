@@ -237,6 +237,26 @@ DESCRIPTION:Responsible: Paul (author)\n\nDone 29 Oct (author): BigQuery AP
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-setup@2026-11-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Subscribe the project address to security newslett
+ ers\; add a Gmail label
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 29 Oct (widenin
+ g the AI-attack search). Subscribe internetsecuritysnapshot@gmail.com to t
+ he newsletters you like\, e.g. TLDR InfoSec\, SANS NewsBites\, Risky Busin
+ ess\, The Record's newsletter. In your own Gmail\, make a filter for mail 
+ delivered to the project address that is not from a person (e.g. has "unsu
+ bscribe"): apply the label "Snapshot newsletters" and skip the inbox\, so 
+ they do not crowd your mail. Claude reads that label twice a month (https:
+ //github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.
+ md).\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:project-email@2026-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
@@ -417,6 +437,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2026-11-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261109
@@ -590,6 +627,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nClaude drafts follow-ups for Vuln
  ISSIONS.md. Cutoff: the 21 Dec session.\n\nSource: https://github.com/paga
  gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2026-11-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-23@internet-security-snapshot
@@ -834,6 +884,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2026-12-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2026-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261210T071700Z
@@ -984,6 +1051,19 @@ DESCRIPTION:Responsible: Claude\n\nDeviation rows\, LOCKED.yaml checksums (
  including the workflows locked under decision item 22)\, freeze summary an
  d the OSF update text.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2026-12-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1146,6 +1226,23 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-01-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-01-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270110T071700Z
@@ -1176,6 +1273,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nAdd your bio (Claude project doc
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:conference-scan@2027-01-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Scan conference talk lists for AI-attack cases (
+ twice a year)
+DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3 
+ sweep list (Black Hat\, DEF CON\, CODE BLUE\, HITCON\, Kaspersky SAS\, Vir
+ us Bulletin\, RSA) held in the previous six months: talks presenting real 
+ attacker use of AI become X3 candidates (found_via: conference)\, with the
+  published paper or slides as the source\; the author confirms in the next
+  hand-check window.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:reviewer-worksheets@2027-01-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270120
@@ -1195,6 +1309,19 @@ DESCRIPTION:Responsible: Claude\n\nExtend the sample (https://github.com/pa
  heck that each worksheet can be followed in a spreadsheet with no code.\n\
  nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
  ocs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-01-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270123
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1331,6 +1458,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-02-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-rule-session@2027-02-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270208T150000Z
@@ -1402,6 +1546,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  on cards in chat\; recommendation first.\n\nSource: https://github.com/pag
  agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-02-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-confirm@2027-03-01@internet-security-snapshot
@@ -1530,6 +1687,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nWalk through the repository\, the
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-03-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270308
+DTEND;VALUE=DATE:20270309
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-03-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270310T071700Z
@@ -1574,6 +1748,19 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nVideo call\; the o
  6)\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/m
  ain/docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-03-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270322
+DTEND;VALUE=DATE:20270323
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-03-28@internet-security-snapshot
@@ -1750,6 +1937,23 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-04-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270408
+DTEND;VALUE=DATE:20270409
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-04-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270410T071700Z
@@ -1774,6 +1978,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nAnswer questions\; confirm the re
  ub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule
  .yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-04-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2027-04-25@internet-security-snapshot
@@ -1909,6 +2126,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-05-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-05-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270510T071700Z
@@ -1937,6 +2171,19 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read-2@2027-05-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270522
+DTEND;VALUE=DATE:20270523
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-06-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270604
@@ -1956,6 +2203,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-06-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270609
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-06-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270610T071700Z
@@ -1966,6 +2230,19 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-06-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270622
+DTEND;VALUE=DATE:20270623
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-06-28@internet-security-snapshot
@@ -2097,6 +2374,23 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-07-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270708
+DTEND;VALUE=DATE:20270709
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-07-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270710T071700Z
@@ -2107,6 +2401,36 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:conference-scan@2027-07-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270716
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Scan conference talk lists for AI-attack cases (
+ twice a year)
+DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3 
+ sweep list (Black Hat\, DEF CON\, CODE BLUE\, HITCON\, Kaspersky SAS\, Vir
+ us Bulletin\, RSA) held in the previous six months: talks presenting real 
+ attacker use of AI become X3 candidates (found_via: conference)\, with the
+  published paper or slides as the source\; the author confirms in the next
+  hand-check window.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-07-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270722
+DTEND;VALUE=DATE:20270723
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2027-07-25@internet-security-snapshot
@@ -2213,6 +2537,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-08-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270808
+DTEND;VALUE=DATE:20270809
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:publication-prep@2027-08-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270810
@@ -2286,6 +2627,19 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read-2@2027-08-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270822
+DTEND;VALUE=DATE:20270823
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-09-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270904
@@ -2305,6 +2659,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-09-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270908
+DTEND;VALUE=DATE:20270909
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-09-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270910T071700Z
@@ -2315,6 +2686,19 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-09-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270922
+DTEND;VALUE=DATE:20270923
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-09-28@internet-security-snapshot
@@ -2446,6 +2830,23 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-10-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271008
+DTEND;VALUE=DATE:20271009
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-10-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271010T071700Z
@@ -2456,6 +2857,19 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-10-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271022
+DTEND;VALUE=DATE:20271023
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2027-10-25@internet-security-snapshot
@@ -2562,6 +2976,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-11-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271108
+DTEND;VALUE=DATE:20271109
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-11-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271110T071700Z
@@ -2590,6 +3021,19 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read-2@2027-11-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271122
+DTEND;VALUE=DATE:20271123
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-12-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271204
@@ -2609,6 +3053,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:newsletter-read@2027-12-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271208
+DTEND;VALUE=DATE:20271209
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases
+DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:rebuild-check@2027-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271210T071700Z
@@ -2619,6 +3080,19 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read-2@2027-12-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271222
+DTEND;VALUE=DATE:20271223
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
+ ack cases (second half of the month)
+DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-12-28@internet-security-snapshot
@@ -2741,6 +3215,23 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:conference-scan@2028-01-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280115
+DTEND;VALUE=DATE:20280116
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Scan conference talk lists for AI-attack cases (
+ twice a year)
+DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3 
+ sweep list (Black Hat\, DEF CON\, CODE BLUE\, HITCON\, Kaspersky SAS\, Vir
+ us Bulletin\, RSA) held in the previous six months: talks presenting real 
+ attacker use of AI become X3 candidates (found_via: conference)\, with the
+  published paper or slides as the source\; the author confirms in the next
+  hand-check window.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2028-01-25@internet-security-snapshot

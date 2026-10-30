@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are ten, in
+something changes, or when the author or Claude starts it by hand. There are eleven, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -18,7 +18,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen |
 
 ## At a glance
 
@@ -29,6 +29,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
+| Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues, run-reports | none | 29 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
@@ -157,6 +158,18 @@ up it opens one `privacy` issue for the author and Claude, giving only the kind 
 where it is, never the value itself. It scans the current files, not the old history: the
 author decided on 27 Oct to leave the history of run-reports as it was (docs/PERMISSIONS.md).
 
+## 11. Feed screen: the monthly net for AI-run attacks
+
+**When:** the 5th of each month at 08:41 UTC (added 29 Oct 2026, author's decision). No Run
+button: it reads outside websites.
+
+**What it does:** reads about sixty security feeds listed in `config/feeds.yaml`: vendor
+research, governments and CERTs, AI labs and AI-incident databases, news sites for leads, and
+sources in seven other languages. It keeps items from the last five weeks that mention both an
+AI term and an attack term, saves them on the run-reports branch with a report on which feeds
+answered, and opens one GitHub issue for Claude to sort. Real cases go into the AI-attack log
+(X3) for the author's confirmation; nothing is logged automatically. Exploratory only.
+
 ## How they depend on each other
 
 Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
@@ -175,7 +188,7 @@ Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
 Checks: the gate on every change; nothing reaches main unless it passes
 ```
 
-Standing alone (no other workflow depends on them): Privacy scan, Backup, Diagrams, Honeypot capture,
+Standing alone (no other workflow depends on them): Feed screen, Privacy scan, Backup, Diagrams, Honeypot capture,
 Research probe, BigQuery check. Shared by several: the run-reports branch (five workflows write
 to it, each retrying if another writes at the same moment), the secrets, and the pinned
 Python, actions and packages.
@@ -195,6 +208,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
+| Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |
 
 The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with
 Checks guarding every change. If any of the other five failed, the pilot would still run.

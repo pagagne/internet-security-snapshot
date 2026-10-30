@@ -1,0 +1,84 @@
+# Feeds read by the monthly AI-attack feed screen (author's decision, 29 Oct 2026).
+# Each feed is read once a month; items from the last 35 days that mention both an AI term
+# and an attack term become candidates for the X3 log (exploratory, never scored). The
+# author confirms or excludes each in the quarterly hand-check window. Dead or moved feeds are
+# reported in each run and fixed here with a dated note; additions are dated too.
+# Groups: vendor research, government and CERTs, AI labs and AI-incident databases, news (leads
+# only), and non-English sources (the X3 sweep's nine languages).
+ai_terms: ["AI agent", "AI agents", "agentic", "LLM", "large language model", "generative AI", "GenAI",
+           "AI-generated", "AI-powered", "AI-assisted", "AI-driven", "autonomous agent", "ChatGPT", "OpenAI",
+           "Claude", "Anthropic", "Gemini", "DeepSeek", "Qwen", "Copilot", "Codex", "MCP server",
+           "prompt injection", "LLMjacking", "vibe hacking", "OpenClaw", "Hermes Agent", "CyberStrikeAI", "ARTEX",
+           "人工智能", "大模型", "智能体", "生成AI", "生成 AI", "AIエージェント", "ИИ", "нейросет", "KI-Agent", "IA générative"]
+attack_terms: ["attack", "attacker", "campaign", "intrusion", "breach", "breached", "compromise", "compromised",
+               "malware", "ransomware", "threat actor", "hacker", "hackers", "exploit", "exploited", "phishing",
+               "espionage", "stolen", "攻击", "入侵", "攻撃", "атак", "взлом", "Angriff", "attaque"]
+added: 2026-10-29
+feeds:
+  # vendor and independent research
+  - {name: Unit 42, url: "https://unit42.paloaltonetworks.com/feed/"}
+  - {name: Cisco Talos, url: "https://blog.talosintelligence.com/rss/"}
+  - {name: Microsoft Security Blog, url: "https://www.microsoft.com/en-us/security/blog/feed/"}
+  - {name: Google Cloud Threat Intelligence, url: "https://cloud.google.com/blog/topics/threat-intelligence/rss/"}
+  - {name: ESET WeLiveSecurity, url: "https://www.welivesecurity.com/en/rss/feed/"}
+  - {name: Kaspersky Securelist, url: "https://securelist.com/feed/"}
+  - {name: Check Point Research, url: "https://research.checkpoint.com/feed/"}
+  - {name: Sophos X-Ops, url: "https://news.sophos.com/en-us/category/threat-research/feed/"}
+  - {name: Huntress, url: "https://www.huntress.com/blog/rss.xml"}
+  - {name: SentinelLabs, url: "https://www.sentinelone.com/labs/feed/"}
+  - {name: Elastic Security Labs, url: "https://www.elastic.co/security-labs/rss/feed.xml"}
+  - {name: Sysdig, url: "https://sysdig.com/feed/"}
+  - {name: Wiz, url: "https://www.wiz.io/feed/rss.xml"}
+  - {name: CrowdStrike, url: "https://www.crowdstrike.com/en-us/blog/feed"}
+  - {name: Trend Micro Research, url: "https://www.trendmicro.com/en_us/research.rss.xml"}
+  - {name: Zscaler ThreatLabz, url: "https://www.zscaler.com/blogs/feeds/security-research"}
+  - {name: Recorded Future, url: "https://www.recordedfuture.com/feed"}
+  - {name: Rapid7, url: "https://www.rapid7.com/blog/rss/"}
+  - {name: Tenable, url: "https://www.tenable.com/blog/feed"}
+  - {name: Qualys, url: "https://blog.qualys.com/feed"}
+  - {name: Cloudflare, url: "https://blog.cloudflare.com/rss/"}
+  - {name: Bitdefender Labs, url: "https://www.bitdefender.com/blog/labs/feed/"}
+  - {name: Proofpoint, url: "https://www.proofpoint.com/us/rss.xml"}
+  - {name: Symantec Threat Hunter Team, url: "https://www.security.com/feed/threat-intelligence"}
+  - {name: GreyNoise, url: "https://www.greynoise.io/blog/rss.xml"}
+  - {name: AhnLab ASEC, url: "https://asec.ahnlab.com/en/feed/"}
+  - {name: SANS Internet Storm Center, url: "https://isc.sans.edu/rssfeed_full.xml"}
+  - {name: Schneier on Security, url: "https://www.schneier.com/feed/atom/"}
+  - {name: Krebs on Security, url: "https://krebsonsecurity.com/feed/"}
+  # government and CERTs
+  - {name: CISA advisories, url: "https://www.cisa.gov/cybersecurity-advisories/all.xml"}
+  - {name: UK NCSC, url: "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml"}
+  - {name: CERT-FR, url: "https://www.cert.ssi.gouv.fr/feed/"}
+  - {name: JPCERT/CC (English), url: "https://www.jpcert.or.jp/english/rss/jpcert-en.rdf"}
+  - {name: JPCERT/CC (Japanese), url: "https://www.jpcert.or.jp/rss/jpcert.rdf"}
+  - {name: CERT-EU, url: "https://cert.europa.eu/publications/threat-intelligence-rss"}
+  - {name: BSI (Germany), url: "https://www.bsi.bund.de/SiteGlobals/Functions/RSSFeed/RSSNewsfeed/RSSNewsfeed.xml"}
+  - {name: Singapore CSA, url: "https://www.csa.gov.sg/rss"}
+  # AI labs and AI-incident databases
+  - {name: OpenAI News, url: "https://openai.com/news/rss.xml"}
+  - {name: AI Incident Database, url: "https://incidentdatabase.ai/rss.xml"}
+  # news (leads only; a case counts only through the report it cites)
+  - {name: BleepingComputer, url: "https://www.bleepingcomputer.com/feed/"}
+  - {name: The Hacker News, url: "https://feeds.feedburner.com/TheHackersNews"}
+  - {name: SecurityWeek, url: "https://www.securityweek.com/feed/"}
+  - {name: The Record, url: "https://therecord.media/feed"}
+  - {name: Dark Reading, url: "https://www.darkreading.com/rss.xml"}
+  - {name: The Register (security), url: "https://www.theregister.com/security/headlines.atom"}
+  - {name: Security Affairs, url: "https://securityaffairs.com/feed"}
+  - {name: Help Net Security, url: "https://www.helpnetsecurity.com/feed/"}
+  - {name: Infosecurity Magazine, url: "https://www.infosecurity-magazine.com/rss/news/"}
+  - {name: Cybernews, url: "https://cybernews.com/feed/"}
+  - {name: Ars Technica (security), url: "https://arstechnica.com/security/feed/"}
+  - {name: Wired (security), url: "https://www.wired.com/feed/category/security/latest/rss"}
+  - {name: Security Boulevard, url: "https://securityboulevard.com/feed/"}
+  # non-English sources
+  - {name: FreeBuf (zh), url: "https://www.freebuf.com/feed"}
+  - {name: Habr infosecurity (ru), url: "https://habr.com/ru/rss/hub/infosecurity/"}
+  - {name: Xakep (ru), url: "https://xakep.ru/feed/"}
+  - {name: SecurityLab (ru), url: "https://www.securitylab.ru/_services/export/rss/"}
+  - {name: Boan News (ko), url: "https://www.boannews.com/media/news_rss.xml"}
+  - {name: heise Security (de), url: "https://www.heise.de/security/rss/news.rdf"}
+  - {name: Security NEXT (ja), url: "https://www.security-next.com/feed"}
+  - {name: ITmedia Enterprise (ja), url: "https://rss.itmedia.co.jp/rss/2.0/enterprise.xml"}
+  - {name: LeMagIT (fr), url: "https://www.lemagit.fr/rss/ContentSyndication.xml"}
+  - {name: CISO Advisor (pt), url: "https://www.cisoadvisor.com.br/feed/"}

@@ -1,0 +1,56 @@
+name: Feed screen
+
+# Monthly AI-attack feed screen (author's decision, 29 Oct 2026; X3, exploratory). Reads the
+# research, government and news feeds in config/feeds.yaml, keeps items from the last 35 days
+# that mention both an AI term and an attack term, saves them on the run-reports branch and
+# opens one issue for Claude to sort. The author keeps or excludes each real case in the
+# quarterly hand-check window. Nothing is added to the X3 log automatically.
+on:
+  schedule:
+    - cron: "41 8 5 * *"   # the 5th of each month, 08:41 UTC, clear of the pull days
+  # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
+  # repository, so it starts only on its timer or through GitHub's API (repository_dispatch),
+  # e.g. by Claude. See docs/WORKFLOWS.md.
+  repository_dispatch:
+    types: [feed-screen]
+
+permissions:
+  contents: write   # results on the run-reports branch only
+  issues: write
+
+concurrency:
+  group: feed-screen
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Screen the feeds
+        run: python -m snapshot.feedscreen --out research-out | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Publish and open the issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          dest="research/$(date -u +%Y-%m-%dT%H%MZ)-feed_screen"
+          git fetch origin run-reports:run-reports
+          git worktree add -q /tmp/rr run-reports
+          mkdir -p "/tmp/rr/$dest" && cp -r research-out/. "/tmp/rr/$dest/" 2>/dev/null || true
+          ( cd /tmp/rr
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A && git commit -qm "Feed screen $GITHUB_RUN_ID"
+            for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && break; sleep $((i * 4)); git pull -q --rebase origin run-reports; done )
+          [ -f research-out/summary.md ] || exit 0
+          gh label create feed-screen --color c5def5 --description "Monthly AI-attack feed screen" --force
+          gh label create owner:claude --color 0e8a16 --description "For a Claude session" --force
+          body=$(printf 'Monthly AI-attack feed screen (X3). Sort these candidates: log real AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: feed_screen, ai_evidence: unrated) or record exclusions in the sweep log; the author confirms in the hand-check window. Full files: run-reports `%s`.\n\n%s' "$dest" "$(head -c 60000 research-out/summary.md)")
+          gh api "repos/$GITHUB_REPOSITORY/issues" -f title="[Claude] Sort the monthly AI-attack feed screen ($(date -u +%B\ %Y))" \
+            -f body="$body" -f "labels[]=feed-screen" -f "labels[]=owner:claude" >/dev/null

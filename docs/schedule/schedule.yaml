@@ -122,6 +122,45 @@ items:
     CrowdStrike, GMO) and the 8 "recheck" rows in exploratory/ai_attack_sweeps.csv; correct the
     log; final list of proposed search changes for decision 9 on 12 Nov.
 
+- id: newsletter-setup
+  owner: author
+  title: Subscribe the project address to security newsletters; add a Gmail label
+  date: 2026-11-02
+  minutes: 15
+  details: >
+    Author's decision 29 Oct (widening the AI-attack search). Subscribe
+    internetsecuritysnapshot@gmail.com to the newsletters you like, e.g. TLDR InfoSec, SANS
+    NewsBites, Risky Business, The Record's newsletter. In your own Gmail, make a filter for
+    mail delivered to the project address that is not from a person (e.g. has "unsubscribe"):
+    apply the label "Snapshot newsletters" and skip the inbox, so they do not crowd your mail.
+    Claude reads that label twice a month (docs/OPERATIONS.md).
+
+- id: newsletter-read
+  owner: claude
+  title: Read the "Snapshot newsletters" label for AI-attack cases
+  repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 8, from: 2026-11, until: 2027-12}
+  details: >
+    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address):
+    log new AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: newsletter,
+    ai_evidence: unrated) or record exclusions in the sweep log; rebuild the catalogue. Also on
+    the 22nd (newsletter-read-2).
+
+- id: newsletter-read-2
+  owner: claude
+  title: Read the "Snapshot newsletters" label for AI-attack cases (second half of the month)
+  repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 22, from: 2026-11, until: 2027-12}
+  details: As newsletter-read.
+
+- id: conference-scan
+  owner: claude
+  title: Scan conference talk lists for AI-attack cases (twice a year)
+  repeat: {months: [1, 7], day: 15, from: 2027-01, until: 2028-01}
+  details: >
+    Talk lists of the conferences in the X3 sweep list (Black Hat, DEF CON, CODE BLUE, HITCON,
+    Kaspersky SAS, Virus Bulletin, RSA) held in the previous six months: talks presenting real
+    attacker use of AI become X3 candidates (found_via: conference), with the published paper
+    or slides as the source; the author confirms in the next hand-check window.
+
 - id: ai-sweep-author-check
   owner: author
   title: Check the AI-attack entries awaiting review (trial sweep, Wiz, TrendAI) and rate their evidence

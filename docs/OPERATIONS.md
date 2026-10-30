@@ -109,6 +109,10 @@ attack in `exploratory/ai_attack_campaigns.csv` (with `attack_method`, `found_vi
 log; checks any CVE IDs (Research task `cve_check`); notes AI tools named in CVE credits on the
 watchlist; adds the inquiry to `docs/INQUIRIES.md`; and rebuilds the catalogue
 (`python -m snapshot.x3catalogue build`) and the manual.
+The same routine applies to the three wider channels added 29 Oct (author): the monthly Feed
+screen issue (`found_via: feed_screen`), the newsletters in the author's Gmail label
+"Snapshot newsletters" (read on the 8th and 22nd, `found_via: newsletter`) and the twice-yearly
+conference scan (`found_via: conference`).
 
 ## The project's email address
 `internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)

@@ -55,6 +55,16 @@ measures:
       found_via (author, quarterly_sweep, trial_sweep, claude_research). The catalogue of
       attack methods and the register of resources (exploratory/ai_attack_catalogue.md) are
       generated from the log; a test keeps them current.
+      Amended 2026-10-29 (author's decision, widening the search): three more channels, each
+      a found_via value. (1) feed_screen: a monthly workflow (Feed screen, the 5th) reads the
+      feeds in config/feeds.yaml (about 60: vendor research, governments and CERTs, AI labs and
+      incident databases, news for leads, and sources in Chinese, Japanese, Korean, Russian,
+      German, French and Portuguese) and lists items naming both an AI term and an attack term.
+      (2) newsletter: security newsletters sent to the project address, read by Claude twice a
+      month. (3) conference: a twice-yearly scan of major conferences' talk lists. All
+      candidates are confirmed by the author in the hand-check window; counts stay a lower
+      bound, and each channel's start date is reported so growth from wider looking is not
+      read as growth in attacks.
     report_sources:
       - Threat-intelligence reports on AI misuse from AI labs (Anthropic, OpenAI, Google GTIG); Anthropic is a conflict of interest and is labeled as such
       - Security vendor and researcher disclosures (e.g. NorForge for Cairn; GreyNoise for the PaperCut agent campaign)
@@ -95,6 +105,9 @@ measures:
         - Chinese security sites (added 2026-10-26 after the trial): FreeBuf, Anquanke, Security Insight (secrss.com), 4hou
         - TrendAI (Trend Micro) Deep Research, English and Japanese editions (added 2026-10-29; the Japanese edition of "Not only ARTEX" came out four days before the English)
         - Japan's National Cybersecurity Office (NCO) alerts and advisories (added 2026-10-29)
+        - AI-incident and threat databases and reports (added 2026-10-29, author): AI Vulnerability Database (AVID); Meta adversarial threat reports; Amazon threat intelligence
+        - More national agencies (added 2026-10-29, author): Singapore CSA, South Korea KISA/KrCERT, Germany BSI, Israel INCD, CERT-EU, and joint Five Eyes advisories
+        - Conference talk lists, scanned twice a year (added 2026-10-29, author): Black Hat USA and Europe, DEF CON, CODE BLUE (Japan), HITCON (Taiwan), Kaspersky SAS, Virus Bulletin, RSA Conference
         - Organisations already in the X3 log but not on this list (added 2026-10-29, author, from the resource register): Wiz Research and Wiz CIRT; Sysdig Threat Research; GMO Cybersecurity (Japanese); CERT-In advisories (India); Taiwan's Ministry of Digital Affairs; Cybernews research; Amazon threat intelligence (AWS Security blog); DIVD (Dutch Institute for Vulnerability Disclosure); Gridinsoft blog; Symantec and Carbon Black Threat Hunter Team (security.com)
         - Russian security sites (added 2026-10-26 after the trial): Securelist.ru, Habr, BI.ZONE, F6, Kaspersky.ru, Anti-Malware, SecurityLab, Xakep (Positive Technologies research read only; it is under US sanctions)
       rules: >

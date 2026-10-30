@@ -40,6 +40,9 @@ FOUND_VIA = {
     "author": "forwarded by the author",
     "quarterly_sweep": "the quarterly search (X3 sweep)",
     "trial_sweep": "the trial search of 26 Oct 2026",
+    "feed_screen": "the monthly feed screen (from Nov 2026)",
+    "newsletter": "a newsletter read in the project inbox (from Nov 2026)",
+    "conference": "a conference talk (twice-yearly scan, from Jan 2027)",
     "claude_research": "Claude's research when the log was set up",
 }
 

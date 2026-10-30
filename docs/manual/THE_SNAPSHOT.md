@@ -2316,6 +2316,10 @@ attack in `exploratory/ai_attack_campaigns.csv` (with `attack_method`, `found_vi
 log; checks any CVE IDs (Research task `cve_check`); notes AI tools named in CVE credits on the
 watchlist; adds the inquiry to `docs/INQUIRIES.md`; and rebuilds the catalogue
 (`python -m snapshot.x3catalogue build`) and the manual.
+The same routine applies to the three wider channels added 29 Oct (author): the monthly Feed
+screen issue (`found_via: feed_screen`), the newsletters in the author's Gmail label
+"Snapshot newsletters" (read on the 8th and 22nd, `found_via: newsletter`) and the twice-yearly
+conference scan (`found_via: conference`).
 
 #### The project's email address
 `internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)
@@ -2440,7 +2444,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are ten, in
+something changes, or when the author or Claude starts it by hand. There are eleven, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -2453,7 +2457,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen |
 
 #### At a glance
 
@@ -2464,6 +2468,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
+| Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues, run-reports | none | 29 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
@@ -2592,6 +2597,18 @@ up it opens one `privacy` issue for the author and Claude, giving only the kind 
 where it is, never the value itself. It scans the current files, not the old history: the
 author decided on 27 Oct to leave the history of run-reports as it was (docs/PERMISSIONS.md).
 
+#### 11. Feed screen: the monthly net for AI-run attacks
+
+**When:** the 5th of each month at 08:41 UTC (added 29 Oct 2026, author's decision). No Run
+button: it reads outside websites.
+
+**What it does:** reads about sixty security feeds listed in `config/feeds.yaml`: vendor
+research, governments and CERTs, AI labs and AI-incident databases, news sites for leads, and
+sources in seven other languages. It keeps items from the last five weeks that mention both an
+AI term and an attack term, saves them on the run-reports branch with a report on which feeds
+answered, and opens one GitHub issue for Claude to sort. Real cases go into the AI-attack log
+(X3) for the author's confirmation; nothing is logged automatically. Exploratory only.
+
 #### How they depend on each other
 
 Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
@@ -2610,7 +2627,7 @@ Quarterly pull (1 Jan/Apr/Jul/Oct provisional, a month later final)
 Checks: the gate on every change; nothing reaches main unless it passes
 ```
 
-Standing alone (no other workflow depends on them): Privacy scan, Backup, Diagrams, Honeypot capture,
+Standing alone (no other workflow depends on them): Feed screen, Privacy scan, Backup, Diagrams, Honeypot capture,
 Research probe, BigQuery check. Shared by several: the run-reports branch (five workflows write
 to it, each retrying if another writes at the same moment), the secrets, and the pinned
 Python, actions and packages.
@@ -2630,6 +2647,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
+| Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |
 
 The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with
 Checks guarding every change. If any of the other five failed, the pilot would still run.
@@ -2683,7 +2701,7 @@ Schedule, Rebuild check, Diagrams, Backup. They work inside the repository or wi
 Run box opens with a sentence saying what the workflow does.
 
 **API only, no button (Claude only, and only when asked or scheduled):** Quarterly pull,
-Research probe, Honeypot capture, BigQuery check. They contact outside sources, so a stray
+Research probe, Honeypot capture, BigQuery check, Feed screen. They contact outside sources, so a stray
 click must never start them. See section 5.
 
 ##### The workflows at a glance
@@ -2761,7 +2779,7 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
   uses Drive space).
 - **Do not:** run it while a pull is running (both write to Drive).
 
-#### 5. The four API-only workflows
+#### 5. The five API-only workflows
 
 These are started only by Claude, and only when the author asked in chat or the schedule says
 so. Each manual start is recorded in that day's session log with the reason.
@@ -2772,6 +2790,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 | Research probe | Testing a new or changed source the author asked about | More than once a day per source; any probe that scans hosts or collects personal data |
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
+| Feed screen | Its monthly run failed or was missed; a feed list change needs testing | More than once a week |
 
 Standing limits that always apply: ransomware.live is never polled more often than every 30
 minutes; no scanning or host-level data; no keys in chat.
@@ -3499,6 +3518,9 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Claude | Quarterly web sweep for AI-run attack reports (X3) | day 2, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Copy the Drive backup's inventory and small private data into the Claude project | day 4, every month, 2026-11 to 2027-12 |
 | Claude | Choose this quarter's watch cases by the rule | day 6, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
+| Claude | Read the "Snapshot newsletters" label for AI-attack cases | day 8, every month, 2026-11 to 2027-12 |
+| Claude | Scan conference talk lists for AI-attack cases (twice a year) | day 15, Jan, Jul, 2027-01 to 2028-01 |
+| Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) | day 22, every month, 2026-11 to 2027-12 |
 | Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
 | Claude | Score the second coder's answer file; publish agreement | day 13, Feb, May, Aug, Nov, 2027-05 to 2028-02 |
@@ -3526,6 +3548,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 28 Oct 2026, 10:00 ET | Paul | Call the UGA Career Center about the reviewer posting - done |
 | Wed 28 Oct 2026, 14:00 ET | Paul | Write and send the Censys research-access application - sent 28 Oct |
 | Thu 29 Oct 2026, 10:00 ET | Paul | Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts - done |
+| Mon 02 Nov 2026 | Paul | Subscribe the project address to security newsletters; add a Gmail label |
 | Mon 02 Nov 2026 | Paul | Create the project email address - done 29 Oct (see docs/OPERATIONS.md) |
 | Mon 02 Nov 2026 | Claude | Recheck the trial AI-attack sweep's open items |
 | Mon 02 Nov 2026 | Claude | HHS OCR health-breach series - second attempt at the export - done 29 Oct (no export; decision 11) |
@@ -3536,6 +3559,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 04 Nov 2026, 10:00 ET | Paul | Email CCRI's cybersecurity program director (alumni route, second coder) |
 | Thu 05 Nov 2026, 10:00 ET | Paul | Email SANS asking them to suggest a reviewer (former-employer route) |
 | Fri 06 Nov 2026, 11:00 ET | Paul | Check the AI-attack entries awaiting review (trial sweep, Wiz, TrendAI) and rate their evidence |
+| Sun 08 Nov 2026 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Mon 09 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Tue 10 Nov 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Wed 11 Nov 2026 | Claude | Restore test of the Drive backup |
@@ -3547,6 +3571,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 18 Nov 2026 | Paul | Ask Georgia State Career Services about the reviewer posting |
 | Fri 20 Nov 2026 | Claude | Draft the permission follow-ups and update the log |
 | Fri 20 Nov 2026, 09:00 ET | Paul | Data-permission follow-ups |
+| Sun 22 Nov 2026 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Mon 23 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 23 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 1 of 2 |
 | Tue 24 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 2 of 2 |
@@ -3562,6 +3587,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 04 Dec 2026 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Fri 04 Dec 2026, 10:00 ET | Paul | Landing page, Discussions, Zenodo |
 | Sat 05 Dec 2026 | Paul | Register on Handshake and connect the approved schools - started early, 28 Oct |
+| Tue 08 Dec 2026 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Thu 10 Dec 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Fri 11 Dec 2026 | Claude | Get every available source ready for the full dry run |
 | Mon 14 Dec 2026 | Claude | Document and test every GitHub workflow; draft the lock list |
@@ -3571,6 +3597,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 18 Dec 2026, 10:00 ET | Paul | Review the workflow page and the lock list |
 | Mon 21 Dec 2026, 10:00 ET | Paul | Core-freeze decision session |
 | Tue 22 Dec 2026 | Claude | Prepare the core freeze (core-v1.2) |
+| Tue 22 Dec 2026 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Mon 28 Dec 2026 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Tue 29 Dec 2026, 10:00 ET | Paul | Freeze the core (core-v1.2) and update OSF |
 | Fri 01 Jan 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
@@ -3581,9 +3608,12 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 04 Jan 2027 | Paul | Post the reviewer ad; email statistics department coordinators |
 | Mon 04 Jan 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 06 Jan 2027 | Claude | Choose this quarter's watch cases by the rule |
+| Fri 08 Jan 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Sun 10 Jan 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Tue 12 Jan 2027, 10:00 ET | Paul | Line up the external reviewer and second coder |
+| Fri 15 Jan 2027 | Claude | Scan conference talk lists for AI-attack cases (twice a year) |
 | Wed 20 Jan 2027 | Claude | Build the figure worksheets for the reviewer's spot check |
+| Fri 22 Jan 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Mon 25 Jan 2027 | Claude | Outside AI-found CVE lists against our AI-credit counts, on pilot data |
 | Mon 25 Jan 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Mon 01 Feb 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
@@ -3593,11 +3623,13 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 03 Feb 2027 | Claude | Compare the pilot with what we expected (docs/PILOT_EXPECTATIONS.md) |
 | Thu 04 Feb 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Mon 08 Feb 2027 | Paul | Adopt the SOP for running workflows by hand (in force from 9 Feb) |
+| Mon 08 Feb 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Mon 08 Feb 2027, 10:00 ET | Paul | Evaluate the AI-credit rule on pilot data; PHP2Shell case |
 | Wed 10 Feb 2027 | Claude | Evaluate the registered plan on the pilot's results (draft) |
 | Wed 10 Feb 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Feb 2027 | Paul | Reviewer applications close; schedule calls |
 | Wed 17 Feb 2027, 10:00 ET | Paul | Review the registered-plan evaluation (changes for the 15 Mar review) |
+| Mon 22 Feb 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Mon 01 Mar 2027 | Paul | Confirm the external reviewer |
 | Tue 02 Mar 2027 to 14 Mar | Reviewer | Getting started - read the overview, plan and statistical review |
 | Tue 02 Mar 2027 to 14 Mar | Reviewer | Optional - practice round as second coder (pilot quarter) |
@@ -3605,9 +3637,11 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 02 Mar 2027 | Claude | Send the reviewer the practice second-coder answer file (pilot quarter) |
 | Thu 04 Mar 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Thu 04 Mar 2027, 10:00 ET | Paul | Onboarding call with the external reviewer |
+| Mon 08 Mar 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Wed 10 Mar 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Mar 2027, 11:00 ET | Paul | Annual review and change window |
 | Mon 15 Mar 2027, 11:00 ET | Reviewer | Optional - join the 2027 annual review |
+| Mon 22 Mar 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Sun 28 Mar 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Apr 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Apr 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -3618,8 +3652,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 04 Apr 2027 to 28 Apr | Paul | Quarterly hand-check window |
 | Sun 04 Apr 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Tue 06 Apr 2027 | Claude | Choose this quarter's watch cases by the rule |
+| Thu 08 Apr 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Sat 10 Apr 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 15 Apr 2027, 10:00 ET | Paul | Optional mid-review check-in with the reviewer |
+| Thu 22 Apr 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Sun 25 Apr 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Thu 29 Apr 2027 | Paul | Write the response to the external review |
 | Thu 29 Apr 2027 to 12 May | Reviewer | Second coder - 20 blinded items |
@@ -3629,10 +3665,14 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sat 01 May 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Sun 02 May 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Tue 04 May 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Sat 08 May 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Mon 10 May 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 13 May 2027 | Claude | Score the second coder's answer file; publish agreement |
+| Sat 22 May 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Fri 04 Jun 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Tue 08 Jun 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Thu 10 Jun 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Tue 22 Jun 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Mon 28 Jun 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Jul 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -3641,7 +3681,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 04 Jul 2027 to 28 Jul | Paul | Quarterly hand-check window |
 | Sun 04 Jul 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Tue 06 Jul 2027 | Claude | Choose this quarter's watch cases by the rule |
+| Thu 08 Jul 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Sat 10 Jul 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Thu 15 Jul 2027 | Claude | Scan conference talk lists for AI-attack cases (twice a year) |
+| Thu 22 Jul 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Sun 25 Jul 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Thu 29 Jul 2027 to 11 Aug | Reviewer | Second coder - 20 blinded items |
 | Thu 29 Jul 2027 | Claude | Send the second coder this quarter's blinded sample |
@@ -3649,12 +3692,16 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 01 Aug 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Mon 02 Aug 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Wed 04 Aug 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Sun 08 Aug 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Tue 10 Aug 2027 | Claude | Prepare the publication decision (where to publish the 2027 results) |
 | Tue 10 Aug 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 12 Aug 2027, 10:00 ET | Paul | Decide where to publish the 2027 results |
 | Fri 13 Aug 2027 | Claude | Score the second coder's answer file; publish agreement |
+| Sun 22 Aug 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Sat 04 Sep 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Wed 08 Sep 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Fri 10 Sep 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Wed 22 Sep 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Tue 28 Sep 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Oct 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -3663,7 +3710,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 04 Oct 2027 to 28 Oct | Paul | Quarterly hand-check window |
 | Mon 04 Oct 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 06 Oct 2027 | Claude | Choose this quarter's watch cases by the rule |
+| Fri 08 Oct 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Sun 10 Oct 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Fri 22 Oct 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Mon 25 Oct 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Fri 29 Oct 2027 to 11 Nov | Reviewer | Second coder - 20 blinded items |
 | Fri 29 Oct 2027 | Claude | Send the second coder this quarter's blinded sample |
@@ -3671,10 +3720,14 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 01 Nov 2027, 06:00 UTC | GitHub | Quarterly pull, final run |
 | Tue 02 Nov 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Thu 04 Nov 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Mon 08 Nov 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Wed 10 Nov 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Sat 13 Nov 2027 | Claude | Score the second coder's answer file; publish agreement |
+| Mon 22 Nov 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Sat 04 Dec 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
+| Wed 08 Dec 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases |
 | Fri 10 Dec 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Wed 22 Dec 2027 | Claude | Read the "Snapshot newsletters" label for AI-attack cases (second half of the month) |
 | Tue 28 Dec 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Sat 01 Jan 2028, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -3683,6 +3736,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 04 Jan 2028 to 28 Jan | Paul | Quarterly hand-check window |
 | Thu 06 Jan 2028 | Claude | Choose this quarter's watch cases by the rule |
 | Mon 10 Jan 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
+| Sat 15 Jan 2028 | Claude | Scan conference talk lists for AI-attack cases (twice a year) |
 | Tue 25 Jan 2028, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Sat 29 Jan 2028 to 11 Feb | Reviewer | Second coder - 20 blinded items |
 | Sat 29 Jan 2028 | Claude | Send the second coder this quarter's blinded sample |
@@ -3714,6 +3768,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 28 Oct 2026, 10:00 ET | Call the UGA Career Center about the reviewer posting - done | Done 28 Oct (author, before 9:00): the call went well; an independent researcher can register on Handshake; the Career Center could not say whether an unpaid internship with course credit is the better listing, so the role is listed as Experiential Learning. Original: Employer relations, (706) 542-3375. Ask whether an independent researcher can post an unpaid, remote research role on hireUGA (Handshake), and whether it is better listed as an unpaid internship with course credit. Note who you spoke with. |
 | Wed 28 Oct 2026, 14:00 ET | Write and send the Censys research-access application - sent 28 Oct | Moved from 15 Feb 2027 (17 Nov, then 28 Oct at the author's choice). In your own words: Censys rejects requests written with AI tools, and the standing rules say you write it. It is an email to research-access-request@censys.com (no web form) covering: a 3-4 sentence project description with the research question and where results are published; your background (public profile or past work); how Censys helps and which access (BigQuery; delayed data is fine); how recent the data must be; confirmation of non-commercial use and citing Censys; agreement to the terms; your Censys username (make an account first). Guide: Claude doc "Censys Research Access: Application Guide". Log it in docs/PERMISSIONS.md (Claude can do the log). Access to choose: option 3 on their page, additional API endpoints and Censys credits (counts by software version or CVE without host data; enough credits for weekly counts on about 80-100 flaws a quarter, a few hundred count queries a month). Not raw Parquet downloads (too large; host data). Platform UI optional. Two things to ask: (1) can count queries be run as of past dates, back to late 2025, for a baseline year? (2) is BigQuery access also available? It would run in the Google Cloud project set up on 29 Oct. |
 | Thu 29 Oct 2026, 10:00 ET | Set up BigQuery in the Google Cloud project (HTTP Archive, deps.dev history); turn on Dependabot alerts - done | Done 29 Oct (author): BigQuery API on; service account snapshot-bq (BigQuery Job User); keyless sign-in from GitHub Actions (Workload Identity Federation: pool "github", provider "github-repo", only pagagne/internet-security-snapshot) instead of a JSON key, so no key exists anywhere; repository variables GCP_WIF_PROVIDER, GCP_SA_EMAIL, GCP_PROJECT. Tested with the BigQuery check workflow (passed). No billing linked (sandbox). Original plan: First, one minute in GitHub (step 3 of the 27 Oct settings PDF): Settings > Advanced Security > Dependabot alerts > Enable (dependency graph on; security and version updates left off); tell Claude, who checks it. The project "internet-security-snapshot" already exists (made 27 Oct for the Drive backup's client ID). console.cloud.google.com, that project: enable the BigQuery API; no billing needed (the BigQuery sandbox includes 1 TB of queries a month); if you ever link billing, add a budget alert at $1; IAM > Service accounts > create "snapshot-bq" with the role BigQuery Job User; Keys > Add key > JSON; in GitHub > Settings > Secrets and variables > Actions, add GCP_SA_KEY (paste the whole file) and GCP_PROJECT (the project ID). Never paste the key into chat. Delete the downloaded file afterwards. |
+| Mon 02 Nov 2026 | Subscribe the project address to security newsletters; add a Gmail label | Author's decision 29 Oct (widening the AI-attack search). Subscribe internetsecuritysnapshot@gmail.com to the newsletters you like, e.g. TLDR InfoSec, SANS NewsBites, Risky Business, The Record's newsletter. In your own Gmail, make a filter for mail delivered to the project address that is not from a person (e.g. has "unsubscribe"): apply the label "Snapshot newsletters" and skip the inbox, so they do not crowd your mail. Claude reads that label twice a month (docs/OPERATIONS.md). |
 | Mon 02 Nov 2026 | Create the project email address - done 29 Oct (see docs/OPERATIONS.md) | For university postings and the reviewer invitation (instead of a personal address). |
 | Wed 04 Nov 2026, 10:00 ET | Email CCRI's cybersecurity program director (alumni route, second coder) | Rewrite docs/reviewer/ccri-outreach.md in your own words and send it to the program director, with docs/reviewer/SECOND_CODER.md. Mainly for the second coder; also asks about CCRI graduates now in a bachelor's programme for the full review. Disclose your alumni tie if a CCRI candidate is chosen (the invitation's conflict-of-interest section). Tell Claude, who logs it. |
 | Thu 05 Nov 2026, 10:00 ET | Email SANS asking them to suggest a reviewer (former-employer route) | Write from docs/reviewer/sans-outreach.md (facts to cover; your own words) and send to the SANS Technology Institute or another SANS contact that reaches the right people, with the invitation letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027); optional: a second coder. Disclose that you worked at SANS and that the study uses Internet Storm Center data; ask for someone you did not work with. Tell Claude, who logs it. |
