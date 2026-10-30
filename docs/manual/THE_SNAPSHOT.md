@@ -5880,6 +5880,16 @@ author's unless marked. Written during the day; later work is added at the end.
   such as promptfoo and Giskard). Caveats: deleted repositories are missing, so older months
   are undercounted; keyword fashion ("agentic") inflates recent ones.
 
+- **Attack versus defence (author's decision, same evening):** defence queries added beside
+  the attack ones; every repository labelled by what it does. Baseline rerun with both sides
+  (run-reports `research/2026-10-30T2306Z-github_tools`): 8,758 repositories; first labels
+  attack 2,673, defence 3,734, both 953, model testing 335, unclear 1,063. Defence tools are
+  more numerous but attack tools draw about ten times the stars (248,000 against 23,000).
+  New defence tools outnumbered new attack tools every month from March 2025 to September
+  2026; October 2026 (part month) is the first with more attack tools (426 against 335).
+  Labels are first guesses: some are wrong (promptfoo and Giskard test AI models; Baserow is
+  unrelated), so Claude checks every tool with 100+ stars before the numbers are used.
+
 #### Carried over
 - Sort the X25 baseline into the register for the author (with the 6 Nov AI-log check).
 - 31 Oct (Saturday task): AI-log recheck, sort the feed screen, fix the 11 dead feeds, verify
