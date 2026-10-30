@@ -96,6 +96,27 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     fig.tight_layout(); n = f"{date}-3-ai-by-side.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
+    qs, qv = [], {k: [] for k in SIDES}
+    for i, m in enumerate(s["months"]):
+        q = f"{m[:4]} Q{(int(m[5:]) - 1) // 3 + 1}"
+        if not qs or qs[-1] != q:
+            qs.append(q)
+            for k in SIDES:
+                qv[k].append(0)
+        for k in SIDES:
+            qv[k][-1] += s["per_month"][k][i]
+    fig = plt.figure(figsize=(11, 7), dpi=130)
+    ax = fig.add_subplot(111, projection="3d")
+    for yi, k in enumerate(SIDES):
+        for xi, v in enumerate(qv[k]):
+            ax.bar3d(xi, yi, 0, .6, .5, v, color=COLOURS[k], alpha=.9, shade=True)
+    ax.set_xticks([i + .3 for i in range(len(qs))], [q.replace(" ", "\n") for q in qs], fontsize=8)
+    ax.set_yticks([i + .25 for i in range(3)], ["Attack", "Defence", "Both"])
+    ax.set_xlabel("Quarter the project was created", labelpad=12); ax.set_ylabel("Role", labelpad=8)
+    ax.set_zlabel("New projects in the quarter")
+    ax.set_title(f"New AI security tools on GitHub, by quarter and role (sweep of {date}; last quarter may be partial)")
+    ax.view_init(elev=24, azim=-58)
+    fig.tight_layout(); n = f"{date}-4-overview-3d.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
     return names
 
 
@@ -138,6 +159,10 @@ def build_text(root: Path | None = None) -> str:
               f"![Chart 3. AI named by each side, sweep of {date}](ai_tool_landscape/{date}-3-ai-by-side.png)", "",
               "*Chart 3. Horizontal: the AI named in a project's description or instructions. "
               "Vertical: projects naming it. Bars: attack and defence.*", "",
+              f"![Chart 4. Overview in 3D, sweep of {date}](ai_tool_landscape/{date}-4-overview-3d.png)", "",
+              "*Chart 4 (overview, author's choice 30 Oct 2026). Left to right: the quarter each project "
+              "was created. Front to back: attack, defence, both. Height: new projects that quarter. "
+              "For exact values use charts 1 and 2; in 3D, front bars can hide those behind.*", "",
               "| Month | " + " | ".join(m for m in s["months"][-12:]) + " |",
               "|---|" + "---|" * len(s["months"][-12:])]
         for k in SIDES:
