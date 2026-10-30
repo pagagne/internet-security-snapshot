@@ -2176,24 +2176,24 @@ Every organisation whose report is in the log, how its cases reached the study, 
 | Google Threat Intelligence Group | bleepingcomputer.com, cloud.google.com | 3 | Claude's research when the log was set up; the trial search of 26 Oct 2026 | 2026-05-11 | yes |
 | NorForge | securityweek.com | 3 | Claude's research when the log was set up | 2026-10-19 | yes |
 | TrendAI | trendaisecurity.com | 3 | forwarded by the author | 2026-10-23 | yes |
-| Amazon | it-connect.fr | 1 | the trial search of 26 Oct 2026 | 2026-02-24 | no |
-| CERT-In | securityaffairs.com | 1 | the trial search of 26 Oct 2026 | 2026-10-17 | no |
+| Amazon | it-connect.fr | 1 | the trial search of 26 Oct 2026 | 2026-02-24 | yes |
+| CERT-In | securityaffairs.com | 1 | the trial search of 26 Oct 2026 | 2026-10-17 | yes |
 | CrowdStrike | crowdstrike.com | 1 | the trial search of 26 Oct 2026 | 2026-10-07 | yes |
-| Cybernews research team | riotimesonline.com | 1 | the trial search of 26 Oct 2026 | 2026-09-09 | no |
-| DIVD | securityweek.com | 1 | Claude's research when the log was set up | 2026-09-30 | no |
-| GMO Cybersecurity | smartscope.blog | 1 | the trial search of 26 Oct 2026 | 2026-10-19 | no |
+| Cybernews research team | riotimesonline.com | 1 | the trial search of 26 Oct 2026 | 2026-09-09 | yes |
+| DIVD | securityweek.com | 1 | Claude's research when the log was set up | 2026-09-30 | yes |
+| GMO Cybersecurity | smartscope.blog | 1 | the trial search of 26 Oct 2026 | 2026-10-19 | yes |
 | GreyNoise | venturebeat.com | 1 | the trial search of 26 Oct 2026 | 2026-09-09 | yes |
-| Gridinsoft | kaspersky.ru | 1 | the trial search of 26 Oct 2026 | 2026-10-15 | no |
+| Gridinsoft | kaspersky.ru | 1 | the trial search of 26 Oct 2026 | 2026-10-15 | yes |
 | Irregular | implicator.ai | 1 | forwarded by the author | 2026-08-14 | yes |
 | Kaspersky | xakep.ru | 1 | the trial search of 26 Oct 2026 | 2026-05-15 | yes |
 | Mandiant | thehackernews.com | 1 | the trial search of 26 Oct 2026 | 2026-09-16 | yes |
 | OpenAI | openai.com | 1 | the trial search of 26 Oct 2026 | 2026-07-21 | yes |
-| Sysdig | bleepingcomputer.com | 1 | the trial search of 26 Oct 2026 | 2026-07-04 | no |
-| Taiwan Ministry of Digital Affairs | taiwannews.com.tw | 1 | the trial search of 26 Oct 2026 | 2026-08-13 | no |
+| Sysdig | bleepingcomputer.com | 1 | the trial search of 26 Oct 2026 | 2026-07-04 | yes |
+| Taiwan Ministry of Digital Affairs | taiwannews.com.tw | 1 | the trial search of 26 Oct 2026 | 2026-08-13 | yes |
 | Trend Micro | trendmicro.com | 1 | the trial search of 26 Oct 2026 | 2026-07-29 | yes |
 | Unit 42 | habr.com | 1 | the trial search of 26 Oct 2026 | 2026-07-30 | yes |
-| Wiz CIRT | wiz.io | 1 | forwarded by the author | 2026-10-19 | no |
-| security.com threat research | securitylab.ru | 1 | the trial search of 26 Oct 2026 | 2026-10-23 | no |
+| Wiz CIRT | wiz.io | 1 | forwarded by the author | 2026-10-19 | yes |
+| security.com threat research | securitylab.ru | 1 | the trial search of 26 Oct 2026 | 2026-10-23 | yes |
 
 How cases reached the study: forwarded by the author 5; the trial search of 26 Oct 2026 16; Claude's research when the log was set up 11.
 

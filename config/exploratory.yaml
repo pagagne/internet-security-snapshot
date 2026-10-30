@@ -95,6 +95,7 @@ measures:
         - Chinese security sites (added 2026-10-26 after the trial): FreeBuf, Anquanke, Security Insight (secrss.com), 4hou
         - TrendAI (Trend Micro) Deep Research, English and Japanese editions (added 2026-10-29; the Japanese edition of "Not only ARTEX" came out four days before the English)
         - Japan's National Cybersecurity Office (NCO) alerts and advisories (added 2026-10-29)
+        - Organisations already in the X3 log but not on this list (added 2026-10-29, author, from the resource register): Wiz Research and Wiz CIRT; Sysdig Threat Research; GMO Cybersecurity (Japanese); CERT-In advisories (India); Taiwan's Ministry of Digital Affairs; Cybernews research; Amazon threat intelligence (AWS Security blog); DIVD (Dutch Institute for Vulnerability Disclosure); Gridinsoft blog; Symantec and Carbon Black Threat Hunter Team (security.com)
         - Russian security sites (added 2026-10-26 after the trial): Securelist.ru, Habr, BI.ZONE, F6, Kaspersky.ru, Anti-Malware, SecurityLab, Xakep (Positive Technologies research read only; it is under US sanctions)
       rules: >
         A candidate is logged in ai_attack_campaigns.csv only if a named organisation or
