@@ -3964,6 +3964,25 @@ there and large: CyberStrikeAI (8,220 stars, 1,756 forks, created Nov 2025, 100+
 and forks of both; about a dozen other agent frameworks have 150 to 1,300 stars. Stars and forks
 are popularity, not use. Release counts above 100 need paging if adopted.
 
+#### 13. Cataloguing AI attack methods and the author's resources (added 29 Oct, author's request)
+The author reads and forwards articles to find AI attack methods the study does not yet
+catalogue, and wants as many resources as possible included. The X3 log (32 cases, 22
+reporters, 9 languages on 29 Oct) records the AI role and the entry route, but not the attack
+method: hijacked AI coding assistants, stolen AI server compute ("LLMjacking"), hidden-instruction
+attacks, AI service key scanning and open-source attack platforms all fall in the same few
+groups. Only 4 of the 32 entered through a CVE the core can see.
+- **A** A separate catalogue of attack methods and a register of resources, kept beside the log.
+- **B ★** Two new columns in the X3 log, `attack_method` (a short fixed list drafted from the 32
+  cases) and `found_via` (forwarded by the author, quarterly sweep, or the publication); the
+  method catalogue and the resource register are generated from the log each quarter. One
+  source of truth.
+- **C** Neither.
+
+Cost: about an hour to classify the existing cases, a minute or two per forwarded article.
+Exploratory, never scored; the report states that the categories reflect what gets reported.
+Evidence: the author's 29 Oct evaluation request (chat); counts above from
+`exploratory/ai_attack_campaigns.csv`.
+
 
 <a id="doc-docs-reviewer-invitation-md"></a>
 
