@@ -194,6 +194,8 @@ Evidence (HHS retry run early, 29 Oct; run-reports `research/2026-10-29T2337Z-hh
 control; the list and its CSV button appear only after browsing in from that page, so no
 script can fetch it reliably. X17 options: the author downloads the public CSV by hand once a
 quarter in the hand-check window (about 5 minutes; counts only), or defer X17 to March.
+**Decided 29 Oct (author), X17:** download by hand once a quarter; X17 active from the Q4 2026
+pilot. deps.dev (X16) still decided on 12 Nov.
 deps.dev: _to fill_ (lighter run, 2 Nov).
 
 ## 12. Open-source AI attack frameworks (added 29 Oct, author's request)

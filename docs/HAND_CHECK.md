@@ -11,6 +11,9 @@ out and reported as pending.
 2. **Internet-facing status** for cohort CVEs in category (c), "any other product".
 3. **Patch dates** (T_patch) for cohort CVEs, confirmed against the vendor's advisory.
 4. **Ground-truth reference dates** for the validation cases (done once, before the run).
+5. **HHS breach list download** (X17, since 29 Oct 2026): once a quarter, download the public
+   CSV from the HHS OCR breach portal (ocrportal.hhs.gov/ocr/breach) and give it to Claude,
+   who keeps only the quarterly counts.
 
 ## How a review works each quarter
 
@@ -175,6 +178,7 @@ From the practice round (about 30-60 seconds per item) and the rules as of 24 Oc
 | Cohort: fix dates and slot c checks | about 12 picks + 3-6 candidates | 15-20 min |
 | Race: flagged fix dates of newly attacked flaws | about 60 (or a sample of about 15-20) | about 60 min (or 15-20 min) |
 | Re-shown items (consistency) | 20 | about 8 min |
+| HHS breach list download (X17) | 1 file | about 5 min |
 | **Hand-check window total** | | **about 1½ hours, or about 50 minutes with a race sample** |
 | Final-run check (2nd of the following month) | new rows only | 15-30 min |
 

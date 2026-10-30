@@ -277,10 +277,14 @@ measures:
     sources: [hhs_ocr]
     added: 2026-10-25
     feeds_labels: false
-    status: planned
+    status: active   # author's decision 29 Oct 2026 (research review #11 decided early): hand download
     method: >
       Quarterly count of "Hacking/IT Incident" breaches affecting 500 or more people, and
       people affected, from the public HHS OCR register. Entity names are never stored.
+      The portal cannot be read by a script (29 Oct probe: the list and its export appear only
+      after browsing in), so the author downloads the public CSV by hand once a quarter in the
+      hand-check window (about 5 minutes) and drops it into the chat; Claude reduces it to the
+      two counts at once and keeps only those, never the file.
 
   - id: X18
     name: Outside AI-found lists against the AI-credit counts

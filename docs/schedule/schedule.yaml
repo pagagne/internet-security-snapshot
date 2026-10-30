@@ -867,7 +867,8 @@ items:
   details: >
     About 1½ hours in the Hand Check app at any time from the 4th to the 28th: fix dates for
     the cohort and the race list, slot (c) checks, AI-credit spot checks, re-shown items, and the AI-attack candidates from the
-    quarter's web sweep (keep or exclude each).
+    quarter's web sweep (keep or exclude each); and download the HHS OCR breach list (CSV) for
+    Claude, about 5 minutes (X17, decided 29 Oct).
 
 - id: hand-check-reminder
   owner: author
