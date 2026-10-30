@@ -56,7 +56,7 @@
   "final": "nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.meta",
   "ctype": "text/plain",
   "bytes": 168,
-  "shape": "text: lastModifiedDate:2026-10-30T06:00:08-04:00",
+  "shape": "text: lastModifiedDate:2026-10-30T08:00:08-04:00",
   "checked": "2026-10-30"
  },
  {
@@ -100,11 +100,11 @@
   "kind": "data",
   "url": "https://www.sec.gov/files/company_tickers.json",
   "used_by": "core sec",
-  "status": 403,
+  "status": 200,
   "final": "www.sec.gov/files/company_tickers.json",
-  "ctype": "text/html",
-  "bytes": 1925,
-  "shape": "text: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">",
+  "ctype": "application/json",
+  "bytes": 798077,
+  "shape": "json keys: 0,1,10,100,1000,10000,10001,10002,10003,10004,10005,10006,10007,10008,10009,1001,10010,10011,10012,10013,10014,10015,10016,10017,10018,10019,1002,10020,10021,10022,10023,10024,10025,10026,10027,10028,10029,1003,10030,10031,10032,10033,10034,10035,10036,10037,10038,10039,1004,10040,10041,10042,10043,",
   "checked": "2026-10-30"
  },
  {
@@ -139,7 +139,7 @@
   "status": 200,
   "final": "isc.sans.edu/feeds/urlsummary.txt",
   "ctype": "text/plain",
-  "bytes": 20004864,
+  "bytes": 20021248,
   "shape": "text: first data line has 4 fields",
   "checked": "2026-10-30"
  },
@@ -230,12 +230,13 @@
   "kind": "terms",
   "url": "https://www.sec.gov/os/accessing-edgar-data",
   "used_by": "core sec",
-  "status": 403,
-  "final": "www.sec.gov/os/accessing-edgar-data",
+  "status": 200,
+  "final": "www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
   "ctype": "text/html",
-  "bytes": 1924,
-  "text_sha256": "325599826b2f3d858867c9c09d339999f638d7f8ebb3d43d9887699c1313aac6",
-  "words": 47,
+  "bytes": 80372,
+  "text_sha256": "2050b88d45c0c5013a0b6e4b950893c15987b41787099a84dbca16a2acc60832",
+  "words": 2038,
+  "archive_url": "save requested (HTTP 520)",
   "checked": "2026-10-30"
  },
  {
@@ -260,7 +261,7 @@
   "status": 200,
   "final": "isc.sans.edu/feeds_doc.html",
   "ctype": "text/html",
-  "bytes": 33391,
+  "bytes": 33390,
   "text_sha256": "313923db27b337ad144cec6f676890df1335b237c5229118118e244ed2d0c58e",
   "words": 479,
   "archive_url": "https://web.archive.org/web/20261030122102/https://isc.sans.edu/feeds_doc.html",
@@ -281,24 +282,17 @@
   "checked": "2026-10-30"
  },
  {
-  "name": "ransomware.live Pro terms",
+  "name": "Cloudflare Radar documentation",
   "kind": "terms",
-  "url": "https://pro.ransomware.live/t&c",
-  "used_by": "permission (ticket 3425)",
-  "status": "error ConnectionError",
-  "checked": "2026-10-30"
- },
- {
-  "name": "Cloudflare Radar about and licence",
-  "kind": "terms",
-  "url": "https://radar.cloudflare.com/about",
+  "url": "https://developers.cloudflare.com/radar/",
   "used_by": "exploratory X4",
-  "status": 403,
-  "final": "radar.cloudflare.com/about",
+  "status": 200,
+  "final": "developers.cloudflare.com/radar/",
   "ctype": "text/html",
-  "bytes": 5636,
-  "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
-  "words": 3,
+  "bytes": 120315,
+  "text_sha256": "a9bc9c594ba77cb08a115e38a8d62beb069d64b9d87ee7f6bf802f0bdef450c9",
+  "words": 566,
+  "archive_url": "https://web.archive.org/web/20261030123145/https://developers.cloudflare.com/radar/",
   "checked": "2026-10-30"
  },
  {

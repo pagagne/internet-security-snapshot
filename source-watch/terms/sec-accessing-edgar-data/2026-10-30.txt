@@ -1,0 +1,295 @@
+# SEC accessing EDGAR data
+# https://www.sec.gov/os/accessing-edgar-data
+# copied 2026-10-30
+
+SEC.gov | Accessing EDGAR Data
+Skip to search field
+Skip to main content
+An official website of the United States government
+Here’s how you know
+Here’s how you know
+Official websites use .gov
+A .gov website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A lock
+( )
+or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+SEC homepage
+Menu
+Close
+Search SEC.gov & EDGAR
+Search
+Search Filings
+Search Filings
+Full Text Search
+Latest Filings
+Mutual Fund Search
+Variable Insurance Products Search
+SIC Codes
+CIK Lookup
+Public Dissemination Service (PDS)
+Search Assistance
+Submit Filings
+Submit Filings
+EDGAR Filer Management Portal
+EDGAR Filing Portal
+Online Forms Management Portal
+EDGAR Next
+Forms Index
+Filer Support & Resources
+Data & Research
+Data & Research
+Data Library
+Statistics & Data Visualizations
+Structured Data
+Investment Management Data
+Open Data at the SEC
+Rules, Enforcement, & Compliance
+Rules & Regulations
+Rulemaking Activity
+Submit Public Comments
+Staff Guidance
+No-Action, Interpretive, and Exemptive Letters
+Self-Regulatory Organization Rulemaking
+Public Petitions for Rulemaking
+Enforcement & Litigation
+Litigation Releases
+Administrative Proceedings
+Administrative Law Judge Orders and Initial Decisions
+Trading Suspensions
+Distributions to Harmed Investors
+Receiverships
+Compliance
+Examination Priorities
+Risk Alerts
+Compliance Outreach Program
+Proposed Rules
+What's New
+Whistleblower Program
+Featured Topics
+Featured Topics
+Crypto Task Force
+Cybersecurity
+Market Structure Analytics
+Saving and Investing for Military Personnel
+Saving and Investing for Teachers
+SEC-CFTC Harmonization Initiative
+Treasury Clearing Implementation
+About
+About
+Mission
+Commissioners
+Divisions & Offices
+Division & Office Directors
+Advisory Committees
+Budget & Performance
+Reports & Publications
+Commission Votes
+Contact the SEC
+Careers
+Submit a Tip or Complaint
+Newsroom
+|
+Investors
+Small Businesses
+Whistleblowers
+Newsroom
+|
+Investors
+Small Businesses
+Whistleblowers
+Search SEC.gov & EDGAR
+Search
+More in this Section
+Search Filings
+Full Text Search
+Latest Filings Search
+Insurance Products Search
+Mutual Funds Search
+Confidential Treatment Orders Search
+Standard Industrial Classification (SIC) Code List
+CIK Lookup
+EDGAR Public Dissemination Service (PDS) System
+Effectiveness Notices
+EDGAR Application Programming Interfaces
+EDGAR Search Assistance
+Accessing EDGAR Data
+How Do I Use EDGAR?
+How to Search for EDGAR Correspondence
+Using EDGAR to Research Investments
+Search Filings
+Full Text Search
+Latest Filings Search
+Insurance Products Search
+Mutual Funds Search
+Confidential Treatment Orders Search
+Standard Industrial Classification (SIC) Code List
+CIK Lookup
+EDGAR Public Dissemination Service (PDS) System
+Effectiveness Notices
+EDGAR Application Programming Interfaces
+EDGAR Search Assistance
+Accessing EDGAR Data
+How Do I Use EDGAR?
+How to Search for EDGAR Correspondence
+Using EDGAR to Research Investments
+Home
+Search Filings
+EDGAR Search Assistance
+Accessing EDGAR Data
+Accessing EDGAR Data
+March 23, 2021
+Overview
+All companies, foreign and domestic, are required to file registration statements, periodic reports, and other forms electronically through the U.S. Securities and Exchange Commission's EDGAR (Electronic Data Gathering, Analysis, and Retrieval) system. Anyone can access and download this information for free or query it through a variety of EDGAR public searches .
+Fair access
+Current max request rate: 10 requests/second.
+To ensure everyone has equitable access to SEC EDGAR content, please use efficient scripting. Download only what you need and please moderate requests to minimize server load.
+SEC reserves the right to limit request rates to preserve fair access for all users. See our Internet Security Policy for our current rate request limit .
+The SEC does not allow botnets or automated tools to crawl the site. Any request that has been identified as part of a botnet or an automated tool outside of the acceptable policy will be managed to ensure fair access for all users.
+Please declare your user agent in request headers:
+Sample Declared Bot Request Headers:
+User-Agent:
+Sample Company Name AdminContact@<sample company domain>.com
+Accept-Encoding:
+gzip, deflate
+Host:
+www.sec.gov
+We do not offer technical support for developing or debugging scripted processes.
+How far back does EDGAR data go?
+EDGAR started in 1994/1995 . Paper copies of filing documents prior to 1994 may be available by filing a Freedom of Information Act request. See How To Access Or Request Records Not Accessible Via SEC Website .
+Business hours and dissemination
+EDGAR accepts new filer applications, new filings, and changes to filer data each business day, Monday through Friday, from 6:00 a.m. to 10:00 p.m., ET. Indexes incorporating the current business day's filings are updated nightly starting about 10:00 p.m., ET; the process is usually completed within a few hours. Some filing submissions that begin after 5:30 p.m. ET—or 10:00 p.m. for Ownership forms 3, 4, 5—will be disseminated the next business day, showing up in the following business day's index.
+Some filings are still submitted in paper and are not accessible through EDGAR. PDF scans of some of these filings are accessible through the Virtual Private Reference Room (VPRR) , described in more detail below.
+Post-acceptance corrections and deletions
+Filings are sometimes authorized by SEC staff for removal or correction for a variety of reasons at the filer's request including, but not limited to, the document was submitted for the wrong filer, the document was a duplicate of a previously filed document, the document in its current form was unreadable, or the document contained sensitive information. Corrections processed during a given business day will be incorporated in the indexes built that evening. However, removals processed on subsequent business days will not be reflected in any previous daily, feed, or oldload index. The full and quarterly index files are rebuilt weekly, early on Saturday mornings, so that any post-acceptance correction (PAC) deletes or updates are incorporated.
+Data APIs
+Submissions by company and extracted XBRL data are available via RESTful APIs on data.sec.gov , offering JSON formatted data.
+Using the EDGAR index files
+Indexes to all public filings are available from 1994Q3 through the present and located in the following browsable directories:
+/Archives/edgar/daily-index — daily index files through the current year;
+/Archives/edgar/full-index — full indexes offer a "bridge" between quarterly and daily indexes, compiling filings from the beginning of the current quarter through the previous business day. At the end of the quarter, the full index is rolled into a static quarterly index.
+Each directory and all child subdirectories contain three files to assist in automated crawling of these directories. Note that these are not visible through directory browsing.
+index.html (the web browser would normally receive these)
+index.xml (an XML structured version of the same content)
+index.json (a JSON structured vision of the same content)
+The EDGAR indexes list the following information for each filing:
+company name
+form type
+central index key (CIK)
+date filed
+file name (including folder path)
+Four types of indexes are available:
+company — sorted by company name
+form — sorted by form type
+master — sorted by CIK number
+XBRL — list of submissions containing XBRL financial files, sorted by CIK number; these include Voluntary Filer Program submissions
+The company, form, and master indexes contain the same information sorted differently.
+CIK
+EDGAR assigns to filers a unique numerical identifier, known as a Central Index Key (CIK), when they sign up to make filings to the SEC. CIK numbers remain unique to the filer; they are not recycled.
+Current list of all CIKs matched with entity name (13 MB, text file). Note that this list includes funds and individuals and is historically cumulative for company names. Thus a given CIK may be associated with multiple names in the case of company or fund name changes, and the list contains some entities that no longer file with the SEC.
+Feed and oldloads directories
+/Archives/edgar/Feed/ — tar and gzip archive files (e.g., 20061207.nc.tar.gz) for each filing day.
+/Archives/edgar/Oldloads/ — daily concatenated archive files of all public filing submissions complete with the filing header.
+Each feed and oldloads directory and all child subdirectories contain three files to assist in automated crawling of these directories:
+index.html (the web browser would normally receive these)
+index.xml (a XML structured version of the same content)
+index.json (a JSON structured vision of the same content)
+See EDGAR Public Dissemination Service (PDS) Technical Specification for details on type of disseminations and SGML header structure.
+Paths and directory structure
+The index paths link to the raw text version of the complete disseminated filing content, for example:
+/Archives/edgar/data/1122304/0001193125-15-118890.txt
+Post-EDGAR 7.0 filings (after May 26, 2000) are also accessible via an alternative symbolic path, incorporating an intermediate accession-number directory without dashes. All the documents submitted for a given filing will be in this directory:
+/Archives/edgar/data/1122304/000119312515118890/0001193125-15-118890.txt
+Other content that may be of interest using the root path:
+/Archives/edgar/data/1122304/0001193125-15-118890-index.html — an HTML version including hyperlinked table of submitted documents.
+/Archives/edgar/data/1122304/000119312515118890/0001193125-15-118890.hdr.sgml —
+the SGML header contents. Note the additional "accession-number-without-dashes" directory in the path.
+Accession number: In the example above, 0001193125-15-118890 is the accession number, a unique identifier assigned automatically to an accepted submission by EDGAR. The first set of numbers (0001193125) is the CIK of the entity submitting the filing. This could be the company or a third-party filer agent. Some filer agents without a regulatory requirement to make disclosure filings with the SEC have a CIK but no searchable presence in the public EDGAR database. The next two numbers (15) represent the year. The last series of numbers represent a sequential count of submitted filings from that CIK. The count is usually, but not always, reset to zero at the start of each calendar year.
+Directory browsing
+Directory browsing is allowed for CIK and accession-number directories. For example:
+https://www.sec.gov/Archives/edgar/data/51143/
+https://www.sec.gov/Archives/edgar/data/51143/000104746917001061/
+Note that the /Archives/edgar/data/ directory is not browsable.
+Each CIK directory and all child subdirectories contain three files to assist in automated crawling of these directories. These are not visible through directory browsing.
+index.html (the web browser would normally receive these)
+index.xml (a XML structured version of the same content)
+index.json (a JSON structured vision of the same content)
+Virtual Private Reference Room (VPRR)
+The VPRR directories contain PDF scans of some filings submitted in paper. These files are not indexed. Directory browsing, however, is allowed; see index: https://www.sec.gov/Archives/edgar/vprr/index.html
+Each directory name is a 4-digit number corresponding to the first four digits of the Film Number/DCN (document control number).
+Each VPRR directory contains three files that are not indicated in the directory listing, but which may be helpful for automated processes:
+index.html (the directory listing you see in the browser)
+index.xml
+index.json
+For example:
+https://www.sec.gov/Archives/edgar/vprr/1403/index.html
+https://www.sec.gov/Archives/edgar/vprr/1403/index.xml
+https://www.sec.gov/Archives/edgar/vprr/1403/index.json
+Monthly directory
+The monthly directory contains archival XBRL RSS files from April 2005, when the Voluntary Filer Program began for XBRL filing. See Structured Disclosure RSS Feeds for more information.
+CIK, ticker, and exchange associations
+We periodically update these files to provide functionality for EDGAR searches, but do not guarantee accuracy or scope.
+company_tickers.json : data file for ticker, CIK, EDGAR conformed company name associations.
+company_tickers_exchange.json : data file for EDGAR conformed company name, CIK, ticker, exchange associations ( Note: path has been changed to https://www.sec.gov/ files/ company_tickers_exchange.json and a redirect is in place from the previous /data/ location).
+company_tickers_mf.json : fund CIK, series, class, ticker ( ( Note: path has been changed to https://www.sec.gov/ files/ company_tickers_mf.json and a redirect is in place from the previous /data/ location).
+Other sources of EDGAR and SEC data
+Webmaster Frequently Asked Questions
+Division of Economic and Risk Analysis Data Library includes datasets from:
+Mutual Fund Prospectus Risk/Return Summaries
+Crowdfunding Offerings
+Form D
+Regulation A
+Transfer Agent
+EDGAR Logfiles
+Financial Statements
+Financial Statements and Notes
+Number of EDGAR Filings by Form Type
+SEC Data Resources
+Contacts
+EDGAR Filer Support
+General SEC Contact information , including electronic mailboxes, telephone numbers, and mailing addresses
+Connection issues and general questions — webmaster@sec.gov ; see also Webmaster FAQ s
+Questions about taxonomies, structured data (e.g., XBRL; XML; FpML; FIX), and the DERA Data Library — structureddata@sec.gov
+Last Reviewed or Updated: June 26, 2024
+Resources
+Fee-based EDGAR Public Dissemination Service (PDS), including subscription and …
+How to Research Public Companies
+Interactive Data Filings and RSS Feeds
+Monthly Archive
+Developer Resources
+Office of Structured Disclosure
+Descriptions of EDGAR form types
+SEC Forms List
+Return to top
+SEC homepage
+About the SEC
+Budget & Performance
+Careers
+Commission Votes
+Contact
+Contracts
+Transparency
+Accessibility & Disability
+Super Intelligence
+FOIA
+Inspector General
+No FEAR Act Data
+Ombuds
+SEC Excess Personal Property Guidance
+Websites
+Investor.gov
+Related Sites
+USA.gov
+Site Information
+Plain Writing
+Privacy & Security
+Site Map
+Stay connected. Sign up for email updates.
+Your email address
+Sign Up
+X
+Facebook
+Instagram
+RSS
+YouTube
+Email Updates
