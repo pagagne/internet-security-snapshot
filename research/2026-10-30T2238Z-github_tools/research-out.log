@@ -1,0 +1,63 @@
+# AI attack-tool sweep of GitHub, 2026-10-30 (X25, exploratory)
+
+Repositories found: 3453 (3453 originals, 0 forks), from 24 fixed queries. A tool on GitHub is supply, not use; many are for authorised testing. Claude sorts these; the author confirms what enters the register.
+
+## New tools by month created (originals, since Jan 2024)
+
+- 2024-03: 2
+- 2024-04: 4
+- 2024-05: 3
+- 2024-06: 4
+- 2024-07: 4
+- 2024-08: 8
+- 2024-09: 4
+- 2024-10: 6
+- 2024-11: 9
+- 2024-12: 2
+- 2025-01: 12
+- 2025-02: 21
+- 2025-03: 13
+- 2025-04: 37
+- 2025-05: 32
+- 2025-06: 27
+- 2025-07: 44
+- 2025-08: 45
+- 2025-09: 62
+- 2025-10: 81
+- 2025-11: 83
+- 2025-12: 93
+- 2026-01: 102
+- 2026-02: 161
+- 2026-03: 247
+- 2026-04: 297
+- 2026-05: 314
+- 2026-06: 282
+- 2026-07: 308
+- 2026-08: 287
+- 2026-09: 301
+- 2026-10: 513
+
+## AI named in descriptions or READMEs (originals)
+
+mcp 620; anthropic/claude 377; openai/gpt 157; ollama/local 103; google/gemini 92; langchain 79; deepseek 43; llama 29; hermes 29; qwen 17; mistral 4
+
+## Safeguards in the READMEs of the most-starred tools
+
+mentions 42; not mentioned 17; no readme 1
+
+## The 40 most-starred originals
+
+- usestrix/strix (Organization, created 2025-08-05): 72,938 stars, 8,194 forks; openai/gpt;anthropic/claude;google/gemini;deepseek;ollama/local;mcp; safeguard: mentions
+- vxcontrol/pentagi (Organization, created 2025-01-06): 32,811 stars, 5,126 forks; openai/gpt;anthropic/claude; safeguard: mentions
+- promptfoo/promptfoo (Organization, created 2023-04-28): 26,649 stars, 2,620 forks; openai/gpt;anthropic/claude;google/gemini;deepseek; safeguard: not mentioned
+- Dujltqzv/Some-Many-Books (User, created 2021-09-05): 25,460 stars, 2,416 forks; AI not named; safeguard: not mentioned
+- GreyDGL/PentestGPT (User, created 2023-02-27): 16,207 stars, 2,832 forks; openai/gpt;anthropic/claude;google/gemini;deepseek;qwen;ollama/local; safeguard: mentions
+- 0x4m4/hexstrike-ai (User, created 2025-07-10): 13,228 stars, 2,669 forks; anthropic/claude;mcp; safeguard: mentions
+- We5ter/Scanners-Box (User, created 2016-12-24): 9,157 stars, 2,429 forks; openai/gpt;anthropic/claude;google/gemini;deepseek;ollama/local;mcp; safeguard: mentions
+- AIPentest/CyberStrikeAI (Organization, created 2025-11-08): 8,254 stars, 1,774 forks; mcp; safeguard: mentions
+- infobyte/faraday (Organization, created 2013-11-06): 6,836 stars, 1,088 forks; AI not named; safeguard: not mentioned
+- Giskard-AI/giskard-oss (Organization, created 2022-03-06): 5,937 stars, 555 forks; openai/gpt;anthropic/claude; safeguard: not mentioned
+- oritera/Cairn (Organization, created 2026-04-19): 4,690 stars, 898 forks; openai/gpt;anthropic/claude;mcp; safeguard: mentions
+- sooryathejas/METATRON (User, created 2026-04-02): 4,247 stars, 836 forks; qwen;ollama/local; safeguard: mentions
+- CyberStrikeus/CyberStrike (Organization, created 2026-02-14): 3,311 stars, 562 forks; openai/gpt;anthropic/claude;google/gemini;deepseek;qwen;llama;mistral;ollama/local;mcp; safeguard: mentions
+- cirosantilli/china-dictatorship
