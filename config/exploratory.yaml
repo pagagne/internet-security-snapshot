@@ -443,3 +443,6 @@ measures:
       the register, exploratory/ai_attack_tools.csv. Read as supply, never as use: never
       scored, never counted as an attack, reported beside X3 and X12. Each sweep gives the
       creation-month curve from the start; repeated sweeps add growth in stars and forks.
+      The January 2027 sweep is part of the pilot (author, 30 Oct 2026). Every sweep is kept as
+      exploratory/ai_tool_sweeps/<date>.csv and catalogued with three charts in
+      exploratory/ai_tool_landscape.md (snapshot.x25report), which is part of The Snapshot.

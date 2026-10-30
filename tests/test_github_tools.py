@@ -43,3 +43,8 @@ def test_sweep_merges_queries_and_reads_safeguards():
     s = G.summary(rows, hits, "2026-10-30")
     assert "| 2026-10 | 2 |" in s and "never instructions" in s
     assert by["a/one"]["role"] == "attack" and by["a/one"]["side"] == "attack"
+
+
+def test_landscape_page_is_current():
+    from snapshot import x25report
+    assert (ROOT / x25report.OUT).read_text() == x25report.build_text(ROOT)

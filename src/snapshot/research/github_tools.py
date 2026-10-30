@@ -215,6 +215,11 @@ def main(argv=None) -> int:
         w = csv.DictWriter(fh, fieldnames=list(row({"full_name": "", "html_url": ""})))
         w.writeheader()
         w.writerows(rows)
+    compact = ["full_name", "created", "stars", "forks", "owner_type", "role", "side", "models", "readme_safeguard"]
+    with (a.out / "compact.csv").open("w", newline="") as fh:   # for exploratory/ai_tool_sweeps/
+        w = csv.DictWriter(fh, fieldnames=compact, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(r for r in rows if not r["is_fork"])
     (a.out / "queries.json").write_text(json.dumps(hits, indent=1, ensure_ascii=False))
     s = summary(rows, hits, dt.date.today().isoformat())
     (a.out / "summary.md").write_text(s)
