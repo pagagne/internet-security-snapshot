@@ -35,3 +35,9 @@ programmes:
     active_to: null
     credit_regex: '\bXint\b'
     source: https://siliconangle.com/2026/03/17/theori-launches-xint-code-ai-platform-uncover-hidden-vulnerabilities-massive-codebases/
+  - org: Causal Security
+    programme: Cipher autonomous AI security agent (ICS/OT research disclosed through CISA)
+    active_from: 2026-10-08   # first CISA advisory crediting Cipher findings (ICSA-26-281-02)
+    active_to: null
+    credit_regex: 'Causal Security|Cipher\s*/\s*Causal'
+    source: https://www.theregister.com/security/2026/10/27/ai-hacker-finds-4-severe-bugs-in-popular-industrial-control-software-in-under-4-hours/5305811 (primary report https://causalsecurity.com/research/epics-base-security-research; added 29 Oct 2026, author)
