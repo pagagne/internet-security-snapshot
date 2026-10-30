@@ -215,6 +215,8 @@ there and large: CyberStrikeAI (8,220 stars, 1,756 forks, created Nov 2025, 100+
 and forks of both; about a dozen other agent frameworks have 150 to 1,300 stars. Stars and forks
 are popularity, not use. Release counts above 100 need paging if adopted.
 
+**Decided early, 30 Oct (author): a variant of A.** Adopted as exploratory X25, but run by hand only, never monthly: a baseline sweep now (30 Oct 2026), then at the start, middle and end of 2027 (Research task `github_tools`, fixed queries in `config/github_tool_queries.yaml`; register `exploratory/ai_attack_tools.csv`). Prompted by the author forwarding vulnerator-ai, an autonomous pentest agent (Hermes on Mistral, Kali through MCP, no scope or consent checks by its own account).
+
 ## 13. Cataloguing AI attack methods and the author's resources (added 29 Oct, author's request)
 The author reads and forwards articles to find AI attack methods the study does not yet
 catalogue, and wants as many resources as possible included. The X3 log (32 cases, 22

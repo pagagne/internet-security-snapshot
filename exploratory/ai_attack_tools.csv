@@ -1,0 +1,2 @@
+full_name,url,maker,created,first_seen,stars_at_first_seen,models,safeguard,found_via,status,notes
+irraz/vulnerator-ai,https://github.com/irraz/vulnerator-ai,person,,2026-10-30,4,hermes;mistral;mcp,says none,author,kept,"Autonomous pentest agent: Hermes (NousResearch) on Mistral Large via OpenRouter; Kali tools, headless browser and AWS audit tools (Prowler, ScoutSuite, Pacu) through MCP; findings tagged with MITRE ATT&CK. README: no scope-guard, consent, audit or authorisation gate; authorised targets only."

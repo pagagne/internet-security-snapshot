@@ -1,0 +1,33 @@
+# Fixed queries for the AI attack-tool sweep of GitHub (X25; author's decision, 30 Oct 2026).
+# Run by hand only (Research task github_tools): baseline Oct 2026, then early 2027, mid-2027
+# and end of 2027. Keep the list fixed between sweeps so their counts compare; any change is
+# dated here and noted in the session log. Topics are GitHub's own tags; "in:name,description"
+# searches only names and descriptions, never code.
+# Excluded on purpose: tools for testing AI models themselves (prompt-injection scanners,
+# LLM red-teaming of chatbots), which are not attack tools against other systems; Claude
+# sorts any that slip through.
+queries:
+  - "topic:ai-pentest"
+  - "topic:ai-pentesting"
+  - "topic:pentest-agent"
+  - "topic:pentesting-agent"
+  - "topic:autonomous-pentesting"
+  - "topic:ai-hacking"
+  - "topic:offensive-ai"
+  - "topic:ai-red-team agent"
+  - "autonomous pentest in:name,description"
+  - "autonomous penetration testing in:description"
+  - "AI pentest agent in:name,description"
+  - "LLM penetration testing in:description"
+  - "agentic pentest in:name,description"
+  - "AI hacking agent in:description"
+  - "offensive security agent LLM in:description"
+  - "kali MCP in:name,description"
+  - "pentest MCP server in:name,description"
+  - "exploit generation LLM in:description"
+  - "AI vulnerability exploitation agent in:description"
+  - "CyberStrikeAI in:name,description"
+  - "ARTEX agent in:name,description"
+  - "渗透测试 AI in:description"
+  - "渗透 智能体 in:description"
+  - "пентест ИИ in:description"

@@ -420,3 +420,22 @@ measures:
       only free sources. Reported beside I6 and never in its place: I6 as registered needs
       VulnCheck and Shadowserver. What EUVD's "exploited since" date means is checked first
       (KEV-lag back-test, 9 Nov).
+
+  - id: X25
+    name: Supply of AI attack tools on GitHub
+    question: How many open-source tools that let an AI agent attack systems are published on GitHub, how fast do new ones appear, which AI do they run on, and how many have safeguards?
+    sources: [github_search]
+    added: 2026-10-30
+    feeds_labels: false
+    status: active   # author's decision 30 Oct 2026 (12 Nov review item 12, decided early, as a hand-run sweep)
+    method: >
+      Run by hand only, never on a timer (Research task github_tools): a baseline in late
+      October 2026, then at the start of 2027, mid-2027 and the end of 2027. Fixed queries
+      (config/github_tool_queries.yaml) over GitHub's public search; per repository: maker
+      (person or organisation), creation date, stars, forks, licence, the AI models or agent
+      frameworks named, and for the most-starred whether the README mentions a scope or
+      authorisation safeguard. No code is downloaded or run. Claude sorts each sweep (dropping
+      tools that test AI models themselves, copies and unrelated hits) and the author confirms
+      the register, exploratory/ai_attack_tools.csv. Read as supply, never as use: never
+      scored, never counted as an attack, reported beside X3 and X12. Each sweep gives the
+      creation-month curve from the start; repeated sweeps add growth in stars and forks.

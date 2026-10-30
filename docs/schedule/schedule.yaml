@@ -1118,6 +1118,28 @@ items:
     About 1-2 hours. Read the first annual check of the free data against better reference
     data (drafted 1 March) and comment before the 15 March 2028 annual review.
 
+- id: github-tool-sweep
+  owner: claude
+  title: Run the AI attack-tool sweep of GitHub (X25) and sort it for the author
+  dates: [2027-01-06, 2027-07-07, 2027-12-08]
+  details: >
+    Author's decision 30 Oct 2026: run by hand only, start, middle and end of 2027 (baseline
+    run 30 Oct 2026). Start the Research workflow with task github_tools (docs/OPERATIONS.md),
+    sort the results (drop tools that test AI models themselves, copies and unrelated hits),
+    compare with the previous sweep (new tools, growth in stars and forks) and propose
+    additions to exploratory/ai_attack_tools.csv. Never on a pull day.
+
+- id: github-tool-review
+  owner: author
+  title: Confirm the new entries in the AI attack-tool register (X25)
+  dates: [2027-01-08, 2027-07-09, 2027-12-10]
+  minutes: 30
+  details: >
+    Claude's sorted list from the sweep two days earlier is in that day's GitHub issue. Keep or
+    exclude each proposed tool for exploratory/ai_attack_tools.csv. Supply, not use: a tool
+    here is never counted as an attack.
+
+
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule
 # build). Each row takes its date(s) from the items above, so a date changed there changes the

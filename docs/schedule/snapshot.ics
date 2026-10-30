@@ -1207,6 +1207,26 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:github-tool-sweep@2027-01-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Run the AI attack-tool sweep of GitHub (X25) and
+  sort it for the author
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: run by ha
+ nd only\, start\, middle and end of 2027 (baseline run 30 Oct 2026). Start
+  the Research workflow with task github_tools (https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the result
+ s (drop tools that test AI models themselves\, copies and unrelated hits)\
+ , compare with the previous sweep (new tools\, growth in stars and forks) 
+ and propose additions to https://github.com/pagagne/internet-security-snap
+ shot/blob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:watch-case-pick@2027-01-06@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270106
@@ -1224,6 +1244,22 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
   https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
  dule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:github-tool-review@2027-01-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Confirm the new entries in the AI attack-tool regi
+ ster (X25)
+DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
+ ep two days earlier is in that day's GitHub issue. Keep or exclude each pr
+ oposed tool for https://github.com/pagagne/internet-security-snapshot/blob
+ /main/exploratory/ai_attack_tools.csv. Supply\, not use: a tool here is ne
+ ver counted as an attack.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:newsletter-read@2027-01-08@internet-security-snapshot
@@ -2374,6 +2410,26 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:github-tool-sweep@2027-07-07@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270707
+DTEND;VALUE=DATE:20270708
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Run the AI attack-tool sweep of GitHub (X25) and
+  sort it for the author
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: run by ha
+ nd only\, start\, middle and end of 2027 (baseline run 30 Oct 2026). Start
+  the Research workflow with task github_tools (https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the result
+ s (drop tools that test AI models themselves\, copies and unrelated hits)\
+ , compare with the previous sweep (new tools\, growth in stars and forks) 
+ and propose additions to https://github.com/pagagne/internet-security-snap
+ shot/blob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-07-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270708
@@ -2389,6 +2445,22 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:github-tool-review@2027-07-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270709
+DTEND;VALUE=DATE:20270710
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Confirm the new entries in the AI attack-tool regi
+ ster (X25)
+DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
+ ep two days earlier is in that day's GitHub issue. Keep or exclude each pr
+ oposed tool for https://github.com/pagagne/internet-security-snapshot/blob
+ /main/exploratory/ai_attack_tools.csv. Supply\, not use: a tool here is ne
+ ver counted as an attack.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2027-07-10@internet-security-snapshot
@@ -3053,6 +3125,26 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:github-tool-sweep@2027-12-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271208
+DTEND;VALUE=DATE:20271209
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Run the AI attack-tool sweep of GitHub (X25) and
+  sort it for the author
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: run by ha
+ nd only\, start\, middle and end of 2027 (baseline run 30 Oct 2026). Start
+  the Research workflow with task github_tools (https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the result
+ s (drop tools that test AI models themselves\, copies and unrelated hits)\
+ , compare with the previous sweep (new tools\, growth in stars and forks) 
+ and propose additions to https://github.com/pagagne/internet-security-snap
+ shot/blob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-12-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271208
@@ -3068,6 +3160,22 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:github-tool-review@2027-12-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271210
+DTEND;VALUE=DATE:20271211
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Confirm the new entries in the AI attack-tool regi
+ ster (X25)
+DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
+ ep two days earlier is in that day's GitHub issue. Keep or exclude each pr
+ oposed tool for https://github.com/pagagne/internet-security-snapshot/blob
+ /main/exploratory/ai_attack_tools.csv. Supply\, not use: a tool here is ne
+ ver counted as an attack.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:rebuild-check@2027-12-10@internet-security-snapshot
