@@ -20,6 +20,7 @@ import gzip
 import hashlib
 import html
 import json
+import os
 import re
 import time
 from pathlib import Path
@@ -72,7 +73,8 @@ def check(src: dict) -> tuple[dict, str | None]:
     """One request. Returns the record and, for a terms page, its visible text."""
     rec = {"name": src["name"], "kind": src["kind"], "url": src["url"], "used_by": src.get("used_by", "")}
     try:
-        r = requests.get(src["url"], headers={"User-Agent": UA}, timeout=60, stream=True)
+        ua = os.environ.get(src["ua_env"], "") if src.get("ua_env") else ""
+        r = requests.get(src["url"], headers={"User-Agent": ua or UA}, timeout=60, stream=True)
         note_status(src["url"], r.status_code)
         body = b""
         for chunk in r.iter_content(65536):

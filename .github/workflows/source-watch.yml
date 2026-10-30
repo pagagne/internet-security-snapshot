@@ -43,6 +43,8 @@ jobs:
         run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
       - name: Check the sources
         if: steps.day.outputs.skip != 'yes'
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}   # the SEC requires a contact User-Agent
         run: |
           git fetch origin run-reports:run-reports
           git worktree add -q /tmp/rr run-reports

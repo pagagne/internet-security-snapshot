@@ -7,7 +7,8 @@
 #   kind: terms  a terms, licence or usage page; the check also keeps a dated text copy and an
 #                Internet Archive copy whenever the wording changes.
 #   used_by:     the collector or measure it serves (core, companion or permission).
-#   expect:      the reply status the address normally gives (default 200).
+#   ua_env:      a secret holding the identifying User-Agent a source requires (the SEC asks for
+#                a contact address); the secret is never printed.
 #
 # One light request per address per week, the study named in each. Addresses that need a key
 # (ransomware.live Pro, Cloudflare Radar API) are watched through their public pages only.
@@ -24,7 +25,7 @@ sources:
   - {name: NVD mirror (fkie-cad), kind: data, used_by: core nvd fallback, url: "https://api.github.com/repos/fkie-cad/nvd-json-data-feeds"}
   - {name: EPSS API, kind: data, used_by: core epss, url: "https://api.first.org/data/v1/epss?limit=1"}
   - {name: EPSS daily file, kind: data, used_by: core epss, url: "https://epss.cyentia.com/epss_scores-current.csv.gz"}
-  - {name: SEC company list, kind: data, used_by: core sec, url: "https://www.sec.gov/files/company_tickers.json"}
+  - {name: SEC company list, kind: data, used_by: core sec, url: "https://www.sec.gov/files/company_tickers.json", ua_env: SEC_USER_AGENT}
   - {name: Red Hat VEX (fix dates), kind: data, used_by: core fix dates, url: "https://security.access.redhat.com/data/csaf/v2/vex/2021/cve-2021-44228.json"}
   - {name: Palo Alto advisories (fix dates), kind: data, used_by: core fix dates, url: "https://security.paloaltonetworks.com/json/CVE-2024-3400"}
   # ---- data addresses (companion and exploratory measures) ----
@@ -36,11 +37,10 @@ sources:
   - {name: CISA KEV catalogue page, kind: terms, used_by: core kev, url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
   - {name: CISA kev-data repository (licence), kind: terms, used_by: core kev, url: "https://github.com/cisagov/kev-data"}
   - {name: FIRST EPSS page, kind: terms, used_by: core epss, url: "https://www.first.org/epss/"}
-  - {name: SEC accessing EDGAR data, kind: terms, used_by: core sec, url: "https://www.sec.gov/os/accessing-edgar-data"}
+  - {name: SEC accessing EDGAR data, kind: terms, used_by: core sec, url: "https://www.sec.gov/os/accessing-edgar-data", ua_env: SEC_USER_AGENT}
   - {name: Red Hat security data, kind: terms, used_by: core fix dates, url: "https://access.redhat.com/security/data"}
   - {name: SANS ISC data feeds, kind: terms, used_by: companion X23 / honeypot, url: "https://isc.sans.edu/feeds_doc.html"}
   - {name: ransomware.live terms, kind: terms, used_by: permission (ticket 3425), url: "https://www.ransomware.live/t&c"}
-  - {name: ransomware.live Pro terms, kind: terms, used_by: permission (ticket 3425), url: "https://pro.ransomware.live/t&c"}
-  - {name: Cloudflare Radar about and licence, kind: terms, used_by: exploratory X4, url: "https://radar.cloudflare.com/about"}
+  - {name: Cloudflare Radar documentation, kind: terms, used_by: exploratory X4, url: "https://developers.cloudflare.com/radar/"}   # radar.cloudflare.com refuses automated readers (403, 30 Oct)
   - {name: JPCERT/CC site terms, kind: terms, used_by: companion X19, url: "https://www.jpcert.or.jp/guide.html"}
   - {name: CERT-FR legal notice, kind: terms, used_by: companion X19, url: "https://www.cert.ssi.gouv.fr/mentions-legales/"}
