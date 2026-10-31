@@ -16,3 +16,6 @@ docs/manual/THE_SNAPSHOT.md
 docs/manual/README.md
 docs/manual/parts/
 *.egg-info/
+# Exploratory work is private (author, 31 Oct 2026): it lives in pagagne/snapshot-manual. A local
+# working copy, or the link the workflows make (tools/private.sh), sits here and is never committed.
+/exploratory
