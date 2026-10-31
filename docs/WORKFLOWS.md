@@ -211,7 +211,7 @@ The Feed screen, Honeypot capture and the exploratory Research tasks (ai_lists, 
 cve_check, honeypot_capture, x3_sources, github_tools, repo_scout, hf_tools, x3_read,
 feed_verify) write there through `tools/private.sh` and print only counts in their public logs.
 The core pull, its method research, the source watch and the working documents stay public.
-The exploratory files were moved on 31 Oct 2026 by the one-off Private move workflow; earlier
+The exploratory files were moved on 31 Oct 2026 by a one-off Private move workflow (run 41218328062; removed afterwards); earlier
 versions remain in this repository's history, and erasing that history is the author's
 decision. Tests that read the private data skip in a public checkout (`tests/conftest.py`).
 

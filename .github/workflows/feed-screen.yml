@@ -58,11 +58,11 @@ jobs:
           mkdir -p "/tmp/private/$dest"
           cp -r research-out/. "/tmp/private/$dest/" 2>/dev/null || true
           cp screen.log "/tmp/private/$dest/" 2>/dev/null || true
-          n=0
+          n=0; base="exploratory/feed-screen-$month"
           if [ -f research-out/candidates.csv ]; then
             n=$(tail -n +2 research-out/candidates.csv | wc -l)
             # a re-run in the same month gets its own name, so a sorted month is never overwritten
-            base="exploratory/feed-screen-$month"; [ -e "$base-candidates.csv" ] && base="exploratory/feed-screen-$stamp"
+            [ -e "$base-candidates.csv" ] && base="exploratory/feed-screen-$stamp"
             cp research-out/candidates.csv "$base-candidates.csv"
             python -m snapshot.feedsheet --candidates "$base-candidates.csv" --out "$base.xlsx" \
               --note "Source: AI-attack feed screen run of $stamp ($n candidates). Not yet sorted: Claude adds abstracts, findings and decisions in $base-decisions.csv and rebuilds this file."
@@ -72,6 +72,6 @@ jobs:
           [ -f research-out/summary.md ] || exit 0
           gh label create feed-screen --color c5def5 --description "Monthly AI-attack feed screen" --force
           gh label create owner:claude --color 0e8a16 --description "For a Claude session" --force
-          body=$(printf 'Monthly AI-attack feed screen (X3): %s candidates. The results are private (author, 31 Oct 2026): pagagne/snapshot-manual, `%s/` and `exploratory/feed-screen-%s.*`. Sort them there: log real AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: feed_screen, ai_evidence: unrated), write the decisions file with an abstract and key findings for each item, and rebuild the spreadsheet (`python -m snapshot.feedsheet`). The author confirms in the hand-check window. Nothing about the items is written here.' "$n" "$dest" "$month")
+          body=$(printf 'Monthly AI-attack feed screen (X3): %s candidates. The results are private (author, 31 Oct 2026): pagagne/snapshot-manual, `%s/` and `%s.*`. Sort them there: log real AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: feed_screen, ai_evidence: unrated), write the decisions file with an abstract and key findings for each item, and rebuild the spreadsheet (`python -m snapshot.feedsheet`). The author confirms in the hand-check window. Nothing about the items is written here.' "$n" "$dest" "$base")
           gh api "repos/$GITHUB_REPOSITORY/issues" -f title="[Claude] Sort the monthly AI-attack feed screen ($(date -u +%B\ %Y))" \
             -f body="$body" -f "labels[]=feed-screen" -f "labels[]=owner:claude" >/dev/null
