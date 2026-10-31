@@ -18,13 +18,27 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
         with:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
       - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Private register from Drive (github_tools only)
+        # X25 privacy (author, 30 Oct 2026): codes for individuals' repositories come from a private
+        # register kept in the author's Drive (x25-private/), never in the repository.
+        if: github.event.client_payload.task == 'github_tools'
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          [ -n "$RCLONE_CONF" ] || { echo "::error::RCLONE_CONF missing: X25 needs the private register"; exit 1; }
+          sudo apt-get install -y -qq rclone >/dev/null
+          mkdir -p ~/.config/rclone research-private-in
+          printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+          chmod 600 ~/.config/rclone/rclone.conf
+          rclone copy gdrive:x25-private/registry.csv research-private-in/ || true
+          echo "register entries: $( [ -f research-private-in/registry.csv ] && tail -n +2 research-private-in/registry.csv | wc -l || echo 0)"
       - name: Probe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -38,6 +52,14 @@ jobs:
           [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools)$ ]] || { echo "unknown task"; exit 2; }
           [[ "$START" =~ ^[0-9-]{10}$ && "$END" =~ ^[0-9-]{10}$ ]] || { echo "bad dates"; exit 2; }
           python -m "snapshot.research.$TASK" --start "$START" --end "$END" --out research-out 2>&1 | tee research-out.log
+      - name: Private list and register to Drive (github_tools only)
+        if: github.event.client_payload.task == 'github_tools'
+        run: |
+          stamp=$(date -u +%Y-%m-%dT%H%MZ)
+          rclone copyto research-private/registry.csv gdrive:x25-private/registry.csv
+          rclone copyto research-private/registry.csv "gdrive:x25-private/registry-$stamp.csv"
+          rclone copyto research-private/tools_full.csv "gdrive:x25-private/tools_full-$stamp.csv"
+          rm -rf research-private research-private-in
       - name: Publish
         if: always()
         env:

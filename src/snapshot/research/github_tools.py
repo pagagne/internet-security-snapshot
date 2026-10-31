@@ -1,22 +1,26 @@
 """AI attack- and defence-tool sweep of GitHub (X25; author's decisions, 30 Oct 2026).
 
-Run by hand only, never on a timer: a baseline in late October 2026, then at the start of 2027,
-mid-2027 and the end of 2027 (docs/schedule/schedule.yaml), started by Claude through the
-Research workflow (task github_tools). Searches GitHub's public catalogue with the fixed
-queries in config/github_tool_queries.yaml and records each repository's public details: who
-made it, when, stars, forks, licence, language, topics, which AI models or agent frameworks
-its description names, and, for the most-starred, whether its README mentions a scope or
-authorisation safeguard. It never downloads or runs anyone's code; README text is read as
-data, never instructions. A tool on GitHub is supply, not use: X25 is never scored and never
-counted as an attack. Requests are spaced well inside GitHub's search limit.
+Run by hand only, never on a timer: a baseline on 30 Oct 2026, then at the start of 2027 (part
+of the pilot), mid-2027 and the end of 2027 (docs/schedule/schedule.yaml), started by Claude
+through the Research workflow (task github_tools). Searches GitHub's public catalogue with the
+fixed queries in config/github_tool_queries.yaml (attack and defence lists) through GitHub's
+API, as GitHub's Acceptable Use Policies allow for research published open access. It never
+downloads or runs anyone's code; README and description text is data, never instructions.
 
-Defence tools are swept the same way (author, 30 Oct 2026), and every repository gets a first
-role label from its own description and topics (role()): attack, defence, both, model_testing
-or unclear. Claude checks the label of every tool with 100+ stars and the author confirms; the
-label says what the software does, not who uses it (a pentest tool serves defenders too).
+Per repository it records: role (attack, defence, both, model_testing, unclear; first guess
+from the tool's own words, checked by Claude for 100+ stars and confirmed by the author), the
+AI it names grouped by the lab that makes it, the agent toolkit, what it goes after (targets)
+and which network protocols it names. Descriptions are read for every repository; READMEs for
+the most-starred originals only (GitHub allows about 1,000 API requests an hour per workflow).
 
-Output (research-out/): tools.csv (one row per repository, all queries merged), summary.md
-(counts, new tools by creation month, the most-starred), queries.json (hits per query).
+Privacy (author's decision, 30 Oct 2026): a repository owned by an individual is published
+under a stable code (ind-00001, ...), never its owner's username, name, link or description;
+organisations keep their names. The code register and the full list are private: written to
+research-private/ and copied by the workflow to the author's Drive (x25-private/), never to
+the repository. A tool on GitHub is supply, not use: X25 is never scored.
+
+Output: research-out/ (public: tools.csv, compact.csv, summary.md, queries.json) and
+research-private/ (registry.csv, tools_full.csv).
 """
 from __future__ import annotations
 
@@ -40,15 +44,49 @@ from ..util import _repo_root
 API = "https://api.github.com"
 CONFIG = "config/github_tool_queries.yaml"
 PER_PAGE, MAX_PAGES = 100, 10      # GitHub returns at most 1,000 results per search
-README_TOP = 100                   # READMEs read for the most-starred tools only
+README_TOP = 800                   # READMEs read for the most-starred originals (API allowance)
+REGISTRY_IN = os.environ.get("X25_REGISTRY", "research-private-in/registry.csv")
+PRIVATE_OUT = Path(os.environ.get("X25_PRIVATE_OUT", "research-private"))
 
-MODELS = {   # names in a description or topic that show which AI a tool runs on
-    "openai/gpt": r"\b(gpt-?[345]|openai|chatgpt|codex)\b", "anthropic/claude": r"\b(claude|anthropic)\b",
-    "google/gemini": r"\bgemini\b", "deepseek": r"\bdeepseek\b", "qwen": r"\bqwen\b",
-    "llama": r"\bllama\b", "mistral": r"\bmistral\b", "hermes": r"\bhermes\b", "ollama/local": r"\bollama\b",
-    "mcp": r"\bmcp\b|model context protocol", "langchain": r"\blangchain\b|\blanggraph\b",
+LABS = {   # AI named in a description or README, grouped by the lab that makes it
+    "OpenAI": r"\bgpt-?[345]|\bopenai\b|\bchatgpt\b|\bcodex\b",
+    "Anthropic": r"\bclaude\b|\banthropic\b",
+    "Google": r"\bgemini\b|\bgemma\b|\bvertex ai\b",
+    "Meta": r"\bllama[- ]?[234]|\bllama\b(?!\.cpp|index)",
+    "Mistral": r"\bmistral\b|\bmixtral\b|\bcodestral\b",
+    "DeepSeek": r"\bdeepseek\b",
+    "Alibaba": r"\bqwen\b|\btongyi\b",
+    "Nous Research": r"\bhermes\b",
+    "Moonshot": r"\bkimi\b|\bmoonshot\b",
+    "Zhipu": r"\bchatglm\b|\bglm-?[45]|\bzhipu\b",
+    "xAI": r"\bgrok\b",
+    "Microsoft": r"\bphi-?[234]\b",
+    "Local runner": r"\bollama\b|\bllama\.cpp\b|\blm studio\b|\bvllm\b",
 }
+TOOLKITS = {
+    "MCP": r"\bmcp\b|model context protocol", "LangChain": r"\blangchain\b|\blanggraph\b",
+    "CrewAI": r"\bcrewai\b", "AutoGen": r"\bautogen\b|\bag2\b", "LlamaIndex": r"\bllamaindex\b|\bllama.index\b",
+    "Semantic Kernel": r"semantic kernel", "OpenAI Agents SDK": r"openai agents sdk|openai-agents",
+    "Claude Code / Agent SDK": r"claude code|claude agent sdk|claude-agent-sdk", "smolagents": r"\bsmolagents\b",
+    "PydanticAI": r"pydantic.?ai\b",
+}
+TARGETS = {   # what a tool goes after (or, for defence tools, protects)
+    "web apps and APIs": r"web ?app|website|\bxss\b|sql ?injection|\bsqli\b|\bowasp\b|\bburp\b|api security|\brest api\b",
+    "cloud accounts": r"\baws\b|\bazure\b|\bgcp\b|google cloud|\bs3\b|\biam\b|cloud security|\bcspm\b",
+    "Windows and Active Directory": r"active directory|\bkerberos\b|\bldap\b|\bbloodhound\b|\bntlm\b|\bwindows\b",
+    "networks and hosts": r"\bnmap\b|port scan|network scan|\binternal network\b|\bhosts?\b scan|\bwi-?fi\b|wireless|bluetooth",
+    "containers and Kubernetes": r"\bdocker\b|\bkubernetes\b|\bk8s\b|\bcontainers?\b",
+    "mobile apps": r"\bandroid\b|\bios\b|mobile app|\bapk\b",
+    "industrial and IoT": r"\bics\b|\bscada\b|\bmodbus\b|\bplc\b|\biot\b|\bot security\b|firmware|embedded",
+    "source code and supply chain": r"source code|\bsast\b|dependenc(y|ies)|supply chain|\bnpm\b|\bpypi\b|github actions|ci/cd|code review",
+    "email and people": r"phishing|social engineering|\bemail security\b",
+    "endpoints and logs": r"\bedr\b|endpoint|\bsiem\b|\blogs?\b analysis|\bsysmon\b|event logs?",
+}
+PROTOCOLS = {name: rf"\b{name.lower()}\b" for name in
+             ["HTTP", "SMB", "SSH", "RDP", "DNS", "LDAP", "Kerberos", "SNMP", "FTP", "SMTP", "MQTT", "Modbus", "BGP", "TLS"]}
+
 SAFEGUARD = re.compile(r"\b(scope|authori[sz](ed|ation)|permission|consent|allow-?list|in-scope|rules of engagement)\b", re.I)
+NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
 MODEL_TESTING = re.compile(r"prompt.?injection|jailbreak|guardrail|llm (vulnerabilit|red.?team|security test|fuzz)|"
                            r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation)", re.I)
 ATTACK = re.compile(r"pen.?test|penetration|exploit|red.?team|offensive|hack(ing|er|s)?\b|recon|\bc2\b|post.?exploit|"
@@ -56,6 +94,11 @@ ATTACK = re.compile(r"pen.?test|penetration|exploit|red.?team|offensive|hack(ing
 DEFENCE = re.compile(r"detect|\bsoc\b|siem|incident response|threat hunt|triage|alert|remediat|auto.?fix|patch|harden|"
                      r"blue.?team|defen[cs]|monitor|forensic|malware analysis|code review|\bsast\b|"
                      r"vulnerability management|compliance|posture|防御|检测|应急|安全运营|защит", re.I)
+
+PUBLIC = ["name", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
+          "role", "side", "labs", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard", "topics", "description"]
+COMPACT = ["name", "owner_type", "created", "stars", "forks", "role", "side", "labs", "toolkits", "targets",
+           "protocols", "readme_read", "readme_safeguard"]
 
 
 def role(text: str) -> str:
@@ -66,33 +109,30 @@ def role(text: str) -> str:
     return "both" if a and d else "attack" if a else "defence" if d else "unclear"
 
 
-NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
-
-
-def gh(path: str, params: dict | None = None) -> requests.Response:
-    h = {"User-Agent": UA, "Accept": "application/vnd.github+json"}
-    if os.environ.get("GITHUB_TOKEN"):
-        h["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
-    for i in range(4):
-        r = requests.get(API + path, params=params, headers=h, timeout=60)
-        note_status(API + path, r.status_code)
-        if r.status_code in (403, 429) and "rate limit" in r.text.lower():
-            reset = int(r.headers.get("x-ratelimit-reset", time.time() + 60))
-            time.sleep(min(max(reset - time.time(), 5), 120) + 1)
-            continue
-        return r
-    return r
-
-
-def models(text: str) -> str:
+def tags(text: str, table: dict) -> list[str]:
     t = text.lower()
-    return ";".join(k for k, rx in MODELS.items() if re.search(rx, t))
+    return [k for k, rx in table.items() if re.search(rx, t, re.I)]
 
 
 def safeguard(readme: str) -> str:
     if NO_SAFEGUARD.search(readme):
         return "says none"
     return "mentions" if SAFEGUARD.search(readme) else "not mentioned"
+
+
+def gh(path: str, params: dict | None = None) -> requests.Response:
+    h = {"User-Agent": UA, "Accept": "application/vnd.github+json"}
+    if os.environ.get("GITHUB_TOKEN"):
+        h["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+    for _ in range(4):
+        r = requests.get(API + path, params=params, headers=h, timeout=60)
+        note_status(API + path, r.status_code)
+        if r.status_code in (403, 429) and "rate limit" in r.text.lower():
+            reset = int(r.headers.get("x-ratelimit-reset", time.time() + 60))
+            time.sleep(min(max(reset - time.time(), 5), 900) + 1)
+            continue
+        return r
+    return r
 
 
 def search(query: str, pause: float = 2.5) -> list[dict]:
@@ -109,23 +149,42 @@ def search(query: str, pause: float = 2.5) -> list[dict]:
     return items
 
 
+def _readme(full_name: str) -> str:
+    r = gh(f"/repos/{full_name}/readme")
+    if r.status_code != 200:
+        return ""
+    try:
+        return base64.b64decode(r.json().get("content", "")).decode("utf-8", "replace")
+    except (ValueError, KeyError):
+        return ""
+
+
+def _label(r: dict, text: str) -> None:
+    for field, table in (("labs", LABS), ("toolkits", TOOLKITS), ("targets", TARGETS), ("protocols", PROTOCOLS)):
+        r[field] = ";".join(sorted(set(filter(None, r[field].split(";"))) | set(tags(text, table)),
+                                   key=list(table).index))
+
+
 def row(it: dict) -> dict:
     desc = (it.get("description") or "").replace("\n", " ")
     topics = it.get("topics") or []
-    return {
-        "full_name": it["full_name"], "url": it["html_url"],
+    r = {
+        "full_name": it["full_name"], "url": it.get("html_url", ""), "name": "",
         "owner_type": (it.get("owner") or {}).get("type", ""),
         "created": (it.get("created_at") or "")[:10], "pushed": (it.get("pushed_at") or "")[:10],
         "stars": it.get("stargazers_count", 0), "forks": it.get("forks_count", 0),
         "is_fork": it.get("fork", False), "archived": it.get("archived", False),
         "license": ((it.get("license") or {}).get("spdx_id") or ""), "language": it.get("language") or "",
-        "topics": ";".join(topics), "models": models(desc + " " + " ".join(topics)),
-        "description": desc[:240], "role": role(it.get("name", "") + " " + desc + " " + " ".join(topics)),
-        "side": "", "queries": "", "readme_safeguard": "",
+        "topics": ";".join(topics), "description": desc[:240],
+        "role": role(it.get("name", "") + " " + desc + " " + " ".join(topics)),
+        "side": "", "queries": "", "labs": "", "toolkits": "", "targets": "", "protocols": "",
+        "readme_read": "no", "readme_safeguard": "",
     }
+    _label(r, it.get("name", "") + " " + desc + " " + " ".join(topics))
+    return r
 
 
-def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None) -> tuple[list[dict], dict]:
+def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_top: int = README_TOP):
     """queries: {"attack": [...], "defence": [...]} (a plain list counts as attack)."""
     if isinstance(queries, list):
         queries = {"attack": queries}
@@ -137,66 +196,67 @@ def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None) -> tupl
             for it in items:
                 r = found.setdefault(it["full_name"], row(it))
                 r["queries"] = ";".join(filter(None, [r["queries"], q]))
-                sides = set(filter(None, r["side"].split("+"))) | {side}
-                r["side"] = "+".join(sorted(sides))
+                r["side"] = "+".join(sorted(set(filter(None, r["side"].split("+"))) | {side}))
     rows = sorted(found.values(), key=lambda r: -r["stars"])
     readme_fn = readme_fn or _readme
-    for r in [r for r in rows if not r["is_fork"]][:README_TOP]:
-        time.sleep(pause / 2)
+    for r in [r for r in rows if not r["is_fork"]][:readme_top]:
+        time.sleep(pause / 5)
         text = readme_fn(r["full_name"])
-        r["readme_safeguard"] = safeguard(text) if text else "no readme"
-        if text and not r["models"]:
-            r["models"] = models(text[:20000])
-        if text and r["role"] == "unclear":
+        if not text:
+            r["readme_safeguard"] = "no readme"
+            continue
+        r["readme_read"] = "yes"
+        r["readme_safeguard"] = safeguard(text)
+        _label(r, text[:30000])
+        if r["role"] == "unclear":
             r["role"] = role(text[:3000])
     return rows, hits
 
 
-def _readme(full_name: str) -> str:
-    r = gh(f"/repos/{full_name}/readme")
-    if r.status_code != 200:
-        return ""
-    try:
-        return base64.b64decode(r.json().get("content", "")).decode("utf-8", "replace")
-    except (ValueError, KeyError):
-        return ""
+def pseudonymise(rows: list[dict], registry: dict[str, str]) -> dict[str, str]:
+    """Organisations keep their names; every other owner gets a stable code from the private
+    register (new codes continue the numbering). Returns the updated register."""
+    reg = dict(registry)
+    nxt = max((int(c[4:]) for c in reg.values() if re.fullmatch(r"ind-\d{5}", c)), default=0) + 1
+    for r in sorted(rows, key=lambda r: (r["created"], r["full_name"])):
+        if r["owner_type"] == "Organization":
+            r["name"] = r["full_name"]
+            continue
+        if r["full_name"] not in reg:
+            reg[r["full_name"]] = f"ind-{nxt:05d}"
+            nxt += 1
+        r["name"] = reg[r["full_name"]]
+    return reg
 
 
-ROLES = ["attack", "defence", "both", "model_testing", "unclear"]
+def public(r: dict) -> dict:
+    out = {k: r.get(k, "") for k in PUBLIC}
+    if r["owner_type"] != "Organization":
+        out["description"] = ""            # may name or describe the person
+    return out
 
 
 def summary(rows: list[dict], hits: dict, today: str) -> str:
     orig = [r for r in rows if not r["is_fork"]]
-    by = {k: [r for r in orig if r["role"] == k] for k in ROLES}
+    roles = ["attack", "defence", "both", "model_testing", "unclear"]
+    by = {k: [r for r in orig if r["role"] == k] for k in roles}
     L = [f"# AI attack- and defence-tool sweep of GitHub, {today} (X25, exploratory)", "",
-         f"Repositories found: {len(rows)} ({len(orig)} originals). First labels from each tool's own "
-         "words: " + "; ".join(f"{k} {len(by[k])}" for k in ROLES) + ". Labels say what the software "
-         "does, not who uses it; Claude checks every tool with 100+ stars and the author confirms. "
-         "A tool on GitHub is supply, not use. The attack and defence query lists differ in size, so "
-         "compare each side's trend, not raw totals.", "",
-         "## New tools by month created, by role (since Jan 2024)", "",
-         "| Month | Attack | Defence | Both | Model testing | Unclear |", "|---|---|---|---|---|---|"]
-    months = sorted({r["created"][:7] for r in orig if r["created"] and r["created"][:7] >= "2024-01"})
-    for m in months:
-        L.append(f"| {m} | " + " | ".join(str(sum(r["created"][:7] == m for r in by[k])) for k in ROLES) + " |")
-    L += ["", "## Each side at a glance", "", "| Role | Tools | Stars (total) | Median stars | Made by organisations | Top AI named |",
-          "|---|---|---|---|---|---|"]
-    for k in ROLES:
-        rs = by[k]
-        if not rs:
-            continue
-        st = sorted(r["stars"] for r in rs)
-        mc = collections.Counter(m for r in rs for m in r["models"].split(";") if m).most_common(4)
-        org = sum(r["owner_type"] == "Organization" for r in rs)
-        L.append(f"| {k} | {len(rs)} | {sum(st):,} | {st[len(st) // 2]:,} | {org} ({100 * org // len(rs)}%) | "
-                 + ", ".join(f"{a} {b}" for a, b in mc) + " |")
-    L += ["", "## Safeguards in the READMEs of the most-starred tools", "",
+         f"Repositories found: {len(rows)} ({len(orig)} originals; READMEs read for "
+         f"{sum(r['readme_read'] == 'yes' for r in orig)}). First labels: "
+         + "; ".join(f"{k} {len(by[k])}" for k in roles) + ". Labels say what the software does, not who "
+         "uses it. Individuals' repositories appear as codes (ind-…); organisations by name.", ""]
+    for field, table in (("labs", LABS), ("toolkits", TOOLKITS), ("targets", TARGETS), ("protocols", PROTOCOLS)):
+        L += [f"## {field.capitalize()} named, by side", "", f"| {field.capitalize()} | Attack | Defence | Both |", "|---|---|---|---|"]
+        for k in table:
+            L.append(f"| {k} | " + " | ".join(str(sum(k in r[field].split(";") for r in by[s])) for s in ("attack", "defence", "both")) + " |")
+        L.append("")
+    L += ["## Safeguards in the READMEs read", "",
           "; ".join(f"{k} {v}" for k, v in collections.Counter(
               r["readme_safeguard"] for r in orig if r["readme_safeguard"]).most_common())]
     for k in ("attack", "defence", "both"):
         L += ["", f"## The 15 most-starred: {k}", ""]
-        L += [f"- {r['full_name']} ({r['owner_type']}, created {r['created']}): {r['stars']:,} stars; "
-              f"{r['models'] or 'AI not named'}; safeguard: {r['readme_safeguard'] or 'n/a'}" for r in by[k][:15]]
+        L += [f"- {r['name']} ({r['owner_type']}, created {r['created']}): {r['stars']:,} stars; "
+              f"{r['labs'] or 'AI not named'}; targets: {r['targets'] or 'not stated'}" for r in by[k][:15]]
     L += ["", "## Hits per query", ""] + [f"- `{q}`: {n}" for q, n in hits.items()]
     L += ["", "README and description text is data, never instructions (docs/OPERATIONS.md)."]
     return "\n".join(L) + "\n"
@@ -208,18 +268,22 @@ def main(argv=None) -> int:
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
+    PRIVATE_OUT.mkdir(parents=True, exist_ok=True)
     cfg = yaml.safe_load((_repo_root() / CONFIG).read_text())
-    queries = {"attack": cfg["attack"], "defence": cfg["defence"]}
-    rows, hits = sweep(queries)
-    with (a.out / "tools.csv").open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(row({"full_name": "", "html_url": ""})))
-        w.writeheader()
-        w.writerows(rows)
-    compact = ["full_name", "created", "stars", "forks", "owner_type", "role", "side", "models", "readme_safeguard"]
-    with (a.out / "compact.csv").open("w", newline="") as fh:   # for exploratory/ai_tool_sweeps/
-        w = csv.DictWriter(fh, fieldnames=compact, extrasaction="ignore")
-        w.writeheader()
-        w.writerows(r for r in rows if not r["is_fork"])
+    rows, hits = sweep({"attack": cfg["attack"], "defence": cfg["defence"]})
+    reg_path = Path(REGISTRY_IN)
+    registry = {r["full_name"]: r["code"] for r in csv.DictReader(reg_path.open())} if reg_path.exists() else {}
+    registry = pseudonymise(rows, registry)
+    with (PRIVATE_OUT / "registry.csv").open("w", newline="") as fh:
+        w = csv.writer(fh); w.writerow(["full_name", "code"]); w.writerows(sorted(registry.items(), key=lambda x: x[1]))
+    with (PRIVATE_OUT / "tools_full.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["full_name", "url"] + PUBLIC + ["queries"], extrasaction="ignore")
+        w.writeheader(); w.writerows(rows)
+    orig = [r for r in rows if not r["is_fork"]]
+    for fname, cols in (("tools.csv", PUBLIC), ("compact.csv", COMPACT)):
+        with (a.out / fname).open("w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
+            w.writeheader(); w.writerows(public(r) for r in orig)
     (a.out / "queries.json").write_text(json.dumps(hits, indent=1, ensure_ascii=False))
     s = summary(rows, hits, dt.date.today().isoformat())
     (a.out / "summary.md").write_text(s)

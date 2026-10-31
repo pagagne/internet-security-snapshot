@@ -36,15 +36,41 @@ def test_sweep_merges_queries_and_reads_safeguards():
     assert hits == {"q1": 2, "q2": 2}
     by = {r["full_name"]: r for r in rows}
     assert len(rows) == 3 and by["a/one"]["queries"] == "q1;q2"
-    assert by["a/one"]["models"] == "hermes;mcp"
+    assert by["a/one"]["labs"] == "Nous Research" and by["a/one"]["toolkits"] == "MCP"
     assert by["a/one"]["readme_safeguard"] == "says none"
     assert by["b/two"]["readme_safeguard"] == "mentions"
     assert by["c/fork"]["readme_safeguard"] == ""          # forks: no README read
     s = G.summary(rows, hits, "2026-10-30")
-    assert "| 2026-10 | 2 |" in s and "never instructions" in s
+    assert "| Nous Research | 2 | 0 | 0 |" in s and "never instructions" in s
     assert by["a/one"]["role"] == "attack" and by["a/one"]["side"] == "attack"
 
 
 def test_landscape_page_is_current():
     from snapshot import x25report
     assert (ROOT / x25report.OUT).read_text() == x25report.build_text(ROOT)
+
+
+def test_breakdown_tags():
+    r = G.row(_item("o/x", 1, desc="Claude and Qwen agent on CrewAI that attacks AWS IAM and SMB shares over Kerberos"))
+    assert r["labs"] == "Anthropic;Alibaba" and r["toolkits"] == "CrewAI"
+    assert r["targets"] == "cloud accounts;Windows and Active Directory"
+    assert r["protocols"] == "SMB;Kerberos"
+
+
+def test_individuals_get_stable_codes_and_no_details():
+    a, b, org = (G.row(_item(n, 1)) for n in ("alice/tool", "bob/tool", "acme/tool"))
+    org["owner_type"] = "Organization"
+    reg = G.pseudonymise([a, b, org], {"bob/tool": "ind-00007"})
+    assert b["name"] == "ind-00007" and a["name"] == "ind-00008" and org["name"] == "acme/tool"
+    assert reg == {"bob/tool": "ind-00007", "alice/tool": "ind-00008"}
+    pub = G.public(a)
+    assert "full_name" not in pub and "url" not in pub and pub["description"] == ""
+    assert "alice" not in " ".join(str(v) for v in pub.values())
+
+
+def test_public_x25_files_name_no_individual():
+    import csv, re
+    for f in list((ROOT / "exploratory/ai_tool_sweeps").glob("*.csv")) + [ROOT / "exploratory/ai_attack_tools.csv"]:
+        for r in csv.DictReader(f.open()):
+            if r.get("owner_type", r.get("maker", "")) not in ("Organization", "organisation"):
+                assert re.fullmatch(r"ind-(\d{5}|pending)", r["name"]), (f.name, r["name"])

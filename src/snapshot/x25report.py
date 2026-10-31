@@ -3,7 +3,7 @@
 Author's decisions, 30 Oct 2026: catalogue each hand-run sweep with charts and carry it in The
 Snapshot manual; the January 2027 sweep is part of the pilot. Reads every sweep in
 exploratory/ai_tool_sweeps/<date>.csv (a compact copy of the Research task github_tools output,
-originals only) and writes exploratory/ai_tool_landscape.md with three charts per sweep in
+originals only) and writes exploratory/ai_tool_landscape.md with five charts per sweep in
 exploratory/ai_tool_landscape/. Exploratory and never scored: a tool on GitHub is supply, not
 use, and the role labels are first guesses until checked.
 
@@ -25,7 +25,14 @@ FIGS = "exploratory/ai_tool_landscape"
 SIDES = ["attack", "defence", "both"]
 ROLES = SIDES + ["model_testing", "unclear"]
 COLOURS = {"attack": "#b85c1e", "defence": "#1f4e79", "both": "#7a7a7a"}
-AI = ["mcp", "anthropic/claude", "openai/gpt", "ollama/local", "google/gemini", "langchain", "deepseek", "qwen", "hermes"]
+LABS = ["OpenAI", "Anthropic", "Google", "Meta", "Mistral", "DeepSeek", "Alibaba", "Nous Research", "Moonshot",
+        "Zhipu", "xAI", "Microsoft", "Local runner"]
+TARGETS = ["web apps and APIs", "cloud accounts", "Windows and Active Directory", "networks and hosts",
+           "containers and Kubernetes", "mobile apps", "industrial and IoT", "source code and supply chain",
+           "email and people", "endpoints and logs"]
+TOOLKITS = ["MCP", "LangChain", "CrewAI", "AutoGen", "LlamaIndex", "Semantic Kernel", "OpenAI Agents SDK",
+            "Claude Code / Agent SDK", "smolagents", "PydanticAI"]
+PROTOCOLS = ["HTTP", "SMB", "SSH", "RDP", "DNS", "LDAP", "Kerberos", "SNMP", "FTP", "SMTP", "MQTT", "Modbus", "BGP", "TLS"]
 
 
 def load(path: Path) -> list[dict]:
@@ -43,7 +50,8 @@ def stats(rows: list[dict]) -> dict:
         "by": by, "months": ms,
         "per_month": {k: [sum(r["created"][:7] == m for r in by[k]) for m in ms] for k in SIDES},
         "stars": {k: sum(int(r["stars"]) for r in by[k]) for k in ROLES},
-        "ai": {k: [sum(a in r["models"].split(";") for r in by[k]) for a in AI] for k in SIDES[:2]},
+        **{f: {k: [sum(a in r[f].split(";") for r in by[k]) for a in lst] for k in SIDES}
+           for f, lst in (("labs", LABS), ("targets", TARGETS), ("toolkits", TOOLKITS), ("protocols", PROTOCOLS))},
     }
 
 
@@ -85,17 +93,20 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     fig.suptitle(f"Projects and attention by role (sweep of {date})")
     fig.tight_layout(); n = f"{date}-2-projects-and-stars.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
 
-    fig, ax = plt.subplots(figsize=(10, 4.5), dpi=130)
-    x = range(len(AI))
-    for off, k in ((-.2, "attack"), (.2, "defence")):
-        ax.bar([i + off for i in x], s["ai"][k], .4, color=COLOURS[k], label=k.capitalize())
-    ax.set_xticks(list(x), ["MCP", "Claude", "OpenAI", "Local (Ollama)", "Gemini", "LangChain", "DeepSeek", "Qwen", "Hermes"])
-    ax.set_xlabel("AI named in the project's description or instructions"); ax.set_ylabel("Projects naming it")
-    ax.set_title(f"Which AI each side builds on (sweep of {date})")
-    ax.legend(frameon=False); ax.grid(axis="y", alpha=.3)
-    for side in ("top", "right"):
-        ax.spines[side].set_visible(False)
-    fig.tight_layout(); n = f"{date}-3-ai-by-side.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
+    for num, field, lst, xlab, title in (
+            (3, "labs", LABS, "Lab whose AI the project names", "Which lab's AI each side builds on"),
+            (5, "targets", TARGETS, "What the project goes after (attack) or protects (defence)", "What each side focuses on")):
+        fig, ax = plt.subplots(figsize=(11, 5), dpi=130)
+        x = range(len(lst))
+        for off, k in ((-.27, "attack"), (0, "defence"), (.27, "both")):
+            ax.bar([i + off for i in x], s[field][k], .27, color=COLOURS[k], label=k.capitalize())
+        ax.set_xticks(list(x), lst, rotation=30, ha="right", fontsize=9)
+        ax.set_xlabel(xlab); ax.set_ylabel("Projects naming it")
+        ax.set_title(f"{title} (sweep of {date})")
+        ax.legend(frameon=False); ax.grid(axis="y", alpha=.3)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        fig.tight_layout(); n = f"{date}-{num}-{field}-by-side.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
     qs, qv = [], {k: [] for k in SIDES}
     for i, m in enumerate(s["months"]):
         q = f"{m[:4]} Q{(int(m[5:]) - 1) // 3 + 1}"
@@ -137,6 +148,10 @@ def build_text(root: Path | None = None) -> str:
          "model testing (tests AI models themselves; kept apart) or unclear. These are first guesses; "
          "Claude checks every tool with 100+ stars and the author confirms. The attack and defence "
          "searches are not mirror images, so read each side's trend, not the gap between totals.", "",
+         "**Privacy.** Repositories owned by individuals appear as codes (ind-00001, ...), never a "
+         "username; organisations by name. The code register and the full list are kept privately in "
+         "the author's Drive (author's decision, 30 Oct 2026; GitHub's Acceptable Use Policies allow "
+         "research use of public, non-personal information published open access).", "",
          "**Schedule.** Run by hand only: baseline 30 Oct 2026; the January 2027 sweep (6 Jan) is part "
          "of the pilot; then mid-2027 (7 Jul) and the end of 2027 (8 Dec).", ""]
     for f in reversed(files):
@@ -144,7 +159,7 @@ def build_text(root: Path | None = None) -> str:
         s = stats(load(f))
         by = s["by"]
         n = sum(len(v) for v in by.values())
-        top = lambda k: "; ".join(f"{r['full_name']} ({int(r['stars']):,})" for r in sorted(
+        top = lambda k: "; ".join(f"{r['name']} ({int(r['stars']):,})" for r in sorted(
             by[k], key=lambda r: -int(r["stars"]))[:8])
         L += [f"## Sweep of {date}", "",
               f"{n:,} repositories: " + ", ".join(f"{k.replace('_', ' ')} {len(by[k]):,}" for k in ROLES) + ". "
@@ -156,13 +171,22 @@ def build_text(root: Path | None = None) -> str:
               "*Chart 2. Two panels. Left: how many projects each role has. Right: how much "
               "attention they get, as GitHub stars (bookmarks people give a project) added up over all "
               "of that role's projects. Horizontal: role; vertical: the count, written on each bar.*", "",
-              f"![Chart 3. AI named by each side, sweep of {date}](ai_tool_landscape/{date}-3-ai-by-side.png)", "",
-              "*Chart 3. Horizontal: the AI named in a project's description or instructions. "
-              "Vertical: projects naming it. Bars: attack and defence.*", "",
+              f"![Chart 3. Which lab's AI each side builds on, sweep of {date}](ai_tool_landscape/{date}-3-labs-by-side.png)", "",
+              "*Chart 3. Horizontal: the lab whose AI a project names (in its description, or its "
+              "README for the most-starred). Vertical: projects naming it. Bars: attack, defence, both.*", "",
               f"![Chart 4. Overview in 3D, sweep of {date}](ai_tool_landscape/{date}-4-overview-3d.png)", "",
               "*Chart 4 (overview, author's choice 30 Oct 2026). Left to right: the quarter each project "
               "was created. Front to back: attack, defence, both. Height: new projects that quarter. "
               "For exact values use charts 1 and 2; in 3D, front bars can hide those behind.*", "",
+              f"![Chart 5. What each side focuses on, sweep of {date}](ai_tool_landscape/{date}-5-targets-by-side.png)", "",
+              "*Chart 5. Horizontal: what a project goes after (attack) or protects (defence). "
+              "Vertical: projects naming it. Bars: attack, defence, both.*", "",
+              "Agent toolkits named (attack / defence / both): " + "; ".join(
+                  f"{t} {s['toolkits']['attack'][i]}/{s['toolkits']['defence'][i]}/{s['toolkits']['both'][i]}"
+                  for i, t in enumerate(TOOLKITS)) + ".", "",
+              "Network protocols named (attack / defence / both): " + "; ".join(
+                  f"{t} {s['protocols']['attack'][i]}/{s['protocols']['defence'][i]}/{s['protocols']['both'][i]}"
+                  for i, t in enumerate(PROTOCOLS)) + ".", "",
               "| Month | " + " | ".join(m for m in s["months"][-12:]) + " |",
               "|---|" + "---|" * len(s["months"][-12:])]
         for k in SIDES:
