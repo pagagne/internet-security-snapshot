@@ -1,0 +1,47 @@
+name: Source status
+
+# The landing page's status banner (author's decisions, 31 Oct 2026): once a day, one light
+# request to each core data source in config/coverage.yaml (only the first bytes are read;
+# sources awaiting permission are never contacted), then draws the banner in light and dark
+# (src/snapshot/landing.py) and saves it with status.json on the run-reports branch under
+# landing/, which the README shows. Green answered, red error, gray not checked, outlined
+# awaiting permission; the picture carries its check time. Nothing is written to main.
+on:
+  schedule:
+    - cron: "23 11 * * *"   # daily, 11:23 UTC
+  # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
+  # repository, so it starts only on its timer or through GitHub's API (repository_dispatch).
+  repository_dispatch:
+    types: [source-status]
+
+permissions:
+  contents: write   # run-reports branch only
+
+concurrency:
+  group: source-status
+  cancel-in-progress: false
+
+jobs:
+  status:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Check the sources and draw the banner
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m snapshot.landing status --out landing-out | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Save to run-reports
+        run: |
+          git fetch -q origin run-reports
+          git worktree add -q --detach /tmp/ls FETCH_HEAD
+          mkdir -p /tmp/ls/landing && cp landing-out/* /tmp/ls/landing/
+          cd /tmp/ls
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && { git diff --cached --quiet && exit 0; git commit -qm "Source status $(date -u +%Y-%m-%dT%H%MZ)"; }
+          for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1

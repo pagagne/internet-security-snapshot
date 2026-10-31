@@ -1,5 +1,19 @@
 # Internet Security Snapshot
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/landing/banner-dark.svg">
+  <img alt="Core data sources: green answered today's check, red error, gray not checked, outlined awaiting permission" src="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/landing/banner-light.svg">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/landing/coverage-dark.svg">
+  <img alt="The data the study needs: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-light.svg">
+</picture>
+
+**Standard operating procedure:** [`docs/SOP_MANUAL_RUNS.md`](docs/SOP_MANUAL_RUNS.md), how
+every workflow is run, checked and recovered. The banner is redrawn daily by the Source status
+workflow; the ring comes from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14).
+
 ## Mission
 
 The Internet Security Snapshot is a study of the internet's security through the year 2027.

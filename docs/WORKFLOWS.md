@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are thirteen, in
+something changes, or when the author or Claude starts it by hand. There are fourteen, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -35,6 +35,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
+| Source status | `source-status.yml` | 11:23 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
 
@@ -214,6 +215,19 @@ The core pull, its method research, the source watch and the working documents s
 The exploratory files were moved on 31 Oct 2026 by a one-off Private move workflow (run 41218328062; removed afterwards); earlier
 versions remain in this repository's history, and erasing that history is the author's
 decision. Tests that read the private data skip in a public checkout (`tests/conftest.py`).
+
+## 14. Source status: the landing page's banner
+
+**When:** daily at 11:23 UTC (added 31 Oct 2026, author's decision). No Run button: it reads
+outside websites. **What it does:** makes one light request to each core data source in
+`config/coverage.yaml`, reading only the first bytes (sources awaiting permission, VulnCheck and
+Shadowserver, are never contacted), and draws the README's status banner: green answered, red
+error, gray not checked, outlined awaiting permission, with the check time. It saves the banner
+and `status.json` on the run-reports branch (`landing/`), so main gets no daily commits. The
+README's second picture, the coverage ring, is drawn from the same file by
+`python -m snapshot.landing build` and kept current by a test: one slice per kind of data the
+study needs, sized 3 per core indicator and 1 per exploratory measure it feeds, coloured only when
+a pull or sweep actually collects it. The landing page links the SOP, not the private manual.
 
 ## How they depend on each other
 
