@@ -18,7 +18,7 @@ parts:
   - name: "Part III. The AI tool explosion: AI security tools on GitHub and Hugging Face (X25)"
     # author, 30 Oct 2026: real attacks (X3) beside the published tools (X25), compared on the
     # same measures (open-weight against closed, protocols)
-    docs: [exploratory/ai_tool_landscape.md, exploratory/ai_attack_catalogue.md]
+    docs: [exploratory/ai_tool_landscape.md, exploratory/x25-checks.md, exploratory/ai_attack_catalogue.md]
   - name: "Part IV. Operations"
     docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
            docs/BACKUP.md, docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, docs/BUILD_PLAN.md]
