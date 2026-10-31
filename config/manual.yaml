@@ -21,7 +21,7 @@ parts:
     docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
            docs/BACKUP.md, docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, docs/BUILD_PLAN.md]
   - name: "Part V. Sources, permissions and publication"
-    docs: [docs/PERMISSIONS.md, docs/PUBLICATION_OPTIONS.md]
+    docs: [docs/PERMISSIONS.md, docs/TERMS_OF_USE.md, docs/PUBLICATION_OPTIONS.md]
   - name: "Part VI. Schedule, reviews and the reviewer"
     docs: [docs/ANNUAL_PLAN.md, "docs/decisions/*.md", docs/reviewer/INVITATION.md,
            docs/reviewer/SECOND_CODER.md, docs/reviewer/sample-worksheet/README.md,

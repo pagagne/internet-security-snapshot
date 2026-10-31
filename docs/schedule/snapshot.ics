@@ -746,6 +746,28 @@ DESCRIPTION:Responsible: Claude\n\nList builder in snapshot.review\, report
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:x25-test-run@2026-11-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Test run of every X25 piece before the pilot (Gi
+ tHub and Hugging Face sweeps\, charts\, privacy\, terms)
+DESCRIPTION:Responsible: Claude\n\nAuthor's request 30 Oct 2026: a full reh
+ earsal before the pilot\, after the refined searches are approved (20 Nov)
+  and before the 1 Dec dry run. Run the Research tasks github_tools and hf_
+ tools\; confirm the private lists reach the author's Drive (x25-private/) 
+ and no individual's username appears in any public file (tests and privacy
+  scan)\; rebuild https://github.com/pagagne/internet-security-snapshot/blo
+ b/main/exploratory/ai_tool_landscape.md (Part III of the manual) and look 
+ at every chart\; confirm the Source watch has dated copies of every terms 
+ page in https://github.com/pagagne/internet-security-snapshot/blob/main/do
+ cs/TERMS_OF_USE.md\; fix anything that fails and note it in the session lo
+ g. Nothing from this run is published.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:pages-build@2026-11-27@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261127
@@ -1247,25 +1269,27 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270106
 DTEND;VALUE=DATE:20270107
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Run the AI attack-tool sweep of GitHub (X25) and
-  sort it for the author
+SUMMARY:[Claude] Snapshot: Run the AI tool sweeps (X25\, GitHub and Hugging
+  Face) and sort them for the author
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
  and only\, start\, middle and end of 2027 (baseline run 30 Oct 2026)\, att
  ack and defence tools side by side\; the January sweep is part of the pilo
- t. After each sweep\, copy research-out/compact.csv to https://github.com/
- pagagne/internet-security-snapshot/tree/main/exploratory/ai_tool_sweeps<da
- te>.csv and run `python -m snapshot.x25report build`\, which adds that swe
- ep's catalogue and charts (protocol charts as many as the protocols found 
- need) to https://github.com/pagagne/internet-security-snapshot/blob/main/e
- xploratory/ai_tool_landscape.md and so to The Snapshot manual. Start the R
- esearch workflow with task github_tools (https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the results (dro
- p tools that test AI models themselves\, copies and unrelated hits)\, comp
- are with the previous sweep (new tools\, growth in stars and forks) and pr
- opose additions to https://github.com/pagagne/internet-security-snapshot/b
- lob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSource: 
- https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
- ule/schedule.yaml
+ t. Run both Research tasks\, github_tools and hf_tools (Hugging Face\; its
+  compact.csv goes to https://github.com/pagagne/internet-security-snapshot
+ /tree/main/exploratory/hf_sweeps<date>.csv). After each sweep\, copy resea
+ rch-out/compact.csv to https://github.com/pagagne/internet-security-snapsh
+ ot/tree/main/exploratory/ai_tool_sweeps<date>.csv and run `python -m snaps
+ hot.x25report build`\, which adds that sweep's catalogue and charts (proto
+ col charts as many as the protocols found need) to https://github.com/paga
+ gne/internet-security-snapshot/blob/main/exploratory/ai_tool_landscape.md 
+ and so to The Snapshot manual. Start the Research workflow with task githu
+ b_tools (https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/OPERATIONS.md)\, sort the results (drop tools that test AI models them
+ selves\, copies and unrelated hits)\, compare with the previous sweep (new
+  tools\, growth in stars and forks) and propose additions to https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_attack_t
+ ools.csv. Never on a pull day.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2457,25 +2481,27 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270707
 DTEND;VALUE=DATE:20270708
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Run the AI attack-tool sweep of GitHub (X25) and
-  sort it for the author
+SUMMARY:[Claude] Snapshot: Run the AI tool sweeps (X25\, GitHub and Hugging
+  Face) and sort them for the author
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
  and only\, start\, middle and end of 2027 (baseline run 30 Oct 2026)\, att
  ack and defence tools side by side\; the January sweep is part of the pilo
- t. After each sweep\, copy research-out/compact.csv to https://github.com/
- pagagne/internet-security-snapshot/tree/main/exploratory/ai_tool_sweeps<da
- te>.csv and run `python -m snapshot.x25report build`\, which adds that swe
- ep's catalogue and charts (protocol charts as many as the protocols found 
- need) to https://github.com/pagagne/internet-security-snapshot/blob/main/e
- xploratory/ai_tool_landscape.md and so to The Snapshot manual. Start the R
- esearch workflow with task github_tools (https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the results (dro
- p tools that test AI models themselves\, copies and unrelated hits)\, comp
- are with the previous sweep (new tools\, growth in stars and forks) and pr
- opose additions to https://github.com/pagagne/internet-security-snapshot/b
- lob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSource: 
- https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
- ule/schedule.yaml
+ t. Run both Research tasks\, github_tools and hf_tools (Hugging Face\; its
+  compact.csv goes to https://github.com/pagagne/internet-security-snapshot
+ /tree/main/exploratory/hf_sweeps<date>.csv). After each sweep\, copy resea
+ rch-out/compact.csv to https://github.com/pagagne/internet-security-snapsh
+ ot/tree/main/exploratory/ai_tool_sweeps<date>.csv and run `python -m snaps
+ hot.x25report build`\, which adds that sweep's catalogue and charts (proto
+ col charts as many as the protocols found need) to https://github.com/paga
+ gne/internet-security-snapshot/blob/main/exploratory/ai_tool_landscape.md 
+ and so to The Snapshot manual. Start the Research workflow with task githu
+ b_tools (https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/OPERATIONS.md)\, sort the results (drop tools that test AI models them
+ selves\, copies and unrelated hits)\, compare with the previous sweep (new
+  tools\, growth in stars and forks) and propose additions to https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_attack_t
+ ools.csv. Never on a pull day.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3179,25 +3205,27 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271208
 DTEND;VALUE=DATE:20271209
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Run the AI attack-tool sweep of GitHub (X25) and
-  sort it for the author
+SUMMARY:[Claude] Snapshot: Run the AI tool sweeps (X25\, GitHub and Hugging
+  Face) and sort them for the author
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
  and only\, start\, middle and end of 2027 (baseline run 30 Oct 2026)\, att
  ack and defence tools side by side\; the January sweep is part of the pilo
- t. After each sweep\, copy research-out/compact.csv to https://github.com/
- pagagne/internet-security-snapshot/tree/main/exploratory/ai_tool_sweeps<da
- te>.csv and run `python -m snapshot.x25report build`\, which adds that swe
- ep's catalogue and charts (protocol charts as many as the protocols found 
- need) to https://github.com/pagagne/internet-security-snapshot/blob/main/e
- xploratory/ai_tool_landscape.md and so to The Snapshot manual. Start the R
- esearch workflow with task github_tools (https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the results (dro
- p tools that test AI models themselves\, copies and unrelated hits)\, comp
- are with the previous sweep (new tools\, growth in stars and forks) and pr
- opose additions to https://github.com/pagagne/internet-security-snapshot/b
- lob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSource: 
- https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
- ule/schedule.yaml
+ t. Run both Research tasks\, github_tools and hf_tools (Hugging Face\; its
+  compact.csv goes to https://github.com/pagagne/internet-security-snapshot
+ /tree/main/exploratory/hf_sweeps<date>.csv). After each sweep\, copy resea
+ rch-out/compact.csv to https://github.com/pagagne/internet-security-snapsh
+ ot/tree/main/exploratory/ai_tool_sweeps<date>.csv and run `python -m snaps
+ hot.x25report build`\, which adds that sweep's catalogue and charts (proto
+ col charts as many as the protocols found need) to https://github.com/paga
+ gne/internet-security-snapshot/blob/main/exploratory/ai_tool_landscape.md 
+ and so to The Snapshot manual. Start the Research workflow with task githu
+ b_tools (https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/OPERATIONS.md)\, sort the results (drop tools that test AI models them
+ selves\, copies and unrelated hits)\, compare with the previous sweep (new
+  tools\, growth in stars and forks) and propose additions to https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_attack_t
+ ools.csv. Never on a pull day.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

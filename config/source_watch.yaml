@@ -44,3 +44,10 @@ sources:
   - {name: Cloudflare Radar documentation, kind: terms, used_by: exploratory X4, url: "https://developers.cloudflare.com/radar/"}   # radar.cloudflare.com refuses automated readers (403, 30 Oct)
   - {name: JPCERT/CC site terms, kind: terms, used_by: companion X19, url: "https://www.jpcert.or.jp/guide.html"}
   - {name: CERT-FR legal notice, kind: terms, used_by: companion X19, url: "https://www.cert.ssi.gouv.fr/mentions-legales/"}
+  # ---- X25 sites (author, 30 Oct 2026: include the terms of every site the study reads) ----
+  - {name: GitHub Acceptable Use Policies, kind: terms, used_by: exploratory X25, url: "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies"}
+  - {name: GitHub Terms of Service, kind: terms, used_by: exploratory X25, url: "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service"}
+  - {name: Hugging Face terms of service, kind: terms, used_by: exploratory X25, url: "https://huggingface.co/terms-of-service"}
+  - {name: Hugging Face content policy, kind: terms, used_by: exploratory X25, url: "https://huggingface.co/content-policy"}
+  - {name: Hugging Face rate limits, kind: terms, used_by: exploratory X25, url: "https://huggingface.co/docs/hub/rate-limits"}
+  - {name: Gitee terms, kind: terms, used_by: exploratory X25 (planned), url: "https://gitee.com/terms"}

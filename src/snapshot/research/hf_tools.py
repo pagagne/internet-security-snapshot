@@ -31,18 +31,61 @@ from pathlib import Path
 import requests
 
 from ..collect.http import UA, note_status
-from .github_tools import role
+from .github_tools import MODEL_TESTING
 
 API = "https://huggingface.co/api"
 PRIVATE_OUT = Path(os.environ.get("X25_PRIVATE_OUT", "research-private"))
 QUERIES = {   # substring searches over names; fixed between sweeps
-    "attack": ["pentest", "pentesting", "penetration", "redteam", "red-team", "exploit", "hacking", "hacker",
-               "offensive", "malware-gen", "cyber-attack", "jailbreak"],
+    # refined 30 Oct 2026 after the first baseline (author): "sigma" (image models), "hacker"
+    # (Hacker News apps) and bare "offensive" (hate-speech classifiers) brought mostly noise
+    "attack": ["pentest", "pentesting", "penetration", "redteam", "red-team", "exploit", "hacking",
+               "offensive-security", "offsec", "malware-gen", "cyber-attack", "jailbreak"],
     "defence": ["cybersecurity", "cyber-security", "threat-detection", "soc-analyst", "malware-detection",
                 "intrusion", "vulnerability", "secure-code", "incident-response", "phishing-detection",
-                "security-copilot", "sigma"],
+                "security-copilot", "sigma-rule"],
     "safety_removed": ["uncensored", "abliterated", "unaligned", "unfiltered"],
 }
+# Hugging Face labels (refined 30 Oct 2026, author): names there are terse, and many words mean
+# something else in machine learning, so the rules are stricter than GitHub's. Order matters.
+HF_UNRELATED = re.compile(r"hacker.?news|hackathon|life.?hack|reward.?hack|hacking.?okay|spec(ification)?.?gaming|"
+                          r"pixart|\bsigma\b(?!.?rule)|hate.?speech|offensive.?(language|speech|text|tweet|content|"
+                          r"mlm|baseline|then|detect)|\btoxic|sentiment|penetration.?depth|shopper|persona|hacker.?typer", re.I)
+HF_ALIGNMENT = re.compile(r"then.?red.?team|red.?team.?(kto|dpo|rl\b|high|low|trained)|redteamrl|sleeper|sandbag|"
+                          r"misalign|secret.?loyalty|alignment|red.?team(ing)?.?(competition|ui|harness|eval|bench)", re.I)
+HF_ATTACK = re.compile(r"pen.?test|penetration.?test|red.?team(?!.?(attempt|harness|eval|bench|data))|\bexploit|"
+                       r"\bhacking\b|\bhacker(ai|gpt)?\b|offensive.?sec|offsec|malware.?gen|\bc2\b|\brecon\b|"
+                       r"cyber.?attack|\bctf\b|privilege.?escalation|shellcode|payload|metasploit|\bnmap\b|\bkali\b|"
+                       r"black.?hat|wormgpt|fraudgpt", re.I)
+HF_DEFENCE = re.compile(r"detect|phishing|\bintrusion|\bids\b|malware.?(classif|analy)|vulnerab|\bsoc\b|siem|"
+                        r"threat|incident|\bcve\b|secure.?code|scam|fraud|\bspam|anomal|forensic|sigma.?rule|"
+                        r"blue.?team|defen[cs]e|guard(?!rail)", re.I)
+HF_GENERAL = re.compile(r"cyber.?sec|cybersecurity|security.?(llm|assistant|copilot|model|gpt)|sec.?llm|\bcyber\b", re.I)
+HF_ROLES = ["attack", "defence", "both", "general_security", "safety_removed", "model_testing", "unrelated", "unclear"]
+
+
+def hf_role(name: str, tags: list[str]) -> str:
+    """Role from the item's own name and its descriptive tags (not dataset, base-model,
+    licence or region tags, which describe something else)."""
+    own = [t for t in tags if ":" not in t]
+    text = re.sub(r"[-_/.]", " ", name) + " " + " ".join(own)
+    if HF_UNRELATED.search(text) and not re.search(r"pen.?test|exploit|malware|cyber", text, re.I):
+        return "unrelated"
+    if MODEL_TESTING.search(text) or HF_ALIGNMENT.search(text):
+        return "model_testing"
+    a, d = bool(HF_ATTACK.search(text)), bool(HF_DEFENCE.search(text))
+    if a and d:
+        return "both"
+    if a:
+        return "attack"
+    if d:
+        return "defence"
+    if SAFETY_REMOVED.search(text):
+        return "safety_removed"
+    if HF_GENERAL.search(text):
+        return "general_security"
+    return "unclear"
+
+
 SAFETY_REMOVED = re.compile(r"uncensored|abliterat|unaligned|unfiltered|no.?refusal|refusal.?removed", re.I)
 LAB_BY_OWNER = {   # owner of a base model -> lab (from base_model:... tags)
     "meta-llama": "Meta", "facebook": "Meta", "qwen": "Alibaba", "deepseek-ai": "DeepSeek",
@@ -99,7 +142,7 @@ def item(kind: str, it: dict) -> dict:
             "downloads": it.get("downloads", 0) if kind == "models" else "",
             "pipeline": it.get("pipeline_tag") or it.get("sdk") or "", "base_lab": base_lab(tags),
             "safety_removed": "yes" if SAFETY_REMOVED.search(text) else "no",
-            "role": role(text), "side": "", "name": ""}
+            "role": hf_role(full.split("/")[-1], tags), "side": "", "name": ""}
 
 
 def owners_kind(owners: list[str], pause: float = 0.7, check=None) -> dict[str, str]:
@@ -115,7 +158,7 @@ def name_rows(rows: list[dict], kinds: dict[str, str]) -> None:
 
 
 def summary(rows: list[dict], hits: dict, today: str) -> str:
-    roles = ["attack", "defence", "both", "model_testing", "unclear"]
+    roles = HF_ROLES
     L = [f"# Hugging Face sweep, {today} (X25 companion, exploratory)", "",
          f"Items: {len(rows)} ({sum(r['kind'] == 'model' for r in rows)} models, "
          f"{sum(r['kind'] == 'space' for r in rows)} Spaces). Safety-removed models: "

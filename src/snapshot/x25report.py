@@ -184,6 +184,72 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     return names
 
 
+HF_SWEEPS = "exploratory/hf_sweeps"
+HF_SHOWN = ["attack", "defence", "general_security", "safety_removed"]
+HF_COLOURS = {"attack": "#b85c1e", "defence": "#1f4e79", "general_security": "#5b8c5a", "safety_removed": "#8e44ad"}
+
+
+def hf_charts(date: str, rows: list[dict], root: Path) -> None:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    out = root / FIGS
+    out.mkdir(parents=True, exist_ok=True)
+    ms = sorted({r["created"][:7] for r in rows if r["created"][:7] >= "2025-01"})
+    fig, ax = plt.subplots(figsize=(10, 4.8), dpi=130)
+    for k in HF_SHOWN:
+        ax.plot([f"{m[5:]}/{m[2:4]}" for m in ms], [sum(r["role"] == k and r["created"][:7] == m for r in rows) for m in ms],
+                marker="o", ms=3, lw=2, color=HF_COLOURS[k], label=k.replace("_", " ").capitalize())
+    ax.set_xlabel("Month the model or app was created (last month may be partial)"); ax.set_ylabel("New items that month")
+    ax.set_title(f"Hugging Face: new security-related AI models and apps each month (sweep of {date})")
+    ax.tick_params(axis="x", labelrotation=60, labelsize=8); ax.legend(frameon=False); ax.grid(axis="y", alpha=.3)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    fig.tight_layout(); fig.savefig(out / f"hf-{date}-1-new-per-month.png"); plt.close(fig)
+    sr = [r for r in rows if r["role"] == "safety_removed" and r["kind"] == "model"]
+    labs = collections.Counter(l for r in sr for l in r["base_lab"].split(";") if l).most_common(10)
+    fig, ax = plt.subplots(figsize=(10, 4.5), dpi=130)
+    bars = ax.bar([l for l, _ in labs], [n for _, n in labs], color=HF_COLOURS["safety_removed"], width=.6)
+    for b, (_, n) in zip(bars, labs):
+        ax.text(b.get_x() + b.get_width() / 2, n, f"{n:,}", ha="center", va="bottom", fontsize=9)
+    ax.set_xlabel("Lab whose model was modified (from the model's own base-model tag)"); ax.set_ylabel("Safety-removed models")
+    ax.set_title(f"Hugging Face: whose models have their safety training removed (sweep of {date})")
+    ax.grid(axis="y", alpha=.3)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    fig.tight_layout(); fig.savefig(out / f"hf-{date}-2-safety-removed-by-lab.png"); plt.close(fig)
+
+
+def hf_section(root: Path) -> list[str]:
+    files = sorted((root / HF_SWEEPS).glob("*.csv"))
+    if not files:
+        return []
+    L = ["## Hugging Face: the models themselves (companion)", "",
+         "Hugging Face is where AI models are published, including open-weight models whose safety "
+         "training has been removed (\"uncensored\", \"abliterated\"). Fixed searches over model and app "
+         "(Space) names; roles from each item's own name and descriptive tags, with stricter rules than "
+         "GitHub's (refined and tested 30 Oct 2026): attack, defence, both, general security (security "
+         "assistants with no side), safety removed, model testing (including AI-alignment red-teaming), "
+         "unrelated (image models, Hacker News apps, hate-speech classifiers, \"reward hacking\") and "
+         "unclear. Individuals' items appear by item name only. First labels; Claude checks the "
+         "most-liked and the author confirms.", ""]
+    for f in reversed(files):
+        date, rows = f.stem, load(f)
+        c = collections.Counter(r["role"] for r in rows)
+        L += [f"### Hugging Face sweep of {date}", "",
+              f"{len(rows):,} items ({sum(r['kind'] == 'model' for r in rows):,} models, "
+              f"{sum(r['kind'] == 'space' for r in rows):,} apps): "
+              + ", ".join(f"{k.replace('_', ' ')} {c.get(k, 0):,}" for k in
+                          ["attack", "defence", "both", "general_security", "safety_removed", "model_testing", "unrelated", "unclear"]) + ".", "",
+              f"![Hugging Face chart 1, sweep of {date}](ai_tool_landscape/hf-{date}-1-new-per-month.png)", "",
+              "*Hugging Face chart 1. Horizontal: the month each model or app was created. Vertical: new "
+              "items that month. Lines: attack, defence, general security, safety removed.*", "",
+              f"![Hugging Face chart 2, sweep of {date}](ai_tool_landscape/hf-{date}-2-safety-removed-by-lab.png)", "",
+              "*Hugging Face chart 2. Horizontal: the lab whose model was modified, from the model's own "
+              "base-model tag (models without one are not counted). Vertical: safety-removed models.*", ""]
+    return L
+
+
 def protocol_section(date: str, s: dict) -> list[str]:
     """One chart per PER_CHART protocols found, so the number of charts follows the data."""
     found = sorted((p for i, p in enumerate(PROTOCOLS) if sum(s["protocols"][k][i] for k in SIDES)),
@@ -220,7 +286,8 @@ def build_text(root: Path | None = None) -> str:
          "**Privacy.** Repositories owned by individuals appear by project name only, never the "
          "owner's username; organisations by full name. The register and the full list are kept privately in "
          "the author's Drive (author's decision, 30 Oct 2026; GitHub's Acceptable Use Policies allow "
-         "research use of public, non-personal information published open access).", "",
+         "research use of public, non-personal information published open access). The terms of every "
+         "site the sweeps read are in `docs/TERMS_OF_USE.md` (Part V), with dated copies kept weekly.", "",
          "**Schedule.** Run by hand only: baseline 30 Oct 2026; the January 2027 sweep (6 Jan) is part "
          "of the pilot; then mid-2027 (7 Jul) and the end of 2027 (8 Dec).", ""]
     for f in reversed(files):
@@ -269,6 +336,7 @@ def build_text(root: Path | None = None) -> str:
         L += ["", f"Most-starred attack tools: {top('attack')}.", "",
               f"Most-starred defence tools: {top('defence')}.", "",
               f"Most-starred tools doing both: {top('both')}.", ""]
+    L += hf_section(root)
     return "\n".join(L) + "\n"
 
 
@@ -281,6 +349,8 @@ def main(argv=None) -> int:
     if a.cmd == "build":
         for f in sorted((root / SWEEPS).glob("*.csv")):
             charts(f.stem, stats(load(f)), root)
+        for f in sorted((root / HF_SWEEPS).glob("*.csv")):
+            hf_charts(f.stem, load(f), root)
         (root / OUT).write_text(text)
         print(f"{OUT}: built")
         return 0

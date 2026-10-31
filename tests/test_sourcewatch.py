@@ -64,3 +64,10 @@ def test_terms_copied_and_archived_only_when_wording_changes(tmp_path):
     assert len(saved) == 2 and "wording changed" in ch["Example"][0]
     assert len(list((state / "terms" / "example").glob("*.txt"))) == 2
     assert "No reuse allowed." in (out / "changes.md").read_text()
+
+
+def test_every_watched_terms_page_is_in_the_register():
+    reg = (ROOT / "docs/TERMS_OF_USE.md").read_text()
+    for s in yaml.safe_load((ROOT / W.CONFIG).read_text())["sources"]:
+        if s["kind"] == "terms":
+            assert s["url"] in reg, s["name"]
