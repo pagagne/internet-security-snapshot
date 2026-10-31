@@ -53,7 +53,7 @@ Gitee（gitee.com）为代码托管·协作开发平台，开发者超过 1400 �
 联系我们
 北京奥思研工智能科技有限公司
 地址：深圳市南山区西丽街道云科技大厦 22 楼
-电话：400-606-0201
+电话 [phone number removed]
 北京奥思研工智能科技有限公司版权所有
 Git 大全 Git 命令学习 CopyCat 代码克隆检测 APP 与插件下载 Gitee 封面人物 GVP 项目 Gitee 博客 Gitee 公益计划 Gitee 持续集成 OpenAPI MCP server 帮助文档 在线自助服务 更新日志 关于我们 加入我们 使用条款 意见建议 合作伙伴 [email address removed] 企业版在线使用：400-606-0201 专业版私有部署： 赖经理 13058176526
 技术交流 QQ 群
