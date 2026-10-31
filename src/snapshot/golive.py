@@ -89,6 +89,43 @@ def feed_charts(root: Path, month: str) -> list[str]:
     return [name]
 
 
+ROLE_NAMES = {"agents_operated_intrusion": "AI agents ran the intrusion", "ai_assisted_operator": "AI helped a human attacker",
+              "ai_generated_malware": "AI-written malware", "ai_enabled_fraud": "AI-enabled fraud or theft of AI use",
+              "evaluation_escape": "AI under test reached real systems"}
+ROLE_COLOURS = {"agents_operated_intrusion": "#b85c1e", "ai_assisted_operator": "#e0a526", "ai_generated_malware": "#6a51a3",
+                "ai_enabled_fraud": "#2a9d8f", "evaluation_escape": "#888780"}
+
+
+def attack_log_chart(root: Path) -> tuple[str, int, collections.Counter]:
+    """X3 log: cases by the month reported and how AI was used (no victim names exist in the log)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    rows = list(csv.DictReader((root / "exploratory/ai_attack_campaigns.csv").open(encoding="utf-8")))
+    seen = sorted({r["date_reported"][:7] for r in rows if r["date_reported"]})
+    ms, (y, m) = [], map(int, seen[0].split("-"))
+    while f"{y}-{m:02d}" <= seen[-1]:                       # every month, so quiet months show as gaps
+        ms.append(f"{y}-{m:02d}"); y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    roles = [k for k in ROLE_NAMES if any(r["ai_role"] == k for r in rows)]
+    fig, ax = plt.subplots(figsize=(10, 4.6), dpi=130)
+    bottom = [0] * len(ms)
+    for k in roles:
+        v = [sum(r["ai_role"] == k and r["date_reported"][:7] == m for r in rows) for m in ms]
+        ax.bar(ms, v, bottom=bottom, color=ROLE_COLOURS[k], label=ROLE_NAMES[k], width=.6)
+        bottom = [b + x for b, x in zip(bottom, v)]
+    ax.set_ylabel("Cases logged"); ax.set_xlabel("Month the case was reported")
+    ax.yaxis.get_major_locator().set_params(integer=True)
+    ax.set_title(f"Publicly reported attacks that used AI: {len(rows)} cases in the log, by how AI was used")
+    ax.tick_params(axis="x", labelrotation=45, labelsize=8); ax.legend(frameon=False, fontsize=8)
+    for s in ("top", "right"):
+        ax.spines[s].set_visible(False)
+    fig.tight_layout()
+    out = root / FEED_CHARTS
+    out.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out / "attack-log.png"); plt.close(fig)
+    return "attack-log.png", len(rows), collections.Counter(r["ai_evidence"] for r in rows)
+
+
 def x25_figures(root: Path) -> tuple[str, list[str]]:
     files = sorted((root / SWEEPS).glob("*.csv"))
     if not files:
@@ -116,6 +153,13 @@ def build_text(root: Path, readme: str) -> str:
               "How many security tools on GitHub use AI, on which kind of model, how fast they are "
               "appearing, and what they do. Full report: Part III of The Snapshot.", ""]
         L += [x for f in figs for x in (f"![{f}](../{FIGS}/{f})", "")]
+    if (root / "exploratory/ai_attack_campaigns.csv").exists():
+        name, n, ev = attack_log_chart(root)
+        L += ["### Attacks that used AI (X3 log)", "",
+              "Publicly reported cases where a real attacker used AI against real systems, or an AI under "
+              "test reached real systems, from organisations' own reports. No victim names are recorded. "
+              "Evidence of AI use: " + ", ".join(f"{k} {v}" for k, v in sorted(ev.items())) + " (unrated cases "
+              "await the author's check).", "", f"![Attack log](../{FEED_CHARTS}/{name})", ""]
     ms = months(root)
     if ms:
         L += ["### Monthly news feed screen (X3)", "",

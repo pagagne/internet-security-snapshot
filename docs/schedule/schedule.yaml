@@ -1247,6 +1247,18 @@ items:
     sources failed and how often, how the measures changed. Summarise for the author in plain
     sentences and add it to the session log and docs/INQUIRIES.md.
 
+- id: go-live-review
+  owner: author
+  title: Review the go-live draft with Claude
+  repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 6, from: 2026-11, until: 2027-12}
+  time: "10:00"
+  minutes: 30
+  details: >
+    Author's decision, 31 Oct 2026: once a month, the day after the feed screen is sorted, review
+    the private go-live draft (pagagne/snapshot-manual, go-live/README.md) together: the copy of
+    the public landing page, and the draft charts that go live with the report (how GitHub tools use
+    AI, their growth and types; the AI attack log; the month's feed screen by site). Decide what
+    to change; nothing goes public until the author says so.
 
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule

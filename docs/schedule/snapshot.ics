@@ -418,6 +418,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2026-11-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261106T150000Z
+DTEND:20261106T153000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-sweep-author-check@2026-11-06@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261106T160000Z
@@ -951,6 +967,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2026-12-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261206T150000Z
+DTEND:20261206T153000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2026-12-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261208
@@ -1333,6 +1365,22 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2027-01-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270106T150000Z
+DTEND:20270106T153000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:github-tool-review@2027-01-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270108
@@ -1563,6 +1611,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:go-live-review@2027-02-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270206T150000Z
+DTEND:20270206T153000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:sop-adopt@2027-02-08@internet-security-snapshot
@@ -1807,6 +1871,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nWalk through the repository\, the
  ounds): https://pagagne.github.io/internet-security-snapshot/reviewer/ (li
  ve from 4 Dec 2026)\n\nSource: https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:go-live-review@2027-03-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270306T150000Z
+DTEND:20270306T153000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2070,6 +2150,22 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2027-04-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270406T140000Z
+DTEND:20270406T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-04-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270408
@@ -2259,6 +2355,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2027-05-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270506T140000Z
+DTEND:20270506T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-05-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270508
@@ -2334,6 +2446,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:go-live-review@2027-06-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270606T140000Z
+DTEND:20270606T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:newsletter-read@2027-06-08@internet-security-snapshot
@@ -2515,6 +2643,22 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
   https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
  dule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:go-live-review@2027-07-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270706T140000Z
+DTEND:20270706T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:github-tool-sweep@2027-07-07@internet-security-snapshot
@@ -2726,6 +2870,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2027-08-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270806T140000Z
+DTEND:20270806T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-08-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270808
@@ -2846,6 +3006,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:go-live-review@2027-09-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270906T140000Z
+DTEND:20270906T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:newsletter-read@2027-09-08@internet-security-snapshot
@@ -3029,6 +3205,22 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2027-10-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20271006T140000Z
+DTEND:20271006T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-10-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271008
@@ -3175,6 +3367,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:go-live-review@2027-11-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20271106T140000Z
+DTEND:20271106T143000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2027-11-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271108
@@ -3250,6 +3458,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:go-live-review@2027-12-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20271206T150000Z
+DTEND:20271206T153000Z
+SUMMARY:[Paul] Snapshot: Review the go-live draft with Claude
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026: 
+ once a month\, the day after the feed screen is sorted\, review the privat
+ e go-live draft (pagagne/snapshot-manual\, go-live/README.md) together: th
+ e copy of the public landing page\, and the draft charts that go live with
+  the report (how GitHub tools use AI\, their growth and types\; the AI att
+ ack log\; the month's feed screen by site). Decide what to change\; nothin
+ g goes public until the author says so.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:github-tool-sweep@2027-12-08@internet-security-snapshot
