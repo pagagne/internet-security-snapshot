@@ -100,11 +100,11 @@ If you encounter Content on our Platform that you believe violates this Policy, 
 In-Platform Reporting: Click the button and select the "Report" option. This will:
 For Repositories : Open a public report and notify the Hugging Face Team
 For Posts and Comments : Notify the Hugging Face Team directly
-Email: Send a report to safety@huggingface.co
+Email: Send a report to [email address removed]
 Please note that reports are Community Content and are themselves subject to this Policy. Abusive uses of the flagging feature, including but not limited to spamming or harassment, will not be tolerated.
 In addition, in some situations, the Hugging Face Team may flag Content to monitor requests or concerns expressed through other channels (e.g., via social media, automatic detection, or raised internally). Depending on the severity of the issue, we may take action as described in the Section below, “How we moderate Content”.
 2. IP Infringement and DMCA takedown process
-If you believe that any Content on our website infringes upon your intellectual property rights , you can submit a Takedown notice to dmca@huggingface.co . This is a process we follow according to applicable law.
+If you believe that any Content on our website infringes upon your intellectual property rights , you can submit a Takedown notice to [email address removed] . This is a process we follow according to applicable law.
 Please include detailed and accurate information to support your claim. By submitting a complaint, you confirm that all information provided is truthful and that you will not intentionally submit any false or misleading details.
 We will review the takedown notice to ensure it meets legal requirements and isn’t abusive. If this is confirmed, we will inform the User who uploaded the allegedly infringing Content and disable it. The original uploader can challenge this decision if they think there has been a mistake by submitting a counter-notification to us and similarly including detailed and accurate information to support their claims. We will review the counter-notification to ensure it meets the legal requirements, and, if it does, we will inform the original claimant, who will have 14 U.S. business days to take legal action to prevent the Content from being restored.
 ⚖️ How we moderate Content
@@ -129,17 +129,17 @@ Edit their own comments
 Hide their own comments
 Close the discussion or PR
 🙋 How you can contest a moderation decision
-If you disagree with a moderation decision to disable your Content or suspend or terminate your account, you can send us your complaint at safety@huggingface.co . Please include all arguments and evidence you may have to support your claims so we can reconsider our decision. We will diligently review your complaint and will respond to you.
+If you disagree with a moderation decision to disable your Content or suspend or terminate your account, you can send us your complaint at [email address removed] . Please include all arguments and evidence you may have to support your claims so we can reconsider our decision. We will diligently review your complaint and will respond to you.
 If you remain unsatisfied, and in accordance with the Digital Services Act , you have the right to approach a certified out-of-court dispute settlement body . We commit to participating in this process in good faith, with the aim of reaching a resolution.
 👋 Contact us
-For our Users : For all communications regarding our Content Policy and how we deal with moderating Content at Hugging Face, please contact us at safety@huggingface.co .
+For our Users : For all communications regarding our Content Policy and how we deal with moderating Content at Hugging Face, please contact us at [email address removed] .
 For EU residents
-For EU Member State authorities, the EU Commission, and the European Board for Digital Services as indicated in the Digital Services Act : For all communications regarding our Content Policy and how we deal with moderating Content at Hugging Face, please contact us at legal@huggingface.co . This is also our point of contact for removal orders related to the Terrorist Content Online Regulation. All communications should be made in English.
+For EU Member State authorities, the EU Commission, and the European Board for Digital Services as indicated in the Digital Services Act : For all communications regarding our Content Policy and how we deal with moderating Content at Hugging Face, please contact us at [email address removed] . This is also our point of contact for removal orders related to the Terrorist Content Online Regulation. All communications should be made in English.
 The main establishment in the European Union is Hugging Face, SAS, a French société par actions simplifiée à associé unique registered in the Paris Trade and Companies Register under the number 822 168 043, and whose headquarters are located on 9 rue des Colonnes, 75002 Paris, France. The designation of this main establishment in the European Union gives authority to the French Regulatory Authority for Audiovisual and Digital Communication (Autorité de régulation de la communication audiovisuelle et numérique - Arcom) per the Digital Services Act.
 Our DSA Transparency Report 2025 is accessible by clicking here .
 Additional content policy in compliance with Australian Section 13(3)(a) of the DIS Standard (Australian Online Safety)
 Before uploading any content to the Hub, particularly any ML Artifacts, you must take appropriate steps to minimise the risk that the content could be used to generate child sexual exploitation material or pro-terror material.
-To report illegal content, Australian residents can email aus-online-safety@huggingface.co . This enables Hugging Face to inform you of the outcome of our investigation and any actions taken in response to the report.
+To report illegal content, Australian residents can email [email address removed] . This enables Hugging Face to inform you of the outcome of our investigation and any actions taken in response to the report.
 System theme
 Company
 TOS Privacy About Careers Website

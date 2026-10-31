@@ -248,8 +248,8 @@ SEC Data Resources
 Contacts
 EDGAR Filer Support
 General SEC Contact information , including electronic mailboxes, telephone numbers, and mailing addresses
-Connection issues and general questions — webmaster@sec.gov ; see also Webmaster FAQ s
-Questions about taxonomies, structured data (e.g., XBRL; XML; FpML; FIX), and the DERA Data Library — structureddata@sec.gov
+Connection issues and general questions — [email address removed] ; see also Webmaster FAQ s
+Questions about taxonomies, structured data (e.g., XBRL; XML; FpML; FIX), and the DERA Data Library — [email address removed]
 Last Reviewed or Updated: June 26, 2024
 Resources
 Fee-based EDGAR Public Dissemination Service (PDS), including subscription and …

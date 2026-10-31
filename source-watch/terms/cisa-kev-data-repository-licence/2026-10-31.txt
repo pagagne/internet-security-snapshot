@@ -143,7 +143,7 @@ The JSON schema will also remain in sync, though that file is not expected to be
 Contributing
 We welcome contribution suggestions from the public to make this repository better and more accurate. Please see this repository's CONTRIBUTING.md for more detail. In summary, we expect issues and pull requests to address purely technical issues like typos in prose, broken links to remediation guidance, accidental schema violations, and the like.
 Notably, this is not a repo for requesting additions or deletions of KEV entries . The KEV is managed by CISA directly, and CISA's requirements for KEV addition are fairly strict, relying on the authority of BOD 26-04 .
-Tips or suggestions about individual entries (beyond technical bug reports) should be directed via email to KEV@cisa.dhs.gov .
+Tips or suggestions about individual entries (beyond technical bug reports) should be directed via email to [email address removed] .
 Usage
 The purpose of this repo of KEV data is to enable easier usage of the KEV JSON and CSV files that CISA produces. GitHub provides a rich API for querying and downloading data sets, so oftentimes, code that is developed and maintained on GitHub (and beyond) has an easier time consuming data sources from GitHub than they might from US government websites.
 In addition, the git commit history provided by GitHub can make tracking changes to data sources like the KEV easier and more transparent. The KEV, in particular, has no inline file revision history or log that's easily accessible after the fact. Related vulnerability tracking projects, such as the CVE List and Vulnrichment benefit from this kind of public logging and public issue tracking functionality.
