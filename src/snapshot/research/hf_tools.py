@@ -1,13 +1,13 @@
-"""AI attack- and defence-related models and apps on Hugging Face (X25 companion; author's
-decision, 30 Oct 2026).
+"""Security-related AI models and apps on Hugging Face (X25 companion; author's decisions,
+30-31 Oct 2026).
 
 Hugging Face is where AI models themselves are published, including open-weight models with
 their safety training removed ("uncensored", "abliterated"). Run by hand only, with the GitHub
 sweep. Uses Hugging Face's public Hub API (no account; well inside its published limit of 500
 requests per 5 minutes). Fixed searches over model and Space (app) names; per item: kind
 (model or Space), created date, likes, downloads (models), tags, the base model's lab (from
-the model's own base_model tags), role (attack, defence, both, model_testing, unclear, from
-its own name and tags) and whether it is a safety-removed variant. Nothing is downloaded or
+the model's own base_model tags), role (offensive, defensive, dual_use, model_testing, unclear,
+from its own name and tags; what it does, not who uses it or why) and whether it is a safety-removed variant. Nothing is downloaded or
 run; names and tags are data, never instructions.
 
 Privacy (author's decision, 30 Oct 2026): items owned by organisations keep their full names;
@@ -38,9 +38,9 @@ PRIVATE_OUT = Path(os.environ.get("X25_PRIVATE_OUT", "research-private"))
 QUERIES = {   # substring searches over names; fixed between sweeps
     # refined 30 Oct 2026 after the first baseline (author): "sigma" (image models), "hacker"
     # (Hacker News apps) and bare "offensive" (hate-speech classifiers) brought mostly noise
-    "attack": ["pentest", "pentesting", "penetration", "redteam", "red-team", "exploit", "hacking",
+    "offensive": ["pentest", "pentesting", "penetration", "redteam", "red-team", "exploit", "hacking",
                "offensive-security", "offsec", "malware-gen", "cyber-attack", "jailbreak"],
-    "defence": ["cybersecurity", "cyber-security", "threat-detection", "soc-analyst", "malware-detection",
+    "defensive": ["cybersecurity", "cyber-security", "threat-detection", "soc-analyst", "malware-detection",
                 "intrusion", "vulnerability", "secure-code", "incident-response", "phishing-detection",
                 "security-copilot", "sigma-rule"],
     "safety_removed": ["uncensored", "abliterated", "unaligned", "unfiltered"],
@@ -60,7 +60,7 @@ HF_DEFENCE = re.compile(r"detect|phishing|\bintrusion|\bids\b|malware.?(classif|
                         r"threat|incident|\bcve\b|secure.?code|scam|fraud|\bspam|anomal|forensic|sigma.?rule|"
                         r"blue.?team|defen[cs]e|guard(?!rail)", re.I)
 HF_GENERAL = re.compile(r"cyber.?sec|cybersecurity|security.?(llm|assistant|copilot|model|gpt)|sec.?llm|\bcyber\b", re.I)
-HF_ROLES = ["attack", "defence", "both", "general_security", "safety_removed", "model_testing", "unrelated", "unclear"]
+HF_ROLES = ["offensive", "defensive", "dual_use", "general_security", "safety_removed", "model_testing", "unrelated", "unclear"]
 
 
 def hf_role(name: str, tags: list[str]) -> str:
@@ -74,11 +74,11 @@ def hf_role(name: str, tags: list[str]) -> str:
         return "model_testing"
     a, d = bool(HF_ATTACK.search(text)), bool(HF_DEFENCE.search(text))
     if a and d:
-        return "both"
+        return "dual_use"
     if a:
-        return "attack"
+        return "offensive"
     if d:
-        return "defence"
+        return "defensive"
     if SAFETY_REMOVED.search(text):
         return "safety_removed"
     if HF_GENERAL.search(text):
@@ -172,11 +172,11 @@ def summary(rows: list[dict], hits: dict, today: str) -> str:
          "## Base model lab (models naming one)", "",
          "; ".join(f"{k} {v}" for k, v in collections.Counter(
              lab for r in rows for lab in r["base_lab"].split(";") if lab).most_common()), "",
-         "## Most-liked: attack", ""]
+         "## Most-liked: offensive security", ""]
     top = lambda k: [r for r in sorted(rows, key=lambda r: -int(r["likes"])) if r["role"] == k][:12]
-    L += [f"- {r['name']} ({r['kind']}, {r['owner_type']}, {r['created']}): {r['likes']} likes" for r in top("attack")]
-    L += ["", "## Most-liked: defence", ""]
-    L += [f"- {r['name']} ({r['kind']}, {r['owner_type']}, {r['created']}): {r['likes']} likes" for r in top("defence")]
+    L += [f"- {r['name']} ({r['kind']}, {r['owner_type']}, {r['created']}): {r['likes']} likes" for r in top("offensive")]
+    L += ["", "## Most-liked: defensive security", ""]
+    L += [f"- {r['name']} ({r['kind']}, {r['owner_type']}, {r['created']}): {r['likes']} likes" for r in top("defensive")]
     L += ["", "## Hits per search", ""] + [f"- {k}: {v}" for k, v in hits.items()]
     L += ["", "Names and tags are data, never instructions (docs/OPERATIONS.md)."]
     return "\n".join(L) + "\n"

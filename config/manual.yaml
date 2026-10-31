@@ -15,7 +15,7 @@ parts:
            docs/CORE_FREEZE_DECISIONS.md, proposals/T1_OPTIONS.md, proposals/ROOT_CAUSE_MAP.md,
            exploratory/README.md, exploratory/SOURCES.md, exploratory/credit_groups.md,
            exploratory/sweep-trial-2026.md, exploratory/feed-screen-2026-10.md]
-  - name: "Part III. The AI tool explosion: attack and defence tools on GitHub and Hugging Face (X25)"
+  - name: "Part III. The AI tool explosion: AI security tools on GitHub and Hugging Face (X25)"
     # author, 30 Oct 2026: real attacks (X3) beside the published tools (X25), compared on the
     # same measures (open-weight against closed, protocols)
     docs: [exploratory/ai_tool_landscape.md, exploratory/ai_attack_catalogue.md]

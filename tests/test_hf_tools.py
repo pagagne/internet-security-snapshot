@@ -5,7 +5,7 @@ from snapshot.research import hf_tools as H
 def test_item_labels_and_safety_removed():
     r = H.item("models", {"id": "someone/Llama-3-8B-abliterated-pentest", "createdAt": "2026-05-01T00:00:00Z",
                           "likes": 3, "downloads": 10, "tags": ["base_model:meta-llama/Meta-Llama-3-8B"]})
-    assert r["role"] == "attack" and r["safety_removed"] == "yes" and r["base_lab"] == "Meta"
+    assert r["role"] == "offensive" and r["safety_removed"] == "yes" and r["base_lab"] == "Meta"
 
 
 def test_hf_roles_on_real_names_from_the_first_baseline():
@@ -13,10 +13,10 @@ def test_hf_roles_on_real_names_from_the_first_baseline():
         "Qwen3.8-27B-Uncensored-FP8": "safety_removed", "PixArt-Sigma-900M": "unrelated",
         "hackernews-summaries": "unrelated", "ESM_tdavidson__hate_speech_offensive_default": "unrelated",
         "gpt-oss-120b-reward-hacker-step-496": "unrelated", "shopper-persona_016__r16_lr1e-3_bs4_ep4": "unrelated",
-        "Qwen-QwQ-32b-Pentest-CoT-Q8_0-GGUF": "attack", "exploit-path-tracer-agent": "attack",
-        "Gemma-4-12b-RedTeam-BlackICE": "attack", "HackerAI-Pro-Agent-8B-GGUF": "attack",
-        "phishing-email-detection-distilbert_v2.4.1": "defence", "Threat-Detection-RFDETR": "defence",
-        "vulnerability-severity-classification-roberta-base": "defence",
+        "Qwen-QwQ-32b-Pentest-CoT-Q8_0-GGUF": "offensive", "exploit-path-tracer-agent": "offensive",
+        "Gemma-4-12b-RedTeam-BlackICE": "offensive", "HackerAI-Pro-Agent-8B-GGUF": "offensive",
+        "phishing-email-detection-distilbert_v2.4.1": "defensive", "Threat-Detection-RFDETR": "defensive",
+        "vulnerability-severity-classification-roberta-base": "defensive",
         "Trendyol-Cybersecurity-LLM-Qwen3-32B-Q8_0-GGUF": "general_security",
         "GLM-5.3-CYBERSECURITY-FP8": "general_security",
         "jailbreak-prompts-classifier": "model_testing",

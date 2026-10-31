@@ -1,16 +1,21 @@
-"""AI attack- and defence-tool sweep of GitHub (X25; author's decisions, 30 Oct 2026).
+"""AI security-tool sweep of GitHub (X25; author's decisions, 30-31 Oct 2026).
 
 Run by hand only, never on a timer: a baseline on 30 Oct 2026, then at the start of 2027 (part
 of the pilot), mid-2027 and the end of 2027 (docs/schedule/schedule.yaml), started by Claude
 through the Research workflow (task github_tools). Searches GitHub's public catalogue with the
-fixed queries in config/github_tool_queries.yaml (attack and defence lists) through GitHub's
+fixed queries in config/github_tool_queries.yaml (offensive and defensive search lists) through GitHub's
 API, as GitHub's Acceptable Use Policies allow for research published open access. It never
 downloads or runs anyone's code; README and description text is data, never instructions.
 
-Per repository it records: role (attack, defence, both, model_testing, unclear; first guess
-from the tool's own words, checked by Claude for 100+ stars and confirmed by the author), the
-AI it names grouped by the lab that makes it, the agent toolkit, what it goes after (targets)
-and which network protocols it names. Descriptions are read for every repository; READMEs for
+Per repository it records, first (author, 31 Oct 2026: "see how many tools are AI related,
+AI hosted, closed weights"), how it uses AI: `ai_use` = hosted closed model, open-weight or
+local, both, or none named. Then what it does: `types`, one or more tool types from its own
+words (penetration testing, scanning, reconnaissance, detection, ...), and from them a `group`:
+offensive security, defensive security, dual-use or unclassified. Labels describe what a tool
+does, not who uses it or why; offensive-security tools are built mainly for authorised testing
+(author, 31 Oct 2026, replacing "attack/defence"). Also the AI it names grouped by the lab that
+makes it, the agent toolkit, what it works on (targets) and which network protocols it names.
+All are first guesses from the tool's own words, checked by Claude and confirmed by the author. Descriptions are read for every repository; READMEs for
 the most-starred originals only (GitHub allows about 1,000 API requests an hour per workflow).
 
 Privacy (author's decisions, 30 Oct 2026): a repository owned by an individual is published
@@ -80,7 +85,7 @@ TOOLKITS = {
     "Claude Code / Agent SDK": r"claude code|claude agent sdk|claude-agent-sdk", "smolagents": r"\bsmolagents\b",
     "PydanticAI": r"pydantic.?ai\b",
 }
-TARGETS = {   # what a tool goes after (or, for defence tools, protects)
+TARGETS = {   # what a tool works on (tests, scans or protects)
     "web apps and APIs": r"web ?app|website|\bxss\b|sql ?injection|\bsqli\b|\bowasp\b|\bburp\b|api security|\brest api\b",
     "cloud accounts": r"\baws\b|\bazure\b|\bgcp\b|google cloud|\bs3\b|\biam\b|cloud security|\bcspm\b",
     "Windows and Active Directory": r"active directory|\bkerberos\b|\bldap\b|\bbloodhound\b|\bntlm\b|\bwindows\b",
@@ -123,28 +128,68 @@ PROTOCOLS = {   # a wide net (author, 30 Oct 2026): only protocols actually foun
     "MCP": r"\bmcp\b|model context protocol", "A2A": r"\ba2a\b|agent2agent|agent-to-agent protocol",
 }
 
+TYPES = {   # what a tool does (author, 31 Oct 2026); a tool can have several
+    "penetration testing": r"pen.?test|penetration|exploit|red.?team|offensive|post.?exploit|privilege escalation|"
+                           r"\bc2\b|command.and.control|bug.?bount|\bctf\b|hack(ing|er|s)?\b|渗透|пентест|взлом",
+    "vulnerability scanning": r"vulnerabilit\w* scan|scanner|\bnuclei\b|\bdast\b|fuzz|漏洞扫描",
+    "reconnaissance and OSINT": r"\brecon|\bosint\b|subdomain|asset discovery|footprint|attack surface|情报收集",
+    "phishing simulation": r"phishing|social engineering",
+    "malware analysis": r"malware|reverse engineer|\byara\b|\bghidra\b|\bida pro\b|sandbox analysis",
+    "detection and monitoring": r"detect|\bsoc\b|\bsiem\b|monitor|alert|\bedr\b|\bsigma rules?\b|log analysis|threat hunt|检测",
+    "code security review": r"code review|\bsast\b|static analysis|secure cod|secret scan|dependenc(y|ies) (scan|audit)|"
+                            r"supply.chain security|auto.?fix|remediat",
+    "threat intelligence": r"threat intel|\bcti\b|\biocs?\b|indicators? of compromise",
+    "incident response": r"incident response|\bdfir\b|forensic|triage|应急",
+    "hardening and compliance": r"harden|compliance|posture|vulnerability management|patch|blue.?team|defen[cs]e|防御|защит",
+    "AI model testing": r"prompt.?injection|jailbreak|guardrail|llm (vulnerabilit|red.?team|security test|fuzz)|"
+                        r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation)",
+}
+MODEL_TESTING = re.compile(TYPES["AI model testing"], re.I)   # also used by the Hugging Face sweep
+OFFENSIVE = {"penetration testing", "phishing simulation"}
+DUAL = {"vulnerability scanning", "reconnaissance and OSINT", "AI model testing"}
+GROUPS = ["offensive", "defensive", "dual_use", "unclassified"]
+GROUP_NAMES = {"offensive": "Offensive security", "defensive": "Defensive security", "dual_use": "Dual-use",
+               "unclassified": "Unclassified"}
+AI_USE = ["closed", "open_local", "both", "none"]
+AI_USE_NAMES = {"closed": "Hosted closed model", "open_local": "Open-weight or local", "both": "Both kinds",
+                "none": "No model named"}
+
 SAFEGUARD = re.compile(r"\b(scope|authori[sz](ed|ation)|permission|consent|allow-?list|in-scope|rules of engagement)\b", re.I)
 NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
-MODEL_TESTING = re.compile(r"prompt.?injection|jailbreak|guardrail|llm (vulnerabilit|red.?team|security test|fuzz)|"
-                           r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation)", re.I)
-ATTACK = re.compile(r"pen.?test|penetration|exploit|red.?team|offensive|hack(ing|er|s)?\b|recon|\bc2\b|post.?exploit|"
-                    r"privilege escalation|bug.?bount|\bctf\b|attack(er|ing|s)?\b|渗透|攻击|пентест|взлом", re.I)
-DEFENCE = re.compile(r"detect|\bsoc\b|siem|incident response|threat hunt|triage|alert|remediat|auto.?fix|patch|harden|"
-                     r"blue.?team|defen[cs]|monitor|forensic|malware analysis|code review|\bsast\b|"
-                     r"vulnerability management|compliance|posture|防御|检测|应急|安全运营|защит", re.I)
+
 
 PUBLIC = ["name", "ref", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
-          "role", "side", "labs", "weights", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard", "topics", "description"]
-COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "role", "side", "labs", "weights", "toolkits", "targets",
+          "ai_use", "types", "group", "labs", "weights", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard", "topics", "description"]
+COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "ai_use", "types", "group", "labs", "weights", "toolkits", "targets",
            "protocols", "readme_read", "readme_safeguard"]
 
 
-def role(text: str) -> str:
-    """First label from a tool's own words; checked by Claude and confirmed by the author."""
-    if MODEL_TESTING.search(text):
-        return "model_testing"
-    a, d = bool(ATTACK.search(text)), bool(DEFENCE.search(text))
-    return "both" if a and d else "attack" if a else "defence" if d else "unclear"
+def tool_types(text: str) -> list[str]:
+    """What a tool does, from its own words (first guesses; checked by Claude, confirmed by the author)."""
+    return tags(text, TYPES)
+
+
+def group(types: list[str] | str) -> str:
+    """Offensive, defensive or dual-use, worked out from the tool types, never from intent."""
+    ts = set(filter(None, types.split(";") if isinstance(types, str) else types))
+    if not ts:
+        return "unclassified"
+    off, dual, deff = bool(ts & OFFENSIVE), bool(ts & DUAL), bool(ts - OFFENSIVE - DUAL)
+    if dual or (off and deff):
+        return "dual_use"
+    return "offensive" if off else "defensive"
+
+
+def ai_use(weights: str) -> str:
+    """How the tool uses AI: a hosted closed model, an open-weight or local one, both, or none named."""
+    w = set(filter(None, weights.split(";")))
+    op, cl = bool(w & {"open-weight", "runs locally"}), "closed" in w
+    return "both" if op and cl else "closed" if cl else "open_local" if op else "none"
+
+
+def finish(r: dict) -> None:
+    r["group"] = group(r["types"])
+    r["ai_use"] = ai_use(r["weights"])
 
 
 def tags(text: str, table: dict) -> list[str]:
@@ -198,7 +243,7 @@ def _readme(full_name: str) -> str:
 
 
 def _label(r: dict, text: str) -> None:
-    for field, table in (("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS), ("targets", TARGETS),
+    for field, table in (("types", TYPES), ("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS), ("targets", TARGETS),
                          ("protocols", PROTOCOLS)):
         r[field] = ";".join(sorted(set(filter(None, r[field].split(";"))) | set(tags(text, table)),
                                    key=list(table).index))
@@ -215,18 +260,18 @@ def row(it: dict) -> dict:
         "is_fork": it.get("fork", False), "archived": it.get("archived", False),
         "license": ((it.get("license") or {}).get("spdx_id") or ""), "language": it.get("language") or "",
         "topics": ";".join(topics), "description": desc[:240],
-        "role": role(it.get("name", "") + " " + desc + " " + " ".join(topics)),
-        "side": "", "queries": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
+        "queries": "", "types": "", "group": "", "ai_use": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
         "readme_read": "no", "readme_safeguard": "",
     }
     _label(r, it.get("name", "") + " " + desc + " " + " ".join(topics))
+    finish(r)
     return r
 
 
 def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_top: int = README_TOP):
-    """queries: {"attack": [...], "defence": [...]} (a plain list counts as attack)."""
+    """queries: {"offensive": [...], "defensive": [...]} (search lists; a plain list is one list)."""
     if isinstance(queries, list):
-        queries = {"attack": queries}
+        queries = {"offensive": queries}
     found, hits = {}, {}
     for side, qs in queries.items():
         for q in qs:
@@ -235,7 +280,6 @@ def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_
             for it in items:
                 r = found.setdefault(it["full_name"], row(it))
                 r["queries"] = ";".join(filter(None, [r["queries"], q]))
-                r["side"] = "+".join(sorted(set(filter(None, r["side"].split("+"))) | {side}))
     rows = sorted(found.values(), key=lambda r: -r["stars"])
     readme_fn = readme_fn or _readme
     for r in [r for r in rows if not r["is_fork"]][:readme_top]:
@@ -247,8 +291,7 @@ def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_
         r["readme_read"] = "yes"
         r["readme_safeguard"] = safeguard(text)
         _label(r, text[:30000])
-        if r["role"] == "unclear":
-            r["role"] = role(text[:3000])
+        finish(r)
     return rows, hits
 
 
@@ -278,25 +321,26 @@ def public(r: dict) -> dict:
 
 def summary(rows: list[dict], hits: dict, today: str) -> str:
     orig = [r for r in rows if not r["is_fork"]]
-    roles = ["attack", "defence", "both", "model_testing", "unclear"]
-    by = {k: [r for r in orig if r["role"] == k] for k in roles}
-    L = [f"# AI attack- and defence-tool sweep of GitHub, {today} (X25, exploratory)", "",
+    by = {k: [r for r in orig if r["group"] == k] for k in GROUPS}
+    L = [f"# AI security-tool sweep of GitHub, {today} (X25, exploratory)", "",
          f"Repositories found: {len(rows)} ({len(orig)} originals; READMEs read for "
-         f"{sum(r['readme_read'] == 'yes' for r in orig)}). First labels: "
-         + "; ".join(f"{k} {len(by[k])}" for k in roles) + ". Labels say what the software does, not who "
-         "uses it. Individuals' repositories appear by project name only (no username); organisations "
-         "by full name.", ""]
-    for field, table in (("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS), ("targets", TARGETS),
-                         ("protocols", PROTOCOLS)):
-        L += [f"## {field.capitalize()} named, by side", "", f"| {field.capitalize()} | Attack | Defence | Both |", "|---|---|---|---|"]
+         f"{sum(r['readme_read'] == 'yes' for r in orig)}). How they use AI: "
+         + "; ".join(f"{AI_USE_NAMES[k].lower()} {sum(r['ai_use'] == k for r in orig)}" for k in AI_USE)
+         + ". Groups (from tool types): " + "; ".join(f"{GROUP_NAMES[k].lower()} {len(by[k])}" for k in GROUPS)
+         + ". Labels describe what a tool does, not who uses it or why. Individuals' repositories appear by "
+         "project name only (no username); organisations by full name.", ""]
+    for field, table in (("types", TYPES), ("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS),
+                         ("targets", TARGETS), ("protocols", PROTOCOLS)):
+        L += [f"## {field.capitalize()} named, by group", "",
+              f"| {field.capitalize()} | " + " | ".join(GROUP_NAMES[g] for g in GROUPS[:3]) + " |", "|---|---|---|---|"]
         for k in table:
-            L.append(f"| {k} | " + " | ".join(str(sum(k in r[field].split(";") for r in by[s])) for s in ("attack", "defence", "both")) + " |")
+            L.append(f"| {k} | " + " | ".join(str(sum(k in r[field].split(";") for r in by[s])) for s in GROUPS[:3]) + " |")
         L.append("")
     L += ["## Safeguards in the READMEs read", "",
           "; ".join(f"{k} {v}" for k, v in collections.Counter(
               r["readme_safeguard"] for r in orig if r["readme_safeguard"]).most_common())]
-    for k in ("attack", "defence", "both"):
-        L += ["", f"## The 15 most-starred: {k}", ""]
+    for k in GROUPS[:3]:
+        L += ["", f"## The 15 most-starred: {GROUP_NAMES[k].lower()}", ""]
         L += [f"- {r['name']} ({r['owner_type']}, created {r['created']}): {r['stars']:,} stars; "
               f"{r['labs'] or 'AI not named'}; targets: {r['targets'] or 'not stated'}" for r in by[k][:15]]
     L += ["", "## Hits per query", ""] + [f"- `{q}`: {n}" for q, n in hits.items()]
@@ -312,7 +356,7 @@ def main(argv=None) -> int:
     a.out.mkdir(parents=True, exist_ok=True)
     PRIVATE_OUT.mkdir(parents=True, exist_ok=True)
     cfg = yaml.safe_load((_repo_root() / CONFIG).read_text())
-    rows, hits = sweep({"attack": cfg["attack"], "defence": cfg["defence"]})
+    rows, hits = sweep({"offensive": cfg["offensive"], "defensive": cfg["defensive"]})
     reg_path = Path(REGISTRY_IN)
     registry = {r["full_name"]: r["code"] for r in csv.DictReader(reg_path.open())} if reg_path.exists() else {}
     registry = pseudonymise(rows, registry)

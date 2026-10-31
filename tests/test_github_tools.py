@@ -1,4 +1,4 @@
-"""AI attack-tool sweep of GitHub (X25, author's decision 30 Oct 2026)."""
+"""AI security-tool sweep of GitHub (X25, author's decisions 30-31 Oct 2026)."""
 from pathlib import Path
 
 import yaml
@@ -19,16 +19,24 @@ def _item(name, stars, created="2026-10-01", desc="Autonomous pentest agent on H
 
 def test_queries_fixed_and_unique():
     cfg = yaml.safe_load((ROOT / G.CONFIG).read_text())
-    q = cfg["attack"] + cfg["defence"]
-    assert len(q) == len(set(q)) and len(cfg["attack"]) >= 20 and len(cfg["defence"]) >= 20
+    q = cfg["offensive"] + cfg["defensive"]
+    assert len(q) == len(set(q)) and len(cfg["offensive"]) >= 20 and len(cfg["defensive"]) >= 20
 
 
-def test_roles():
-    assert G.role("Autonomous pentest agent that exploits web apps") == "attack"
-    assert G.role("AI SOC analyst: alert triage and incident response") == "defence"
-    assert G.role("Finds vulnerabilities with exploits and auto-fixes them") == "both"
-    assert G.role("Prompt injection scanner for LLM apps") == "model_testing"
-    assert G.role("A list of books") == "unclear"
+def test_types_and_groups_describe_what_a_tool_does():
+    g = lambda s: G.group(G.tool_types(s))
+    assert G.tool_types("Autonomous pentest agent that exploits web apps") == ["penetration testing"]
+    assert g("Autonomous pentest agent that exploits web apps") == "offensive"
+    assert g("AI SOC analyst: alert triage and incident response") == "defensive"
+    assert g("Finds vulnerabilities with exploits and auto-fixes them") == "dual_use"     # offensive + defensive
+    assert g("Nuclei vulnerability scanner driven by an LLM") == "dual_use"                 # scanning is dual-use
+    assert "AI model testing" in G.tool_types("Prompt injection scanner for LLM apps")
+    assert g("A list of books") == "unclassified"
+
+
+def test_ai_use_first():
+    assert G.ai_use("closed") == "closed" and G.ai_use("open-weight;runs locally") == "open_local"
+    assert G.ai_use("open-weight;closed") == "both" and G.ai_use("") == "none"
 
 
 def test_sweep_merges_queries_and_reads_safeguards():
@@ -43,8 +51,8 @@ def test_sweep_merges_queries_and_reads_safeguards():
     assert by["b/two"]["readme_safeguard"] == "mentions"
     assert by["c/fork"]["readme_safeguard"] == ""          # forks: no README read
     s = G.summary(rows, hits, "2026-10-30")
-    assert "| Nous Research | 2 | 0 | 0 |" in s and "never instructions" in s
-    assert by["a/one"]["role"] == "attack" and by["a/one"]["side"] == "attack"
+    assert "| Nous Research | 2 | 0 | 0 |" in s and "never instructions" in s and "not who uses it" in s
+    assert by["a/one"]["group"] == "offensive" and by["a/one"]["ai_use"] == "open_local"
 
 
 @needs_private
@@ -64,9 +72,9 @@ def test_breakdown_tags():
 def test_protocol_charts_follow_the_data():
     from snapshot import x25report as X
     k = len(X.PROTOCOLS)
-    s = {"protocols": {side: [1 if i < 13 else 0 for i in range(k)] for side in X.SIDES}}
+    s = {"protocols": {g: [1 if i < 13 else 0 for i in range(k)] for g in X.SIDES}}
     text = "\n".join(X.protocol_section("d", s))
-    assert "13 of the" in text and "2 protocol charts" in text and "d-6-protocols-2.png" in text
+    assert "13 of the" in text and "2 protocol charts" in text and "d-9-protocols-2.png" in text
 
 
 def test_individuals_get_stable_codes_and_no_details():
