@@ -91,8 +91,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Draft the CCRI outreach email and the second-cod
- er role summary - done
+SUMMARY:✅ DONE [Claude] Snapshot: Draft the CCRI outreach email and the s
+ econd-coder role summary - done
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/reviewer/ccri-outreach.md (draft for the auth
  or to rewrite) and https://github.com/pagagne/internet-security-snapshot/b
@@ -165,8 +165,8 @@ UID:uga-call@2026-10-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261028T140000Z
 DTEND:20261028T142000Z
-SUMMARY:[Paul] Snapshot: Call the UGA Career Center about the reviewer post
- ing - done
+SUMMARY:✅ DONE [Paul] Snapshot: Call the UGA Career Center about the revi
+ ewer posting - done
 DESCRIPTION:Responsible: Paul (author)\n\nDone 28 Oct (author\, before 9:00
  ): the call went well\; an independent researcher can register on Handshak
  e\; the Career Center could not say whether an unpaid internship with cour
@@ -212,8 +212,8 @@ UID:gcp-setup@2026-10-29@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261029T140000Z
 DTEND:20261029T142000Z
-SUMMARY:[Paul] Snapshot: Set up BigQuery in the Google Cloud project (HTTP 
- Archive\, deps.dev history)\; turn on Dependabot alerts - done
+SUMMARY:✅ DONE [Paul] Snapshot: Set up BigQuery in the Google Cloud proje
+ ct (HTTP Archive\, deps.dev history)\; turn on Dependabot alerts - done
 DESCRIPTION:Responsible: Paul (author)\n\nDone 29 Oct (author): BigQuery AP
  I on\; service account snapshot-bq (BigQuery Job User)\; keyless sign-in f
  rom GitHub Actions (Workload Identity Federation: pool "github"\, provider
@@ -262,8 +262,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Create the project email address - done 29 Oct (se
- e docs/OPERATIONS.md)
+SUMMARY:✅ DONE [Paul] Snapshot: Create the project email address - done 2
+ 9 Oct (see docs/OPERATIONS.md)
 DESCRIPTION:Responsible: Paul (author)\n\nFor university postings and the r
  eviewer invitation (instead of a personal address).\n\nSource: https://git
  hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
@@ -276,7 +276,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Recheck the trial AI-attack sweep's open items
+SUMMARY:✅ DONE [Claude] Snapshot: Recheck the trial AI-attack sweep's ope
+ n items
 DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
   at the author's request (https://github.com/pagagne/internet-security-sna
  pshot/blob/main/exploratory/sweep-trial-2026.md\; 15 kept after the China 
@@ -294,8 +295,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: HHS OCR health-breach series - second attempt at
-  the export - done 29 Oct (no export\; decision 11)
+SUMMARY:✅ DONE [Claude] Snapshot: HHS OCR health-breach series - second a
+ ttempt at the export - done 29 Oct (no export\; decision 11)
 DESCRIPTION:Responsible: Claude\n\nProbe 25 Oct: the portal answers\, but i
  ts CSV export is a form the probe did not trigger. Second attempt with the
   form's real fields\; if it still fails\, the public research copies of th
@@ -311,8 +312,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: HTTP Archive test - are software versions record
- ed? - done 29 Oct (yes\; decision 10)
+SUMMARY:✅ DONE [Claude] Snapshot: HTTP Archive test - are software versio
+ ns recorded? - done 29 Oct (yes\; decision 10)
 DESCRIPTION:Responsible: Claude\n\nOne small BigQuery query within the free
   tier\, with a per-query byte cap. If versions are recorded\, propose an e
  xploratory patch-adoption measure for web software (share of sites on the 
@@ -334,8 +335,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Add kernel commit dates (and more CSAF vendors) 
- to the fix-date pre-fill - done 29 Oct (#29)
+SUMMARY:✅ DONE [Claude] Snapshot: Add kernel commit dates (and more CSAF 
+ vendors) to the fix-date pre-fill - done 29 Oct (#29)
 DESCRIPTION:Responsible: Claude\n\nsnapshot.fixdates.prefill_exploited: fix
  ing commits from kernel CVE records dated through the GitHub mirrors\; Deb
  ian/Ubuntu trackers as a cross-check\; CSAF feeds of further vendors (Siem

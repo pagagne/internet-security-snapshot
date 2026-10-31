@@ -86,7 +86,8 @@ def test_feeds_in_sync():
     full = set(_events(S.ICS.read_text()))
     rev = _events(S.REVIEWER_ICS.read_text())
     assert rev and all(e in full for e in rev)
-    assert all(any(f"SUMMARY:[{who}]" in e for who in S.RESPONSIBLE.values()) for e in full)
+    assert all(any(f"SUMMARY:[{who}]" in e or f"SUMMARY:\u2705 DONE [{who}]" in e for who in S.RESPONSIBLE.values()) for e in full)
+    assert any("SUMMARY:\u2705 DONE [" in e for e in full)     # finished items stay, marked done (31 Oct 2026)
 
 
 def test_reviewer_desk_tasks_match_feed():

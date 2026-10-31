@@ -111,6 +111,9 @@ def expand(items: list[dict]) -> list[dict]:
                 "open": int(it.get("open", DEFAULT_OPEN[it["owner"]])),
                 "dispatch": it.get("dispatch"),
                 "feeds": list(it.get("feeds") or []),
+                # finished items stay in the calendar, marked done (author, 31 Oct 2026): a `done`
+                # field (date or note), or the older "- done ..." in the title
+                "done": str(it["done"]) if it.get("done") else ("yes" if re.search(r"\s-\s+done\b", it["title"]) else ""),
             }
             out.append(occ)
     return sorted(out, key=lambda o: (o["date"], o["time"] or "", OWNERS.index(o["owner"]), o["id"]))
@@ -184,7 +187,8 @@ def ics(occ: list[dict], feed: tuple[str, str] = ALL_FEED) -> str:
             L += [f"DTSTART;VALUE=DATE:{o['date']:%Y%m%d}",
                   f"DTEND;VALUE=DATE:{o['date'] + dt.timedelta(days=o['days']):%Y%m%d}",
                   "TRANSP:TRANSPARENT"]
-        L += [f"SUMMARY:{_ics_text(f'{tag} Snapshot: ' + o['title'])}",
+        mark = "\u2705 DONE " if o.get("done") else ""
+        L += [f"SUMMARY:{_ics_text(f'{mark}{tag} Snapshot: ' + o['title'])}",
               f"DESCRIPTION:{_ics_text(_description(o))}",
               f"CATEGORIES:{OWNER_NAME[o['owner']]}", "END:VEVENT"]
     L.append("END:VCALENDAR")
@@ -288,7 +292,7 @@ def act(today: dt.date, dry: bool = False, gh=None) -> list[str]:
     done = set(re.findall(r"<!-- schedule-uid: (\S+) -->", existing))
     log = []
     for o in d["issues"]:
-        if o["uid"] in done:
+        if o["uid"] in done or o.get("done"):
             continue
         args = ["issue", "create", "--title", f"[{OWNER_NAME[o['owner']]}] {o['title']} ({o['when']})",
                 "--label", "schedule", "--label", f"owner:{o['owner']}", "--body", issue_body(o)]
@@ -296,7 +300,7 @@ def act(today: dt.date, dry: bool = False, gh=None) -> list[str]:
         if not dry:
             gh(args)
     for o in d["runs"]:
-        if o["uid"] in done:
+        if o["uid"] in done or o.get("done"):
             continue
         w = o["dispatch"]
         log.append(f"run {o['uid']} ({w['workflow']})")

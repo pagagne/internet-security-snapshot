@@ -19,6 +19,8 @@
 #   open    days before the date to open the GitHub issue (default 0; author items default 2)
 #   dispatch {workflow: file.yml, inputs: {...}}: the daily schedule job runs this workflow
 #   feeds   [reviewer]: also show this author/Claude item in the reviewer's own calendar feed
+#   done    when finished (date or short note): the item stays in the calendar marked DONE and
+#           opens no issue or run (author, 31 Oct 2026); older items say "- done ..." in the title
 #   details what to do (plain text; links welcome)
 
 items:
@@ -116,6 +118,7 @@ items:
   owner: claude
   title: Recheck the trial AI-attack sweep's open items
   date: 2026-11-02  # moved up 29 Oct, so the author's check can be on 6 Nov (was 11-05)
+  done: 31 Oct 2026 (AI-attack log recheck; session log)
   details: >
     The trial itself ran early, on 26 Oct, at the author's request (exploratory/sweep-trial-2026.md;
     15 kept after the China and Russia retry, log 13 -> 28). Read the primary reports behind the kept entries (Sysdig, GTIG,
