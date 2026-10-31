@@ -6,12 +6,13 @@ def test_ring_is_current():
     assert L.main(["check"]) == 0, "run: python -m snapshot.landing build"
 
 
-def test_slice_weights_count_core_three_times():
-    assert L.weight({"measures": ["I2", "I3", "X1"]}) == 7
-    assert L.weight({"measures": ["X7"]}) == 1
+def test_two_rings_kept_apart():
+    p = {"measures": ["I2", "I3", "X1"]}
+    assert L.weight(p, "core") == 2 and L.weight(p, "exploratory") == 1 and L.weight(p) == 7
     pieces = L.load()["pieces"]
     assert all(p["tier"] in {"core", "companion"} and isinstance(p["collected"], bool) for p in pieces)
-    assert 0 < L.collected_share(pieces) < 100
+    assert all(0 < L.collected_share(pieces, r) < 100 for r in L.RINGS)
+    assert not any(L.weight(p, "core") == 0 for p in L.ring_pieces(pieces, "core"))   # rings kept apart
 
 
 def test_pending_sources_are_never_contacted(tmp_path, monkeypatch):

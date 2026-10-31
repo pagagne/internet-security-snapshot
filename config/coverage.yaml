@@ -5,8 +5,10 @@
 # pieces: one slice of the ring each.
 #   tier:      core (feeds a pre-registered indicator I1-I8) or companion (exploratory X measures)
 #   collected: true only when a pull or a sweep actually collects it (author, 31 Oct 2026)
-#   measures:  the study measures it feeds. Slice size = 3 x core indicators + 1 x X measures
-#              (author's choice, 31 Oct 2026), so slices grow and shrink as measures change.
+#   measures:  the study measures it feeds. Two separate rings (author, 31 Oct 2026: core and
+#              exploratory never combined): in the core ring a slice's size is the number of core
+#              indicators (I1-I8) it feeds, in the exploratory ring the number of X measures, so
+#              slices grow and shrink as measures change. Data feeding both appears in both rings.
 #   First sort by Claude, 31 Oct 2026, from prereg Section 7 and config/exploratory.yaml; the
 #   author checks it. Change a line here and run `python -m snapshot.landing build`.
 #
@@ -30,8 +32,8 @@ pieces:
   - {name: "AI attack campaigns",              tier: companion, collected: true,  measures: [X3]}
   - {name: "AI tool supply",                   tier: companion, collected: true,  measures: [X25]}
   - {name: "Bot and AI traffic",               tier: companion, collected: true,  measures: [X4, X21]}
-  - {name: "National alerts",                  tier: companion, collected: true,  measures: [X19]}
-  - {name: "Breaches outside the US, HHS",     tier: companion, collected: true,  measures: [X17, X22]}
+  - {name: "National alerts",                  tier: companion, collected: false, measures: [X19]}   # no collector yet (checked 31 Oct 2026)
+  - {name: "Breaches outside the US, HHS",     tier: companion, collected: false, measures: [X17, X22]}   # no collector yet (checked 31 Oct 2026)
   - {name: "Honeypot activity (SANS)",         tier: companion, collected: true,  measures: [X14, X23]}
   - {name: "Patch adoption (deps.dev)",        tier: companion, collected: false, measures: [X16]}
   - {name: "Zero-day list",                    tier: companion, collected: false, measures: [X15]}
