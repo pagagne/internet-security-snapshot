@@ -63,7 +63,7 @@ def redact(text: str) -> str:
     # wider than the scan, for copied pages: international numbers with short groups, and
     # numbers after a Tel/Fax/電話 label
     text = re.sub(r"\+\d{1,3}(?:[ .-]?\d{1,4}){2,5}\b", "[phone number removed]", text)
-    text = re.sub(r"(?i)(tel|fax|phone|電話|ＴＥＬ|ＦＡＸ)\s*[:：.]?\s*[\d()\- ]{8,}\d", r"\1 [phone number removed]", text)
+    text = re.sub(r"(?i)(tel|fax|phone|電話|电话|传真|ＴＥＬ|ＦＡＸ|телефон|тел)\s*[:：.]?\s*[\d()\- ]{8,}\d", r"\1 [phone number removed]", text)
     return text
 
 

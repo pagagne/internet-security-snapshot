@@ -80,3 +80,4 @@ def test_every_watched_terms_page_is_in_the_register():
 def test_saved_copies_carry_no_contact_details():
     t = W.visible_text("<p>Write to pr@example.org or call +81 3 6271 7071.</p>")
     assert "@" not in t and "6271" not in t and "[email address removed]" in t
+    assert "0201" not in W.redact("电话：400-606-0201")
