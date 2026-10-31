@@ -1,3 +1,0 @@
-# Primary reports fingerprinted and archived
-
-Reports: 23; fetched: 22; archived copies: 21

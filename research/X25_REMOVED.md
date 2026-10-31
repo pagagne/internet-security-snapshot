@@ -1,1 +1,0 @@
-Removed 30 Oct 2026 (author's privacy decision, X25): these runs listed individual developers' GitHub usernames. Public X25 results now use codes; the full lists are private (author's Drive). Earlier copies remain in this branch's history.

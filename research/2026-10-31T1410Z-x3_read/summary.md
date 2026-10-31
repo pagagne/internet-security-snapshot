@@ -1,3 +1,0 @@
-# X3 reports read for model and protocol tags
-
-Addresses: 86; read: 78. Tags only; no article text kept. Tags come from the whole page, so a model or protocol named in a sidebar can appear: Claude checks each against the case before it enters the log.
