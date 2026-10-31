@@ -4,7 +4,7 @@ name: Research probe
 # research/, except the exploratory tasks (author's decision, 31 Oct 2026: every sweep in
 # addition to the core goes to the private repository pagagne/snapshot-manual): ai_lists,
 # ai_tools, cve_check, honeypot_capture, x3_sources, github_tools, repo_scout, hf_tools, x3_read
-# and feed_verify save to runs/research/ there, print nothing to this public log beyond counts,
+# feed_verify and gitee_probe save to runs/research/ there, print nothing to this public log beyond counts,
 # and read the private exploratory/ folder (tools/private.sh). After github_tools or hf_tools the
 # sweep's compact copy is added to exploratory/ai_tool_sweeps/ or hf_sweeps/ and the landscape
 # report is rebuilt there. Public sources; the only secrets are the Radar and ransomware.live keys, given
@@ -13,7 +13,7 @@ on:
   # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
   # repository, so it starts only on its timer or through GitHub's API (repository_dispatch),
   # e.g. from the Schedule workflow or Claude. See docs/WORKFLOWS.md.
-  # Payload fields: task (one of: fixdate_probe, source_scout, global_probe, terms_scout, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists, resource_profile, cve_check, ai_tools, prefill_coverage, x3_sources, github_tools, repo_scout, hf_tools, x3_read, feed_verify; default fixdate_probe),
+  # Payload fields: task (one of: fixdate_probe, source_scout, global_probe, terms_scout, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists, resource_profile, cve_check, ai_tools, prefill_coverage, x3_sources, github_tools, repo_scout, hf_tools, x3_read, feed_verify, gitee_probe; default fixdate_probe),
   # start and end (KEV date-added range, YYYY-MM-DD; defaults 2026-04-01 and 2026-09-30).
   repository_dispatch:
     types: [research]
@@ -37,7 +37,7 @@ jobs:
           MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
           TASK: ${{ (github.event.client_payload.task || 'fixdate_probe') }}
         run: |
-          if [[ "$TASK" =~ ^(ai_lists|ai_tools|cve_check|honeypot_capture|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify)$ ]]; then
+          if [[ "$TASK" =~ ^(ai_lists|ai_tools|cve_check|honeypot_capture|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify|gitee_probe)$ ]]; then
             [ -n "$MANUAL_REPO_TOKEN" ] || { echo "::error::MANUAL_REPO_TOKEN missing: exploratory results must go to the private repository"; exit 1; }
             tools/private.sh checkout /tmp/private
             echo "private=yes" >> "$GITHUB_OUTPUT"
@@ -62,11 +62,13 @@ jobs:
           # global_probe only: X21 tests (Radar by continent; ransomware.live counts, api-pro as permitted)
           CLOUDFLARE_TOKEN: ${{ (github.event.client_payload.task || 'fixdate_probe') == 'global_probe' && secrets.CLOUDFLARE_TOKEN || '' }}
           RANSOMWARE_LIVE_KEY: ${{ (github.event.client_payload.task || 'fixdate_probe') == 'global_probe' && secrets.RANSOMWARE_LIVE_KEY || '' }}
+          # gitee_probe only: the author's Gitee token (scope user_info), 31 Oct 2026
+          GITEE_TOKEN: ${{ github.event.client_payload.task == 'gitee_probe' && secrets.GITEE_TOKEN || '' }}
           TASK: ${{ (github.event.client_payload.task || 'fixdate_probe') }}
           START: ${{ github.event.client_payload.start || '2026-04-01' }}
           END: ${{ github.event.client_payload.end || '2026-09-30' }}
         run: |
-          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify)$ ]] || { echo "unknown task"; exit 2; }
+          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify|gitee_probe)$ ]] || { echo "unknown task"; exit 2; }
           [[ "$START" =~ ^[0-9-]{10}$ && "$END" =~ ^[0-9-]{10}$ ]] || { echo "bad dates"; exit 2; }
           if [ "${{ steps.priv.outputs.private }}" = "yes" ]; then
             # exploratory: nothing but the exit code and file counts in this public log
@@ -92,7 +94,7 @@ jobs:
           MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify)$ ]] || { echo "unknown task"; exit 2; }
+          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify|gitee_probe)$ ]] || { echo "unknown task"; exit 2; }
           dest="research/$(date -u +%Y-%m-%dT%H%MZ)-$TASK"
           if [ "${{ steps.priv.outputs.private }}" = "yes" ]; then
             mkdir -p "/tmp/private/runs/$dest"
