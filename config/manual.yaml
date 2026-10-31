@@ -14,14 +14,15 @@ parts:
     docs: [docs/EVALUATION_FLOW.md, docs/HAND_CHECK.md, docs/HAND_CHECK_APP.md, docs/CHANGE_POLICY.md,
            docs/CORE_FREEZE_DECISIONS.md, proposals/T1_OPTIONS.md, proposals/ROOT_CAUSE_MAP.md,
            exploratory/README.md, exploratory/SOURCES.md, exploratory/credit_groups.md,
-           exploratory/sweep-trial-2026.md, exploratory/ai_attack_catalogue.md,
-           exploratory/ai_tool_landscape.md]
-  - name: "Part III. Operations"
+           exploratory/sweep-trial-2026.md, exploratory/ai_attack_catalogue.md]
+  - name: "Part III. The AI tool explosion: attack and defence tools on GitHub and Hugging Face (X25)"
+    docs: [exploratory/ai_tool_landscape.md]
+  - name: "Part IV. Operations"
     docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
            docs/BACKUP.md, docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, docs/BUILD_PLAN.md]
-  - name: "Part IV. Sources, permissions and publication"
+  - name: "Part V. Sources, permissions and publication"
     docs: [docs/PERMISSIONS.md, docs/PUBLICATION_OPTIONS.md]
-  - name: "Part V. Schedule, reviews and the reviewer"
+  - name: "Part VI. Schedule, reviews and the reviewer"
     docs: [docs/ANNUAL_PLAN.md, "docs/decisions/*.md", docs/reviewer/INVITATION.md,
            docs/reviewer/SECOND_CODER.md, docs/reviewer/sample-worksheet/README.md,
            docs/reviewer/HANDSHAKE_POSTING.md, docs/reviewer/ccri-outreach.md,

@@ -26,8 +26,9 @@ Generated from the study's documents by `python -m snapshot.manual build` (confi
   - [Who is behind the unclear AI credits? (Q3 2026, researched 2026-10-22)](#doc-exploratory-credit-groups-md) (`exploratory/credit_groups.md`)
   - [Trial AI-attack sweep, July-October 2026 (run 26 Oct 2026)](#doc-exploratory-sweep-trial-2026-md) (`exploratory/sweep-trial-2026.md`)
   - [AI attack methods and resources (generated)](#doc-exploratory-ai-attack-catalogue-md) (`exploratory/ai_attack_catalogue.md`)
+- **Part III. The AI tool explosion: attack and defence tools on GitHub and Hugging Face (X25)**
   - [AI attack and defence tools on GitHub (X25, generated)](#doc-exploratory-ai-tool-landscape-md) (`exploratory/ai_tool_landscape.md`)
-- **Part III. Operations**
+- **Part IV. Operations**
   - [Operations: how the study runs without depending on one Claude chat](#doc-docs-operations-md) (`docs/OPERATIONS.md`)
   - [The study's workflows](#doc-docs-workflows-md) (`docs/WORKFLOWS.md`)
   - [Standard operating procedure: running workflows by hand](#doc-docs-sop-manual-runs-md) (`docs/SOP_MANUAL_RUNS.md`)
@@ -37,10 +38,10 @@ Generated from the study's documents by `python -m snapshot.manual build` (confi
   - [Sync review: keeping everything in step](#doc-docs-sync-review-md) (`docs/SYNC_REVIEW.md`)
   - [Handover: session 1 to the continuing session (24 Oct 2026)](#doc-docs-handover-md) (`docs/HANDOVER.md`)
   - [Build plan to the December dry runs](#doc-docs-build-plan-md) (`docs/BUILD_PLAN.md`)
-- **Part IV. Sources, permissions and publication**
+- **Part V. Sources, permissions and publication**
   - [Data permissions log](#doc-docs-permissions-md) (`docs/PERMISSIONS.md`)
   - [Where to publish the 2027 results (options, 28 Oct 2026)](#doc-docs-publication-options-md) (`docs/PUBLICATION_OPTIONS.md`)
-- **Part V. Schedule, reviews and the reviewer**
+- **Part VI. Schedule, reviews and the reviewer**
   - [Annual plan: every action item, by who does it](#doc-docs-annual-plan-md) (`docs/ANNUAL_PLAN.md`)
   - [Decision sheet: research review, Thu 12 Nov 2026, 10:00 ET](#doc-docs-decisions-2026-11-12-research-review-md) (`docs/decisions/2026-11-12-research-review.md`)
   - [Invitation: Independent Reviewer for the Internet Security Snapshot](#doc-docs-reviewer-invitation-md) (`docs/reviewer/INVITATION.md`)
@@ -2228,6 +2229,9 @@ Every organisation whose report is in the log, how its cases reached the study, 
 How cases reached the study: forwarded by the author 5; the trial search of 26 Oct 2026 16; Claude's research when the log was set up 11.
 
 
+# Part III. The AI tool explosion: attack and defence tools on GitHub and Hugging Face (X25)
+
+
 <a id="doc-exploratory-ai-tool-landscape-md"></a>
 
 ## AI attack and defence tools on GitHub (X25, generated)
@@ -2301,7 +2305,7 @@ Most-starred defence tools: baserow/baserow (6,245); malwoverview (4,135); thale
 Most-starred tools doing both: Some-Many-Books (25,462); Scanners-Box (9,158); infobyte/faraday (6,836); Trusted-AI/adversarial-robustness-toolbox (6,296); AiSOC (5,319); china-dictatorship (3,298); Armur-Ai/Pentest-Swarm-AI (3,093); artex-global (2,400).
 
 
-# Part III. Operations
+# Part IV. Operations
 
 
 <a id="doc-docs-operations-md"></a>
@@ -3373,7 +3377,7 @@ Author checkpoints: 16 Nov reference-date spot check, 23-24 Nov baseline-year ha
 Research window 23 Oct - 15 Nov (two plans: with and without data permissions): see `docs/RESEARCH_PLAN.md`; review 12 Nov.
 
 
-# Part IV. Sources, permissions and publication
+# Part V. Sources, permissions and publication
 
 
 <a id="doc-docs-permissions-md"></a>
@@ -3616,7 +3620,7 @@ Sources (28 Oct 2026): [WEIS 2026 call](https://weis2026.econinfosec.org/) ·
 [arXiv endorsement for independent authors](https://discuss.huggingface.co/t/looking-for-arxiv-cs-cr-endorsement-independent-researcher/180656)
 
 
-# Part V. Schedule, reviews and the reviewer
+# Part VI. Schedule, reviews and the reviewer
 
 
 <a id="doc-docs-annual-plan-md"></a>
@@ -4706,6 +4710,7 @@ Started 25 Oct 2026 at the author's request.
 | 2026-10-30 | Author | The number of charts should follow the number of protocols encountered, not be fixed now. | **Author's decision:** the X25 protocol list widened to 57 (web, remote access, Windows identity, network plumbing, mail, industrial and IoT, wireless, databases, AI agent protocols MCP and A2A); every protocol found gets a bar, 12 to a chart, so the number of protocol charts follows each sweep. Revisited with the 18-20 Nov refinement. |
 | 2026-10-30 | Author | Add weighted AI systems? | Taken as open-weight models (downloadable, run anywhere, outside the maker's safeguards) against closed ones. **Author's decision:** each AI the X25 sweep finds is marked open-weight, closed or run locally, decided by model, not lab (Google, OpenAI and Mistral make both); new chart comparing attack and defence and the open-weight share by quarter; linked to X12. Added now and the baseline rerun the same night. |
 | 2026-10-30 | Author | Beyond GitHub, use the top public repositories: Hugging Face, one from China, two from Russia. | **Author's decisions:** five sources were chosen (GitHub, Hugging Face, Gitee, GitFlic, GitVerse), then the two Russian ones dropped the same night: the Research task `repo_scout` and searches found GitVerse is run by SberTech (Sberbank group, under US blocking sanctions since 2022) and GitFlic belongs to the Astra Group (US sanctions, May 2024); GitFlic's search also needs an account. Not legal advice; avoided as a precaution. Claude checks Yandex's SourceCraft for sanctions and usability. Hugging Face: terms and content policy allow it, public API needs no account; sweep built (`hf_tools`) and baseline run 30 Oct. Gitee: search needs a logged-in key; Claude reads the full user agreement, then the author opens a free account and adds the key as a GitHub secret. Each companion keeps its own numbers; privacy rule as for GitHub. |
+| 2026-10-30 | Author | The tool sweep shows how fast AI use is exploding for both attack and defence; it earns its own chapter in The Snapshot. | **Author's decision:** X25 (GitHub, with the Hugging Face companion) is now its own part of the manual, Part III "The AI tool explosion"; later parts renumbered. Kept short: the sweep runs by hand three times in 2027. |
 
 
 <a id="doc-docs-cases-php2shell-md"></a>
