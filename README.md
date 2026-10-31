@@ -53,6 +53,21 @@ computer cannot judge, and seven pre-registered questions are reported: a provis
 on the 1st of January, April, July and October, and a final one a month later. Q4 2026 is a
 labelled pilot; Q1 2027 is the first scored quarter.
 
+## About the author
+
+<img src="https://github.com/pagagne.png?size=160" alt="Paul A. Gagne" width="110" align="left" style="margin-right:12px">
+
+**Paul A. Gagne** retired from the U.S. Navy after 20 years as a quartermaster (Petty Officer
+Second Class). From 2005 to 2009 he worked in Baghdad as an IT contractor supporting the U.S.
+Army Corps of Engineers and the U.S. Embassy, and he later retired from the SANS Institute, where
+he was a systems administrator on the operations team. He holds an associate degree in applied
+science (chemical technology) from the Community College of Rhode Island and has more than 30
+years in IT. He now runs the Internet Security Snapshot, a free, independent study of how quickly
+software flaws are fixed compared with how quickly attackers exploit them, and how AI is changing
+that race.
+
+<br clear="left">
+
 ## Key documents
 
 - **How it works (plain-language overview with diagrams):** [`docs/HOW_IT_WORKS.md`](docs/HOW_IT_WORKS.md)
@@ -147,6 +162,33 @@ estimation.
 | 1 Feb 2028 | Q4 2027 final: last quarter of the first year |
 | 1 Apr 2028 | 2027 closing re-run with full follow-up |
 <!-- schedule:end -->
+
+## Workflow schedule
+
+The study runs on GitHub workflows: automatic jobs that collect, check, back up and publish.
+
+<!-- workflows:begin -->
+<!-- Generated from .github/workflows/*.yml by python -m snapshot.workflows build; do not edit here. -->
+| Workflow | Timer | Also runs |
+|---|---|---|
+| Backup to Google Drive | the 3rd of each month at 10:17 UTC | Run button |
+| BigQuery check | no timer | started by the Schedule workflow or Claude |
+| Checks | no timer | after changes to main, on pull requests, Run button |
+| Diagrams | no timer | after changes to main, Run button |
+| Feed screen | the 5th of each month at 08:41 UTC | started by the Schedule workflow or Claude |
+| Honeypot capture | the 2nd of each month at 09:43 UTC | started by the Schedule workflow or Claude |
+| Landing snapshot | no timer | started by the Schedule workflow or Claude, Run button |
+| Manual publish (private) | no timer | after changes to main, started by the Schedule workflow or Claude, Run button |
+| Privacy scan | daily at 11:47 UTC; daily at 21:13 UTC | Run button |
+| Quarterly pull | 1st Jan/Apr/Jul/Oct at 06:00 UTC; 1st Feb/May/Aug/Nov at 06:00 UTC | started by the Schedule workflow or Claude |
+| Rebuild check | the 10th of each month at 07:17 UTC | Run button |
+| Research probe | no timer | started by the Schedule workflow or Claude |
+| Schedule | daily at 10:23 UTC; daily at 12:07 UTC; daily at 15:37 UTC | Run button |
+| Source status | daily at 11:23 UTC | started by the Schedule workflow or Claude |
+| Source watch | Wednesdays at 13:17 UTC | started by the Schedule workflow or Claude |
+
+Details for each workflow: [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md). Dates for scheduled runs without a timer (dry runs, sweeps, landing snapshots) are in the schedule above.
+<!-- workflows:end -->
 
 ## Principles
 

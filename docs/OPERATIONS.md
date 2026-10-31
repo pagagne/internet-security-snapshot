@@ -163,7 +163,9 @@ that day (author's request, 27 Oct).
    run download, run report or quality report; the quarterly pull moves it to the author's
    private Drive backup (`snapshot.private`, `docs/BACKUP.md`).
 2. Personal and third-party details (candidates, contacts, family, private emails) stay in the
-   Claude project or Drive; repository documents describe people by role.
+   Claude project or Drive; repository documents describe people by role. One exception, the
+   author's own choice (31 Oct 2026): his name, GitHub profile photo and approved short bio on
+   the README's "About the author".
 3. Embargoed or not-yet-public vulnerability information never enters the repository.
 4. Every sweep in addition to the core (the exploratory work: data, analysis and reports) lives
    in the private repository `pagagne/snapshot-manual` with the manual (author's decision,
