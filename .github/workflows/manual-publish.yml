@@ -5,12 +5,17 @@ name: Manual publish (private)
 # author's private repository pagagne/snapshot-manual, where it is read on GitHub (contents page
 # with dropdowns, one file per part). Needs the MANUAL_REPO_TOKEN secret: a fine-grained token
 # with Contents read and write on that one repository only. Nothing is written to this
-# repository.
+# repository. Since 31 Oct 2026 the private repository also holds the exploratory work
+# (exploratory/, runs/; tools/private.sh): the manual's Part III is built from there, and this
+# workflow replaces only README.md and docs/ in it. The sweep workflows start it through
+# repository_dispatch (manual-publish) after they save, so the manual follows the private data.
 on:
   push:
     branches: [main]
     paths: ["**.md", "config/manual.yaml", "src/snapshot/manual.py", "tools/manual_publish.py",
-            "docs/diagrams/**", "exploratory/**"]
+            "docs/diagrams/**", "src/snapshot/x25report.py", "src/snapshot/x3catalogue.py"]
+  repository_dispatch:
+    types: [manual-publish]
   workflow_dispatch:
     inputs:
       about:
@@ -47,18 +52,14 @@ jobs:
       - name: Build and copy to the private repository
         if: steps.tok.outputs.skip != 'yes'
         env:
-          TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
         run: |
           set -euo pipefail
-          python -m snapshot.manual build
-          git clone -q "https://x-access-token:${TOKEN}@github.com/pagagne/snapshot-manual.git" /tmp/manual
-          find /tmp/manual -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          python tools/manual_publish.py /tmp/manual
-          cd /tmp/manual
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet && { echo "No change."; exit 0; }
-          git commit -qm "Manual from internet-security-snapshot@${GITHUB_SHA::7}"
-          git branch -M main
-          git push -q origin main
+          tools/private.sh checkout /tmp/private
+          [ -f exploratory/ai_attack_campaigns.csv ] || { echo "::notice::Private repository not yet holding the exploratory work (Private move); manual not rebuilt."; exit 0; }
+          python -m snapshot.x3catalogue build > /dev/null   # generated reports, rebuilt in the private copy
+          python -m snapshot.x25report build > /dev/null
+          SNAPSHOT_REQUIRE_PRIVATE=1 python -m snapshot.manual build
+          rm -rf /tmp/private/docs /tmp/private/README.md   # the manual only; exploratory/ and runs/ stay
+          python tools/manual_publish.py /tmp/private
+          tools/private.sh save /tmp/private "Manual from internet-security-snapshot@${GITHUB_SHA::7}"

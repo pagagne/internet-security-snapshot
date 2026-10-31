@@ -7,6 +7,8 @@ import re
 
 import yaml
 
+from conftest import needs_private
+
 ROOT = Path(__file__).resolve().parents[1]
 LOCKED = yaml.safe_load((ROOT / "prereg/LOCKED.yaml").read_text())
 DEVIATIONS = (ROOT / "prereg/DEVIATIONS.md").read_text()
@@ -43,6 +45,7 @@ def test_exploratory_measures_never_feed_labels():
         assert m["feeds_labels"] is False, f"{m['id']} must not feed labels"
 
 
+@needs_private
 def test_ai_attack_campaign_log_is_well_formed():
     import csv
     rows = list(csv.DictReader((ROOT / "exploratory/ai_attack_campaigns.csv").open()))

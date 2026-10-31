@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import glob
+import os
 import re
 import sys
 from pathlib import Path
@@ -37,10 +38,20 @@ def load(root: Path) -> dict:
     return yaml.safe_load((root / CONFIG).read_text())
 
 
+PRIVATE = "exploratory/"   # kept in the private repository pagagne/snapshot-manual (author, 31 Oct 2026)
+PRIVATE_URL = "https://github.com/pagagne/snapshot-manual/blob/main/"
+
+
+def _source(d: str) -> str:
+    return f"*Source: [`{d}`]({PRIVATE_URL if d.startswith(PRIVATE) else REPO_URL}{d})*"
+
+
 def expand(root: Path, patterns: list[str]) -> list[str]:
     out = []
     for p in patterns:
         hits = sorted(Path(x).relative_to(root).as_posix() for x in glob.glob(str(root / p)))
+        if not hits and p.startswith(PRIVATE) and not os.environ.get("SNAPSHOT_REQUIRE_PRIVATE"):
+            continue   # private exploratory work: absent from the public checkout (author, 31 Oct 2026)
         if not hits:
             raise FileNotFoundError(f"{CONFIG}: nothing matches {p}")
         out += [h for h in hits if h not in out]
@@ -118,7 +129,7 @@ def build_text(root: Path | None = None) -> str:
             title = _title(text, d)
             body = re.sub(r"^# .+\n?", "", text, count=1, flags=re.M) if text.startswith("# ") else text
             L += ["", f'<a id="{_anchor(d)}"></a>', "", f"## {title}", "",
-                  f"*Source: [`{d}`]({REPO_URL}{d})*", "",
+                  _source(d), "",
                   _shift_headings(_fix_links(body, d, out_dir, included)).strip(), ""]
     return "\n".join(L).rstrip() + "\n"
 
@@ -137,7 +148,7 @@ def _section(root: Path, d: str, out_dir: str, included: set[str], where) -> str
     title = _title(text, d)
     body = re.sub(r"^# .+\n?", "", text, count=1, flags=re.M) if text.startswith("# ") else text
     return "\n".join(["", f'<a id="{_anchor(d)}"></a>', "", f"## {title}", "",
-                      f"*Source: [`{d}`]({REPO_URL}{d})*", "",
+                      _source(d), "",
                       _shift_headings(_fix_links(body, d, out_dir, included, where)).strip(), ""])
 
 

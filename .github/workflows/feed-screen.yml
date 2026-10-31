@@ -2,9 +2,13 @@ name: Feed screen
 
 # Monthly AI-attack feed screen (author's decision, 29 Oct 2026; X3, exploratory). Reads the
 # research, government and news feeds in config/feeds.yaml, keeps items from the last 35 days
-# that mention both an AI term and an attack term, saves them on the run-reports branch and
-# opens one issue for Claude to sort. The author keeps or excludes each real case in the
-# quarterly hand-check window. Nothing is added to the X3 log automatically.
+# that mention both an AI term and an attack term, and opens one issue for Claude to sort. The
+# author keeps or excludes each real case in the quarterly hand-check window. Nothing is added
+# to the X3 log automatically. Since 31 Oct 2026 (author's decision) the results are private:
+# the candidates, summary and the month's spreadsheet (src/snapshot/feedsheet.py: clickable
+# titles, abstract and findings as pop-up notes, filled in after Claude sorts) go to the private
+# repository pagagne/snapshot-manual (runs/research/ and exploratory/feed-screen-YYYY-MM.*), and
+# this public log and the issue carry counts only.
 on:
   schedule:
     - cron: "41 8 5 * *"   # the 5th of each month, 08:41 UTC, clear of the pull days
@@ -15,7 +19,7 @@ on:
     types: [feed-screen]
 
 permissions:
-  contents: write   # results on the run-reports branch only
+  contents: write   # only to start the manual rebuild (repository_dispatch); results are private
   issues: write
 
 concurrency:
@@ -32,25 +36,42 @@ jobs:
         with:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
       - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
-      - name: Screen the feeds
-        run: python -m snapshot.feedscreen --out research-out | tee -a "$GITHUB_STEP_SUMMARY"
-      - name: Publish and open the issue
+      - run: pip install --require-hashes --no-deps -r requirements-sheet.lock
+      - name: Private repository
+        env:
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+        run: tools/private.sh checkout /tmp/private
+      - name: Screen the feeds (counts only in this public log)
+        run: |
+          set +e; python -m snapshot.feedscreen --out research-out > screen.log 2>&1; rc=$?; set -e
+          n=$( [ -f research-out/candidates.csv ] && tail -n +2 research-out/candidates.csv | wc -l || echo 0 )
+          echo "exit $rc; $n candidates (saved privately)" | tee -a "$GITHUB_STEP_SUMMARY"; exit $rc
+      - name: Spreadsheet, save privately and open the issue
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
         run: |
-          dest="research/$(date -u +%Y-%m-%dT%H%MZ)-feed_screen"
-          git fetch origin run-reports:run-reports
-          git worktree add -q /tmp/rr run-reports
-          mkdir -p "/tmp/rr/$dest" && cp -r research-out/. "/tmp/rr/$dest/" 2>/dev/null || true
-          ( cd /tmp/rr
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A && git commit -qm "Feed screen $GITHUB_RUN_ID"
-            for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && break; sleep $((i * 4)); git pull -q --rebase origin run-reports; done )
+          set -euo pipefail
+          stamp=$(date -u +%Y-%m-%dT%H%MZ); month=$(date -u +%Y-%m)
+          dest="runs/research/$stamp-feed_screen"
+          mkdir -p "/tmp/private/$dest"
+          cp -r research-out/. "/tmp/private/$dest/" 2>/dev/null || true
+          cp screen.log "/tmp/private/$dest/" 2>/dev/null || true
+          n=0
+          if [ -f research-out/candidates.csv ]; then
+            n=$(tail -n +2 research-out/candidates.csv | wc -l)
+            # a re-run in the same month gets its own name, so a sorted month is never overwritten
+            base="exploratory/feed-screen-$month"; [ -e "$base-candidates.csv" ] && base="exploratory/feed-screen-$stamp"
+            cp research-out/candidates.csv "$base-candidates.csv"
+            python -m snapshot.feedsheet --candidates "$base-candidates.csv" --out "$base.xlsx" \
+              --note "Source: AI-attack feed screen run of $stamp ($n candidates). Not yet sorted: Claude adds abstracts, findings and decisions in $base-decisions.csv and rebuilds this file."
+          fi
+          tools/private.sh save /tmp/private "Feed screen $stamp ($n candidates)"
+          gh api "repos/$GITHUB_REPOSITORY/dispatches" -f event_type=manual-publish >/dev/null || true
           [ -f research-out/summary.md ] || exit 0
           gh label create feed-screen --color c5def5 --description "Monthly AI-attack feed screen" --force
           gh label create owner:claude --color 0e8a16 --description "For a Claude session" --force
-          body=$(printf 'Monthly AI-attack feed screen (X3). Sort these candidates: log real AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: feed_screen, ai_evidence: unrated) or record exclusions in the sweep log; the author confirms in the hand-check window. Full files: run-reports `%s`.\n\n%s' "$dest" "$(head -c 60000 research-out/summary.md)")
+          body=$(printf 'Monthly AI-attack feed screen (X3): %s candidates. The results are private (author, 31 Oct 2026): pagagne/snapshot-manual, `%s/` and `exploratory/feed-screen-%s.*`. Sort them there: log real AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: feed_screen, ai_evidence: unrated), write the decisions file with an abstract and key findings for each item, and rebuild the spreadsheet (`python -m snapshot.feedsheet`). The author confirms in the hand-check window. Nothing about the items is written here.' "$n" "$dest" "$month")
           gh api "repos/$GITHUB_REPOSITORY/issues" -f title="[Claude] Sort the monthly AI-attack feed screen ($(date -u +%B\ %Y))" \
             -f body="$body" -f "labels[]=feed-screen" -f "labels[]=owner:claude" >/dev/null

@@ -29,12 +29,12 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
-| Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues, run-reports | none | 29 Oct |
+| Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues (counts only), the private repository | `MANUAL_REPO_TOKEN` | 29 Oct; private since 31 Oct |
 | Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
-| Manual publish | `manual-publish.yml` | Every change to main that touches a document; Run button | the private repository pagagne/snapshot-manual | `MANUAL_REPO_TOKEN` | 30 Oct |
-| Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
-| Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
-| Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
+| Manual publish | `manual-publish.yml` | Every change to main that touches a document; after each private sweep; Run button | the private repository pagagne/snapshot-manual (manual only) | `MANUAL_REPO_TOKEN` | 30 Oct |
+| Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
+| Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
+| Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
 
@@ -168,9 +168,14 @@ button: it reads outside websites.
 **What it does:** reads about sixty security feeds listed in `config/feeds.yaml`: vendor
 research, governments and CERTs, AI labs and AI-incident databases, news sites for leads, and
 sources in seven other languages. It keeps items from the last five weeks that mention both an
-AI term and an attack term, saves them on the run-reports branch with a report on which feeds
-answered, and opens one GitHub issue for Claude to sort. Real cases go into the AI-attack log
-(X3) for the author's confirmation; nothing is logged automatically. Exploratory only.
+AI term and an attack term, and opens one GitHub issue for Claude to sort. Real cases go into
+the AI-attack log (X3) for the author's confirmation; nothing is logged automatically.
+Exploratory only. Since 31 Oct 2026 (author's decision) everything it finds is private: the
+candidates, the report on which feeds answered and the month's spreadsheet
+(`exploratory/feed-screen-YYYY-MM.xlsx`: each title a link to the article, the abstract and key
+findings as a pop-up note, a "Read one" tab) go to the private repository; the public log and
+issue give counts only. After Claude sorts the month, the spreadsheet is rebuilt with the
+decisions (`python -m snapshot.feedsheet`).
 
 ## 12. Source watch: early warning that a data source changed
 
@@ -192,7 +197,23 @@ gone: mark broken, never substitute). It reads no data into the study.
 documents and copies it, with its pictures, to the author's private repository
 `pagagne/snapshot-manual`, where it reads on GitHub: a contents page with one dropdown per part,
 one file per part, split further as the manual grows. The manual is part of the report and is
-not public before it; nothing is written to this repository.
+not public before it; nothing is written to this repository. Part III is built from the
+exploratory work in the private repository (below), and the AI-attack catalogue and tool
+landscape are regenerated there first.
+
+**The private repository** (author's decision, 31 Oct 2026: "any sweeps that are in addition
+to the core sweeps should go into the private manual repo … data, analysis and reports").
+`pagagne/snapshot-manual` holds the manual (`docs/`, written only by Manual publish), the
+exploratory work (`exploratory/`: the AI-attack log, catalogue and sources, the feed screens and
+their spreadsheets, the GitHub and Hugging Face tool sweeps and their charts, the model-release
+list, credit groups, the sweep trial) and the raw results of the exploratory runs (`runs/`).
+The Feed screen, Honeypot capture and the exploratory Research tasks (ai_lists, ai_tools,
+cve_check, honeypot_capture, x3_sources, github_tools, repo_scout, hf_tools, x3_read,
+feed_verify) write there through `tools/private.sh` and print only counts in their public logs.
+The core pull, its method research, the source watch and the working documents stay public.
+The exploratory files were moved on 31 Oct 2026 by the one-off Private move workflow; earlier
+versions remain in this repository's history, and erasing that history is the author's
+decision. Tests that read the private data skip in a public checkout (`tests/conftest.py`).
 
 ## How they depend on each other
 

@@ -4,7 +4,8 @@ name: Honeypot capture
 # (exploratory X14, context only, src/snapshot/collect/isc_honeypot.py). The two files (about
 # 1 GB) are summarised on the runner and discarded; each capture saves about 40 KB of counts,
 # never a URL or IP address. Monthly, to keep the load on ISC low (author's decision, 25 Oct). Results go to the
-# run-reports branch under data/isc-honeypot/. Credit: SANS Technology Institute, Internet
+# private repository pagagne/snapshot-manual under runs/data/isc-honeypot/ (author's decision,
+# 31 Oct 2026: exploratory sweeps are private; this public log carries counts only). Credit: SANS Technology Institute, Internet
 # Storm Center, https://isc.sans.edu (attribution required, no reselling).
 on:
   schedule:
@@ -16,7 +17,7 @@ on:
     types: [honeypot]
 
 permissions:
-  contents: write   # run-reports branch only
+  contents: write   # run log on the run-reports branch (status only)
 
 jobs:
   capture:
@@ -28,20 +29,19 @@ jobs:
         with:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
       - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
-      - name: Capture (aggregates only)
-        run: python -m snapshot.collect.isc_honeypot --out honeypot-out | tee summary.md
-      - name: Save to run-reports
+      - name: Capture (aggregates only; nothing printed here)
+        run: |
+          set +e; python -m snapshot.collect.isc_honeypot --out honeypot-out > capture.log 2>&1; rc=$?; set -e
+          echo "Honeypot capture: exit $rc; $(ls honeypot-out 2>/dev/null | wc -l) files saved to the private repository." | tee summary.md; exit $rc
+      - name: Save to the private repository
+        env:
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
         run: |
           day=$(date -u +%Y-%m-%d)
-          git fetch -q origin run-reports
-          git worktree add -q --detach /tmp/hp FETCH_HEAD
-          mkdir -p "/tmp/hp/data/isc-honeypot/$day"
-          cp honeypot-out/* "/tmp/hp/data/isc-honeypot/$day/"
-          cd /tmp/hp
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A && git commit -qm "Honeypot capture $day"
-          for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1
+          tools/private.sh checkout /tmp/private
+          mkdir -p "/tmp/private/runs/data/isc-honeypot/$day"
+          cp honeypot-out/* capture.log "/tmp/private/runs/data/isc-honeypot/$day/"
+          tools/private.sh save /tmp/private "Honeypot capture $day"
       - name: Record the run (run-reports branch)
         if: always()
         run: tools/run_log.sh "Honeypot capture" "${{ job.status }}" summary.md

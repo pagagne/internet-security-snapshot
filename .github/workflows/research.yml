@@ -1,7 +1,13 @@
 name: Research probe
 
 # Manual research runs (docs/RESEARCH_PLAN.md). Results go to the run-reports branch under
-# research/. Public sources; the only secrets are the Radar and ransomware.live keys, given
+# research/, except the exploratory tasks (author's decision, 31 Oct 2026: every sweep in
+# addition to the core goes to the private repository pagagne/snapshot-manual): ai_lists,
+# ai_tools, cve_check, honeypot_capture, x3_sources, github_tools, repo_scout, hf_tools, x3_read
+# and feed_verify save to runs/research/ there, print nothing to this public log beyond counts,
+# and read the private exploratory/ folder (tools/private.sh). After github_tools or hf_tools the
+# sweep's compact copy is added to exploratory/ai_tool_sweeps/ or hf_sweeps/ and the landscape
+# report is rebuilt there. Public sources; the only secrets are the Radar and ransomware.live keys, given
 # to global_probe alone for its X21 tests.
 on:
   # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
@@ -25,6 +31,17 @@ jobs:
         with:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
       - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Private repository (exploratory tasks)
+        id: priv
+        env:
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+          TASK: ${{ (github.event.client_payload.task || 'fixdate_probe') }}
+        run: |
+          if [[ "$TASK" =~ ^(ai_lists|ai_tools|cve_check|honeypot_capture|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify)$ ]]; then
+            [ -n "$MANUAL_REPO_TOKEN" ] || { echo "::error::MANUAL_REPO_TOKEN missing: exploratory results must go to the private repository"; exit 1; }
+            tools/private.sh checkout /tmp/private
+            echo "private=yes" >> "$GITHUB_OUTPUT"
+          fi
       - name: Private register from Drive (X25 sweeps only)
         # X25 privacy (author, 30 Oct 2026): codes for individuals' repositories come from a private
         # register kept in the author's Drive (x25-private/), never in the repository.
@@ -51,6 +68,11 @@ jobs:
         run: |
           [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify)$ ]] || { echo "unknown task"; exit 2; }
           [[ "$START" =~ ^[0-9-]{10}$ && "$END" =~ ^[0-9-]{10}$ ]] || { echo "bad dates"; exit 2; }
+          if [ "${{ steps.priv.outputs.private }}" = "yes" ]; then
+            # exploratory: nothing but the exit code and file counts in this public log
+            set +e; python -m "snapshot.research.$TASK" --start "$START" --end "$END" --out research-out > research-out.log 2>&1; rc=$?; set -e
+            echo "exit $rc; $(find research-out -type f 2>/dev/null | wc -l) result files (saved privately)"; exit $rc
+          fi
           python -m "snapshot.research.$TASK" --start "$START" --end "$END" --out research-out 2>&1 | tee research-out.log
       - name: Private lists to Drive (X25 sweeps only)
         if: contains(fromJSON('["github_tools", "hf_tools"]'), github.event.client_payload.task)
@@ -67,9 +89,27 @@ jobs:
         if: always()
         env:
           TASK: ${{ (github.event.client_payload.task || 'fixdate_probe') }}
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools|x3_read|feed_verify)$ ]] || { echo "unknown task"; exit 2; }
           dest="research/$(date -u +%Y-%m-%dT%H%MZ)-$TASK"
+          if [ "${{ steps.priv.outputs.private }}" = "yes" ]; then
+            mkdir -p "/tmp/private/runs/$dest"
+            cp -r research-out/. "/tmp/private/runs/$dest/" 2>/dev/null || true
+            cp research-out.log "/tmp/private/runs/$dest/" 2>/dev/null || true
+            day=$(date -u +%Y-%m-%d)
+            if [ "$TASK" = github_tools ] && [ -f research-out/compact.csv ]; then
+              mkdir -p exploratory/ai_tool_sweeps && cp research-out/compact.csv "exploratory/ai_tool_sweeps/$day.csv"
+            fi
+            if [ "$TASK" = hf_tools ] && [ -f research-out/compact.csv ]; then
+              mkdir -p exploratory/hf_sweeps && cp research-out/compact.csv "exploratory/hf_sweeps/$day.csv"
+            fi
+            if [[ "$TASK" =~ ^(github_tools|hf_tools)$ ]]; then python -m snapshot.x25report build > /dev/null; fi
+            tools/private.sh save /tmp/private "Research $TASK $GITHUB_RUN_ID"
+            gh api "repos/$GITHUB_REPOSITORY/dispatches" -f event_type=manual-publish >/dev/null || true
+            exit 0
+          fi
           git fetch origin run-reports:run-reports
           git worktree add -q /tmp/rr run-reports
           mkdir -p "/tmp/rr/$dest"

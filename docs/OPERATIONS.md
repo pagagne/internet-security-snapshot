@@ -165,6 +165,9 @@ that day (author's request, 27 Oct).
 2. Personal and third-party details (candidates, contacts, family, private emails) stay in the
    Claude project or Drive; repository documents describe people by role.
 3. Embargoed or not-yet-public vulnerability information never enters the repository.
+4. Every sweep in addition to the core (the exploratory work: data, analysis and reports) lives
+   in the private repository `pagagne/snapshot-manual` with the manual (author's decision,
+   31 Oct 2026); see `docs/WORKFLOWS.md`, section 13. Public logs and issues carry counts only.
 
 Periodic checks (27 Oct 2026): the privacy scan (`snapshot.privacy`) runs on every push
 (Checks), twice a day on `main` and `run-reports` (its own Privacy scan workflow since 29 Oct, with a Run

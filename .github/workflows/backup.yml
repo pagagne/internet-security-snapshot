@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       about:
-        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history) and The Snapshot manual (Markdown) to your Google Drive folder Internet-Security-Snapshot-2027, plus a small test file proving the connection works. Contacts only your own Drive."
+        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history), of your private repository snapshot-manual, and The Snapshot manual (Markdown) to your Google Drive folder Internet-Security-Snapshot-2027, plus a small test file proving the connection works. Contacts only your own Drive."
         type: boolean
         default: true
 
@@ -57,6 +57,20 @@ jobs:
           git bundle create "$name" --all
           rclone copy "$name" gdrive:repository/
           echo "Repository copy $name: $(du -h "$name" | cut -f1)"
+      - name: Private repository copy (manual and exploratory work)
+        # Author's decision 31 Oct 2026: every sweep in addition to the core lives in the private
+        # repository pagagne/snapshot-manual; a full copy of it (all history) goes to private-repository/.
+        if: env.HAVE_CONF == 'true'
+        env:
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          [ -n "$MANUAL_REPO_TOKEN" ] || { echo "::warning::MANUAL_REPO_TOKEN missing: private repository not copied"; exit 0; }
+          tools/private.sh checkout /tmp/private
+          name="snapshot-manual-$(date -u +%Y-%m-%d).bundle"
+          git -C /tmp/private bundle create "$PWD/$name" --all
+          rclone copy "$name" gdrive:private-repository/
+          echo "Private repository copy: $(du -h "$name" | cut -f1)"
       - name: Manual copy (The Snapshot, Markdown)
         # Author's decision 31 Oct 2026: the manual is kept as Markdown only, no PDFs. A copy of
         # the built manual (single file, parts and contents page) goes to manual/ in Drive,
@@ -65,7 +79,7 @@ jobs:
         run: |
           set -euo pipefail
           pip install -q --require-hashes -r requirements.lock && pip install -q --no-deps -e .
-          python -m snapshot.manual build >/dev/null   # outputs are never committed (author, 30 Oct 2026)
+          SNAPSHOT_REQUIRE_PRIVATE=1 python -m snapshot.manual build >/dev/null   # never committed (author, 30 Oct 2026); Part III from the private checkout
           rclone copyto docs/manual/THE_SNAPSHOT.md gdrive:manual/THE_SNAPSHOT.md
           rclone copyto docs/manual/README.md gdrive:manual/README.md
           rclone sync docs/manual/parts gdrive:manual/parts

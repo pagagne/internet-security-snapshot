@@ -5,6 +5,8 @@ import yaml
 
 from snapshot.research import github_tools as G
 
+from conftest import needs_private
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -45,6 +47,7 @@ def test_sweep_merges_queries_and_reads_safeguards():
     assert by["a/one"]["role"] == "attack" and by["a/one"]["side"] == "attack"
 
 
+@needs_private
 def test_landscape_page_is_current():
     from snapshot import x25report
     assert (ROOT / x25report.OUT).read_text() == x25report.build_text(ROOT)
@@ -78,6 +81,7 @@ def test_individuals_get_stable_codes_and_no_details():
     assert "alice" not in " ".join(str(v) for v in pub.values())
 
 
+@needs_private
 def test_public_x25_files_name_no_individual():
     import csv, re
     for f in list((ROOT / "exploratory/ai_tool_sweeps").glob("*.csv")) + [ROOT / "exploratory/ai_attack_tools.csv"]:

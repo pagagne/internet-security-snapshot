@@ -1,5 +1,11 @@
 # Exploratory layer: AI-operated attacks
 
+**Private since 31 Oct 2026** (author's decision): this folder lives in the private repository
+`pagagne/snapshot-manual`, with the manual, and every sweep in addition to the core writes here
+(data, analysis and reports). The monthly feed screens are `feed-screen-YYYY-MM-candidates.csv`
+(from the workflow), `-decisions.csv` (Claude's sorting, abstracts and key findings) and `.xlsx`
+(the spreadsheet: `python -m snapshot.feedsheet`). Raw run results are in `runs/` beside this folder.
+
 The core study sees attacks only through published flaws (CVEs), the CISA exploited list,
 ransomware leak sites and SEC filings. Attacks run by AI agents against websites often use
 bugs that never get a CVE, so the core cannot see them. This folder tracks them as
