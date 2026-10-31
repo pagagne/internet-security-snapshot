@@ -44,7 +44,20 @@ def visible_text(raw: str) -> str:
     t = re.sub(r"(?i)<(br|/p|/div|/li|/h[1-6]|/tr)\b[^>]*>", "\n", t)
     t = html.unescape(re.sub(r"<[^>]+>", " ", t))
     lines = (re.sub(r"\s+", " ", ln).strip() for ln in t.splitlines())
-    return "\n".join(ln for ln in lines if ln)
+    return redact("\n".join(ln for ln in lines if ln))
+
+
+def redact(text: str) -> str:
+    """Contact details are never kept in the public copies (privacy issue #32, 31 Oct 2026):
+    email addresses and phone numbers become placeholders, even an organisation's own."""
+    from .privacy import PATTERNS
+    for kind in ("email address", "phone number"):
+        text = re.sub(PATTERNS[kind], f"[{kind} removed]", text)
+    # wider than the scan, for copied pages: international numbers with short groups, and
+    # numbers after a Tel/Fax/電話 label
+    text = re.sub(r"\+\d{1,3}(?:[ .-]?\d{1,4}){2,5}\b", "[phone number removed]", text)
+    text = re.sub(r"(?i)(tel|fax|phone|電話|ＴＥＬ|ＦＡＸ)\s*[:：.]?\s*[\d()\- ]{8,}\d", r"\1 [phone number removed]", text)
+    return text
 
 
 def shape(body: bytes, ctype: str, url: str) -> str:

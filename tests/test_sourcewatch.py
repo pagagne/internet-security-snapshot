@@ -75,3 +75,8 @@ def test_every_watched_terms_page_is_in_the_register():
     for s in yaml.safe_load((ROOT / W.CONFIG).read_text())["sources"]:
         if s["kind"] == "terms":
             assert s["url"] in reg, s["name"]
+
+
+def test_saved_copies_carry_no_contact_details():
+    t = W.visible_text("<p>Write to pr@example.org or call +81 3 6271 7071.</p>")
+    assert "@" not in t and "6271" not in t and "[email address removed]" in t
