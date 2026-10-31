@@ -4,6 +4,8 @@ First monthly run of the AI-attack feed screen (29 Oct 2026; 51 of 62 feeds answ
 
 **Result:** 6 new log rows from the feed screen (Storm-0940, VAPOR PANDA, Wiz LLMjacking, Unit 42 CL-UNK-1211, Talos UAT-11985) plus 4 found while following its leads (CrowdStrike's four Claude Code harness actors); second sources added to 5 existing rows; 5 items for the author's judgement; the rest excluded with reasons below.
 
+**Spreadsheet:** `exploratory/feed-screen-2026-10.xlsx` holds the same 65 items with clickable article links, the report in the attack log, and Claude's own short abstract and key findings for each (shown as a pop-up note when the pointer rests on a title, and on the "Read one" tab). Each row says whether the summary comes from reading the report or only from the title and feed entry.
+
 | # | Date | Feed | Title | Decision | Reason |
 |---|---|---|---|---|---|
 | 0 | 2026-10-30 | SecurityLab (ru) | Binance взломали. С крупнейшей криптобиржи вывели почти $6 млрд за час | excluded | no AI use by the attacker in the report (crypto exchange and wallet thefts, Linux kernel flaw, routing abuse, product statistics, VMmanager attack, BEC, ASOS breach); matched only on general AI words |
