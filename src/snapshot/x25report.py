@@ -50,8 +50,29 @@ def _type_group(t: str) -> str:
     return "offensive" if t in OFFENSIVE else "dual_use" if t in DUAL else "defensive"
 
 
+COPY_MIN = 5   # author, 31 Oct 2026: a name uploaded 5+ times in a month by different makers is one tool plus copies
+
+
 def load(path: Path) -> list[dict]:
     return list(csv.DictReader(path.open()))
+
+
+def mark_copies(rows: list[dict]) -> dict[str, int]:
+    """Count a tool once when many makers upload projects with the same name in the same month
+    (e.g. after a tool is in the news): the earliest stays, the rest get copy=yes. Returns the
+    number of copies per name."""
+    groups: dict[tuple[str, str], list[dict]] = collections.defaultdict(list)
+    for r in rows:
+        r["copy"] = ""
+        groups[(r["name"].split("/")[-1].lower(), r["created"][:7])].append(r)
+    copies: dict[str, int] = collections.Counter()
+    for (name, _), rs in groups.items():
+        makers = {r.get("ref") or r["name"].split("/")[0] for r in rs}
+        if len(rs) >= COPY_MIN and len(makers) >= COPY_MIN:
+            for r in sorted(rs, key=lambda r: (r["created"], r["name"]))[1:]:
+                r["copy"] = "yes"
+                copies[name] += 1
+    return dict(copies)
 
 
 def months(rows, since="2025-01"):
@@ -362,7 +383,9 @@ def build_text(root: Path | None = None) -> str:
          "of the pilot; then mid-2027 (7 Jul) and the end of 2027 (8 Dec).", ""]
     for f in reversed(files):
         date = f.stem
-        rows = load(f)
+        all_rows = load(f)
+        copies = mark_copies(all_rows)
+        rows = [r for r in all_rows if r["copy"] != "yes"]
         s = stats(rows)
         by = s["by"]
         named = s["n"] - s["ai_use"]["none"]
@@ -370,7 +393,10 @@ def build_text(root: Path | None = None) -> str:
             by[k], key=lambda r: -int(r["stars"]))[:8])
         relabelled = bool(rows and rows[0].get("types_from"))
         L += [f"## Sweep of {date}", "",
-              f"{s['n']:,} projects. **How they use AI:** "
+              f"{s['n']:,} projects"
+              + (f" (plus {sum(copies.values()):,} copies of tools uploaded many times in the same month, counted once: "
+                 + ", ".join(f"{n} {c}" for n, c in sorted(copies.items(), key=lambda x: -x[1])) + ")" if copies else "")
+              + ". **How they use AI:** "
               + ", ".join(f"{AI_USE_NAMES[u].lower()} {s['ai_use'][u]:,} ({100 * s['ai_use'][u] / max(s['n'], 1):.0f}%)" for u in AI_USE)
               + f". Of the {named:,} that name a model, {100 * s['ai_use']['closed'] / max(named, 1):.0f}% rely only on "
               f"hosted closed models, {100 * s['ai_use']['open_local'] / max(named, 1):.0f}% only on open-weight or local "
@@ -439,7 +465,9 @@ def main(argv=None) -> int:
         for old in (root / FIGS).glob("*.png") if (root / FIGS).exists() else []:
             old.unlink()            # chart names follow the current layout; old files go
         for f in sorted((root / SWEEPS).glob("*.csv")):
-            charts(f.stem, stats(load(f)), root)
+            rows = load(f)
+            mark_copies(rows)
+            charts(f.stem, stats([r for r in rows if r["copy"] != "yes"]), root)
         for f in sorted((root / HF_SWEEPS).glob("*.csv")):
             hf_charts(f.stem, hf_load(f), root)
         (root / OUT).write_text(text)
