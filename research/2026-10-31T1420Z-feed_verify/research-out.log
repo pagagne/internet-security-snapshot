@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/feed_verify.py", line 132, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/research/feed_verify.py", line 122, in main
+    L += [f"- {r['name']}: feed {r['feed']} ({r['items']} items); site names org {r['site_names_org']}; "
+                                                                                  ~^^^^^^^^^^^^^^^^^^
+KeyError: 'site_names_org'
