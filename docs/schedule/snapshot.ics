@@ -1255,16 +1255,16 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
  t. After each sweep\, copy research-out/compact.csv to https://github.com/
  pagagne/internet-security-snapshot/tree/main/exploratory/ai_tool_sweeps<da
  te>.csv and run `python -m snapshot.x25report build`\, which adds that swe
- ep's catalogue and three charts to https://github.com/pagagne/internet-sec
- urity-snapshot/blob/main/exploratory/ai_tool_landscape.md and so to The Sn
- apshot manual. Start the Research workflow with task github_tools (https:/
- /github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.m
- d)\, sort the results (drop tools that test AI models themselves\, copies 
- and unrelated hits)\, compare with the previous sweep (new tools\, growth 
- in stars and forks) and propose additions to https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/exploratory/ai_attack_tools.csv. Never 
- on a pull day.\n\nSource: https://github.com/pagagne/internet-security-sna
- pshot/blob/main/docs/schedule/schedule.yaml
+ ep's catalogue and five charts to https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/exploratory/ai_tool_landscape.md and so to The Sna
+ pshot manual. Start the Research workflow with task github_tools (https://
+ github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md
+ )\, sort the results (drop tools that test AI models themselves\, copies a
+ nd unrelated hits)\, compare with the previous sweep (new tools\, growth i
+ n stars and forks) and propose additions to https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/exploratory/ai_attack_tools.csv. Never o
+ n a pull day.\n\nSource: https://github.com/pagagne/internet-security-snap
+ shot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2464,16 +2464,16 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
  t. After each sweep\, copy research-out/compact.csv to https://github.com/
  pagagne/internet-security-snapshot/tree/main/exploratory/ai_tool_sweeps<da
  te>.csv and run `python -m snapshot.x25report build`\, which adds that swe
- ep's catalogue and three charts to https://github.com/pagagne/internet-sec
- urity-snapshot/blob/main/exploratory/ai_tool_landscape.md and so to The Sn
- apshot manual. Start the Research workflow with task github_tools (https:/
- /github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.m
- d)\, sort the results (drop tools that test AI models themselves\, copies 
- and unrelated hits)\, compare with the previous sweep (new tools\, growth 
- in stars and forks) and propose additions to https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/exploratory/ai_attack_tools.csv. Never 
- on a pull day.\n\nSource: https://github.com/pagagne/internet-security-sna
- pshot/blob/main/docs/schedule/schedule.yaml
+ ep's catalogue and five charts to https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/exploratory/ai_tool_landscape.md and so to The Sna
+ pshot manual. Start the Research workflow with task github_tools (https://
+ github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md
+ )\, sort the results (drop tools that test AI models themselves\, copies a
+ nd unrelated hits)\, compare with the previous sweep (new tools\, growth i
+ n stars and forks) and propose additions to https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/exploratory/ai_attack_tools.csv. Never o
+ n a pull day.\n\nSource: https://github.com/pagagne/internet-security-snap
+ shot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3185,16 +3185,16 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
  t. After each sweep\, copy research-out/compact.csv to https://github.com/
  pagagne/internet-security-snapshot/tree/main/exploratory/ai_tool_sweeps<da
  te>.csv and run `python -m snapshot.x25report build`\, which adds that swe
- ep's catalogue and three charts to https://github.com/pagagne/internet-sec
- urity-snapshot/blob/main/exploratory/ai_tool_landscape.md and so to The Sn
- apshot manual. Start the Research workflow with task github_tools (https:/
- /github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.m
- d)\, sort the results (drop tools that test AI models themselves\, copies 
- and unrelated hits)\, compare with the previous sweep (new tools\, growth 
- in stars and forks) and propose additions to https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/exploratory/ai_attack_tools.csv. Never 
- on a pull day.\n\nSource: https://github.com/pagagne/internet-security-sna
- pshot/blob/main/docs/schedule/schedule.yaml
+ ep's catalogue and five charts to https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/exploratory/ai_tool_landscape.md and so to The Sna
+ pshot manual. Start the Research workflow with task github_tools (https://
+ github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md
+ )\, sort the results (drop tools that test AI models themselves\, copies a
+ nd unrelated hits)\, compare with the previous sweep (new tools\, growth i
+ n stars and forks) and propose additions to https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/exploratory/ai_attack_tools.csv. Never o
+ n a pull day.\n\nSource: https://github.com/pagagne/internet-security-snap
+ shot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

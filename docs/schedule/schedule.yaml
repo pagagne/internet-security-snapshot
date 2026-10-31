@@ -1147,7 +1147,7 @@ items:
     Author's decisions 30 Oct 2026: run by hand only, start, middle and end of 2027 (baseline
     run 30 Oct 2026), attack and defence tools side by side; the January sweep is part of the
     pilot. After each sweep, copy research-out/compact.csv to exploratory/ai_tool_sweeps/<date>.csv
-    and run `python -m snapshot.x25report build`, which adds that sweep's catalogue and three
+    and run `python -m snapshot.x25report build`, which adds that sweep's catalogue and five
     charts to exploratory/ai_tool_landscape.md and so to The Snapshot manual. Start the Research workflow with task github_tools (docs/OPERATIONS.md),
     sort the results (drop tools that test AI models themselves, copies and unrelated hits),
     compare with the previous sweep (new tools, growth in stars and forks) and propose
