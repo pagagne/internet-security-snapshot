@@ -1,0 +1,43 @@
+{
+ "checked": "2026-10-31 19:35 UTC",
+ "results": {
+  "CVE List": {
+   "state": "ok",
+   "code": 200
+  },
+  "CISA KEV": {
+   "state": "ok",
+   "code": 200
+  },
+  "NVD": {
+   "state": "ok",
+   "code": 200
+  },
+  "FIRST EPSS": {
+   "state": "ok",
+   "code": 200
+  },
+  "SEC EDGAR": {
+   "state": "ok",
+   "code": 200
+  },
+  "Red Hat fix dates": {
+   "state": "ok",
+   "code": 200
+  },
+  "Palo Alto fix dates": {
+   "state": "ok",
+   "code": 200
+  },
+  "ransomware.live": {
+   "state": "ok",
+   "code": 200
+  },
+  "VulnCheck": {
+   "state": "pending"
+  },
+  "Shadowserver": {
+   "state": "pending"
+  }
+ }
+}
