@@ -47,6 +47,13 @@ def visible_text(raw: str) -> str:
     return redact("\n".join(ln for ln in lines if ln))
 
 
+def _charset(r) -> str:
+    """requests assumes ISO-8859-1 when a page names no charset; nearly every page is UTF-8,
+    and guessing wrong garbles French, Japanese and Russian text (seen 31 Oct 2026)."""
+    named = "charset=" in r.headers.get("content-type", "").lower()
+    return r.encoding if named and r.encoding else "utf-8"
+
+
 def redact(text: str) -> str:
     """Contact details are never kept in the public copies (privacy issue #32, 31 Oct 2026):
     email addresses and phone numbers become placeholders, even an organisation's own."""
@@ -111,7 +118,7 @@ def check(src: dict) -> tuple[dict, str | None]:
     if src["kind"] == "data":
         rec["shape"] = shape(body, rec["ctype"], src["url"])
         return rec, None
-    text = visible_text(body.decode(r.encoding or "utf-8", "replace"))
+    text = visible_text(body.decode(_charset(r), "replace"))
     rec["text_sha256"] = hashlib.sha256(text.encode()).hexdigest()
     # Compared for changes (31 Oct 2026, after the first runs): digits removed, so page dates,
     # counters and build numbers do not count as a change in the terms; the dated copy keeps
