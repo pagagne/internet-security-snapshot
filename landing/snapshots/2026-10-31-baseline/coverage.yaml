@@ -1,0 +1,51 @@
+# What the study needs, and what it has (author's request, 31 Oct 2026): the landing page shows
+# a status banner of the core data sources and a ring of every kind of data the study needs.
+# Read by snapshot.landing.
+#
+# pieces: one slice of the ring each.
+#   tier:      core (feeds a pre-registered indicator I1-I8) or companion (exploratory X measures)
+#   collected: true only when a pull or a sweep actually collects it (author, 31 Oct 2026)
+#   measures:  the study measures it feeds. Slice size = 3 x core indicators + 1 x X measures
+#              (author's choice, 31 Oct 2026), so slices grow and shrink as measures change.
+#   First sort by Claude, 31 Oct 2026, from prereg Section 7 and config/exploratory.yaml; the
+#   author checks it. Change a line here and run `python -m snapshot.landing build`.
+#
+# sources: the squares of the daily status banner (core data the pull reads).
+#   url:     one light request a day (only the first bytes are read); never more often
+#   pending: awaiting permission; drawn as an outlined square and never contacted
+#   ua_env:  secret holding the contact User-Agent the source requires (SEC)
+
+pieces:
+  - {name: "Flaw records (CVE, NVD)",          tier: core,      collected: true,  measures: [I2, I3, I5, I8, X1, X5, X6, X9, X13]}
+  - {name: "Exploited list (CISA KEV)",        tier: core,      collected: true,  measures: [I2, I3, I6, X6, X8, X10, X19, X24]}
+  - {name: "Exploit likelihood (EPSS)",        tier: core,      collected: true,  measures: [X8]}
+  - {name: "Fix dates",                        tier: core,      collected: true,  measures: [I1, I3, X10, X16]}
+  - {name: "Ransomware postings",              tier: core,      collected: true,  measures: [I7, X21]}
+  - {name: "SEC breach filings",               tier: core,      collected: true,  measures: [I7]}
+  - {name: "AI credits in flaws",              tier: core,      collected: true,  measures: [I8, X1, X13, X18]}
+  - {name: "Second exploited list (VulnCheck)", tier: core,     collected: false, measures: [I6, X24]}
+  - {name: "Exposure scans (Shadowserver)",    tier: core,      collected: false, measures: [I1]}
+  - {name: "Honeypot CVE hits (Shadowserver)", tier: core,      collected: false, measures: [I4, I6]}
+  - {name: "Public exploit code",              tier: companion, collected: false, measures: [X7]}
+  - {name: "AI attack campaigns",              tier: companion, collected: true,  measures: [X3]}
+  - {name: "AI tool supply",                   tier: companion, collected: true,  measures: [X25]}
+  - {name: "Bot and AI traffic",               tier: companion, collected: true,  measures: [X4, X21]}
+  - {name: "National alerts",                  tier: companion, collected: true,  measures: [X19]}
+  - {name: "Breaches outside the US, HHS",     tier: companion, collected: true,  measures: [X17, X22]}
+  - {name: "Honeypot activity (SANS)",         tier: companion, collected: true,  measures: [X14, X23]}
+  - {name: "Patch adoption (deps.dev)",        tier: companion, collected: false, measures: [X16]}
+  - {name: "Zero-day list",                    tier: companion, collected: false, measures: [X15]}
+  - {name: "Exposed AI servers",               tier: companion, collected: false, measures: [X11]}
+  - {name: "Routing hygiene",                  tier: companion, collected: false, measures: [X20]}
+
+sources:
+  - {name: CVE List,          url: "https://api.github.com/repos/CVEProject/cvelistV5"}
+  - {name: CISA KEV,          url: "https://api.github.com/repos/cisagov/kev-data"}
+  - {name: NVD,               url: "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1"}
+  - {name: FIRST EPSS,        url: "https://api.first.org/data/v1/epss?limit=1"}
+  - {name: SEC EDGAR,         url: "https://www.sec.gov/files/company_tickers.json", ua_env: SEC_USER_AGENT}
+  - {name: Red Hat fix dates, url: "https://security.access.redhat.com/data/csaf/v2/vex/2021/cve-2021-44228.json"}
+  - {name: Palo Alto fix dates, url: "https://security.paloaltonetworks.com/json/CVE-2024-3400"}
+  - {name: ransomware.live,   url: "https://www.ransomware.live/"}
+  - {name: VulnCheck,         pending: true}
+  - {name: Shadowserver,      pending: true}
