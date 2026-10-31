@@ -23,3 +23,20 @@ def test_pending_sources_are_never_contacted(tmp_path, monkeypatch):
     svg = (tmp_path / "banner-light.svg").read_text()
     assert 'fill="none"' in svg and L.THEMES["light"]["error"] in svg and "checked " in svg
     assert res["NVD"]["state"] == "error" and (tmp_path / "status.json").exists()
+
+
+def test_snapshots_roll_up_changes(tmp_path):
+    import json
+    store = tmp_path / "landing"
+    banner = tmp_path / "b"; banner.mkdir()
+    for f in ("banner-light.svg", "banner-dark.svg"):
+        (banner / f).write_text("<svg/>")
+    (banner / "status.json").write_text(json.dumps({"checked": "x", "results": {"NVD": {"state": "ok"}}}))
+    L.capture("baseline", banner, "2026-10-31", store)
+    d = L.capture("pilot", None, "2027-01-01", store)
+    cfg = (d / "coverage.yaml").read_text().replace(
+        '"Public exploit code",              tier: companion, collected: false', '"Public exploit code",              tier: companion, collected: true')
+    (d / "coverage.yaml").write_text(cfg)
+    text = L.rollup_text(store)
+    assert "Now collected: Public exploit code" in text and "## Whole study so far" in text
+    assert (store / "snapshots" / "2026-10-31-baseline" / "summary.md").exists()

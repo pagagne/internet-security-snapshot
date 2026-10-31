@@ -12,7 +12,9 @@
 
 **Standard operating procedure:** [`docs/SOP_MANUAL_RUNS.md`](docs/SOP_MANUAL_RUNS.md), how
 every workflow is run, checked and recovered. The banner is redrawn daily by the Source status
-workflow; the ring comes from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14).
+workflow; the ring comes from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14). Both
+change often, so dated snapshots are kept at the cutover, the pilot run and every quarterly run:
+[what changed](https://github.com/pagagne/internet-security-snapshot/blob/run-reports/landing/CHANGES.md).
 
 ## Mission
 

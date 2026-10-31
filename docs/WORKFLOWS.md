@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are fourteen, in
+something changes, or when the author or Claude starts it by hand. There are fifteen, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -35,6 +35,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
+| Landing snapshot | `landing-snapshot.yml` | Schedule: 30 Nov 2026, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
 | Source status | `source-status.yml` | 11:23 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
@@ -228,6 +229,16 @@ README's second picture, the coverage ring, is drawn from the same file by
 `python -m snapshot.landing build` and kept current by a test: one slice per kind of data the
 study needs, sized 3 per core indicator and 1 per exploratory measure it feeds, coloured only when
 a pull or sweep actually collects it. The landing page links the SOP, not the private manual.
+
+## 15. Landing snapshot: the page's history
+
+**When:** started by the Schedule workflow at the cutover (30 Nov 2026), the pilot run (1 Jan
+2027) and each quarterly run (1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028), after that day's source
+check; also by its Run button (added 31 Oct 2026, author's request). **What it does:** copies the
+coverage ring, its settings and the day's banner into run-reports
+`landing/snapshots/<date>-<label>/` with a summary, and rebuilds `landing/CHANGES.md`: what
+changed since the previous snapshot, a roll-up per year and one for the whole study. Claude
+writes up the 2027 roll-up on 4 Jan 2028. The baseline was taken on 31 Oct 2026.
 
 ## How they depend on each other
 

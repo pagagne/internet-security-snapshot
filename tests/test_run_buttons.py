@@ -43,6 +43,9 @@ def test_schedule_starts_runs_by_api_event():
 
 
 def test_every_scheduled_dispatch_targets_an_api_workflow():
+    # the Schedule workflow starts runs by repository_dispatch named after the file; a
+    # repository-only workflow may listen for it beside its Run button (Landing snapshot, 31 Oct 2026)
     for o in S.expand(S.load()):
         if o["dispatch"]:
-            assert o["dispatch"]["workflow"] in EXTERNAL, o["uid"]
+            name = o["dispatch"]["workflow"]
+            assert _on(name)["repository_dispatch"]["types"] == [name.removesuffix(".yml")], o["uid"]

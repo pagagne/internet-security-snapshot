@@ -1,0 +1,50 @@
+name: Landing snapshot
+
+# Dated snapshot of the landing page (author's request, 31 Oct 2026: "capture snapshots at the
+# pilot and the cutover, then quarterly, with a roll-up annually to see what changed"). Copies
+# the coverage ring, its config and that day's status banner into run-reports
+# landing/snapshots/<date>-<label>/ and rebuilds landing/CHANGES.md (each change, a roll-up per
+# year and for the whole study). Started by the Schedule workflow on the capture dates in
+# docs/schedule/schedule.yaml, or by its Run button. Reads only this repository.
+on:
+  repository_dispatch:     # from the Schedule workflow: client_payload.label
+    types: [landing-snapshot]
+  workflow_dispatch:
+    inputs:
+      label:
+        description: "Name for this snapshot (lower-case letters, digits and hyphens), e.g. cutover, pilot, 2027q1. Saves a dated copy of the landing page's pictures to the run-reports branch; changes nothing else."
+        required: true
+        default: "manual"
+
+permissions:
+  contents: write   # run-reports branch only
+
+concurrency:
+  group: landing-snapshot
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Capture and save to run-reports
+        env:
+          LABEL: ${{ inputs.label || github.event.client_payload.label }}
+        run: |
+          set -euo pipefail
+          [[ "$LABEL" =~ ^[a-z0-9-]{1,40}$ ]] || { echo "::error::label: lower-case letters, digits and hyphens only"; exit 2; }
+          git fetch -q origin run-reports
+          git worktree add -q --detach /tmp/rr FETCH_HEAD
+          mkdir -p /tmp/rr/landing
+          python -m snapshot.landing capture --label "$LABEL" --banner /tmp/rr/landing --store /tmp/rr/landing | tee -a "$GITHUB_STEP_SUMMARY"
+          cd /tmp/rr
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Landing snapshot $LABEL"
+          for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1

@@ -1178,6 +1178,75 @@ items:
     here is never counted as an attack.
 
 
+# ---------------------------------------------------------------- landing-page snapshots
+# Author's request, 31 Oct 2026: the landing page (status banner and coverage ring) changes
+# often, so it is captured at the cutover, the pilot run and every quarterly run, after the
+# day's source check; run-reports landing/CHANGES.md rolls the changes up by year.
+- id: landing-snapshot-cutover
+  owner: github
+  title: Landing-page snapshot (cutover)
+  date: 2026-11-30
+  time: "12:41"
+  utc: true
+  minutes: 5
+  dispatch: {workflow: landing-snapshot.yml, inputs: {label: cutover}}
+
+- id: landing-snapshot-pilot
+  owner: github
+  title: Landing-page snapshot (Q4 2026 pilot run)
+  date: 2027-01-01
+  time: "12:41"
+  utc: true
+  minutes: 5
+  dispatch: {workflow: landing-snapshot.yml, inputs: {label: pilot}}
+
+- id: landing-snapshot-2027q1
+  owner: github
+  title: Landing-page snapshot (Q1 2027 run)
+  date: 2027-04-01
+  time: "12:41"
+  utc: true
+  minutes: 5
+  dispatch: {workflow: landing-snapshot.yml, inputs: {label: 2027q1}}
+
+- id: landing-snapshot-2027q2
+  owner: github
+  title: Landing-page snapshot (Q2 2027 run)
+  date: 2027-07-01
+  time: "12:41"
+  utc: true
+  minutes: 5
+  dispatch: {workflow: landing-snapshot.yml, inputs: {label: 2027q2}}
+
+- id: landing-snapshot-2027q3
+  owner: github
+  title: Landing-page snapshot (Q3 2027 run)
+  date: 2027-10-01
+  time: "12:41"
+  utc: true
+  minutes: 5
+  dispatch: {workflow: landing-snapshot.yml, inputs: {label: 2027q3}}
+
+- id: landing-snapshot-2027q4
+  owner: github
+  title: Landing-page snapshot (Q4 2027 run)
+  date: 2028-01-01
+  time: "12:41"
+  utc: true
+  minutes: 5
+  dispatch: {workflow: landing-snapshot.yml, inputs: {label: 2027q4}}
+
+- id: landing-rollup-2027
+  owner: claude
+  title: Write up the annual landing-page roll-up
+  date: 2028-01-04
+  details: >
+    Read run-reports landing/CHANGES.md (the 2027 roll-up and the whole-study roll-up, from the
+    31 Oct 2026 baseline to the Q4 2027 snapshot): what data the study gained or lost, which
+    sources failed and how often, how the measures changed. Summarise for the author in plain
+    sentences and add it to the session log and docs/INQUIRIES.md.
+
+
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule
 # build). Each row takes its date(s) from the items above, so a date changed there changes the
@@ -1215,3 +1284,4 @@ milestones:
   text: "Q4 2027 final: last quarter of the first year"
 - at: [closing-rerun]
   text: 2027 closing re-run with full follow-up
+

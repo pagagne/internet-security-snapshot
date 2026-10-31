@@ -833,6 +833,16 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:landing-snapshot-cutover@2026-11-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261130T124100Z
+DTEND:20261130T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (cutover)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
 UID:dry-run-review@2026-12-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261201
@@ -1175,6 +1185,16 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
  s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
  ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:landing-snapshot-pilot@2027-01-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270101T124100Z
+DTEND:20270101T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (Q4 2026 pilot run)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -1907,6 +1927,16 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:landing-snapshot-2027q1@2027-04-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270401T124100Z
+DTEND:20270401T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (Q1 2027 run)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-incident-sweep@2027-04-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270402
@@ -2386,6 +2416,16 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  net-security-snapshot/blob/main/.github/workflows/quarterly-pull.yml\; tag
  s snapshot-<quarter>-provisional.\n\nSource: https://github.com/pagagne/in
  ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:landing-snapshot-2027q2@2027-07-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270701T124100Z
+DTEND:20270701T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (Q2 2027 run)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
@@ -2890,6 +2930,16 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:landing-snapshot-2027q3@2027-10-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20271001T124100Z
+DTEND:20271001T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (Q3 2027 run)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-incident-sweep@2027-10-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271002
@@ -3329,6 +3379,16 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:landing-snapshot-2027q4@2028-01-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20280101T124100Z
+DTEND:20280101T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (Q4 2027 run)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-incident-sweep@2028-01-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20280102
@@ -3376,6 +3436,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nAbout 1½ hours in the Hand Check
  nutes (X17\, decided 29 Oct).\n\nSource: https://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:landing-rollup-2027@2028-01-04@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280104
+DTEND;VALUE=DATE:20280105
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Write up the annual landing-page roll-up
+DESCRIPTION:Responsible: Claude\n\nRead run-reports landing/CHANGES.md (the
+  2027 roll-up and the whole-study roll-up\, from the 31 Oct 2026 baseline 
+ to the Q4 2027 snapshot): what data the study gained or lost\, which sourc
+ es failed and how often\, how the measures changed. Summarise for the auth
+ or in plain sentences and add it to the session log and https://github.com
+ /pagagne/internet-security-snapshot/blob/main/docs/INQUIRIES.md.\n\nSource
+ : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
+ edule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:watch-case-pick@2028-01-06@internet-security-snapshot

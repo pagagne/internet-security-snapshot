@@ -85,6 +85,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 27 Nov 2026 | Claude | Build the project website and its publishing workflow (ready for 4 Dec) |
 | Mon 30 Nov 2026 | Claude | Cutover check (study no longer depends on one Claude chat) |
 | Mon 30 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
+| Mon 30 Nov 2026, 12:41 UTC | GitHub | Landing-page snapshot (cutover) |
 | Tue 01 Dec 2026 | Claude | Read the dry-run quality report; prepare the hand-check lists |
 | Tue 01 Dec 2026, 11:00 UTC | GitHub | Dry run of the quarterly pull (Oct-Nov data) |
 | Wed 02 Dec 2026, 10:00 ET | Paul | Hand check on the dry run |
@@ -107,6 +108,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 29 Dec 2026, 10:00 ET | Paul | Freeze the core (core-v1.2) and update OSF |
 | Fri 01 Jan 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Jan 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Fri 01 Jan 2027, 12:41 UTC | GitHub | Landing-page snapshot (Q4 2026 pilot run) |
 | Sat 02 Jan 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sat 02 Jan 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Mon 04 Jan 2027 to 28 Jan | Paul | Quarterly hand-check window |
@@ -152,6 +154,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 28 Mar 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Apr 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Apr 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Thu 01 Apr 2027, 12:41 UTC | GitHub | Landing-page snapshot (Q1 2027 run) |
 | Fri 02 Apr 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Fri 02 Apr 2027 | Claude | Send the reviewer the Q1 2027 review packet |
 | Fri 02 Apr 2027, 10:00 ET | Paul | Approve the provisional draft |
@@ -183,6 +186,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 28 Jun 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Jul 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Thu 01 Jul 2027, 12:41 UTC | GitHub | Landing-page snapshot (Q2 2027 run) |
 | Fri 02 Jul 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Fri 02 Jul 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Sun 04 Jul 2027 to 28 Jul | Paul | Quarterly hand-check window |
@@ -214,6 +218,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 28 Sep 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Oct 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Fri 01 Oct 2027, 12:41 UTC | GitHub | Landing-page snapshot (Q3 2027 run) |
 | Sat 02 Oct 2027 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sat 02 Oct 2027, 10:00 ET | Paul | Approve the provisional draft |
 | Mon 04 Oct 2027 to 28 Oct | Paul | Quarterly hand-check window |
@@ -242,9 +247,11 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 28 Dec 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Sat 01 Jan 2028, 06:00 UTC | GitHub | Quarterly pull, provisional run |
+| Sat 01 Jan 2028, 12:41 UTC | GitHub | Landing-page snapshot (Q4 2027 run) |
 | Sun 02 Jan 2028 | Claude | Quarterly web sweep for AI-run attack reports (X3) |
 | Sun 02 Jan 2028, 10:00 ET | Paul | Approve the provisional draft |
 | Tue 04 Jan 2028 to 28 Jan | Paul | Quarterly hand-check window |
+| Tue 04 Jan 2028 | Claude | Write up the annual landing-page roll-up |
 | Thu 06 Jan 2028 | Claude | Choose this quarter's watch cases by the rule |
 | Mon 10 Jan 2028, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Sat 15 Jan 2028 | Claude | Scan conference talk lists for AI-attack cases (twice a year) |
@@ -374,6 +381,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 07 Jul 2027 | Run the AI tool sweeps (X25, GitHub and Hugging Face) and sort them for the author | Author's decisions 30 Oct 2026: run by hand only, start, middle and end of 2027 (baseline run 30 Oct 2026), attack and defence tools side by side; the January sweep is part of the pilot. Run both Research tasks, github_tools and hf_tools (Hugging Face; its compact.csv goes to exploratory/hf_sweeps/<date>.csv). After each sweep, copy research-out/compact.csv to exploratory/ai_tool_sweeps/<date>.csv and run `python -m snapshot.x25report build`, which adds that sweep's catalogue and charts (protocol charts as many as the protocols found need) to exploratory/ai_tool_landscape.md and so to The Snapshot manual. Start the Research workflow with task github_tools (docs/OPERATIONS.md), sort the results (drop tools that test AI models themselves, copies and unrelated hits), compare with the previous sweep (new tools, growth in stars and forks) and propose additions to exploratory/ai_attack_tools.csv. Never on a pull day. |
 | Tue 10 Aug 2027 | Prepare the publication decision (where to publish the 2027 results) | Update docs/PUBLICATION_OPTIONS.md (written 28 Oct 2026): confirm the 2028 calls and dates (WEIS 2028 and the Journal of Cybersecurity special issue and its open-access fee; CVE/FIRST VulnCon 2028; IMC 2028; PAM 2029), check arXiv endorsement options, and what the Q1 and Q2 2027 results suggest is worth a paper (the author also has a figshare preprint, so a copy there is an option). Questions to the author as option cards on 12 Aug. |
 | Wed 08 Dec 2027 | Run the AI tool sweeps (X25, GitHub and Hugging Face) and sort them for the author | Author's decisions 30 Oct 2026: run by hand only, start, middle and end of 2027 (baseline run 30 Oct 2026), attack and defence tools side by side; the January sweep is part of the pilot. Run both Research tasks, github_tools and hf_tools (Hugging Face; its compact.csv goes to exploratory/hf_sweeps/<date>.csv). After each sweep, copy research-out/compact.csv to exploratory/ai_tool_sweeps/<date>.csv and run `python -m snapshot.x25report build`, which adds that sweep's catalogue and charts (protocol charts as many as the protocols found need) to exploratory/ai_tool_landscape.md and so to The Snapshot manual. Start the Research workflow with task github_tools (docs/OPERATIONS.md), sort the results (drop tools that test AI models themselves, copies and unrelated hits), compare with the previous sweep (new tools, growth in stars and forks) and propose additions to exploratory/ai_attack_tools.csv. Never on a pull day. |
+| Tue 04 Jan 2028 | Write up the annual landing-page roll-up | Read run-reports landing/CHANGES.md (the 2027 roll-up and the whole-study roll-up, from the 31 Oct 2026 baseline to the Q4 2027 snapshot): what data the study gained or lost, which sources failed and how often, how the measures changed. Summarise for the author in plain sentences and add it to the session log and docs/INQUIRIES.md. |
 | Wed 01 Mar 2028 | Draft the first annual check against reference data (2027) | prereg section 13: exposure reference if scan data was obtained by 31 Jan, harm reference always. For the author's approval at the 15 March 2028 review. |
 | Sat 01 Apr 2028 | 2027 closing re-run with full follow-up | Re-run all four 2027 quarters once every 2027 cohort CVE has its 90-day follow-up; publish as a completeness addendum to the annual check. Labels unchanged (decision item 21). The author approves. |
 
@@ -381,6 +389,12 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | What | Details |
 |---|---|---|
+| Mon 30 Nov 2026, 12:41 UTC | Landing-page snapshot (cutover) |  |
 | Tue 01 Dec 2026, 11:00 UTC | Dry run of the quarterly pull (Oct-Nov data) | Started by the Schedule workflow (December has no cron). Unscored. |
 | Tue 15 Dec 2026, 11:00 UTC | Full dry run with all available sources (1 Oct-14 Dec data) | Started by the Schedule workflow. Second dry run, the closest test of the 1 Jan pilot: every source switched on in config/sources.yaml, in the container if container-pull is done. Unscored; nothing published. |
+| Fri 01 Jan 2027, 12:41 UTC | Landing-page snapshot (Q4 2026 pilot run) |  |
+| Thu 01 Apr 2027, 12:41 UTC | Landing-page snapshot (Q1 2027 run) |  |
+| Thu 01 Jul 2027, 12:41 UTC | Landing-page snapshot (Q2 2027 run) |  |
+| Fri 01 Oct 2027, 12:41 UTC | Landing-page snapshot (Q3 2027 run) |  |
+| Sat 01 Jan 2028, 12:41 UTC | Landing-page snapshot (Q4 2027 run) |  |
 
