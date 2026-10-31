@@ -14,7 +14,7 @@ parts:
     docs: [docs/EVALUATION_FLOW.md, docs/HAND_CHECK.md, docs/HAND_CHECK_APP.md, docs/CHANGE_POLICY.md,
            docs/CORE_FREEZE_DECISIONS.md, proposals/T1_OPTIONS.md, proposals/ROOT_CAUSE_MAP.md,
            exploratory/README.md, exploratory/SOURCES.md, exploratory/credit_groups.md,
-           exploratory/sweep-trial-2026.md]
+           exploratory/sweep-trial-2026.md, exploratory/feed-screen-2026-10.md]
   - name: "Part III. The AI tool explosion: attack and defence tools on GitHub and Hugging Face (X25)"
     # author, 30 Oct 2026: real attacks (X3) beside the published tools (X25), compared on the
     # same measures (open-weight against closed, protocols)
