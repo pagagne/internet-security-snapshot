@@ -59,6 +59,7 @@ jobs:
           [ -f exploratory/ai_attack_campaigns.csv ] || { echo "::notice::Private repository not yet holding the exploratory work (Private move); manual not rebuilt."; exit 0; }
           python -m snapshot.x3catalogue build > /dev/null   # generated reports, rebuilt in the private copy
           python -m snapshot.x25report build > /dev/null
+          python -m snapshot.golive build --out /tmp/private/go-live > /dev/null   # private go-live draft (author, 31 Oct 2026)
           SNAPSHOT_REQUIRE_PRIVATE=1 python -m snapshot.manual build
           rm -rf /tmp/private/docs /tmp/private/README.md   # the manual only; exploratory/ and runs/ stay
           python tools/manual_publish.py /tmp/private

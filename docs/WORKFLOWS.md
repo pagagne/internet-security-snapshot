@@ -201,7 +201,10 @@ documents and copies it, with its pictures, to the author's private repository
 one file per part, split further as the manual grows. The manual is part of the report and is
 not public before it; nothing is written to this repository. Part III is built from the
 exploratory work in the private repository (below), and the AI-attack catalogue and tool
-landscape are regenerated there first.
+landscape are regenerated there first. It also rebuilds the private **go-live draft**
+(`go-live/README.md`, `snapshot.golive`; author's request, 31 Oct 2026): a copy of the public
+landing page plus the draft of what goes live with the report (X25 charts, the monthly feed
+screens by site host name only), worked on behind the scenes until the author decides.
 
 **The private repository** (author's decision, 31 Oct 2026: "any sweeps that are in addition
 to the core sweeps should go into the private manual repo … data, analysis and reports").

@@ -40,3 +40,11 @@ def test_snapshots_roll_up_changes(tmp_path):
     text = L.rollup_text(store)
     assert "Now collected: Public exploit code" in text and "## Whole study so far" in text
     assert (store / "snapshots" / "2026-10-31-baseline" / "summary.md").exists()
+
+
+def test_go_live_copy_points_at_the_public_repository():
+    from snapshot import golive
+    t = golive.public_readme('<img src="docs/landing/coverage-light.svg"> [SOP](docs/SOP_MANUAL_RUNS.md) [x](https://a.org)')
+    assert 'src="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/docs/landing/coverage-light.svg"' in t
+    assert "(https://github.com/pagagne/internet-security-snapshot/blob/main/docs/SOP_MANUAL_RUNS.md)" in t
+    assert "(https://a.org)" in t

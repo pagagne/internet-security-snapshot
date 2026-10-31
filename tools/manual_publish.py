@@ -47,7 +47,13 @@ def main(dest: Path) -> int:
         "# The Snapshot (private)\n\nThe study manual of the Internet Security Snapshot, kept private until the "
         "report is published (author's decision, 30 Oct 2026). Start at the contents: "
         "[docs/manual/README.md](docs/manual/README.md).\n\nGenerated automatically from the public study "
-        "repository by its Manual publish workflow; do not edit here.\n")
+        "repository by its Manual publish workflow; do not edit here.\n\n"
+        "## Exploratory work (private)\n\nSince 31 Oct 2026 this repository also holds every sweep made in addition "
+        "to the core data (author's decision): `exploratory/` (the AI-attack log and catalogue, the monthly feed "
+        "screens and their spreadsheets, the GitHub and Hugging Face tool sweeps and their charts) and `runs/` (the "
+        "raw results of those runs). Nothing in them is published before the report.\n\n"
+        "## Go-live draft (private)\n\n[`go-live/README.md`](go-live/README.md): the landing page as it is today plus "
+        "the draft of what goes live with the report (author's request, 31 Oct 2026); rebuilt with the manual.\n")
     print(f"{len(files)} manual files and {len(pics)} pictures copied to {dest}")
     return 0
 
