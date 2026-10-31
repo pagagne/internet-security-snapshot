@@ -10,11 +10,29 @@
   <img alt="The data the study needs: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-light.svg">
 </picture>
 
+**Reading the ring.** Each slice is one kind of data the study needs to see the whole picture,
+from flaw records and the CISA exploited list to AI attack campaigns and routing hygiene (the
+numbered list beside the ring). A slice is coloured only when a quarterly pull or a sweep
+actually collects that data: green for the core data behind the eight pre-registered
+indicators, purple for the exploratory companion measures. Gray slices are pieces still missing,
+mostly sources waiting for permission (VulnCheck, Shadowserver) or measures not yet built. The
+size of a slice is how much the study leans on it: 3 for every core indicator it feeds and 1
+for every exploratory measure. The number in the middle is the share of the ring that is
+collected.
+
+**How it changes.** The ring is redrawn whenever `config/coverage.yaml` changes. A slice turns
+from gray to colour when its data starts arriving (for example, when Shadowserver or VulnCheck
+grant permission and their collectors run), and back to gray if a source stops or is withdrawn.
+A slice grows when a new measure starts using that data and shrinks when one is retired, and new
+kinds of data join the ring as new slices. So the middle number rises as the study fills its
+gaps, and drops if a source is lost. The banner above tells the day-to-day story: whether each
+core source answered today. Dated copies of both pictures, with what changed between them, are
+kept at the cutover, the pilot run and every quarterly run:
+[what changed](https://github.com/pagagne/internet-security-snapshot/blob/run-reports/landing/CHANGES.md).
+
 **Standard operating procedure:** [`docs/SOP_MANUAL_RUNS.md`](docs/SOP_MANUAL_RUNS.md), how
 every workflow is run, checked and recovered. The banner is redrawn daily by the Source status
-workflow; the ring comes from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14). Both
-change often, so dated snapshots are kept at the cutover, the pilot run and every quarterly run:
-[what changed](https://github.com/pagagne/internet-security-snapshot/blob/run-reports/landing/CHANGES.md).
+workflow; the ring comes from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14).
 
 ## Mission
 
