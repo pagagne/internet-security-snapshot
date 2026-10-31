@@ -66,3 +66,19 @@ Most-starred defence tools: baserow/baserow (6,245); malwoverview (4,135); thale
 
 Most-starred tools doing both: Some-Many-Books (25,462); Scanners-Box (9,158); infobyte/faraday (6,836); Trusted-AI/adversarial-robustness-toolbox (6,296); AiSOC (5,319); china-dictatorship (3,298); Armur-Ai/Pentest-Swarm-AI (3,093); artex-global (2,400).
 
+## Hugging Face: the models themselves (companion)
+
+Hugging Face is where AI models are published, including open-weight models whose safety training has been removed ("uncensored", "abliterated"). Fixed searches over model and app (Space) names; roles from each item's own name and descriptive tags, with stricter rules than GitHub's (refined and tested 30 Oct 2026): attack, defence, both, general security (security assistants with no side), safety removed, model testing (including AI-alignment red-teaming), unrelated (image models, Hacker News apps, hate-speech classifiers, "reward hacking") and unclear. Individuals' items appear by item name only. First labels; Claude checks the most-liked and the author confirms. Each search reads up to 40,000 items, newest first.
+
+### Hugging Face sweep of 2026-10-30
+
+20,812 items (19,661 models, 1,151 apps): attack 904, defence 1,062, both 55, general security 422, safety removed 16,423, model testing 1,115, unrelated 550, unclear 281.
+
+![Hugging Face chart 1, sweep of 2026-10-30](ai_tool_landscape/hf-2026-10-30-1-new-per-month.png)
+
+*Hugging Face chart 1. Horizontal: the month each model or app was created. Vertical: new items that month. Lines: attack, defence, general security, safety removed.*
+
+![Hugging Face chart 2, sweep of 2026-10-30](ai_tool_landscape/hf-2026-10-30-2-safety-removed-by-lab.png)
+
+*Hugging Face chart 2. Horizontal: the lab whose model was modified, from the model's own base-model tag (models without one are not counted). Vertical: safety-removed models.*
+
