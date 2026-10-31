@@ -1,0 +1,66 @@
+# Feed verification
+
+Feeds: 62; verified: 46; failing: 14; replacements found: 4.
+
+- Unit 42: feed ok (15 items); site names org True; linked True; verified yes
+- Cisco Talos: feed ok (15 items); site names org True; linked False; verified yes
+- Microsoft Security Blog: feed ok (10 items); site names org True; linked False; verified yes
+- Google Cloud Threat Intelligence: feed refused: declares a DOCTYPE or entities (0 items); site names org True; linked False; verified no
+- ESET WeLiveSecurity: feed ok (100 items); site names org True; linked True; verified yes
+- Kaspersky Securelist: feed ok (10 items); site names org True; linked True; verified yes
+- Check Point Research: feed ok (15 items); site names org True; linked False; verified yes
+- Sophos X-Ops: feed ok (15 items); site names org True; linked False; verified yes
+- Huntress: feed ok (746 items); site names org True; linked False; verified yes
+- SentinelLabs: feed ok (10 items); site names org False; linked False; verified no
+- Elastic Security Labs: feed refused: larger than 5 MB (0 items); site names org True; linked False; verified no; replacement https://elastic.co/blog/feed/ (40 items)
+- Sysdig: feed ok (100 items); site names org True; linked False; verified yes
+- Wiz: feed ok (714 items); site names org True; linked True; verified yes
+- CrowdStrike: feed ok (10 items); site names org True; linked False; verified yes
+- Trend Micro Research: feed HTTP 404 (0 items); site names org True; linked False; verified no
+- Zscaler ThreatLabz: feed ok (50 items); site names org True; linked False; verified yes
+- Recorded Future: feed ok (50 items); site names org True; linked False; verified yes
+- Rapid7: feed error ParseError (0 items); site names org True; linked False; verified no
+- Tenable: feed ok (10 items); site names org True; linked False; verified yes
+- Qualys: feed ok (10 items); site names org True; linked False; verified yes
+- Cloudflare: feed ok (20 items); site names org True; linked False; verified yes
+- Bitdefender Labs: feed HTTP 404 (0 items); site names org True; linked False; verified no
+- Proofpoint: feed ok (10 items); site names org True; linked False; verified yes
+- Symantec Threat Hunter Team: feed HTTP 404 (0 items); site names org True; linked False; verified no; replacement https://www.security.com:443/rss/v1/blogs/rss.xml (10 items)
+- GreyNoise: feed ok (100 items); site names org True; linked False; verified yes
+- AhnLab ASEC: feed ok (30 items); site names org True; linked False; verified yes
+- SANS Internet Storm Center: feed ok (10 items); site names org True; linked True; verified yes
+- Schneier on Security: feed ok (10 items); site names org True; linked True; verified yes
+- Krebs on Security: feed ok (10 items); site names org True; linked True; verified yes
+- CISA advisories: feed refused: larger than 5 MB (0 items); site names org True; linked False; verified no; replacement https://cisa.gov/rss.xml (10 items)
+- UK NCSC: feed ok (20 items); site names org True; linked False; verified yes
+- CERT-FR: feed refused: redirected off the official domain to https://cert.cyber.gouv.fr/feed/ (0 items); site names org True; linked False; verified no
+- JPCERT/CC (English): feed ok (6 items); site names org True; linked False; verified yes
+- JPCERT/CC (Japanese): feed ok (21 items); site names org True; linked True; verified yes
+- CERT-EU: feed ok (10 items); site names org True; linked False; verified yes
+- BSI (Germany): feed HTTP 404 (0 items); site names org True; linked False; verified no
+- Singapore CSA: feed HTTP 404 (0 items); site names org True; linked False; verified no
+- OpenAI News: feed ok (1341 items); site names org True; linked True; verified yes
+- AI Incident Database: feed ok (100 items); site names org True; linked True; verified yes
+- BleepingComputer: feed ok (15 items); site names org True; linked True; verified yes
+- The Hacker News: feed ok (50 items); site names org True; linked True; verified yes
+- SecurityWeek: feed ok (10 items); site names org True; linked True; verified yes
+- The Record: feed ok (5 items); site names org True; linked True; verified yes
+- Dark Reading: feed ok (50 items); site names org True; linked True; verified yes
+- The Register (security): feed ok (50 items); site names org True; linked False; verified yes
+- Security Affairs: feed ok (10 items); site names org True; linked False; verified yes
+- Help Net Security: feed ok (10 items); site names org True; linked True; verified yes
+- Infosecurity Magazine: feed ok (250 items); site names org True; linked False; verified yes
+- Cybernews: feed ok (50 items); site names org True; linked False; verified yes
+- Ars Technica (security): feed ok (20 items); site names org True; linked False; verified yes
+- Wired (security): feed ok (20 items); site names org True; linked False; verified yes
+- Security Boulevard: feed HTTP 403 (0 items); site names org False; linked False; verified no
+- FreeBuf (zh): feed HTTP 405 (0 items); site names org False; linked False; verified no
+- Habr infosecurity (ru): feed ok (40 items); site names org True; linked False; verified yes
+- Xakep (ru): feed ok (10 items); site names org True; linked True; verified yes
+- SecurityLab (ru): feed ok (120 items); site names org False; linked False; verified no
+- Boan News (ko): feed refused: declares a DOCTYPE or entities (0 items); site names org True; linked False; verified no; replacement https://cdn.boannews.com/rss/gn_rss_allArticle.xml (50 items)
+- heise Security (de): feed ok (20 items); site names org True; linked False; verified yes
+- Security NEXT (ja): feed ok (20 items); site names org True; linked False; verified yes
+- ITmedia Enterprise (ja): feed ok (50 items); site names org True; linked False; verified yes
+- LeMagIT (fr): feed ok (20 items); site names org True; linked False; verified yes
+- CISO Advisor (pt): feed HTTP 403 (0 items); site names org False; linked False; verified no
