@@ -9,7 +9,7 @@
   "ctype": "application/json",
   "bytes": 6232,
   "shape": "json keys: allow_forking,archive_url,archived,assignees_url,blobs_url,branches_url,clone_url,collaborators_url,comments_url,commits_url,compare_url,contents_url,contributors_url,created_at,custom_properties,default_branch,deployments_url,description,disabled,downloads_url,events_url,fork,forks,forks_count,fork",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json": {
   "name": "CISA KEV catalogue (CISA feed)",
@@ -19,9 +19,9 @@
   "status": 200,
   "final": "www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "ctype": "application/json",
-  "bytes": 1822979,
+  "bytes": 1826755,
   "shape": "json keys: catalogVersion,count,dateReleased,title,vulnerabilities",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://api.github.com/repos/cisagov/kev-data": {
   "name": "CISA KEV repository (kev-data)",
@@ -33,7 +33,7 @@
   "ctype": "application/json",
   "bytes": 6048,
   "shape": "json keys: allow_forking,archive_url,archived,assignees_url,blobs_url,branches_url,clone_url,collaborators_url,comments_url,commits_url,compare_url,contents_url,contributors_url,created_at,custom_properties,default_branch,deployments_url,description,disabled,downloads_url,events_url,fork,forks,forks_count,fork",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1": {
   "name": "NVD API",
@@ -45,7 +45,7 @@
   "ctype": "application/json",
   "bytes": 2517,
   "shape": "json keys: format,resultsPerPage,startIndex,timestamp,totalResults,version,vulnerabilities",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.meta": {
   "name": "NVD feed files",
@@ -57,7 +57,7 @@
   "ctype": "text/plain",
   "bytes": 168,
   "shape": "fields: lastModifiedDate,size,zipSize,gzSize,sha256",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://api.github.com/repos/fkie-cad/nvd-json-data-feeds": {
   "name": "NVD mirror (fkie-cad)",
@@ -69,7 +69,7 @@
   "ctype": "application/json",
   "bytes": 6642,
   "shape": "json keys: allow_forking,archive_url,archived,assignees_url,blobs_url,branches_url,clone_url,collaborators_url,comments_url,commits_url,compare_url,contents_url,contributors_url,created_at,custom_properties,default_branch,deployments_url,description,disabled,downloads_url,events_url,fork,forks,forks_count,fork",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://api.first.org/data/v1/epss?limit=1": {
   "name": "EPSS API",
@@ -81,7 +81,7 @@
   "ctype": "application/json",
   "bytes": 206,
   "shape": "json keys: access,data,limit,offset,status,status-code,total,version",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://epss.cyentia.com/epss_scores-current.csv.gz": {
   "name": "EPSS daily file",
@@ -89,11 +89,11 @@
   "url": "https://epss.cyentia.com/epss_scores-current.csv.gz",
   "used_by": "core epss",
   "status": 200,
-  "final": "epss.empiricalsecurity.com/epss_scores-2026-10-29.csv.gz",
+  "final": "epss.empiricalsecurity.com/epss_scores-2026-10-30.csv.gz",
   "ctype": "binary/octet-stream",
-  "bytes": 2789117,
+  "bytes": 2792728,
   "shape": "text: first data line has 3 fields",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.sec.gov/files/company_tickers.json": {
   "name": "SEC company list",
@@ -105,7 +105,7 @@
   "ctype": "application/json",
   "bytes": 798077,
   "shape": "json numbered entries of: cik_str,ticker,title",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://security.access.redhat.com/data/csaf/v2/vex/2021/cve-2021-44228.json": {
   "name": "Red Hat VEX (fix dates)",
@@ -117,7 +117,7 @@
   "ctype": "application/json",
   "bytes": 3622781,
   "shape": "json keys: document,product_tree,vulnerabilities",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://security.paloaltonetworks.com/json/CVE-2024-3400": {
   "name": "Palo Alto advisories (fix dates)",
@@ -129,7 +129,7 @@
   "ctype": "application/json",
   "bytes": 18486,
   "shape": "json keys: containers,cveMetadata,dataType,dataVersion",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://isc.sans.edu/feeds/urlsummary.txt": {
   "name": "SANS ISC honeypot URL summary",
@@ -139,9 +139,9 @@
   "status": 200,
   "final": "isc.sans.edu/feeds/urlsummary.txt",
   "ctype": "text/plain",
-  "bytes": 20037632,
+  "bytes": 20004864,
   "shape": "text: first data line has 4 fields",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://isc.sans.edu/feeds/urlcategories.txt": {
   "name": "SANS ISC honeypot URL categories",
@@ -151,9 +151,9 @@
   "status": 200,
   "final": "isc.sans.edu/feeds/urlcategories.txt",
   "ctype": "text/plain",
-  "bytes": 20054016,
+  "bytes": 20051238,
   "shape": "text: first data line has 3 fields",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://nvd.nist.gov/developers/terms-of-use": {
   "name": "NVD terms of use",
@@ -167,7 +167,7 @@
   "text_sha256": "292ad2c13ba05e942353c1e709d5bdb3b51433f3a551ee6cb7926c6ed25f0ad6",
   "words": 3,
   "archive_url": "https://web.archive.org/web/20261030121244/https://nvd.nist.gov/developers/terms-of-use",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.cve.org/Legal/TermsOfUse": {
   "name": "CVE Program terms of use",
@@ -181,7 +181,7 @@
   "text_sha256": "7834fedb6efff6635986d274c5dc8ee3ade56b9580f60da889ddabdebf2db72f",
   "words": 5,
   "archive_url": "https://web.archive.org/web/20261030121420/https://www.cve.org/Legal/TermsOfUse",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.cisa.gov/known-exploited-vulnerabilities-catalog": {
   "name": "CISA KEV catalogue page",
@@ -191,11 +191,11 @@
   "status": 200,
   "final": "www.cisa.gov/known-exploited-vulnerabilities-catalog",
   "ctype": "text/html",
-  "bytes": 288070,
-  "text_sha256": "27333f5058c627958a950e03d10721e21a94c28263d10ef1cda7bacb3bf4ab20",
-  "words": 4245,
-  "archive_url": "https://web.archive.org/web/20261030093710/https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-  "checked": "2026-10-30"
+  "bytes": 288549,
+  "text_sha256": "a3093c5a44c119aa69e8b9be8cbc076e1fd76be8af678b9a8e399ee7ce5b6b8f",
+  "words": 4236,
+  "archive_url": "https://web.archive.org/web/20261030184204/https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+  "checked": "2026-10-31"
  },
  "https://github.com/cisagov/kev-data": {
   "name": "CISA kev-data repository (licence)",
@@ -205,11 +205,11 @@
   "status": 200,
   "final": "github.com/cisagov/kev-data",
   "ctype": "text/html",
-  "bytes": 240996,
-  "text_sha256": "75136fb79fcc90df1eaad5a69b4bda8dc3c38c4c0c9f70d3caea91caefbd7cca",
+  "bytes": 240928,
+  "text_sha256": "46a3066cb0c4cd2cf05cafba274445d72de98fd7fef8a4be73b6bbef73fc1003",
   "words": 873,
-  "archive_url": "https://web.archive.org/web/20261030121538/https://github.com/cisagov/kev-data",
-  "checked": "2026-10-30"
+  "archive_url": "https://web.archive.org/web/20261031014155/https://github.com/cisagov/kev-data",
+  "checked": "2026-10-31"
  },
  "https://www.first.org/epss/": {
   "name": "FIRST EPSS page",
@@ -223,7 +223,7 @@
   "text_sha256": "4cc64a8a3a07890c29784750f26e01e610a9bbd29a7d6656de4f6ca95b7c1a47",
   "words": 1204,
   "archive_url": "error ConnectTimeout",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data": {
   "name": "SEC accessing EDGAR data",
@@ -233,11 +233,11 @@
   "status": 200,
   "final": "www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
   "ctype": "text/html",
-  "bytes": 80372,
+  "bytes": 80382,
   "text_sha256": "2050b88d45c0c5013a0b6e4b950893c15987b41787099a84dbca16a2acc60832",
   "words": 2038,
   "archive_url": "save requested (HTTP 520)",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://access.redhat.com/security/data": {
   "name": "Red Hat security data",
@@ -251,7 +251,7 @@
   "text_sha256": "de4b93ddcb5c2064983c462f82d1a35b6458ada8f424418d4ffd6dd77231440b",
   "words": 1024,
   "archive_url": "error ReadTimeout",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://isc.sans.edu/feeds_doc.html": {
   "name": "SANS ISC data feeds",
@@ -261,11 +261,11 @@
   "status": 200,
   "final": "isc.sans.edu/feeds_doc.html",
   "ctype": "text/html",
-  "bytes": 33395,
-  "text_sha256": "313923db27b337ad144cec6f676890df1335b237c5229118118e244ed2d0c58e",
+  "bytes": 33394,
+  "text_sha256": "2d4e0a6adb17edd0a766ec7f57bbe6a1a6a55dfcaf88c4c11dec4bbba213116b",
   "words": 479,
-  "archive_url": "https://web.archive.org/web/20261030122102/https://isc.sans.edu/feeds_doc.html",
-  "checked": "2026-10-30"
+  "archive_url": "https://web.archive.org/web/20261031014306/https://isc.sans.edu/feeds_doc.html",
+  "checked": "2026-10-31"
  },
  "https://www.ransomware.live/t&c": {
   "name": "ransomware.live terms",
@@ -276,10 +276,10 @@
   "final": "www.ransomware.live/t&c",
   "ctype": "text/html",
   "bytes": 35503,
-  "text_sha256": "905e2c9d0f705886fe61019e4ea12e1c51992cbb8500bc8ac71a1eb196bcf602",
+  "text_sha256": "29054b3769517d34941da1fcf856a903ad4a766783300807829fd41a54e28024",
   "words": 1133,
-  "archive_url": "https://web.archive.org/web/20261030122221/https://www.ransomware.live/t&c",
-  "checked": "2026-10-30"
+  "archive_url": "error ConnectionError",
+  "checked": "2026-10-31"
  },
  "https://developers.cloudflare.com/radar/": {
   "name": "Cloudflare Radar documentation",
@@ -293,7 +293,7 @@
   "text_sha256": "a9bc9c594ba77cb08a115e38a8d62beb069d64b9d87ee7f6bf802f0bdef450c9",
   "words": 566,
   "archive_url": "https://web.archive.org/web/20261030123145/https://developers.cloudflare.com/radar/",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.jpcert.or.jp/guide.html": {
   "name": "JPCERT/CC site terms",
@@ -307,7 +307,7 @@
   "text_sha256": "6d97f9a8face733c00870dec681c20c68b922004da0e351a7841c0fd153ab2ca",
   "words": 345,
   "archive_url": "https://web.archive.org/web/20261030122350/https://www.jpcert.or.jp/guide.html",
-  "checked": "2026-10-30"
+  "checked": "2026-10-31"
  },
  "https://www.cert.ssi.gouv.fr/mentions-legales/": {
   "name": "CERT-FR legal notice",
@@ -317,10 +317,94 @@
   "status": 200,
   "final": "cert.cyber.gouv.fr/mentions-legales/",
   "ctype": "text/html",
-  "bytes": 23514,
-  "text_sha256": "3e385cbe0bab07fd340209178a5112782b89621c1021d4d9f49060e74e203811",
-  "words": 707,
-  "archive_url": "https://web.archive.org/web/20261030122529/https://cert.cyber.gouv.fr/mentions-legales/",
-  "checked": "2026-10-30"
+  "bytes": 23939,
+  "text_sha256": "c059ce5cb489d6401e4f71a3730174b72136dab39767ac28449079b481308ee7",
+  "words": 724,
+  "archive_url": "error ConnectionError",
+  "checked": "2026-10-31"
+ },
+ "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies": {
+  "name": "GitHub Acceptable Use Policies",
+  "kind": "terms",
+  "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+  "used_by": "exploratory X25",
+  "status": 200,
+  "final": "docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+  "ctype": "text/html",
+  "bytes": 171333,
+  "text_sha256": "6c5c2547e78188624dfc4ad7f1c3fc50f877a17a0edf8b473192c22ead577a7e",
+  "words": 1904,
+  "archive_url": "error ConnectionError",
+  "checked": "2026-10-31"
+ },
+ "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service": {
+  "name": "GitHub Terms of Service",
+  "kind": "terms",
+  "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+  "used_by": "exploratory X25",
+  "status": 200,
+  "final": "docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+  "ctype": "text/html",
+  "bytes": 366895,
+  "text_sha256": "34e466692e8758e361a165ae0eb9c1e7edf7837f01fce097383c03dc8dba2c6d",
+  "words": 7868,
+  "archive_url": "error ConnectionError",
+  "checked": "2026-10-31"
+ },
+ "https://huggingface.co/terms-of-service": {
+  "name": "Hugging Face terms of service",
+  "kind": "terms",
+  "url": "https://huggingface.co/terms-of-service",
+  "used_by": "exploratory X25",
+  "status": 200,
+  "final": "huggingface.co/terms-of-service",
+  "ctype": "text/html",
+  "bytes": 114250,
+  "text_sha256": "f597662457277cde3e08adbdad4307980710a3bd0e401c595938e42784f51832",
+  "words": 4819,
+  "archive_url": "error ConnectionError",
+  "checked": "2026-10-31"
+ },
+ "https://huggingface.co/content-policy": {
+  "name": "Hugging Face content policy",
+  "kind": "terms",
+  "url": "https://huggingface.co/content-policy",
+  "used_by": "exploratory X25",
+  "status": 200,
+  "final": "huggingface.co/content-policy",
+  "ctype": "text/html",
+  "bytes": 84808,
+  "text_sha256": "e6ab3e58f8766e4943fd394889edb8ada060ffd828bec55e3f79231019a5b9e9",
+  "words": 2139,
+  "archive_url": "error ConnectionError",
+  "checked": "2026-10-31"
+ },
+ "https://huggingface.co/docs/hub/rate-limits": {
+  "name": "Hugging Face rate limits",
+  "kind": "terms",
+  "url": "https://huggingface.co/docs/hub/rate-limits",
+  "used_by": "exploratory X25",
+  "status": 200,
+  "final": "huggingface.co/docs/hub/rate-limits",
+  "ctype": "text/html",
+  "bytes": 201397,
+  "text_sha256": "5472d2df7cffc000f9fbb5a01b3226bde2feb560ddea74127154580bf300e366",
+  "words": 1407,
+  "archive_url": "error ReadTimeout",
+  "checked": "2026-10-31"
+ },
+ "https://gitee.com/terms": {
+  "name": "Gitee terms",
+  "kind": "terms",
+  "url": "https://gitee.com/terms",
+  "used_by": "exploratory X25 (planned)",
+  "status": 200,
+  "final": "gitee.com/terms",
+  "ctype": "text/html",
+  "bytes": 106417,
+  "text_sha256": "39ff2d253300289d5c4615d85e987045eea979037d61d7eb04d963c7a3ac92e1",
+  "words": 156,
+  "archive_url": "https://web.archive.org/web/20261031014832/https://gitee.com/terms",
+  "checked": "2026-10-31"
  }
 }

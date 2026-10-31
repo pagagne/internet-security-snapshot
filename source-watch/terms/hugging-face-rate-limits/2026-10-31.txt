@@ -1,0 +1,136 @@
+# Hugging Face rate limits
+# https://huggingface.co/docs/hub/rate-limits
+# copied 2026-10-31
+
+Hub Rate limits · Hugging Face
+Hugging Face
+Models
+Datasets
+Spaces
+Buckets
+Docs
+Enterprise
+Pricing
+Website
+Tasks
+HuggingChat
+Collections
+Languages
+Organizations
+Community
+Blog
+Posts
+Daily Papers
+Hardware
+Learn
+Discord
+Forum
+GitHub
+Solutions
+Team & Enterprise
+Hugging Face PRO
+Enterprise Support
+Inference Providers
+Inference Endpoints
+Storage Buckets
+Log In
+Sign Up
+Hub documentation
+Hub Rate limits
+Hub
+🏡 View all docs AWS Trainium & Inferentia Accelerate Argilla AutoTrain Bitsandbytes CLI Chat UI Dataset viewer Datasets Deploying on AWS Diffusers Distilabel Evaluate Google Cloud Google TPUs Gradio Hub Hub Python Library Huggingface.js Inference Endpoints (dedicated) Inference Providers Kernels LeRobot Leaderboards Lighteval Microsoft Azure OpenEnv Optimum PEFT Reachy Mini Safetensors Sentence Transformers TRL Tasks Text Embeddings Inference Text Generation Inference Tokenizers Trackio Transformers Transformers.js Xet smolagents timm
+Search documentation
+AR EN ES FR ID JA KO PT RU TR VI ZH
+API docs
+🤗 Hugging Face Hub Team & Enterprise Plans
+Single Sign-On (SSO) Audit Logs Storage Regions Data Studio for Private datasets Resource Groups (Access Control) Advanced Compute Options Advanced Security Tokens Management Service Accounts Publisher Analytics Gating Group Collections Network Security Download Analytics Rate Limits Blog Articles
+PRO Plan Repositories
+Getting Started with Repositories Repository Settings Storage Limits Storage Backend (Xet) Local Cache Pull Requests & Discussions Notifications Collections Webhooks GitHub Actions Notebooks Next Steps Licenses
+Models
+The Model Hub Model Cards Eval Results Leaderboard Data Gated Models Uploading Models Downloading Models Integrated Libraries Model Widgets Model Inference Models Download Stats Model Release Checklist Hardware Local Apps Frequently Asked Questions Advanced Topics
+Datasets
+Datasets Overview Dataset Cards Gated Datasets Uploading Datasets Uploading Datasets (for LLMs) Downloading Datasets Streaming Datasets Integrated Libraries Data Studio Agent Traces Datasets Download Stats
+Spaces
+Spaces Overview Spaces GPU Upgrades Spaces ZeroGPU Spaces Dev Mode Spaces Disk Usage & Storage Spaces Custom Domain Spaces as MCP servers Spaces as Agent Tools Spaces as API Endpoints Gradio Spaces Streamlit Spaces Static HTML Spaces Docker Spaces Embed your Space Run Spaces with Docker Spaces Configuration Reference Sign-In with HF button Featured Spaces Spaces Changelog Advanced Topics
+Storage Buckets new
+Access Patterns S3 Compatibility Bucket Integrations Bucket Security
+Container Images new Jobs
+Jobs Overview Quickstart Pricing and Billing Manage Jobs Configuration Using Docker images Serve Models Train Models Examples & Tutorials Process Large Datasets Schedule Jobs Webhook Automation Reference
+Agents
+Agents Overview Hugging Face CLI for AI Agents Hugging Face MCP Server Hugging Face Agent Skills Building agents with the HF SDK Local Agents with llama.cpp Agent Libraries Session Traces Format
+Other
+Organizations Billing Security Moderation Paper Pages Academia Hub Blog Articles Search Digital Object Identifier (DOI) Hub API Endpoints OAuth / Sign in with HF
+Join the Hugging Face community
+and get access to the augmented documentation experience
+Collaborate on models, datasets and Spaces
+Faster examples with accelerated inference
+Switch between documentation themes
+Sign Up to get started
+Copy page
+Hub Rate limits
+To protect our platform’s integrity and ensure availability to as many AI community members as possible, we enforce rate limits on all requests made to the Hugging Face Hub.
+We define different rate limits for distinct classes of requests. We distinguish three main buckets:
+Hub APIs e.g. model or dataset search, repo creation, user management, etc. All endpoints that belong to this bucket are documented in Hub API Endpoints .
+Resolvers They’re all the URLs that contain a /resolve/ segment in their path, which serve user-generated content from the Hub. Concretely, those are the URLs that are constructed by open source libraries (transformers, datasets, vLLM, llama.cpp, …) or AI applications (LM Studio, Jan, ollama, …) to download model/dataset files from HF.
+Specifically, this is the “Resolve a file” endpoint documented in our OpenAPI spec.
+Resolve requests are heavily used by the community, and since we optimize our infrastructure to serve them with maximum efficiency, the rate limits for Resolvers are the highest.
+Pages All the Web pages we host on huggingface.co.
+Usually Web browsing requests are made by humans, hence rate limits don’t need to be as high as the above mentioned programmatic endpoints.
+All values are defined over 5-minute windows, which allows for some level of “burstiness” from an application or developer’s point of view.
+If you, your organization, or your application need higher rate limits, we encourage you to upgrade your account to PRO, Team, or Enterprise. We prioritize support requests from PRO, Team, and Enterprise customers – see built-in limits in Rate limit Tiers .
+Billing dashboard
+At any point, you can check your rate limit status on your (or your org’s) Billing page: https://huggingface.co/settings/billing
+On the right side, you will see three gauges, one for each bucket of Requests.
+Each bucket presents the number of current (last 5 minutes) requests, and the number of allowed requests based on your user account or organization plan.
+Whenever you exceed the limit in the past 5 minutes (the view is updated in real-time), the bar will turn red.
+Note: You can use the context switcher to easily switch between your user account and your orgs.
+HTTP Headers
+Whenever you or your organization hits a rate limit, you will receive a 429 Too Many Requests HTTP error.
+We implement the mechanism described in the IETF draft (Version 9) titled “RateLimit HTTP header fields for HTTP” (also known as draft-ietf-httpapi-ratelimit-headers ).
+The goal is to define standardized HTTP headers that servers can use to advertise quota / rate-limit policies and communicate current usage / limits to clients so that they can avoid being throttled.
+Precisely, we implement the following headers:
+Header Purpose / Meaning
+RateLimit The total allowed rate limit for the current window. “How many requests (of this type) you’re allowed to perform.”
+RateLimit-Policy Carries the rate limit policy itself (e.g. “100 requests per 5 minutes”). It’s informative; shows what policy the client is subject to.
+A set of examples is as follows:
+Header Example
+RateLimit "api\|pages\|resolvers";r=[remaining];t=[seconds remaining until reset]
+RateLimit-Policy "fixed window";"api\|\pages\|resolvers";q=[total allowed for window];w=[window duration in seconds]
+Rate limit Tiers
+Here are the current rate limits (in September ‘25) based on your plan:
+Plan API Resolvers Pages
+Anonymous user (per IP address) 500 * 3,000 * 100 *
+Free user 1,000 * 5,000 * 200 *
+PRO user 2,500 12,000 400
+Team organization 3,000 20,000 400
+Enterprise organization 6,000 50,000 600
+Enterprise Plus organization 10,000 100,000 1,000
+Enterprise Plus organization
+With “Higher Hub Rate Limits” enabled 100,000 500,000 10,000
+Academia Hub organization 3,000 20,000 400
+* Anonymous and Free users are subject to change over time depending on platform health 🤞
+All quotas are calculated over 5-minute fixed windows.
+Note: For organizations, rate limits are applied individually to each member, not shared among members.
+What if I get rate-limited
+First, make sure you always pass a HF_TOKEN , and it is passed downstream to all libraries or applications that download stuff from the Hub.
+This is the number one reason users get rate limited and is a very easy fix.
+Despite passing HF_TOKEN if you are still rate limited, you can:
+spread out your requests over longer periods of time
+replace Hub API calls with Resolver calls, whenever possible (Resolver rate limits are much higher and much more optimized).
+upgrade to PRO, Team, or Enterprise.
+Smart rate limit handling with huggingface_hub
+The Hub Python Library huggingface_hub (version 1.2.0+ ) includes smart retry handling for rate limit errors.
+When a 429 error occurs, the SDK automatically parses the RateLimit header to extract the exact number of seconds until the rate limit resets, then waits precisely that duration before retrying. This applies to file downloads (i.e. Resolvers) and paginated Hub API calls (list models, datasets, spaces, etc.).
+We strongly recommend using huggingface_hub for all programmatic access to the Hub to benefit from this optimized retry behavior and avoid implementing custom rate limit handling.
+Granular user action Rate limits
+In addition to those main classes of rate limits, we enforce limits on certain specific kinds of user actions, like:
+repo creation
+repo commits
+discussions and comments
+moderation actions
+etc.
+We don’t currently document the rate limits for those specific actions, given they tend to change over time more often. If you get quota errors, we encourage you to upgrade your account to PRO, Team, or Enterprise.
+Feel free to get in touch with us via the support team.
+Update on GitHub
+← Download Analytics Blog Articles →
+Hub Rate limits Billing dashboard HTT P Headers Rate limit Tiers What if I get rate-limited Smart rate limit handling with huggingface_hub Granular user action Rate limits

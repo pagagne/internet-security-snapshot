@@ -1,0 +1,76 @@
+# SANS ISC data feeds
+# https://isc.sans.edu/feeds_doc.html
+# copied 2026-10-31
+
+Using Our Data Feeds - SANS Internet Storm Center
+-->
+Internet Storm Center
+Sign In
+Sign Up
+Handler on Duty: Xavier Mertens
+Threat Level: green
+Using DShield's Data Feeds
+Use of data premitted with attribution: SANS Technology Institute, Internet Storm Center, https://isc.sans.edu
+(you may feel free to change the format of the attribution according to your guidelines). Do not resell the data.
+Other commercial uses are allowed. For more details, send an email to handlers at isc.sans.edu.
+More granular data is available via our API . But whenever possible, these static feeds should be used. Avoid downloading the data more than once an hour.
+Top of page
+Top IP Addresses
+https://feeds.dshield.org/feeds/topips.txt : Top 100 IP addresses and hostnames.
+https://feeds.dshield.org/feeds/top10.txt : Just IPs. No hostnames
+https://feeds.dshield.org/feeds/block.txt : Top 20 most active networks
+https://feeds.dshield.org/feeds/daily_sources : Daily summary of all source IPs
+Top Ports
+https://feeds.dshield.org/feeds//topports.txt : Top 10 Ports (from firewall logs)
+https://feeds.dshield.org/feeds//topports_source.txt : Top 10 Ports sorted by number of source IPs scanning(from firewall logs)
+https://feeds.dshield.org/feeds//topports_reports.txt : Top 10 Ports sorted by number of reports received (from firewall logs)
+https://feeds.dshield.org/feeds//topports_targets.txt : Top 10 Ports sorted by number of target IPs reporting (from firewall logs)
+SSH Logs
+Each day, a file is created summarizing the activity of the day before. See
+https://feeds.dshield.org/feeds/ssh_daily_2026-10-31 (date in YYYY-MM-DD format): The data includes the source IP addresses, usernames, and passwords.
+https://isc.sans.edu/sshallusernames.json . Summary of recently seen usernames (last 30 days). Data includes the date the username was first seen, last seen and how often it was seen by our cowrie honeypots.
+Web Honeypot Data
+These feeds are updated once a day. URLs are reproduced "AS IS" and not encoded.
+https://isc.sans.edu/feeds/urlsummary.txt : URL Summary. All URLs seen, when they were first and last seen and how often.
+https://isc.sans.edu/feeds/urlcategories.txt : URL Category Summary. All URLs for which we assign a category/type (= more vulnerability information)
+Threatintel feeds
+We make a dump of our database available that includes all the labels we associate with an IP address.
+https://isc.sans.edu/feeds/threatintel.txt .
+New Domain Lists
+Today's list of new domains can be retrieved from https://isc.sans.edu/feeds/domaindata.json.gz . Prior lists can be retrieved by addeding the date to the filename like: https://isc.sasn.edu/feeds/domaindata.2025-10-30.json.gz . We will keep at least five prior days available. The next day is considered "current" once it contains one million domains. Feeds are updated once an hour. Many of the domains are retreived from certificate transparency logs. They may not be new, but new to us.
+Homepage
+Diaries
+Podcasts
+Jobs
+Data
+TCP/UDP Port Activity
+Port Trends
+SSH/Telnet Scanning Activity
+Weblogs
+Domains
+Threat Feeds Activity
+Threat Feeds Map
+Useful InfoSec Links
+Presentations & Papers
+Research Papers
+API
+Tools
+DShield Sensor
+DNS Looking Glass
+Honeypot (RPi/AWS)
+InfoSec Glossary
+Contact Us
+Contact Us
+About Us
+Handlers
+About Us
+Slack Channel
+Mastodon
+Bluesky
+X
+© 2026 SANS™ Internet Storm Center
+Developers: We have an API for you!
+Link To Us
+About Us
+Handlers
+Privacy Policy
