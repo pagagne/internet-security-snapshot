@@ -3,7 +3,7 @@
 Author's decisions, 30 Oct 2026: catalogue each hand-run sweep with charts and carry it in The
 Snapshot manual; the January 2027 sweep is part of the pilot. Reads every sweep in
 exploratory/ai_tool_sweeps/<date>.csv (a compact copy of the Research task github_tools output,
-originals only) and writes exploratory/ai_tool_landscape.md with a set of charts per sweep (five, plus one protocol chart for every 12 protocols found) in
+originals only) and writes exploratory/ai_tool_landscape.md with a set of charts per sweep (six, plus one protocol chart for every 12 protocols found) in
 exploratory/ai_tool_landscape/. Exploratory and never scored: a tool on GitHub is supply, not
 use, and the role labels are first guesses until checked.
 
@@ -34,6 +34,7 @@ TOOLKITS = ["MCP", "LangChain", "CrewAI", "AutoGen", "LlamaIndex", "Semantic Ker
             "Claude Code / Agent SDK", "smolagents", "PydanticAI"]
 from .research.github_tools import PROTOCOLS as _P
 PROTOCOLS = list(_P)
+WEIGHTS = ["open-weight", "closed", "runs locally"]
 PER_CHART = 12   # protocols per chart: the number of protocol charts follows what a sweep finds
 
 
@@ -45,6 +46,20 @@ def months(rows, since="2025-01"):
     return sorted({r["created"][:7] for r in rows if r["created"] and r["created"][:7] >= since})
 
 
+def open_share(rows: list[dict], ms: list[str]) -> tuple[list[str], list[float]]:
+    """Per quarter: of the tools naming any AI model, the share naming an open-weight one (or
+    running models locally)."""
+    qs, out = [], []
+    for q in sorted({f"{m[:4]} Q{(int(m[5:]) - 1) // 3 + 1}" for m in ms}):
+        yr, qn = q.split(" Q")
+        mons = {f"{yr}-{3 * (int(qn) - 1) + i:02d}" for i in (1, 2, 3)}
+        named = [r for r in rows if r["created"][:7] in mons and r.get("weights")]
+        if len(named) >= 5:
+            qs.append(q)
+            out.append(100 * sum(("open-weight" in r["weights"]) or ("runs locally" in r["weights"]) for r in named) / len(named))
+    return qs, out
+
+
 def stats(rows: list[dict]) -> dict:
     by = {k: [r for r in rows if r["role"] == k] for k in ROLES}
     ms = months(rows)
@@ -53,7 +68,9 @@ def stats(rows: list[dict]) -> dict:
         "per_month": {k: [sum(r["created"][:7] == m for r in by[k]) for m in ms] for k in SIDES},
         "stars": {k: sum(int(r["stars"]) for r in by[k]) for k in ROLES},
         **{f: {k: [sum(a in r[f].split(";") for r in by[k]) for a in lst] for k in SIDES}
-           for f, lst in (("labs", LABS), ("targets", TARGETS), ("toolkits", TOOLKITS), ("protocols", PROTOCOLS))},
+           for f, lst in (("labs", LABS), ("weights", WEIGHTS), ("targets", TARGETS), ("toolkits", TOOLKITS),
+                          ("protocols", PROTOCOLS))},
+        "open_share": {k: open_share(by[k], ms) for k in SIDES},
     }
 
 
@@ -109,6 +126,24 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
         for side in ("top", "right"):
             ax.spines[side].set_visible(False)
         fig.tight_layout(); n = f"{date}-{num}-{field}-by-side.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.8), dpi=130)
+    x = range(len(WEIGHTS))
+    for off, k in ((-.27, "attack"), (0, "defence"), (.27, "both")):
+        a1.bar([i + off for i in x], s["weights"][k], .27, color=COLOURS[k], label=k.capitalize())
+    a1.set_xticks(list(x), ["Open-weight model", "Closed model", "Runs models locally"])
+    a1.set_xlabel("Kind of AI the project names"); a1.set_ylabel("Projects naming it")
+    a1.set_title("Open-weight or closed, by role"); a1.legend(frameon=False); a1.grid(axis="y", alpha=.3)
+    for k in ("attack", "defence"):
+        qs, vals = s["open_share"][k]
+        a2.plot(qs, vals, marker="o", lw=2, color=COLOURS[k], label=k.capitalize())
+    a2.set_ylim(0, 100); a2.set_xlabel("Quarter the project was created")
+    a2.set_ylabel("% naming an open-weight or local model"); a2.set_title("Share using open-weight AI, by quarter")
+    a2.tick_params(axis="x", labelrotation=45, labelsize=8); a2.legend(frameon=False); a2.grid(axis="y", alpha=.3)
+    for ax in (a1, a2):
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+    fig.suptitle(f"Open-weight against closed AI (sweep of {date})")
+    fig.tight_layout(); n = f"{date}-7-open-weight.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
     found = sorted((p for i, p in enumerate(PROTOCOLS) if sum(s["protocols"][k][i] for k in SIDES)),
                    key=lambda p: -sum(s["protocols"][k][PROTOCOLS.index(p)] for k in SIDES))
     for c, start in enumerate(range(0, len(found), PER_CHART)):
@@ -218,6 +253,14 @@ def build_text(root: Path | None = None) -> str:
               "Agent toolkits named (attack / defence / both): " + "; ".join(
                   f"{t} {s['toolkits']['attack'][i]}/{s['toolkits']['defence'][i]}/{s['toolkits']['both'][i]}"
                   for i, t in enumerate(TOOLKITS)) + ".", "",
+              f"![Chart 6. Open-weight against closed AI, sweep of {date}](ai_tool_landscape/{date}-7-open-weight.png)", "",
+              "*Chart 6 (author's decision, 30 Oct 2026). Left: projects naming an open-weight model "
+              "(downloadable, runs anywhere: Llama, Qwen, DeepSeek, Mistral's open models, Hermes, Gemma, "
+              "gpt-oss), a closed model (used through the maker's service: GPT, Claude, Gemini, Grok) or "
+              "local running (Ollama and similar); a project can name several. Right: per quarter, the "
+              "share of projects naming any model that name an open-weight or local one (quarters with "
+              "fewer than five such projects left out). Decided by model, not lab: Google, OpenAI and "
+              "Mistral make both kinds.*", "",
               *protocol_section(date, s),
               "| Month | " + " | ".join(m for m in s["months"][-12:]) + " |",
               "|---|" + "---|" * len(s["months"][-12:])]

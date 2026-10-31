@@ -4648,6 +4648,7 @@ Started 25 Oct 2026 at the author's request.
 | 2026-10-30 | Author | Review GitHub's terms for the sweep; can it break each tool down by the technology or network protocols it focuses on and the AI it names, by developer lab? | GitHub's Acceptable Use Policies (section 7) allow research use of public, non-personal information when publications are open access; collection through the API is not scraping; no spam, no selling personal data, no burdensome bulk activity. Individuals' usernames are personal information, which also conflicts with our rule to research organisations, not individuals. **Author's decisions:** (1) individuals' repositories appear in public files by project name only, never the owner's username (organisations by full name; author's revision the same evening: project names, not code numbers); the register and full list are kept privately in the author's Drive (`x25-private/`); the 30 Oct baseline with usernames was removed from the working files (it stays in the repository history); (2) the breakdown is added now (targets, network protocols, AI by lab, agent toolkit; READMEs read for the 800 most-starred) and the baseline rerun. |
 | 2026-10-30 | Author | Use the baseline sweep to refine the searches and parameters for the next sweep, in the pilot; keep it a manual workflow. | **Author's decision:** the 30 Oct baseline is used once to refine the X25 searches and word lists (Claude's proposal 18 Nov, author's approval 20 Nov); fixed from the 6 Jan 2027 pilot sweep on. The sweep stays hand-run only (Research task `github_tools`, started through GitHub's API; no timer). |
 | 2026-10-30 | Author | The number of charts should follow the number of protocols encountered, not be fixed now. | **Author's decision:** the X25 protocol list widened to 57 (web, remote access, Windows identity, network plumbing, mail, industrial and IoT, wireless, databases, AI agent protocols MCP and A2A); every protocol found gets a bar, 12 to a chart, so the number of protocol charts follows each sweep. Revisited with the 18-20 Nov refinement. |
+| 2026-10-30 | Author | Add weighted AI systems? | Taken as open-weight models (downloadable, run anywhere, outside the maker's safeguards) against closed ones. **Author's decision:** each AI the X25 sweep finds is marked open-weight, closed or run locally, decided by model, not lab (Google, OpenAI and Mistral make both); new chart comparing attack and defence and the open-weight share by quarter; linked to X12. Added now and the baseline rerun the same night. |
 
 
 <a id="doc-docs-cases-php2shell-md"></a>
@@ -5937,6 +5938,10 @@ author's unless marked. Written during the day; later work is added at the end.
   access, Windows identity, network plumbing, mail, industrial and IoT, wireless, databases,
   AI agent protocols such as MCP and A2A); only those found are charted, 12 to a chart, so the
   number of charts follows each sweep and is not fixed before the pilot.
+
+- **Open-weight against closed (author):** each AI named is marked open-weight, closed or run
+  locally, by model not lab; a new chart compares attack and defence and tracks the open-weight
+  share by quarter (beside X12, the open-weight release log).
 
 #### Carried over
 - Sort the X25 baseline into the register for the author (with the 6 Nov AI-log check).

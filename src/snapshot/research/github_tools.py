@@ -65,6 +65,14 @@ LABS = {   # AI named in a description or README, grouped by the lab that makes 
     "Microsoft": r"\bphi-?[234]\b",
     "Local runner": r"\bollama\b|\bllama\.cpp\b|\blm studio\b|\bvllm\b",
 }
+WEIGHTS = {   # open-weight against closed, decided by model, not lab (author, 30 Oct 2026)
+    "open-weight": r"\bllama\b(?!\.cpp|index)|\bqwen|\bdeepseek|\bmistral\b(?! large)|\bmixtral\b|\bhermes\b|\bgemma\b|"
+                   r"\bgpt-?oss\b|\bphi-?[234]\b|\bchatglm\b|\bglm-?[45]|\bkimi\b|\bfalcon\b|\bolmo\b|\bstarcoder|"
+                   r"open.?weights?\b|open-source (llm|model)s?|local (llm|model)s?|self-hosted (llm|model)s?",
+    "closed": r"\bgpt-?[345](?!-?oss)|\bchatgpt\b|\bopenai api\b|\bclaude\b|\bgemini\b|\bgrok\b|mistral large|"
+              r"\bo[134](-mini)?\b(?= model)",
+    "runs locally": r"\bollama\b|\bllama\.cpp\b|\blm studio\b|\bvllm\b|\blocalai\b|run(s|ning)? locally|offline (llm|model)",
+}
 TOOLKITS = {
     "MCP": r"\bmcp\b|model context protocol", "LangChain": r"\blangchain\b|\blanggraph\b",
     "CrewAI": r"\bcrewai\b", "AutoGen": r"\bautogen\b|\bag2\b", "LlamaIndex": r"\bllamaindex\b|\bllama.index\b",
@@ -126,8 +134,8 @@ DEFENCE = re.compile(r"detect|\bsoc\b|siem|incident response|threat hunt|triage|
                      r"vulnerability management|compliance|posture|防御|检测|应急|安全运营|защит", re.I)
 
 PUBLIC = ["name", "ref", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
-          "role", "side", "labs", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard", "topics", "description"]
-COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "role", "side", "labs", "toolkits", "targets",
+          "role", "side", "labs", "weights", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard", "topics", "description"]
+COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "role", "side", "labs", "weights", "toolkits", "targets",
            "protocols", "readme_read", "readme_safeguard"]
 
 
@@ -190,7 +198,8 @@ def _readme(full_name: str) -> str:
 
 
 def _label(r: dict, text: str) -> None:
-    for field, table in (("labs", LABS), ("toolkits", TOOLKITS), ("targets", TARGETS), ("protocols", PROTOCOLS)):
+    for field, table in (("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS), ("targets", TARGETS),
+                         ("protocols", PROTOCOLS)):
         r[field] = ";".join(sorted(set(filter(None, r[field].split(";"))) | set(tags(text, table)),
                                    key=list(table).index))
 
@@ -207,7 +216,7 @@ def row(it: dict) -> dict:
         "license": ((it.get("license") or {}).get("spdx_id") or ""), "language": it.get("language") or "",
         "topics": ";".join(topics), "description": desc[:240],
         "role": role(it.get("name", "") + " " + desc + " " + " ".join(topics)),
-        "side": "", "queries": "", "labs": "", "toolkits": "", "targets": "", "protocols": "",
+        "side": "", "queries": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
         "readme_read": "no", "readme_safeguard": "",
     }
     _label(r, it.get("name", "") + " " + desc + " " + " ".join(topics))
@@ -277,7 +286,8 @@ def summary(rows: list[dict], hits: dict, today: str) -> str:
          + "; ".join(f"{k} {len(by[k])}" for k in roles) + ". Labels say what the software does, not who "
          "uses it. Individuals' repositories appear by project name only (no username); organisations "
          "by full name.", ""]
-    for field, table in (("labs", LABS), ("toolkits", TOOLKITS), ("targets", TARGETS), ("protocols", PROTOCOLS)):
+    for field, table in (("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS), ("targets", TARGETS),
+                         ("protocols", PROTOCOLS)):
         L += [f"## {field.capitalize()} named, by side", "", f"| {field.capitalize()} | Attack | Defence | Both |", "|---|---|---|---|"]
         for k in table:
             L.append(f"| {k} | " + " | ".join(str(sum(k in r[field].split(";") for r in by[s])) for s in ("attack", "defence", "both")) + " |")

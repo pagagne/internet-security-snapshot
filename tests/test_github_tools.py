@@ -84,3 +84,11 @@ def test_public_x25_files_name_no_individual():
         for r in csv.DictReader(f.open()):
             if r.get("owner_type", r.get("maker", "")) not in ("Organization", "organisation"):
                 assert "/" not in r["name"], (f.name, r["name"])     # project name, never owner/project
+
+
+def test_open_weight_by_model_not_lab():
+    w = lambda d: G.tags(d, G.WEIGHTS)
+    assert w("runs Gemma 3 via Ollama") == ["open-weight", "runs locally"]
+    assert w("uses Gemini 2.5 and Claude") == ["closed"]
+    assert w("gpt-oss-120b agent") == ["open-weight"] and w("GPT-4o agent") == ["closed"]
+    assert w("Hermes on Mistral Large via OpenRouter") == ["open-weight", "closed"]
