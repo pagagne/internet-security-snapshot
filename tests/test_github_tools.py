@@ -61,7 +61,8 @@ def test_individuals_get_stable_codes_and_no_details():
     a, b, org = (G.row(_item(n, 1)) for n in ("alice/tool", "bob/tool", "acme/tool"))
     org["owner_type"] = "Organization"
     reg = G.pseudonymise([a, b, org], {"bob/tool": "ind-00007"})
-    assert b["name"] == "ind-00007" and a["name"] == "ind-00008" and org["name"] == "acme/tool"
+    assert (b["name"], b["ref"]) == ("tool", "ind-00007") and (a["name"], a["ref"]) == ("tool", "ind-00008")
+    assert org["name"] == "acme/tool" and org["ref"] == ""
     assert reg == {"bob/tool": "ind-00007", "alice/tool": "ind-00008"}
     pub = G.public(a)
     assert "full_name" not in pub and "url" not in pub and pub["description"] == ""
@@ -73,4 +74,4 @@ def test_public_x25_files_name_no_individual():
     for f in list((ROOT / "exploratory/ai_tool_sweeps").glob("*.csv")) + [ROOT / "exploratory/ai_attack_tools.csv"]:
         for r in csv.DictReader(f.open()):
             if r.get("owner_type", r.get("maker", "")) not in ("Organization", "organisation"):
-                assert re.fullmatch(r"ind-(\d{5}|pending)", r["name"]), (f.name, r["name"])
+                assert "/" not in r["name"], (f.name, r["name"])     # project name, never owner/project

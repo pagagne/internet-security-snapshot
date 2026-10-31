@@ -13,9 +13,11 @@ AI it names grouped by the lab that makes it, the agent toolkit, what it goes af
 and which network protocols it names. Descriptions are read for every repository; READMEs for
 the most-starred originals only (GitHub allows about 1,000 API requests an hour per workflow).
 
-Privacy (author's decision, 30 Oct 2026): a repository owned by an individual is published
-under a stable code (ind-00001, ...), never its owner's username, name, link or description;
-organisations keep their names. The code register and the full list are private: written to
+Privacy (author's decisions, 30 Oct 2026): a repository owned by an individual is published
+under its project name only (the part after the slash), never its owner's username, link or
+description; organisations keep their full names. Each individual's repository also gets a
+stable reference (ind-00001, ...) in the `ref` column, only to tell apart two projects with the
+same name across sweeps. The register and the full list are private: written to
 research-private/ and copied by the workflow to the author's Drive (x25-private/), never to
 the repository. A tool on GitHub is supply, not use: X25 is never scored.
 
@@ -95,9 +97,9 @@ DEFENCE = re.compile(r"detect|\bsoc\b|siem|incident response|threat hunt|triage|
                      r"blue.?team|defen[cs]|monitor|forensic|malware analysis|code review|\bsast\b|"
                      r"vulnerability management|compliance|posture|防御|检测|应急|安全运营|защит", re.I)
 
-PUBLIC = ["name", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
+PUBLIC = ["name", "ref", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
           "role", "side", "labs", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard", "topics", "description"]
-COMPACT = ["name", "owner_type", "created", "stars", "forks", "role", "side", "labs", "toolkits", "targets",
+COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "role", "side", "labs", "toolkits", "targets",
            "protocols", "readme_read", "readme_safeguard"]
 
 
@@ -214,18 +216,19 @@ def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_
 
 
 def pseudonymise(rows: list[dict], registry: dict[str, str]) -> dict[str, str]:
-    """Organisations keep their names; every other owner gets a stable code from the private
-    register (new codes continue the numbering). Returns the updated register."""
+    """Organisations keep their full names; an individual's repository is shown by its project
+    name, with a stable reference from the private register (new references continue the
+    numbering). Returns the updated register."""
     reg = dict(registry)
     nxt = max((int(c[4:]) for c in reg.values() if re.fullmatch(r"ind-\d{5}", c)), default=0) + 1
     for r in sorted(rows, key=lambda r: (r["created"], r["full_name"])):
         if r["owner_type"] == "Organization":
-            r["name"] = r["full_name"]
+            r["name"], r["ref"] = r["full_name"], ""
             continue
         if r["full_name"] not in reg:
             reg[r["full_name"]] = f"ind-{nxt:05d}"
             nxt += 1
-        r["name"] = reg[r["full_name"]]
+        r["name"], r["ref"] = r["full_name"].split("/", 1)[1], reg[r["full_name"]]
     return reg
 
 
@@ -244,7 +247,8 @@ def summary(rows: list[dict], hits: dict, today: str) -> str:
          f"Repositories found: {len(rows)} ({len(orig)} originals; READMEs read for "
          f"{sum(r['readme_read'] == 'yes' for r in orig)}). First labels: "
          + "; ".join(f"{k} {len(by[k])}" for k in roles) + ". Labels say what the software does, not who "
-         "uses it. Individuals' repositories appear as codes (ind-…); organisations by name.", ""]
+         "uses it. Individuals' repositories appear by project name only (no username); organisations "
+         "by full name.", ""]
     for field, table in (("labs", LABS), ("toolkits", TOOLKITS), ("targets", TARGETS), ("protocols", PROTOCOLS)):
         L += [f"## {field.capitalize()} named, by side", "", f"| {field.capitalize()} | Attack | Defence | Both |", "|---|---|---|---|"]
         for k in table:

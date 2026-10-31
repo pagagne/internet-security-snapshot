@@ -148,8 +148,8 @@ def build_text(root: Path | None = None) -> str:
          "model testing (tests AI models themselves; kept apart) or unclear. These are first guesses; "
          "Claude checks every tool with 100+ stars and the author confirms. The attack and defence "
          "searches are not mirror images, so read each side's trend, not the gap between totals.", "",
-         "**Privacy.** Repositories owned by individuals appear as codes (ind-00001, ...), never a "
-         "username; organisations by name. The code register and the full list are kept privately in "
+         "**Privacy.** Repositories owned by individuals appear by project name only, never the "
+         "owner's username; organisations by full name. The register and the full list are kept privately in "
          "the author's Drive (author's decision, 30 Oct 2026; GitHub's Acceptable Use Policies allow "
          "research use of public, non-personal information published open access).", "",
          "**Schedule.** Run by hand only: baseline 30 Oct 2026; the January 2027 sweep (6 Jan) is part "
