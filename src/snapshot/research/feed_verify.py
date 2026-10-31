@@ -119,8 +119,8 @@ def main(argv=None) -> int:
          f"failing: {sum(r['feed'] not in ('ok', 'skipped') or (r['feed'] == 'ok' and not r['items']) for r in rows)}; "
          f"skipped: {sum(r['feed'] == 'skipped' for r in rows)}; "
          f"replacements found: {sum(bool(r.get('replacement')) for r in rows)}.", ""]
-    L += [f"- {r['name']}: feed {r['feed']} ({r['items']} items); site names org {r['site_names_org']}; "
-          f"linked {r['linked_from_site']}; verified {r['verified']}"
+    L += [f"- {r['name']}: feed {r['feed']} ({r['items']} items); site names org {r.get('site_names_org', '-')}; "
+          f"linked {r.get('linked_from_site', '-')}; verified {r['verified']}"
           + (f"; replacement {r['replacement']} ({r['replacement_items']} items)" if r.get("replacement") else "")
           for r in rows]
     (a.out / "summary.md").write_text("\n".join(L) + "\n")

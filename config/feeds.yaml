@@ -5,7 +5,8 @@
 # reported in each run and fixed here with a dated note; additions are dated too.
 # Vetting (author's decision, 29 Oct 2026): every feed records the organisation (name), its
 # official domain, a trust level and whether that domain has been verified against the
-# organisation's own website. A test fails if a feed's address is outside its domain (alt_host
+# organisation's own website (checked by the Research task feed_verify; first full check 31 Oct
+# 2026). A test fails if a feed's address is outside its domain (alt_host
 # allowed only with a reason), not HTTPS, or missing a field; the reader drops any reply that
 # redirects off the domain. Trust levels: primary_research and government (their own reports
 # can be cited), ai_lab (its own threat reports), news_leads_only and database_leads_only (leads
@@ -22,65 +23,65 @@ attack_terms: ["attack", "attacker", "campaign", "intrusion", "breach", "breache
                "espionage", "stolen", "攻击", "入侵", "攻撃", "атак", "взлом", "Angriff", "attaque"]
 added: 2026-10-29
 feeds:
-  - {name: "Unit 42", url: "https://unit42.paloaltonetworks.com/feed/", domain: unit42.paloaltonetworks.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Cisco Talos", url: "https://blog.talosintelligence.com/rss/", domain: talosintelligence.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Microsoft Security Blog", url: "https://www.microsoft.com/en-us/security/blog/feed/", domain: microsoft.com, trust: primary_research, verified: pending, added: 2026-10-29}
+  - {name: "Unit 42", url: "https://unit42.paloaltonetworks.com/feed/", domain: unit42.paloaltonetworks.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Cisco Talos", url: "https://blog.talosintelligence.com/rss/", domain: talosintelligence.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Microsoft Security Blog", url: "https://www.microsoft.com/en-us/security/blog/feed/", domain: microsoft.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
   - {name: "Google Cloud Threat Intelligence", url: "https://cloud.google.com/blog/topics/threat-intelligence/rss/", domain: cloud.google.com, trust: primary_research, verified: pending, added: 2026-10-29, skip: "the address returns a web page, not a feed, and Google publishes no feed for this blog; covered by the quarterly sweep page list, 31 Oct"}
-  - {name: "ESET WeLiveSecurity", url: "https://www.welivesecurity.com/en/rss/feed/", domain: welivesecurity.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Kaspersky Securelist", url: "https://securelist.com/feed/", domain: securelist.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Check Point Research", url: "https://research.checkpoint.com/feed/", domain: checkpoint.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Sophos X-Ops", url: "https://news.sophos.com/en-us/category/threat-research/feed/", domain: sophos.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Huntress", url: "https://www.huntress.com/blog/rss.xml", domain: huntress.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "SentinelLabs", url: "https://www.sentinelone.com/labs/feed/", domain: sentinelone.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Elastic Security Labs", url: "https://www.elastic.co/security-labs/rss/feed.xml", domain: elastic.co, trust: primary_research, verified: pending, added: 2026-10-29, max_mb: 20, note: "feed is about 6 MB (full articles); size limit raised for this feed only, 31 Oct"}
-  - {name: "Sysdig", url: "https://sysdig.com/feed/", domain: sysdig.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Wiz", url: "https://www.wiz.io/feed/rss.xml", domain: wiz.io, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "CrowdStrike", url: "https://www.crowdstrike.com/en-us/blog/feed", domain: crowdstrike.com, trust: primary_research, verified: pending, added: 2026-10-29}
+  - {name: "ESET WeLiveSecurity", url: "https://www.welivesecurity.com/en/rss/feed/", domain: welivesecurity.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Kaspersky Securelist", url: "https://securelist.com/feed/", domain: securelist.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Check Point Research", url: "https://research.checkpoint.com/feed/", domain: checkpoint.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Sophos X-Ops", url: "https://news.sophos.com/en-us/category/threat-research/feed/", domain: sophos.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Huntress", url: "https://www.huntress.com/blog/rss.xml", domain: huntress.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "SentinelLabs", url: "https://www.sentinelone.com/labs/feed/", domain: sentinelone.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, verified_note: "served over HTTPS by sentinelone.com, SentinelOne's own site (the automatic name check looked for 'SentinelLabs')"}
+  - {name: "Elastic Security Labs", url: "https://www.elastic.co/security-labs/rss/feed.xml", domain: elastic.co, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, max_mb: 20, note: "feed is about 6 MB (full articles); size limit raised for this feed only, 31 Oct"}
+  - {name: "Sysdig", url: "https://sysdig.com/feed/", domain: sysdig.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Wiz", url: "https://www.wiz.io/feed/rss.xml", domain: wiz.io, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "CrowdStrike", url: "https://www.crowdstrike.com/en-us/blog/feed", domain: crowdstrike.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
   - {name: "Trend Micro Research", url: "https://www.trendmicro.com/en_us/research.rss.xml", domain: trendmicro.com, trust: primary_research, verified: pending, added: 2026-10-29, skip: "Trend Micro publishes no research RSS feed any more (its RSS page says delivery is suspended); its research is covered by the quarterly sweep page list, 31 Oct"}
-  - {name: "Zscaler ThreatLabz", url: "https://www.zscaler.com/blogs/feeds/security-research", domain: zscaler.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Recorded Future", url: "https://www.recordedfuture.com/feed", domain: recordedfuture.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Rapid7", url: "https://www.rapid7.com/blog/tag/research/rss/", domain: rapid7.com, trust: primary_research, verified: pending, added: 2026-10-29, note: "old feed failed to parse; Rapid7 changed its feed addresses in 2025 (Rapid7 community post), research tag feed, 31 Oct"}
-  - {name: "Tenable", url: "https://www.tenable.com/blog/feed", domain: tenable.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Qualys", url: "https://blog.qualys.com/feed", domain: qualys.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Cloudflare", url: "https://blog.cloudflare.com/rss/", domain: cloudflare.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Bitdefender Labs", url: "https://www.bitdefender.com/nuxt/api/en-us/rss/labs/", domain: bitdefender.com, trust: primary_research, verified: pending, added: 2026-10-29, note: "old feed 404; Bitdefender's new feed system (to confirm by the next check), 31 Oct"}
-  - {name: "Proofpoint", url: "https://www.proofpoint.com/us/rss.xml", domain: proofpoint.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Symantec Threat Hunter Team", url: "https://www.security.com/rss/v1/blogs/rss.xml", domain: security.com, trust: primary_research, verified: pending, added: 2026-10-29, note: "address moved (old /feed/threat-intelligence gave 404); new address advertised by security.com, 31 Oct"}
-  - {name: "GreyNoise", url: "https://www.greynoise.io/blog/rss.xml", domain: greynoise.io, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "AhnLab ASEC", url: "https://asec.ahnlab.com/en/feed/", domain: asec.ahnlab.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "SANS Internet Storm Center", url: "https://isc.sans.edu/rssfeed_full.xml", domain: isc.sans.edu, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Schneier on Security", url: "https://www.schneier.com/feed/atom/", domain: schneier.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/", domain: krebsonsecurity.com, trust: primary_research, verified: pending, added: 2026-10-29}
-  - {name: "CISA advisories", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml", domain: cisa.gov, trust: government, verified: pending, added: 2026-10-29, max_mb: 20, note: "feed larger than 5 MB; size limit raised for this feed only, 31 Oct"}
-  - {name: "UK NCSC", url: "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml", domain: ncsc.gov.uk, trust: government, verified: pending, added: 2026-10-29}
-  - {name: "CERT-FR", url: "https://cert.cyber.gouv.fr/feed/", domain: cyber.gouv.fr, trust: government, verified: pending, added: 2026-10-29, note: "CERT-FR moved to cert.cyber.gouv.fr (ANSSI's cyber.gouv.fr); the old feed now redirects there, 31 Oct (CHANGE_POLICY section 7, case 1: moved)"}
-  - {name: "JPCERT/CC (English)", url: "https://www.jpcert.or.jp/english/rss/jpcert-en.rdf", domain: jpcert.or.jp, trust: government, verified: pending, added: 2026-10-29}
-  - {name: "JPCERT/CC (Japanese)", url: "https://www.jpcert.or.jp/rss/jpcert.rdf", domain: jpcert.or.jp, trust: government, verified: pending, added: 2026-10-29}
-  - {name: "CERT-EU", url: "https://cert.europa.eu/publications/threat-intelligence-rss", domain: cert.europa.eu, trust: government, verified: pending, added: 2026-10-29}
-  - {name: "BSI (Germany)", url: "https://www.bsi.bund.de/SiteGlobals/Functions/RSSFeed/RSSNewsfeed/RSSNewsfeed_Presse_Veranstaltungen.xml?nn=910128", domain: bsi.bund.de, trust: government, verified: pending, added: 2026-10-29, note: "old feed 404; press and short-news feed listed on BSI's RSS page, 31 Oct"}
+  - {name: "Zscaler ThreatLabz", url: "https://www.zscaler.com/blogs/feeds/security-research", domain: zscaler.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Recorded Future", url: "https://www.recordedfuture.com/feed", domain: recordedfuture.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Rapid7", url: "https://www.rapid7.com/blog/tag/research/rss/", domain: rapid7.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, note: "old feed failed to parse; Rapid7 changed its feed addresses in 2025 (Rapid7 community post), research tag feed, 31 Oct"}
+  - {name: "Tenable", url: "https://www.tenable.com/blog/feed", domain: tenable.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Qualys", url: "https://blog.qualys.com/feed", domain: qualys.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Cloudflare", url: "https://blog.cloudflare.com/rss/", domain: cloudflare.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Bitdefender Labs", url: "https://www.bitdefender.com/nuxt/api/en-us/rss/labs/", domain: bitdefender.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, note: "old feed 404; Bitdefender's new feed system (to confirm by the next check), 31 Oct"}
+  - {name: "Proofpoint", url: "https://www.proofpoint.com/us/rss.xml", domain: proofpoint.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Symantec Threat Hunter Team", url: "https://www.security.com/rss/v1/blogs/rss.xml", domain: security.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, note: "address moved (old /feed/threat-intelligence gave 404); new address advertised by security.com, 31 Oct"}
+  - {name: "GreyNoise", url: "https://www.greynoise.io/blog/rss.xml", domain: greynoise.io, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "AhnLab ASEC", url: "https://asec.ahnlab.com/en/feed/", domain: asec.ahnlab.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "SANS Internet Storm Center", url: "https://isc.sans.edu/rssfeed_full.xml", domain: isc.sans.edu, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Schneier on Security", url: "https://www.schneier.com/feed/atom/", domain: schneier.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/", domain: krebsonsecurity.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "CISA advisories", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml", domain: cisa.gov, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, max_mb: 20, note: "feed larger than 5 MB; size limit raised for this feed only, 31 Oct"}
+  - {name: "UK NCSC", url: "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml", domain: ncsc.gov.uk, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "CERT-FR", url: "https://cert.cyber.gouv.fr/feed/", domain: cyber.gouv.fr, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, note: "CERT-FR moved to cert.cyber.gouv.fr (ANSSI's cyber.gouv.fr); the old feed now redirects there, 31 Oct (CHANGE_POLICY section 7, case 1: moved)", verified_note: "served over HTTPS by cert.cyber.gouv.fr on ANSSI's cyber.gouv.fr; the old official address redirects there"}
+  - {name: "JPCERT/CC (English)", url: "https://www.jpcert.or.jp/english/rss/jpcert-en.rdf", domain: jpcert.or.jp, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "JPCERT/CC (Japanese)", url: "https://www.jpcert.or.jp/rss/jpcert.rdf", domain: jpcert.or.jp, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "CERT-EU", url: "https://cert.europa.eu/publications/threat-intelligence-rss", domain: cert.europa.eu, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "BSI (Germany)", url: "https://www.bsi.bund.de/SiteGlobals/Functions/RSSFeed/RSSNewsfeed/RSSNewsfeed_Presse_Veranstaltungen.xml?nn=910128", domain: bsi.bund.de, trust: government, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, note: "old feed 404; press and short-news feed listed on BSI's RSS page, 31 Oct"}
   - {name: "Singapore CSA", url: "https://www.csa.gov.sg/rss", domain: csa.gov.sg, trust: government, verified: pending, added: 2026-10-29, skip: "no RSS feed found on csa.gov.sg (old address 404); covered by the quarterly sweep page list, 31 Oct"}
-  - {name: "OpenAI News", url: "https://openai.com/news/rss.xml", domain: openai.com, trust: ai_lab, verified: pending, added: 2026-10-29}
-  - {name: "AI Incident Database", url: "https://incidentdatabase.ai/rss.xml", domain: incidentdatabase.ai, trust: database_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "BleepingComputer", url: "https://www.bleepingcomputer.com/feed/", domain: bleepingcomputer.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews", domain: thehackernews.com, trust: news_leads_only, verified: pending, added: 2026-10-29, alt_host: feeds.feedburner.com, alt_host_reason: "Google FeedBurner serves this publisher's official feed"}
-  - {name: "SecurityWeek", url: "https://www.securityweek.com/feed/", domain: securityweek.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "The Record", url: "https://therecord.media/feed", domain: therecord.media, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Dark Reading", url: "https://www.darkreading.com/rss.xml", domain: darkreading.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "The Register (security)", url: "https://www.theregister.com/security/headlines.atom", domain: theregister.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Security Affairs", url: "https://securityaffairs.com/feed", domain: securityaffairs.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Help Net Security", url: "https://www.helpnetsecurity.com/feed/", domain: helpnetsecurity.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Infosecurity Magazine", url: "https://www.infosecurity-magazine.com/rss/news/", domain: infosecurity-magazine.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Cybernews", url: "https://cybernews.com/feed/", domain: cybernews.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Ars Technica (security)", url: "https://arstechnica.com/security/feed/", domain: arstechnica.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Wired (security)", url: "https://www.wired.com/feed/category/security/latest/rss", domain: wired.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
+  - {name: "OpenAI News", url: "https://openai.com/news/rss.xml", domain: openai.com, trust: ai_lab, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "AI Incident Database", url: "https://incidentdatabase.ai/rss.xml", domain: incidentdatabase.ai, trust: database_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "BleepingComputer", url: "https://www.bleepingcomputer.com/feed/", domain: bleepingcomputer.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews", domain: thehackernews.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, alt_host: feeds.feedburner.com, alt_host_reason: "Google FeedBurner serves this publisher's official feed"}
+  - {name: "SecurityWeek", url: "https://www.securityweek.com/feed/", domain: securityweek.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "The Record", url: "https://therecord.media/feed", domain: therecord.media, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Dark Reading", url: "https://www.darkreading.com/rss.xml", domain: darkreading.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "The Register (security)", url: "https://www.theregister.com/security/headlines.atom", domain: theregister.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Security Affairs", url: "https://securityaffairs.com/feed", domain: securityaffairs.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Help Net Security", url: "https://www.helpnetsecurity.com/feed/", domain: helpnetsecurity.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Infosecurity Magazine", url: "https://www.infosecurity-magazine.com/rss/news/", domain: infosecurity-magazine.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Cybernews", url: "https://cybernews.com/feed/", domain: cybernews.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Ars Technica (security)", url: "https://arstechnica.com/security/feed/", domain: arstechnica.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Wired (security)", url: "https://www.wired.com/feed/category/security/latest/rss", domain: wired.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
   - {name: "Security Boulevard", url: "https://securityboulevard.com/feed/", domain: securityboulevard.com, trust: news_leads_only, verified: pending, added: 2026-10-29, skip: "site refuses automated readers (HTTP 403); not worked around, 31 Oct"}
   - {name: "FreeBuf (zh)", url: "https://www.freebuf.com/feed", domain: freebuf.com, trust: news_leads_only, verified: pending, added: 2026-10-29, skip: "site refuses automated readers (HTTP 405); not worked around; Chinese coverage through Habr-like sources and the sweep, 31 Oct"}
-  - {name: "Habr infosecurity (ru)", url: "https://habr.com/ru/rss/hub/infosecurity/", domain: habr.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Xakep (ru)", url: "https://xakep.ru/feed/", domain: xakep.ru, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "SecurityLab (ru)", url: "https://www.securitylab.ru/_services/export/rss/", domain: securitylab.ru, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Boan News (ko)", url: "https://cdn.boannews.com/rss/gn_rss_allArticle.xml", domain: boannews.com, trust: news_leads_only, verified: pending, added: 2026-10-29, note: "old feed declared a DOCTYPE (refused by the safe reader); feed advertised by boannews.com, 31 Oct"}
-  - {name: "heise Security (de)", url: "https://www.heise.de/security/rss/news.rdf", domain: heise.de, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "Security NEXT (ja)", url: "https://www.security-next.com/feed", domain: security-next.com, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "ITmedia Enterprise (ja)", url: "https://rss.itmedia.co.jp/rss/2.0/enterprise.xml", domain: itmedia.co.jp, trust: news_leads_only, verified: pending, added: 2026-10-29}
-  - {name: "LeMagIT (fr)", url: "https://www.lemagit.fr/rss/ContentSyndication.xml", domain: lemagit.fr, trust: news_leads_only, verified: pending, added: 2026-10-29}
+  - {name: "Habr infosecurity (ru)", url: "https://habr.com/ru/rss/hub/infosecurity/", domain: habr.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Xakep (ru)", url: "https://xakep.ru/feed/", domain: xakep.ru, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "SecurityLab (ru)", url: "https://www.securitylab.ru/_services/export/rss/", domain: securitylab.ru, trust: news_leads_only, verified: pending, added: 2026-10-29, verified_note: "feed answers from securitylab.ru, but the site's home page refused the automated check; to confirm by hand"}
+  - {name: "Boan News (ko)", url: "https://cdn.boannews.com/rss/gn_rss_allArticle.xml", domain: boannews.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29, note: "old feed declared a DOCTYPE (refused by the safe reader); feed advertised by boannews.com, 31 Oct"}
+  - {name: "heise Security (de)", url: "https://www.heise.de/security/rss/news.rdf", domain: heise.de, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "Security NEXT (ja)", url: "https://www.security-next.com/feed", domain: security-next.com, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "ITmedia Enterprise (ja)", url: "https://rss.itmedia.co.jp/rss/2.0/enterprise.xml", domain: itmedia.co.jp, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
+  - {name: "LeMagIT (fr)", url: "https://www.lemagit.fr/rss/ContentSyndication.xml", domain: lemagit.fr, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
   - {name: "CISO Advisor (pt)", url: "https://www.cisoadvisor.com.br/feed/", domain: cisoadvisor.com.br, trust: news_leads_only, verified: pending, added: 2026-10-29, skip: "site refuses automated readers (HTTP 403); not worked around, 31 Oct"}
