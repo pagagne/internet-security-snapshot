@@ -61,5 +61,10 @@ def test_ai_attack_campaign_log_is_well_formed():
         from snapshot.x3catalogue import FOUND_VIA, METHODS
         assert r["attack_method"] in METHODS, r["campaign"]
         assert r["found_via"] in FOUND_VIA, r["campaign"]
+        # added 2026-10-30 (author): open-weight or closed AI, and the network protocols used
+        from snapshot.research.github_tools import PROTOCOLS
+        assert r["model_weights"] in {"open-weight", "closed", "both", "not named", "to check"}, r["campaign"]
+        assert r["protocols"] in {"not named", "to check"} or all(
+            x in PROTOCOLS for x in r["protocols"].split(";")), (r["campaign"], r["protocols"])
         for cid in filter(None, r["cve_ids"].split(";")):
             assert re.fullmatch(r"CVE-\d{4}-\d{4,}", cid), (r["campaign"], cid)

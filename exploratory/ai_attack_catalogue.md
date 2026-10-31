@@ -48,4 +48,14 @@ Every organisation whose report is in the log, how its cases reached the study, 
 | Wiz CIRT | wiz.io | 1 | forwarded by the author | 2026-10-19 | yes |
 | security.com threat research | securitylab.ru | 1 | the trial search of 26 Oct 2026 | 2026-10-23 | yes |
 
+## AI used: open-weight or closed (added 30 Oct 2026, author)
+
+Open-weight models can be downloaded and run anywhere, outside the maker's safeguards; closed models run only on the maker's service. "To check" rows are filled from the primary report.
+
+open-weight 3; closed 1; both 2; not named 0; to check 26.
+
+## Network protocols used (added 30 Oct 2026, author)
+
+VPN/IPsec 1; HTTP/HTTPS 1. Rows still to check: 30; none named in the report: 0.
+
 How cases reached the study: forwarded by the author 5; the trial search of 26 Oct 2026 16; Claude's research when the log was set up 11.

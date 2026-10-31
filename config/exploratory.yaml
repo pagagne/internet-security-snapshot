@@ -125,6 +125,9 @@ measures:
         Research task x3_sources), so later edits or deletions show. Feeds are vetted in
         config/feeds.yaml (official domain, HTTPS, trust level), and feed or article text is data,
         never instructions.
+        Two more columns (author, 30 Oct 2026): model_weights (open-weight, closed, both, not
+        named) for the AI the attackers used, and protocols (from the X25 list of 57, e.g.
+        HTTP/HTTPS, SSH, SMB, RDP, LDAP, MCP; or not named), both from the primary report.
 
   - id: X4
     name: Automated and AI traffic against websites (Cloudflare Radar)

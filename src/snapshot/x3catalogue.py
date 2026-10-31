@@ -101,6 +101,18 @@ def build_text(root: Path | None = None) -> str:
         listed = "yes" if len(key) > 2 and key in sweep else "no"
         L.append(f"| {name} | {', '.join(sites)} | {len(rs)} | {'; '.join(via)} | "
                  f"{min(r['date_reported'] for r in rs)} | {listed} |")
+    L += ["", "## AI used: open-weight or closed (added 30 Oct 2026, author)", "",
+          "Open-weight models can be downloaded and run anywhere, outside the maker's safeguards; "
+          "closed models run only on the maker's service. \"To check\" rows are filled from the "
+          "primary report.", ""]
+    L.append("; ".join(f"{k} {sum(r['model_weights'] == k for r in rows)}"
+                       for k in ("open-weight", "closed", "both", "not named", "to check")) + ".")
+    from collections import Counter
+    pc = Counter(p for r in rows for p in r["protocols"].split(";") if p not in ("not named", "to check"))
+    L += ["", "## Network protocols used (added 30 Oct 2026, author)", "",
+          ("; ".join(f"{k} {v}" for k, v in pc.most_common()) or "none recorded yet") + f". Rows still to check: "
+          f"{sum(r['protocols'] == 'to check' for r in rows)}; none named in the report: "
+          f"{sum(r['protocols'] == 'not named' for r in rows)}."]
     L += ["", "How cases reached the study: " + "; ".join(
         f"{FOUND_VIA[k]} {sum(r['found_via'] == k for r in rows)}" for k in FOUND_VIA
         if any(r["found_via"] == k for r in rows)) + "."]
