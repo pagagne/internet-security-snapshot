@@ -1,8 +1,9 @@
 # Fixed queries for the AI attack- and defence-tool sweep of GitHub (X25; author's decisions,
 # 30 Oct 2026: attack tools, then the same for defence tools, compared side by side).
 # Run by hand only (Research task github_tools): baseline Oct 2026, then early 2027, mid-2027
-# and end of 2027. Keep the list fixed between sweeps so their counts compare; any change is
-# dated here and noted in the session log. Topics are GitHub's own tags; "in:name,description"
+# and end of 2027. Refined once, from the 30 Oct 2026 baseline, before the January pilot sweep
+# (author's decision, 30 Oct 2026; proposal 18 Nov, author's approval 20 Nov); then fixed from
+# the 6 Jan 2027 sweep, so later sweeps compare. Any change is dated here and in the session log. Topics are GitHub's own tags; "in:name,description"
 # searches only names and descriptions, never code.
 # Which list found a repository does not decide its label: every repository is labelled by
 # what it does (snapshot.research.github_tools.role): attack, defence, both, model_testing

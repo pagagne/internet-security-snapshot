@@ -600,6 +600,41 @@ DESCRIPTION:Responsible: Paul (author)\n\nSame question as UGA\; the Handsh
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:x25-refine@2026-11-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Propose refinements to the GitHub tool sweep's s
+ earches and labels (X25)\, from the baseline
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
+ 0 Oct baseline to refine the sweep before the January pilot sweep\, which 
+ stays a hand-run (manual) workflow. Check the labels of every tool with 10
+ 0+ stars\; list searches that bring mostly noise and gaps (tools found by 
+ hand but missed)\; propose changes to https://github.com/pagagne/internet-
+ security-snapshot/blob/main/config/github_tool_queries.yaml and to the lab
+ el\, target\, protocol\, lab and toolkit word lists in snapshot.research.g
+ ithub_tools\, with the effect of each on the baseline counts. Written to t
+ he 20 Nov issue for the author.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:x25-refine-approve@2026-11-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Approve the refined GitHub tool-sweep searches (X2
+ 5) before the January pilot sweep
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's proposal of 18 Nov 
+ and keep or reject each change. After this\, the searches and word lists a
+ re fixed from the 6 Jan 2027 pilot sweep on\, so the 2027 sweeps compare.\
+ n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:permission-drafts@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120

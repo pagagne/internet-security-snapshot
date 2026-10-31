@@ -1118,6 +1118,27 @@ items:
     About 1-2 hours. Read the first annual check of the free data against better reference
     data (drafted 1 March) and comment before the 15 March 2028 annual review.
 
+- id: x25-refine
+  owner: claude
+  title: Propose refinements to the GitHub tool sweep's searches and labels (X25), from the baseline
+  date: 2026-11-18
+  details: >
+    Author's decision 30 Oct 2026: use the 30 Oct baseline to refine the sweep before the January
+    pilot sweep, which stays a hand-run (manual) workflow. Check the labels of every tool with
+    100+ stars; list searches that bring mostly noise and gaps (tools found by hand but missed);
+    propose changes to config/github_tool_queries.yaml and to the label, target, protocol, lab
+    and toolkit word lists in snapshot.research.github_tools, with the effect of each on the
+    baseline counts. Written to the 20 Nov issue for the author.
+
+- id: x25-refine-approve
+  owner: author
+  title: Approve the refined GitHub tool-sweep searches (X25) before the January pilot sweep
+  date: 2026-11-20
+  minutes: 20
+  details: >
+    Read Claude's proposal of 18 Nov and keep or reject each change. After this, the searches and
+    word lists are fixed from the 6 Jan 2027 pilot sweep on, so the 2027 sweeps compare.
+
 - id: github-tool-sweep
   owner: claude
   title: Run the AI attack-tool sweep of GitHub (X25) and sort it for the author
