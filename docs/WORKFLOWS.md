@@ -5,7 +5,7 @@ was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec w
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are twelve, in
+something changes, or when the author or Claude starts it by hand. There are thirteen, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -18,7 +18,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup, Manual publish | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch |
 
 ## At a glance
 
@@ -31,6 +31,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
 | Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues, run-reports | none | 29 Oct |
 | Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
+| Manual publish | `manual-publish.yml` | Every change to main that touches a document; Run button | the private repository pagagne/snapshot-manual | `MANUAL_REPO_TOKEN` | 30 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports | GitHub token | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | run-reports | none | 27 Oct, run 40586462028 |
@@ -184,6 +185,15 @@ whenever their wording changes. Any change opens one `source-watch` issue for Cl
 under `docs/CHANGE_POLICY.md` section 7 (moved: update and log; changed: flag exploratory;
 gone: mark broken, never substitute). It reads no data into the study.
 
+## 13. Manual publish: the private manual
+
+**When:** after every change on main that touches a document, and by its Run button (added
+30 Oct 2026, author's decision). **What it does:** builds The Snapshot from the public working
+documents and copies it, with its pictures, to the author's private repository
+`pagagne/snapshot-manual`, where it reads on GitHub: a contents page with one dropdown per part,
+one file per part, split further as the manual grows. The manual is part of the report and is
+not public before it; nothing is written to this repository.
+
 ## How they depend on each other
 
 Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
@@ -223,6 +233,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
 | Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |
+| Manual publish | **Support**: the private reading copy of the manual | The private copy goes stale; the PDFs in Drive and the public documents are unaffected. |
 | Source watch | **Support**: early warning for the core and companion sources | A moved or changed source would be found on pull day instead of weeks earlier; data unaffected. |
 
 The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with

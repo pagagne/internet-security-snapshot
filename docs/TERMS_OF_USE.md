@@ -18,7 +18,7 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 |---|---|---|---|
 | NVD (NIST) | https://nvd.nist.gov/developers/terms-of-use | API rate limits; a notice that the product uses the NVD API but is not endorsed by NVD | Keyed requests within the limits (pull), notice on outputs |
 | CVE Program | https://www.cve.org/Legal/TermsOfUse | To summarise | CVE List read from the cvelistV5 repository |
-| CISA KEV | https://www.cisa.gov/known-exploited-vulnerabilities-catalog ; https://github.com/cisagov/kev-data | US government work; repository licence | Read from the kev-data repository; credited |
+| CISA KEV | https://github.com/cisagov/kev-data (the catalogue page itself changes daily, so it is not watched) | US government work; repository licence | Read from the kev-data repository; credited |
 | FIRST EPSS | https://www.first.org/epss/ | To summarise | Daily files and API, spaced; credited |
 | SEC EDGAR | https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data | Fair access: a User-Agent naming the requester with a contact address; request-rate ceiling | Contact User-Agent (secret `SEC_USER_AGENT`); few requests |
 | Red Hat security data | https://access.redhat.com/security/data | To summarise | CSAF/VEX fix dates only |

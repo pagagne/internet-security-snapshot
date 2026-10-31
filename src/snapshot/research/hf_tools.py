@@ -112,8 +112,12 @@ def get(url: str, params=None, pause: float = 0.7):
     return None
 
 
-def search(kind: str, q: str, pause: float = 0.7, cap: int = 3000) -> list[dict]:
-    out, url, params = [], f"{API}/{kind}", {"search": q, "limit": 1000, "full": "true"}
+CAP = 40_000   # per search; the first run's cap of 3,000 cut "uncensored" and "abliterated" short (30 Oct 2026)
+
+
+def search(kind: str, q: str, pause: float = 0.7, cap: int = CAP) -> list[dict]:
+    out, url, params = [], f"{API}/{kind}", {"search": q, "limit": 1000, "full": "true",
+                                              "sort": "createdAt", "direction": "-1"}
     while url and len(out) < cap:
         r = get(url, params, pause)
         if r is None or r.status_code != 200:
@@ -211,6 +215,9 @@ def main(argv=None) -> int:
         w = csv.DictWriter(fh, fieldnames=PUBLIC, extrasaction="ignore")
         w.writeheader(); w.writerows(rows)
     (a.out / "queries.json").write_text(json.dumps(hits, indent=1))
+    capped = [k for k, v in hits.items() if v >= CAP]
+    if capped:
+        print("::warning title=Search capped::" + ", ".join(capped))
     s = summary(rows, hits, dt.date.today().isoformat())
     (a.out / "summary.md").write_text(s)
     print(s[:3000])

@@ -13,7 +13,8 @@ WF = Path(__file__).resolve().parents[1] / ".github" / "workflows"
 EXTERNAL = {"quarterly-pull.yml": "quarterly-pull", "research.yml": "research",
             "honeypot.yml": "honeypot", "bigquery-check.yml": "bigquery-check",
             "feed-screen.yml": "feed-screen", "source-watch.yml": "source-watch"}
-BUTTONS = ["checks.yml", "privacy.yml", "schedule.yml", "rebuild-check.yml", "diagrams.yml", "backup.yml"]
+BUTTONS = ["checks.yml", "privacy.yml", "schedule.yml", "rebuild-check.yml", "diagrams.yml", "backup.yml",
+           "manual-publish.yml"]
 
 
 def _on(name):

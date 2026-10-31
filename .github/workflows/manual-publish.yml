@@ -1,0 +1,64 @@
+name: Manual publish (private)
+
+# The Snapshot, the study manual, is part of the report and is not public before it (author's
+# decision, 30 Oct 2026). It is built here from the public working documents and pushed to the
+# author's private repository pagagne/snapshot-manual, where it is read on GitHub (contents page
+# with dropdowns, one file per part). Needs the MANUAL_REPO_TOKEN secret: a fine-grained token
+# with Contents read and write on that one repository only. Nothing is written to this
+# repository.
+on:
+  push:
+    branches: [main]
+    paths: ["**.md", "config/manual.yaml", "src/snapshot/manual.py", "tools/manual_publish.py",
+            "docs/diagrams/**", "exploratory/**"]
+  workflow_dispatch:
+    inputs:
+      about:
+        description: "Rebuilds The Snapshot manual and copies it to your private repository snapshot-manual (only you can see it). Changes nothing in this repository."
+        required: false
+        default: "ok"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manual-publish
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 15
+    steps:
+      - name: Token present?
+        id: tok
+        env:
+          HAVE: ${{ secrets.MANUAL_REPO_TOKEN != '' }}
+        run: |
+          if [ "$HAVE" != "true" ]; then echo "::warning title=Manual not published::MANUAL_REPO_TOKEN secret missing (docs/OPERATIONS.md)"; echo "skip=yes" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+        if: steps.tok.outputs.skip != 'yes'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        if: steps.tok.outputs.skip != 'yes'
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - if: steps.tok.outputs.skip != 'yes'
+        run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Build and copy to the private repository
+        if: steps.tok.outputs.skip != 'yes'
+        env:
+          TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          python -m snapshot.manual build
+          git clone -q "https://x-access-token:${TOKEN}@github.com/pagagne/snapshot-manual.git" /tmp/manual
+          find /tmp/manual -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          python tools/manual_publish.py /tmp/manual
+          cd /tmp/manual
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "No change."; exit 0; }
+          git commit -qm "Manual from internet-security-snapshot@${GITHUB_SHA::7}"
+          git branch -M main
+          git push -q origin main

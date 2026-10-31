@@ -30,7 +30,8 @@ jobs:
         # docs/ANNUAL_PLAN.md and the calendar feed must match docs/schedule/schedule.yaml.
         run: python -m snapshot.schedule check
       - name: Manual up to date?
-        # docs/manual/THE_SNAPSHOT.md must match its source documents (config/manual.yaml).
+        # The manual must build and list every document (config/manual.yaml). Its outputs are
+        # private and never committed (author, 30 Oct 2026; Manual publish workflow).
         run: python -m snapshot.manual check
       - name: Privacy scan
         # Fails if a key, token, personal contact detail or not-yet-publishable figure is in the

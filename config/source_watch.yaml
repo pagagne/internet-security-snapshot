@@ -34,7 +34,6 @@ sources:
   # ---- terms, licence and usage pages ----
   - {name: NVD terms of use, kind: terms, used_by: core nvd, url: "https://nvd.nist.gov/developers/terms-of-use"}
   - {name: CVE Program terms of use, kind: terms, used_by: core cve, url: "https://www.cve.org/Legal/TermsOfUse"}
-  - {name: CISA KEV catalogue page, kind: terms, used_by: core kev, url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
   - {name: CISA kev-data repository (licence), kind: terms, used_by: core kev, url: "https://github.com/cisagov/kev-data"}
   - {name: FIRST EPSS page, kind: terms, used_by: core epss, url: "https://www.first.org/epss/"}
   - {name: SEC accessing EDGAR data, kind: terms, used_by: core sec, url: "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data", ua_env: SEC_USER_AGENT}   # moved from /os/accessing-edgar-data (found 30 Oct)

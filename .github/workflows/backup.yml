@@ -69,6 +69,7 @@ jobs:
           pip install -q --require-hashes -r requirements.lock
           pip install -q markdown==3.11 pypdf==6.17.0 playwright==1.63.0   # PDF tools, pinned
           python -m playwright install --with-deps chromium >/dev/null
+          python -m snapshot.manual build >/dev/null   # outputs are never committed (author, 30 Oct 2026)
           python tools/manual_pdf.py "$RUNNER_TEMP/The-Snapshot.pdf" >/dev/null
           rclone copyto "$RUNNER_TEMP/The-Snapshot.pdf" gdrive:manual/The-Snapshot.pdf
           echo "Public edition: $(du -h "$RUNNER_TEMP/The-Snapshot.pdf" | cut -f1)"

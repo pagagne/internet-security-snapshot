@@ -19,7 +19,7 @@ allowed, and when not to.
 ## 2. The two kinds of workflow
 
 **Run button (author or Claude, any time the rules below allow):** Checks, Privacy scan,
-Schedule, Rebuild check, Diagrams, Backup. They work inside the repository or with the author's own Drive. The
+Schedule, Rebuild check, Diagrams, Backup, Manual publish. They work inside the repository or with the author's own Drive. The
 Run box opens with a sentence saying what the workflow does.
 
 **API only, no button (Claude only, and only when asked or scheduled):** Quarterly pull,
@@ -100,6 +100,12 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
 - **Allowed:** outside the quiet periods; at most once a day (each run is a full copy and
   uses Drive space).
 - **Do not:** run it while a pull is running (both write to Drive).
+
+### Manual publish
+- **Does:** rebuilds The Snapshot and copies it to your private repository snapshot-manual
+  (only you can see it). Changes nothing here.
+- **Run it when:** the private copy looks out of date, or after the token was renewed.
+- **Allowed:** any time; it also runs by itself after every document change.
 
 ## 5. The six API-only workflows
 

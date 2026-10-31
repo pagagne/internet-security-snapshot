@@ -55,14 +55,18 @@ def test_terms_copied_and_archived_only_when_wording_changes(tmp_path):
         return lambda s: ({"name": "Example", "kind": "terms", "url": s["url"], "status": 200,
                            "final": "example.org/x", "ctype": "text/html",
                            "text_sha256": W.hashlib.sha256(text.encode()).hexdigest(),
+                           "words_sha256": W.hashlib.sha256(W.re.sub(r"\d+", "", text).encode()).hexdigest(),
                            "words": len(text.split())}, text)
     save = lambda u: saved.append(u) or "https://web.archive.org/web/1/" + u
     W.run([_src("terms")], state, out, "2026-10-30", pause=0, fetch=page("Credit required."), save=save)
     W.run([_src("terms")], state, out, "2026-11-04", pause=0, fetch=page("Credit required."), save=save)
     assert len(saved) == 1
+    _, ch = W.run([_src("terms")], state, out, "2026-11-05", pause=0, fetch=page("Credit required. Updated 2026-11-05"), save=save)
+    _, ch = W.run([_src("terms")], state, out, "2026-11-06", pause=0, fetch=page("Credit required. Updated 2026-11-06"), save=save)
+    assert ch == {} and len(saved) == 2      # a new date is not a new wording
     _, ch = W.run([_src("terms")], state, out, "2026-11-11", pause=0, fetch=page("No reuse allowed."), save=save)
-    assert len(saved) == 2 and "wording changed" in ch["Example"][0]
-    assert len(list((state / "terms" / "example").glob("*.txt"))) == 2
+    assert len(saved) == 3 and "wording changed" in ch["Example"][0]
+    assert len(list((state / "terms" / "example").glob("*.txt"))) == 3
     assert "No reuse allowed." in (out / "changes.md").read_text()
 
 

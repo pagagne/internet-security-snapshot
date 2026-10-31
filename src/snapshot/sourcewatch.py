@@ -100,6 +100,10 @@ def check(src: dict) -> tuple[dict, str | None]:
         return rec, None
     text = visible_text(body.decode(r.encoding or "utf-8", "replace"))
     rec["text_sha256"] = hashlib.sha256(text.encode()).hexdigest()
+    # Compared for changes (31 Oct 2026, after the first runs): digits removed, so page dates,
+    # counters and build numbers do not count as a change in the terms; the dated copy keeps
+    # the full text, numbers included, and a real wording change still shows.
+    rec["words_sha256"] = hashlib.sha256(re.sub(r"\d+", "", text).encode()).hexdigest()
     rec["words"] = len(text.split())
     return rec, text
 
@@ -123,7 +127,8 @@ def compare(old: dict | None, new: dict) -> list[str]:
     out = []
     if old.get("status") != new.get("status"):
         out.append(f"reply changed from {old.get('status')} to {new.get('status')}")
-    if new.get("status") == 200 and old.get("final") and old.get("final") != new.get("final"):
+    same_place = re.sub(r"\d+", "#", old.get("final") or "") == re.sub(r"\d+", "#", new.get("final") or "")
+    if new.get("status") == 200 and old.get("final") and not same_place:   # dated file names are not a move
         out.append(f"now ends up at {new.get('final')} (was {old.get('final')})")
     if new.get("status") == 200 and old.get("ctype") and old.get("ctype") != new.get("ctype"):
         out.append(f"content type changed from {old.get('ctype')} to {new.get('ctype')}")
@@ -132,8 +137,8 @@ def compare(old: dict | None, new: dict) -> list[str]:
             out.append(f"structure changed: {new.get('shape')} (was {old.get('shape')})")
         if old.get("bytes") and new.get("bytes", 0) < SHRINK * old["bytes"]:
             out.append(f"size fell from {old['bytes']:,} to {new['bytes']:,} bytes")
-    if new["kind"] == "terms" and new.get("status") == 200 and old.get("text_sha256") \
-            and old.get("text_sha256") != new.get("text_sha256"):
+    if new["kind"] == "terms" and new.get("status") == 200 and old.get("words_sha256") \
+            and old.get("words_sha256") != new.get("words_sha256"):
         out.append(f"wording changed ({old.get('words')} words before, {new.get('words')} now)")
     return out
 
@@ -154,7 +159,7 @@ def run(sources: list[dict], state_dir: Path, out: Path, today: str, pause: floa
         ch = compare(old, rec)
         if text is not None and rec.get("status") == 200:
             tdir = state_dir / "terms" / _slug(s["name"])
-            new_wording = old is None or old.get("text_sha256") != rec["text_sha256"]
+            new_wording = old is None or (old.get("words_sha256") or rec["words_sha256"]) != rec["words_sha256"]
             if new_wording:
                 tdir.mkdir(parents=True, exist_ok=True)
                 earlier = sorted(tdir.glob("*.txt"))

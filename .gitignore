@@ -10,4 +10,9 @@ data/work/
 .seed/
 # Build output (never committed; the code under src/ is the only source)
 build/
+# The Snapshot manual is generated and kept private until the report (author, 30 Oct 2026):
+# it is published only to the private repository pagagne/snapshot-manual and the Drive PDFs.
+docs/manual/THE_SNAPSHOT.md
+docs/manual/README.md
+docs/manual/parts/
 *.egg-info/

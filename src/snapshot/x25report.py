@@ -232,7 +232,7 @@ def hf_section(root: Path) -> list[str]:
          "assistants with no side), safety removed, model testing (including AI-alignment red-teaming), "
          "unrelated (image models, Hacker News apps, hate-speech classifiers, \"reward hacking\") and "
          "unclear. Individuals' items appear by item name only. First labels; Claude checks the "
-         "most-liked and the author confirms.", ""]
+         "most-liked and the author confirms. Each search reads up to 40,000 items, newest first.", ""]
     for f in reversed(files):
         date, rows = f.stem, load(f)
         c = collections.Counter(r["role"] for r in rows)

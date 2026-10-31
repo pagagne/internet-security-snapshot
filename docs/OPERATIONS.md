@@ -16,11 +16,16 @@ person, can pick up the work from the files and issues below.
 The full list, grouped by owner, is `docs/ANNUAL_PLAN.md` (generated; do not edit by hand).
 
 ## The manual is generated
-"The Snapshot" (`docs/manual/THE_SNAPSHOT.md`, author's request 29 Oct 2026) holds every study
-document in full, assembled by `python -m snapshot.manual build` from the list in
-`config/manual.yaml`. After changing any document (or the schedule, which rewrites
-ANNUAL_PLAN.md), run the build before pushing; Checks fails if the manual is stale or a new
-Markdown file is in neither the manual nor its `excluded` list. The PDFs are built by
+"The Snapshot" (author's request 29 Oct 2026) holds every study document in full, assembled by
+`python -m snapshot.manual build` from the list in `config/manual.yaml`. **It is part of the
+report and private until then (author's decision, 30 Oct 2026):** its outputs
+(`docs/manual/THE_SNAPSHOT.md`, the GitHub copy in parts and its contents page) are never
+committed here. The Manual publish workflow builds it on every change and pushes it to the
+author's private repository `pagagne/snapshot-manual` (secret `MANUAL_REPO_TOKEN`: a
+fine-grained token with Contents read and write on that repository only), where it reads on
+GitHub with a dropdown contents page, one file per part, split further as it grows. The working
+documents stay public. Checks fails if the manual cannot be built or a new Markdown file is in
+neither the manual nor its `excluded` list. The PDFs are built by
 `tools/manual_pdf.py` and saved to Drive by the Backup workflow (monthly, or its Run button):
 the public edition to `manual/`, the private edition (adding Appendix C: full bio,
 correspondence index, Drive inventory, read from `manual/private/appendix-c.md` in Drive, never
