@@ -77,9 +77,9 @@ def fetch(feed: dict) -> tuple[int, bytes]:
     body = b""
     for chunk in r.iter_content(65536):
         body += chunk
-        if len(body) > MAX_BYTES:
+        if len(body) > feed.get("max_mb", MAX_BYTES / 1e6) * 1e6:
             r.close()
-            raise UnsafeFeed("larger than 5 MB")
+            raise UnsafeFeed(f"larger than {feed.get('max_mb', MAX_BYTES / 1e6):g} MB")
     return r.status_code, body
 
 
@@ -138,6 +138,9 @@ def main(argv=None) -> int:
     a.out.mkdir(parents=True, exist_ok=True)
     health, cands = [], []
     for f in cfg["feeds"]:
+        if f.get("skip"):          # no usable feed (dated reason in config/feeds.yaml); never worked around
+            health.append({"feed": f["name"], "status": "skipped", "items": 0, "candidates": 0, "error": f["skip"]})
+            continue
         time.sleep(1.0)
         try:
             status, body = fetch(f)

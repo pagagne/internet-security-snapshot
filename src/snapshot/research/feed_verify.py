@@ -107,7 +107,8 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
     feeds = yaml.safe_load((_repo_root() / "config/feeds.yaml").read_text())["feeds"]
-    rows = [verify(f) for f in feeds]
+    rows = [verify(f) if not f.get("skip") else {"name": f["name"], "url": f["url"], "domain": f["domain"],
+                                                 "feed": "skipped", "items": 0, "verified": "no"} for f in feeds]
     cols = ["name", "url", "domain", "feed", "items", "site_names_org", "linked_from_site", "verified",
             "replacement", "replacement_items"]
     with (a.out / "feed_verify.csv").open("w", newline="") as fh:
@@ -115,7 +116,8 @@ def main(argv=None) -> int:
         w.writeheader(); w.writerows(rows)
     L = ["# Feed verification", "",
          f"Feeds: {len(rows)}; verified: {sum(r['verified'] == 'yes' for r in rows)}; "
-         f"failing: {sum(r['feed'] != 'ok' or not r['items'] for r in rows)}; "
+         f"failing: {sum(r['feed'] not in ('ok', 'skipped') or (r['feed'] == 'ok' and not r['items']) for r in rows)}; "
+         f"skipped: {sum(r['feed'] == 'skipped' for r in rows)}; "
          f"replacements found: {sum(bool(r.get('replacement')) for r in rows)}.", ""]
     L += [f"- {r['name']}: feed {r['feed']} ({r['items']} items); site names org {r['site_names_org']}; "
           f"linked {r['linked_from_site']}; verified {r['verified']}"
