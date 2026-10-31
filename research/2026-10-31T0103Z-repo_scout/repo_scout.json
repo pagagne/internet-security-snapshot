@@ -1,0 +1,167 @@
+{
+ "huggingface": {
+  "pages": {
+   "https://huggingface.co/terms-of-service": {
+    "status": 200,
+    "words": 4819
+   },
+   "https://huggingface.co/privacy": {
+    "status": 200,
+    "words": 2591
+   },
+   "https://huggingface.co/content-policy": {
+    "status": 200,
+    "words": 2139
+   }
+  },
+  "search": {
+   "https://huggingface.co/api/models?search=pentest&limit=50": {
+    "status": 200,
+    "content_type": "application/json",
+    "results": 50,
+    "fields": [
+     "_id",
+     "createdAt",
+     "downloads",
+     "id",
+     "library_name",
+     "likes",
+     "modelId",
+     "pipeline_tag",
+     "private",
+     "tags",
+     "trendingScore"
+    ]
+   },
+   "https://huggingface.co/api/spaces?search=pentest&limit=50": {
+    "status": 200,
+    "content_type": "application/json",
+    "results": 50,
+    "fields": [
+     "_id",
+     "createdAt",
+     "id",
+     "likes",
+     "private",
+     "sdk",
+     "tags",
+     "trendingScore"
+    ]
+   }
+  },
+  "home_status": 200
+ },
+ "gitee": {
+  "pages": {
+   "https://gitee.com/user_terms": {
+    "status": 200,
+    "words": 483
+   },
+   "https://gitee.com/terms": {
+    "status": 200,
+    "words": 156
+   },
+   "https://gitee.com/api/v5/swagger": {
+    "status": 200,
+    "words": 17
+   }
+  },
+  "search": {
+   "https://gitee.com/api/v5/search/repositories?q=%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95&per_page=50": {
+    "status": 200,
+    "content_type": "application/json",
+    "results": 0,
+    "fields": []
+   }
+  },
+  "home_status": 200
+ },
+ "gitflic": {
+  "pages": {
+   "https://gitflic.ru/help/api/intro": {
+    "status": 200,
+    "words": 1125
+   },
+   "https://gitflic.ru/docs/policy": {
+    "status": 200,
+    "words": 3508
+   },
+   "https://gitflic.ru/docs/terms": {
+    "status": 200,
+    "words": 1845
+   },
+   "https://gitflic.ru/docs/license": {
+    "status": 200,
+    "words": 3463
+   },
+   "https://gitflic.ru/docs/policy-sh": {
+    "status": 200,
+    "words": 947
+   },
+   "https://gitflic.ru/docs/license-sh": {
+    "status": 200,
+    "words": 3241
+   },
+   "https://gitflic.ru/static/files/privacy-policy.pdf": {
+    "status": 200,
+    "words": 7528
+   }
+  },
+  "search": {
+   "https://api.gitflic.ru/project?title=pentest": {
+    "status": 403,
+    "content_type": "application/json",
+    "results": 0,
+    "fields": [],
+    "top_keys": [
+     "detail",
+     "instance",
+     "status",
+     "title",
+     "type"
+    ],
+    "message": "org.springframework.security.core.AuthenticationException.detail"
+   },
+   "https://gitflic.ru/search?q=pentest": {
+    "status": 404,
+    "content_type": "application/json",
+    "results": 0,
+    "fields": [],
+    "top_keys": [
+     "error",
+     "path",
+     "status",
+     "timestamp"
+    ],
+    "message": "Not Found"
+   }
+  },
+  "home_status": 200
+ },
+ "gitverse": {
+  "pages": {
+   "https://gitverse.ru/docs/": {
+    "status": 200,
+    "words": 256
+   }
+  },
+  "search": {
+   "https://api.gitverse.ru/search/repositories?q=pentest": {
+    "status": 400,
+    "content_type": "application/json",
+    "results": 0,
+    "fields": [],
+    "top_keys": [
+     "error"
+    ],
+    "message": "{'code': 'VALIDATION_ERROR', 'documentation_url': 'https://gitverse.ru/docs/developers/public-api', 'message': 'Invalid request', 'status': '400'}"
+   },
+   "https://gitverse.ru/search?q=pentest": {
+    "status": 404,
+    "content_type": "text/html",
+    "note": "not JSON (a web page)"
+   }
+  },
+  "home_status": 200
+ }
+}
