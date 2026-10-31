@@ -383,9 +383,20 @@ def build_text(root: Path | None = None) -> str:
               f"![Chart 1. How the tools use AI, sweep of {date}](ai_tool_landscape/{date}-1-ai-use.png)", "",
               "*Chart 1 (the author's question). Left: projects by the kind of AI model they name, with the "
               "share of all projects. Right: the same within each group, as a share of the group. " + NOTE + "*", "",
+              f"**In short.** About {round(100 * named / max(s['n'], 1))} in 100 of these security projects say which AI "
+              f"model they use. Of those, about {round(100 * s['ai_use']['closed'] / max(named, 1))} in 100 depend only on "
+              "a hosted, closed model reached over the internet (such as GPT, Claude or Gemini), about "
+              f"{round(100 * s['ai_use']['open_local'] / max(named, 1))} in 100 only on open-weight models people download "
+              f"and run themselves, and the rest, about {round(100 * s['ai_use']['both'] / max(named, 1))} in 100, on both. "
+              "The other projects name no model; some may still use AI without saying so.", "",
               f"![Chart 2. What the tools do, sweep of {date}](ai_tool_landscape/{date}-2-tool-types.png)", "",
               "*Chart 2. Projects by tool type (a project can have several). Colour: the group the type "
               "counts towards.*", "",
+              "**In short.** Each project is described by what it does, in its own words: testing systems "
+              "the way an attacker would (offensive security, mostly for authorised red teams and "
+              "penetration testers), detecting, investigating and fixing problems (defensive security), or "
+              "work both sides do every day, such as scanning and reconnaissance (dual-use). The labels say "
+              "what a tool does, never who uses it or why.", "",
               f"![Chart 3. New tools each month by group, sweep of {date}](ai_tool_landscape/{date}-3-new-per-month.png)", "",
               "*Chart 3. Horizontal: the month each project was created. Vertical: new projects that "
               "month. Lines: offensive security, defensive security, dual-use.*", "",

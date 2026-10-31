@@ -28,7 +28,10 @@ QUERIES = ["渗透测试", "AI 渗透", "大模型 安全", "红队 智能体", 
 def search(q: str, token: str) -> dict:
     rec = {"query": q}
     try:
-        r = requests.get(API, params={"q": q, "per_page": 20, "page": 1, "access_token": token},
+        params = {"q": q, "per_page": 20, "page": 1}
+        if token:
+            params["access_token"] = token
+        r = requests.get(API, params=params,
                          headers={"User-Agent": UA}, timeout=45)
     except requests.RequestException as e:
         rec["status"] = f"error {type(e).__name__}"
@@ -47,7 +50,7 @@ def search(q: str, token: str) -> dict:
             rec["fields"] = ";".join(k for k in ("created_at", "stargazers_count", "forks_count", "description",
                                                  "language", "owner", "license") if k in keys)
     else:
-        rec["message"] = (r.text or "")[:120].replace(token, "***")
+        rec["message"] = (r.text or "")[:120].replace(token, "***") if token else (r.text or "")[:120]
     return rec
 
 
@@ -57,11 +60,7 @@ def main(argv=None) -> int:
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
-    token = os.environ.get("GITEE_TOKEN", "")
-    if not token:
-        (a.out / "summary.md").write_text("# Gitee probe\n\nGITEE_TOKEN missing.\n")
-        print("GITEE_TOKEN missing")
-        return 1
+    token = os.environ.get("GITEE_TOKEN", "")   # optional: without it the searches run anonymously
     rows = []
     for q in QUERIES:
         rows.append(search(q, token))
@@ -71,7 +70,8 @@ def main(argv=None) -> int:
         w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
         w.writeheader(); w.writerows(rows)
     ok = sum(r.get("status") == 200 for r in rows)
-    L = ["# Gitee probe", "", f"Searches: {len(rows)}; answered: {ok}. Counts only; no names kept.", ""]
+    L = ["# Gitee probe", "", f"Searches: {len(rows)}; answered: {ok}; token: {'yes' if token else 'no'}. "
+         "Counts only; no names kept. See docs/AFTER_ACTION_GITEE_2026-10-31.md.", ""]
     L += [f"- {r['query']}: status {r.get('status')}; total {r.get('total_count', '-')}; items {r.get('items', '-')}"
           f"; fields {r.get('fields', '-')}" + (f"; message {r['message']}" if r.get('message') else "") for r in rows]
     (a.out / "summary.md").write_text("\n".join(L) + "\n")
