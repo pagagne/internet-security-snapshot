@@ -62,8 +62,6 @@ jobs:
           # global_probe only: X21 tests (Radar by continent; ransomware.live counts, api-pro as permitted)
           CLOUDFLARE_TOKEN: ${{ (github.event.client_payload.task || 'fixdate_probe') == 'global_probe' && secrets.CLOUDFLARE_TOKEN || '' }}
           RANSOMWARE_LIVE_KEY: ${{ (github.event.client_payload.task || 'fixdate_probe') == 'global_probe' && secrets.RANSOMWARE_LIVE_KEY || '' }}
-          # gitee_probe only: the author's Gitee token (scope user_info), 31 Oct 2026
-          GITEE_TOKEN: ${{ github.event.client_payload.task == 'gitee_probe' && secrets.GITEE_TOKEN || '' }}
           TASK: ${{ (github.event.client_payload.task || 'fixdate_probe') }}
           START: ${{ github.event.client_payload.start || '2026-04-01' }}
           END: ${{ github.event.client_payload.end || '2026-09-30' }}

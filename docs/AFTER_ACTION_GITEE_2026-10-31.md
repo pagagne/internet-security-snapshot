@@ -79,10 +79,15 @@ Russian sites were later dropped for US sanctions and SourceCraft for needing a 
 
 ## Follow-ups
 
-- [ ] Author: delete the Gitee token on gitee.com (Settings, Personal access tokens) and the
+- [x] Author: delete the Gitee token on gitee.com (Settings, Personal access tokens) and the
       `GITEE_TOKEN` secret in GitHub (Settings, Secrets and variables, Actions). The author may
       keep or delete the Gitee account itself; the study does not need it.
 - [x] `docs/TERMS_OF_USE.md` and `docs/INQUIRIES.md` record Gitee as not used (31 Oct 2026).
-- [ ] Claude: once the secret is gone, remove the `GITEE_TOKEN` line from the Research workflow;
+- [x] Claude: once the secret is gone, remove the `GITEE_TOKEN` line from the Research workflow;
       keep the `gitee_probe` task (it now runs without a token, anonymously) so the check can be
       repeated if Gitee's API changes. Re-check once, at the 18 Nov refinement, with no token.
+
+**Closed 31 Oct 2026, 18:10 ET.** The author deleted the token on Gitee and the `GITEE_TOKEN`
+repository secret in GitHub (a repository secret, so both tests did run with the token); the
+workflow line that passed it was removed. The only follow-up left is the anonymous re-check at the
+18 Nov refinement.
