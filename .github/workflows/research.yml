@@ -7,7 +7,7 @@ on:
   # No Run button (author's decision, 29 Oct 2026): this workflow contacts sources outside the
   # repository, so it starts only on its timer or through GitHub's API (repository_dispatch),
   # e.g. from the Schedule workflow or Claude. See docs/WORKFLOWS.md.
-  # Payload fields: task (one of: fixdate_probe, source_scout, global_probe, terms_scout, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists, resource_profile, cve_check, ai_tools, prefill_coverage, x3_sources, github_tools, repo_scout; default fixdate_probe),
+  # Payload fields: task (one of: fixdate_probe, source_scout, global_probe, terms_scout, honeypot_capture, kev_lag, kernel_fixdates, depsdev_adoption, hhs_breaches, ai_lists, resource_profile, cve_check, ai_tools, prefill_coverage, x3_sources, github_tools, repo_scout, hf_tools; default fixdate_probe),
   # start and end (KEV date-added range, YYYY-MM-DD; defaults 2026-04-01 and 2026-09-30).
   repository_dispatch:
     types: [research]
@@ -25,10 +25,10 @@ jobs:
         with:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
       - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
-      - name: Private register from Drive (github_tools only)
+      - name: Private register from Drive (X25 sweeps only)
         # X25 privacy (author, 30 Oct 2026): codes for individuals' repositories come from a private
         # register kept in the author's Drive (x25-private/), never in the repository.
-        if: github.event.client_payload.task == 'github_tools'
+        if: contains(fromJSON('["github_tools", "hf_tools"]'), github.event.client_payload.task)
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         run: |
@@ -49,23 +49,26 @@ jobs:
           START: ${{ github.event.client_payload.start || '2026-04-01' }}
           END: ${{ github.event.client_payload.end || '2026-09-30' }}
         run: |
-          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout)$ ]] || { echo "unknown task"; exit 2; }
+          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools)$ ]] || { echo "unknown task"; exit 2; }
           [[ "$START" =~ ^[0-9-]{10}$ && "$END" =~ ^[0-9-]{10}$ ]] || { echo "bad dates"; exit 2; }
           python -m "snapshot.research.$TASK" --start "$START" --end "$END" --out research-out 2>&1 | tee research-out.log
-      - name: Private list and register to Drive (github_tools only)
-        if: github.event.client_payload.task == 'github_tools'
+      - name: Private lists to Drive (X25 sweeps only)
+        if: contains(fromJSON('["github_tools", "hf_tools"]'), github.event.client_payload.task)
+        env:
+          TASK: ${{ github.event.client_payload.task }}
         run: |
           stamp=$(date -u +%Y-%m-%dT%H%MZ)
-          rclone copyto research-private/registry.csv gdrive:x25-private/registry.csv
-          rclone copyto research-private/registry.csv "gdrive:x25-private/registry-$stamp.csv"
-          rclone copyto research-private/tools_full.csv "gdrive:x25-private/tools_full-$stamp.csv"
+          if [ -f research-private/registry.csv ]; then
+            rclone copyto research-private/registry.csv gdrive:x25-private/registry.csv
+          fi
+          rclone copy research-private/ "gdrive:x25-private/$TASK-$stamp/"
           rm -rf research-private research-private-in
       - name: Publish
         if: always()
         env:
           TASK: ${{ (github.event.client_payload.task || 'fixdate_probe') }}
         run: |
-          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout)$ ]] || { echo "unknown task"; exit 2; }
+          [[ "$TASK" =~ ^(fixdate_probe|source_scout|global_probe|terms_scout|honeypot_capture|kev_lag|kernel_fixdates|depsdev_adoption|hhs_breaches|ai_lists|resource_profile|cve_check|ai_tools|prefill_coverage|x3_sources|github_tools|repo_scout|hf_tools)$ ]] || { echo "unknown task"; exit 2; }
           dest="research/$(date -u +%Y-%m-%dT%H%MZ)-$TASK"
           git fetch origin run-reports:run-reports
           git worktree add -q /tmp/rr run-reports
