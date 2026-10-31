@@ -55,6 +55,15 @@ def test_breakdown_tags():
     assert r["labs"] == "Anthropic;Alibaba" and r["toolkits"] == "CrewAI"
     assert r["targets"] == "cloud accounts;Windows and Active Directory"
     assert r["protocols"] == "SMB;Kerberos"
+    assert G.tags("MQTT and Modbus over OPC UA; A2A agents on BLE", G.PROTOCOLS) == ["MQTT", "Modbus", "OPC UA", "Bluetooth/BLE", "A2A"]
+
+
+def test_protocol_charts_follow_the_data():
+    from snapshot import x25report as X
+    k = len(X.PROTOCOLS)
+    s = {"protocols": {side: [1 if i < 13 else 0 for i in range(k)] for side in X.SIDES}}
+    text = "\n".join(X.protocol_section("d", s))
+    assert "13 of the" in text and "2 protocol charts" in text and "d-6-protocols-2.png" in text
 
 
 def test_individuals_get_stable_codes_and_no_details():

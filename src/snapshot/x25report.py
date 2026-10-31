@@ -3,7 +3,7 @@
 Author's decisions, 30 Oct 2026: catalogue each hand-run sweep with charts and carry it in The
 Snapshot manual; the January 2027 sweep is part of the pilot. Reads every sweep in
 exploratory/ai_tool_sweeps/<date>.csv (a compact copy of the Research task github_tools output,
-originals only) and writes exploratory/ai_tool_landscape.md with five charts per sweep in
+originals only) and writes exploratory/ai_tool_landscape.md with a set of charts per sweep (five, plus one protocol chart for every 12 protocols found) in
 exploratory/ai_tool_landscape/. Exploratory and never scored: a tool on GitHub is supply, not
 use, and the role labels are first guesses until checked.
 
@@ -32,7 +32,9 @@ TARGETS = ["web apps and APIs", "cloud accounts", "Windows and Active Directory"
            "email and people", "endpoints and logs"]
 TOOLKITS = ["MCP", "LangChain", "CrewAI", "AutoGen", "LlamaIndex", "Semantic Kernel", "OpenAI Agents SDK",
             "Claude Code / Agent SDK", "smolagents", "PydanticAI"]
-PROTOCOLS = ["HTTP", "SMB", "SSH", "RDP", "DNS", "LDAP", "Kerberos", "SNMP", "FTP", "SMTP", "MQTT", "Modbus", "BGP", "TLS"]
+from .research.github_tools import PROTOCOLS as _P
+PROTOCOLS = list(_P)
+PER_CHART = 12   # protocols per chart: the number of protocol charts follows what a sweep finds
 
 
 def load(path: Path) -> list[dict]:
@@ -107,6 +109,22 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
         for side in ("top", "right"):
             ax.spines[side].set_visible(False)
         fig.tight_layout(); n = f"{date}-{num}-{field}-by-side.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
+    found = sorted((p for i, p in enumerate(PROTOCOLS) if sum(s["protocols"][k][i] for k in SIDES)),
+                   key=lambda p: -sum(s["protocols"][k][PROTOCOLS.index(p)] for k in SIDES))
+    for c, start in enumerate(range(0, len(found), PER_CHART)):
+        chunk = found[start:start + PER_CHART]
+        fig, ax = plt.subplots(figsize=(11, 5), dpi=130)
+        x = range(len(chunk))
+        for off, k in ((-.27, "attack"), (0, "defence"), (.27, "both")):
+            ax.bar([i + off for i in x], [s["protocols"][k][PROTOCOLS.index(p)] for p in chunk], .27,
+                   color=COLOURS[k], label=k.capitalize())
+        ax.set_xticks(list(x), chunk, rotation=30, ha="right", fontsize=9)
+        ax.set_xlabel("Network protocol named by the project (most-named first)"); ax.set_ylabel("Projects naming it")
+        ax.set_title(f"Network protocols each side names, {start + 1}-{start + len(chunk)} of {len(found)} found (sweep of {date})")
+        ax.legend(frameon=False); ax.grid(axis="y", alpha=.3)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+        fig.tight_layout(); n = f"{date}-6-protocols-{c + 1}.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
     qs, qv = [], {k: [] for k in SIDES}
     for i, m in enumerate(s["months"]):
         q = f"{m[:4]} Q{(int(m[5:]) - 1) // 3 + 1}"
@@ -129,6 +147,22 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     ax.view_init(elev=24, azim=-58)
     fig.tight_layout(); n = f"{date}-4-overview-3d.png"; fig.savefig(out / n); plt.close(fig); names.append(n)
     return names
+
+
+def protocol_section(date: str, s: dict) -> list[str]:
+    """One chart per PER_CHART protocols found, so the number of charts follows the data."""
+    found = sorted((p for i, p in enumerate(PROTOCOLS) if sum(s["protocols"][k][i] for k in SIDES)),
+                   key=lambda p: -sum(s["protocols"][k][PROTOCOLS.index(p)] for k in SIDES))
+    n = (len(found) + PER_CHART - 1) // PER_CHART
+    L = [f"Network protocols: {len(found)} of the {len(PROTOCOLS)} watched were named, so {n} protocol "
+         f"chart{'s' if n != 1 else ''} (12 to a chart, most-named first). Not found this sweep: "
+         + (", ".join(p for p in PROTOCOLS if p not in found) or "none") + ".", ""]
+    for c in range(n):
+        L += [f"![Protocol chart {c + 1} of {n}, sweep of {date}](ai_tool_landscape/{date}-6-protocols-{c + 1}.png)", ""]
+    if n:
+        L += ["*Protocol charts. Horizontal: the network protocol a project names. Vertical: projects "
+              "naming it. Bars: attack, defence, both.*", ""]
+    return L
 
 
 def build_text(root: Path | None = None) -> str:
@@ -184,9 +218,7 @@ def build_text(root: Path | None = None) -> str:
               "Agent toolkits named (attack / defence / both): " + "; ".join(
                   f"{t} {s['toolkits']['attack'][i]}/{s['toolkits']['defence'][i]}/{s['toolkits']['both'][i]}"
                   for i, t in enumerate(TOOLKITS)) + ".", "",
-              "Network protocols named (attack / defence / both): " + "; ".join(
-                  f"{t} {s['protocols']['attack'][i]}/{s['protocols']['defence'][i]}/{s['protocols']['both'][i]}"
-                  for i, t in enumerate(PROTOCOLS)) + ".", "",
+              *protocol_section(date, s),
               "| Month | " + " | ".join(m for m in s["months"][-12:]) + " |",
               "|---|" + "---|" * len(s["months"][-12:])]
         for k in SIDES:

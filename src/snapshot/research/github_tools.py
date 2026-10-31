@@ -84,8 +84,36 @@ TARGETS = {   # what a tool goes after (or, for defence tools, protects)
     "email and people": r"phishing|social engineering|\bemail security\b",
     "endpoints and logs": r"\bedr\b|endpoint|\bsiem\b|\blogs?\b analysis|\bsysmon\b|event logs?",
 }
-PROTOCOLS = {name: rf"\b{name.lower()}\b" for name in
-             ["HTTP", "SMB", "SSH", "RDP", "DNS", "LDAP", "Kerberos", "SNMP", "FTP", "SMTP", "MQTT", "Modbus", "BGP", "TLS"]}
+PROTOCOLS = {   # a wide net (author, 30 Oct 2026): only protocols actually found are charted
+    # web and APIs
+    "HTTP/HTTPS": r"\bhttps?\b", "TLS/SSL": r"\btls\b|\bssl\b", "WebSocket": r"\bwebsockets?\b",
+    "GraphQL": r"\bgraphql\b", "gRPC": r"\bgrpc\b", "OAuth/OIDC": r"\boauth\b|\boidc\b|openid connect",
+    "SAML": r"\bsaml\b", "JWT": r"\bjwt\b",
+    # remote access and file sharing
+    "SSH": r"\bssh\b", "RDP": r"\brdp\b", "VNC": r"\bvnc\b", "Telnet": r"\btelnet\b", "WinRM": r"\bwinrm\b",
+    "SMB": r"\bsmb\b", "FTP/SFTP": r"\bs?ftp\b", "NFS": r"\bnfs\b", "RPC/MSRPC": r"\bms-?rpc\b|\brpc\b",
+    # Windows identity
+    "LDAP": r"\bldaps?\b", "Kerberos": r"\bkerberos\b", "NTLM": r"\bntlm\b",
+    # network plumbing
+    "DNS": r"\bdns\b", "DHCP": r"\bdhcp\b", "ARP": r"\barp\b", "ICMP": r"\bicmp\b", "BGP": r"\bbgp\b",
+    "OSPF": r"\bospf\b", "SNMP": r"\bsnmp\b", "NTP": r"\bntp\b", "IPv6": r"\bipv6\b", "VPN/IPsec": r"\bvpn\b|\bipsec\b|\bwireguard\b",
+    # mail and messaging
+    "SMTP": r"\bsmtp\b", "IMAP/POP3": r"\bimap\b|\bpop3\b", "SIP/VoIP": r"\bsip\b|\bvoip\b",
+    "AMQP": r"\bamqp\b", "XMPP": r"\bxmpp\b",
+    # industrial and IoT
+    "MQTT": r"\bmqtt\b", "CoAP": r"\bcoap\b", "Modbus": r"\bmodbus\b", "DNP3": r"\bdnp3\b",
+    "BACnet": r"\bbacnet\b", "OPC UA": r"\bopc[ -]?ua\b", "S7comm": r"\bs7(comm)?\b",
+    "Zigbee": r"\bzigbee\b", "LoRaWAN": r"\blora(wan)?\b", "CAN bus": r"\bcan ?bus\b",
+    # wireless
+    "Wi-Fi/802.11": r"\bwi-?fi\b|802\.11|\bwpa[23]?\b", "Bluetooth/BLE": r"\bbluetooth\b|\bble\b",
+    "RFID/NFC": r"\brfid\b|\bnfc\b", "Cellular (LTE/5G)": r"\blte\b|\b5g\b|\bgsm\b",
+    # databases and services spoken on the wire
+    "SQL databases": r"\bmysql\b|\bpostgres(ql)?\b|\bmssql\b|\boracle db\b", "Redis": r"\bredis\b",
+    "MongoDB": r"\bmongodb\b", "Elasticsearch": r"\belasticsearch\b", "Docker API": r"docker (api|socket|daemon)",
+    "Kubernetes API": r"kubernetes api|\bkube-?apiserver\b",
+    # AI agent protocols
+    "MCP": r"\bmcp\b|model context protocol", "A2A": r"\ba2a\b|agent2agent|agent-to-agent protocol",
+}
 
 SAFEGUARD = re.compile(r"\b(scope|authori[sz](ed|ation)|permission|consent|allow-?list|in-scope|rules of engagement)\b", re.I)
 NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
