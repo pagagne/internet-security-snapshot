@@ -12,7 +12,7 @@ monthly copy of the whole repository in case the GitHub account is ever lost or 
 | `private/` | Sources not yet allowed to be published (ransomware.live until it agrees; VulnCheck once collected), kept out of every public output | After each pull | under 1 MB a pull |
 | `repository/` | `git bundle` of every branch (code, schedule, run logs) | The 3rd of each month | a few MB |
 | `correspondence/` | Full text of every email with outside organisations (permissions, reviewers), one file per thread; filed by Claude the day it arrives | As it happens | small |
-| `manual/` | The Snapshot manual: public edition `The-Snapshot.pdf`; `private/` holds the private edition and its Appendix C source (`appendix-c.md`, kept current by Claude) | Each Backup run (monthly, or Run button), replacing the previous copy | about 3 MB each |
+| `manual/` | The Snapshot manual as Markdown (`THE_SNAPSHOT.md`, `README.md` contents, `parts/`; no PDFs since 31 Oct 2026, author's decision); `private/` holds its Appendix C (`appendix-c.md`, kept current by Claude). The two PDFs from 29 Oct are out of date and can be deleted by the author | Each Backup run (monthly, or Run button), replacing the previous copy | about 3 MB each |
 
 About 3 GB for 2027 (`docs/CAPACITY.md`). The folder stays private: nothing in it is
 published, and it holds data the standing rules keep private. Victim names are never in it

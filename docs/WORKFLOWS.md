@@ -102,9 +102,9 @@ with the author (repository admin) able to bypass it.
 **What it does:** saves a complete copy of the repository (every branch and all history) as one
 file in the author's Drive folder "Internet-Security-Snapshot-2027", under `repository/`. Started
 by hand, it also writes a small test file under `tests/` to prove the connection works. Each
-quarterly pull backs up its own data separately, as its last step. Since 29 Oct it also builds
-both editions of The Snapshot manual as PDFs and saves them under `manual/`, replacing the
-previous copies (the private edition's appendix is read from Drive, never from the repository).
+quarterly pull backs up its own data separately, as its last step. It also copies The Snapshot
+manual, as Markdown, to `manual/`, replacing the previous copy (no PDFs since 31 Oct 2026,
+author's decision; the private appendix stays in Drive).
 Setup: `docs/BACKUP.md`.
 
 ## 6. Research probe: the testing bench
@@ -233,7 +233,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
 | Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |
-| Manual publish | **Support**: the private reading copy of the manual | The private copy goes stale; the PDFs in Drive and the public documents are unaffected. |
+| Manual publish | **Support**: the private reading copy of the manual | The private copy goes stale; the Markdown copy in Drive and the public documents are unaffected. |
 | Source watch | **Support**: early warning for the core and companion sources | A moved or changed source would be found on pull day instead of weeks earlier; data unaffected. |
 
 The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with

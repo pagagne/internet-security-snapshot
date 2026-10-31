@@ -93,9 +93,9 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
 
 ### Backup
 - **Does:** copies the whole repository, with history, to the Drive folder
-  Internet-Security-Snapshot-2027, saves both editions of The Snapshot manual (PDF) under
+  Internet-Security-Snapshot-2027, saves The Snapshot manual (Markdown) under
   `manual/`, and writes a small file proving the connection works.
-- **Run it when:** after the manual changes and you want the Drive PDFs current; after a decision session or freeze; before a report is published; after the
+- **Run it when:** after the manual changes and you want the Drive copy current; after a decision session or freeze; before a report is published; after the
   Drive connection was renewed; before any risky repository change.
 - **Allowed:** outside the quiet periods; at most once a day (each run is a full copy and
   uses Drive space).

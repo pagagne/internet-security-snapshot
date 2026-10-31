@@ -25,11 +25,11 @@ author's private repository `pagagne/snapshot-manual` (secret `MANUAL_REPO_TOKEN
 fine-grained token with Contents read and write on that repository only), where it reads on
 GitHub with a dropdown contents page, one file per part, split further as it grows. The working
 documents stay public. Checks fails if the manual cannot be built or a new Markdown file is in
-neither the manual nor its `excluded` list. The PDFs are built by
-`tools/manual_pdf.py` and saved to Drive by the Backup workflow (monthly, or its Run button):
-the public edition to `manual/`, the private edition (adding Appendix C: full bio,
-correspondence index, Drive inventory, read from `manual/private/appendix-c.md` in Drive, never
-in the repository) to `manual/private/`. Claude keeps that appendix current in Drive.
+neither the manual nor its `excluded` list. **The manual is kept as Markdown only, no PDFs
+(author's decision, 31 Oct 2026).** The Backup workflow (monthly, or its Run button) copies it
+to Drive `manual/` (single file, parts, contents page). Its private Appendix C (full bio,
+correspondence index, Drive inventory) stays as Markdown in Drive `manual/private/appendix-c.md`,
+never in the repository; Claude keeps it current.
 
 ## The schedule is code
 - **Source:** `docs/schedule/schedule.yaml`. Edit it, then run
@@ -141,7 +141,7 @@ meeting as a decision sheet in `docs/decisions/` (question, options, recommendat
 linked from the calendar entry. News and ideas the author raises go to `docs/INQUIRIES.md`
 the same day, and anything needing a decision is added to the next meeting's sheet.
 The author listens to replies with a read-aloud tool (29 Oct): chat replies are written mostly in
-plain sentences, with tables, code and long links kept in the documents and PDFs. Option cards
+plain sentences, with tables, code and long links kept in the documents. Option cards
 cannot be read aloud, so before each card the same questions and options, with the
 recommendation, are sent as a plain message he can listen to.
 Every email or form exchange with an outside organisation about the study (data sources,
