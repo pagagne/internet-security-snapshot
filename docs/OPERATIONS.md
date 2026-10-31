@@ -170,6 +170,13 @@ that day (author's request, 27 Oct).
 4. Every sweep in addition to the core (the exploratory work: data, analysis and reports) lives
    in the private repository `pagagne/snapshot-manual` with the manual (author's decision,
    31 Oct 2026); see `docs/WORKFLOWS.md`, section 13. Public logs and issues carry counts only.
+5. Exploratory figures never go into public files (author's decision, 31 Oct 2026, after Claude
+   briefly quoted October sweep counts in the public inquiry log): public documents say that a
+   check or sweep was done and point to the private repository; the figures stay there. The
+   privacy scan enforces it: a public Markdown line about the feed screens, the attack log or the
+   tool sweeps that quotes a count stops the push, unless it predates the rule
+   (`config/privacy_baseline.txt`) or ends with `<!-- public-figure -->` for a figure the author has
+   cleared.
 
 Periodic checks (27 Oct 2026): the privacy scan (`snapshot.privacy`) runs on every push
 (Checks), twice a day on `main` and `run-reports` (its own Privacy scan workflow since 29 Oct, with a Run

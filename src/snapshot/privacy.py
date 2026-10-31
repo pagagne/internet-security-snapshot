@@ -9,6 +9,12 @@ are not on the allow list, and figures from sources whose `publish` switch is of
 (config/sources.yaml; today ransomware.live counts). Prints each finding as file:line and kind
 (never the matched value in full) and exits 1 if there is any.
 
+Also (author's decision, 31 Oct 2026) exploratory figures: the exploratory work (feed screens,
+the AI-attack log, the GitHub and Hugging Face sweeps) is private until the report, so a line in
+a public Markdown file that talks about it and quotes a count is flagged, unless it was already
+there on 31 Oct 2026 (config/privacy_baseline.txt) or ends with the marker
+`<!-- public-figure -->` (a figure the author has cleared, such as a fixed search count).
+
 Runs on every push (Checks), daily on main and run-reports (Schedule), and in each sync review.
 Allow-listed values are public addresses of organisations, kept in ALLOW below with a reason.
 """
@@ -48,6 +54,37 @@ ALLOW = {
     "(706) 542-3375": "UGA Career Center employer-relations office line (public)",
     "internetsecuritysnapshot@gmail.com": "the study's own public contact address (created 29 Oct 2026)",
 }
+# Exploratory figures (author, 31 Oct 2026)
+EXPLORATORY = re.compile(r"\bX(3|25)\b|feed.?screen|tool sweep|GitHub sweep|Hugging Face sweep|attack log|"
+                         r"\bcandidates\b|projects? created|offensive.security|defensive.security|dual.use|\bARTEX\b", re.I)
+COUNT = re.compile(r"(?<![\w./-])(?!(?:19|20)\d\d\b)\d{1,3}(?:,\d{3})+(?![\w/-])|(?<![\w./:-])(?!(?:19|20)\d\d\b)\d{2,}(?![\w/:.-]|\s?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\b)")
+MARK = "<!-- public-figure -->"
+BASELINE = Path(__file__).resolve().parents[2] / "config" / "privacy_baseline.txt"
+
+
+def _line_key(name: str, line: str) -> str:
+    import hashlib
+    return hashlib.sha1(f"{name}\t{line.strip()}".encode()).hexdigest()[:16]
+
+
+def exploratory_lines(name: str, text: str) -> list[tuple[int, str]]:
+    if not name.endswith(".md") or name.startswith(("exploratory/", "docs/manual/")):
+        return []
+    out = []
+    for i, line in enumerate(text.split("\n"), 1):
+        if MARK in line or not EXPLORATORY.search(line):
+            continue
+        bare = re.sub(r"\]\([^)]*\)|`[^`]*`|https?://\S+|^\|\s*\d+\s*\||(?:section|item|items|Part|chart|run|step|points?|v)\s*\d+", "", line, flags=re.I)
+        bare = re.sub(r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d+|\d{1,2}:\d{2}|\d{4}-\d{2}(-\d{2})?", "", bare)
+        if COUNT.search(bare):
+            out.append((i, line))
+    return out
+
+
+def _baseline() -> set[str]:
+    return set(BASELINE.read_text().split()) if BASELINE.exists() else set()
+
+
 SKIP_SUFFIX = (".png", ".jpg", ".svg", ".ico", ".pdf", ".zip", ".parquet", ".gz", ".bundle", ".lock")
 SKIP_PATHS = ("src/snapshot/privacy.py", "tests/test_privacy.py")
 
@@ -96,15 +133,24 @@ def scan_text(name: str, text: str) -> list[tuple[str, int, str]]:
 
 def scan(ref: str | None = None) -> list[tuple[str, int, str]]:
     out = []
+    base = _baseline()
     for name, text in _files(ref):
         out += scan_text(name, text)
+        out += [(name, i, "exploratory figure (private until the report)") for i, line in exploratory_lines(name, text)
+                if _line_key(name, line) not in base]
     return out
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--ref", help="branch or commit to scan (default: the checked-out files)")
+    ap.add_argument("--write-baseline", action="store_true", help=argparse.SUPPRESS)   # one-off, 31 Oct 2026
     a = ap.parse_args(argv)
+    if a.write_baseline:
+        keys = sorted({_line_key(n, l) for n, text in _files(None) for _, l in exploratory_lines(n, text)})
+        BASELINE.write_text("# Lines that quoted exploratory figures before the 31 Oct 2026 rule (grandfathered).\n"
+                            + "\n".join(keys) + "\n")
+        print(f"baseline: {len(keys)} lines"); return 0
     hits = scan(a.ref)
     where = a.ref or "working tree"
     if not hits:

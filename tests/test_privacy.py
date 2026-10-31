@@ -30,3 +30,11 @@ def test_finds_secrets_personal_details_and_private_figures(monkeypatch):
 def test_allow_list_and_dates_pass():
     sample = "noreply@anthropic.com contact@shadowserver.org 2026-10-27 12:34 (706) 542-3375"
     assert privacy.scan_text("x.md", sample) == []
+
+
+def test_exploratory_figures_are_flagged_unless_cleared():
+    from snapshot import privacy as P
+    assert P.exploratory_lines("docs/x.md", "The October jump: 377 offensive-security projects against 172 in September.")
+    assert not P.exploratory_lines("docs/x.md", "Run the GitHub sweep (X25) on 6 Jan 2027 at 10:00.")
+    assert not P.exploratory_lines("docs/x.md", "X25 uses 48 fixed searches " + P.MARK)
+    assert not P.exploratory_lines("exploratory/x.md", "377 offensive-security projects")   # private files are not public
