@@ -277,6 +277,19 @@ def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple
             part = draft_section(root, s["draft"])
             if not part:
                 continue
+            if s.get("under_banner"):            # spliced in right under the banner picture (the news line)
+                if not mirror and not s.get("cleared"):
+                    problems.append(f"draft section not cleared by the author: {s['draft']}")
+                badge = ([f"<sub>🟧 DRAFT (`{s['draft']}`): goes live at the flip</sub>", ""]
+                         if mirror and s.get("status") == "draft" else [])
+                block = "\n".join(part + badge)
+                for i, prev in enumerate(L):
+                    if "</picture>" in prev:
+                        L[i] = prev.replace("</picture>", "</picture>\n\n" + block, 1)
+                        break
+                else:
+                    L.append(block)
+                continue
             if mirror and s.get("status") == "draft":
                 part.insert(2, f"> 🟧 **DRAFT section** (`{s['draft']}`): private, goes live at the flip"
                                + ("" if s.get("cleared") else "; figures not yet cleared by the author") + ".")
