@@ -11,7 +11,7 @@
 #           refuses any draft section that is not cleared
 # Structure only: no figures live in this file.
 
-flip_date: 2027-01-01
+flip_date: 2027-01-02   # the day after the pilot report (schedule item landing-flip)
 sections:
   - {readme: top,                      status: live}
   - {draft: results,                   status: draft, cleared: false}
