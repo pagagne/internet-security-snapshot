@@ -116,3 +116,14 @@ def test_rules_of_1_nov_2026():
     assert G.group("AI model testing") == "dual_use"
     assert G.relevant({"full_name": "x/pentest-agent", "description": "", "topics": ""})
     assert not G.relevant({"full_name": "x/some-books", "description": "A list of books", "topics": "ai"})
+
+
+def test_tightening_of_1_nov_2026():
+    from snapshot.research import github_tools as G
+    ts = G.tool_types("Autonomous AI pentest agent that monitors progress and alerts you when done")
+    assert "detection and monitoring" not in ts and G.group(ts) == "offensive"
+    assert "detection and monitoring" in G.tool_types("LLM agent for threat detection in SIEM alerts")
+    ts = G.tool_types("Adversarial Robustness Toolbox: adversarial attacks on machine learning models; harden models")
+    assert "AI model testing" in ts and "penetration testing" not in ts and G.group(ts) == "dual_use"
+    assert not G.relevant({"full_name": "x/baserow", "description": "Secure open-source no-code database", "topics": "database"})
+    assert G.relevant({"full_name": "x/tool", "description": "An AI security testing agent", "topics": ""})

@@ -135,14 +135,21 @@ TYPES = {   # what a tool does (author, 31 Oct 2026); a tool can have several
     "reconnaissance and OSINT": r"\brecon|\bosint\b|subdomain|asset discovery|footprint|attack surface|情报收集",
     "phishing simulation": r"phishing|social engineering",
     "malware analysis": r"malware|reverse engineer|\byara\b|\bghidra\b|\bida pro\b|sandbox analysis",
-    "detection and monitoring": r"detect|\bsoc\b|\bsiem\b|monitor|alert|\bedr\b|\bsigma rules?\b|log analysis|threat hunt|检测",
+    # phrases only (author, 1 Nov 2026): bare "detect", "monitor" and "alert" also describe attack
+    # agents watching their own progress
+    "detection and monitoring": r"(threat|intrusion|anomal\w*|malware|attack|phishing|fraud|breach|ransomware|exploit) detect\w*|"
+                                r"detect\w* (of )?(threats?|intrusions?|attacks?|malware|anomal\w*|phishing|fraud|ransomware)|"
+                                r"security (monitoring|alerts?|operations)|monitor\w* (for )?(threats?|attacks?|security)|"
+                                r"\bsoc\b|\bsiem\b|\bedr\b|\bxdr\b|alert triage|\bsigma rules?\b|log analysis|threat hunt|检测",
     "code security review": r"code review|\bsast\b|static analysis|secure cod|secret scan|dependenc(y|ies) (scan|audit)|"
                             r"supply.chain security|auto.?fix|remediat",
     "threat intelligence": r"threat intel|\bcti\b|\biocs?\b|indicators? of compromise",
     "incident response": r"incident response|\bdfir\b|forensic|triage|应急",
-    "hardening and compliance": r"harden|compliance|posture|vulnerability management|patch|blue.?team|defen[cs]e|防御|защит",
+    "hardening and compliance": r"harden|compliance|posture|vulnerability management|patch management|blue.?team|"
+                                r"cyber.?defen[cs]e|defensive security|防御|защит",
     "AI model testing": r"prompt.?injection|jailbreak|guardrail|llm (vulnerabilit|red.?team|security test|fuzz)|"
-                        r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation)",
+                        r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation|robustness)|"
+                        r"adversarial (robustness|machine learning|ml\b|examples?|attacks? (on|against) (ml|ai|models?|neural))",
 }
 MODEL_TESTING = re.compile(TYPES["AI model testing"], re.I)   # also used by the Hugging Face sweep
 OFFENSIVE = {"penetration testing", "phishing simulation"}
@@ -189,6 +196,8 @@ def group(types: list[str] | str) -> str:
     ts = set(filter(None, types.split(";") if isinstance(types, str) else types))
     if not ts:
         return "unclassified"
+    if "AI model testing" in ts:   # a model tester is not made defensive by hardening or monitoring words (1 Nov 2026)
+        ts = ts - {"hardening and compliance", "detection and monitoring"}
     off, deff = bool(ts & OFFENSIVE), bool(ts - OFFENSIVE - DUAL)
     if off and deff:
         return "dual_use"
@@ -218,13 +227,21 @@ def finish(r: dict) -> None:
 RELEVANT = re.compile(r"secur|pen.?test|penetration|exploit|vulnerab|\bcve\b|malware|phish|threat|red.?team|blue.?team|"
                       r"\bsoc\b|siem|intrusion|forensic|incident|hack|offensive|defen[cs]|ctf|osint|recon|fuzz|"
                       r"jailbreak|prompt.?injection|guardrail|attack|scanner|audit|cyber|渗透|安全|漏洞|пентест|безопасн|взлом", re.I)
+# Tightened 1 Nov 2026 (author): in the description a passing word such as "secure" is not enough;
+# it needs a security phrase or a specific security term
+DESC_RELEVANT = re.compile(r"security (tool|testing|test|research|scanner|scan|audit|analysis|operations|team|assessment|agent|"
+                           r"automation|copilot|assistant|framework|platform|monitoring)|cyber.?security|infosec|pen.?test|"
+                           r"penetration|exploit|vulnerab|\bcve\b|malware|phishing|intrusion|threat|red.?team|blue.?team|"
+                           r"\bsoc\b|siem|forensic|incident response|hacking|offensive security|\bctf\b|osint|fuzz|"
+                           r"jailbreak|prompt.?injection|guardrail|attack surface|cyber.?attack|渗透|漏洞|网络安全|пентест|взлом", re.I)
 
 
 LEFT_OUT: list[str] = []
 
 
 def relevant(r: dict) -> bool:
-    return bool(RELEVANT.search(" ".join([r.get("full_name", ""), r.get("description", ""), r.get("topics", "")])))
+    name_topics = r.get("full_name", "").replace("-", " ").replace("_", " ") + " " + r.get("topics", "")
+    return bool(RELEVANT.search(name_topics) or DESC_RELEVANT.search(r.get("description", "")))
 
 
 def tags(text: str, table: dict) -> list[str]:
