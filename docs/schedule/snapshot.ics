@@ -644,6 +644,28 @@ DESCRIPTION:Responsible: Paul (author)\n\nSame question as UGA\; the Handsh
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:crypto-category-proposal@2026-11-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Propose an AI-and-crypto category for the explor
+ atory feeds (author's idea\, 1 Nov)
+DESCRIPTION:Responsible: Claude\n\nThe author expects AI and cryptocurrency
+  to be a very active issue in 2027 and may give it its own exploratory cat
+ egory. Draft for the author: what it would cover (AI-run crypto scams and 
+ deepfakes\, AI-found smart-contract flaws and exploits\, AI-assisted theft
+ s and laundering\, crypto paths to AI services)\, which feeds and search t
+ erms to add to the monthly news check and the GitHub search\, how cases wo
+ uld be recorded (beside the AI attack cases and the GitHub tool counts\, n
+ ever in a score)\, and the sources' terms. Background in https://github.co
+ m/pagagne/internet-security-snapshot/blob/main/docs/INQUIRIES.md (1 Nov). 
+ Decided with the GitHub search refinement on 20 Nov.\n\nSource: https://gi
+ thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
+ le.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:x25-refine@2026-11-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118

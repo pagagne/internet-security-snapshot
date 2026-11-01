@@ -1163,6 +1163,18 @@ items:
     and toolkit word lists in snapshot.research.github_tools, with the effect of each on the
     baseline counts. Written to the 20 Nov issue for the author.
 
+- id: crypto-category-proposal
+  owner: claude
+  title: Propose an AI-and-crypto category for the exploratory feeds (author's idea, 1 Nov)
+  date: 2026-11-18
+  details: >
+    The author expects AI and cryptocurrency to be a very active issue in 2027 and may give it its
+    own exploratory category. Draft for the author: what it would cover (AI-run crypto scams and
+    deepfakes, AI-found smart-contract flaws and exploits, AI-assisted thefts and laundering,
+    crypto paths to AI services), which feeds and search terms to add to the monthly news check and the
+    GitHub search, how cases would be recorded (beside the AI attack cases and the GitHub tool counts, never in a score), and the sources'
+    terms. Background in docs/INQUIRIES.md (1 Nov). Decided with the GitHub search refinement on 20 Nov.
+
 - id: x25-refine-approve
   owner: author
   title: Approve the refined GitHub tool-sweep searches (X25) before the January pilot sweep

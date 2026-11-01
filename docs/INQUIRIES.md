@@ -105,3 +105,8 @@ Started 25 Oct 2026 at the author's request.
   question for the 18 Nov refinement. Two documents the author shared from other AI assistants
   were read as leads only; claims not found in primary sources are treated as unverified.
 
+- **1 Nov 2026: AI and crypto as its own category (author's idea).** The author expects AI and
+  cryptocurrency to be a very active issue in 2027 and will most likely expand this kind of feed
+  into its own exploratory category. Claude drafts a proposal for 18 Nov (scope, feeds and search
+  terms, how cases are logged beside X3 and X25, never in a score); decided on 20 Nov.
+
