@@ -144,20 +144,20 @@ def chart(qid: str, series: list[tuple[str, dict]], path: Path, simulation: bool
 def timeline(milestones: list[tuple[dt.date, str]], today: dt.date, path: Path) -> None:
     """The study's running timeline with a 'you are here' marker (from docs/schedule/schedule.yaml)."""
     import matplotlib.dates as md
-    plt, fig, ax = _ax((11, 2.6))
+    plt, fig, ax = _ax((11, 3.0))
     start, end = dt.date(2026, 10, 1), dt.date(2028, 4, 30)
     ax.plot([start, end], [0, 0], color=LIGHT, lw=6, solid_capstyle="round")
     ax.plot([start, min(today, end)], [0, 0], color=ACCENT, lw=6, solid_capstyle="round")
     for i, (d, text) in enumerate(m for m in milestones if start <= m[0] <= end):
         past = d <= today
         ax.plot([d], [0], "o", ms=7, color=ACCENT if past else "white", mec=ACCENT if past else GRAY, mew=1.5, zorder=3)
-        y = 0.55 if i % 2 == 0 else -0.55
+        y = (0.45, -0.45, 0.85, -0.85)[i % 4]     # four label rows so close milestones do not collide
         ax.annotate(("✓ " if past else "") + text, (d, 0), xytext=(d, y), fontsize=7, ha="center",
                     va="bottom" if y > 0 else "top", color="#2C2C2A" if past else "#5F5E5A",
                     arrowprops=dict(arrowstyle="-", color=LIGHT, lw=.8))
     ax.axvline(today, color="#D85A30", lw=1.2, ls="--")
-    ax.text(today, 1.15, f"you are here, {today:%d %b %Y}", color="#D85A30", fontsize=8, ha="center")
-    ax.set_ylim(-1.3, 1.35); ax.set_yticks([])
+    ax.text(today, 1.42, f"you are here, {today:%d %b %Y}", color="#D85A30", fontsize=8, ha="center")
+    ax.set_ylim(-1.6, 1.6); ax.set_yticks([])
     ax.spines["left"].set_visible(False); ax.spines["bottom"].set_visible(False)
     ax.xaxis.set_major_locator(md.MonthLocator(bymonth=[1, 4, 7, 10]))
     ax.xaxis.set_major_formatter(md.DateFormatter("%b %Y")); ax.tick_params(axis="x", labelsize=8, length=0)
@@ -229,7 +229,8 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
         L += ["> **Provisional.** Published within two days of the quarter's end, before the hand check. "
               + (f"The final report: [{final_key}]({final_key}.md)." if final_key else
                  "The final report follows one month later; this page then stays as it is, with a link to it."), ""]
-    L += ["## At a glance", "", "| Question | This quarter | 90% interval or range | Label |", "|---|---|---|---|"]
+    L += [f"PDF archive copy: [{key}.pdf]({key}.pdf)" + (" (simulation; not for citation)" if simulation else ""), "",
+          "## At a glance", "", "| Question | This quarter | 90% interval or range | Label |", "|---|---|---|---|"]
     L += [f"| {a} | {b} | {c} | {'simulation' if simulation else 'see section'} |" for a, b, c in summary_rows(R)]
     L += ["", "Labels (Improving, Worsening, Rising, Falling or No clear direction) are given from Q1 2027 by "
           "the registered rule, each with its companion check. "
@@ -263,7 +264,8 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
     return "\n".join(L)
 
 
-def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date | None = None) -> dict:
+def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date | None = None,
+          pdf: bool = True) -> dict:
     """Write reports/<key>.md, reports/charts/<key>-T*.png and timeline.png under out.
     Returns {'latest': key or None, 'keys': [...], 'available': {qid: bool}}."""
     res = load_results(results_dir)
@@ -279,7 +281,14 @@ def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date 
             if i == len(res) - 1:
                 info["available"][qid] = ok
         final_key = finals.get(R["quarter"]) if R.get("run") == "provisional" else None
-        (out / "reports" / f"{key}.md").write_text(report_md(key, R, series, simulation, final_key))
+        md = out / "reports" / f"{key}.md"
+        md.write_text(report_md(key, R, series, simulation, final_key))
+        if pdf:                                  # archive copy beside the page (author, 1 Nov 2026)
+            from . import reportpdf
+            try:
+                reportpdf.make(md)
+            except Exception as e:  # noqa: BLE001  (a PDF problem never blocks the page)
+                print(f"::warning::PDF of {key} failed: {e}")
     info["latest"] = res[-1][0]
     info["latest_R"] = res[-1][1]
     return info

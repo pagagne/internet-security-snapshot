@@ -21,7 +21,7 @@ def test_build_end_to_end(tmp_path, monkeypatch):
         (res / name).mkdir(parents=True)
         (res / name / "practice_eval.json").write_text(json.dumps(R | {"run": run}))
     monkeypatch.setattr(RP, "schedule_points", lambda: [(dt.date(2027, 1, 1), "Pilot report")])
-    info = RP.build(res, tmp_path / "out", today=dt.date(2026, 11, 1))
+    info = RP.build(res, tmp_path / "out", today=dt.date(2026, 11, 1), pdf=False)
     assert info["keys"] == ["2026Q3-provisional", "2026Q3-final"] and info["latest"] == "2026Q3-final" and info["available"]["T2"] is False
     out = tmp_path / "out"
     assert (out / "timeline.png").exists() and len(list((out / "reports/charts").glob("*.png"))) == 14
@@ -29,3 +29,11 @@ def test_build_end_to_end(tmp_path, monkeypatch):
     assert "SIMULATION" in prov and "[2026Q3-final](2026Q3-final.md)" in prov      # provisional links to its final
     final = (out / "reports/2026Q3-final.md").read_text()
     assert "## T1. The race" in final and "charts/2026Q3-final-T7.png" in final and "Nothing flagged" in final
+
+
+def test_pdf_markdown_subset(tmp_path):
+    from snapshot import reportpdf as P
+    h = P.md_to_html("# Title\n\n> **SIM** note\n\n| a | b |\n|---|---|\n| 1 | *x* |\n\n- one\n- [two](t.md)\n\ntext ![c](missing.png)", tmp_path)
+    assert "<h1>Title</h1>" in h and "<blockquote><b>SIM</b> note</blockquote>" in h
+    assert "<th>a</th>" in h and "<td><i>x</i></td>" in h and '<li><a href="t.md">two</a></li>' in h
+    assert '<img src="missing.png"' in h
