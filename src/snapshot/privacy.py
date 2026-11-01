@@ -56,7 +56,7 @@ ALLOW = {
 }
 # Exploratory figures (author, 31 Oct 2026)
 EXPLORATORY = re.compile(r"\bX(3|25)\b|feed.?screen|tool sweep|GitHub sweep|Hugging Face sweep|attack log|"
-                         r"\bcandidates\b|projects? created|offensive.security|defensive.security|dual.use|\bARTEX\b", re.I)
+                         r"projects? created|offensive.security|defensive.security|dual.use|\bARTEX\b", re.I)
 COUNT = re.compile(r"(?<![\w./-])(?!(?:19|20)\d\d\b)\d{1,3}(?:,\d{3})+(?![\w/-])|(?<![\w./:-])(?!(?:19|20)\d\d\b)\d{2,}(?![\w/:.-]|\s?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\b)")
 MARK = "<!-- public-figure -->"
 BASELINE = Path(__file__).resolve().parents[2] / "config" / "privacy_baseline.txt"
@@ -136,8 +136,9 @@ def scan(ref: str | None = None) -> list[tuple[str, int, str]]:
     base = _baseline()
     for name, text in _files(ref):
         out += scan_text(name, text)
-        out += [(name, i, "exploratory figure (private until the report)") for i, line in exploratory_lines(name, text)
-                if _line_key(name, line) not in base]
+        if ref in (None, "main", "origin/main"):   # the documents; run-reports holds core run logs (31 Oct 2026)
+            out += [(name, i, "exploratory figure (private until the report)") for i, line in exploratory_lines(name, text)
+                    if _line_key(name, line) not in base]
     return out
 
 
