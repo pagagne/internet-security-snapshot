@@ -86,6 +86,10 @@ timed workflows actually ran: the quarterly pull, honeypot capture, backup and r
 GitHub skipped one (no run four hours after it was due, looking back three days), it starts it
 once and opens a `watchdog` issue for the author. So the study keeps collecting even if no one,
 Claude included, is available (`src/snapshot/watchdog.py`; `docs/SOP_MANUAL_RUNS.md`, section 7).
+Since 1 Nov 2026 (author's decision) it also watches the daily Source status check behind the
+landing-page banner: if today's check has not run four hours after its 11:23 UTC time, the
+15:37 UTC Schedule run starts it once, without an issue (only the latest missed day; still one
+request per source per day).
 
 ## 4. Checks: the safety net on every change
 

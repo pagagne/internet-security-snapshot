@@ -69,6 +69,7 @@ jobs:
       - name: Watchdog for skipped timed runs
         # Author's decision, 29 Oct 2026: if GitHub skipped the quarterly pull, honeypot capture,
         # backup or rebuild check, start it now and open a "watchdog" issue (src/snapshot/watchdog.py).
+        # Since 1 Nov 2026 also the daily Source status banner check (restarted quietly, no issue).
         if: ${{ inputs.dry_run != true }}
         env:
           GH_TOKEN: ${{ github.token }}

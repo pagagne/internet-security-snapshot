@@ -13,6 +13,7 @@ def at(y, m, d, h=12, mi=0):
 
 def fake_gh(runs_by_file, issues=""):
     calls = []
+    runs_by_file = {"source-status.yml": [1], **runs_by_file}   # the daily banner check ran, unless a test says not
 
     def gh(args):
         calls.append(args)
@@ -59,3 +60,13 @@ def test_dry_run_starts_nothing():
     gh, calls = fake_gh({})
     assert W.check(at(2027, 1, 2, 15, 37), dry=True, gh=gh)
     assert not any("POST" in c for c in calls)
+
+
+def test_daily_banner_check_restarted_quietly_once():
+    assert W.due_times("source-status.yml", at(2026, 11, 20, 15, 22)) == [at(2026, 11, 19, 11, 23)]   # latest only
+    assert W.due_times("source-status.yml", at(2026, 11, 20, 15, 37)) == [at(2026, 11, 20, 11, 23)]
+    gh, calls = fake_gh({"source-status.yml": []})
+    assert W.check(at(2026, 11, 20, 15, 37), gh=gh) == ["start source-status.yml@2026-11-20T1123Z"]
+    assert any(c[-2:] == ["-f", "event_type=source-status"] for c in calls)
+    assert not any(c[:2] == ["label", "create"] for c in calls)
+    assert not any(c[1].endswith("/issues") for c in calls)                     # no issue for a daily restart

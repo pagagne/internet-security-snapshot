@@ -23,13 +23,20 @@ from .schedule import dispatch_args
 
 UTC = dt.timezone.utc
 
-# file: (days of month, months or None for every month, due time UTC, how to start it)
+# file: (days of month or None for every day, months or None for every month, due time UTC,
+#        how to start it: "api" (Schedule's dispatch), "button" (Run button), or "event:<type>"
+#        (a repository_dispatch event, for workflows without a Run button))
 WATCHED = {
     "quarterly-pull.yml": ({1}, {1, 2, 4, 5, 7, 8, 10, 11}, dt.time(6, 0), "api"),
     "honeypot.yml": ({2}, None, dt.time(9, 43), "api"),
     "backup.yml": ({3}, None, dt.time(10, 17), "button"),
     "rebuild-check.yml": ({10}, None, dt.time(7, 17), "button"),
+    # Daily banner check (author, 1 Nov 2026, after GitHub skipped it that morning). Restarted
+    # once if missing 4 hours after its time, so by Schedule's 15:37 UTC run; still one light
+    # request per source per day. No issue opened (daily; the run itself is the record).
+    "source-status.yml": (None, None, dt.time(11, 23), "event:source-status"),
 }
+QUIET = {"source-status.yml"}      # restarted without opening an issue
 GRACE = dt.timedelta(hours=4)      # GitHub's late timers usually arrive well within this
 LOOKBACK_DAYS = 3                  # catch up even if Schedule itself missed a day or two
 MARKER = "<!-- watchdog: {} -->"
@@ -41,10 +48,12 @@ def due_times(name: str, now: dt.datetime) -> list[dt.datetime]:
     out = []
     for back in range(LOOKBACK_DAYS + 1):
         d = (now - dt.timedelta(days=back)).date()
-        if d.day in days and (months is None or d.month in months):
+        if (days is None or d.day in days) and (months is None or d.month in months):
             t = dt.datetime.combine(d, at, UTC)
             if t + GRACE <= now:
                 out.append(t)
+    if days is None:                # a daily run: only the latest missed one matters (no catch-up pile)
+        out = out[:1]
     return out
 
 
@@ -58,8 +67,11 @@ def payload(name: str, due: dt.datetime) -> dict:
 
 
 def start_args(name: str, due: dt.datetime, repo: str) -> list[str]:
-    if WATCHED[name][3] == "api":
+    how = WATCHED[name][3]
+    if how == "api":
         return dispatch_args(payload(name, due))
+    if how.startswith("event:"):
+        return ["api", "-X", "POST", f"repos/{repo}/dispatches", "-f", f"event_type={how[6:]}"]
     return ["api", "-X", "POST", f"repos/{repo}/actions/workflows/{name}/dispatches", "-f", "ref=main"]
 
 
@@ -83,6 +95,8 @@ def check(now: dt.datetime, dry: bool = False, gh=None) -> list[str]:
             if dry:
                 continue
             gh(start_args(name, due, repo))
+            if name in QUIET:
+                continue
             gh(["label", "create", "watchdog", "--color", "fbca04", "--description", "Started by the watchdog", "--force"])
             body = (f"GitHub did not start **{name}**, due {due:%a %d %b %Y %H:%M} UTC; no run had appeared "
                     f"{GRACE.seconds // 3600} hours later. The watchdog in the Schedule workflow started it now "
