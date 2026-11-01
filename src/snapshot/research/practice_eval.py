@@ -35,6 +35,17 @@ from ..fixdates import prefill_exploited
 from ..race import t1_kev_race, t3_time_to_exploit
 from ..t7 import t7_range
 from ..util import Quarter
+from .prefill_coverage import CVE_RAW, bucket
+
+
+def _cve_record(cve_id: str) -> dict:
+    import requests
+    y, n = cve_id.split("-")[1:]
+    try:
+        r = requests.get(CVE_RAW.format(y=y, b=n[:-3] + "xxx", c=cve_id), timeout=30)
+        return r.json() if r.ok else {}
+    except (requests.RequestException, ValueError):
+        return {}
 
 
 def _find_bundle(root: Path) -> Path:
@@ -102,15 +113,24 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataF
     sub = cve[cve["cve_id"].isin(set(kq["cve_id"]))].drop(columns=["pub"])
     vend = dict(zip(kq["cve_id"], kq["vendor"]))
     prefills, sources = {}, {}
+    # Bundles frozen before 1 Nov 2026 lack the CNA disclosure date and keep only five links;
+    # for those, the CVE record is read live, as the worksheet does (noted in the report)
+    live = "date_public" not in cve.columns
+    R["fix_inputs"] = "CVE records read live (bundle predates the disclosure-date field)" if live else "frozen bundle"
     for r in sub.itertuples():
         lst = lambda x: [] if x is None else list(x)
         refs = lst(getattr(r, "fix_links", None)) + lst(getattr(r, "ref_links", None))
         pub = str(r.date_published)[:10] if pd.notna(r.date_published) else ""
         dp = getattr(r, "date_public", None)   # in bundles from 1 Nov 2026 on
         dp = str(dp)[:10] if dp is not None and pd.notna(dp) else ""
+        if live and nvd is None:   # tests pass nvd and stay offline
+            rec = _cve_record(r.cve_id)
+            cna = (rec.get("containers") or {}).get("cna") or {}
+            refs = refs + [x.get("url", "") for x in cna.get("references") or [] if x.get("url") not in refs]
+            dp = str(cna.get("datePublic") or "")[:10]
         d, src, hand = prefill_exploited(r.cve_id, refs, vend.get(r.cve_id, ""), pub or "", dp)
         prefills[r.cve_id] = (d, src, hand)
-        sources[r.cve_id] = "assumed" if src.upper().startswith("ASSUMED") else src.split(" ")[0]
+        sources[r.cve_id] = bucket(src)
         time.sleep(pause)
     ev = build_events(sub, kq.rename(columns={"date_added": "date_added"}), prefills=prefills)
     for c in ("t0", "t_patch", "t_exploit", "t_kev", "fix_lo", "fix_hi", "exploit_hi"):
@@ -118,6 +138,7 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataF
     ev["prefill_source"] = ev["cve_id"].map(sources)
     R["kev_added_in_quarter"] = int(len(kq))
     R["prefill_assumed"] = int(sum(v == "assumed" for v in sources.values()))
+    R["prefill_sources"] = dict(pd.Series(list(sources.values()), dtype=str).value_counts().items())
     R["I3"] = t1_kev_race(ev, qs, qe)
     R["I2"] = t3_time_to_exploit(ev, qs, qe)
 
@@ -141,30 +162,88 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataF
     return R, ev
 
 
+PLAIN = {
+    "n": "Flaws counted", "n_measured": "Flaws with both dates",
+    "median_days_t0_to_exploit": "Median days from publication to first attack",
+    "share_exploited_on_or_before_t0": "Share attacked on or before publication",
+    "median_days_fix_to_exploit": "Median days from fix to first attack",
+    "zero_day_share_x10": "Share attacked before a fix existed (exploratory X10)",
+    "ci90": "90% interval", "share_ci90": "90% interval", "zero_day_ci90": "90% interval",
+    "yoy_growth_pct": "Growth on the same quarter last year (%)",
+    "cves": "Flaws published in the quarter", "floor": "Floor: credit names an AI tool in a clear role",
+    "hand": "Headline: credit mentions an AI tool or AI lab", "ceiling": "Ceiling: every possible AI mention",
+    "floor_pct": "Floor (%)", "hand_pct": "Headline (%)", "ceiling_pct": "Ceiling (%)",
+}
+BOUNDS = {"n_fix_date_bounded": "Flaws whose fix date is a range, not a day",
+          "n_exploit_before_kev": "Flaws with attack evidence before the KEV listing",
+          "median_days_low": "Median days allowing for fix-date ranges, low end",
+          "median_days_high": "Median days using the earliest attack evidence (an upper bound on the true median)",
+          "zero_day_share_low": "Zero-day share, low end", "zero_day_share_high": "Zero-day share, high end"}
+SOURCE_ORDER = ["GitHub", "Microsoft", "Cisco", "Linux kernel", "Siemens", "Red Hat", "Palo Alto",
+                "OSV fixing commit", "deps.dev release", "dated advisory link", "CNA disclosure date", "assumed", "other"]
+
+
+def _pct(v):
+    return f"{100 * v:.0f}%" if isinstance(v, float) and v <= 1 else _fmt(v)
+
+
+def _block(d: dict, skip=()) -> list[str]:
+    out = []
+    for k, v in d.items():
+        if k in skip or k == "note":
+            continue
+        name = PLAIN.get(k, k.replace("_", " "))
+        if "share" in k and not isinstance(v, (tuple, list)):
+            v = _pct(v)
+        elif "share" in k or k in ("share_ci90", "zero_day_ci90"):
+            v = "(" + ", ".join(_pct(x) for x in v) + ")"
+        out.append(f"- {name}: {_fmt(v) if not isinstance(v, str) else v}")
+    return out
+
+
 def report(R: dict) -> str:
     L = [f"# Practice evaluation: {R['quarter']} ({R['run']} run)", "",
-         "> **Practice, not a result.** This quarter is outside the registered study; fix dates are the "
-         "automatic pre-fill without the author's hand check; no direction labels (they need four earlier "
-         "quarters). Judged only on whether the method works (author's decision, 1 Nov 2026).", "",
-         "## Method check", "",
-         f"- CVEs first added to CISA KEV in the quarter: {R['kev_added_in_quarter']}; fix date only assumed "
-         f"(no source found): {R['prefill_assumed']}.", ""]
-    for key, title in (("I2", "I2. Days from publication to first exploitation"),
-                       ("I3", "I3. The race: days from the fix to first exploitation (option a)"),
-                       ("I5", "I5. Growth in published CVE records"),
-                       ("I5_count_check", "I5 check: our counts against NVD's"),
-                       ("I5_calendar_years", "I5 check: whole calendar years (compare with published reviews)"),
-                       ("I8", "I8. AI-credited share (range)")):
-        L += [f"## {title}", ""] + [f"- {k}: {_fmt(v)}" for k, v in R[key].items()] + ["", "Label: not given (needs four earlier quarters).", ""]
-    L += ["## I7. Breaches and ransomware", ""]
+         "> **Practice, not a result.** Q3 2026 is outside the registered study (the Q4 2026 pilot "
+         "comes first; labels start with Q1 2027). Fix dates are the automatic pre-fill, before the "
+         "author's hand check. Judged only on whether the method works (author's decision, 1 Nov 2026).", "",
+         "## Fix dates behind the race measures", "",
+         f"- Flaws first added to CISA KEV in the quarter: {R['kev_added_in_quarter']}",
+         f"- Where the fix dates came from ({R.get('fix_inputs', 'frozen bundle')}):"]
+    src = R.get("prefill_sources", {})
+    L += [f"  - {k}: {src[k]}" for k in SOURCE_ORDER if k in src]
+    L += [f"- Still an assumed date (no source; the hand check fills these): {R['prefill_assumed']}", ""]
+    L += ["## I2. How fast newly published flaws are attacked", ""] + _block(R["I2"]) + [""]
+    L += ["## I3. The race: days from the fix to the first attack", ""] + _block(R["I3"], skip=("bounds",))
+    b = R["I3"].get("bounds") or {}
+    if b:
+        L += ["", "Range allowing for uncertain dates:"] + [
+            f"- {BOUNDS[k]}: {_pct(v) if 'share' in k else ('-' if v is None else _fmt(v))}" for k, v in b.items() if k in BOUNDS]
+        if b.get("note"):
+            L += ["", f"_{b['note']}_"]
+    L += ["", "## I5. Growth in published CVE records", "",
+          "Published records in the same quarter of each year:"]
+    L += [f"- {y}: {_fmt(c)}" for y, c in R["I5"]["published_by_year"].items()]
+    L += [f"- {PLAIN['yoy_growth_pct']}: {_fmt(R['I5']['yoy_growth_pct'])}", "",
+          "Count check against NVD (quality report section 2b; flagged above 5%):"]
+    cc = R.get("I5_count_check") or {}
+    L += [f"- {r['year']}: ours {_fmt(r['ours'])}, NVD {_fmt(r['nvd']) if r['nvd'] is not None else 'no answer'}"
+          + (f", difference {100 * r['diff']:.1f}%" if r.get("diff") is not None else "") for r in cc.get("rows", [])]
+    L += [f"- Flagged: {', '.join(map(str, cc['flags'])) if cc.get('flags') else 'none'}", "",
+          "Whole calendar years (to compare with published annual totals):"]
+    L += [f"- {y}: {_fmt(c)}" for y, c in R["I5_calendar_years"].items()]
+    L += ["", "How I5 is scored with the 2026 surge in its baseline is core-freeze item 25 (21 Dec).", "",
+          "## I8. Share of flaws credited to AI (range)", ""] + _block(R["I8"]) + ["", "## I7. Breaches and ransomware", ""]
     if "I7a_ransomware_postings" in R:
-        L.append("- Ransomware postings by month (ransomware.live, aggregates): " + ", ".join(
+        L.append("- Ransomware postings by month (ransomware.live, totals only): " + ", ".join(
             f"{m} {_fmt(c)}" for m, c in R["I7a_ransomware_postings"].items()))
     if "I7b_sec_8k_item105" in R:
-        L.append("- SEC 8-K Item 1.05 filings: " + ", ".join(f"{k} {_fmt(v)}" for k, v in R["I7b_sec_8k_item105"].items()))
-    L += ["", "Label: not given.", "", "## Not computable yet", ""] + [f"- {k}: {v}" for k, v in R["not_computable"].items()]
-    L += ["", "Files: `practice_eval.json` (all figures), `events.csv` (one row per CVE first added to KEV, "
-          "with event dates and the pre-fill source: the worksheet input for I2 and I3)."]
+        s = R["I7b_sec_8k_item105"]
+        L.append(f"- SEC 8-K Item 1.05 cyber-incident filings: {_fmt(s['filings'])}"
+                 + (f" of {_fmt(s['registrants'])} registrants, {s['per_1000']} per 1,000" if s.get("registrants") else ""))
+    L += ["", "## Not computable yet", ""] + [f"- {k}: {v}" for k, v in R["not_computable"].items()]
+    L += ["", "No Improving or Worsening labels: this is a practice quarter outside the study.", "",
+          "Files: `practice_eval.json` (all figures) and `events.csv` (one row per flaw first added to "
+          "KEV, with its dates and fix-date source: the worksheet input for I2 and I3)."]
     return "\n".join(L) + "\n"
 
 
