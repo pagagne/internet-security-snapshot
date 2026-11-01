@@ -150,8 +150,8 @@ items:
   title: Read the "Snapshot newsletters" label for AI-attack cases
   repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 8, from: 2026-11, until: 2027-12}
   details: >
-    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address):
-    log new AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: newsletter,
+    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address),
+    except SANS NewsBites until SANS's AI clause is settled (docs/TERMS_OF_USE.md): log new AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: newsletter,
     ai_evidence: unrated) or record exclusions in the sweep log; rebuild the catalogue. Also on
     the 22nd (newsletter-read-2).
 

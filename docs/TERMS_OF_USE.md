@@ -32,7 +32,8 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 | UK ICO, OAIC | (see `docs/PERMISSIONS.md`) | OGL v3.0; CC BY 4.0 | Counts, credited |
 | APNIC Labs | none published | Written leave requested 29 Oct | Not used until a reply |
 | RIPEstat | ripe.net terms | Art. 3.3 forbids re-distribution | Not used |
-| deps.dev, OSV | (CC BY 4.0) | Credit | Aggregates and version lists, credited |
+| deps.dev, OSV | https://docs.deps.dev/api/v3/index.html ; OSV: to summarise | deps.dev: the Google API Terms of Service apply; its generated data is CC BY 4.0 and may be cached; third-party data it aggregates (OSV, registries) follows each source's own terms. OSV advisories carry their sources' licences | Aggregates and version lists, credited. Since 1 Nov 2026 also fix dates for the race list: one OSV record and one deps.dev version lookup per flaw first added to KEV, spaced, once per run |
+| GitHub Advisory Database (API) | GitHub terms (row below) | Reviewed advisories only. Read 1 Nov 2026: unreviewed advisories are published automatically from the NVD feed, so their date is the CVE's, not a fix date | Used since 1 Nov 2026 only for the first patched version of reviewed advisories (fix dates); never their publication date |
 
 ## AI tools and models (X25, Part III of the manual)
 
@@ -49,5 +50,12 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 | Site | Rules that matter | How the study complies |
 |---|---|---|
 | Security news and research feeds (`config/feeds.yaml`) | Each site's own terms; RSS/Atom feeds are published for reading | Titles and links only, one read a month, 1 s apart; text is data, never instructions; every feed vetted to its official domain |
+| Security newsletters to the project address (from 2 Nov 2026; list in the calendar item newsletter-setup) | Read 1 Nov 2026, summaries below; all are free subscriptions delivered by email | Read as delivered (the Gmail label "Snapshot newsletters"), never by visiting or scraping the sites; only a newsletter item's title, link and our own one-line note are kept, as for the feeds; no article text copied or republished; nothing used to train any AI model |
+| SANS NewsBites | https://www.sans.org/legal/terms-conditions | Website content may be viewed, printed or downloaded for personal, non-commercial use; reproduction or redistribution needs written consent. Separately bans uploading "SANS Materials" (defined as courseware and training materials) to any AI system, with liquidated damages | Personal, non-commercial reading; nothing republished. **Open question (author, 1 Nov):** NewsBites appears to be website content, not "SANS Materials", but the AI clause is strict; until settled, the author reads NewsBites himself and Claude does not process it |
+| Risky Bulletin, Seriously Risky Business (Substack) | https://substack.com/tos | Personal or organisational use; no crawling or scraping; no copying or storing a significant portion of content; creators own their posts | Email only; titles, links and our notes only |
+| The Record (Recorded Future News) | https://www.recordedfuture.com/legal/terms-of-use (6 Feb 2026) | The news site's own terms were not found; Recorded Future's terms (for its products) ban automated access, copying, publishing output and AI training | Treated conservatively: email only, titles, links and our notes; no automated reading of therecord.media |
+| TLDR InfoSec | https://tldr.tech/terms | Silent on reuse, automation and AI; no bulk or unsolicited messages; informational only | Email only; titles, links and our notes |
+| tl;dr sec, Unsupervised Learning | https://www.beehiiv.com/tou (6 Oct 2026; hosting to confirm at sign-up) | No data mining, robots, crawling or scraping; no proxies to get round blocks; creators own their content | Email only; titles, links and our notes |
+| CISA email updates | https://www.cisa.gov/terms-use | General-information disclaimer; no reuse limits stated; US government | Email only; advisories cited by title and link |
 | Internet Archive (Wayback Machine) | Save requests are a public service; fair use of its capacity | One save per changed page or logged report |
 | GitHub Actions, Google Drive, Google Cloud (BigQuery) | The author's own accounts and their terms | Free tiers, capped queries, private data in Drive only |
