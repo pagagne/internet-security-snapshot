@@ -88,9 +88,9 @@ feeds:
   # Crypto-security research (author's decision, 1 Nov 2026: AI and crypto as a tagged section).
   # Addresses to be verified by the Research task feed_verify before the first read (verified: pending).
   - {name: "Chainalysis blog", url: "https://www.chainalysis.com/blog/feed/", domain: chainalysis.com, trust: primary_research, verified: "yes", verified_on: 2026-11-01, added: 2026-11-01}
-  - {name: "Elliptic blog", url: "https://www.elliptic.co/blog/rss.xml", domain: elliptic.co, trust: primary_research, verified: "no", skip: "no feed at this address (HTTP 404) and none advertised by elliptic.co; not worked around (1 Nov 2026)", added: 2026-11-01}
+  - {name: "Elliptic blog", url: "https://www.elliptic.co/blog/rss.xml", domain: elliptic.co, trust: primary_research, verified: pending, skip: "no feed at this address (HTTP 404) and none advertised by elliptic.co; not worked around (1 Nov 2026)", added: 2026-11-01}
   - {name: "TRM Labs blog", url: "https://www.trmlabs.com/resources/blog/rss.xml", domain: trmlabs.com, trust: primary_research, verified: "yes", verified_on: 2026-11-01, added: 2026-11-01}
-  - {name: "SlowMist", url: "https://slowmist.medium.com/feed", domain: slowmist.medium.com, trust: primary_research, verified: "no", skip: "the Medium feed works but is not confirmed as SlowMist's own from slowmist.com; held until confirmed (1 Nov 2026)", added: 2026-11-01}
-  - {name: "CertiK blog", url: "https://www.certik.com/resources/blog/rss.xml", domain: certik.com, trust: primary_research, verified: "no", skip: "no feed at this address (HTTP 404) and none advertised by certik.com; not worked around (1 Nov 2026)", added: 2026-11-01}
+  - {name: "SlowMist", url: "https://slowmist.medium.com/feed", domain: slowmist.medium.com, trust: primary_research, verified: pending, skip: "the Medium feed works but is not confirmed as SlowMist's own from slowmist.com; held until confirmed (1 Nov 2026)", added: 2026-11-01}
+  - {name: "CertiK blog", url: "https://www.certik.com/resources/blog/rss.xml", domain: certik.com, trust: primary_research, verified: pending, skip: "no feed at this address (HTTP 404) and none advertised by certik.com; not worked around (1 Nov 2026)", added: 2026-11-01}
   - {name: "Rekt News", url: "https://rekt.news/rss/feed.xml", domain: rekt.news, trust: news_leads_only, verified: "yes", verified_on: 2026-11-01, added: 2026-11-01}
 
