@@ -681,10 +681,12 @@ DESCRIPTION:Responsible: Claude\n\nThe author found the label narrow. Propo
  )\, fill the base model's lab\, test wider terms\, read model cards for th
  e method of removal (author's idea)\, hand-check a sample for precision\, 
  report as "advertised as safety-removed" with a floor and range\, and show
-  security-related models separately. Details in the private x25-checks. De
- cided with the GitHub search refinement on 20 Nov.\n\nSource: https://gith
- ub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule
- .yaml
+  security-related models separately. Also the monthly chart (author\, 1 No
+ v): take the safety-removed line out of the "security-related" chart\, whi
+ ch it dominates without being security tooling\, and count originals only.
+  Details in the private x25-checks. Decided with the GitHub search refinem
+ ent on 20 Nov.\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
