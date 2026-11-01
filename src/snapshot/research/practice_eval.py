@@ -106,7 +106,9 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataF
         lst = lambda x: [] if x is None else list(x)
         refs = lst(getattr(r, "fix_links", None)) + lst(getattr(r, "ref_links", None))
         pub = str(r.date_published)[:10] if pd.notna(r.date_published) else ""
-        d, src, hand = prefill_exploited(r.cve_id, refs, vend.get(r.cve_id, ""), pub or "")
+        dp = getattr(r, "date_public", None)   # in bundles from 1 Nov 2026 on
+        dp = str(dp)[:10] if dp is not None and pd.notna(dp) else ""
+        d, src, hand = prefill_exploited(r.cve_id, refs, vend.get(r.cve_id, ""), pub or "", dp)
         prefills[r.cve_id] = (d, src, hand)
         sources[r.cve_id] = "assumed" if src.upper().startswith("ASSUMED") else src.split(" ")[0]
         time.sleep(pause)

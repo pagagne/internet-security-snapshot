@@ -107,6 +107,9 @@ def parse_record(doc: dict) -> dict:
         "date_reserved": parse_ts(meta.get("dateReserved")),
         "date_published": parse_ts(meta.get("datePublished")),
         "date_updated": parse_ts(meta.get("dateUpdated")),
+        # The CNA's disclosure date: a fallback fix date for the race (I3); kept in the frozen
+        # bundle so the evaluation sees what the worksheet sees (author, 1 Nov 2026)
+        "date_public": parse_ts(cna.get("datePublic")),
         "cvss_base": score,
         "cvss_version": version,
         "cvss_severity": severity,

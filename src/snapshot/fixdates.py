@@ -97,7 +97,8 @@ def prefill_exploited(cve_id: str, refs: list[str], vendor: str, published: str,
 
     Returns (YYYY-MM-DD, source note, needs_hand_check). Order: GitHub links; Microsoft
     Update Guide; Cisco CSAF; Linux kernel commits; Siemens CSAF; Red Hat VEX; Palo Alto JSON;
-    CNA datePublic; else publication (assumed).
+    OSV fixing commit; deps.dev release of the first patched version; a full date written in an
+    advisory link; CNA datePublic; else publication (assumed).
     """
     d, src = prefill(refs, published)
     if not src.startswith("ASSUMED"):
@@ -146,6 +147,77 @@ def prefill_exploited(cve_id: str, refs: list[str], vendor: str, published: str,
             hist = [t.get("value", "") for t in cna.get("timeline") or []]
             later = fix_later_signal(hist)
             return cna["datePublic"][:10], "Palo Alto advisory" + (" (fix timeline changed later)" if later else ""), later
+    # Added 1 Nov 2026 after the fix-date sources test (author's decision): small real gains
+    d2 = osv_fix_commit(cve_id)
+    if d2:
+        return d2, "OSV: fixing commit named for this CVE (fix may ship later in a release)", True
+    d2, note = depsdev_patched_release(cve_id)
+    if d2:
+        return d2, note, False
+    d2, note = dated_advisory_link(refs)
+    if d2:
+        return d2, note, True
     if date_public:
         return date_public[:10], "vendor disclosure date (CVE datePublic); fix date not stated", True
     return published[:10], "ASSUMED same day as CVE publication; check the advisory link", True
+
+
+# --- Extra sources (author's decision, 1 Nov 2026, after the private fixdate_sources test) ----
+# Never used: the "published" date of GitHub's global advisory database. GitHub mirrors every
+# CVE there as an unreviewed advisory on the day it is published, so that date is the CVE
+# publication date again, not a fix date. Only reviewed advisories' patched versions are used.
+
+OSV_VULN = "https://api.osv.dev/v1/vulns/{id}"
+GH_GLOBAL_ADV = "/advisories?cve_id={cve}&type=reviewed"
+DEPSDEV_VERSION = "https://api.deps.dev/v3/systems/{sys}/packages/{pkg}/versions/{ver}"
+DEPSDEV_SYS = {"npm": "npm", "pip": "pypi", "maven": "maven", "go": "go", "nuget": "nuget",
+               "rubygems": "rubygems", "rust": "cargo"}
+DATE_IN_PATH = re.compile(r"(?<!\d)(20\d\d)[-/](0[1-9]|1[0-2])[-/](0[1-9]|[12]\d|3[01])(?!\d)")
+GIT_REPO = re.compile(r"github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$")
+# Hosts whose links are advisories or bulletins, not write-ups by third parties
+ADVISORY_HOST = re.compile(r"source\.android\.com|security|advisor|psirt|support\.|kb\.|bulletin|access\.redhat", re.I)
+
+
+def osv_fix_commit(cve_id: str) -> str:
+    """Earliest GitHub commit OSV names as fixing this CVE, or ''."""
+    from urllib.parse import quote
+    rec = _vendor_json(OSV_VULN.format(id=quote(cve_id))) or {}
+    dates = []
+    for af in rec.get("affected") or []:
+        for rg in af.get("ranges") or []:
+            m = GIT_REPO.search(rg.get("repo", "")) if rg.get("type") == "GIT" else None
+            for ev in (rg.get("events") or []) if m else []:
+                if ev.get("fixed"):
+                    c = ((_get(f"/repos/{m.group(1)}/{m.group(2)}/commits/{ev['fixed']}") or {}).get("commit") or {})
+                    when = (c.get("committer") or c.get("author") or {}).get("date")
+                    if when:
+                        dates.append(when[:10])
+    return min(dates) if dates else ""
+
+
+def depsdev_patched_release(cve_id: str) -> tuple[str, str]:
+    """Release date of the first patched version in a reviewed GitHub advisory, via deps.dev."""
+    from urllib.parse import quote
+    found = []
+    for adv in _get(GH_GLOBAL_ADV.format(cve=cve_id)) or []:
+        for v in adv.get("vulnerabilities") or []:
+            pkg, fix = v.get("package") or {}, v.get("first_patched_version")
+            fix = fix.get("identifier") if isinstance(fix, dict) else fix
+            sysname = DEPSDEV_SYS.get((pkg.get("ecosystem") or "").lower())
+            if sysname and fix and pkg.get("name"):
+                j = _vendor_json(DEPSDEV_VERSION.format(sys=sysname, pkg=quote(pkg["name"], safe=""),
+                                                        ver=quote(fix, safe=""))) or {}
+                if j.get("publishedAt"):
+                    found.append((j["publishedAt"][:10], f"deps.dev: {pkg['name']} {fix} released (first patched version)"))
+    return min(found) if found else ("", "")
+
+
+def dated_advisory_link(refs: list[str]) -> tuple[str, str]:
+    """A full date written in an advisory or bulletin link (e.g. Android bulletins), or ''."""
+    from urllib.parse import urlparse
+    found = []
+    for r in refs:
+        u = urlparse(r)
+        if ADVISORY_HOST.search((u.hostname or "") + u.path) and (m := DATE_IN_PATH.search(u.path)):
+            found.append((f"{m.group(1)}-{m.group(2)}-{m.group(3)}", f"date in advisory link ({u.hostname})"))
+    return min(found) if found else ("", "")

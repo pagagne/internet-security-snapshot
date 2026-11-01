@@ -38,7 +38,8 @@ def bucket(src: str) -> str:
     for key, name in [("assumed", "assumed"), ("github", "GitHub"), ("fix commit", "GitHub"),
                       ("microsoft", "Microsoft"), ("cisco", "Cisco"), ("kernel", "Linux kernel"),
                       ("siemens", "Siemens"), ("red hat", "Red Hat"), ("palo alto", "Palo Alto"),
-                      ("disclosure date", "CNA disclosure date")]:
+                      ("osv", "OSV fixing commit"), ("deps.dev", "deps.dev release"),
+                      ("advisory link", "dated advisory link"), ("disclosure date", "CNA disclosure date")]:
         if key in s:
             return name
     return "other"
