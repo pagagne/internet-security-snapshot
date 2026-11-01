@@ -205,11 +205,11 @@ def results_section(root: Path, simulate: bool = True) -> list[str]:
         if not R0:
             return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
         key, R = f"{R0['quarter']}-{R0.get('run', 'final')}", R0 | {"_source": run}
-    L += [f"> **SIMULATION, not a result.** Built end to end from the private practice evaluation of {R['quarter']} "
+    L += [f"> **SIMULATION, not a result.** Built end to end from the private evaluation of {R['quarter']} "
           f"({R.get('_source')}), a quarter outside the registered study, with fix dates before the author's hand "
           "check. The real section starts with the pilot report (1 Jan 2027) and the first scored quarter "
           "(Q1 2027, reported 1 Apr 2027).", "",
-          f"**Quarter:** {R['quarter']} ({R.get('run', 'final')} run) &nbsp;·&nbsp; **Full report:** "
+          f"**Quarter:** {R['quarter']} ({R.get('run', 'final').replace('-', ' ')}) &nbsp;·&nbsp; **Full report:** "
           f"[{key}](reports/{key}.md) &nbsp;·&nbsp; **Label:** none in a practice quarter.", "",
           "| Question | This quarter | 90% interval or range | Label |", "|---|---|---|---|"]
     L += [f"| {a} | {b} | {c} | simulation |" for a, b, c in RP.summary_rows(R)]

@@ -286,7 +286,7 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
     title = f"# Internet Security Snapshot: {q} report ({run})" + (" — SIMULATION" if simulation else "")
     L = [title, ""]
     if simulation:
-        L += ["> **SIMULATION, not a result.** Built end to end from the private practice evaluation "
+        L += ["> **SIMULATION, not a result.** Built end to end from the private evaluation "
               f"({R.get('_source')}) of a quarter outside the registered study, with fix dates before the "
               "author's hand check, to test the whole flow and the report's design. Real reports start with "
               "the pilot (1 Jan 2027) and the first scored quarter (1 Apr 2027).", ""]
