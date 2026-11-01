@@ -171,45 +171,34 @@ def _n(v, pct=False):
     return f"{100 * v:.0f}%" if pct else (f"{v:,.0f}" if float(v).is_integer() else f"{v:,.1f}")
 
 
+REPORTS: dict = {}    # filled by main() from snapshot.reportpage.build (report pages and charts)
+
+
 def results_section(root: Path, simulate: bool = True) -> list[str]:
-    """The quarterly results, one row per registered question. Until the pilot, a simulation on
-    the latest private practice evaluation (author, 1 Nov 2026), clearly marked as such."""
-    run, R = latest_practice(root) if simulate else (None, None)
+    """Latest results on the landing page: a summary table, one chart per question (each linking
+    to its section of the full report) and a link to the report (author, 1 Nov 2026). Until the
+    pilot it is a simulation built end to end from the latest private practice evaluation."""
+    from . import reportpage as RP
+    info = REPORTS
     L = ["## Latest results", ""]
-    if not R:
-        return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
-    L += [f"> **SIMULATION, not a result.** Filled from the private practice evaluation of {R['quarter']} "
-          f"({run}), a quarter outside the registered study, with fix dates before the author's hand "
-          "check. It shows how the section will look; the real section starts with the pilot report "
-          "(1 Jan 2027, labelled pilot) and the first scored quarter (Q1 2027, reported 1 Apr 2027).", "",
-          f"**Quarter:** {R['quarter']} &nbsp;·&nbsp; **Label:** none in a practice quarter (Improving, Worsening, "
-          "Rising, Falling or No clear direction appear here from Q1 2027, each with its companion check).", "",
-          "| Question | This quarter | 90% interval | Label |", "|---|---|---|---|"]
-    i3, i2, i8 = R.get("I3", {}), R.get("I2", {}), R.get("I8", {})
-    nc = R.get("not_computable", {})
-    rows = [
-        ("T1 The race: days from the fix to the first attack (median)", _n(i3.get("median_days_fix_to_exploit")),
-         "{} to {}".format(*map(_n, i3.get("ci90") or [None, None]))),
-        ("T2 Exposure half-life after a patch", "not available" if "I1" in nc else "-", "-"),
-        ("T3 Days from publication to the first attack (median)", _n(i2.get("median_days_t0_to_exploit")),
-         "{} to {}".format(*map(_n, i2.get("ci90") or [None, None]))),
-        ("T3 Share attacked on or before publication", _n(i2.get("share_exploited_on_or_before_t0"), True),
-         "{} to {}".format(*[_n(x, True) for x in (i2.get("share_ci90") or [None, None])])),
-        ("T4 Share of attacks on flaws over a year old", "not available" if "I4" in nc else "-", "-"),
-        ("T5 Published CVE records, growth on the same quarter last year",
-         f"{_n(R['I5'].get('yoy_growth_pct'))}%", "-"),
-    ]
-    if "I7a_ransomware_postings" in R:
-        rows.append(("T6 Ransomware postings in the quarter", _n(sum(R["I7a_ransomware_postings"].values())), "-"))
-    if R.get("I7b_sec_8k_item105", {}).get("per_1000") is not None:
-        rows.append(("T6 SEC cyber-incident filings per 1,000 companies", f"{R['I7b_sec_8k_item105']['per_1000']:.2f}", "-"))
-    rows.append(("T7 Share of flaws credited to AI (headline; floor to ceiling)",
-                 f"{i8.get('hand_pct', 0):.1f}%", f"{i8.get('floor_pct', 0):.1f}% to {i8.get('ceiling_pct', 0):.1f}%"))
-    L += [f"| {q} | {v} | {ci} | simulation |" for q, v, ci in rows]
-    assumed, total = R.get("prefill_assumed"), R.get("kev_added_in_quarter")
-    L += ["", f"*Race figures rest on {total} flaws first added to CISA's exploited list; {assumed} still carry "
-          "an assumed fix date that the hand check replaces. Exposure and old-flaw measures wait on "
-          "Shadowserver's permission. Full method: the quarterly report.*", ""]
+    key, R = info.get("latest"), info.get("latest_R")
+    if not key:
+        run, R0 = latest_practice(root) if simulate else (None, None)
+        if not R0:
+            return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
+        key, R = f"{R0['quarter']}-{R0.get('run', 'final')}", R0 | {"_source": run}
+    L += [f"> **SIMULATION, not a result.** Built end to end from the private practice evaluation of {R['quarter']} "
+          f"({R.get('_source')}), a quarter outside the registered study, with fix dates before the author's hand "
+          "check. The real section starts with the pilot report (1 Jan 2027) and the first scored quarter "
+          "(Q1 2027, reported 1 Apr 2027).", "",
+          f"**Quarter:** {R['quarter']} ({R.get('run', 'final')} run) &nbsp;·&nbsp; **Full report:** "
+          f"[{key}](reports/{key}.md) &nbsp;·&nbsp; **Label:** none in a practice quarter.", "",
+          "| Question | This quarter | 90% interval or range | Label |", "|---|---|---|---|"]
+    L += [f"| {a} | {b} | {c} | simulation |" for a, b, c in RP.summary_rows(R)]
+    L += ["", "*One chart per question; each opens its section of the full report.*", ""]
+    cells = [f'<a href="reports/{key}.md#{q[0].lower()}-{q[1].lower().replace(" ", "-").replace(chr(39), "")}">'
+             f'<img src="reports/charts/{key}-{q[0]}.png" width="420" alt="{q[0]} {q[1]}"></a>' for q in RP.QUESTIONS]
+    L += ["<p>"] + cells + ["</p>", ""]
     return L
 
 
@@ -217,6 +206,10 @@ def draft_section(root: Path, name: str) -> list[str]:
     L: list[str] = []
     if name == "results":
         return results_section(root)
+    if name == "timeline":
+        return ["## Where the study stands", "", "![Study timeline](timeline.png)", "",
+                "*Drawn daily from the study calendar (docs/schedule/schedule.yaml): ticks are done, the dashed "
+                "line is today.*", ""]
     if name == "x25":
         date, figs = x25_figures(root)
         if figs:
@@ -307,6 +300,9 @@ def main(argv=None) -> int:
         feed_charts(root, m)
     a.out.mkdir(parents=True, exist_ok=True)
     readme = (root / "README.md").read_text()
+    from . import reportpage
+    REPORTS.clear()
+    REPORTS.update(reportpage.build(_practice_dir(root), a.out, simulation=True))   # every run, end to end
     (a.out / "README.md").write_text(build_text(root, readme))
     preview, _ = flip_check(root, readme, load_layout(root))
     (a.out / "FLIP_PREVIEW.md").write_text("<!-- What the public README would be after the flip (dry run). -->\n" + preview)
