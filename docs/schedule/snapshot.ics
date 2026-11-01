@@ -669,6 +669,25 @@ DESCRIPTION:Responsible: Claude\n\nThe author expects AI and cryptocurrency
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:hf-label-refine@2026-11-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Propose fixes to the Hugging Face "safety remove
+ d" label (author's question\, 1 Nov)
+DESCRIPTION:Responsible: Claude\n\nThe author found the label narrow. Propo
+ se: count originals once (quantised copies collapsed onto their base model
+ )\, fill the base model's lab\, test wider terms\, read model cards for th
+ e method of removal (author's idea)\, hand-check a sample for precision\, 
+ report as "advertised as safety-removed" with a floor and range\, and show
+  security-related models separately. Details in the private x25-checks. De
+ cided with the GitHub search refinement on 20 Nov.\n\nSource: https://gith
+ ub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule
+ .yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:newsbites-revisit@2026-11-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118

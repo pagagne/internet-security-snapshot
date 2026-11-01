@@ -1201,6 +1201,17 @@ items:
     GitHub search, how cases would be recorded (beside the AI attack cases and the GitHub tool counts, never in a score), and the sources'
     terms. Background in docs/INQUIRIES.md (1 Nov). Decided with the GitHub search refinement on 20 Nov.
 
+- id: hf-label-refine
+  owner: claude
+  title: Propose fixes to the Hugging Face "safety removed" label (author's question, 1 Nov)
+  date: 2026-11-18
+  details: >
+    The author found the label narrow. Propose: count originals once (quantised copies collapsed
+    onto their base model), fill the base model's lab, test wider terms, read model cards for the
+    method of removal (author's idea), hand-check a sample for precision, report as "advertised as
+    safety-removed" with a floor and range, and show security-related models separately. Details in
+    the private x25-checks. Decided with the GitHub search refinement on 20 Nov.
+
 - id: x25-refine-approve
   owner: author
   title: Approve the refined GitHub tool-sweep searches (X25) before the January pilot sweep
