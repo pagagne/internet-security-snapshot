@@ -1,0 +1,29 @@
+# Landing page layout: one source for the public page and its private go-live mirror
+# (author's decisions, 1 Nov 2026: tweak the private mirror, flip it to the real landing page
+# with the pilot report on 1 Jan 2027, through a guarded flip with privacy checks).
+#
+# sections, in page order:
+#   readme: the README part with this H2 heading ("top" = everything before the first H2)
+#   draft:  a section generated from private data by snapshot.golive (results, x25, attack_log,
+#           feed_screen); never public until flipped
+#   status: live (on the public page now) or draft (mirror only; goes live at the flip)
+#   cleared: true when the author has cleared the section's figures for publication; the flip
+#           refuses any draft section that is not cleared
+# Structure only: no figures live in this file.
+
+flip_date: 2027-01-01
+sections:
+  - {readme: top,                      status: live}
+  - {draft: results,                   status: draft, cleared: false}
+  - {readme: Mission,                  status: live}
+  - {readme: About the author,         status: live}
+  - {draft: x25,                       status: draft, cleared: false}
+  - {draft: attack_log,                status: draft, cleared: false}
+  - {draft: feed_screen,               status: draft, cleared: false}
+  - {readme: Key documents,            status: live}
+  - {readme: Data sources,             status: live}
+  - {readme: Schedule,                 status: live}
+  - {readme: Workflow schedule,        status: live}
+  - {readme: Principles,               status: live}
+  - {readme: AI involvement and conflict of interest, status: live}
+  - {readme: Licence,                  status: live}

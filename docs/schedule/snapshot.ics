@@ -430,8 +430,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -979,8 +983,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -998,6 +1006,25 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
  the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:landing-flip-workflow@2026-12-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the guarded landing-page flip workflow (ru
+ n button\, practice flip\, privacy checks)
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision\, 1 Nov 2026. A Run-bu
+ tton workflow that builds the page from https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/config/landing_layout.yaml with every sectio
+ n live\, refuses unless every draft section is cleared by the author\, the
+  privacy scan is clean and the results section holds the pilot report (not
+  the simulation)\, and otherwise shows the practice flip only. Tested end 
+ to end with a practice flip before the 15 Dec dry run.\n\nSource: https://
+ github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
+ dule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1138,6 +1165,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  s scored\, and how the 2026 surge in the baseline year is handled.\n\nSour
  ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
  chedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:landing-clear-sections@2026-12-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Clear the draft landing-page sections for the flip
+DESCRIPTION:Responsible: Paul (author)\n\nIn the private mirror (go-live/RE
+ ADME.md)\, decide section by section which draft sections go live on 1 Jan
+  2027 (results\, AI tools\, AI attack cases\, news feeds)\; Claude sets cl
+ eared: true in https://github.com/pagagne/internet-security-snapshot/blob/
+ main/config/landing_layout.yaml for those you approve.\n\nSource: https://
+ github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
+ dule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1302,6 +1345,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft and approve i
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:landing-flip@2027-01-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270102T150000Z
+DTEND:20270102T153000Z
+SUMMARY:[Paul] Snapshot: Flip the landing page live with the pilot report
+DESCRIPTION:Responsible: Paul (author)\n\nAfter the pilot report is publish
+ ed: run the practice flip\, read go-live/FLIP_PREVIEW.md with Claude\, the
+ n press the flip workflow's Run button. Claude confirms the checks and the
+  public page.\n\nSource: https://github.com/pagagne/internet-security-snap
+ shot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:hand-check-window@2027-01-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270104
@@ -1415,8 +1471,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1663,8 +1723,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1924,8 +1988,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2200,8 +2268,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2405,8 +2477,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2498,8 +2574,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2695,8 +2775,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2920,8 +3004,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3058,8 +3146,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3255,8 +3347,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3417,8 +3513,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3510,8 +3610,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  e copy of the public landing page\, and the draft charts that go live with
   the report (how GitHub tools use AI\, their growth and types\; the AI att
  ack log\; the month's feed screen by site). Decide what to change\; nothin
- g goes public until the author says so.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ g goes public until the author says so. Since 1 Nov 2026 the draft is a mi
+ rror of the landing page built from https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
+ sults section (latest practice evaluation) and a practice flip (go-live/FL
+ IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

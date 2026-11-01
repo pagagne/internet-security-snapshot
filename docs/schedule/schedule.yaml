@@ -1284,7 +1284,40 @@ items:
     the private go-live draft (pagagne/snapshot-manual, go-live/README.md) together: the copy of
     the public landing page, and the draft charts that go live with the report (how GitHub tools use
     AI, their growth and types; the AI attack log; the month's feed screen by site). Decide what
-    to change; nothing goes public until the author says so.
+    to change; nothing goes public until the author says so. Since 1 Nov 2026 the draft is a
+    mirror of the landing page built from config/landing_layout.yaml, with a simulated results
+    section (latest practice evaluation) and a practice flip (go-live/FLIP_PREVIEW.md).
+
+- id: landing-flip-workflow
+  owner: claude
+  title: Build the guarded landing-page flip workflow (run button, practice flip, privacy checks)
+  date: 2026-12-10
+  details: >
+    Author's decision, 1 Nov 2026. A Run-button workflow that builds the page from
+    config/landing_layout.yaml with every section live, refuses unless every draft section is
+    cleared by the author, the privacy scan is clean and the results section holds the pilot
+    report (not the simulation), and otherwise shows the practice flip only. Tested end to end
+    with a practice flip before the 15 Dec dry run.
+
+- id: landing-clear-sections
+  owner: author
+  title: Clear the draft landing-page sections for the flip
+  date: 2026-12-18
+  minutes: 30
+  details: >
+    In the private mirror (go-live/README.md), decide section by section which draft sections go
+    live on 1 Jan 2027 (results, AI tools, AI attack cases, news feeds); Claude sets cleared: true in
+    config/landing_layout.yaml for those you approve.
+
+- id: landing-flip
+  owner: author
+  title: Flip the landing page live with the pilot report
+  date: 2027-01-02
+  time: "10:00"
+  minutes: 30
+  details: >
+    After the pilot report is published: run the practice flip, read go-live/FLIP_PREVIEW.md with
+    Claude, then press the flip workflow's Run button. Claude confirms the checks and the public page.
 
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule

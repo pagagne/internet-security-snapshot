@@ -5,11 +5,12 @@ everything that goes live with the report, worked on in the background between t
 Claude." Kept in the private repository only (go-live/README.md), rebuilt by the Manual publish
 workflow after the private data, never published before the author says so.
 
-It holds:
-  1. the public README as it stands (pictures and links pointed at the public repository);
-  2. draft sections that are not public yet: the AI tool sweeps (X25: how tools use AI, the
-     growth chart, what they do) and the monthly news feed screens (items by site host name and
-     what happened to them; no titles or links to articles).
+Since 1 Nov 2026 (author) it is a mirror built from one layout (config/landing_layout.yaml):
+the public README's sections in page order, with the draft sections placed where they will go:
+the results (simulated on the latest private practice evaluation until the pilot), the AI tool
+sweeps (X25), the attack log and the news feed screens (X3; host names only, no titles or links).
+FLIP_PREVIEW.md beside it is the dry run of the flip: the page as it would go public, after the
+privacy scan, and the reasons it may not yet. The flip itself is the author's, on 1 Jan 2027.
 
   python -m snapshot.golive build --out DIR     (run inside a checkout where exploratory/ is linked)
 """
@@ -135,45 +136,163 @@ def x25_figures(root: Path) -> tuple[str, list[str]]:
     return d, [w for w in want if (root / FIGS / w).exists()]
 
 
-def build_text(root: Path, readme: str) -> str:
-    L = ["# Go-live draft: the landing page, behind the scenes", "",
-         "> **Private draft** (author's request, 31 Oct 2026). Nothing here is public. Part 1 duplicates the "
-         "public README as it stands; part 2 is the draft of what goes live with the report. Rebuilt "
-         "automatically by the Manual publish workflow; do not edit here, change the sources instead.", "",
-         "---", "", "## Part 1. The public landing page today (copy)", ""]
-    body = public_readme(readme)
-    body = re.sub(r"^# ", "### ", body, count=1, flags=re.M)
-    L += [body.strip(), "", "---", "", "## Part 2. Draft: what goes live with the report", "",
-          "Descriptive charts only, from the private data: totals and host names, never article titles, "
-          "links to articles, project owners or rows. Labels describe what a tool does, not who uses it "
-          "or why.", ""]
-    date, figs = x25_figures(root)
-    if figs:
-        L += [f"### AI security tools on GitHub (X25), sweep of {date}", "",
-              "How many security tools on GitHub use AI, on which kind of model, how fast they are "
-              "appearing, and what they do. Full report: Part III of The Snapshot.", ""]
-        L += [x for f in figs for x in (f"![{f}](../{FIGS}/{f})", "")]
-    if (root / "exploratory/ai_attack_campaigns.csv").exists():
-        name, n, ev = attack_log_chart(root)
-        L += ["### Attacks that used AI (X3 log)", "",
+LAYOUT = "config/landing_layout.yaml"
+PRACTICE = None   # override in tests; default: runs/research beside the linked private exploratory/
+
+
+def _practice_dir(root: Path) -> Path:
+    return Path(PRACTICE) if PRACTICE else (root / "exploratory").resolve().parent / "runs" / "research"
+
+
+def load_layout(root: Path) -> dict:
+    import yaml
+    return yaml.safe_load((root / LAYOUT).read_text())
+
+
+def readme_sections(readme: str) -> dict[str, str]:
+    """README split by H2 heading; 'top' is everything before the first H2."""
+    parts = re.split(r"^(?=## )", readme, flags=re.M)
+    out = {"top": parts[0]}
+    for p in parts[1:]:
+        out[p.split("\n", 1)[0][3:].strip()] = p
+    return out
+
+
+def latest_practice(root: Path) -> tuple[str, dict] | tuple[None, None]:
+    import json
+    d = _practice_dir(root)
+    runs = sorted(d.glob("*practice_eval/practice_eval.json")) if d.exists() else []
+    return (runs[-1].parent.name, json.loads(runs[-1].read_text())) if runs else (None, None)
+
+
+def _n(v, pct=False):
+    if v is None:
+        return "-"
+    return f"{100 * v:.0f}%" if pct else (f"{v:,.0f}" if float(v).is_integer() else f"{v:,.1f}")
+
+
+def results_section(root: Path, simulate: bool = True) -> list[str]:
+    """The quarterly results, one row per registered question. Until the pilot, a simulation on
+    the latest private practice evaluation (author, 1 Nov 2026), clearly marked as such."""
+    run, R = latest_practice(root) if simulate else (None, None)
+    L = ["## Latest results", ""]
+    if not R:
+        return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
+    L += [f"> **SIMULATION, not a result.** Filled from the private practice evaluation of {R['quarter']} "
+          f"({run}), a quarter outside the registered study, with fix dates before the author's hand "
+          "check. It shows how the section will look; the real section starts with the pilot report "
+          "(1 Jan 2027, labelled pilot) and the first scored quarter (Q1 2027, reported 1 Apr 2027).", "",
+          f"**Quarter:** {R['quarter']} &nbsp;·&nbsp; **Label:** none in a practice quarter (Improving, Worsening, "
+          "Rising, Falling or No clear direction appear here from Q1 2027, each with its companion check).", "",
+          "| Question | This quarter | 90% interval | Label |", "|---|---|---|---|"]
+    i3, i2, i8 = R.get("I3", {}), R.get("I2", {}), R.get("I8", {})
+    nc = R.get("not_computable", {})
+    rows = [
+        ("T1 The race: days from the fix to the first attack (median)", _n(i3.get("median_days_fix_to_exploit")),
+         "{} to {}".format(*map(_n, i3.get("ci90") or [None, None]))),
+        ("T2 Exposure half-life after a patch", "not available" if "I1" in nc else "-", "-"),
+        ("T3 Days from publication to the first attack (median)", _n(i2.get("median_days_t0_to_exploit")),
+         "{} to {}".format(*map(_n, i2.get("ci90") or [None, None]))),
+        ("T3 Share attacked on or before publication", _n(i2.get("share_exploited_on_or_before_t0"), True),
+         "{} to {}".format(*[_n(x, True) for x in (i2.get("share_ci90") or [None, None])])),
+        ("T4 Share of attacks on flaws over a year old", "not available" if "I4" in nc else "-", "-"),
+        ("T5 Published CVE records, growth on the same quarter last year",
+         f"{_n(R['I5'].get('yoy_growth_pct'))}%", "-"),
+    ]
+    if "I7a_ransomware_postings" in R:
+        rows.append(("T6 Ransomware postings in the quarter", _n(sum(R["I7a_ransomware_postings"].values())), "-"))
+    if R.get("I7b_sec_8k_item105", {}).get("per_1000") is not None:
+        rows.append(("T6 SEC cyber-incident filings per 1,000 companies", f"{R['I7b_sec_8k_item105']['per_1000']:.2f}", "-"))
+    rows.append(("T7 Share of flaws credited to AI (headline; floor to ceiling)",
+                 f"{i8.get('hand_pct', 0):.1f}%", f"{i8.get('floor_pct', 0):.1f}% to {i8.get('ceiling_pct', 0):.1f}%"))
+    L += [f"| {q} | {v} | {ci} | simulation |" for q, v, ci in rows]
+    assumed, total = R.get("prefill_assumed"), R.get("kev_added_in_quarter")
+    L += ["", f"*Race figures rest on {total} flaws first added to CISA's exploited list; {assumed} still carry "
+          "an assumed fix date that the hand check replaces. Exposure and old-flaw measures wait on "
+          "Shadowserver's permission. Full method: the quarterly report.*", ""]
+    return L
+
+
+def draft_section(root: Path, name: str) -> list[str]:
+    L: list[str] = []
+    if name == "results":
+        return results_section(root)
+    if name == "x25":
+        date, figs = x25_figures(root)
+        if figs:
+            L += [f"## AI security tools on GitHub (X25), sweep of {date}", "",
+                  "How many security tools on GitHub use AI, on which kind of model, how fast they are "
+                  "appearing, and what they do. Labels describe what a tool does, not who uses it or why.", ""]
+            L += [x for f in figs for x in (f"![{f}](../{FIGS}/{f})", "")]
+    elif name == "attack_log" and (root / "exploratory/ai_attack_campaigns.csv").exists():
+        fig, n, ev = attack_log_chart(root)
+        L += ["## Attacks that used AI (X3 log)", "",
               "Publicly reported cases where a real attacker used AI against real systems, or an AI under "
               "test reached real systems, from organisations' own reports. No victim names are recorded. "
-              "Evidence of AI use: " + ", ".join(f"{k} {v}" for k, v in sorted(ev.items())) + " (unrated cases "
-              "await the author's check).", "", f"![Attack log](../{FEED_CHARTS}/{name})", ""]
-    ms = months(root)
-    if ms:
-        L += ["### Monthly news feed screen (X3)", "",
-              "Each month about sixty security research, government and news feeds are read for items that "
-              "mention both AI and an attack; each item is then sorted by hand. Shown by site host name only.", ""]
-        for m in reversed(ms):
-            hosts, decs, n = feed_counts(root, m)
-            L += [f"![Feed screen {m}](../{FEED_CHARTS}/feed-screen-{m}.png)", "",
-                  f"*{m}: {n} items from {len(hosts)} sites; " + ", ".join(
-                      f"{DEC_NAMES[d]} {decs.get(d, 0)}" for d in DECISIONS) + ".*", ""]
-    L += ["### Still to draft", "",
-          "- The quarterly results, once the pilot runs (1 Jan 2027).",
-          "- Which of the above the author chooses to publish, and when.", ""]
-    return "\n".join(L) + "\n"
+              "Evidence of AI use: " + ", ".join(f"{k} {v}" for k, v in sorted(ev.items())) + ".", "",
+              f"![Attack log](../{FEED_CHARTS}/{fig})", ""]
+    elif name == "feed_screen":
+        ms = months(root)
+        if ms:
+            L += ["## Monthly news feed screen (X3)", "",
+                  "Each month about sixty security research, government and news feeds are read for items that "
+                  "mention both AI and an attack; each is then sorted by hand. Shown by site host name only.", ""]
+            for m in reversed(ms):
+                hosts, decs, n = feed_counts(root, m)
+                L += [f"![Feed screen {m}](../{FEED_CHARTS}/feed-screen-{m}.png)", "",
+                      f"*{m}: {n} items from {len(hosts)} sites; " + ", ".join(
+                          f"{DEC_NAMES[d]} {decs.get(d, 0)}" for d in DECISIONS) + ".*", ""]
+    return L
+
+
+def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple[str, list[str]]:
+    """The page in layout order. mirror=True: every section, drafts badged (the private mirror).
+    mirror=False: what the page would be after the flip. Returns (text, problems)."""
+    secs, problems, L = readme_sections(readme), [], []
+    for s in layout["sections"]:
+        if "readme" in s:
+            body = secs.get(s["readme"])
+            if body is None:
+                problems.append(f"README section missing: {s['readme']}")
+                continue
+            L.append(public_readme(body).rstrip() + "\n")
+        else:
+            part = draft_section(root, s["draft"])
+            if not part:
+                continue
+            if mirror and s.get("status") == "draft":
+                part.insert(2, f"> 🟧 **DRAFT section** (`{s['draft']}`): private, goes live at the flip"
+                               + ("" if s.get("cleared") else "; figures not yet cleared by the author") + ".")
+                part.insert(3, "")
+            if not mirror and not s.get("cleared"):
+                problems.append(f"draft section not cleared by the author: {s['draft']}")
+            L.append("\n".join(part).rstrip() + "\n")
+    return "\n".join(L), problems
+
+
+def flip_check(root: Path, readme: str, layout: dict) -> tuple[str, list[str]]:
+    """Dry run of the flip: the page as it would go public, and every reason it may not yet."""
+    from . import privacy
+    text, problems = compose(root, readme, layout, mirror=False)
+    problems += [f"line {line}: {kind}" for _, line, kind in privacy.scan_text("README.md", text)]
+    if "SIMULATION" in text:
+        problems.append("results section still shows the practice simulation (needs the pilot report)")
+    return text, problems
+
+
+def build_text(root: Path, readme: str) -> str:
+    layout = load_layout(root)
+    page, problems = compose(root, readme, layout, mirror=True)
+    _, flip = flip_check(root, readme, layout)
+    head = ["# Go-live mirror of the landing page (private)", "",
+            "> **Private mirror** (author's decisions, 31 Oct and 1 Nov 2026). This is the landing page as it "
+            f"will look after the flip on {layout.get('flip_date')}: the public sections exactly as they are "
+            "today, with the draft sections in place and badged. Tweak it here; the flip makes it the real "
+            "page through a guarded workflow. Order and status: `config/landing_layout.yaml`. Rebuilt by the "
+            "Manual publish workflow; do not edit here.", "",
+            f"**Practice flip today:** {'ready' if not flip else 'not ready, ' + str(len(flip)) + ' reason(s)'}"]
+    head += [f"- {p}" for p in flip + problems] + ["", "---", ""]
+    return "\n".join(head) + "\n" + page
 
 
 def main(argv=None) -> int:
@@ -187,7 +306,10 @@ def main(argv=None) -> int:
     for m in months(root):
         feed_charts(root, m)
     a.out.mkdir(parents=True, exist_ok=True)
-    (a.out / "README.md").write_text(build_text(root, (root / "README.md").read_text()))
+    readme = (root / "README.md").read_text()
+    (a.out / "README.md").write_text(build_text(root, readme))
+    preview, _ = flip_check(root, readme, load_layout(root))
+    (a.out / "FLIP_PREVIEW.md").write_text("<!-- What the public README would be after the flip (dry run). -->\n" + preview)
     print(f"go-live draft written to {a.out}/README.md")
     return 0
 
