@@ -127,20 +127,20 @@ items:
 
 - id: newsletter-setup
   owner: author
-  title: Subscribe the project address to security newsletters (8 listed); add a Gmail label
+  title: Subscribe the project address to security newsletters (7 listed); add a Gmail label
   date: 2026-11-02
   minutes: 30
   details: >
     Author's decision 29 Oct (widening the AI-attack search); list confirmed 1 Nov. Subscribe
     the project address (the study's Gmail) to each (free tier only; untick marketing extras):
-    1. SANS NewsBites, twice weekly: https://www.sans.org/newsletters/newsbites/ ;
-    2. Risky Bulletin (Risky Business News), daily: https://riskybiznews.substack.com/ ;
-    3. The Record, Recorded Future News, daily: https://therecord.media/subscribe ;
-    4. TLDR InfoSec, daily: https://tldr.tech/ (choose InfoSec) ;
-    5. tl;dr sec, weekly, strong on AI and security: https://tldrsec.com/subscribe ;
-    6. Unsupervised Learning, weekly, AI and security: https://newsletter.danielmiessler.com/subscribe ;
-    7. CISA email updates, alerts and advisories: https://www.cisa.gov/subscribe-updates-cisa ;
-    8. Seriously Risky Business, weekly policy: https://srslyriskybiz.substack.com/ .
+    1. Risky Bulletin (Risky Business News), daily: https://riskybiznews.substack.com/ ;
+    2. The Record, Recorded Future News, daily: https://therecord.media/subscribe ;
+    3. TLDR InfoSec, daily: https://tldr.tech/ (choose InfoSec) ;
+    4. tl;dr sec, weekly, strong on AI and security: https://tldrsec.com/subscribe ;
+    5. Unsupervised Learning, weekly, AI and security: https://newsletter.danielmiessler.com/subscribe ;
+    6. CISA email updates, alerts and advisories: https://www.cisa.gov/subscribe-updates-cisa ;
+    7. Seriously Risky Business, weekly policy: https://srslyriskybiz.substack.com/ .
+    SANS NewsBites is left out for now (author, 1 Nov: its terms restrict AI use; revisited 18 Nov).
     Then in your own Gmail make a filter for mail delivered to the project address that has
     "unsubscribe": apply the label "Snapshot newsletters" and skip the inbox. Tell Claude which
     ones you subscribed to; Claude reads that label twice a month (8th and 22nd).
@@ -150,8 +150,8 @@ items:
   title: Read the "Snapshot newsletters" label for AI-attack cases
   repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 8, from: 2026-11, until: 2027-12}
   details: >
-    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address),
-    except SANS NewsBites until SANS's AI clause is settled (docs/TERMS_OF_USE.md): log new AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: newsletter,
+    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address):
+    log new AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: newsletter,
     ai_evidence: unrated) or record exclusions in the sweep log; rebuild the catalogue. Also on
     the 22nd (newsletter-read-2).
 
@@ -1175,6 +1175,17 @@ items:
     propose changes to config/github_tool_queries.yaml and to the label, target, protocol, lab
     and toolkit word lists in snapshot.research.github_tools, with the effect of each on the
     baseline counts. Written to the 20 Nov issue for the author.
+
+- id: newsbites-revisit
+  owner: claude
+  title: Revisit SANS NewsBites - what it would add, and whether SANS allows AI-assisted reading
+  date: 2026-11-18
+  details: >
+    Author's decision 1 Nov 2026: NewsBites dropped for now because SANS's terms ban uploading
+    "SANS Materials" to AI systems (docs/TERMS_OF_USE.md). For the author: what NewsBites would add
+    to the AI-attack search beyond the other newsletters (its editors' commentary, US government
+    and policy items), whether the clause covers newsletters at all, and a short question to SANS
+    if worth asking (it could go with the reviewer request). Decided with the X25 refinement.
 
 - id: crypto-category-proposal
   owner: claude

@@ -243,25 +243,25 @@ DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Subscribe the project address to security newslett
- ers (8 listed)\; add a Gmail label
+ ers (7 listed)\; add a Gmail label
 DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 29 Oct (widenin
  g the AI-attack search)\; list confirmed 1 Nov. Subscribe the project addr
  ess (the study's Gmail) to each (free tier only\; untick marketing extras)
- : 1. SANS NewsBites\, twice weekly: https://www.sans.org/newsletters/newsb
- ites/ \; 2. Risky Bulletin (Risky Business News)\, daily: https://riskybiz
- news.substack.com/ \; 3. The Record\, Recorded Future News\, daily: https:
- //therecord.media/subscribe \; 4. TLDR InfoSec\, daily: https://tldr.tech/
-  (choose InfoSec) \; 5. tl\;dr sec\, weekly\, strong on AI and security: h
- ttps://tldrsec.com/subscribe \; 6. Unsupervised Learning\, weekly\, AI and
-  security: https://newsletter.danielmiessler.com/subscribe \; 7. CISA emai
- l updates\, alerts and advisories: https://www.cisa.gov/subscribe-updates-
- cisa \; 8. Seriously Risky Business\, weekly policy: https://srslyriskybiz
- .substack.com/ . Then in your own Gmail make a filter for mail delivered t
- o the project address that has "unsubscribe": apply the label "Snapshot ne
- wsletters" and skip the inbox. Tell Claude which ones you subscribed to\; 
- Claude reads that label twice a month (8th and 22nd).\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
+ : 1. Risky Bulletin (Risky Business News)\, daily: https://riskybiznews.su
+ bstack.com/ \; 2. The Record\, Recorded Future News\, daily: https://there
+ cord.media/subscribe \; 3. TLDR InfoSec\, daily: https://tldr.tech/ (choos
+ e InfoSec) \; 4. tl\;dr sec\, weekly\, strong on AI and security: https://
+ tldrsec.com/subscribe \; 5. Unsupervised Learning\, weekly\, AI and securi
+ ty: https://newsletter.danielmiessler.com/subscribe \; 6. CISA email updat
+ es\, alerts and advisories: https://www.cisa.gov/subscribe-updates-cisa \;
+  7. Seriously Risky Business\, weekly policy: https://srslyriskybiz.substa
+ ck.com/ . SANS NewsBites is left out for now (author\, 1 Nov: its terms re
+ strict AI use\; revisited 18 Nov). Then in your own Gmail make a filter fo
+ r mail delivered to the project address that has "unsubscribe": apply the 
+ label "Snapshot newsletters" and skip the inbox. Tell Claude which ones yo
+ u subscribed to\; Claude reads that label twice a month (8th and 22nd).\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -489,14 +489,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -665,6 +663,26 @@ DESCRIPTION:Responsible: Claude\n\nThe author expects AI and cryptocurrency
  Decided with the GitHub search refinement on 20 Nov.\n\nSource: https://gi
  thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
  le.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:newsbites-revisit@2026-11-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Revisit SANS NewsBites - what it would add\, and
+  whether SANS allows AI-assisted reading
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 1 Nov 2026: NewsBites 
+ dropped for now because SANS's terms ban uploading "SANS Materials" to AI 
+ systems (https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/TERMS_OF_USE.md). For the author: what NewsBites would add to the AI-a
+ ttack search beyond the other newsletters (its editors' commentary\, US go
+ vernment and policy items)\, whether the clause covers newsletters at all\
+ , and a short question to SANS if worth asking (it could go with the revie
+ wer request). Decided with the X25 refinement.\n\nSource: https://github.c
+ om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
+ l
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1066,14 +1084,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1572,14 +1588,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1826,14 +1840,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2077,14 +2089,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2359,14 +2369,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2570,14 +2578,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2669,14 +2675,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2902,14 +2906,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3103,14 +3105,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3247,14 +3247,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3450,14 +3448,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3618,14 +3614,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3747,14 +3741,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
  ack cases
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, except SANS NewsBites u
- ntil SANS's AI clause is settled (https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/TERMS_OF_USE.md): log new AI-using attacks in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/explorato
- ry/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrated) 
- or record exclusions in the sweep log\; rebuild the catalogue. Also on the
-  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
- security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address): log new AI-using attacks
+  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
+ atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
+ d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
+ the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
