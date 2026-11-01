@@ -104,3 +104,15 @@ def test_open_weight_by_model_not_lab():
     assert w("uses Gemini 2.5 and Claude") == ["closed"]
     assert w("gpt-oss-120b agent") == ["open-weight"] and w("GPT-4o agent") == ["closed"]
     assert w("Hermes on Mistral Large via OpenRouter") == ["open-weight", "closed"]
+
+
+def test_rules_of_1_nov_2026():
+    from snapshot.research import github_tools as G
+    assert G.group("penetration testing;vulnerability scanning;reconnaissance and OSINT") == "offensive"
+    assert G.group("vulnerability scanning") == "dual_use"
+    assert G.group("penetration testing;incident response") == "dual_use"
+    assert G.group("detection and monitoring;reconnaissance and OSINT") == "defensive"
+    assert G.tool_types("LLM red teaming and prompt injection scanner for AI apps") == ["AI model testing"]
+    assert G.group("AI model testing") == "dual_use"
+    assert G.relevant({"full_name": "x/pentest-agent", "description": "", "topics": ""})
+    assert not G.relevant({"full_name": "x/some-books", "description": "A list of books", "topics": "ai"})

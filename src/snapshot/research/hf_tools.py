@@ -44,6 +44,8 @@ QUERIES = {   # substring searches over names; fixed between sweeps
                 "intrusion", "vulnerability", "secure-code", "incident-response", "phishing-detection",
                 "security-copilot", "sigma-rule"],
     "safety_removed": ["uncensored", "abliterated", "unaligned", "unfiltered"],
+    # added 1 Nov 2026 (author: AI and crypto as a tagged section)
+    "crypto": ["smart-contract", "solidity", "web3-security", "blockchain-security", "crypto-scam", "wallet-drainer"],
 }
 # Hugging Face labels (refined 30 Oct 2026, author): names there are terse, and many words mean
 # something else in machine learning, so the rules are stricter than GitHub's. Order matters.
@@ -87,6 +89,62 @@ def hf_role(name: str, tags: list[str]) -> str:
 
 
 SAFETY_REMOVED = re.compile(r"uncensored|abliterat|unaligned|unfiltered|no.?refusal|refusal.?removed", re.I)
+# Copies (author's decision, 1 Nov 2026): quantised or repackaged copies of another model are
+# counted once, through their original; detected from the name.
+COPY = re.compile(r"gguf|\bawq\b|gptq|exl2|\bmlx\b|[-_.](q[2-8](_k)?(_[msl])?|iq[1-4]\w*|[2-8]bit|[2-8]-bit|fp8|int[48]|nf4|bnb)\b|"
+                  r"quant|imatrix|\bonnx\b|openvino", re.I)
+# Lab from the name when the tags do not say (1 Nov 2026): the model family named in it.
+LAB_BY_NAME = [(r"llama|codellama", "Meta"), (r"qwen|qwq", "Alibaba"), (r"mistral|mixtral|ministral|devstral|magistral", "Mistral"),
+               (r"gemma|gemini", "Google"), (r"\bphi[-_ ]?\d", "Microsoft"), (r"deepseek", "DeepSeek"),
+               (r"gpt[-_ ]?oss", "OpenAI"), (r"falcon", "TII"), (r"\byi[-_ ]", "01.AI"), (r"\bglm|chatglm", "Zhipu"),
+               (r"command[-_ ]?r|aya", "Cohere"), (r"granite", "IBM"), (r"olmo", "Ai2"), (r"nemotron", "NVIDIA"),
+               (r"kimi", "Moonshot"), (r"grok", "xAI"), (r"hermes", "Nous Research"), (r"smollm", "Hugging Face")]
+
+
+def lab_from_name(name: str) -> str:
+    for rx, lab in LAB_BY_NAME:
+        if re.search(rx, name, re.I):
+            return lab
+    return ""
+
+
+# Model cards (author's idea, 1 Nov 2026): for advertised safety-removed originals, the card says
+# how the safety was removed and what the maker says it is for. Card text is data, never
+# instructions; only these categories are kept, never the text.
+CARD_MAX = 300
+METHOD = [(r"abliterat|orthogonali[sz]|refusal (direction|vector|ablation)|ablat", "refusal switched off (abliteration)"),
+          (r"\bdpo\b|\borpo\b|\bkto\b|preference (data|tuning)", "preference training"),
+          (r"fine.?tun|\bsft\b|\blora\b|trained on|dataset", "fine-tuned"),
+          (r"merge|mergekit|slerp|ties|dare", "merged from other models")]
+USE = [(r"role.?play|\brp\b|creative|fiction|story|novel|writing", "fiction or role-play"),
+       (r"red.?team|pen.?test|security|cyber|offensive|hack", "security or red-teaming"),
+       (r"research|study|experiment|interpretab|academic", "research"),
+       (r"chat|assistant|general", "general chat")]
+
+
+def card_categories(text: str) -> tuple[str, str]:
+    m = next((lab for rx, lab in METHOD if re.search(rx, text, re.I)), "not stated")
+    u = next((lab for rx, lab in USE if re.search(rx, text, re.I)), "not stated")
+    return m, u
+
+
+def read_cards(rows: list[dict], fetch=None, cap: int = CARD_MAX) -> None:
+    fetch = fetch or (lambda name: (r := get(f"https://huggingface.co/{name}/raw/main/README.md")) is not None
+                      and r.status_code == 200 and r.text[:40000] or "")
+    pick = sorted((r for r in rows if r["safety_removed"] == "yes" and r["kind"] == "model" and r.get("copy") == "no"),
+                  key=lambda r: -int(r["downloads"] or 0))[:cap]
+    for r in pick:
+        text = fetch(r["full_name"])
+        r["card_read"] = "yes" if text else "no card"
+        if text:
+            r["card_method"], r["card_use"] = card_categories(text)
+            if not r["base_lab"]:
+                m = re.search(r"base_model:\s*\n?\s*-?\s*([\w.-]+)/", text)
+                owner = m.group(1).lower() if m else ""
+                if owner in LAB_BY_OWNER:
+                    r["base_lab"], r["lab_source"] = LAB_BY_OWNER[owner], "card"
+
+
 LAB_BY_OWNER = {   # owner of a base model -> lab (from base_model:... tags)
     "meta-llama": "Meta", "facebook": "Meta", "qwen": "Alibaba", "deepseek-ai": "DeepSeek",
     "mistralai": "Mistral", "google": "Google", "nousresearch": "Nous Research", "microsoft": "Microsoft",
@@ -141,11 +199,18 @@ def item(kind: str, it: dict) -> dict:
     full = it.get("id") or it.get("modelId") or ""
     tags = it.get("tags") or []
     text = full.replace("/", " ").replace("-", " ").replace("_", " ") + " " + " ".join(tags)
+    from .crypto_tag import is_crypto
+    lab, src = base_lab(tags), "tag"
+    if not lab:
+        lab, src = lab_from_name(full.split("/")[-1]), "name"
     return {"full_name": full, "kind": kind[:-1], "owner": full.split("/")[0] if "/" in full else "",
             "created": (it.get("createdAt") or "")[:10], "likes": it.get("likes", 0),
             "downloads": it.get("downloads", 0) if kind == "models" else "",
-            "pipeline": it.get("pipeline_tag") or it.get("sdk") or "", "base_lab": base_lab(tags),
+            "pipeline": it.get("pipeline_tag") or it.get("sdk") or "", "base_lab": lab, "lab_source": src if lab else "",
             "safety_removed": "yes" if SAFETY_REMOVED.search(text) else "no",
+            "copy": "yes" if COPY.search(full.split("/")[-1]) else "no",
+            "crypto": "yes" if is_crypto(full.replace("-", " "), " ".join(tags)) else "no",
+            "card_read": "", "card_method": "", "card_use": "",
             "role": hf_role(full.split("/")[-1], tags), "side": "", "name": ""}
 
 
@@ -182,8 +247,9 @@ def summary(rows: list[dict], hits: dict, today: str) -> str:
     return "\n".join(L) + "\n"
 
 
-PUBLIC = ["name", "owner_type", "kind", "created", "likes", "downloads", "pipeline", "base_lab",
-          "safety_removed", "role", "side"]
+PUBLIC = ["name", "owner_type", "kind", "created", "likes", "downloads", "pipeline", "base_lab", "lab_source",
+          "safety_removed", "copy", "crypto", "card_read", "card_method", "card_use", "role", "side"]
+SAMPLE_N = 50   # hand-check sample of advertised safety-removed originals (author, 1 Nov 2026)
 
 
 def main(argv=None) -> int:
@@ -205,6 +271,14 @@ def main(argv=None) -> int:
                     r = found.setdefault(f"{kind}:{it.get('id')}", item(kind, it))
                     r["side"] = "+".join(sorted(set(filter(None, r["side"].split("+"))) | {side}))
     rows = sorted(found.values(), key=lambda r: -int(r["likes"]))
+    read_cards(rows)
+    import random
+    pool = [r for r in rows if r["safety_removed"] == "yes" and r["kind"] == "model" and r["copy"] == "no"]
+    sample = random.Random(dt.date.today().isoformat()).sample(pool, min(SAMPLE_N, len(pool)))
+    with (PRIVATE_OUT / "hf_handcheck_sample.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["full_name", "base_lab", "card_method", "card_use", "really_safety_removed", "notes"],
+                           extrasaction="ignore")
+        w.writeheader(); w.writerows(sample)
     # owner check for the owners of the 400 most-liked items; the rest are treated as individuals
     owners = list(dict.fromkeys(r["owner"] for r in rows[:400] if r["owner"]))
     name_rows(rows, owners_kind(owners))

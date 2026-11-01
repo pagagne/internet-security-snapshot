@@ -254,10 +254,11 @@ def draft_section(root: Path, name: str) -> list[str]:
         if hf:
             d = hf[-1].name[3:13]
             L += [f"## AI models on Hugging Face (X25), sweep of {d}", "",
-                  "Security-related AI models and apps published on Hugging Face, including open-weight models whose "
-                  "safety training has been removed, counted by month and by the lab of their base model. Nothing is "
-                  "downloaded or run; individuals' items are never named by username.", ""]
-            L += [x for s in ("1-new-per-month", "2-safety-removed-by-lab")
+                  "Security-related AI models and apps published on Hugging Face, and, apart from them, models "
+                  "advertised as safety-removed (a floor, from their own names and tags), originals only, by month and "
+                  "by the lab of the model modified. Nothing is downloaded or run; individuals' items are never named "
+                  "by username.", ""]
+            L += [x for s in ("1-new-per-month", "3-safety-removed-per-month", "2-safety-removed-by-lab")
                   if (figs / f"hf-{d}-{s}.png").exists() for x in (f"![{s}](../{FIGS}/hf-{d}-{s}.png)", "")]
     elif name == "feed_screen":
         ms = months(root)

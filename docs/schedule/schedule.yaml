@@ -1168,6 +1168,7 @@ items:
 
 - id: x25-refine
   owner: claude
+  done: "1 Nov 2026 (decided early at the author's request; follow-ups in gitee-recheck)"
   title: Propose refinements to the GitHub tool sweep's searches and labels (X25), from the baseline
   date: 2026-11-18
   details: >
@@ -1180,6 +1181,7 @@ items:
 
 - id: newsbites-revisit
   owner: claude
+  done: "1 Nov 2026 (decided early at the author's request)"
   title: Revisit SANS NewsBites - what it would add, and whether SANS allows AI-assisted reading
   date: 2026-11-18
   details: >
@@ -1191,6 +1193,7 @@ items:
 
 - id: crypto-category-proposal
   owner: claude
+  done: "1 Nov 2026 (decided early at the author's request)"
   title: Propose an AI-and-crypto category for the exploratory feeds (author's idea, 1 Nov)
   date: 2026-11-18
   details: >
@@ -1203,6 +1206,7 @@ items:
 
 - id: hf-label-refine
   owner: claude
+  done: "1 Nov 2026 (decided early at the author's request)"
   title: Propose fixes to the Hugging Face "safety removed" label (author's question, 1 Nov)
   date: 2026-11-18
   details: >
@@ -1214,8 +1218,20 @@ items:
     which it dominates without being security tooling, and count originals only. Details in
     the private x25-checks. Decided with the GitHub search refinement on 20 Nov.
 
+- id: gitee-recheck
+  owner: claude
+  title: Anonymous Gitee re-check, and a label check of the most-starred tools under the new rules
+  date: 2026-11-18
+  details: >
+    Left over from the rules decided early on 1 Nov 2026 (author): run the gitee_probe task without
+    a token (five spaced searches) to see whether Gitee's API search has opened; and check the
+    labels of the most-starred tools in a re-run of the tool sweep under the new rules (some attack
+    agents may stay dual-use because broad defensive words such as fix, monitor or patch appear in
+    their descriptions). Findings to the author.
+
 - id: x25-refine-approve
   owner: author
+  done: "1 Nov 2026 (rules approved early; effect checked on the next sweep)"
   title: Approve the refined GitHub tool-sweep searches (X25) before the January pilot sweep
   date: 2026-11-20
   minutes: 20

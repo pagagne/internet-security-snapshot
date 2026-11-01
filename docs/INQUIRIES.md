@@ -110,3 +110,12 @@ Started 25 Oct 2026 at the author's request.
   into its own exploratory category. Claude drafts a proposal for 18 Nov (scope, feeds and search
   terms, how cases are logged beside X3 and X25, never in a score); decided on 20 Nov.
 
+- **1 Nov 2026: the 18 Nov items decided early (author).** AI and crypto: a crypto tag on the AI
+  attack log and both tool sweeps, with its own report section; vetted crypto-security research
+  feeds (pending verification) and crypto searches for GitHub and Hugging Face. Hugging Face
+  "safety removed": originals only, labs filled from tags, cards or model family, model cards read
+  for the method and stated use, a hand-check sample, called "advertised as safety-removed" (a
+  floor) with its own chart, apart from the security chart. GitHub sweep: scanning and
+  reconnaissance no longer make an attack tool dual-use; AI model testing is its own type; a
+  relevance filter. SANS NewsBites stays dropped. Gitee anonymous re-check stays on 18 Nov.
+

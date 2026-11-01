@@ -652,8 +652,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Propose an AI-and-crypto category for the explor
- atory feeds (author's idea\, 1 Nov)
+SUMMARY:✅ DONE [Claude] Snapshot: Propose an AI-and-crypto category for t
+ he exploratory feeds (author's idea\, 1 Nov)
 DESCRIPTION:Responsible: Claude\n\nThe author expects AI and cryptocurrency
   to be a very active issue in 2027 and may give it its own exploratory cat
  egory. Draft for the author: what it would cover (AI-run crypto scams and 
@@ -669,13 +669,31 @@ DESCRIPTION:Responsible: Claude\n\nThe author expects AI and cryptocurrency
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:gitee-recheck@2026-11-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Anonymous Gitee re-check\, and a label check of 
+ the most-starred tools under the new rules
+DESCRIPTION:Responsible: Claude\n\nLeft over from the rules decided early o
+ n 1 Nov 2026 (author): run the gitee_probe task without a token (five spac
+ ed searches) to see whether Gitee's API search has opened\; and check the 
+ labels of the most-starred tools in a re-run of the tool sweep under the n
+ ew rules (some attack agents may stay dual-use because broad defensive wor
+ ds such as fix\, monitor or patch appear in their descriptions). Findings 
+ to the author.\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:hf-label-refine@2026-11-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Propose fixes to the Hugging Face "safety remove
- d" label (author's question\, 1 Nov)
+SUMMARY:✅ DONE [Claude] Snapshot: Propose fixes to the Hugging Face "safe
+ ty removed" label (author's question\, 1 Nov)
 DESCRIPTION:Responsible: Claude\n\nThe author found the label narrow. Propo
  se: count originals once (quantised copies collapsed onto their base model
  )\, fill the base model's lab\, test wider terms\, read model cards for th
@@ -695,8 +713,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Revisit SANS NewsBites - what it would add\, and
-  whether SANS allows AI-assisted reading
+SUMMARY:✅ DONE [Claude] Snapshot: Revisit SANS NewsBites - what it would 
+ add\, and whether SANS allows AI-assisted reading
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 1 Nov 2026: NewsBites 
  dropped for now because SANS's terms ban uploading "SANS Materials" to AI 
  systems (https://github.com/pagagne/internet-security-snapshot/blob/main/d
@@ -715,8 +733,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Propose refinements to the GitHub tool sweep's s
- earches and labels (X25)\, from the baseline
+SUMMARY:✅ DONE [Claude] Snapshot: Propose refinements to the GitHub tool 
+ sweep's searches and labels (X25)\, from the baseline
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
  0 Oct baseline to refine the sweep before the January pilot sweep\, which 
  stays a hand-run (manual) workflow. Check the labels of every tool with 10
@@ -735,8 +753,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Approve the refined GitHub tool-sweep searches (X2
- 5) before the January pilot sweep
+SUMMARY:✅ DONE [Paul] Snapshot: Approve the refined GitHub tool-sweep sea
+ rches (X25) before the January pilot sweep
 DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's proposal of 18 Nov 
  and keep or reject each change. After this\, the searches and word lists a
  re fixed from the 6 Jan 2027 pilot sweep on\, so the 2027 sweeps compare.\

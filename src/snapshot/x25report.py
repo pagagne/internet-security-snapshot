@@ -255,15 +255,23 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
 
 
 HF_SWEEPS = "exploratory/hf_sweeps"
-HF_SHOWN = ["offensive", "defensive", "general_security", "safety_removed"]
+HF_SHOWN = ["offensive", "defensive", "general_security"]   # safety-removed has its own chart (1 Nov 2026)
 HF_COLOURS = {"offensive": "#b85c1e", "defensive": "#1f4e79", "general_security": "#5b8c5a", "safety_removed": "#8e44ad"}
 HF_OLD = {"attack": "offensive", "defence": "defensive", "both": "dual_use"}   # sweeps before 31 Oct 2026
 
 
 def hf_load(path: Path) -> list[dict]:
+    """Rows of a Hugging Face sweep; sweeps before 1 Nov 2026 get the copy flag and a lab from the
+    name here, so the fixes of 1 Nov apply to them too."""
+    from .research.hf_tools import COPY, lab_from_name
     rows = load(path)
     for r in rows:
         r["role"] = HF_OLD.get(r["role"], r["role"])
+        if not r.get("copy"):
+            r["copy"] = "yes" if COPY.search(r["name"].split("/")[-1]) else "no"
+        if not r.get("base_lab"):
+            r["base_lab"] = lab_from_name(r["name"].split("/")[-1])
+            r["lab_source"] = "name" if r["base_lab"] else ""
     return rows
 
 
@@ -273,29 +281,42 @@ def hf_charts(date: str, rows: list[dict], root: Path) -> None:
     import matplotlib.pyplot as plt
     out = root / FIGS
     out.mkdir(parents=True, exist_ok=True)
+    rows = [r for r in rows if r.get("copy") != "yes"]   # originals only (1 Nov 2026)
     ms = sorted({r["created"][:7] for r in rows if r["created"][:7] >= "2025-01"})
     fig, ax = plt.subplots(figsize=(10, 4.8), dpi=130)
     for k in HF_SHOWN:
         ax.plot([f"{m[5:]}/{m[2:4]}" for m in ms], [sum(r["role"] == k and r["created"][:7] == m for r in rows) for m in ms],
                 marker="o", ms=3, lw=2, color=HF_COLOURS[k], label={"offensive": "Offensive security", "defensive": "Defensive security"}.get(k, k.replace("_", " ").capitalize()))
-    ax.set_xlabel("Month the model or app was created (last month may be partial)"); ax.set_ylabel("New items that month")
-    ax.set_title(f"Hugging Face: new security-related AI models and apps each month (sweep of {date})")
+    ax.set_xlabel("Month the model or app was created (last month may be partial)"); ax.set_ylabel("New originals that month")
+    ax.set_title(f"Hugging Face: new security-related AI models and apps each month, originals only (sweep of {date})")
     ax.tick_params(axis="x", labelrotation=60, labelsize=8); ax.legend(frameon=False); ax.grid(axis="y", alpha=.3)
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     fig.tight_layout(); fig.savefig(out / f"hf-{date}-1-new-per-month.png"); plt.close(fig)
-    sr = [r for r in rows if r["role"] == "safety_removed" and r["kind"] == "model"]
+    sr = [r for r in rows if r["safety_removed"] == "yes" and r["kind"] == "model"]
     labs = collections.Counter(l for r in sr for l in r["base_lab"].split(";") if l).most_common(10)
+    unknown = sum(not r["base_lab"] for r in sr)
     fig, ax = plt.subplots(figsize=(10, 4.5), dpi=130)
-    bars = ax.bar([l for l, _ in labs], [n for _, n in labs], color=HF_COLOURS["safety_removed"], width=.6)
-    for b, (_, n) in zip(bars, labs):
+    bars = ax.bar([l for l, _ in labs] + ["lab not stated"], [n for _, n in labs] + [unknown],
+                  color=[HF_COLOURS["safety_removed"]] * len(labs) + ["#C8C8C8"], width=.6)
+    for b, n in zip(bars, [n for _, n in labs] + [unknown]):
         ax.text(b.get_x() + b.get_width() / 2, n, f"{n:,}", ha="center", va="bottom", fontsize=9)
-    ax.set_xlabel("Lab whose model was modified (from the model's own base-model tag)"); ax.set_ylabel("Safety-removed models")
-    ax.set_title(f"Hugging Face: whose models have their safety training removed (sweep of {date})")
-    ax.grid(axis="y", alpha=.3)
+    ax.set_xlabel("Lab whose model was modified (base-model tag, the model card, or the model family named)")
+    ax.set_ylabel("Originals advertised as safety-removed")
+    ax.set_title(f"Hugging Face: whose models are advertised as safety-removed, originals only (sweep of {date})")
+    ax.tick_params(axis="x", labelrotation=30, labelsize=8); ax.grid(axis="y", alpha=.3)
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     fig.tight_layout(); fig.savefig(out / f"hf-{date}-2-safety-removed-by-lab.png"); plt.close(fig)
+    ms3 = sorted({r["created"][:7] for r in sr if r["created"][:7] >= "2024-01"})
+    fig, ax = plt.subplots(figsize=(10, 4.2), dpi=130)
+    ax.bar([f"{m[5:]}/{m[2:4]}" for m in ms3], [sum(r["created"][:7] == m for r in sr) for m in ms3], color=HF_COLOURS["safety_removed"])
+    ax.set_ylabel("New originals"); ax.set_xlabel("Month created (last month may be partial)")
+    ax.set_title(f"Hugging Face: new models advertised as safety-removed each month, originals only (sweep of {date}); a floor")
+    ax.tick_params(axis="x", labelrotation=60, labelsize=7); ax.grid(axis="y", alpha=.3)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    fig.tight_layout(); fig.savefig(out / f"hf-{date}-3-safety-removed-per-month.png"); plt.close(fig)
 
 
 def hf_section(root: Path) -> list[str]:

@@ -20,7 +20,7 @@ ai_terms: ["AI agent", "AI agents", "agentic", "LLM", "large language model", "g
            "人工智能", "大模型", "智能体", "生成AI", "生成 AI", "AIエージェント", "ИИ", "нейросет", "KI-Agent", "IA générative"]
 attack_terms: ["attack", "attacker", "campaign", "intrusion", "breach", "breached", "compromise", "compromised",
                "malware", "ransomware", "threat actor", "hacker", "hackers", "exploit", "exploited", "phishing",
-               "espionage", "stolen", "攻击", "入侵", "攻撃", "атак", "взлом", "Angriff", "attaque"]
+               "espionage", "stolen", "drainer", "heist", "rug pull", "pig butchering", "攻击", "入侵", "攻撃", "атак", "взлом", "Angriff", "attaque"]
 added: 2026-10-29
 feeds:
   - {name: "Unit 42", url: "https://unit42.paloaltonetworks.com/feed/", domain: unit42.paloaltonetworks.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
@@ -85,3 +85,12 @@ feeds:
   - {name: "ITmedia Enterprise (ja)", url: "https://rss.itmedia.co.jp/rss/2.0/enterprise.xml", domain: itmedia.co.jp, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
   - {name: "LeMagIT (fr)", url: "https://www.lemagit.fr/rss/ContentSyndication.xml", domain: lemagit.fr, trust: news_leads_only, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}
   - {name: "CISO Advisor (pt)", url: "https://www.cisoadvisor.com.br/feed/", domain: cisoadvisor.com.br, trust: news_leads_only, verified: pending, added: 2026-10-29, skip: "site refuses automated readers (HTTP 403); not worked around, 31 Oct"}
+  # Crypto-security research (author's decision, 1 Nov 2026: AI and crypto as a tagged section).
+  # Addresses to be verified by the Research task feed_verify before the first read (verified: pending).
+  - {name: "Chainalysis blog", url: "https://www.chainalysis.com/blog/feed/", domain: chainalysis.com, trust: primary_research, verified: pending, added: 2026-11-01}
+  - {name: "Elliptic blog", url: "https://www.elliptic.co/blog/rss.xml", domain: elliptic.co, trust: primary_research, verified: pending, added: 2026-11-01}
+  - {name: "TRM Labs blog", url: "https://www.trmlabs.com/resources/blog/rss.xml", domain: trmlabs.com, trust: primary_research, verified: pending, added: 2026-11-01}
+  - {name: "SlowMist", url: "https://slowmist.medium.com/feed", domain: slowmist.medium.com, trust: primary_research, verified: pending, added: 2026-11-01}
+  - {name: "CertiK blog", url: "https://www.certik.com/resources/blog/rss.xml", domain: certik.com, trust: primary_research, verified: pending, added: 2026-11-01}
+  - {name: "Rekt News", url: "https://rekt.news/rss/feed.xml", domain: rekt.news, trust: news_leads_only, verified: pending, added: 2026-11-01}
+

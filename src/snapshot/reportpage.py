@@ -472,21 +472,51 @@ def exploratory_parts(key: str, R: dict, explo: Path, rdir: Path) -> list[str]:
         L += ["No GitHub sweep yet.", ""]
     L += ["### Hugging Face: AI models and apps", "",
           "Hugging Face is where AI models themselves are published, including open-weight models whose safety "
-          "training has been removed (\"uncensored\" or \"abliterated\" variants). The sweep counts security-related "
-          "models and apps by when they appeared, what they do, and which lab's base model a safety-removed variant "
-          "comes from. Nothing is downloaded or run; individuals' items are never named by username.", ""]
+          "training has been removed (\"uncensored\" or \"abliterated\" variants). The sweep counts originals only "
+          "(compressed copies of another model are counted once, through the original). Security-related models and "
+          "apps are shown apart from models advertised as safety-removed, which are mostly general chat models; that "
+          "label comes from the model's own name and tags, so it is a floor, and a hand-checked sample gives its "
+          "accuracy. Nothing is downloaded or run; individuals' items are never named by username.", ""]
     hf = sorted(figs.glob("hf-*-1-new-per-month.png")) if figs.exists() else []
     if hf:
         d = hf[-1].name[3:13]
-        for suffix, cap in (("1-new-per-month", "New security-related models and apps per month"),
-                            ("2-safety-removed-by-lab", "Safety-removed models, by the lab of their base model")):
+        for suffix, cap in (("1-new-per-month", "New security-related models and apps per month (originals)"),
+                            ("3-safety-removed-per-month", "New models advertised as safety-removed per month (originals; a floor)"),
+                            ("2-safety-removed-by-lab", "Advertised as safety-removed, by the lab of the model modified")):
             f = figs / f"hf-{d}-{suffix}.png"
             if f.exists():
                 shutil.copy(f, charts / f"{key}-hf-{suffix}.png")
                 L += [f"**{cap}** (sweep of {d})", "", f"![{cap}](charts/{key}-hf-{suffix}.png)", ""]
     else:
         L += ["No Hugging Face sweep yet.", ""]
+    L += crypto_section(explo)
     return L
+
+
+def crypto_section(explo: Path) -> list[str]:
+    """AI and cryptocurrency, from the crypto tag on the existing logs (author, 1 Nov 2026)."""
+    import csv
+    from .research.crypto_tag import is_crypto
+    L = ["## AI and cryptocurrency (exploratory, tagged)", "",
+         "*Context only.* Cases and tools that touch cryptocurrency, picked out by a tag on the logs above rather "
+         "than a separate measure (author's decision, 1 Nov 2026): AI-run crypto scams and thefts, AI-found "
+         "smart-contract flaws, and AI tools and models for smart-contract and wallet security on both sides. It may "
+         "become a measure of its own at the March 2027 review.", ""]
+    log = explo / "ai_attack_campaigns.csv"
+    if log.exists():
+        rows = list(csv.DictReader(log.open(encoding="utf-8")))
+        n = sum(is_crypto(r.get("campaign", ""), r.get("attack_method", ""), r.get("target_sectors", ""), r.get("notes", ""))
+                for r in rows)
+        L.append(f"- AI attack log: {n} of {len(rows)} cases touch cryptocurrency.")
+    for label, folder in (("GitHub tools", "ai_tool_sweeps"), ("Hugging Face models and apps", "hf_sweeps")):
+        files = sorted((explo / folder).glob("*.csv")) if (explo / folder).exists() else []
+        if files:
+            rows = list(csv.DictReader(files[-1].open(encoding="utf-8")))
+            if rows and "crypto" in rows[0]:
+                L.append(f"- {label} (sweep of {files[-1].stem}): {sum(r['crypto'] == 'yes' for r in rows)} tagged crypto.")
+            else:
+                L.append(f"- {label}: the crypto tag starts with the next sweep.")
+    return L + [""]
 
 
 def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date | None = None,

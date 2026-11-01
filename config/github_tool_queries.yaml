@@ -59,3 +59,15 @@ defensive:
   - "威胁检测 大模型 in:description"
   - "应急响应 智能体 in:description"
   - "ИИ SOC in:description"
+# Added 1 Nov 2026 (author's decision: AI and crypto as a tagged section): AI tools for
+# smart-contract and wallet security, on both sides. Tagged crypto: yes; grouped by what they do.
+crypto:
+  - "AI smart contract audit in:name,description"
+  - "LLM smart contract vulnerability in:description"
+  - "AI solidity security in:name,description"
+  - "smart contract exploit agent in:description"
+  - "wallet drainer in:name,description"
+  - "AI crypto trading bot security in:description"
+  - "topic:smart-contract-audit"
+  - "topic:web3-security"
+
