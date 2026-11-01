@@ -259,9 +259,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 29 Oct (widenin
  strict AI use\; revisited 18 Nov). Then in your own Gmail make a filter fo
  r mail delivered to the project address that has "unsubscribe": apply the 
  label "Snapshot newsletters" and skip the inbox. Tell Claude which ones yo
- u subscribed to\; Claude reads that label twice a month (8th and 22nd).\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ u subscribed to\; Claude reads that label twice a month (8th and 22nd) for
+  research only: nothing from them is shown\, and they do not feed the AI a
+ ttack log (author\, 1 Nov).\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -486,15 +487,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261108
 DTEND;VALUE=DATE:20261109
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -755,8 +758,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261122
 DTEND;VALUE=DATE:20261123
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -1081,15 +1084,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261208
 DTEND;VALUE=DATE:20261209
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1324,8 +1329,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261222
 DTEND;VALUE=DATE:20261223
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -1585,15 +1590,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270108
 DTEND;VALUE=DATE:20270109
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1671,8 +1678,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270122
 DTEND;VALUE=DATE:20270123
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -1837,15 +1844,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270208
 DTEND;VALUE=DATE:20270209
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1927,8 +1936,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270222
 DTEND;VALUE=DATE:20270223
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -2086,15 +2095,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270308
 DTEND;VALUE=DATE:20270309
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2149,8 +2160,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270322
 DTEND;VALUE=DATE:20270323
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -2366,15 +2377,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270408
 DTEND;VALUE=DATE:20270409
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2409,8 +2422,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270422
 DTEND;VALUE=DATE:20270423
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -2575,15 +2588,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270508
 DTEND;VALUE=DATE:20270509
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2620,8 +2635,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270522
 DTEND;VALUE=DATE:20270523
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -2672,15 +2687,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270608
 DTEND;VALUE=DATE:20270609
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2701,8 +2718,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270622
 DTEND;VALUE=DATE:20270623
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -2903,15 +2920,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270708
 DTEND;VALUE=DATE:20270709
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2965,8 +2984,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270722
 DTEND;VALUE=DATE:20270723
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -3102,15 +3121,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270808
 DTEND;VALUE=DATE:20270809
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3192,8 +3213,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270822
 DTEND;VALUE=DATE:20270823
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -3244,15 +3265,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270908
 DTEND;VALUE=DATE:20270909
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3273,8 +3296,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270922
 DTEND;VALUE=DATE:20270923
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -3445,15 +3468,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271008
 DTEND;VALUE=DATE:20271009
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3474,8 +3499,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271022
 DTEND;VALUE=DATE:20271023
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -3611,15 +3636,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271108
 DTEND;VALUE=DATE:20271109
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3656,8 +3683,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271122
 DTEND;VALUE=DATE:20271123
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml
@@ -3738,15 +3765,17 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271208
 DTEND;VALUE=DATE:20271209
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only)
 DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address): log new AI-using attacks
-  in https://github.com/pagagne/internet-security-snapshot/blob/main/explor
- atory/ai_attack_campaigns.csv (found_via: newsletter\, ai_evidence: unrate
- d) or record exclusions in the sweep log\; rebuild the catalogue. Also on 
- the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ or's Gmail\, forwarded from the project address). Research only (author\, 
+ 1 Nov 2026): nothing from the newsletters is shown in a report or on the l
+ anding page\, and cases first spotted there are not entered in the AI atta
+ ck log. Note trends worth discussing with the author\, for an optional tre
+ nds summary in our own words (https://github.com/pagagne/internet-security
+ -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
+ Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3783,8 +3812,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271222
 DTEND;VALUE=DATE:20271223
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label for AI-att
- ack cases (second half of the month)
+SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
+ only\; second half of the month)
 DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
  ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
  ule.yaml

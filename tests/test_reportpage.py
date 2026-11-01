@@ -66,3 +66,15 @@ def test_exploratory_parts_news_list(tmp_path):
     page = (tmp_path / "reports/2026Q3-final-news-2026-08.md").read_text()
     assert "[A / title](https://www.example.org/a)" in page and "example.org" in page and "Our note." in page
     assert "COPIED ABSTRACT" not in page                    # abstracts stay private
+
+
+def test_part3_hugging_face_and_optional_trends(tmp_path):
+    explo = tmp_path / "exploratory"; (explo / "ai_tool_landscape").mkdir(parents=True)
+    import shutil
+    png = tmp_path / "x.png"; png.write_bytes(b"\x89PNG")
+    shutil.copy(png, explo / "ai_tool_landscape" / "hf-2026-10-30-1-new-per-month.png")
+    L = "\n".join(RP.exploratory_parts("2026Q3-final", R, explo, tmp_path / "reports"))
+    assert "### Hugging Face" in L and "charts/2026Q3-final-hf-1-new-per-month.png" in L
+    assert "Trends we noticed" not in L                                    # optional: absent unless written
+    (explo / "trends").mkdir(); (explo / "trends" / "2026Q3.md").write_text("Our own words.")
+    assert "Our own words." in "\n".join(RP.exploratory_parts("2026Q3-final", R, explo, tmp_path / "reports"))

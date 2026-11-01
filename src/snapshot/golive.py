@@ -248,6 +248,17 @@ def draft_section(root: Path, name: str) -> list[str]:
               "test reached real systems, from organisations' own reports. No victim names are recorded. "
               "Evidence of AI use: " + ", ".join(f"{k} {v}" for k, v in sorted(ev.items())) + ".", "",
               f"![Attack log](../{FEED_CHARTS}/{fig})", ""]
+    elif name == "hf":
+        figs = root / FIGS
+        hf = sorted(figs.glob("hf-*-1-new-per-month.png")) if figs.exists() else []
+        if hf:
+            d = hf[-1].name[3:13]
+            L += [f"## AI models on Hugging Face (X25), sweep of {d}", "",
+                  "Security-related AI models and apps published on Hugging Face, including open-weight models whose "
+                  "safety training has been removed, counted by month and by the lab of their base model. Nothing is "
+                  "downloaded or run; individuals' items are never named by username.", ""]
+            L += [x for s in ("1-new-per-month", "2-safety-removed-by-lab")
+                  if (figs / f"hf-{d}-{s}.png").exists() for x in (f"![{s}](../{FIGS}/hf-{d}-{s}.png)", "")]
     elif name == "feed_screen":
         ms = months(root)
         if ms:

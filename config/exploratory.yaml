@@ -61,7 +61,8 @@ measures:
       incident databases, news for leads, and sources in Chinese, Japanese, Korean, Russian,
       German, French and Portuguese) and lists items naming both an AI term and an attack term.
       (2) newsletter: security newsletters sent to the project address, read by Claude twice a
-      month. (3) conference: a twice-yearly scan of major conferences' talk lists. All
+      month; amended 2026-11-01 (author): newsletters are research only, never shown, and a
+      case first spotted in a newsletter is not entered in the log. (3) conference: a twice-yearly scan of major conferences' talk lists. All
       candidates are confirmed by the author in the hand-check window; counts stay a lower
       bound, and each channel's start date is reported so growth from wider looking is not
       read as growth in attacks.

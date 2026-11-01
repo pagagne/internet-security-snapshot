@@ -301,8 +301,9 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
           "**Part 1, the core data,** is scored: public records of flaws, attacks, fixes and breaches answer the seven "
           "registered questions (T1-T7) and alone decide the labels. **Part 2, the news feeds,** is exploratory: each "
           "month about sixty feeds are read for reports of attacks that used AI, sorted by hand into the AI attack log "
-          "(X3). **Part 3, the GitHub sweep,** is exploratory: each month GitHub is searched for security tools, "
-          "counted by how they use AI and what they do (X25). Parts 2 and 3 give context beside the scores and meet "
+          "(X3). **Part 3, the tool and model sweeps,** is exploratory: each month GitHub is searched for "
+          "security tools and Hugging Face for security-related AI models, counted by how they use AI, what they do "
+          "and whether safety training was removed (X25). Parts 2 and 3 give context beside the scores and meet "
           "Part 1 only in the discussion, never in a label.", "",
           "## Part 1. Core data: the seven scored questions", "",
           "### At a glance", "",
@@ -358,8 +359,8 @@ def flow_diagram(path: Path) -> None:
              ["Quarterly pull, frozen", "and hand-checked"], ["Seven questions T1-T7", "decide the labels"]),
             ("Part 2. News feeds (exploratory)", "#7F77DD", ["About sixty security, government", "and news feeds"],
              ["Monthly screen, sorted", "by hand"], ["AI attack log (X3)", "context only"]),
-            ("Part 3. GitHub sweep (exploratory)", "#BA7517", ["Public GitHub repositories", "(security tools)"],
-             ["Monthly search, counted", "by AI use and tool type"], ["AI tool supply (X25)", "context only"])]
+            ("Part 3. Tool and model sweeps (exploratory)", "#BA7517", ["GitHub security tools,", "Hugging Face AI models"],
+             ["Monthly search, counted by", "AI use, type and safety"], ["AI tool and model supply", "(X25) context only"])]
     for i, (title, colr, a, b, c) in enumerate(cols):
         x = 0.3 + i * 4
         ax.text(x + 1.7, 6.85, title, ha="center", fontsize=10, weight="bold", color=colr)
@@ -447,12 +448,15 @@ def exploratory_parts(key: str, R: dict, explo: Path, rdir: Path) -> list[str]:
               f"[Open the clickable list of articles]({page}).", ""]
     if not months:
         L += ["No feed screen yet.", ""]
-    L += ["## Part 3. GitHub sweep: AI security tools (exploratory)", "",
+    trends = explo / "trends" / f"{R['quarter']}.md"     # optional, our own words (author, 1 Nov 2026)
+    if trends.exists():
+        L += ["### Trends we noticed this quarter", "", trends.read_text().strip(), ""]
+    L += ["## Part 3. Tool and model sweeps: GitHub and Hugging Face (exploratory)", "",
           "*Context only: never part of a score or label.* Each month GitHub is searched for public security tools "
           "in several languages. Each tool is counted once by how it uses AI (a hosted closed model, an open-weight or "
           "local model, both, or none named) and by what it does. Labels describe what a tool does, not who uses it or "
           "why: much attack tooling serves defenders' red teams and the reverse. Tools are counted, never named by "
-          "their owners' usernames.", ""]
+          "their owners' usernames.", "", "### GitHub: AI security tools", ""]
     sweeps = sorted((explo / "ai_tool_sweeps").glob("*.csv"))
     figs = explo / "ai_tool_landscape"
     if sweeps:
@@ -466,6 +470,22 @@ def exploratory_parts(key: str, R: dict, explo: Path, rdir: Path) -> list[str]:
                 L += [f"**{cap}** (sweep of {d})", "", f"![{cap}](charts/{key}-x25-{suffix}.png)", ""]
     else:
         L += ["No GitHub sweep yet.", ""]
+    L += ["### Hugging Face: AI models and apps", "",
+          "Hugging Face is where AI models themselves are published, including open-weight models whose safety "
+          "training has been removed (\"uncensored\" or \"abliterated\" variants). The sweep counts security-related "
+          "models and apps by when they appeared, what they do, and which lab's base model a safety-removed variant "
+          "comes from. Nothing is downloaded or run; individuals' items are never named by username.", ""]
+    hf = sorted(figs.glob("hf-*-1-new-per-month.png")) if figs.exists() else []
+    if hf:
+        d = hf[-1].name[3:13]
+        for suffix, cap in (("1-new-per-month", "New security-related models and apps per month"),
+                            ("2-safety-removed-by-lab", "Safety-removed models, by the lab of their base model")):
+            f = figs / f"hf-{d}-{suffix}.png"
+            if f.exists():
+                shutil.copy(f, charts / f"{key}-hf-{suffix}.png")
+                L += [f"**{cap}** (sweep of {d})", "", f"![{cap}](charts/{key}-hf-{suffix}.png)", ""]
+    else:
+        L += ["No Hugging Face sweep yet.", ""]
     return L
 
 

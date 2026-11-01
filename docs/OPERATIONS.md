@@ -122,10 +122,12 @@ organisation; surprising claims need a second independent source; each logged re
 fingerprinted and archived (Research task `x3_sources`). New feeds go into `config/feeds.yaml`
 with their official domain (checked against the organisation's own website), HTTPS and a trust
 level; a test refuses anything else.
-The same routine applies to the three wider channels added 29 Oct (author): the monthly Feed
-screen issue (`found_via: feed_screen`), the newsletters in the author's Gmail label
-"Snapshot newsletters" (read on the 8th and 22nd, `found_via: newsletter`) and the twice-yearly
-conference scan (`found_via: conference`).
+The same routine applies to the wider channels added 29 Oct (author): the monthly Feed screen
+issue (`found_via: feed_screen`) and the twice-yearly conference scan (`found_via: conference`).
+The newsletters in the author's Gmail label "Snapshot newsletters" (read on the 8th and 22nd)
+are research only since 1 Nov 2026 (author): never shown in a report or on the landing page,
+and a case first spotted in a newsletter is not entered in the AI attack log. What they show
+may inform an optional trends summary written in our own words.
 
 ## The project's email address
 `internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)

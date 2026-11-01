@@ -143,21 +143,23 @@ items:
     SANS NewsBites is left out for now (author, 1 Nov: its terms restrict AI use; revisited 18 Nov).
     Then in your own Gmail make a filter for mail delivered to the project address that has
     "unsubscribe": apply the label "Snapshot newsletters" and skip the inbox. Tell Claude which
-    ones you subscribed to; Claude reads that label twice a month (8th and 22nd).
+    ones you subscribed to; Claude reads that label twice a month (8th and 22nd) for research
+    only: nothing from them is shown, and they do not feed the AI attack log (author, 1 Nov).
 
 - id: newsletter-read
   owner: claude
-  title: Read the "Snapshot newsletters" label for AI-attack cases
+  title: Read the "Snapshot newsletters" label (research only)
   repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 8, from: 2026-11, until: 2027-12}
   details: >
-    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address):
-    log new AI-using attacks in exploratory/ai_attack_campaigns.csv (found_via: newsletter,
-    ai_evidence: unrated) or record exclusions in the sweep log; rebuild the catalogue. Also on
-    the 22nd (newsletter-read-2).
+    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address).
+    Research only (author, 1 Nov 2026): nothing from the newsletters is shown in a report or on
+    the landing page, and cases first spotted there are not entered in the AI attack log. Note
+    trends worth discussing with the author, for an optional trends summary in our own words
+    (exploratory/trends/<quarter>.md, private until used). Also on the 22nd (newsletter-read-2).
 
 - id: newsletter-read-2
   owner: claude
-  title: Read the "Snapshot newsletters" label for AI-attack cases (second half of the month)
+  title: Read the "Snapshot newsletters" label (research only; second half of the month)
   repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 22, from: 2026-11, until: 2027-12}
   details: As newsletter-read.
 
