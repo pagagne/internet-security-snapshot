@@ -171,6 +171,24 @@ def _n(v, pct=False):
     return f"{100 * v:.0f}%" if pct else (f"{v:,.0f}" if float(v).is_integer() else f"{v:,.1f}")
 
 
+RUN_REPORTS = "https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/"
+# Draft introduction for the landing page (author, 1 Nov 2026: Claude drafts, reviewed on 6 Nov)
+INTRO_DRAFT = [
+    "## What this page is",
+    "",
+    "The Internet Security Snapshot measures, every quarter through 2027, whether defenders are fixing "
+    "internet-facing software flaws faster than attackers start exploiting them, and how AI is changing "
+    "that race. It uses free public data only, on a plan registered in advance, so the results cannot be "
+    "bent to fit a story.",
+    "",
+    "**How to read it.** The banner at the top shows whether each data source answered today, and the line "
+    "under it what happened last in the study and what comes next. The rings show how much of the data the "
+    "study needs is already collected. The timeline shows where the study stands. The latest results follow: "
+    "one chart per question, each linking to the full report, with every quarter's provisional and final "
+    "report kept as its own page and PDF. A result is labelled Improving, Worsening, Rising or Falling only "
+    "when the registered rule says so; a label is never proof of a cause, including AI.",
+    "",
+]
 REPORTS: dict = {}    # filled by main() from snapshot.reportpage.build (report pages and charts)
 
 
@@ -207,9 +225,15 @@ def draft_section(root: Path, name: str) -> list[str]:
     if name == "results":
         return results_section(root)
     if name == "timeline":
-        return ["## Where the study stands", "", "![Study timeline](timeline.png)", "",
+        return ["## Where the study stands", "", f"![Study timeline]({RUN_REPORTS}landing/timeline.png)", "",
                 "*Drawn daily from the study calendar (docs/schedule/schedule.yaml): ticks are done, the dashed "
                 "line is today.*", ""]
+    if name == "news":
+        return ["<picture>", f'  <source media="(prefers-color-scheme: dark)" srcset="{RUN_REPORTS}landing/news-dark.svg">',
+                f'  <img alt="Latest and next milestone of the study, from its calendar" src="{RUN_REPORTS}landing/news-light.svg">',
+                "</picture>", ""]
+    if name == "intro":
+        return list(INTRO_DRAFT)
     if name == "x25":
         date, figs = x25_figures(root)
         if figs:

@@ -439,6 +439,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:landing-intro-review@2026-11-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261106T153000Z
+DTEND:20261106T154500Z
+SUMMARY:[Paul] Snapshot: Review Claude's draft introduction for the landing
+  page
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 1 Nov 2026: C
+ laude drafted "What this page is" (how to read the banner\, news line\, ri
+ ngs\, timeline and results). Read it in the private mirror (go-live/README
+ .md) at the go-live review\; say what to change.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-sweep-author-check@2026-11-06@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261106T160000Z

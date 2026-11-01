@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 from pathlib import Path
 
 QUESTIONS = [
@@ -36,6 +37,21 @@ QUESTIONS = [
      "Ransomware leak-site postings (totals only) and SEC cyber-incident filings per 1,000 companies."),
     ("T7", "AI's share", "How often are AI tools credited with finding flaws?",
      "Share of the quarter's CVE records whose credits mention an AI tool or AI lab, with a floor and ceiling."),
+]
+GROUPS = [   # "At a glance" themes (author, 1 Nov 2026): plain heading, why it matters, its questions
+    ("The race and the speed of attack", ["T1", "T3"],
+     "Whether defenders get fixes out before attackers strike, and how quickly newly published flaws are "
+     "attacked. A longer gap from fix to attack is good news for defenders; a shorter gap from publication "
+     "to attack means less time to patch."),
+    ("How long flaws stay exposed", ["T2", "T4"],
+     "How fast vulnerable systems disappear from the internet after a fix, and how much attack traffic still "
+     "targets flaws over a year old. Both need Shadowserver's data, which is awaiting permission."),
+    ("How many flaws and breaches", ["T5", "T6"],
+     "The pressure on defenders: how many new flaws are published compared with the same quarter in earlier "
+     "years, and how many ransomware postings and company breach filings appear."),
+    ("AI's role", ["T7"],
+     "How often the people credited with finding a flaw mention an AI tool or AI lab: a floor (the tool is "
+     "named in a clear role), a headline and a ceiling, since credits rarely say how a flaw was found."),
 ]
 ACCENT, GRAY, LIGHT = "#1D9E75", "#B4B2A9", "#D3D1C7"
 
@@ -192,6 +208,51 @@ def schedule_points() -> list[tuple[dt.date, str]]:
     return sorted(out)
 
 
+NEWS_THEMES = {"light": {"text": "#1f2328", "muted": "#59636e", "accent": "#1D9E75"},
+               "dark": {"text": "#e6edf3", "muted": "#9198a1", "accent": "#5DCAA5"}}
+
+
+def news(today: dt.date) -> tuple[str, str]:
+    """Latest and next milestone from the study calendar (author, 1 Nov 2026: a one-line status
+    under the banner, written automatically)."""
+    from . import schedule as S
+    table = S.readme_table(S.expand(S.load()), S.load_milestones())
+    rows = []
+    for line in table.split("\n")[2:]:
+        when, text = [c.strip() for c in line.strip().strip("|").split("|", 1)]
+        first = re.search(r"(\d{1,2})(?:-\d{1,2})? ([A-Z][a-z]{2})", when)
+        year = re.search(r"(\d{4})", when)
+        if first and year:
+            rows.append((dt.datetime.strptime(f"{first[1]} {first[2]} {year[1]}", "%d %b %Y").date(), text.strip()))
+    rows.sort()
+    last = [r for r in rows if r[0] <= today][-1:] or [(None, "")]
+    nxt = [r for r in rows if r[0] > today][:1] or [(None, "")]
+    f = lambda r: f"{r[1]} ({r[0].day} {r[0]:%b %Y})" if r[0] else "-"
+    return f(last[0]), f(nxt[0])
+
+
+def news_svg(today: dt.date, theme: str) -> str:
+    from xml.sax.saxutils import escape
+    c = NEWS_THEMES[theme]
+    last, nxt = news(today)
+    cut = lambda s: s if len(s) <= 110 else s[:107] + "..."
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="780" height="46" viewBox="0 0 780 46" '
+            f'font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" role="img" '
+            f'aria-label="Latest: {escape(last)}. Next: {escape(nxt)}">'
+            f'<text x="0" y="17" font-size="12" fill="{c["text"]}"><tspan font-weight="600" fill="{c["accent"]}">Latest </tspan>'
+            f'{escape(cut(last))}</text>'
+            f'<text x="0" y="38" font-size="12" fill="{c["muted"]}"><tspan font-weight="600">Next </tspan>{escape(cut(nxt))}</text>'
+            "</svg>\n")
+
+
+def daily(out: Path, today: dt.date | None = None) -> None:
+    """Drawn every day by the Source status run: the timeline strip and the news line."""
+    today = today or dt.date.today()
+    timeline(schedule_points(), today, out / "timeline.png")
+    for theme in NEWS_THEMES:
+        (out / f"news-{theme}.svg").write_text(news_svg(today, theme))
+
+
 def _n(v, pct=False):
     if v is None:
         return "-"
@@ -230,11 +291,20 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
               + (f"The final report: [{final_key}]({final_key}.md)." if final_key else
                  "The final report follows one month later; this page then stays as it is, with a link to it."), ""]
     L += [f"PDF archive copy: [{key}.pdf]({key}.pdf)" + (" (simulation; not for citation)" if simulation else ""), "",
-          "## At a glance", "", "| Question | This quarter | 90% interval or range | Label |", "|---|---|---|---|"]
-    L += [f"| {a} | {b} | {c} | {'simulation' if simulation else 'see section'} |" for a, b, c in summary_rows(R)]
-    L += ["", "Labels (Improving, Worsening, Rising, Falling or No clear direction) are given from Q1 2027 by "
-          "the registered rule, each with its companion check. "
-          + ("None in a practice quarter." if simulation else ""), ""]
+          "## At a glance", "",
+          "Labels (Improving, Worsening, Rising, Falling or No clear direction) are given from Q1 2027 by the "
+          "registered rule, each with its companion check. " + ("None in a practice quarter." if simulation else ""), ""]
+    rows = summary_rows(R)
+    for head, qids, why in GROUPS:
+        L += [f"### {head}", "", why, ""]
+        L += [f"- **{a}:** {b}" + (f" (90% interval or range: {c})" if c != "-" else "")
+              for a, b, c in rows if a.split()[0] in qids]
+        L.append("")
+    L += ["<sub>All figures in one table:</sub>", "", "| <sub>Question</sub> | <sub>This quarter</sub> | "
+          "<sub>90% interval or range</sub> | <sub>Label</sub> |", "|---|---|---|---|"]
+    L += [f"| <sub>{a}</sub> | <sub>{b}</sub> | <sub>{c}</sub> | <sub>{'simulation' if simulation else 'see section'}</sub> |"
+          for a, b, c in rows]
+    L.append("")
     for qid, name, ask, how in QUESTIONS:
         L += [f"## {qid}. {name}", "", f"*{ask}*", "", how, "", f"![{qid}](charts/{key}-{qid}.png)", ""]
         if qid == "T1":
@@ -296,10 +366,15 @@ def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["build"])
-    ap.add_argument("--results", required=True, type=Path)
+    ap.add_argument("cmd", choices=["build", "daily"])
+    ap.add_argument("--results", type=Path)
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)
+    if a.cmd == "daily":
+        a.out.mkdir(parents=True, exist_ok=True)
+        daily(a.out)
+        print("timeline and news line drawn")
+        return 0
     info = build(a.results, a.out)
     print(f"reports: {len(info['keys'])}; latest {info['latest']}")
     return 0

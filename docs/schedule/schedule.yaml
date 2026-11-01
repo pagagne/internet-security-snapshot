@@ -1288,6 +1288,17 @@ items:
     mirror of the landing page built from config/landing_layout.yaml, with a simulated results
     section (latest practice evaluation) and a practice flip (go-live/FLIP_PREVIEW.md).
 
+- id: landing-intro-review
+  owner: author
+  title: Review Claude's draft introduction for the landing page
+  date: 2026-11-06
+  time: "10:30"
+  minutes: 15
+  details: >
+    Author's decision, 1 Nov 2026: Claude drafted "What this page is" (how to read the banner, news
+    line, rings, timeline and results). Read it in the private mirror (go-live/README.md) at the
+    go-live review; say what to change.
+
 - id: landing-flip-workflow
   owner: claude
   title: Build the guarded landing-page flip workflow (run button, practice flip, privacy checks)

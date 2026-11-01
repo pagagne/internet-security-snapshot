@@ -35,11 +35,12 @@ blockquote { border-left: 3px solid #BA7517; margin: 6pt 0; padding: 2pt 10pt; c
 img { max-width: 100%; break-inside: avoid; display: block; margin: 6pt auto; }
 .cover { border: 1px solid #d0d7de; padding: 6pt 10pt; margin-bottom: 10pt; font-size: 9pt; color: #444; }
 .sim { color: #BA7517; font-weight: bold; }
+sub { font-size: 7.5pt; vertical-align: baseline; } h3 { font-size: 11pt; margin: 10pt 0 4pt; }
 """
 
 
 def _inline(s: str, base: Path) -> str:
-    s = html.escape(s, quote=False)
+    s = html.escape(s, quote=False).replace("&lt;sub&gt;", "<sub>").replace("&lt;/sub&gt;", "</sub>")
     s = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", lambda m: _img(m[2], m[1], base), s)
     s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", s)

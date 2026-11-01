@@ -37,3 +37,18 @@ def test_pdf_markdown_subset(tmp_path):
     assert "<h1>Title</h1>" in h and "<blockquote><b>SIM</b> note</blockquote>" in h
     assert "<th>a</th>" in h and "<td><i>x</i></td>" in h and '<li><a href="t.md">two</a></li>' in h
     assert '<img src="missing.png"' in h
+
+
+def test_news_and_daily(tmp_path):
+    last, nxt = RP.news(dt.date(2027, 1, 10))
+    assert "2027" in last and nxt and last != nxt
+    RP.daily(tmp_path, dt.date(2026, 11, 1))
+    assert (tmp_path / "timeline.png").exists()
+    svg = (tmp_path / "news-light.svg").read_text()
+    assert "Latest" in svg and "Next" in svg and (tmp_path / "news-dark.svg").exists()
+
+
+def test_at_a_glance_grouped(tmp_path):
+    md = RP.report_md("2026Q3-final", R | {"_source": "x"}, [], True, None)
+    assert md.index("### The race and the speed of attack") < md.index("### AI's role") < md.index("<sub>All figures")
+    assert "- **T1 The race" in md and "| <sub>T7" in md
