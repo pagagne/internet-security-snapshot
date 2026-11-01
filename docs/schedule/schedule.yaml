@@ -483,6 +483,7 @@ items:
   owner: claude
   title: Wire the race list and the quarterly evaluation into the pull, before the 1 Dec dry run
   date: 2026-11-24
+  done: "1 Nov 2026 (moved up at the author's request; tested on a Q3 2026 dry-run pull)"
   details: >
     Found in the 1 Nov quality check: the quarterly pull does not yet build the race list (every
     flaw first added to CISA KEV in the quarter, option a) or run the evaluation; only the private

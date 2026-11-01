@@ -59,7 +59,10 @@ ACCENT, GRAY, LIGHT = "#1D9E75", "#B4B2A9", "#D3D1C7"
 def load_results(d: Path) -> list[tuple[str, dict]]:
     """Every evaluation result under d, newest per quarter and run kept: [(key, R)] sorted."""
     best: dict[str, tuple[str, dict]] = {}
-    for f in sorted(d.glob("*practice_eval/practice_eval.json")) if d.exists() else []:
+    found = sorted(d.glob("*practice_eval/practice_eval.json")) if d.exists() else []
+    ev = d.parent / "evaluations"                 # evaluations made by the Quarterly pull (1 Nov 2026)
+    found += sorted(ev.glob("*/evaluation.json")) if ev.exists() else []
+    for f in sorted(found, key=lambda p: p.parent.name):
         R = json.loads(f.read_text())
         key = f"{R['quarter']}-{R.get('run', 'final')}"
         best[key] = (f.parent.name, R)           # later folders (newer runs) win

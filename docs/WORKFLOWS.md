@@ -56,7 +56,12 @@ GitHub's API. No Run button: it contacts every data source.
    permission) out of the public copy.
 4. Counts any refusals from a source's server (HTTP 403 or 429, "server pushback") so the run
    report shows at once if a source starts treating the study's downloads as unwelcome.
-5. Writes a data-quality report and the list for the author's hand check.
+5. Writes a data-quality report (with the published-count check against NVD) and the list for
+   the author's hand check, including, since 1 Nov 2026, the race list: every flaw first added
+   to CISA KEV in the quarter, with its fix date pre-filled.
+6. Since 1 Nov 2026: evaluates the frozen bundle (the registered measures the free sources
+   allow) and saves the result to the private repository until the author's review; the private
+   rebuild then makes the report page, its charts and its PDF.
 
 **What it produces:** the public bundle (kept on GitHub for 90 days), a tag marking the run, a
 run report on the run-reports branch, and the full bundle, including the private part, in the

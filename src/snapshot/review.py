@@ -159,12 +159,46 @@ def retest_rows(cve: pd.DataFrame, earlier: list[dict], months: list[str]) -> li
     return out
 
 
+def race_rows(cve: pd.DataFrame, kev: pd.DataFrame, quarter: str, pause: float = 0.3) -> list[dict]:
+    """The race list (option a, decided 23 Oct 2026): every flaw first added to CISA KEV in the
+    quarter, with its fix date pre-filled by snapshot.fixdates.prefill_exploited (vendor sources,
+    OSV fixing commits, deps.dev releases, dated advisory links, the CVE disclosure date) for the
+    author to confirm or correct. Built into the pull on 1 Nov 2026 (quality check finding)."""
+    import time
+    from .fixdates import prefill_exploited
+    q = Quarter.parse(quarter)
+    qs, qe = pd.Timestamp(q.start), pd.Timestamp(q.end) + pd.Timedelta(days=1)
+    added = pd.to_datetime(kev["date_added"], utc=True, errors="coerce").dt.tz_localize(None)
+    kq = kev[(added >= qs) & (added < qe)].assign(added_ts=added)
+    recs = cve.set_index("cve_id")
+    lst = lambda x: [] if x is None or (isinstance(x, float) and pd.isna(x)) else list(x)
+    rows = []
+    for k in kq.sort_values(["added_ts", "cve_id"]).itertuples():
+        r = recs.loc[k.cve_id] if k.cve_id in recs.index else None
+        if isinstance(r, pd.DataFrame):
+            r = r.iloc[0]
+        refs = (lst(r.get("fix_links")) + lst(r.get("ref_links"))) if r is not None else []
+        pub = str(r["date_published"])[:10] if r is not None and pd.notna(r["date_published"]) else ""
+        dp = r.get("date_public") if r is not None else None
+        dp = str(dp)[:10] if dp is not None and pd.notna(dp) else ""
+        d, src, hand = prefill_exploited(k.cve_id, refs, str(getattr(k, "vendor", "") or ""), pub or str(k.added_ts)[:10], dp)
+        rows.append({"month": str(k.added_ts)[:7], "slot": "race", "draw_rank": "", "cve_id": k.cve_id,
+                     "product": f"{getattr(k, 'vendor', '')} {getattr(k, 'product', '')}".strip(), "published": pub,
+                     "task": "patch_date",
+                     "question": f"Race list: when was the fix first available? (attacked by {str(k.added_ts)[:10]}, CISA KEV)"
+                                 + (" Check this one." if hand else ""),
+                     "links": " ".join(refs[:3]), "answer": "", "patch_date": d, "patch_source": src, "notes": ""})
+        time.sleep(pause)
+    return rows
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--cve", required=True, type=Path)
     ap.add_argument("--months", nargs="+", help="YYYY-MM months (or use --quarter)")
     ap.add_argument("--quarter", help="e.g. 2026Q3: its three months")
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--kev", type=Path, help="kev_entries.parquet: adds the race list (every flaw first added to KEV)")
     ap.add_argument("--decisions", type=Path, default=Path("review/decisions.csv"),
                     help="earlier scored decisions; decided credit texts are not asked again")
     a = ap.parse_args(argv)
@@ -185,6 +219,8 @@ def main(argv=None) -> int:
                      "patch_date": "", "patch_source": f"no fix yet as of {r['checked_on']}"})
     rows += credit_rows(cve, a.months, decided_credits(a.decisions))
     rows += retest_rows(cve, retest_items(a.decisions, RETEST_N, seed=",".join(a.months)), a.months)
+    if a.kev and a.kev.exists() and a.quarter:
+        rows += race_rows(cve, pd.read_parquet(a.kev), a.quarter)
     if CARRIED:
         print(f"{len(CARRIED)} credit texts carried over from earlier decisions")
     a.out.parent.mkdir(parents=True, exist_ok=True)
