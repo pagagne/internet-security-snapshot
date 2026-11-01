@@ -1227,7 +1227,9 @@ items:
     a token (five spaced searches) to see whether Gitee's API search has opened; and check the
     labels of the most-starred tools in a re-run of the tool sweep under the new rules (some attack
     agents may stay dual-use because broad defensive words such as fix, monitor or patch appear in
-    their descriptions). Findings to the author.
+    their descriptions). Findings to the author. Updated 1 Nov: the label rules were tightened and
+    tested that day; on 18 Nov also spot-check the left-out list (left_out.csv in the Drive folder of
+    the next sweep) to make sure the relevance filter does not drop real tools.
 
 - id: x25-refine-approve
   owner: author

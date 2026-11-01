@@ -682,8 +682,11 @@ DESCRIPTION:Responsible: Claude\n\nLeft over from the rules decided early o
  labels of the most-starred tools in a re-run of the tool sweep under the n
  ew rules (some attack agents may stay dual-use because broad defensive wor
  ds such as fix\, monitor or patch appear in their descriptions). Findings 
- to the author.\n\nSource: https://github.com/pagagne/internet-security-sna
- pshot/blob/main/docs/schedule/schedule.yaml
+ to the author. Updated 1 Nov: the label rules were tightened and tested th
+ at day\; on 18 Nov also spot-check the left-out list (left_out.csv in the 
+ Drive folder of the next sweep) to make sure the relevance filter does not
+  drop real tools.\n\nSource: https://github.com/pagagne/internet-security-
+ snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

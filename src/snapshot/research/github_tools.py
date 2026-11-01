@@ -423,6 +423,8 @@ def main(argv=None) -> int:
     with (PRIVATE_OUT / "tools_full.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["full_name", "url"] + PUBLIC + ["queries"], extrasaction="ignore")
         w.writeheader(); w.writerows(rows)
+    with (PRIVATE_OUT / "left_out.csv").open("w", newline="") as fh:   # for the author's spot check (1 Nov 2026)
+        w = csv.writer(fh); w.writerow(["full_name"]); w.writerows([n] for n in sorted(LEFT_OUT))
     orig = [r for r in rows if not r["is_fork"]]
     for fname, cols in (("tools.csv", PUBLIC), ("compact.csv", COMPACT)):
         with (a.out / fname).open("w", newline="") as fh:
