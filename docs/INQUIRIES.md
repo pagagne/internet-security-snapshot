@@ -78,3 +78,9 @@ Started 25 Oct 2026 at the author's request.
   counts agree, and whole-year totals agree with a published independent review, so the rise is
   real, not a counting error. Open question: an official per-quarter CVE.org count (none found).
 
+- **1 Nov 2026: extra fix-date sources tested.** OSV/GitHub advisories, deps.dev, vendor CSAF
+  and Debian/Ubuntu tried on Q3 2026's exploited flaws (private task `fixdate_sources`). Small
+  real gains (OSV fixing commits, deps.dev releases, dated advisory links); GitHub advisory
+  publication dates are CVE mirror dates, not fix dates; commercial vendors rarely publish CSAF.
+  The hand check remains the route for most commercial flaws.
+
