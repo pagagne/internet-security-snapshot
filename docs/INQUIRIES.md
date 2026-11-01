@@ -71,3 +71,10 @@ Started 25 Oct 2026 at the author's request.
 | 2026-10-31 | Author | Finished items should stay in the calendar but show as completed. | **Built:** an item's optional `done` field (or the older "- done ..." in its title) puts "✅ DONE" at the start of its calendar entry; done items open no issue and start no run. The trial-sweep recheck (2 Nov) is marked done (finished 31 Oct). The new calendar feed (`snapshot.ics?v=1031`) was subscribed by the author and the old copy removed. |
 | 2026-10-31 | Author | Test the GitHub notification flow end to end. | Four harmless failing test runs (unknown research task name, changes nothing). Test 1 (12:56 ET) reached the personal address directly; after the author set GitHub's default notification email to the project address, tests 2 and 3 reached only the project mailbox, because its forwarding was switched off. The author switched forwarding on (19:52 ET); **test 4 (19:53 ET) arrived in the personal mailbox through the project address**: GitHub alerts now reach the author end to end. The author is also verifying the project address in his GitHub account (pagagne). |
 | 2026-11-01 | Author | How would we analyse the Q3 2026 final pull, and what would it look like? | Explained (Q3 2026 is outside the study; five core measures computable, three waiting on Shadowserver and VulnCheck; no labels without four earlier quarters; a short report page plus worksheets). **Author's decision:** run a private practice evaluation now, judged only on whether the method works, so its figures cannot sway the 21 Dec core-freeze decisions. Built as the Research task `practice_eval` (reads the pull's frozen bundle; results private). |
+
+- **1 Nov 2026: published-count cross-check (I5).** At the author's request the count of
+  published CVE records is now checked against NVD's own count in every quarterly pull (data
+  quality report, section 2b; flagged above 5%). First check on the Q3 2026 practice run: the
+  counts agree, and whole-year totals agree with a published independent review, so the rise is
+  real, not a counting error. Open question: an official per-quarter CVE.org count (none found).
+
