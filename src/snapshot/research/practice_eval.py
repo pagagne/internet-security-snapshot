@@ -68,7 +68,7 @@ def registrants() -> int | None:
         return None
 
 
-def evaluate(bundle: Path, pause: float = 0.3) -> tuple[dict, pd.DataFrame]:
+def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataFrame]:
     man = json.loads((bundle / "manifest.json").read_text())
     q = Quarter.parse(man["quarter"])
     qs, qe = pd.Timestamp(q.start), pd.Timestamp(q.end)
@@ -86,6 +86,12 @@ def evaluate(bundle: Path, pause: float = 0.3) -> tuple[dict, pd.DataFrame]:
     yrs = {y: count(y) for y in range(qs.year - 3, qs.year + 1)}
     R["I5"] = {"published_by_year": yrs,
                "yoy_growth_pct": round(100 * (yrs[qs.year] / yrs[qs.year - 1] - 1), 1) if yrs.get(qs.year - 1) else None}
+    # Cross-checks of the count (author, 1 Nov 2026): NVD's own count for the same windows, and
+    # whole calendar years, which published reviews quote (e.g. 2024 and 2025 totals)
+    from .. import quality
+    _, R["I5_count_check"] = quality.count_check(cve, q, nvd=nvd or quality.nvd_published_count)
+    R["I5_calendar_years"] = {y: int(((pubd["pub"] >= pd.Timestamp(f"{y}-01-01")) & (pubd["pub"] < pd.Timestamp(f"{y + 1}-01-01"))).sum())
+                              for y in range(qs.year - 3, qs.year)}
 
     # I8: AI-credited share (range)
     qc = pubd[(pubd["pub"] >= qs) & (pubd["pub"] < qe + pd.Timedelta(days=1))]
@@ -144,6 +150,8 @@ def report(R: dict) -> str:
     for key, title in (("I2", "I2. Days from publication to first exploitation"),
                        ("I3", "I3. The race: days from the fix to first exploitation (option a)"),
                        ("I5", "I5. Growth in published CVE records"),
+                       ("I5_count_check", "I5 check: our counts against NVD's"),
+                       ("I5_calendar_years", "I5 check: whole calendar years (compare with published reviews)"),
                        ("I8", "I8. AI-credited share (range)")):
         L += [f"## {title}", ""] + [f"- {k}: {_fmt(v)}" for k, v in R[key].items()] + ["", "Label: not given (needs four earlier quarters).", ""]
     L += ["## I7. Breaches and ransomware", ""]

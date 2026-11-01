@@ -11,6 +11,7 @@ feeds a label.
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import sys
 from pathlib import Path
@@ -38,6 +39,63 @@ def _has_names(affected) -> bool:
 
 def _utc(s: pd.Series) -> pd.Series:
     return pd.to_datetime(s, utc=True, errors="coerce")
+
+
+NVD_API = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+COUNT_TOLERANCE = 0.05   # flag when our count and NVD's differ by more than 5% (author, 1 Nov 2026)
+
+
+def nvd_published_count(start: dt.date, end: dt.date, pause: float = 7.0) -> int | None:
+    """Independent count of CVEs published in [start, end] (rejected excluded), from the NVD API
+    (one light request; the API allows windows up to 120 days). None if it cannot be read."""
+    import os
+    import time
+    import requests
+    from .collect.http import UA
+    params = {"pubStartDate": f"{start}T00:00:00.000", "pubEndDate": f"{end}T23:59:59.999",
+              "noRejected": "", "resultsPerPage": 1}
+    headers = {"User-Agent": UA}
+    if os.environ.get("NVD_API_KEY"):
+        headers["apiKey"] = os.environ["NVD_API_KEY"]
+    for attempt in range(3):
+        try:
+            time.sleep(pause)
+            r = requests.get(NVD_API, params=params, headers=headers, timeout=90)
+            if r.ok:
+                return int(r.json().get("totalResults"))
+        except Exception:  # noqa: BLE001
+            pass
+    return None
+
+
+def count_check(cve: pd.DataFrame, q, years: int = 4, nvd=None) -> tuple[list[str], dict]:
+    """I5 cross-check, part of every pull (author, 1 Nov 2026): CVE records published in this
+    quarter and the same quarter of earlier years, from our bundle and independently from NVD.
+    The NVD lookup runs only when SNAPSHOT_COUNT_CHECK=1 (set by the pull workflow), so tests and
+    offline rebuilds make no network requests."""
+    import os
+    if nvd is None:
+        nvd = nvd_published_count if os.environ.get("SNAPSHOT_COUNT_CHECK") == "1" else (lambda s, e: None)
+    pub = cve[cve["state"] == "PUBLISHED"]
+    d = _utc(pub["date_published"])
+    rows, flags = [], []
+    for k in range(years - 1, -1, -1):
+        s, e = dt.date(q.start.year - k, q.start.month, q.start.day), dt.date(q.end.year - k, q.end.month, q.end.day)
+        ours = int(((d >= pd.Timestamp(s, tz="UTC")) & (d < pd.Timestamp(e, tz="UTC") + pd.Timedelta(days=1))).sum())
+        theirs = nvd(s, e)
+        diff = None if not theirs else round((ours - theirs) / theirs, 3)
+        if diff is not None and abs(diff) > COUNT_TOLERANCE:
+            flags.append(f"{s.year}: ours {ours:,}, NVD {theirs:,} ({diff:+.1%})")
+        rows.append({"year": s.year, "ours": ours, "nvd": theirs, "diff": diff})
+    L = ["## 2b. Published-count cross-check (I5)", "",
+         "CVE records published in this quarter and the same quarter of earlier years: our count from the "
+         "CVE List against NVD's own count for the same dates (rejected records excluded). A difference over "
+         f"{COUNT_TOLERANCE:.0%} is flagged; dates can differ by a day between the two.", "",
+         "| Year | Our count | NVD count | Difference |", "|---|---|---|---|"]
+    L += [f"| {r['year']} | {r['ours']:,} | {r['nvd'] if r['nvd'] is None else format(r['nvd'], ',')} | "
+          f"{'-' if r['diff'] is None else format(r['diff'], '+.1%')} |" for r in rows]
+    L += ["", ("- **Flagged:** " + "; ".join(flags)) if flags else "- Counts agree within tolerance.", ""]
+    return L, {"rows": rows, "flags": flags}
 
 
 def build(bundle: Path) -> tuple[str, dict]:
@@ -92,6 +150,12 @@ def build(bundle: Path) -> tuple[str, dict]:
                 L.append(f"- Days from publication to CISA scoring: median {lag.median():.1f}, 90th percentile {lag.quantile(.9):.1f}")
         M.update(cvss_rate=float(has_cvss.mean()) if n else None, cwe_rate=float(has_cwe.mean()) if n else None)
         L.append("")
+        try:
+            cl, cm = count_check(cve, q)
+            L += cl
+            M["count_check"] = cm
+        except Exception as exc:  # never hide the rest of the report
+            L += ["## 2b. Published-count cross-check (I5)", "", f"- Not run: {type(exc).__name__}", ""]
 
     # 3. NVD agreement and delays -------------------------------------------------
     if nvd is not None and qc is not None:

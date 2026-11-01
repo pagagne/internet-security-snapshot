@@ -23,7 +23,7 @@ def test_practice_evaluation_runs(tmp_path, monkeypatch):
                   {"cve_id": "CVE-2026-1", "vendor": "Acme", "date_added": pd.Timestamp("2026-08-03", tz="UTC")}]
                  ).to_parquet(b / "kev/kev_entries.parquet")
     monkeypatch.setattr(P, "prefill_exploited", lambda c, refs, v, pub, dp="": ("2026-07-10", "github fix commit", False))
-    R, ev = P.evaluate(b, pause=0)
+    R, ev = P.evaluate(b, pause=0, nvd=lambda s, e: None)
     assert R["kev_added_in_quarter"] == 2 and R["I5"]["published_by_year"][2026] == 2
     assert R["I8"]["ceiling"] == 1 and "not_computable" in R
     text = P.report(R)

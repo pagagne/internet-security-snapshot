@@ -76,6 +76,10 @@ jobs:
         if: always()
         # Writes quality.md/json into each bundle, adds it to the run summary, and posts it
         # as a public notice so it can be read without downloading the bundle.
+        # Includes the published-count cross-check against NVD (section 2b; author, 1 Nov 2026).
+        env:
+          SNAPSHOT_COUNT_CHECK: "1"
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
           # Previous run's metrics, for the drift checks
           git fetch -q origin run-reports 2>/dev/null && prev=$(git ls-tree -r --name-only FETCH_HEAD | grep 'quality-.*\.json$' | sort | tail -1)
