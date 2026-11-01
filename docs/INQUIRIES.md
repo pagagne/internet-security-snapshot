@@ -89,3 +89,19 @@ Started 25 Oct 2026 at the author's request.
   growth rate and as a seasonally adjusted level. Scheduled as core-freeze item 25 (notes in
   `docs/decisions/I5_BASELINE_NOTES.md`; evidence 14 Dec, author reads 18 Dec, decided 21 Dec).
 
+- **1 Nov 2026: how is AI affecting cryptocurrencies? (author; research question, no decision yet).**
+  Claude's quick review of public reporting, for the author: (1) crime: blockchain-analytics
+  firms report that scam operations linked to AI tooling vendors take in several times more than
+  others and that impersonation scams rose sharply in 2025 (Chainalysis 2026 report, as covered
+  in the press); (2) offence research: Anthropic's SCONE-bench (Dec 2025) showed AI agents writing
+  working exploits for about half of 405 historical smart-contract hacks in simulation and finding
+  two new flaws; (3) the record Binance theft of 29 Oct 2026 (about USD 6.3 billion, attributed by
+  TRM Labs to North Korea's TraderTraitor) has no public evidence of AI use by the attackers;
+  (4) infrastructure: bitcoin miners are moving capacity and revenue to AI data centres, with
+  hashrate falling from its October 2025 peak; (5) payments: AI agents paying in stablecoins
+  (Coinbase's x402) and crypto-funded cards used to reach AI services from restricted countries.
+  Relevance to the study: AI-enabled fraud is already a category of the X3 attack log, and
+  smart-contract tools fall within the X25 sweep; any new search terms for crypto would be a
+  question for the 18 Nov refinement. Two documents the author shared from other AI assistants
+  were read as leads only; claims not found in primary sources are treated as unverified.
+
