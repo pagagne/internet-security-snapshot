@@ -339,7 +339,10 @@ def main(argv=None) -> int:
     readme = (root / "README.md").read_text()
     from . import reportpage
     REPORTS.clear()
-    REPORTS.update(reportpage.build(_practice_dir(root), a.out, simulation=True))   # every run, end to end
+    if (root / "exploratory/ai_attack_campaigns.csv").exists():
+        attack_log_chart(root)                   # the report's Part 2 uses it
+    REPORTS.update(reportpage.build(_practice_dir(root), a.out, simulation=True,
+                                    explo=(root / "exploratory").resolve()))   # every run, end to end
     (a.out / "README.md").write_text(build_text(root, readme))
     preview, _ = flip_check(root, readme, load_layout(root))
     (a.out / "FLIP_PREVIEW.md").write_text("<!-- What the public README would be after the flip (dry run). -->\n" + preview)

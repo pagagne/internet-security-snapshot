@@ -24,7 +24,7 @@ def test_build_end_to_end(tmp_path, monkeypatch):
     info = RP.build(res, tmp_path / "out", today=dt.date(2026, 11, 1), pdf=False)
     assert info["keys"] == ["2026Q3-provisional", "2026Q3-final"] and info["latest"] == "2026Q3-final" and info["available"]["T2"] is False
     out = tmp_path / "out"
-    assert (out / "timeline.png").exists() and len(list((out / "reports/charts").glob("*.png"))) == 14
+    assert (out / "timeline.png").exists() and len(list((out / "reports/charts").glob("*.png"))) == 16   # 7 questions + flow, twice
     prov = (out / "reports/2026Q3-provisional.md").read_text()
     assert "SIMULATION" in prov and "[2026Q3-final](2026Q3-final.md)" in prov      # provisional links to its final
     final = (out / "reports/2026Q3-final.md").read_text()
@@ -52,3 +52,17 @@ def test_at_a_glance_grouped(tmp_path):
     md = RP.report_md("2026Q3-final", R | {"_source": "x"}, [], True, None)
     assert md.index("### The race and the speed of attack") < md.index("### AI's role") < md.index("<sub>All figures")
     assert "- **T1 The race" in md and "| <sub>T7" in md
+
+
+def test_exploratory_parts_news_list(tmp_path):
+    explo = tmp_path / "exploratory"; explo.mkdir()
+    (explo / "feed-screen-2026-08-candidates.csv").write_text(
+        "date,feed,title,link,ai_term,attack_term\n2026-08-02,F,A | title,https://www.example.org/a,ai,attack\n")
+    (explo / "feed-screen-2026-08-decisions.csv").write_text(
+        "n,decision,reason,abstract,key_findings,basis,report\n0,logged,r,COPIED ABSTRACT,Our note.,title,\n")
+    L = RP.exploratory_parts("2026Q3-final", R, explo, tmp_path / "reports")
+    text = "\n".join(L)
+    assert "## Part 2." in text and "## Part 3." in text and "1 logged as new cases" in text
+    page = (tmp_path / "reports/2026Q3-final-news-2026-08.md").read_text()
+    assert "[A / title](https://www.example.org/a)" in page and "example.org" in page and "Our note." in page
+    assert "COPIED ABSTRACT" not in page                    # abstracts stay private

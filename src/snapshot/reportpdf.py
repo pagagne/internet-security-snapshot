@@ -35,7 +35,7 @@ blockquote { border-left: 3px solid #BA7517; margin: 6pt 0; padding: 2pt 10pt; c
 img { max-width: 100%; break-inside: avoid; display: block; margin: 6pt auto; }
 .cover { border: 1px solid #d0d7de; padding: 6pt 10pt; margin-bottom: 10pt; font-size: 9pt; color: #444; }
 .sim { color: #BA7517; font-weight: bold; }
-sub { font-size: 7.5pt; vertical-align: baseline; } h3 { font-size: 11pt; margin: 10pt 0 4pt; }
+sub { font-size: 7.5pt; vertical-align: baseline; } h3 { font-size: 11pt; margin: 10pt 0 4pt; } h4 { font-size: 10pt; margin: 8pt 0 3pt; }
 """
 
 
@@ -70,7 +70,7 @@ def md_to_html(text: str, base: Path) -> str:
         ln = lines[i]
         if not ln.strip():
             flush(); i += 1; continue
-        if m := re.match(r"^(#{1,3}) (.*)", ln):
+        if m := re.match(r"^(#{1,4}) (.*)", ln):
             flush(); n = len(m[1]); out.append(f"<h{n}>{_inline(m[2], base)}</h{n}>"); i += 1; continue
         if ln.startswith("|"):
             flush(); rows = []

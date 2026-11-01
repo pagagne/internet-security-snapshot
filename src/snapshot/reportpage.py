@@ -277,7 +277,8 @@ def summary_rows(R: dict) -> list[tuple[str, str, str]]:
     return rows
 
 
-def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: bool, final_key: str | None) -> str:
+def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: bool, final_key: str | None,
+              extra: list[str] | None = None) -> str:
     q, run = R["quarter"], R.get("run", "final")
     title = f"# Internet Security Snapshot: {q} report ({run})" + (" — SIMULATION" if simulation else "")
     L = [title, ""]
@@ -291,12 +292,22 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
               + (f"The final report: [{final_key}]({final_key}.md)." if final_key else
                  "The final report follows one month later; this page then stays as it is, with a link to it."), ""]
     L += [f"PDF archive copy: [{key}.pdf]({key}.pdf)" + (" (simulation; not for citation)" if simulation else ""), "",
-          "## At a glance", "",
+          "## How the three parts fit together", "",
+          f"![Three separate streams](charts/{key}-flow.png)", "",
+          "The report has three parts that are kept apart and never combined in the scores (author's rule, 31 Oct 2026). "
+          "**Part 1, the core data,** is scored: public records of flaws, attacks, fixes and breaches answer the seven "
+          "registered questions (T1-T7) and alone decide the labels. **Part 2, the news feeds,** is exploratory: each "
+          "month about sixty feeds are read for reports of attacks that used AI, sorted by hand into the AI attack log "
+          "(X3). **Part 3, the GitHub sweep,** is exploratory: each month GitHub is searched for security tools, "
+          "counted by how they use AI and what they do (X25). Parts 2 and 3 give context beside the scores and meet "
+          "Part 1 only in the discussion, never in a label.", "",
+          "## Part 1. Core data: the seven scored questions", "",
+          "### At a glance", "",
           "Labels (Improving, Worsening, Rising, Falling or No clear direction) are given from Q1 2027 by the "
           "registered rule, each with its companion check. " + ("None in a practice quarter." if simulation else ""), ""]
     rows = summary_rows(R)
     for head, qids, why in GROUPS:
-        L += [f"### {head}", "", why, ""]
+        L += [f"#### {head}", "", why, ""]
         L += [f"- **{a}:** {b}" + (f" (90% interval or range: {c})" if c != "-" else "")
               for a, b, c in rows if a.split()[0] in qids]
         L.append("")
@@ -306,7 +317,7 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
           for a, b, c in rows]
     L.append("")
     for qid, name, ask, how in QUESTIONS:
-        L += [f"## {qid}. {name}", "", f"*{ask}*", "", how, "", f"![{qid}](charts/{key}-{qid}.png)", ""]
+        L += [f"### {qid}. {name}", "", f"*{ask}*", "", how, "", f"![{qid}](charts/{key}-{qid}.png)", ""]
         if qid == "T1":
             b = R["I3"].get("bounds") or {}
             L += [f"- Flaws counted: {R['I3'].get('n')}; with both dates: {R['I3'].get('n_measured')}",
@@ -321,21 +332,142 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
                 f"{r['year']} {('%+.1f%%' % (100 * r['diff'])) if r.get('diff') is not None else 'no answer'}" for r in cc.get("rows", []))
                 + (". Flagged: " + ", ".join(map(str, cc["flags"])) if cc.get("flags") else ". Nothing flagged."), "",
                   "How T5 is scored with the 2026 surge in its baseline is decided on 21 Dec 2026 (core-freeze item 25).", ""]
-    L += ["## Data and checks", "", f"- Flaws first added to CISA KEV in the quarter: {R.get('kev_added_in_quarter')}",
+    L += ["### Data and checks", "", f"- Flaws first added to CISA KEV in the quarter: {R.get('kev_added_in_quarter')}",
           f"- Fix dates ({R.get('fix_inputs', 'frozen bundle')}): " + ", ".join(
               f"{k} {v}" for k, v in (R.get("prefill_sources") or {}).items()),
           f"- Still an assumed fix date (the hand check replaces these): {R.get('prefill_assumed')}",
           "- Whole calendar years of published records: " + ", ".join(
               f"{y} {v:,}" for y, v in (R.get("I5_calendar_years") or {}).items()), "",
-          "## Not available yet", ""] + [f"- {k}: {v}" for k, v in (R.get("not_computable") or {}).items()]
-    L += ["", "## About this report", "",
+          "### Not available yet", ""] + [f"- {k}: {v}" for k, v in (R.get("not_computable") or {}).items()]
+    L += [""] + (extra or []) + ["", "## About this report", "",
           f"Run: {q}, {run}. Source: {R.get('_source')}. Method: the pre-registration (OSF DOI 10.17605/OSF.IO/3XT82) "
           "and docs/EVALUATION_FLOW.md. This page is frozen once published; corrections are added as dated notes.", ""]
     return "\n".join(L)
 
 
+# --- The three streams and the exploratory parts (author, 1 Nov 2026) ----------------------------
+def flow_diagram(path: Path) -> None:
+    """Three streams, side by side, never combined in the scores."""
+    from matplotlib.patches import FancyBboxPatch
+    plt, fig, ax = _ax((11, 4.4))
+    ax.axis("off"); ax.set_xlim(0, 12); ax.set_ylim(0, 7.2)
+    cols = [("Part 1. Core data (scored)", "#1D9E75", ["CVE records, NVD, CISA KEV,", "EPSS, fix dates, SEC filings,", "ransomware totals"],
+             ["Quarterly pull, frozen", "and hand-checked"], ["Seven questions T1-T7", "decide the labels"]),
+            ("Part 2. News feeds (exploratory)", "#7F77DD", ["About sixty security, government", "and news feeds"],
+             ["Monthly screen, sorted", "by hand"], ["AI attack log (X3)", "context only"]),
+            ("Part 3. GitHub sweep (exploratory)", "#BA7517", ["Public GitHub repositories", "(security tools)"],
+             ["Monthly search, counted", "by AI use and tool type"], ["AI tool supply (X25)", "context only"])]
+    for i, (title, colr, a, b, c) in enumerate(cols):
+        x = 0.3 + i * 4
+        ax.text(x + 1.7, 6.85, title, ha="center", fontsize=10, weight="bold", color=colr)
+        for j, lines in enumerate((a, b, c)):
+            y = 5.2 - j * 1.85
+            ax.add_patch(FancyBboxPatch((x, y), 3.4, 1.2, boxstyle="round,pad=0.05,rounding_size=0.15",
+                                        fc=colr if j == 2 else "white", ec=colr, lw=1.4, alpha=1 if j == 2 else 1))
+            ax.text(x + 1.7, y + 0.6, "\n".join(lines), ha="center", va="center", fontsize=8.5,
+                    color="white" if j == 2 else "#2C2C2A")
+            if j < 2:
+                ax.annotate("", (x + 1.7, y - 0.62), (x + 1.7, y - 0.02), arrowprops=dict(arrowstyle="-|>", color=colr, lw=1.2))
+    ax.plot([0.3, 11.7], [0.55, 0.55], color=LIGHT, lw=1)
+    ax.text(6, 0.15, "The three meet only in each report's discussion: side by side, never combined in a score or label.",
+            ha="center", fontsize=8.5, color="#5F5E5A")
+    fig.tight_layout(); path.parent.mkdir(parents=True, exist_ok=True); fig.savefig(path); plt.close(fig)
+
+
+DECISION_WORDS = {"logged": "Logged as a new case", "second source": "Second source for a logged case",
+                  "already logged": "Already in the log", "your judgement": "Author's judgement pending",
+                  "excluded": "Excluded", "": "Not yet sorted"}
+
+
+def _quarter_months(quarter: str) -> list[str]:
+    y, q = int(quarter[:4]), int(quarter[-1])
+    return [f"{y}-{m:02d}" for m in range(3 * q - 2, 3 * q + 1)]
+
+
+def news_rows(explo: Path, month: str) -> list[dict]:
+    """The month's sorted feed items: title, link, site, our decision and our own note. No copied
+    article text (author, 1 Nov 2026: titles and links with our notes; abstracts stay private)."""
+    import csv
+    from urllib.parse import urlparse
+    cands = list(csv.DictReader((explo / f"feed-screen-{month}-candidates.csv").open(encoding="utf-8")))
+    decs = {int(r["n"]): r for r in csv.DictReader((explo / f"feed-screen-{month}-decisions.csv").open(encoding="utf-8"))}
+    out = []
+    for i, c in enumerate(cands):
+        d = decs.get(i, {})
+        out.append({"date": c.get("date", ""), "title": c.get("title", ""), "link": c.get("link", ""),
+                    "site": (urlparse(c.get("link", "")).hostname or "").removeprefix("www."), "feed": c.get("feed", ""),
+                    "decision": DECISION_WORDS.get(d.get("decision", ""), d.get("decision", "")),
+                    "note": (d.get("key_findings") or d.get("reason") or "").strip()})
+    return sorted(out, key=lambda r: r["date"], reverse=True)
+
+
+def _cell(s: str) -> str:
+    return " ".join(str(s).split()).replace("|", "/")
+
+
+def exploratory_parts(key: str, R: dict, explo: Path, rdir: Path) -> list[str]:
+    """Part 2 (news feeds, X3) and Part 3 (GitHub sweep, X25) of a report, from the private data."""
+    import shutil
+    charts = rdir / "charts"
+    charts.mkdir(parents=True, exist_ok=True)
+    L = ["## Part 2. News feeds: attacks that used AI (exploratory)", "",
+         "*Context only: never part of a score or label.* Each month about sixty security research, government and "
+         "news feeds are read for items that mention both AI and an attack. Each item is then sorted by hand: logged "
+         "as a new case in the AI attack log (X3), a second source for a case already logged, or excluded (for "
+         "example, AI only as the bait or the target). Only reports where a real attacker used AI against real "
+         "systems are logged.", ""]
+    have = sorted(p.name[len("feed-screen-"):len("feed-screen-") + 7] for p in explo.glob("feed-screen-????-??-decisions.csv"))
+    months = [m for m in _quarter_months(R["quarter"]) if m in have]
+    note = ""
+    if not months and have:
+        months, note = [have[-1]], f" (no screen in {R['quarter']}; the latest month is shown)"
+    feed_png = explo / "feed_charts"
+    if (feed_png / "attack-log.png").exists():
+        shutil.copy(feed_png / "attack-log.png", charts / f"{key}-x3-attack-log.png")
+        L += [f"![AI attack log by month](charts/{key}-x3-attack-log.png)", ""]
+    for m in months:
+        rows = news_rows(explo, m)
+        if (feed_png / f"feed-screen-{m}.png").exists():
+            shutil.copy(feed_png / f"feed-screen-{m}.png", charts / f"{key}-x3-feeds-{m}.png")
+            L += [f"![Feed screen {m}](charts/{key}-x3-feeds-{m}.png)", ""]
+        page = f"{key}-news-{m}.md"
+        (rdir / page).write_text("\n".join(
+            [f"# News feed screen, {m}{note}", "",
+             f"Back to the report: [{key}]({key}.md#part-2-news-feeds-attacks-that-used-ai-exploratory)", "",
+             "Every item the screen found, newest first: the article's title and link, the site, what we did with it "
+             "and our own one-line note. The articles belong to their publishers; follow the link to read them.", "",
+             "| Date | Article | Site | What we did | Our note |", "|---|---|---|---|---|"]
+            + [f"| {r['date']} | [{_cell(r['title'])}]({r['link']}) | {_cell(r['site'])} | {r['decision']} | <sub>{_cell(r['note'])}</sub> |"
+               for r in rows]) + "\n")
+        logged = sum(r["decision"].startswith("Logged") for r in rows)
+        L += [f"**{m}{note}:** {len(rows)} items screened, {logged} logged as new cases. "
+              f"[Open the clickable list of articles]({page}).", ""]
+    if not months:
+        L += ["No feed screen yet.", ""]
+    L += ["## Part 3. GitHub sweep: AI security tools (exploratory)", "",
+          "*Context only: never part of a score or label.* Each month GitHub is searched for public security tools "
+          "in several languages. Each tool is counted once by how it uses AI (a hosted closed model, an open-weight or "
+          "local model, both, or none named) and by what it does. Labels describe what a tool does, not who uses it or "
+          "why: much attack tooling serves defenders' red teams and the reverse. Tools are counted, never named by "
+          "their owners' usernames.", ""]
+    sweeps = sorted((explo / "ai_tool_sweeps").glob("*.csv"))
+    figs = explo / "ai_tool_landscape"
+    if sweeps:
+        d = sweeps[-1].stem
+        for suffix, cap in (("1-ai-use", "How the tools use AI"), ("3-new-per-month", "New tools per month"),
+                            ("2-tool-types", "What the tools do"), ("7-targets-by-group", "What they target, by group"),
+                            ("8-open-weight", "Which open-weight models they use")):
+            f = figs / f"{d}-{suffix}.png"
+            if f.exists():
+                shutil.copy(f, charts / f"{key}-x25-{suffix}.png")
+                L += [f"**{cap}** (sweep of {d})", "", f"![{cap}](charts/{key}-x25-{suffix}.png)", ""]
+    else:
+        L += ["No GitHub sweep yet.", ""]
+    return L
+
+
 def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date | None = None,
-          pdf: bool = True) -> dict:
+          pdf: bool = True, explo: Path | None = None) -> dict:
     """Write reports/<key>.md, reports/charts/<key>-T*.png and timeline.png under out.
     Returns {'latest': key or None, 'keys': [...], 'available': {qid: bool}}."""
     res = load_results(results_dir)
@@ -352,7 +484,9 @@ def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date 
                 info["available"][qid] = ok
         final_key = finals.get(R["quarter"]) if R.get("run") == "provisional" else None
         md = out / "reports" / f"{key}.md"
-        md.write_text(report_md(key, R, series, simulation, final_key))
+        flow_diagram(out / "reports" / "charts" / f"{key}-flow.png")
+        extra = exploratory_parts(key, R, explo, out / "reports") if explo else []
+        md.write_text(report_md(key, R, series, simulation, final_key, extra))
         if pdf:                                  # archive copy beside the page (author, 1 Nov 2026)
             from . import reportpdf
             try:
