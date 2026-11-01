@@ -1034,6 +1034,25 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 26 Oct: a second dry
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:i5-baseline-evidence@2026-12-14@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the I5/T5 baseline evidence for decision
+  item 25
+DESCRIPTION:Responsible: Claude\n\nPrivately (snapshot-manual): quarterly p
+ ublished-record counts 2017 to Q4 2026 with the NVD cross-check\; the 2026
+  quarters as growth rates and as seasonally adjusted levels against each b
+ aseline median\; PELT changepoints\; the five-largest-CNA sensitivity\; wh
+ at each option in https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/decisions/I5_BASELINE_NOTES.md would label for the pilot\, us
+ ing the 15 Dec full dry run. Send the author a short summary before 21 Dec
+ .\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/ma
+ in/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:workflows-doc@2026-12-14@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261214
@@ -1106,6 +1125,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nA shorter pass than 2 Dec (only i
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:i5-baseline-read@2026-12-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Read the I5/T5 decision notes and Claude's evidenc
+ e (item 25)
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/decisions/I5_BASELINE_NOTES.md and Cla
+ ude's private summary. Decide at the 21 Dec session: which form of I5/T5 i
+ s scored\, and how the 2026 surge in the baseline year is handled.\n\nSour
+ ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
+ chedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:workflows-review@2026-12-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261218T150000Z
@@ -1135,9 +1170,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  permission)\; item 20\, the early-patch (embargo) note on fix dates (rec. 
  yes)\; the CISA active-exploitation date as T_exploit (12 Nov decision 2)\
  ; item 8\, fixing the sweep's searches and the X12 capable bar and the ado
- pted X19-X22 before the freeze. Claude asks these as option cards with rec
- ommendations\, as on 12 Nov.\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ pted X19-X22 before the freeze. Added 1 Nov: item 25\, how I5/T5 is scored
+  with the 2026 surge in the baseline year (notes in https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/decisions/I5_BASELINE_NOTES
+ .md\; rec. option 1). Claude asks these as option cards with recommendatio
+ ns\, as on 12 Nov.\n\nSource: https://github.com/pagagne/internet-security
+ -snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

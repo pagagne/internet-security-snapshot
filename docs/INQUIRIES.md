@@ -84,3 +84,8 @@ Started 25 Oct 2026 at the author's request.
   publication dates are CVE mirror dates, not fix dates; commercial vendors rarely publish CSAF.
   The hand check remains the route for most commercial flaws.
 
+- **1 Nov 2026: I5 baseline year.** The 2026 surge in published CVE records falls inside the
+  baseline for the first growth labels (Q1 2027), and the registration describes I5 both as a
+  growth rate and as a seasonally adjusted level. Scheduled as core-freeze item 25 (notes in
+  `docs/decisions/I5_BASELINE_NOTES.md`; evidence 14 Dec, author reads 18 Dec, decided 21 Dec).
+
