@@ -290,7 +290,7 @@ def build_text(root: Path, readme: str) -> str:
             "today, with the draft sections in place and badged. Tweak it here; the flip makes it the real "
             "page through a guarded workflow. Order and status: `config/landing_layout.yaml`. Rebuilt by the "
             "Manual publish workflow; do not edit here.", "",
-            f"**Practice flip today:** {'ready' if not flip else 'not ready, ' + str(len(flip)) + ' reason(s)'}"]
+            f"**Practice flip today:** {'ready' if not flip else 'not ready, ' + str(len(flip)) + ' reason(s):'}", ""]
     head += [f"- {p}" for p in flip + problems] + ["", "---", ""]
     return "\n".join(head) + "\n" + page
 
