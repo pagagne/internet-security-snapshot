@@ -772,6 +772,25 @@ DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks and edge ca
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:race-list-build@2026-11-24@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Wire the race list and the quarterly evaluation 
+ into the pull\, before the 1 Dec dry run
+DESCRIPTION:Responsible: Claude\n\nFound in the 1 Nov quality check: the qu
+ arterly pull does not yet build the race list (every flaw first added to C
+ ISA KEV in the quarter\, option a) or run the evaluation\; only the privat
+ e practice evaluation does. Build both from the pull's frozen bundle: fix 
+ dates from snapshot.fixdates.prefill_exploited with the CVE disclosure dat
+ e (now kept in the bundle)\, review-list rows for the Hand Check app\, the
+ n the report page\, charts and PDF (snapshot.reportpage). Test end to end 
+ on the Q3 2026 bundle before 1 Dec.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:baseline-hand-check-2@2026-11-24@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261124T150000Z

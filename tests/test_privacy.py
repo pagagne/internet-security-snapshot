@@ -38,3 +38,9 @@ def test_exploratory_figures_are_flagged_unless_cleared():
     assert not P.exploratory_lines("docs/x.md", "Run the GitHub sweep (X25) on 6 Jan 2027 at 10:00.")
     assert not P.exploratory_lines("docs/x.md", "X25 uses 48 fixed searches " + P.MARK)
     assert not P.exploratory_lines("exploratory/x.md", "377 offensive-security projects")   # private files are not public
+
+
+def test_day_first_dates_are_not_counts():
+    from snapshot import privacy as P
+    assert P.exploratory_lines("docs/x.md", "| Wed 18 Nov 2026 | Review the GitHub sweep |") == []
+    assert P.exploratory_lines("docs/x.md", "The GitHub sweep found 1,234 tools") != []

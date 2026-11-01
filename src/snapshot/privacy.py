@@ -74,7 +74,10 @@ def exploratory_lines(name: str, text: str) -> list[tuple[int, str]]:
     for i, line in enumerate(text.split("\n"), 1):
         if MARK in line or not EXPLORATORY.search(line):
             continue
-        bare = re.sub(r"\]\([^)]*\)|`[^`]*`|https?://\S+|^\|\s*\d+\s*\||(?:section|item|items|Part|chart|run|step|points?|v)\s*\d+", "", line, flags=re.I)
+        # dates are not counts: "18 Nov 2026" first (day-first added 1 Nov 2026, after three false
+        # alarms on calendar rows), then "Nov 18", "10:30", "2026-11-18" below
+        line_nd = re.sub(r"\b\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*(?:\s+\d{4})?", "", line)
+        bare = re.sub(r"\]\([^)]*\)|`[^`]*`|https?://\S+|^\|\s*\d+\s*\||(?:section|item|items|Part|chart|run|step|points?|v)\s*\d+", "", line_nd, flags=re.I)
         bare = re.sub(r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d+|\d{1,2}:\d{2}|\d{4}-\d{2}(-\d{2})?", "", bare)
         if COUNT.search(bare):
             out.append((i, line))

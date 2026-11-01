@@ -479,6 +479,18 @@ items:
     inputs: {quarter: 2026Q4, run: dry-run}
   details: Started by the Schedule workflow (December has no cron). Unscored.
 
+- id: race-list-build
+  owner: claude
+  title: Wire the race list and the quarterly evaluation into the pull, before the 1 Dec dry run
+  date: 2026-11-24
+  details: >
+    Found in the 1 Nov quality check: the quarterly pull does not yet build the race list (every
+    flaw first added to CISA KEV in the quarter, option a) or run the evaluation; only the private
+    practice evaluation does. Build both from the pull's frozen bundle: fix dates from
+    snapshot.fixdates.prefill_exploited with the CVE disclosure date (now kept in the bundle),
+    review-list rows for the Hand Check app, then the report page, charts and PDF
+    (snapshot.reportpage). Test end to end on the Q3 2026 bundle before 1 Dec.
+
 - id: dry-run-review
   owner: claude
   title: Read the dry-run quality report; prepare the hand-check lists
