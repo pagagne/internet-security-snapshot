@@ -127,16 +127,23 @@ items:
 
 - id: newsletter-setup
   owner: author
-  title: Subscribe the project address to security newsletters; add a Gmail label
+  title: Subscribe the project address to security newsletters (8 listed); add a Gmail label
   date: 2026-11-02
-  minutes: 15
+  minutes: 30
   details: >
-    Author's decision 29 Oct (widening the AI-attack search). Subscribe
-    internetsecuritysnapshot@gmail.com to the newsletters you like, e.g. TLDR InfoSec, SANS
-    NewsBites, Risky Business, The Record's newsletter. In your own Gmail, make a filter for
-    mail delivered to the project address that is not from a person (e.g. has "unsubscribe"):
-    apply the label "Snapshot newsletters" and skip the inbox, so they do not crowd your mail.
-    Claude reads that label twice a month (docs/OPERATIONS.md).
+    Author's decision 29 Oct (widening the AI-attack search); list confirmed 1 Nov. Subscribe
+    the project address (the study's Gmail) to each (free tier only; untick marketing extras):
+    1. SANS NewsBites, twice weekly: https://www.sans.org/newsletters/newsbites/ ;
+    2. Risky Bulletin (Risky Business News), daily: https://riskybiznews.substack.com/ ;
+    3. The Record, Recorded Future News, daily: https://therecord.media/subscribe ;
+    4. TLDR InfoSec, daily: https://tldr.tech/ (choose InfoSec) ;
+    5. tl;dr sec, weekly, strong on AI and security: https://tldrsec.com/subscribe ;
+    6. Unsupervised Learning, weekly, AI and security: https://newsletter.danielmiessler.com/subscribe ;
+    7. CISA email updates, alerts and advisories: https://www.cisa.gov/subscribe-updates-cisa ;
+    8. Seriously Risky Business, weekly policy: https://srslyriskybiz.substack.com/ .
+    Then in your own Gmail make a filter for mail delivered to the project address that has
+    "unsubscribe": apply the label "Snapshot newsletters" and skip the inbox. Tell Claude which
+    ones you subscribed to; Claude reads that label twice a month (8th and 22nd).
 
 - id: newsletter-read
   owner: claude

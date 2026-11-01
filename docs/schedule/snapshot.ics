@@ -243,17 +243,25 @@ DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Subscribe the project address to security newslett
- ers\; add a Gmail label
+ ers (8 listed)\; add a Gmail label
 DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 29 Oct (widenin
- g the AI-attack search). Subscribe internetsecuritysnapshot@gmail.com to t
- he newsletters you like\, e.g. TLDR InfoSec\, SANS NewsBites\, Risky Busin
- ess\, The Record's newsletter. In your own Gmail\, make a filter for mail 
- delivered to the project address that is not from a person (e.g. has "unsu
- bscribe"): apply the label "Snapshot newsletters" and skip the inbox\, so 
- they do not crowd your mail. Claude reads that label twice a month (https:
- //github.com/pagagne/internet-security-snapshot/blob/main/docs/OPERATIONS.
- md).\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
- /main/docs/schedule/schedule.yaml
+ g the AI-attack search)\; list confirmed 1 Nov. Subscribe the project addr
+ ess (the study's Gmail) to each (free tier only\; untick marketing extras)
+ : 1. SANS NewsBites\, twice weekly: https://www.sans.org/newsletters/newsb
+ ites/ \; 2. Risky Bulletin (Risky Business News)\, daily: https://riskybiz
+ news.substack.com/ \; 3. The Record\, Recorded Future News\, daily: https:
+ //therecord.media/subscribe \; 4. TLDR InfoSec\, daily: https://tldr.tech/
+  (choose InfoSec) \; 5. tl\;dr sec\, weekly\, strong on AI and security: h
+ ttps://tldrsec.com/subscribe \; 6. Unsupervised Learning\, weekly\, AI and
+  security: https://newsletter.danielmiessler.com/subscribe \; 7. CISA emai
+ l updates\, alerts and advisories: https://www.cisa.gov/subscribe-updates-
+ cisa \; 8. Seriously Risky Business\, weekly policy: https://srslyriskybiz
+ .substack.com/ . Then in your own Gmail make a filter for mail delivered t
+ o the project address that has "unsubscribe": apply the label "Snapshot ne
+ wsletters" and skip the inbox. Tell Claude which ones you subscribed to\; 
+ Claude reads that label twice a month (8th and 22nd).\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
