@@ -124,3 +124,8 @@ Started 25 Oct 2026 at the author's request.
   provided APNIC Labs is credited and the figures accurately represent the source data. X20 goes
   ahead; collector scheduled for 25 Nov.
 
+
+- **2 Nov 2026: reality check of the tool and model sweeps (author).** The author shared a
+  security audit of ClawHub (a registry of AI-agent skills) and asked how its techniques compare
+  with the way the GitHub and Hugging Face sweeps (X25) judge content, and what our method's
+  shortfalls are. Deep-dive evaluation scheduled for Thu 5 Nov; the report itself is kept privately.
