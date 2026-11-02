@@ -134,7 +134,7 @@ from one is published until its permission is granted.
 | Source | What it would give the study | Role |
 |---|---|---|
 | CERT-FR, JPCERT/CC, BSI, KrCERT/CC alerts | Other countries' active-exploitation alerts, compared with CISA KEV | Exploratory (X19) |
-| APNIC Labs and RIPE NCC | DNSSEC validation and RPKI route checking by country | Exploratory (X20) |
+| APNIC Labs (written permission 1 Nov 2026; RIPE NCC not used, its terms forbid redistribution) | DNSSEC validation and RPKI route checking by country | Exploratory (X20), collector to build by 25 Nov |
 | Cloudflare Radar and ransomware.live by region | Attack, bot and ransomware trends by world region | Exploratory (X21) |
 | UK ICO, OAIC, PDPC, ENISA | Data-breach notifications outside the US | Exploratory (X22) |
 | Quarterly web sweep, nine languages | AI-run attack reports outside the usual channels | Exploratory (X3) |

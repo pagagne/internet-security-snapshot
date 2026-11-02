@@ -52,10 +52,10 @@
    "fingerprints": {
     "config/ai_credit_auto_accept.yaml": "d29c0b4d7cb5609c",
     "config/ai_credit_terms.yaml": "2fc836bf6fcf7a2e",
-    "docs/HAND_CHECK.md": "0e6088eaa3a8ba79",
+    "docs/HAND_CHECK.md": "bf4493d2c7d13821",
     "docs/diagrams/track_c.mmd": "bb99230c6a2086e8"
    },
-   "reviewed_on": "2026-10-24"
+   "reviewed_on": "2026-11-02"
   },
   "track_d": {
    "doc": "docs/EVALUATION_FLOW.md",
@@ -90,12 +90,12 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "8719c3a96655258c",
+    "README.md": "afaeaa523920bf7b",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "ac164756bb924d6f",
+    ".github/workflows/quarterly-pull.yml": "d2530aaf33bffdf0",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
-   "reviewed_on": "2026-10-27"
+   "reviewed_on": "2026-11-02"
   },
   "build_plan": {
    "doc": "docs/BUILD_PLAN.md",
@@ -104,10 +104,10 @@
     "docs/RESEARCH_PLAN.md"
    ],
    "fingerprints": {
-    "docs/RESEARCH_PLAN.md": "9ea8f1fa641ad1b2",
+    "docs/RESEARCH_PLAN.md": "4457bf7b740638fe",
     "docs/diagrams/build_plan.mmd": "f7017bfe99a376b3"
    },
-   "reviewed_on": "2026-10-26"
+   "reviewed_on": "2026-11-02"
   },
   "freeze_year": {
    "doc": "docs/CORE_FREEZE_DECISIONS.md",
@@ -117,11 +117,11 @@
     "README.md"
    ],
    "fingerprints": {
-    "docs/CHANGE_POLICY.md": "c8fb231e3fd9119c",
-    "README.md": "8719c3a96655258c",
+    "docs/CHANGE_POLICY.md": "12756eb8694f4987",
+    "README.md": "afaeaa523920bf7b",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-10-27"
+   "reviewed_on": "2026-11-02"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
@@ -132,12 +132,12 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "eccca8f7d14ef60a",
-    ".github/workflows/quarterly-pull.yml": "ac164756bb924d6f",
+    "docs/PERMISSIONS.md": "2fa27acb35b90a27",
+    ".github/workflows/quarterly-pull.yml": "d2530aaf33bffdf0",
     "tools/architecture_svg.py": "bc1bc52ccafcacdd",
     "docs/diagrams/architecture.svg": "3e741b8366e559e5"
    },
-   "reviewed_on": "2026-10-27"
+   "reviewed_on": "2026-11-02"
   },
   "workflow_runs": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -147,11 +147,11 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "6e5f15bfc67d8e95",
-    ".github/workflows/checks.yml": "e57e379b11047e66",
-    "docs/diagrams/workflow_runs.dot": "3f4631492d16f9af"
+    "docs/WORKFLOWS.md": "ae96b4860517eec4",
+    ".github/workflows/checks.yml": "31d6790266e8f665",
+    "docs/diagrams/workflow_runs.dot": "9538151433af3e6d"
    },
-   "reviewed_on": "2026-10-29"
+   "reviewed_on": "2026-11-02"
   },
   "indicator_sources": {
    "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",

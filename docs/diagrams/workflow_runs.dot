@@ -32,6 +32,7 @@ digraph workflows {
     bq    [label="BigQuery check\nwhen asked"];
     feeds [label="Feed screen\n5th monthly"];
     watch [label="Source watch\nWednesdays"];
+    status [label="Source status\ndaily (banner)"];
   }
 
   subgraph cluster_out {
@@ -49,5 +50,5 @@ digraph workflows {
     { rank=same; sources; sans; gcp; drive; news; }
   you -> privacy [lhead=cluster_int, color="#1f4e79", label="any of these"];
   claude -> probe [lhead=cluster_ext, color="#b85c1e", label="probes, checks"];
-  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive; feeds -> news; watch -> sources [style=dashed, label="addresses\nand terms"]; watch -> sans [style=dashed];
+  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive; feeds -> news; watch -> sources [style=dashed, label="addresses\nand terms"]; watch -> sans [style=dashed]; status -> sources [style=dashed, label="one light\ncheck a day"];
 }

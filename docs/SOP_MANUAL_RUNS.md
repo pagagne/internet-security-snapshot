@@ -146,7 +146,10 @@ does not depend on Claude to keep collecting data.
    the quarterly pull (1st of Jan/Feb/Apr/May/Jul/Aug/Oct/Nov), honeypot capture (2nd), backup
    (3rd) and rebuild check (10th) actually ran. If GitHub skipped one, it starts it itself within
    about four to nine hours, only once, and opens a **watchdog** issue telling you. Check that run's
-   result, then close the issue.
+   result, then close the issue. Since 1 Nov 2026 it also restarts the daily Source status check
+   behind the landing-page banner, quietly (no issue). The watchdog runs inside Schedule, so it
+   cannot help if GitHub skips Schedule itself (as on 1 and 2 Nov, about 01:00-12:00 UTC): the
+   morning report checks for that and starts the skipped runs by hand.
 3. **If a run failed, rerun it yourself with GitHub's Re-run button.** This works for every
    workflow, including those without a Run button, and repeats the run with exactly the same
    settings:
