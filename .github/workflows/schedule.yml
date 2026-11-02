@@ -8,9 +8,13 @@ on:
   schedule:
     - cron: "23 10 * * *"  # 10:23 UTC = 06:23 ET (05:23 in winter time)
     - cron: "7 12 * * *"   # 12:07 UTC = 07:07 ET
+    - cron: "23 13 * * *"  # 13:23 UTC = 08:23 ET
     - cron: "37 15 * * *"  # 15:37 UTC = 10:37 ET
+    - cron: "23 21 * * *"  # 21:23 UTC = 16:23 ET
     # Three timers because GitHub drops scheduled runs at busy times (it skipped the 12:07 run
     # on 25 and 26 Oct 2026). The job opens each issue only once, so extra runs change nothing.
+    # 13:23 and 21:23 added 2 Nov 2026 (author's decision): GitHub skipped every scheduled run
+    # from about 01:00 to 12:00 UTC on 1 and 2 Nov, so two timers now sit outside that window.
     # Last safety net: the daily Claude work queue (08:32 ET) starts this workflow by hand if
     # no run has succeeded that day (docs/OPERATIONS.md).
   workflow_dispatch:

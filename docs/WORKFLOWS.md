@@ -26,7 +26,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 |---|---|---|---|---|---|
 | Quarterly pull | `quarterly-pull.yml` | 06:00 on 1 Jan/Apr/Jul/Oct (provisional) and 1 Feb/May/Aug/Nov (final); Schedule (dry runs); no button | repository (tags, run-reports) | NVD, Cloudflare, SEC user agent, ransomware.live, VulnCheck, Drive | 27 Oct, run 40583009106 |
 | Rebuild check | `rebuild-check.yml` | 07:17 on the 10th of each month; Run button | run-reports | none | 27 Oct, run 40584529355 |
-| Schedule | `schedule.yml` | 10:23, 12:07 and 15:37 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
+| Schedule | `schedule.yml` | 10:23, 12:07, 13:23, 15:37 and 21:23 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
 | Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
 | Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues (counts only), the private repository | `MANUAL_REPO_TOKEN` | 29 Oct; private since 31 Oct |

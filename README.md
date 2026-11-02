@@ -188,7 +188,7 @@ The study runs on GitHub workflows: automatic jobs that collect, check, back up 
 | Quarterly pull | 1st Jan/Apr/Jul/Oct at 06:00 UTC; 1st Feb/May/Aug/Nov at 06:00 UTC | started by the Schedule workflow or Claude |
 | Rebuild check | the 10th of each month at 07:17 UTC | Run button |
 | Research probe | no timer | started by the Schedule workflow or Claude |
-| Schedule | daily at 10:23 UTC; daily at 12:07 UTC; daily at 15:37 UTC | Run button |
+| Schedule | daily at 10:23 UTC; daily at 12:07 UTC; daily at 13:23 UTC; daily at 15:37 UTC; daily at 21:23 UTC | Run button |
 | Source status | daily at 11:23 UTC | started by the Schedule workflow or Claude |
 | Source watch | Wednesdays at 13:17 UTC | started by the Schedule workflow or Claude |
 
