@@ -103,10 +103,10 @@ def chrome() -> str | None:
     return None
 
 
-def make(md_path: Path, now: dt.datetime | None = None) -> Path | None:
+def make(md_path: Path, now: dt.datetime | None = None, label: str | None = None) -> Path | None:
     text = md_path.read_text()
-    status = ("SIMULATION" if "SIMULATION" in text.split("\n", 1)[0] else
-              "Provisional" if "(provisional)" in text.split("\n", 1)[0] else "Final")
+    status = label or ("SIMULATION" if "SIMULATION" in text.split("\n", 1)[0] else
+                       "Provisional" if "(provisional)" in text.split("\n", 1)[0] else "Final")
     now = now or dt.datetime.now(dt.timezone.utc)
     cover = (f'<div class="cover"><span class="{"sim" if status == "SIMULATION" else ""}">{status}</span> · '
              f"Internet Security Snapshot · archive copy of {md_path.name} · built {now:%d %b %Y %H:%M} UTC"
@@ -126,6 +126,28 @@ def make(md_path: Path, now: dt.datetime | None = None) -> Path | None:
     return pdf
 
 
+def make_if_changed(md_path: Path, label: str | None = None) -> Path | None:
+    """PDF only when the text changed since the last one (a .sha file beside the PDF), so private
+    rebuilds do not re-commit unchanged PDFs (session logs, author's decision 1 Nov 2026)."""
+    import hashlib
+    sha = hashlib.sha256(md_path.read_bytes()).hexdigest()
+    mark = md_path.with_suffix(".pdf.sha")
+    if mark.exists() and mark.read_text().strip() == sha and md_path.with_suffix(".pdf").exists():
+        return None
+    out = make(md_path, label=label)
+    if out:
+        mark.write_text(sha + "\n")
+    return out
+
+
 if __name__ == "__main__":
-    for a in sys.argv[1:]:
-        print(make(Path(a)))
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("files", nargs="+", type=Path)
+    ap.add_argument("--label", help="cover label, e.g. 'Session log (private)'")
+    ap.add_argument("--changed-only", action="store_true", help="skip files whose PDF is current")
+    a = ap.parse_args()
+    for f in a.files:
+        out = make_if_changed(f, a.label) if a.changed_only else make(f, label=a.label)
+        if out:
+            print(out)

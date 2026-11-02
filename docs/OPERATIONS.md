@@ -152,9 +152,12 @@ text in the private Drive folder `correspondence/`, an index in the Claude proje
 (`claude/correspondence.md`), and a summary without personal contact details in
 `docs/PERMISSIONS.md` (permissions) or `docs/INQUIRIES.md` (everything else). The author
 forwards or attaches the email; Claude does the filing.
-At the end of each working day the session writes a log in `docs/sessions/<week>/` (weekly folders,
-Sunday to Saturday, named like `2026-10-25_to_2026-10-31`; what was asked,
-decided and done, with the day's workflow runs) and copies it to the Claude project.
+At the end of each working day the session writes a log (what was asked, decided and done, with
+the day's workflow runs) in weekly folders, Sunday to Saturday, named like
+`2026-10-25_to_2026-10-31`, and copies it to the Claude project. **Since 1 Nov 2026 the session
+logs are kept privately** (author's decision), in the private repository with a PDF of each day;
+earlier versions remain in this repository's history. Every decision stays public: in
+`docs/INQUIRIES.md`, `prereg/DEVIATIONS.md` and the decision documents in `docs/decisions/`.
 When the author is next online (usually the following morning), the session opens by
 presenting that report in chat: what was accomplished, what carried over, and what is due
 that day (author's request, 27 Oct).
