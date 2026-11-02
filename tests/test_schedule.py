@@ -111,3 +111,14 @@ def test_calendar_links_are_full_urls():
     rev = S.REVIEWER_ICS.read_bytes().decode().replace("\r\n ", "")
     assert rev.count("BEGIN:VEVENT") == rev.count("pagagne.github.io/internet-security-snapshot/reviewer/")
     assert "doi.org/10.17605/OSF.IO/3XT82" in rev
+
+
+def test_done_items_open_no_issue():
+    """2 Nov 2026: finished items (done field or '- done' in the title) must not open issues."""
+    import datetime as dt
+    from snapshot import schedule as S
+    d = S.due(S.expand(S.load()), dt.date(2026, 11, 2))
+    calls = []
+    log = S.act(dt.date(2026, 11, 2), dry=True, gh=lambda a: calls.append(a) or "[]")
+    assert not any("kernel-fixdates-prefill" in x for x in log)
+    assert all(o.get("done") == "" or o.get("done") for o in d["issues"])

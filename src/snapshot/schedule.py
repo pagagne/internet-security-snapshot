@@ -248,7 +248,7 @@ def due(occ: list[dict], today: dt.date, catch_up: int = CATCH_UP_DAYS) -> dict:
               and lo <= o["date"] - dt.timedelta(days=o["open"]) <= today]
     runs = [o for o in occ if o["dispatch"] and lo <= o["date"] <= today]
     js = lambda o: {"uid": o["uid"], "owner": o["owner"], "title": o["title"], "when": _when(o),
-                    "details": o["details"], "dispatch": o["dispatch"]}
+                    "details": o["details"], "dispatch": o["dispatch"], "done": o.get("done", "")}   # done kept (2 Nov 2026 fix)
     return {"date": today.isoformat(), "issues": [js(o) for o in issues], "runs": [js(o) for o in runs]}
 
 
