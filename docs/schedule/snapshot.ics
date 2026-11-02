@@ -896,6 +896,25 @@ DESCRIPTION:Responsible: Claude\n\nList builder in snapshot.review\, report
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:x20-collector@2026-11-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the APNIC Labs collector for X20 (DNSSEC a
+ nd RPKI by country)
+DESCRIPTION:Responsible: Claude\n\nAPNIC granted written leave on 1 Nov 202
+ 6 (ticket 00177078): credit APNIC Labs and keep the figures an accurate re
+ presentation of the source data. Build the quarterly snapshot of the publi
+ c per-country DNSSEC-validation and RPKI figures (exploratory X20)\, with 
+ the credit line on every chart and table\; test it before the 15 Dec full 
+ dry run\; then mark the "Routing hygiene" slice collected in https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/config/coverage.yaml.\n
+ \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
+ docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:x25-test-run@2026-11-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125

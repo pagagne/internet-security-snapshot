@@ -365,7 +365,7 @@ measures:
     sources: [apnic_labs, ripe_ncc]
     added: 2026-10-26
     feeds_labels: false
-    status: planned   # 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution); waits for APNIC's written leave (requested 29 Oct via helpdesk)
+    status: planned   # 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution). APNIC granted written leave 1 Nov 2026 (ticket 00177078; credit, accurate representation); collector to build
     method: >
       Quarterly snapshot of the public per-country measurements: share of users behind
       resolvers that validate DNSSEC, and share of routes covered by RPKI and of networks

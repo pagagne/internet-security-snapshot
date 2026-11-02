@@ -136,7 +136,10 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   Commissioner website - www.oaic.gov.au"; logos, coat of arms and images excluded.
 - **APNIC Labs (29 Oct):** no terms published for Labs measurement data (none on
   stats.labs.apnic.net or labs.apnic.net either); written leave requested by the author 29 Oct
-  18:35 UTC through APNIC's helpdesk (Labs has no address of its own); awaiting reply.
+  18:35 UTC through APNIC's helpdesk (Labs has no address of its own). **Granted 1 Nov 2026**
+  (ticket 00177078, reply received by the author 1 Nov, 20:49 ET): the study may use the APNIC
+  Labs figures as described, provided APNIC Labs is appropriately credited and the figures are an
+  accurate representation of the source data. X20 can go ahead (collector to build).
 - **JPCERT/CC (29 Oct, found by the terms_scout probe):** "ご利用にあたってのお願い"
   (https://www.jpcert.or.jp/guide.html, updated 2026-10-05). Quoting its published documents is
   free, naming the source, document and URL; JPCERT/CC asks, as a courtesy, to be told by email

@@ -119,3 +119,8 @@ Started 25 Oct 2026 at the author's request.
   reconnaissance no longer make an attack tool dual-use; AI model testing is its own type; a
   relevance filter. SANS NewsBites stays dropped. Gitee anonymous re-check stays on 18 Nov.
 
+- **2 Nov 2026: APNIC Labs permission granted.** APNIC's helpdesk replied on 1 Nov (ticket
+  00177078): the study may use the APNIC Labs DNSSEC and RPKI country figures as described,
+  provided APNIC Labs is credited and the figures accurately represent the source data. X20 goes
+  ahead; collector scheduled for 25 Nov.
+

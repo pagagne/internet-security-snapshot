@@ -1375,6 +1375,17 @@ items:
     line, rings, timeline and results). Read it in the private mirror (go-live/README.md) at the
     go-live review; say what to change.
 
+- id: x20-collector
+  owner: claude
+  title: Build the APNIC Labs collector for X20 (DNSSEC and RPKI by country)
+  date: 2026-11-25
+  details: >
+    APNIC granted written leave on 1 Nov 2026 (ticket 00177078): credit APNIC Labs and keep the
+    figures an accurate representation of the source data. Build the quarterly snapshot of the
+    public per-country DNSSEC-validation and RPKI figures (exploratory X20), with the credit line
+    on every chart and table; test it before the 15 Dec full dry run; then mark the "Routing
+    hygiene" slice collected in config/coverage.yaml.
+
 - id: landing-flip-workflow
   owner: claude
   title: Build the guarded landing-page flip workflow (run button, practice flip, privacy checks)
