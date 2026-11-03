@@ -5,6 +5,62 @@
   <img alt="Core data sources: green answered today's check, red error, gray not checked, outlined awaiting permission" src="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/landing/banner-light.svg">
 </picture>
 
+## Mission
+
+Artificial intelligence has officially entered the cybersecurity fight. No one can say exactly
+when it started, but 2026 unleashed an unprecedented wave of global data breaches and AI-driven
+attacks ([IBM, Cost of a Data Breach 2026](https://www.helpnetsecurity.com/2026/07/30/ibm-cost-of-a-data-breach-2026/);
+[Verizon DBIR 2026](https://www.techrepublic.com/article/news-verizon-dbir-vulnerability-exploitation-2026/);
+[record ransomware victims, Q3 2026](https://www.webull.com/news/15712183178626048)), and experts
+warn that 2027 will escalate even faster and at a much greater scale
+([UK NCSC, the impact of AI on the cyber threat to 2027](https://www.ncsc.gov.uk/pdfs/report/impact-ai-cyber-threat-now-2027.pdf)).
+The mission is to measure the internet's vulnerability lifecycle and plot the cybersecurity shift
+quarter by quarter, using free, public reporting services from the US and around the world.
+
+The Internet Security Snapshot tracks the health of internet security through 2027. Every
+quarter it answers one critical question: are defenders closing internet-exposed flaws faster
+than attackers can exploit them, and how is AI changing the race?
+
+At its core, it answers using only free, public data, under a plan pre-registered with the Open
+Science Framework (OSF, DOI [10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82),
+20 October 2026), so the findings cannot be shaped to fit a conclusion.
+
+The study tracks ten core datasets. Seven are collected now:
+
+1. **Flaw records:** public records of software flaws, from CVE.org and NVD, plus CISA's
+   Vulnrichment analysis.
+2. **Known-exploited flaws:** flaws confirmed as attacked in the wild, from CISA's Known
+   Exploited Vulnerabilities (KEV) catalog.
+3. **Exploit likelihood:** daily exploitation-probability scores, from EPSS.
+4. **Fix dates:** when vendors released fixes, from vendor advisories.
+5. **Ransomware postings:** victim claims on leak sites, counted only (no victim names), from
+   ransomware.live (with written permission, 27 October 2026).
+6. **Breach filings:** material cybersecurity incidents disclosed by companies, from SEC
+   filings.
+7. **AI credits:** AI tools credited in flaw records.
+
+Three are pending permission:
+
+8. **Exploited flaws, second source:** independent exploitation evidence, from VulnCheck.
+9. **Exposure scans:** how many internet systems are still exposed to a flaw, from Shadowserver.
+10. **Honeypot hits:** real-world attack observations, from Shadowserver's honeypots.
+
+**Yearly cross-check:** internet scan data from Censys, once research access is granted.
+
+**International views, being tested:** national alerts on actively exploited flaws from France
+(CERT-FR) and Japan (JPCERT/CC); routing security by country from APNIC Labs (with written
+permission, 1 November 2026); regional splits of web traffic and ransomware postings; and
+data-breach notifications from the UK (ICO) and Australia (OAIC).
+
+Each quarter, an automatic GitHub job freezes an exact copy of the data, the author checks by
+hand what automation cannot judge, and the seven pre-registered questions are reported: a
+provisional evaluation on the 1st of January, April, July and October, and a final one a month
+later. Q4 2026 is a labelled pilot; Q1 2027 is the first scored quarter. Additional context comes
+from news reporting, internet traffic data from Cloudflare Radar, and open repositories of
+software code and AI models and datasets.
+
+## Data coverage
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/landing/coverage-core-dark.svg">
   <img alt="Core data: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-core-light.svg">
@@ -38,25 +94,6 @@ cutover, the pilot run and every quarterly run:
 **Standard operating procedure:** [`docs/SOP_MANUAL_RUNS.md`](docs/SOP_MANUAL_RUNS.md), how
 every workflow is run, checked and recovered. The banner is redrawn daily by the Source status
 workflow; the rings come from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14).
-
-## Mission
-
-The Internet Security Snapshot is a study of the internet's security through the year 2027.
-Every quarter it asks one question: are defenders closing internet-exposed software flaws
-faster than attackers start exploiting them, and how is AI changing that race?
-
-It answers with free public data only, on a plan registered in advance (OSF, DOI
-[10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82), 20 October 2026), so the results
-cannot be bent to fit a story. The sources are public records of software flaws (CVE), CISA's
-list of flaws known to be attacked (KEV) and its added analysis (Vulnrichment), NVD, daily
-exploitation-likelihood scores (EPSS), vendor fix dates, company breach filings with the SEC and
-Cloudflare Radar's internet traffic data. ransomware.live joined with written permission on 27 October 2026; Shadowserver, VulnCheck and
-Censys join only once each grants permission or access.
-
-Each quarter an automatic job freezes an exact copy of the data, the author hand-checks what a
-computer cannot judge, and seven pre-registered questions are reported: a provisional evaluation
-on the 1st of January, April, July and October, and a final one a month later. Q4 2026 is a
-labelled pilot; Q1 2027 is the first scored quarter.
 
 ## About the author
 

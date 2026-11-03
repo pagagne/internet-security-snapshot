@@ -16,10 +16,11 @@ flip_date: 2027-01-02   # the day after the pilot report (schedule item landing-
 sections:
   - {readme: top,                      status: live}
   - {draft: news,                      status: draft, cleared: false, under_banner: true}
+  - {readme: Mission,                  status: live}   # moved under the banner 3 Nov 2026 (author)
+  - {readme: Data coverage,            status: live}   # the rings, split from the top 3 Nov 2026
   - {draft: intro,                     status: draft, cleared: false}
   - {draft: timeline,                  status: draft, cleared: false}
   - {draft: results,                   status: draft, cleared: false}
-  - {readme: Mission,                  status: live}
   - {readme: About the author,         status: live}
   - {draft: x25,                       status: draft, cleared: false}
   - {draft: hf,                        status: draft, cleared: false}   # added 1 Nov 2026 (author)
