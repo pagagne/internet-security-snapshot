@@ -137,3 +137,6 @@ Started 25 Oct 2026 at the author's request.
   5 Feb; the same person does the April review, with all advice published and none on the scored
   rules; the Handshake posting goes live now, with GitHub links until the website is published.
   This adds to the plan and changes no registered rule; reviewer calendar dates follow.
+  Revised the same afternoon (author): two people instead of one, so the first does not
+  influence the second: a pilot witness (posted now) and the independent reviewer (original role,
+  posting live 4 Jan). Handshake schools trimmed to UGA, Georgia State, Georgia Tech and MIT.
