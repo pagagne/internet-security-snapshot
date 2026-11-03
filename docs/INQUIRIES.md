@@ -129,3 +129,11 @@ Started 25 Oct 2026 at the author's request.
   security audit of ClawHub (a registry of AI-agent skills) and asked how its techniques compare
   with the way the GitHub and Hugging Face sweeps (X25) judge content, and what our method's
   shortfalls are. Deep-dive evaluation scheduled for Thu 5 Nov; the report itself is kept privately.
+
+- **3 Nov 2026: the reviewer joins before the pilot (author).** The author wants the independent
+  reviewer on board during the pilot to witness data collection and advise on the lock timing,
+  since the procedures (SOP) are to be locked directly after the pilot (adoption 8 Feb 2027).
+  Decided: the reviewer witnesses the 15 Dec dry run and the whole pilot and sends a note by
+  5 Feb; the same person does the April review, with all advice published and none on the scored
+  rules; the Handshake posting goes live now, with GitHub links until the website is published.
+  This adds to the plan and changes no registered rule; reviewer calendar dates follow.

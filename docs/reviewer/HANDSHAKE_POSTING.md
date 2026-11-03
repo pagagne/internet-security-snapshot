@@ -22,10 +22,20 @@ separately. Same text on every board.
 
 ---
 
+**3 Nov (author's decisions):** the reviewer joins before the pilot, to witness the 15 Dec dry
+run and the whole pilot (1 Jan pull, January hand checks, 1 Feb final) and to advise on the lock
+timing before the SOP is adopted on 8 Feb; the same person does the April review, with all advice
+logged publicly and none on the scored rules. The posting goes live now (the author lifts the
+4 Dec link rule for this posting); the two project-website links are replaced by GitHub links
+until GitHub Pages is published.
+
+---
+
 **Independent Reviewer for the Internet Security Snapshot**
 
-I am looking for an independent reviewer for a research project running through 2027: about 15
-to 19 hours over roughly 14 months, more than half of it in April 2027.
+I am looking for an independent reviewer for a research project running through 2027: about 22
+to 28 hours over roughly 15 months, starting in December 2026, with the largest block in April
+2027.
 
 The role needs someone who reads data and calculations skeptically, cares more about whether a
 number is right than whether it tells a good story, and has no stake in the outcome. No security
@@ -38,13 +48,17 @@ software flaws faster than attackers start using them, and how artificial intell
 changing that race. It uses only free public data, and the plan was registered publicly in
 advance, so the results cannot be bent to fit a story.
 
-- Project website: https://pagagne.github.io/internet-security-snapshot/
 - Registered plan (Open Science Framework): https://doi.org/10.17605/OSF.IO/3XT82
 - Code and data: https://github.com/pagagne/internet-security-snapshot
-- What the reviewer's work looks like (Reviewer's Desk): https://pagagne.github.io/internet-security-snapshot/reviewer/
+- The reviewer role in detail: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/INVITATION.md
 
 **What you would do**
 
+- Witness the pilot (December 2026 to early February 2027): follow the full dry run on 15-16
+  December, the pilot's data collection on 1 January (through its public run logs and the frozen
+  copy of the data), the January hand checks and the final run on 1 February. Then write a short
+  note on any problems you saw and on the timing of locking the procedures (by 5 February).
+  Your notes are published.
 - Independent review of the first scored quarter (April 2027): read the provisional report
   against the registered plan, recompute three randomly drawn headline figures from worksheets,
   and check a sample of hand decisions. You write a short review, which is published.
@@ -54,10 +68,14 @@ advance, so the results cannot be bent to fit a story.
 
 **Time and format**
 
-- About 15 to 19 hours over 14 months; 8 to 12 of them between 3 and 28 April 2027.
-- Getting started in early March 2027 (3 to 4 hours, including one video call).
+- About 22 to 28 hours over 15 months:
+  - getting started, 7-14 December 2026 (3 to 4 hours, including one video call);
+  - witnessing the dry run and the pilot, mid-December to early February (about 7 to 9 hours,
+    spread out);
+  - the April review, 3-28 April 2027 (8 to 12 hours);
+  - second coding, about 45 minutes a quarter.
 - Fully remote; work at any time of day within each window.
-- Runs from 2 March 2027 to 11 February 2028 (an optional comment on the annual check until
+- Runs from 7 December 2026 to 11 February 2028 (an optional comment on the annual check until
   14 March 2028).
 
 **Who should apply**
@@ -70,11 +88,11 @@ than any security knowledge.
 
 This is an unpaid volunteer role. You will be named as the independent reviewer in the published
 reports and listed as a contributor on the archived, citable releases (Zenodo, with your ORCID
-iD if you have one). Your written review is a citable document. A reference letter or LinkedIn
-recommendation on request after the April 2027 review. Course credit may be possible through
-your own department.
+iD if you have one). Your written notes and review are citable documents. A reference letter or
+LinkedIn recommendation on request after the April 2027 review. Course credit may be possible
+through your own department.
 
 **How to apply**
 
 Send a short note on why the role interests you and any relevant coursework or experience.
-Applications close 15 February 2027; the reviewer is confirmed by 1 March 2027.
+Applications close 30 November 2026; the reviewer is confirmed by 6 December 2026.
