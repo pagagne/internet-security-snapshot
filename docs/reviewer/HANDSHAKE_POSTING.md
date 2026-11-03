@@ -8,8 +8,13 @@ Position type: Experiential Learning (UGA could not say whether an internship fo
 better). Position dates: start 2 Mar 2027, end 11 Feb 2028 (last required second-coder round).
 **29 Oct: account suspended for review** by Handshake's Trust and Safety team (a possible terms
 issue; nothing posted; the organisation name also shows misspelled). The author asked them the
-same evening what is needed to restore it and to correct the name; reply awaited. The posting
-is not due until 4 Jan, so there is time.
+same evening what is needed to restore it and to correct the name. **Handshake's answer (ticket,
+29 Oct and 2 Nov):** new employer accounts need a government ID matching the page owner and a
+valid EIN (business tax number), checked through their verification partner; personal or
+household jobs are the only stated alternative. The author replied that the study is an
+individual's project with no business or EIN, and sent his ID; Handshake's answer to that is
+awaited. Next step suggested: ask UGA's Career Center employer-relations office how they list an
+unincorporated research project, or to vouch for it. The posting is not due until 4 Jan.
 Schools (author, 28 Oct): UGA, Georgia State, Georgia Tech, Clemson, University of South
 Carolina, College of Charleston, The Citadel, Emory and MIT; each approves the employer
 separately. Same text on every board.
