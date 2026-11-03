@@ -13,8 +13,9 @@ same evening what is needed to restore it and to correct the name. **Handshake's
 valid EIN (business tax number), checked through their verification partner; personal or
 household jobs are the only stated alternative. The author replied that the study is an
 individual's project with no business or EIN, and sent his ID; Handshake's answer to that is
-awaited. Next step suggested: ask UGA's Career Center employer-relations office how they list an
-unincorporated research project, or to vouch for it. The posting is not due until 4 Jan.
+awaited. **3 Nov: account restored** (the author reports it open and working). The posting is
+not due until 4 Jan; its two project-website links work only once GitHub Pages is published
+(website build 27 Nov, launch 4 Dec).
 Schools (author, 28 Oct): UGA, Georgia State, Georgia Tech, Clemson, University of South
 Carolina, College of Charleston, The Citadel, Emory and MIT; each approves the employer
 separately. Same text on every board.
