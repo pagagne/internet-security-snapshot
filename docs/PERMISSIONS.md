@@ -150,7 +150,9 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   (kept in the private correspondence index, not here). Two further conditions on the same page:
   linking is free, with the same courtesy email; and any email or communication that links to
   their site must tell readers they are being linked to JPCERT/CC's site. Their page addresses
-  may change without notice (see the 29 Oct inquiry on source stability).
+  may change without notice (see the 29 Oct inquiry on source stability). **Confirmed in writing
+  3 Nov 2026** (reply from JPCERT/CC's Public Relations team): the study may use documents
+  published on their website, as proposed, provided the source is properly credited.
 - **ENISA:** not used for now (no regular counts found; March review).
 - **PDPC (Singapore):** its site answered the workflow with a bot check (HTTP 202, empty page);
   not to be worked around.

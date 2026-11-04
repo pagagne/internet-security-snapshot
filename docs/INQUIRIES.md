@@ -140,3 +140,7 @@ Started 25 Oct 2026 at the author's request.
   Revised the same afternoon (author): two people instead of one, so the first does not
   influence the second: a pilot witness (posted now) and the independent reviewer (original role,
   posting live 4 Jan). Handshake schools trimmed to UGA, Georgia State, Georgia Tech and MIT.
+
+- **4 Nov 2026: JPCERT/CC confirmed.** JPCERT/CC's Public Relations team answered the 29 Oct
+  courtesy notice (received 3 Nov, 19:55 ET): the study may use documents published on their
+  website as proposed, provided the source is properly credited. X19 keeps JPCERT/CC with credit.
