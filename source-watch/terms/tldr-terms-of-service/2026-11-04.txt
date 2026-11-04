@@ -1,0 +1,33 @@
+# TLDR terms of service
+# https://tldr.tech/terms
+# copied 2026-11-04
+
+TLDR - Terms of Service TLDR Newsletters Advertise Blog
+TLDR Terms of Service
+Acceptance
+By accessing or using TLDR’s sites, software or tools, you certify that you are at least 13 years old (due to US COPPA laws). Do not use our sites, software, or tools if you do not agree to these terms of service.
+Privacy Policy
+We maintain a separate privacy policy at https://tldr.tech/privacy which indirectly forms part of these terms of service.
+Financial Disclosures
+The opinions expressed herein are not intended to provide investment, accounting, tax, or legal advice. Nothing in TLDR is a recommendation that you purchase, sell or hold any security or other investment, or that you pursue any investment style or strategy. The content of this website is presented on an “as is” basis with no warranties, express or implied, of any kind with respect to the Services. Content provided herein is for informational purposes only and should not be relied upon when making any investment decision.
+Your Conduct
+You agree that you will not use any of TLDR’s sites, software or tools to:
+send bulk, spam, or unsolicited communications to third parties attack or disrupt the normal flow of work, dialogue, or communications of any system engage in activities that violate the laws of both the United States and the United Kingdom attack, defame, or intimidate other users of the sites, software or tools
+Your Submissions
+All of your contributions and submissions to TLDR’s sites, software or tools are made available to TLDR to use indefinitely and non-exclusively. You will retain the copyright of your own words other than where an alternative arrangement has been made.
+No payments are due for TLDR’s use of your approved, submitted content unless arrangements have been made in advance.
+Copyright Infringement Claims
+TLDR respects the copyrights and intellectual property rights of third party content creators but if a copyrighted work has been copied and is accessible on a TLDR site, software or tool, please send a written notice to our Copyright Agent that includes:
+verification of your identity
+a description of whose intellectual property rights have been violated (if it is not you directly)
+a description of the work that is in violation or has been violated
+your contact information
+a statement by you, made under penalty of perjury, that the above information has been sent in good faith and that, if you are not the copyright holder, you have been approved by the copyright owner to act on their behalf
+Please send such notices to: [email address removed]
+Indemnity
+You agree to indemnify and hold TLDR and its officers, directors, affiliates, partners, agents, licensors, licensees, and employees harmless from any claim or demand, including reasonable attorneys’ fees, made by any third party due to or arising out of your violation of these terms of service, or your violation of any rights of any third party based on or related to your use of our sites, software or tools.
+Termination of Services
+We reserve the right to cancel, remove, or modify services being offered, withstanding any contractual obligations.
+Warranty Disclaimer
+You agree to accept and assume the entire risk in downloading, using or accessing any of the sites, services or software that we offer. You also agree to accept and assume the entire risk in using our materials or following any directives, instructions, or advice therein.
+YOUR USE OF OUR SITES, SERVICES, OR SOFTWARE IS ENTIRELY AT YOUR OWN RISK AND IS PROVIDED ON AS “AS IS”, “AS AVAILABLE” AND “WITH ALL FAULTS” BASIS. TLDR MAKES NO WARRANTIES, REPRESENTATIONS OR GUARANTEES AS TO THE USEFULNESS, QUALITY, SUITABILITY, ACCURACY, TRUTH OR COMPLETENESS OF ITS SITES, SOFTWARE, OR SERVICES.

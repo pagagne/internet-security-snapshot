@@ -1,0 +1,129 @@
+# SANS terms and conditions (NewsBites)
+# https://www.sans.org/legal/terms-conditions
+# copied 2026-11-04
+
+Terms and Conditions
+Skip to main content
+Go to search
+Go to footer
+Log In
+Join - It's Free
+Search
+Search
+Training Learning Paths Free Resources For Organizations
+Back Training Courses
+Build cyber prowess with training from renowned experts.
+Ways to Train
+Multiple training options to best fit your schedule and preferred learning style.
+Cyber Ranges
+Hands-on training to keep you at the top of your game.
+Training Events & Summits
+Expert-led training at locations around the world.
+Certifications
+Demonstrate cybersecurity expertise with GIAC certifications.
+Free Training Events
+Upcoming workshops, webinars and local events.
+Workforce Security and Risk Training
+Harden enterprise security with end-user and role-based training.
+Meet Our Instructors
+Train with world-class cybersecurity experts who bring real-world expertise to class.
+Featured Course View All Courses
+SEC536: Adversarial AI - Penetration Testing AI Systems
+SEC536 Offensive Operations, Artificial Intelligence
+View course details Register
+Get a Free Hour of SANS Training Experience SANS training through course previews.
+Learn More
+Back Learning Paths By Focus Area
+Chart your path to job-specific training courses.
+New to Cyber
+Give your cybersecurity career the right foundation for success.
+By Job Role
+Find the courses and certifications that align with your current or desired role.
+Leadership
+Training designed to help security leaders reduce organizational risk.
+By Skills Framework or Directive
+Explore how SANS courses align with leading cybersecurity skills frameworks including NICE, ECSF and DoD 8140
+Degree and Certificate Programs
+Gain the skills, certifications, and confidence to launch or advance your cybersecurity career.
+By Skills Roadmap
+Find the right training path based on critical skills.
+Featured View all Focus Areas
+NEW - AI Security Training
+Can't find what you are looking for? Let us help.
+Contact us
+Back Free Resources Watch & Listen Webinars Summit Presentations Podcasts & Live Streams Overview Read Blog Newsletters Internet Storm Center Overview Download Open Source Tools Posters & Cheat Sheets Policy Templates White Papers Overview
+SANS Community Benefits
+Connect, learn, and share with other cybersecurity professionals
+Customer Case Studies
+Discover how organizations and individual cyber practitioners use SANS training and GIAC certifications
+AI Risk & Readiness
+Explore expert-driven guidance, training, and tools to help defend against AI-powered threats and adopt AI securely
+Join the SANS Community Become a member for instant access to our free resources.
+Sign Up
+Back For Organizations Team Development Why Partner with SANS Group Purchases Skills & Talent Assessments Private & Custom Training Programs Overview Leadership Development Management Courses & Accreditation Cyber Crisis Exercises SANS Cyber Leaders Network Overview Workforce Security & Risk Security Awareness Training Compliance Training Risk Management Services Resources Overview
+Public Sector
+Mission-focused cybersecurity training for government, defense, and education
+Partnerships
+Explore industry-specific programming and customized training solutions
+Sponsorship Opportunities
+Sponsor a SANS event or research paper
+Interested in developing a training plan to fit your organization’s needs? We're here to help.
+Contact Us
+Group Purchasing Log In
+Join - It's Free
+Menu Search Search
+Group Purchasing
+Legal Notices and Policies
+Terms and Conditions
+Previous level Terms and Conditions
+These Terms and Conditions (the “Agreement”) constitute a legal agreement between The Escal Institute of Advanced Technologies, Inc. /dba SANS Institute, for itself and on behalf of its subsidiaries (collectively “SANS”) and you (“User”). By using a SANS website or registering for a SANS-provided training, product and/or service, User agrees to be bound by the terms of this Agreement. PLEASE READ THIS AGREEMENT CAREFULLY TO ENSURE THAT YOU UNDERSTAND EACH PROVISION. THIS AGREEMENT CONTAINS A MANDATORY ARBITRATION OF DISPUTES PROVISION THAT REQUIRES THE USE OF ARBITRATION ON AN INDIVIDUAL BASIS TO RESOLVE DISPUTES, RATHER THAN TRIAL BY JURY OR CLASS ACTION.
+If User is registering for SANS-provided training, products or services that are paid for by User’s employer or other sponsoring organization (“Sponsor”), and there is a conflict or inconsistency between the provisions of this Agreement and any of the provisions of a previously agreed agreement between SANS and the Sponsor (Previous Agreement), the provisions of the Previous Agreement shall prevail.
+Eligibility
+User must agree to this Agreement before using a SANS website or registering for and participating in any SANS-provided training, product or service. User acknowledges that User is at least 18 years old and legally capable of consenting to this Agreement. If User is under the age of 18 and/or is not legally capable of consenting to this Agreement, User must ask a legal guardian to review and agree to this Agreement and so User can use a SANS website or complete the registration and purchase of SANS-provided training, products or services on User’s behalf.
+Live, Online and OnDemand Training
+SANS provides high quality training in different modalities, including live in person, live online, or on demand training. SANS Training Policy describe various obligations and requirements of User when attending training event or taking training online whether live or on demand. If User is registering for SANS-provided training, User is also subject to the SANS Training Policy located at https://www.sans.org/legal/sans-training-policy/ and such Policy is incorporated into this Agreement by reference.
+Intellectual Property
+All trademarks, service marks, trade names, logos, domain names, and other identifiers (collectively, “Marks”) appearing on a SANS website, downloadable content on a SANS website or in content received from SANS after registering for SANS training (collectively “SANS Content”) are proprietary to SANS or their respective owners, whether registered or unregistered. Such Marks are protected by worldwide copyright and trademark laws. Any rights not expressly granted herein are reserved. Reproduction, transfer, distribution or storage of any SANS Content without the prior written consent of SANS is strictly prohibited except in accordance with the terms herein. SANS consents to the browsing, the printing or the downloading of SANS Content for personal and non-commercial use; provided, there may be no further reproduction or modification of the SANS Content.
+SANS owns the Marks to its logos (including the “SANS” logo, “GIAC Certifications” logo, the “GIAC Certified” logos, “SANS Technology Institute” logo) as well as the SANS logos for events and programs (including but not limited to the “SANSFIRE” logo, “Cyber Defense Initiative” logo, “Security West” logo, “Netwars” logos). Course names and titles are also protected Marks of SANS (including for example “SEC401: Security Essentials – Network, Endpoint, and Cloud” and “FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics”). The absence of a name or logo from this paragraph or the display of a name or logo not marked as a registered or unregistered Mark on SANS Content does not constitute a waiver of SANS’s trademark or other intellectual property rights to such names or logos.
+All SANS courseware, certifications, and training materials (“SANS Materials”) are copyrighted and/or otherwise consists of data, concepts, technology, and intellectual property owned, licensed and proprietary to SANS. User obtains no intellectual property rights to any SANS Materials. SANS grants to User a worldwide, non-transferable, perpetual, irrevocable, non-exclusive, limited license directly to use such SANS Materials for non-commercial use only.
+User may not copy, reproduce, distribute, display, modify or create derivative works based upon all or any portion of the SANS Materials in any medium whether printed, electronic or otherwise, without the express written consent of SANS. Additionally, User may not upload, submit, or otherwise transmit SANS Materials to any artificial intelligence system, platform, or service for any purpose, regardless of whether the intended use is commercial, educational, or personal, without the express written consent of SANS. User agrees that the failure to abide by this provision would cause irreparable harm to SANS that is impossible to quantify. User therefore agrees to a base liquidated damages amount of $5000.00 USD per item of SANS Material infringed upon or fraction thereof. In addition, the base liquidated damages amount shall be doubled for any SANS Material less than a year old as a reasonable estimation of the anticipated or actual harm caused by User’s breach of these terms. Both parties acknowledge and agree that the stipulated amount of liquidated damages is not intended as a penalty, but as a reasonable estimate of damages suffered by SANS due to User’s breach of these terms.
+Privacy
+SANS is committed to protecting the privacy and security of User’s personal data. The SANS (www.sans.org/privacy), GIAC (www.giac.org/privacy) and SANS Technical Institute (www.sans.edu/privacy) Privacy Policies describes how SANS may collect, uses, discloses and stores User’s data. Such Privacy Policies are incorporated into this Agreement by reference. By agreeing to this Agreement, User agrees to the applicable SANS, GIAC or SANS Technical Institute Privacy Policy for the training, product or service purchased.
+SANS products and services are not directed to children under the age of 16. SANS does not knowingly collect any personal information from children under the age of 16, nor does SANS knowingly distribute such information to third parties. If SANS becomes aware that it has received personal information from someone under the age of 16, SANS will take steps to delete such information from its records. If User believes SANS has personal information from individuals under the age of 16, please contact SANS at [email address removed] .
+Spam Filters & Email Notices
+SANS cannot be responsible for User’s spam filters blocking User’s confirmation email. It is the responsibility of User to ensure that the email account associated with User’s registration will allow mail from sans.org, sans.edu, giac.org, and giac.net.
+Payment Terms, Taxes
+If User is registering for SANS-provided training, services or products that require a fee or other charge, User agrees to the pricing and payment terms of SANS as updated from time to time. SANS may add new training, products or services for additional fees or charges, or amend fees and charges for existing training, products or services at any time in SANS sole discretion.
+All information User provides in connection with User’s purchase or transaction must be accurate, complete and current. All applicable taxes related to any such purchases or transactions from SANS is the responsibility of User.
+Indemnity
+User agrees to defend, indemnify and hold harmless SANS and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including attorney’s fees) arising out of or relating to: (i) User’s participation in any training, services or products provided by SANS, including any data or content transmitted or received by you, (ii) User’s violation of any terms of this Agreement, (iii) User’s violation of any third-party right, including the intellectual property rights of third parties, (iv) User’s violation of any applicable law, rule or regulation, (v) any false, misleading or inaccurate information submitted by User or in User’s account, or (vi) negligent or willful misconduct.
+No Warranty
+SANS disclaims all representations and warranties, oral or written, expressed, implied, or statutory, including without limitation, any implied warranties of fitness for a particular purpose or of merchantability. In no event shall SANS be liable for any incidental, indirect, consequential, exemplary, special, or punitive damages, whether foreseeable, and regardless of whether liability is based on agreement, tort, or otherwise.
+Limitation of Liability
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SANS, ITS DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATING TO THE USE, OR INABILITY TO USE, THE SANS-PROVIDED TRAINING, PRODUCTS OR SERVICES. THIS LIMITATION OF LIABILITY APPLIES WHETHER THE ALLEGED LIABILITY IS BASED ON CONTRACT, TORT, NEGLIGENCE, STRICT LIABILIYT OR OTHER BASIS.
+Events Outside our Control
+SANS will not be liable or responsible for any failure to perform, or delay in performance of, any of our obligations that is caused by events outside our reasonable control (a “Force Majeure Event”). A Force Majeure Event includes any act, event, non-happening, omission or accident beyond our reasonable control.
+Our performance is deemed to be suspended for the period that the Force Majeure Event continues, and we will have an extension of time for performance for the duration of that period. We will use our reasonable endeavours to bring the Force Majeure Event to a close or to find a solution by which our obligations may be performed despite the Force Majeure Event.
+Sanctions and Export Compliance
+The SANS-provided training, products and services are controlled by, operated from and/ or owned by facilities in the United States of America (“U.S.A.”). User is responsible for complying with all applicable government import and export regulations, including those of the U.S.A. User may not purchase or use any SANS-training, products or services if User is a resident of an embargoed country of the U.S.A., or a person subject to U.S.A. government-imposed sanctions or on the denied person list.
+Governing Law and Arbitration
+User agrees that the SANS-provided training, products or services shall be deemed solely based in Maryland, U.S.A. and that User’s participation in SANS-provided training, products or services is passive and does not give rise to personal jurisdiction over SANS other than in Maryland, U.S.A. This Agreement will be governed by and construed in accordance with the laws of the state of Maryland. Each party hereby irrevocably consents to exclusive personal jurisdiction and venue in the state and federal courts located in Maryland. Both Parties exclude the application of the Uniform Computer Information Transactions Act (“UCITA”), the United Nations Convention on the International Sale of Goods (“CISG”) and any law of any jurisdiction that would apply UCITA or CISG or terms equivalent to UCITA or CISG to this Agreement.
+In the event that SANS and User are not able to resolve a dispute after 60 days, each party agrees to resolve any claim, dispute or controversy (excluding any SANS claims for injunctive or other equitable relief) arising out of or in connection with this Agreement by binding arbitration in Montgomery County, Maryland, U.S.A. administered by the American Arbitration Association in accordance with its Commercial Arbitration Rules. The language of the arbitration will be English.
+ALL CLAIMS MUST BE BROUGHT IN A PARTY’S INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS ACTION, COLLECTIVE ACTION, PRIVATE ATTORNEY GENERAL ACTION OR OTHER REPRESENTATIVE PROCEEDING. USER AGREES THAT BY ENTERING INTO THIS AGREEMENT, USER AND SANS ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICPATE IN A CLASS ACTION, COLLECTIVE ACTION, PRIVATE ATTORNEY GENERAL ACTION, OR OTHER REPRESENTATIVE PROCEEDING OF ANY KIND.
+No Waiver
+SANS’ waiver of any term of this Agreement shall not be considered a continuing waiver of such term or any other term, and SANS’ failure to assert any right or provision under this Agreement shall not constitute a waiver of such right or provision.
+Entire Agreement
+This Agreement constitutes the entire understanding and agreement between the parties concerning the use of a SANS website, or SANS-provided training, products or services. If any provision of this Agreement is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of this Agreement, which shall remain in full force and effect. This Agreement may not be amended except by a written amendment signed by both parties.
+Get Curated News, Vulnerabilities, and Essential Security Awareness Tips
+Subscribe to Newsletter
+The Highest Standard in Cybersecurity Education Since 1989
+Company
+About Instructors Careers Press
+Help & Support
+Contact FAQs Legal
+Training Programs
+Work Study Program Academies & Programs Workforce Development Partnerships Law Enforcement SkillsFuture Singapore Cybersecurity Degrees & Certificates
+Get Involved
+Become a SANS Member Become an Instructor Become a Sponsor Speak at a Summit Award Programs Join the Cyber Leaders Network
+Privacy Policy Terms and Conditions Do Not Sell/Share My Personal Information Cookie Notice
+© 2026 The Escal Institute of Advanced Technologies, Inc. d/b/a SANS Institute. Our Terms and Conditions detail our trademark and copyright rights. Any unauthorized use is expressly prohibited.
