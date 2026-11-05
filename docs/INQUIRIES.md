@@ -144,3 +144,13 @@ Started 25 Oct 2026 at the author's request.
 - **4 Nov 2026: JPCERT/CC confirmed.** JPCERT/CC's Public Relations team answered the 29 Oct
   courtesy notice (received 3 Nov, 19:55 ET): the study may use documents published on their
   website as proposed, provided the source is properly credited. X19 keeps JPCERT/CC with credit.
+
+- **5 Nov 2026: reality check of the tool and model sweeps (X25), answered.** Against the
+  ClawHub audit's techniques, the sweeps judge items by what they say about themselves (names,
+  topics, descriptions, some READMEs and model cards), so they count advertised supply and cannot
+  yet tell a real tool from a malware lure, a renamed clone or a burst of look-alike projects.
+  Shortfalls named: no text check of READMEs for lure patterns, no measured mislabel rate on
+  GitHub, no clone or publisher-cluster flags, star-weighted comparisons exposed to bought stars,
+  a 1,000-result cap per GitHub search, and agent-skill registries not covered. Endpoint
+  telemetry (one of the audit's techniques) stays out of scope. Options put to the author; the
+  full review is kept privately.
