@@ -9,8 +9,8 @@ name: Privacy scan
 # request); until then a step of the Schedule workflow. Every push is also scanned by Checks.
 on:
   schedule:
-    - cron: "47 11 * * *"   # 11:47 UTC = 07:47 ET daily
-    - cron: "13 21 * * *"   # 21:13 UTC = 17:13 ET; a second daily run in case GitHub skips one
+    - cron: "13 21 * * *"   # 21:13 UTC = 16:13 ET daily
+    - cron: "51 23 * * *"   # 23:51 UTC = 18:51 ET; second daily run (moved from 11:47 on 5 Nov 2026, evening trial)
   workflow_dispatch:
     inputs:
       about:

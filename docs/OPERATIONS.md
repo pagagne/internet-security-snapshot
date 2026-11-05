@@ -36,8 +36,9 @@ never in the repository; Claude keeps it current.
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
   feeds `docs/schedule/snapshot.ics` and `docs/schedule/reviewer.ics` and the Schedule table in `README.md` (from the
   `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
-- **Daily job:** `.github/workflows/schedule.yml` runs at 10:23, 12:07 and 15:37 UTC, because
-  GitHub drops scheduled runs at busy times (it skipped the 12:07 run on 25 and 26 Oct 2026).
+- **Daily job:** `.github/workflows/schedule.yml` runs at 15:37, 20:07, 21:23, 22:37 and 23:43
+  UTC. GitHub starts scheduled runs late at busy times (4 to 8 hours late, measured 28 Oct -
+  5 Nov 2026), so the daily timers moved to the evening on 5 Nov for a one-week trial (author).
   As a last safety net the daily Claude work queue (08:32 ET) starts it by hand if no run has
   succeeded that day. It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never

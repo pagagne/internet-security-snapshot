@@ -31,13 +31,14 @@ WATCHED = {
     "honeypot.yml": ({2}, None, dt.time(9, 43), "api"),
     "backup.yml": ({3}, None, dt.time(10, 17), "button"),
     "rebuild-check.yml": ({10}, None, dt.time(7, 17), "button"),
-    # Daily banner check (author, 1 Nov 2026, after GitHub skipped it that morning). Restarted
-    # once if missing 4 hours after its time, so by Schedule's 15:37 UTC run; still one light
-    # request per source per day. No issue opened (daily; the run itself is the record).
-    "source-status.yml": (None, None, dt.time(11, 23), "event:source-status"),
+    # Daily banner check (author, 1 Nov 2026). Moved to the evening on 5 Nov 2026 (21:47 UTC).
+    # Restarted once if missing after the grace period; still one light request per source per
+    # day. No issue opened (daily; the run itself is the record).
+    "source-status.yml": (None, None, dt.time(21, 47), "event:source-status"),
 }
 QUIET = {"source-status.yml"}      # restarted without opening an issue
-GRACE = dt.timedelta(hours=4)      # GitHub's late timers usually arrive well within this
+GRACE = dt.timedelta(hours=10)     # GitHub starts scheduled runs 4 to 8 hours late at busy times
+                                   # (measured 28 Oct - 5 Nov 2026; raised from 4 hours, author 5 Nov)
 LOOKBACK_DAYS = 3                  # catch up even if Schedule itself missed a day or two
 MARKER = "<!-- watchdog: {} -->"
 

@@ -221,12 +221,12 @@ The study runs on GitHub workflows: automatic jobs that collect, check, back up 
 | Honeypot capture | the 2nd of each month at 09:43 UTC | started by the Schedule workflow or Claude |
 | Landing snapshot | no timer | started by the Schedule workflow or Claude, Run button |
 | Manual publish (private) | no timer | after changes to main, started by the Schedule workflow or Claude, Run button |
-| Privacy scan | daily at 11:47 UTC; daily at 21:13 UTC | Run button |
+| Privacy scan | daily at 21:13 UTC; daily at 23:51 UTC | Run button |
 | Quarterly pull | 1st Jan/Apr/Jul/Oct at 06:00 UTC; 1st Feb/May/Aug/Nov at 06:00 UTC | started by the Schedule workflow or Claude |
 | Rebuild check | the 10th of each month at 07:17 UTC | Run button |
 | Research probe | no timer | started by the Schedule workflow or Claude |
-| Schedule | daily at 10:23 UTC; daily at 12:07 UTC; daily at 13:23 UTC; daily at 15:37 UTC; daily at 21:23 UTC | Run button |
-| Source status | daily at 11:23 UTC | started by the Schedule workflow or Claude |
+| Schedule | daily at 15:37 UTC; daily at 20:07 UTC; daily at 21:23 UTC; daily at 22:37 UTC; daily at 23:43 UTC | Run button |
+| Source status | daily at 21:47 UTC | started by the Schedule workflow or Claude |
 | Source watch | Wednesdays at 13:17 UTC | started by the Schedule workflow or Claude |
 
 Details for each workflow: [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md). Dates for scheduled runs without a timer (dry runs, sweeps, landing snapshots) are in the schedule above.

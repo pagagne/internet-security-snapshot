@@ -26,9 +26,9 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 |---|---|---|---|---|---|
 | Quarterly pull | `quarterly-pull.yml` | 06:00 on 1 Jan/Apr/Jul/Oct (provisional) and 1 Feb/May/Aug/Nov (final); Schedule (dry runs); no button | repository (tags, run-reports) | NVD, Cloudflare, SEC user agent, ransomware.live, VulnCheck, Drive | 27 Oct, run 40583009106 |
 | Rebuild check | `rebuild-check.yml` | 07:17 on the 10th of each month; Run button | run-reports | none | 27 Oct, run 40584529355 |
-| Schedule | `schedule.yml` | 10:23, 12:07, 13:23, 15:37 and 21:23 daily; Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
+| Schedule | `schedule.yml` | 15:37, 20:07, 21:23, 22:37 and 23:43 daily (evening trial from 5 Nov); Run button | issues, run-reports, starts other workflows | none | 27 Oct, run 40583012321 |
 | Checks | `checks.yml` | every push and pull request; Run button | nothing (read only) | none | 27 Oct, test push |
-| Privacy scan | `privacy.yml` | 11:47 and 21:13 daily; Run button | issues, run-reports | none | 29 Oct |
+| Privacy scan | `privacy.yml` | 21:13 and 23:51 daily; Run button | issues, run-reports | none | 29 Oct |
 | Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues (counts only), the private repository | `MANUAL_REPO_TOKEN` | 29 Oct; private since 31 Oct |
 | Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
 | Manual publish | `manual-publish.yml` | Every change to main that touches a document; after each private sweep; Run button | the private repository pagagne/snapshot-manual (manual only) | `MANUAL_REPO_TOKEN` | 30 Oct |
@@ -36,7 +36,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
 | Landing snapshot | `landing-snapshot.yml` | Schedule: 30 Nov 2026, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
-| Source status | `source-status.yml` | 11:23 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
+| Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
 
@@ -92,9 +92,12 @@ GitHub skipped one (no run four hours after it was due, looking back three days)
 once and opens a `watchdog` issue for the author. So the study keeps collecting even if no one,
 Claude included, is available (`src/snapshot/watchdog.py`; `docs/SOP_MANUAL_RUNS.md`, section 7).
 Since 1 Nov 2026 (author's decision) it also watches the daily Source status check behind the
-landing-page banner: if today's check has not run four hours after its 11:23 UTC time, the
-15:37 UTC Schedule run starts it once, without an issue (only the latest missed day; still one
-request per source per day).
+landing-page banner: if a day's check has not run ten hours after its 21:47 UTC time, the next
+Schedule run starts it once, without an issue (only the latest missed day; still one request per
+source per day). **Timing (5 Nov 2026, author's decisions):** GitHub had been starting scheduled
+runs 4 to 8 hours late, not skipping them, so the watchdog now waits 10 hours instead of 4 before
+restarting anything (no second quarterly pull), and the daily timers moved to the evening, where
+delays were shorter, for a one-week trial reviewed on 12 Nov.
 
 ## 4. Checks: the safety net on every change
 
@@ -159,7 +162,7 @@ query capped at 10 MB. The same sign-in is used by the HTTP Archive and deps.dev
 
 ## 10. Privacy scan: keeps private things out of the public repository
 
-**When:** twice a day, at 11:47 and 21:13 UTC (07:47 and 17:13 ET), and by hand (Run button).
+**When:** twice a day, at 21:13 and 23:51 UTC (16:13 and 18:51 ET; moved to the evening on 5 Nov 2026), and by hand (Run button).
 Its own workflow since 29 Oct 2026 at the author's request; before that it was a step inside
 Schedule. Checks also runs the same scan on every change.
 
@@ -231,7 +234,7 @@ decision. Tests that read the private data skip in a public checkout (`tests/con
 
 ## 14. Source status: the landing page's banner
 
-**When:** daily at 11:23 UTC (added 31 Oct 2026, author's decision). No Run button: it reads
+**When:** daily at 21:47 UTC (added 31 Oct 2026, author's decision; moved from 11:23 UTC on 5 Nov 2026). No Run button: it reads
 outside websites. **What it does:** makes one light request to each core data source in
 `config/coverage.yaml`, reading only the first bytes (sources awaiting permission, VulnCheck and
 Shadowserver, are never contacted), and draws the README's status banner: green answered, red

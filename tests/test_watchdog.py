@@ -27,21 +27,21 @@ def fake_gh(runs_by_file, issues=""):
 
 
 def test_due_only_after_grace_and_within_lookback():
-    assert W.due_times("quarterly-pull.yml", at(2027, 1, 1, 9, 59)) == []          # still in grace
-    assert W.due_times("quarterly-pull.yml", at(2027, 1, 1, 10, 23)) == [at(2027, 1, 1, 6, 0)]
+    assert W.due_times("quarterly-pull.yml", at(2027, 1, 1, 15, 59)) == []         # still in grace (10 hours)
+    assert W.due_times("quarterly-pull.yml", at(2027, 1, 1, 20, 7)) == [at(2027, 1, 1, 6, 0)]
     assert W.due_times("quarterly-pull.yml", at(2027, 3, 1, 12)) == []             # March: no pull
     assert W.due_times("quarterly-pull.yml", at(2027, 1, 5, 12)) == []             # past look-back
 
 
 def test_skipped_pull_is_started_as_provisional_once():
     gh, calls = fake_gh({})
-    log = W.check(at(2027, 1, 1, 10, 23), gh=gh)
+    log = W.check(at(2027, 1, 1, 20, 7), gh=gh)
     assert log == ["start quarterly-pull.yml@2027-01-01T0600Z"]
     start = next(c for c in calls if c[:4] == ["api", "-X", "POST", "repos/pagagne/internet-security-snapshot/dispatches"])
     assert "event_type=quarterly-pull" in start
     assert "client_payload[run]=provisional" in start and "client_payload[quarter]=2026Q4" in start
     gh2, _ = fake_gh({}, issues="<!-- watchdog: quarterly-pull.yml@2027-01-01T0600Z -->")
-    assert W.check(at(2027, 1, 1, 15, 37), gh=gh2) == []                          # never twice
+    assert W.check(at(2027, 1, 1, 21, 23), gh=gh2) == []                          # never twice
 
 
 def test_final_run_in_february_and_no_start_when_it_ran():
@@ -52,7 +52,7 @@ def test_final_run_in_february_and_no_start_when_it_ran():
 
 def test_button_workflows_restarted_by_workflow_dispatch():
     gh, calls = fake_gh({})
-    assert W.check(at(2027, 3, 10, 12, 7), gh=gh) == ["start rebuild-check.yml@2027-03-10T0717Z"]
+    assert W.check(at(2027, 3, 10, 20, 7), gh=gh) == ["start rebuild-check.yml@2027-03-10T0717Z"]
     assert any(c[-2:] == ["-f", "ref=main"] and "rebuild-check.yml" in c[3] for c in calls)
 
 
@@ -63,10 +63,10 @@ def test_dry_run_starts_nothing():
 
 
 def test_daily_banner_check_restarted_quietly_once():
-    assert W.due_times("source-status.yml", at(2026, 11, 20, 15, 22)) == [at(2026, 11, 19, 11, 23)]   # latest only
-    assert W.due_times("source-status.yml", at(2026, 11, 20, 15, 37)) == [at(2026, 11, 20, 11, 23)]
+    assert W.due_times("source-status.yml", at(2026, 11, 20, 7, 46)) == [at(2026, 11, 18, 21, 47)]   # latest only
+    assert W.due_times("source-status.yml", at(2026, 11, 20, 7, 47)) == [at(2026, 11, 19, 21, 47)]
     gh, calls = fake_gh({"source-status.yml": []})
-    assert W.check(at(2026, 11, 20, 15, 37), gh=gh) == ["start source-status.yml@2026-11-20T1123Z"]
+    assert W.check(at(2026, 11, 20, 20, 7), gh=gh) == ["start source-status.yml@2026-11-19T2147Z"]
     assert any(c[-2:] == ["-f", "event_type=source-status"] for c in calls)
     assert not any(c[:2] == ["label", "create"] for c in calls)
     assert not any(c[1].endswith("/issues") for c in calls)                     # no issue for a daily restart
