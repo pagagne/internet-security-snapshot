@@ -53,8 +53,11 @@ sources:
   # ---- added 1 Nov 2026: new fix-date sources and the newsletters read from the project address ----
   - {name: deps.dev API terms and data licence, kind: terms, used_by: core fix dates, url: "https://docs.deps.dev/api/v3/index.html"}
   - {name: SANS terms and conditions (NewsBites), kind: terms, used_by: exploratory X3 newsletters (NewsBites, not subscribed; revisit 18 Nov), url: "https://www.sans.org/legal/terms-conditions"}
-  - {name: Substack terms (Risky Bulletin, Seriously Risky Business), kind: terms, used_by: exploratory X3 newsletters, url: "https://substack.com/tos"}
   - {name: Recorded Future terms of use (The Record), kind: terms, used_by: exploratory X3 newsletters, url: "https://www.recordedfuture.com/legal/terms-of-use"}
   - {name: TLDR terms of service, kind: terms, used_by: exploratory X3 newsletters, url: "https://tldr.tech/terms"}
   - {name: beehiiv terms of use (tl;dr sec, Unsupervised Learning), kind: terms, used_by: exploratory X3 newsletters, url: "https://www.beehiiv.com/tou"}
-  - {name: CISA terms of use (email updates), kind: terms, used_by: exploratory X3 newsletters, url: "https://www.cisa.gov/terms-use"}
+
+# Not watched automatically (removed 5 Nov 2026): Substack's terms (https://substack.com/tos) and
+# CISA's terms of use (https://www.cisa.gov/terms-use) answer automated readers with 403, which is
+# not worked around. Both were read by hand on 1 Nov (docs/TERMS_OF_USE.md); Claude re-reads them
+# by hand at each quarterly review. Newsletters are research only, so nothing published depends on them.
