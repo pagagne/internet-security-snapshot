@@ -1,0 +1,24 @@
+// Sync flow until the 30 Nov 2026 cutover (author's request, 5 Nov 2026).
+// Source of truth: docs/SYNC_REVIEW.md, docs/OPERATIONS.md, docs/SOP_MANUAL_RUNS.md.
+// Render: dot -Tpng -Gdpi=150 docs/diagrams/sync_flow_now.dot -o docs/diagrams/sync_flow_now.png
+digraph sync_now {
+  graph [rankdir=TB, fontname="Helvetica", fontsize=12, nodesep=0.6, ranksep=0.55, pad=0.3,
+         label="Until 30 Nov 2026. Teal = public, purple = private, coral = Claude sessions, gray = everything else.\nThe daily work queue starts fresh each day and cannot reach the private repository (tested 5 Nov).",
+         labelloc=b];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", width=2.4, height=0.7, penwidth=0.8];
+  edge  [color="#5F5E5A", arrowsize=0.7];
+
+  gh      [label="GitHub runs\ntimers, watchdog, pulls", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
+  pub     [label="Public repository\ncode, docs, sync checklist", fillcolor="#E1F5EE", color="#0F6E56", fontcolor="#04342C"];
+  priv    [label="Private repository\nlogs, sweeps, artifact map", fillcolor="#EEEDFE", color="#534AB7", fontcolor="#26215C"];
+  chat    [label="This chat (Claude)\nweekly sync review, private work", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
+  queue   [label="Daily work queue (Claude)\npublic only, comments only", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
+  outside [label="Claude docs, calendar,\nscheduled tasks\nchecked every Monday", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
+
+  gh -> pub; gh -> priv;
+  {rank=same; pub; priv;}
+  chat -> pub; chat -> priv;
+  queue -> pub;
+  chat -> outside;
+  {rank=same; queue; chat; outside;}
+}

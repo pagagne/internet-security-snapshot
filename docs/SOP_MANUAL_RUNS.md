@@ -142,14 +142,16 @@ does not depend on Claude to keep collecting data.
 
 1. **Everything essential runs on GitHub's timers:** Quarterly pull, Rebuild check, Backup,
    Honeypot capture, Privacy scan and Schedule. The December dry runs are started by Schedule.
-2. **The watchdog covers skipped timers.** Three times a day the Schedule workflow checks that
-   the quarterly pull (1st of Jan/Feb/Apr/May/Jul/Aug/Oct/Nov), honeypot capture (2nd), backup
-   (3rd) and rebuild check (10th) actually ran. If GitHub skipped one, it starts it itself within
-   about four to nine hours, only once, and opens a **watchdog** issue telling you. Check that run's
-   result, then close the issue. Since 1 Nov 2026 it also restarts the daily Source status check
-   behind the landing-page banner, quietly (no issue). The watchdog runs inside Schedule, so it
-   cannot help if GitHub skips Schedule itself (as on 1 and 2 Nov, about 01:00-12:00 UTC): the
-   morning report checks for that and starts the skipped runs by hand.
+2. **The watchdog covers missed timers.** Every Schedule run checks that the quarterly pull
+   (1st of Jan/Feb/Apr/May/Jul/Aug/Oct/Nov), honeypot capture (2nd), backup (3rd) and rebuild
+   check (10th) actually ran. If one has not started 10 hours after its time, it starts it itself,
+   only once, and opens a **watchdog** issue telling you. Check that run's result, then close the
+   issue. Since 1 Nov 2026 it also restarts the daily Source status check behind the
+   landing-page banner, quietly (no issue). GitHub starts scheduled runs late at busy times
+   (measured 28 Oct - 5 Nov 2026: morning UTC timers 6 to 8 hours late, evening ones about 4,
+   none dropped), so the wait was raised from 4 to 10 hours on 5 Nov 2026 and the daily timers
+   moved to the evening (trial reviewed 12 Nov). Late is not missing: do not start a run by hand
+   because it has not appeared by morning.
 3. **If a run failed, rerun it yourself with GitHub's Re-run button.** This works for every
    workflow, including those without a Run button, and repeats the run with exactly the same
    settings:
@@ -160,7 +162,36 @@ does not depend on Claude to keep collecting data.
 4. **What waits for Claude:** research probes, the BigQuery check, fixes to failing code, and
    the reports. None of these stops the data collection.
 
-## 8. Changes to this procedure
+## 8. Who keeps everything in step (sync flow)
+
+Added 5 Nov 2026 (author's request). Two Claude sessions work on the study, with different reach:
+
+- **The original chat session** can read and write both repositories. It does the private work
+  (the AI-attack log, the tool sweeps, session logs, morning reports) and keeps the Claude
+  documents in step with their repository copies, using the private artifact map
+  (`exploratory/docs/artifacts/README.md`).
+- **The daily work queue** is a scheduled Claude task that starts fresh each morning with the
+  public repository only; a test on 5 Nov 2026 confirmed it cannot attach the private one. Until
+  30 Nov 2026 it only comments on issues. From the cutover it works the owner:claude issues and
+  does the quarterly sync review from the public checklist (`docs/SYNC_REVIEW.md`). When a
+  document with a Claude copy changes, it lists the documents in the issue and the chat session
+  updates the copies.
+
+Until 30 Nov 2026:
+
+![Sync flow until the 30 Nov 2026 cutover](diagrams/sync_flow_now.png)
+
+From the 29 Dec 2026 lock (core freeze and workflow lock), through the pilot (1 Jan 2027) and
+after the procedures are adopted (8 Feb 2027):
+
+![Sync flow after the 29 Dec 2026 lock](diagrams/sync_flow_locked.png)
+
+*After the lock, locked parts change only through a dated, logged deviation that the author
+approves (`docs/CHANGE_POLICY.md`); neither Claude session can change them quietly. The pilot
+witness and the independent reviewer see only the public side, plus what the author chooses to
+show them. Sources: `docs/diagrams/sync_flow_now.dot`, `docs/diagrams/sync_flow_locked.dot`.*
+
+## 9. Changes to this procedure
 
 Changes after 9 Feb 2027 follow `docs/CHANGE_POLICY.md` for support material: written here with
 the date and reason, noted in the session log, and raised at the next review.

@@ -17,7 +17,7 @@ digraph workflows {
     node [fillcolor="#e1ecf8", color="#1f4e79"];
     checks  [label="Checks\nevery change"];
     privacy [label="Privacy scan\ntwice daily"];
-    sched   [label="Schedule\n3x daily"];
+    sched   [label="Schedule\n5x daily (evening)"];
     rebuild [label="Rebuild check\n10th monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
     diag    [label="Diagrams\nwhen a diagram changes"];
     backup  [label="Backup\n3rd monthly"];

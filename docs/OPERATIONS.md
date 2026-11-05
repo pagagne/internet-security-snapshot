@@ -72,7 +72,9 @@ at the March review.
 `docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
 scheduled tasks and the Reviewer's Desk in step: weekly until the cutover, then three days
 before each provisional report, and on request. Questions for the author are always asked
-together, in one list.
+together, in one list. Who does what before and after the cutover and the 29 Dec lock (the two Claude
+sessions, the public and private repositories): diagrams in `docs/SOP_MANUAL_RUNS.md`,
+section 8.
 
 ## Checking progress
 - **Run log:** the Schedule and Rebuild check workflows add a line to

@@ -5,6 +5,12 @@ and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the aut
 Scheduled weekly until the 30 Nov 2026 cutover, then three days before each provisional report
 (`sync-review` and `sync-review-quarterly` in `docs/schedule/schedule.yaml`), and on request.
 
+Who runs it: the original chat session until the cutover; the daily work queue after it, from
+this public checklist, handing changed Claude documents to the chat session (the artifact map is
+private). Diagrams of both stages: `docs/SOP_MANUAL_RUNS.md`, section 8.
+
+![Sync flow after the 29 Dec 2026 lock](diagrams/sync_flow_locked.png)
+
 Many checks already run on every push (Checks workflow): tests, schedule outputs (plan, both
 calendar feeds, README table, the Desk's task list), diagram review stamps, the reviewer feed
 matching the full feed, and the Desk's copy of the sample inputs. The review covers what those

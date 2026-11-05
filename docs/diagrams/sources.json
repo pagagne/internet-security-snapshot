@@ -52,10 +52,10 @@
    "fingerprints": {
     "config/ai_credit_auto_accept.yaml": "d29c0b4d7cb5609c",
     "config/ai_credit_terms.yaml": "2fc836bf6fcf7a2e",
-    "docs/HAND_CHECK.md": "bf4493d2c7d13821",
+    "docs/HAND_CHECK.md": "5cc84076b131c461",
     "docs/diagrams/track_c.mmd": "bb99230c6a2086e8"
    },
-   "reviewed_on": "2026-11-02"
+   "reviewed_on": "2026-11-05"
   },
   "track_d": {
    "doc": "docs/EVALUATION_FLOW.md",
@@ -90,12 +90,12 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "afaeaa523920bf7b",
+    "README.md": "24143bed16f01de3",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "d2530aaf33bffdf0",
+    ".github/workflows/quarterly-pull.yml": "86540eea58d10618",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
-   "reviewed_on": "2026-11-02"
+   "reviewed_on": "2026-11-05"
   },
   "build_plan": {
    "doc": "exploratory/docs/BUILD_PLAN.md",
@@ -104,10 +104,10 @@
     "docs/RESEARCH_PLAN.md"
    ],
    "fingerprints": {
-    "docs/RESEARCH_PLAN.md": "4457bf7b740638fe",
+    "docs/RESEARCH_PLAN.md": "870df527654b9db6",
     "docs/diagrams/build_plan.mmd": "f7017bfe99a376b3"
    },
-   "reviewed_on": "2026-11-02"
+   "reviewed_on": "2026-11-05"
   },
   "freeze_year": {
    "doc": "docs/CORE_FREEZE_DECISIONS.md",
@@ -118,10 +118,10 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "12756eb8694f4987",
-    "README.md": "afaeaa523920bf7b",
+    "README.md": "24143bed16f01de3",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-11-02"
+   "reviewed_on": "2026-11-05"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
@@ -132,12 +132,12 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "2fa27acb35b90a27",
-    ".github/workflows/quarterly-pull.yml": "d2530aaf33bffdf0",
+    "docs/PERMISSIONS.md": "8c18bb6054b7614c",
+    ".github/workflows/quarterly-pull.yml": "86540eea58d10618",
     "tools/architecture_svg.py": "bc1bc52ccafcacdd",
     "docs/diagrams/architecture.svg": "3e741b8366e559e5"
    },
-   "reviewed_on": "2026-11-02"
+   "reviewed_on": "2026-11-05"
   },
   "workflow_runs": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -147,11 +147,11 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "ae96b4860517eec4",
+    "docs/WORKFLOWS.md": "e8328a40a1601f43",
     ".github/workflows/checks.yml": "31d6790266e8f665",
-    "docs/diagrams/workflow_runs.dot": "9538151433af3e6d"
+    "docs/diagrams/workflow_runs.dot": "da4d816dad112913"
    },
-   "reviewed_on": "2026-11-02"
+   "reviewed_on": "2026-11-05"
   },
   "indicator_sources": {
    "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",
@@ -166,6 +166,34 @@
     "docs/diagrams/indicator_sources.dot": "6e52fc810f97ded6"
    },
    "reviewed_on": "2026-10-29"
+  },
+  "sync_flow_now": {
+   "doc": "docs/SOP_MANUAL_RUNS.md",
+   "source": "docs/diagrams/sync_flow_now.dot",
+   "depends_on": [
+    "docs/SYNC_REVIEW.md",
+    "docs/OPERATIONS.md"
+   ],
+   "fingerprints": {
+    "docs/SYNC_REVIEW.md": "13292e578de5856e",
+    "docs/OPERATIONS.md": "cd8b00a12f281df4",
+    "docs/diagrams/sync_flow_now.dot": "dbd54aeb6c10ee53"
+   },
+   "reviewed_on": "2026-11-05"
+  },
+  "sync_flow_locked": {
+   "doc": "docs/SOP_MANUAL_RUNS.md",
+   "source": "docs/diagrams/sync_flow_locked.dot",
+   "depends_on": [
+    "docs/SYNC_REVIEW.md",
+    "docs/OPERATIONS.md"
+   ],
+   "fingerprints": {
+    "docs/SYNC_REVIEW.md": "13292e578de5856e",
+    "docs/OPERATIONS.md": "cd8b00a12f281df4",
+    "docs/diagrams/sync_flow_locked.dot": "1d7ddf0bd220b250"
+   },
+   "reviewed_on": "2026-11-05"
   }
  }
 }

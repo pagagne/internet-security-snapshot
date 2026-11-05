@@ -1,0 +1,26 @@
+// Sync flow after the 29 Dec 2026 lock (core freeze and workflow lock) and from the pilot
+// (1 Jan 2027); procedures adopted 8 Feb 2027 (author's request, 5 Nov 2026).
+// Source of truth: docs/SYNC_REVIEW.md, docs/OPERATIONS.md, docs/SOP_MANUAL_RUNS.md, docs/CHANGE_POLICY.md.
+// Render: dot -Tpng -Gdpi=150 docs/diagrams/sync_flow_locked.dot -o docs/diagrams/sync_flow_locked.png
+digraph sync_locked {
+  graph [rankdir=TB, fontname="Helvetica", fontsize=12, nodesep=0.6, ranksep=0.55, pad=0.3,
+         label="From the 29 Dec 2026 lock. Locked parts change only through a dated, logged deviation the author approves.\nDashed: the work queue lists changed documents in the issue; this chat updates the matching Claude documents.",
+         labelloc=b];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", width=2.4, height=0.7, penwidth=0.8];
+  edge  [color="#5F5E5A", arrowsize=0.7];
+
+  gh     [label="GitHub runs\nworkflows locked 29 Dec", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
+  pub    [label="Public repository\ncore frozen, sync checklist", fillcolor="#E1F5EE", color="#0F6E56", fontcolor="#04342C"];
+  priv   [label="Private repository\nlogs, sweeps, artifact map", fillcolor="#EEEDFE", color="#534AB7", fontcolor="#26215C"];
+  queue  [label="Daily work queue (Claude)\nissues; quarterly sync review\n3 days before each report", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
+  chat   [label="This chat (Claude)\nprivate work, Claude docs,\nmorning reports", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
+  people [label="Author, pilot witness, reviewer\nauthor approves;\nothers read the public side", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
+
+  gh -> pub; gh -> priv;
+  {rank=same; pub; priv;}
+  queue -> pub;
+  chat -> priv; chat -> pub;
+  queue -> chat [style=dashed];
+  {rank=same; queue; chat;}
+  queue -> people [style=invis]; chat -> people [style=invis];
+}
