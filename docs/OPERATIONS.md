@@ -69,7 +69,7 @@ Questions about how the study would handle an outside event or source go in
 at the March review.
 
 ## Sync review
-`exploratory/docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
+`docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
 scheduled tasks and the Reviewer's Desk in step: weekly until the cutover, then three days
 before each provisional report, and on request. Questions for the author are always asked
 together, in one list.
@@ -239,9 +239,10 @@ The author decided on 3 Nov 2026 to keep the public `docs/` folder to documents 
 record the study. On 5 Nov these moved to the private repository (`pagagne/snapshot-manual`,
 under `exploratory/docs/`), still in the private manual: the copies of the Claude documents
 (`artifacts/`); the reviewer outreach drafts and the Handshake posting notes; and the internal
-working notes (sync review checklist, build plan, backup setup, Hand Check app guide, the Gitee
+working notes (build plan, backup setup, Hand Check app guide, the Gitee
 after-action report, the 27 Oct workflow security review, publication options, capacity). They
-stay in the public history. Kept public on purpose: the schedule, the decisions and core-freeze
+stay in the public history. The sync review checklist came back to `docs/` the same day (author):
+it holds nothing private, and the daily work queue must be able to read it after the cutover. Kept public on purpose: the schedule, the decisions and core-freeze
 list, the reviewer invitation, second-coder page and sample worksheet, and this guide and the
 handover (the daily work queue reads them). Public files mention moved documents by their
 private path, `exploratory/docs/...`, and do not link to them.

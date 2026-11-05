@@ -77,12 +77,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
-  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
- erything that runs on its own. Findings to the author as Confirmed / Fixed
-  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -93,14 +93,13 @@ DTEND;VALUE=DATE:20261027
 TRANSP:TRANSPARENT
 SUMMARY:✅ DONE [Claude] Snapshot: Draft the CCRI outreach email and the s
  econd-coder role summary - done
-DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/reviewer/ccri-outreach.md (draft 
- for the author to rewrite) and https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/docs/reviewer/SECOND_CODER.md (one-page role summary)
- . Author's decision\, 26 Oct: approach CCRI (the author's alma mater\; NSA
-  CAE in Cyber Defense) mainly for the second coder.\n\nSource: https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
- e.yaml
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/snapshot-manu
+ al/blob/main/exploratory/docs/reviewer/ccri-outreach.md (draft for the aut
+ hor to rewrite) and https://github.com/pagagne/internet-security-snapshot/
+ blob/main/docs/reviewer/SECOND_CODER.md (one-page role summary). Author's 
+ decision\, 26 Oct: approach CCRI (the author's alma mater\; NSA CAE in Cyb
+ er Defense) mainly for the second coder.\n\nSource: https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -289,14 +288,14 @@ TRANSP:TRANSPARENT
 SUMMARY:✅ DONE [Claude] Snapshot: Recheck the trial AI-attack sweep's ope
  n items
 DESCRIPTION:Responsible: Claude\n\nThe trial itself ran early\, on 26 Oct\,
-  at the author's request (https://github.com/pagagne/internet-security-sna
- pshot/blob/main/exploratory/sweep-trial-2026.md\; 15 kept after the China 
- and Russia retry\, log 13 -> 28). Read the primary reports behind the kept
-  entries (Sysdig\, GTIG\, CrowdStrike\, GMO) and the 8 "recheck" rows in h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/exploratory
- /ai_attack_sweeps.csv\; correct the log\; final list of proposed search ch
- anges for decision 9 on 12 Nov.\n\nSource: https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+  at the author's request (https://github.com/pagagne/snapshot-manual/blob/
+ main/exploratory/sweep-trial-2026.md\; 15 kept after the China and Russia 
+ retry\, log 13 -> 28). Read the primary reports behind the kept entries (S
+ ysdig\, GTIG\, CrowdStrike\, GMO) and the 8 "recheck" rows in https://gith
+ ub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_sweeps.csv\
+ ; correct the log\; final list of proposed search changes for decision 9 o
+ n 12 Nov.\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -365,12 +364,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
-  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
- erything that runs on its own. Findings to the author as Confirmed / Fixed
-  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -385,10 +384,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decisions 3 Nov 2026: a
  pilot witness\, separate from the independent reviewer so the first does n
  ot influence the second\, follows the 15 Dec dry run and the whole pilot a
  nd writes a short published note before the procedures are locked. Text: P
- osting 1 in https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/exploratory/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 30 No
- v.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/m
- ain/docs/schedule/schedule.yaml
+ osting 1 in https://github.com/pagagne/snapshot-manual/blob/main/explorato
+ ry/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 30 Nov.\n\nSourc
+ e: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sc
+ hedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -418,14 +417,14 @@ DTEND:20261104T152000Z
 SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
  i route\, second coder)
 DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
- e/internet-security-snapshot/blob/main/exploratory/docs/reviewer/ccri-outr
- each.md in your own words and send it to the program director\, with https
- ://github.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/S
- ECOND_CODER.md. Mainly for the second coder\; also asks about CCRI graduat
- es now in a bachelor's programme for the full review. Disclose your alumni
-  tie if a CCRI candidate is chosen (the invitation's conflict-of-interest 
- section). Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne
- /internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ e/snapshot-manual/blob/main/exploratory/docs/reviewer/ccri-outreach.md in 
+ your own words and send it to the program director\, with https://github.c
+ om/pagagne/internet-security-snapshot/blob/main/docs/reviewer/SECOND_CODER
+ .md. Mainly for the second coder\; also asks about CCRI graduates now in a
+  bachelor's programme for the full review. Disclose your alumni tie if a C
+ CRI candidate is chosen (the invitation's conflict-of-interest section). T
+ ell Claude\, who logs it.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -436,14 +435,14 @@ DTEND:20261105T153000Z
 SUMMARY:[Paul] Snapshot: Email SANS asking them to suggest a reviewer (form
  er-employer route)
 DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
- agne/internet-security-snapshot/blob/main/exploratory/docs/reviewer/sans-o
- utreach.md (facts to cover\; your own words) and send to the SANS Technolo
- gy Institute or another SANS contact that reaches the right people\, with 
- the invitation letter. Main ask: the independent reviewer (confirmed by 1 
- Mar 2027)\; optional: a second coder. Disclose that you worked at SANS and
-  that the study uses Internet Storm Center data\; ask for someone you did 
- not work with. Tell Claude\, who logs it.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ agne/snapshot-manual/blob/main/exploratory/docs/reviewer/sans-outreach.md 
+ (facts to cover\; your own words) and send to the SANS Technology Institut
+ e or another SANS contact that reaches the right people\, with the invitat
+ ion letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027)\;
+  optional: a second coder. Disclose that you worked at SANS and that the s
+ tudy uses Internet Storm Center data\; ask for someone you did not work wi
+ th. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -488,16 +487,16 @@ DTSTART:20261106T160000Z
 DTEND:20261106T163500Z
 SUMMARY:[Paul] Snapshot: Check the AI-attack entries awaiting review (trial
   sweep\, Wiz\, TrendAI) and rate their evidence
-DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
- et-security-snapshot/blob/main/exploratory/ai_attack_campaigns.csv\, the 1
- 7 rows marked "awaiting author check" (the trial sweep's\, in https://gith
- ub.com/pagagne/internet-security-snapshot/blob/main/exploratory/sweep-tria
- l-2026.md\, plus Wiz and the three TrendAI cases): keep or exclude each\, 
- and rate ai_evidence confirmed or assessed for every row still "unrated" (
- added 29 Oct)\; two questions in the trial tables (Shai-Hulud: X3 or X5? k
- eep the single-source Brazil case?). Claude's recheck of the primary repor
- ts is done by 2 Nov.\n\nSource: https://github.com/pagagne/internet-securi
- ty-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/snapsh
+ ot-manual/blob/main/exploratory/ai_attack_campaigns.csv\, the 17 rows mark
+ ed "awaiting author check" (the trial sweep's\, in https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/sweep-trial-2026.md\, plus Wiz a
+ nd the three TrendAI cases): keep or exclude each\, and rate ai_evidence c
+ onfirmed or assessed for every row still "unrated" (added 29 Oct)\; two qu
+ estions in the trial tables (Shai-Hulud: X3 or X5? keep the single-source 
+ Brazil case?). Claude's recheck of the primary reports is done by 2 Nov.\n
+ \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
+ docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -513,10 +512,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -528,12 +527,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
-  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
- erything that runs on its own. Findings to the author as Confirmed / Fixed
-  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -634,12 +633,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
-  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
- erything that runs on its own. Findings to the author as Confirmed / Fixed
-  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -875,12 +874,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
-  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
- erything that runs on its own. Findings to the author as Confirmed / Fixed
-  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -986,13 +985,13 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request 30 Oct 2026: a full reh
   and before the 1 Dec dry run. Run the Research tasks github_tools and hf_
  tools\; confirm the private lists reach the author's Drive (x25-private/) 
  and no individual's username appears in any public file (tests and privacy
-  scan)\; rebuild https://github.com/pagagne/internet-security-snapshot/blo
- b/main/exploratory/ai_tool_landscape.md (Part III of the manual) and look 
- at every chart\; confirm the Source watch has dated copies of every terms 
- page in https://github.com/pagagne/internet-security-snapshot/blob/main/do
- cs/TERMS_OF_USE.md\; fix anything that fails and note it in the session lo
- g. Nothing from this run is published.\n\nSource: https://github.com/pagag
- ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+  scan)\; rebuild https://github.com/pagagne/snapshot-manual/blob/main/expl
+ oratory/ai_tool_landscape.md (Part III of the manual) and look at every ch
+ art\; confirm the Source watch has dated copies of every terms page in htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/TERMS_OF
+ _USE.md\; fix anything that fails and note it in the session log. Nothing 
+ from this run is published.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1052,12 +1051,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
-  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
- erything that runs on its own. Findings to the author as Confirmed / Fixed
-  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
+ ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
+ t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
+  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1080,11 +1079,11 @@ SUMMARY:[Claude] Snapshot: Read the dry-run quality report\; prepare the ha
  nd-check lists
 DESCRIPTION:Responsible: Claude\n\nFirst check that the Schedule workflow r
  eally started the quarterly pull (first end-to-end test\, https://github.c
- om/pagagne/internet-security-snapshot/blob/main/exploratory/docs/WORKFLOW_
- REVIEW_2026-10-27.md item 4)\; if not\, start it by hand. Then load the re
- view lists (including the race list) into the Hand Check app.\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ om/pagagne/snapshot-manual/blob/main/exploratory/docs/WORKFLOW_REVIEW_2026
+ -10-27.md item 4)\; if not\, start it by hand. Then load the review lists 
+ (including the race list) into the Hand Check app.\n\nSource: https://gith
+ ub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule
+ .yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1189,10 +1188,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
  page as website. Approvals arrive during the RV trip. Started 28 Oct\; sch
  ools requested: UGA\, Georgia State\, Georgia Tech\, Clemson\, University 
  of South Carolina\, College of Charleston\, The Citadel\, Emory\, MIT. Pos
- ting saved as a draft (https://github.com/pagagne/internet-security-snapsh
- ot/blob/main/exploratory/docs/reviewer/HANDSHAKE_POSTING.md)\, live 4 Jan 
- - 15 Feb 2027.\n\nSource: https://github.com/pagagne/internet-security-sna
- pshot/blob/main/docs/schedule/schedule.yaml
+ ting saved as a draft (https://github.com/pagagne/snapshot-manual/blob/mai
+ n/exploratory/docs/reviewer/HANDSHAKE_POSTING.md)\, live 4 Jan - 15 Feb 20
+ 27.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1228,10 +1227,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1333,21 +1332,21 @@ SUMMARY:[Claude] Snapshot: Document and test every GitHub workflow\; draft
  the lock list
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/WORKFLOWS.md (written 27 Oct in plain languag
- e\; extend it from https://github.com/pagagne/internet-security-snapshot/b
- lob/main/exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md): for each workflo
- w\, what starts it\, its permissions and secrets\, inputs and outputs\, wh
- at happens on failure and who notices\, and its latest successful run (lin
- k). Run any workflow without a successful run since its last change (rebui
- ld check on the dry run's bundle\; quarterly pull inside the container\; t
- he daily honeypot collector). Draft the lock list for decision item 22: da
- ta workflows (quarterly pull\, rebuild check\, daily collectors\, Dockerfi
- le) locked like the core\; support workflows (Checks\, Schedule\, Diagrams
- \, Research\, Pages\, Backup) under a change log. Evaluate each workflow's
-  function and how critical it is to the study (author\, 29 Oct): confirm o
- r change the role table in https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/WORKFLOWS.md\, "How they depend on each other".\n\nS
- ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
- s/schedule/schedule.yaml
+ e\; extend it from https://github.com/pagagne/snapshot-manual/blob/main/ex
+ ploratory/docs/WORKFLOW_REVIEW_2026-10-27.md): for each workflow\, what st
+ arts it\, its permissions and secrets\, inputs and outputs\, what happens 
+ on failure and who notices\, and its latest successful run (link). Run any
+  workflow without a successful run since its last change (rebuild check on
+  the dry run's bundle\; quarterly pull inside the container\; the daily ho
+ neypot collector). Draft the lock list for decision item 22: data workflow
+ s (quarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked 
+ like the core\; support workflows (Checks\, Schedule\, Diagrams\, Research
+ \, Pages\, Backup) under a change log. Evaluate each workflow's function a
+ nd how critical it is to the study (author\, 29 Oct): confirm or change th
+ e role table in https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/WORKFLOWS.md\, "How they depend on each other".\n\nSource: http
+ s://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/
+ schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1515,11 +1514,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
- e each provisional report so it starts from a consistent state. Findings t
- o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1597,15 +1596,15 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
  n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/internet-security-snapshot/
- blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
- ason) and add the kept ones to https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
- thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports. Then start the Research task cve
- _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
- ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
- /blob/main/docs/schedule/schedule.yaml
+  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
+ dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
+ cidents reported outside the AI-lab and vendor channels\; it cannot find w
+ hat nobody reports. Then start the Research task cve_check: every CVE ID i
+ n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1657,14 +1656,14 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Post the reviewer ad\; email statistics department
   coordinators
 DESCRIPTION:Responsible: Paul (author)\n\nOn each approved board (UGA first
- )\; applications close 15 Feb. The text is in https://github.com/pagagne/i
- nternet-security-snapshot/blob/main/exploratory/docs/reviewer/HANDSHAKE_PO
- STING.md (Posting 2\, independent reviewer). The draft saved on 28 Oct bec
- ame the pilot-witness posting on 3 Nov\, so create this posting again: che
- ck the links work (the site opens 4 Dec) and set it live today. First past
- e your bio into the Handshake employer profile (short version\, Claude pro
- ject doc author-bio).\n\nSource: https://github.com/pagagne/internet-secur
- ity-snapshot/blob/main/docs/schedule/schedule.yaml
+ )\; applications close 15 Feb. The text is in https://github.com/pagagne/s
+ napshot-manual/blob/main/exploratory/docs/reviewer/HANDSHAKE_POSTING.md (P
+ osting 2\, independent reviewer). The draft saved on 28 Oct became the pil
+ ot-witness posting on 3 Nov\, so create this posting again: check the link
+ s work (the site opens 4 Dec) and set it live today. First paste your bio 
+ into the Handshake employer profile (short version\, Claude project doc au
+ thor-bio).\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1699,21 +1698,21 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
   the tools use AI first\, then offensive\, defensive and dual-use tools (f
  rom tool types\; renamed 31 Oct 2026)\; the January sweep is part of the p
  ilot. Run both Research tasks\, github_tools and hf_tools (Hugging Face\; 
- its compact.csv goes to https://github.com/pagagne/internet-security-snaps
- hot/tree/main/exploratory/hf_sweeps<date>.csv). After each sweep\, copy re
- search-out/compact.csv to https://github.com/pagagne/internet-security-sna
- pshot/tree/main/exploratory/ai_tool_sweeps<date>.csv and run `python -m sn
- apshot.x25report build`\, which adds that sweep's catalogue and charts (pr
- otocol charts as many as the protocols found need) to https://github.com/p
- agagne/internet-security-snapshot/blob/main/exploratory/ai_tool_landscape.
- md and so to The Snapshot manual. Start the Research workflow with task gi
- thub_tools (https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/docs/OPERATIONS.md)\, sort the results (drop tools that test AI models t
- hemselves\, copies and unrelated hits)\, compare with the previous sweep (
- new tools\, growth in stars and forks) and propose additions to https://gi
- thub.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_attac
- k_tools.csv. Never on a pull day.\n\nSource: https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ its compact.csv goes to https://github.com/pagagne/snapshot-manual/tree/ma
+ in/exploratory/hf_sweeps<date>.csv). After each sweep\, copy research-out/
+ compact.csv to https://github.com/pagagne/snapshot-manual/tree/main/explor
+ atory/ai_tool_sweeps<date>.csv and run `python -m snapshot.x25report build
+ `\, which adds that sweep's catalogue and charts (protocol charts as many 
+ as the protocols found need) to https://github.com/pagagne/snapshot-manual
+ /blob/main/exploratory/ai_tool_landscape.md and so to The Snapshot manual.
+  Start the Research workflow with task github_tools (https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the 
+ results (drop tools that test AI models themselves\, copies and unrelated 
+ hits)\, compare with the previous sweep (new tools\, growth in stars and f
+ orks) and propose additions to https://github.com/pagagne/snapshot-manual/
+ blob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1765,10 +1764,10 @@ SUMMARY:[Paul] Snapshot: Confirm the new entries in the AI attack-tool regi
  ster (X25)
 DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
  ep two days earlier is in that day's GitHub issue. Keep or exclude each pr
- oposed tool for https://github.com/pagagne/internet-security-snapshot/blob
- /main/exploratory/ai_attack_tools.csv. Supply\, not use: a tool here is ne
- ver counted as an attack.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+ oposed tool for https://github.com/pagagne/snapshot-manual/blob/main/explo
+ ratory/ai_attack_tools.csv. Supply\, not use: a tool here is never counted
+  as an attack.\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1784,10 +1783,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2070,10 +2069,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2321,10 +2320,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2395,11 +2394,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
- e each provisional report so it starts from a consistent state. Findings t
- o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2449,15 +2448,15 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
  n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/internet-security-snapshot/
- blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
- ason) and add the kept ones to https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
- thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports. Then start the Research task cve
- _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
- ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
- /blob/main/docs/schedule/schedule.yaml
+  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
+ dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
+ cidents reported outside the AI-lab and vendor channels\; it cannot find w
+ hat nobody reports. Then start the Research task cve_check: every CVE ID i
+ n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2603,10 +2602,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2814,10 +2813,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2913,10 +2912,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2953,11 +2952,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
- e each provisional report so it starts from a consistent state. Findings t
- o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3007,15 +3006,15 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
  n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/internet-security-snapshot/
- blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
- ason) and add the kept ones to https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
- thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports. Then start the Research task cve
- _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
- ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
- /blob/main/docs/schedule/schedule.yaml
+  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
+ dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
+ cidents reported outside the AI-lab and vendor channels\; it cannot find w
+ hat nobody reports. Then start the Research task cve_check: every CVE ID i
+ n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3116,21 +3115,21 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
   the tools use AI first\, then offensive\, defensive and dual-use tools (f
  rom tool types\; renamed 31 Oct 2026)\; the January sweep is part of the p
  ilot. Run both Research tasks\, github_tools and hf_tools (Hugging Face\; 
- its compact.csv goes to https://github.com/pagagne/internet-security-snaps
- hot/tree/main/exploratory/hf_sweeps<date>.csv). After each sweep\, copy re
- search-out/compact.csv to https://github.com/pagagne/internet-security-sna
- pshot/tree/main/exploratory/ai_tool_sweeps<date>.csv and run `python -m sn
- apshot.x25report build`\, which adds that sweep's catalogue and charts (pr
- otocol charts as many as the protocols found need) to https://github.com/p
- agagne/internet-security-snapshot/blob/main/exploratory/ai_tool_landscape.
- md and so to The Snapshot manual. Start the Research workflow with task gi
- thub_tools (https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/docs/OPERATIONS.md)\, sort the results (drop tools that test AI models t
- hemselves\, copies and unrelated hits)\, compare with the previous sweep (
- new tools\, growth in stars and forks) and propose additions to https://gi
- thub.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_attac
- k_tools.csv. Never on a pull day.\n\nSource: https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ its compact.csv goes to https://github.com/pagagne/snapshot-manual/tree/ma
+ in/exploratory/hf_sweeps<date>.csv). After each sweep\, copy research-out/
+ compact.csv to https://github.com/pagagne/snapshot-manual/tree/main/explor
+ atory/ai_tool_sweeps<date>.csv and run `python -m snapshot.x25report build
+ `\, which adds that sweep's catalogue and charts (protocol charts as many 
+ as the protocols found need) to https://github.com/pagagne/snapshot-manual
+ /blob/main/exploratory/ai_tool_landscape.md and so to The Snapshot manual.
+  Start the Research workflow with task github_tools (https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the 
+ results (drop tools that test AI models themselves\, copies and unrelated 
+ hits)\, compare with the previous sweep (new tools\, growth in stars and f
+ orks) and propose additions to https://github.com/pagagne/snapshot-manual/
+ blob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3146,10 +3145,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3162,10 +3161,10 @@ SUMMARY:[Paul] Snapshot: Confirm the new entries in the AI attack-tool regi
  ster (X25)
 DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
  ep two days earlier is in that day's GitHub issue. Keep or exclude each pr
- oposed tool for https://github.com/pagagne/internet-security-snapshot/blob
- /main/exploratory/ai_attack_tools.csv. Supply\, not use: a tool here is ne
- ver counted as an attack.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+ oposed tool for https://github.com/pagagne/snapshot-manual/blob/main/explo
+ ratory/ai_attack_tools.csv. Supply\, not use: a tool here is never counted
+  as an attack.\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3347,10 +3346,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3361,15 +3360,15 @@ DTEND;VALUE=DATE:20270811
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the publication decision (where to publi
  sh the 2027 results)
-DESCRIPTION:Responsible: Claude\n\nUpdate https://github.com/pagagne/intern
- et-security-snapshot/blob/main/exploratory/docs/PUBLICATION_OPTIONS.md (wr
- itten 28 Oct 2026): confirm the 2028 calls and dates (WEIS 2028 and the Jo
- urnal of Cybersecurity special issue and its open-access fee\; CVE/FIRST V
- ulnCon 2028\; IMC 2028\; PAM 2029)\, check arXiv endorsement options\, and
-  what the Q1 and Q2 2027 results suggest is worth a paper (the author also
-  has a figshare preprint\, so a copy there is an option). Questions to the
-  author as option cards on 12 Aug.\n\nSource: https://github.com/pagagne/i
- nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Claude\n\nUpdate https://github.com/pagagne/snapsh
+ ot-manual/blob/main/exploratory/docs/PUBLICATION_OPTIONS.md (written 28 Oc
+ t 2026): confirm the 2028 calls and dates (WEIS 2028 and the Journal of Cy
+ bersecurity special issue and its open-access fee\; CVE/FIRST VulnCon 2028
+ \; IMC 2028\; PAM 2029)\, check arXiv endorsement options\, and what the Q
+ 1 and Q2 2027 results suggest is worth a paper (the author also has a figs
+ hare preprint\, so a copy there is an option). Questions to the author as 
+ option cards on 12 Aug.\n\nSource: https://github.com/pagagne/internet-sec
+ urity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3392,23 +3391,22 @@ DTEND:20270812T144500Z
 SUMMARY:[Paul] Snapshot: Decide where to publish the 2027 results
 DESCRIPTION:Responsible: Paul (author)\n\nAsked 28 Oct 2026 to evaluate in 
  Q3 2027\; nothing decided yet (figshare included). Every option from 28 Oc
- t\, compared in https://github.com/pagagne/internet-security-snapshot/blob
- /main/exploratory/docs/PUBLICATION_OPTIONS.md: (1) Self-published report w
- ith a DOI\, March 2028\, on one or more of OSF Preprints (beside the regis
- tration)\, Zenodo (data and code\, already planned)\, figshare (where the 
- author already has a preprint) or arXiv (needs an endorser for a first-tim
- e independent author). (2) WEIS 2028\, Workshop on the Economics of Inform
- ation Security (deadline ~1 Feb 2028\, workshop ~June\; double-anonymous r
- eview)\, then the Journal of Cybersecurity special issue (open-access fee 
- to confirm)\; paper written Nov 2027 - Jan 2028. (3) CVE/FIRST VulnCon 202
- 8 talk (proposal ~Dec 2027\, event ~April 2028). (4) PAM 2029\, Passive an
- d Active Measurement\, methods paper (deadline ~Oct 2028\, online). (5) IM
- C 2028\, Internet Measurement Conference (deadline ~May 2028)\, only if fi
- ndings are striking. (6) SANS Internet Storm Center diary (any time\; form
- er employer\, disclose the tie). (7) FIRST Conference talk (~June 2028). T
- he chosen deadlines then go into this schedule.\n\nSource: https://github.
- com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
- ml
+ t\, compared in https://github.com/pagagne/snapshot-manual/blob/main/explo
+ ratory/docs/PUBLICATION_OPTIONS.md: (1) Self-published report with a DOI\,
+  March 2028\, on one or more of OSF Preprints (beside the registration)\, 
+ Zenodo (data and code\, already planned)\, figshare (where the author alre
+ ady has a preprint) or arXiv (needs an endorser for a first-time independe
+ nt author). (2) WEIS 2028\, Workshop on the Economics of Information Secur
+ ity (deadline ~1 Feb 2028\, workshop ~June\; double-anonymous review)\, th
+ en the Journal of Cybersecurity special issue (open-access fee to confirm)
+ \; paper written Nov 2027 - Jan 2028. (3) CVE/FIRST VulnCon 2028 talk (pro
+ posal ~Dec 2027\, event ~April 2028). (4) PAM 2029\, Passive and Active Me
+ asurement\, methods paper (deadline ~Oct 2028\, online). (5) IMC 2028\, In
+ ternet Measurement Conference (deadline ~May 2028)\, only if findings are 
+ striking. (6) SANS Internet Storm Center diary (any time\; former employer
+ \, disclose the tie). (7) FIRST Conference talk (~June 2028). The chosen d
+ eadlines then go into this schedule.\n\nSource: https://github.com/pagagne
+ /internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3492,10 +3490,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3532,11 +3530,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
- e each provisional report so it starts from a consistent state. Findings t
- o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3586,15 +3584,15 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
  n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/internet-security-snapshot/
- blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
- ason) and add the kept ones to https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
- thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports. Then start the Research task cve
- _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
- ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
- /blob/main/docs/schedule/schedule.yaml
+  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
+ dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
+ cidents reported outside the AI-lab and vendor channels\; it cannot find w
+ hat nobody reports. Then start the Research task cve_check: every CVE ID i
+ n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3695,10 +3693,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3863,10 +3861,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3962,21 +3960,21 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
   the tools use AI first\, then offensive\, defensive and dual-use tools (f
  rom tool types\; renamed 31 Oct 2026)\; the January sweep is part of the p
  ilot. Run both Research tasks\, github_tools and hf_tools (Hugging Face\; 
- its compact.csv goes to https://github.com/pagagne/internet-security-snaps
- hot/tree/main/exploratory/hf_sweeps<date>.csv). After each sweep\, copy re
- search-out/compact.csv to https://github.com/pagagne/internet-security-sna
- pshot/tree/main/exploratory/ai_tool_sweeps<date>.csv and run `python -m sn
- apshot.x25report build`\, which adds that sweep's catalogue and charts (pr
- otocol charts as many as the protocols found need) to https://github.com/p
- agagne/internet-security-snapshot/blob/main/exploratory/ai_tool_landscape.
- md and so to The Snapshot manual. Start the Research workflow with task gi
- thub_tools (https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/docs/OPERATIONS.md)\, sort the results (drop tools that test AI models t
- hemselves\, copies and unrelated hits)\, compare with the previous sweep (
- new tools\, growth in stars and forks) and propose additions to https://gi
- thub.com/pagagne/internet-security-snapshot/blob/main/exploratory/ai_attac
- k_tools.csv. Never on a pull day.\n\nSource: https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ its compact.csv goes to https://github.com/pagagne/snapshot-manual/tree/ma
+ in/exploratory/hf_sweeps<date>.csv). After each sweep\, copy research-out/
+ compact.csv to https://github.com/pagagne/snapshot-manual/tree/main/explor
+ atory/ai_tool_sweeps<date>.csv and run `python -m snapshot.x25report build
+ `\, which adds that sweep's catalogue and charts (protocol charts as many 
+ as the protocols found need) to https://github.com/pagagne/snapshot-manual
+ /blob/main/exploratory/ai_tool_landscape.md and so to The Snapshot manual.
+  Start the Research workflow with task github_tools (https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/OPERATIONS.md)\, sort the 
+ results (drop tools that test AI models themselves\, copies and unrelated 
+ hits)\, compare with the previous sweep (new tools\, growth in stars and f
+ orks) and propose additions to https://github.com/pagagne/snapshot-manual/
+ blob/main/exploratory/ai_attack_tools.csv. Never on a pull day.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3992,10 +3990,10 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  1 Nov 2026): nothing from the newsletters is shown in a report or on the l
  anding page\, and cases first spotted there are not entered in the AI atta
  ck log. Note trends worth discussing with the author\, for an optional tre
- nds summary in our own words (https://github.com/pagagne/internet-security
- -snapshot/tree/main/exploratory/trends<quarter>.md\, private until used). 
- Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ nds summary in our own words (https://github.com/pagagne/snapshot-manual/t
+ ree/main/exploratory/trends<quarter>.md\, private until used). Also on the
+  22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4008,10 +4006,10 @@ SUMMARY:[Paul] Snapshot: Confirm the new entries in the AI attack-tool regi
  ster (X25)
 DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
  ep two days earlier is in that day's GitHub issue. Keep or exclude each pr
- oposed tool for https://github.com/pagagne/internet-security-snapshot/blob
- /main/exploratory/ai_attack_tools.csv. Supply\, not use: a tool here is ne
- ver counted as an attack.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+ oposed tool for https://github.com/pagagne/snapshot-manual/blob/main/explo
+ ratory/ai_attack_tools.csv. Supply\, not use: a tool here is never counted
+  as an attack.\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -4048,11 +4046,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
- e each provisional report so it starts from a consistent state. Findings t
- o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
+ sional report so it starts from a consistent state. Findings to the author
+  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4102,15 +4100,15 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
  n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/internet-security-snapshot/
- blob/main/exploratory/ai_attack_sweeps.csv (kept or excluded\, with the re
- ason) and add the kept ones to https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/exploratory/ai_attack_campaigns.csv marked for the au
- thor's check. Finds incidents reported outside the AI-lab and vendor chann
- els\; it cannot find what nobody reports. Then start the Research task cve
- _check: every CVE ID in the campaign and sweep logs must exist (added 29 O
- ct 2026).\n\nSource: https://github.com/pagagne/internet-security-snapshot
- /blob/main/docs/schedule/schedule.yaml
+  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
+ dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
+ xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
+ cidents reported outside the AI-lab and vendor channels\; it cannot find w
+ hat nobody reports. Then start the Research task cve_check: every CVE ID i
+ n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

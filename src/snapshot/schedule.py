@@ -149,6 +149,7 @@ def reviewer_occ(occ: list[dict]) -> list[dict]:
 
 
 REPO_URL = "https://github.com/pagagne/internet-security-snapshot"
+PRIVATE_URL = "https://github.com/pagagne/snapshot-manual"   # exploratory/ lives there (31 Oct 2026)
 DESK_URL = "https://pagagne.github.io/internet-security-snapshot/reviewer/"
 _PATH = re.compile(r"(?<![\w/.:-])((?:docs|prereg|site|config|src|apps|tools|exploratory|\.github)/(?:[\w./-]*[\w/])?)")
 
@@ -158,7 +159,8 @@ def _linked(text: str) -> str:
     def url(m):
         path = m.group(1)
         kind = "tree" if path.endswith("/") or "." not in path.rsplit("/", 1)[-1] else "blob"
-        return f"{REPO_URL}/{kind}/main/{path.rstrip('/')}"
+        base = PRIVATE_URL if path.startswith("exploratory/") else REPO_URL   # private: opens for the author only
+        return f"{base}/{kind}/main/{path.rstrip('/')}"
     return _PATH.sub(url, text)
 
 

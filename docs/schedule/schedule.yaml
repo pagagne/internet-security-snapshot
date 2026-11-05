@@ -447,7 +447,7 @@ items:
   title: Sync review (three passes; findings to the author)
   dates: [2026-10-25, 2026-11-02, 2026-11-09, 2026-11-16, 2026-11-23, 2026-11-30]
   details: >
-    exploratory/docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
+    docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
     scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed /
     Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.
 
@@ -456,7 +456,7 @@ items:
   title: Sync review before the provisional report (three passes; findings to the author)
   repeat: {months: [3, 6, 9, 12], day: 28, from: 2026-12, until: 2027-12}
   details: >
-    exploratory/docs/SYNC_REVIEW.md, three days before each provisional report so it starts from a
+    docs/SYNC_REVIEW.md, three days before each provisional report so it starts from a
     consistent state. Findings to the author as Confirmed / Fixed / Conflicts resolved /
     Still for you.
 

@@ -23,7 +23,7 @@ parts:
     docs: [exploratory/ai_tool_landscape.md, exploratory/x25-checks.md, exploratory/ai_attack_catalogue.md]
   - name: "Part IV. Operations"
     docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
-           exploratory/docs/BACKUP.md, exploratory/docs/CAPACITY.md, exploratory/docs/SYNC_REVIEW.md, docs/HANDOVER.md, exploratory/docs/BUILD_PLAN.md]
+           exploratory/docs/BACKUP.md, exploratory/docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, exploratory/docs/BUILD_PLAN.md]
   - name: "Part V. Sources, permissions and publication"
     docs: [docs/PERMISSIONS.md, docs/TERMS_OF_USE.md, exploratory/docs/PUBLICATION_OPTIONS.md]
   - name: "Part VI. Schedule, reviews and the reviewer"
