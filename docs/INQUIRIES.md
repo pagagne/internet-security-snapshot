@@ -154,3 +154,14 @@ Started 25 Oct 2026 at the author's request.
   a 1,000-result cap per GitHub search, and agent-skill registries not covered. Endpoint
   telemetry (one of the audit's techniques) stays out of scope. Options put to the author; the
   full review is kept privately.
+
+- **5 Nov 2026: the AI coding-agent market (author shared a report).** An unedited AI-generated
+  market report (Hyperresearch, 4 Oct 2026) on Claude Code, OpenAI Codex, GitHub Copilot, Cursor
+  and open-source agents. Main claims checked against primary or multiple sources: JetBrains'
+  2026 survey puts Claude Code at 39% workplace use, Copilot 21%, Codex 16% and Cursor 12%;
+  Microsoft reported 4.7 million paid Copilot subscribers in January; Anthropic stated a Claude
+  Code run-rate above $2.5 billion in February; SpaceX bought Cursor and OpenAI ends Cursor's
+  model access on 12 November; Microsoft moved most engineers from Claude Code to Copilot CLI.
+  Later revenue figures are third-party estimates. Relevant to the study as context for AI
+  credits (T7) and the tool sweeps (X25); no change. Conflict of interest noted: the report
+  favours Claude Code, made by Claude's developer.
