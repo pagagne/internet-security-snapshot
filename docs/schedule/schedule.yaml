@@ -63,8 +63,8 @@ items:
 - id: ccri-email
   owner: author
   title: Email CCRI's cybersecurity program director (alumni route, second coder)
-  date: 2026-11-04  # moved up 29 Oct (author; was 11-09)
-  time: "10:00"
+  date: 2026-11-06  # moved up 29 Oct (author; was 11-09); moved to 6 Nov afternoon (author, 5 Nov)
+  time: "13:00"
   minutes: 20
   details: >
     Rewrite exploratory/docs/reviewer/ccri-outreach.md in your own words and send it to the program
@@ -76,8 +76,8 @@ items:
 - id: sans-email
   owner: author
   title: Email SANS asking them to suggest a reviewer (former-employer route)
-  date: 2026-11-05  # moved up 29 Oct (author; was 11-10)
-  time: "10:00"
+  date: 2026-11-06  # moved up 29 Oct (author; was 11-10); moved to 6 Nov afternoon (author, 5 Nov)
+  time: "13:30"
   minutes: 30
   details: >
     Write from exploratory/docs/reviewer/sans-outreach.md (facts to cover; your own words) and send to the

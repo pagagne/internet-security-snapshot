@@ -410,42 +410,6 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:ccri-email@2026-11-04@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261104T150000Z
-DTEND:20261104T152000Z
-SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
- i route\, second coder)
-DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
- e/snapshot-manual/blob/main/exploratory/docs/reviewer/ccri-outreach.md in 
- your own words and send it to the program director\, with https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/reviewer/SECOND_CODER
- .md. Mainly for the second coder\; also asks about CCRI graduates now in a
-  bachelor's programme for the full review. Disclose your alumni tie if a C
- CRI candidate is chosen (the invitation's conflict-of-interest section). T
- ell Claude\, who logs it.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:sans-email@2026-11-05@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261105T150000Z
-DTEND:20261105T153000Z
-SUMMARY:[Paul] Snapshot: Email SANS asking them to suggest a reviewer (form
- er-employer route)
-DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
- agne/snapshot-manual/blob/main/exploratory/docs/reviewer/sans-outreach.md 
- (facts to cover\; your own words) and send to the SANS Technology Institut
- e or another SANS contact that reaches the right people\, with the invitat
- ion letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027)\;
-  optional: a second coder. Disclose that you worked at SANS and that the s
- tudy uses Internet Storm Center data\; ask for someone you did not work wi
- th. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/inter
- net-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:go-live-review@2026-11-06@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261106T150000Z
@@ -497,6 +461,42 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/snapsh
  Brazil case?). Claude's recheck of the primary reports is done by 2 Nov.\n
  \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
  docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:ccri-email@2026-11-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261106T180000Z
+DTEND:20261106T182000Z
+SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
+ i route\, second coder)
+DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/reviewer/ccri-outreach.md in 
+ your own words and send it to the program director\, with https://github.c
+ om/pagagne/internet-security-snapshot/blob/main/docs/reviewer/SECOND_CODER
+ .md. Mainly for the second coder\; also asks about CCRI graduates now in a
+  bachelor's programme for the full review. Disclose your alumni tie if a C
+ CRI candidate is chosen (the invitation's conflict-of-interest section). T
+ ell Claude\, who logs it.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:sans-email@2026-11-06@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261106T183000Z
+DTEND:20261106T190000Z
+SUMMARY:[Paul] Snapshot: Email SANS asking them to suggest a reviewer (form
+ er-employer route)
+DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
+ agne/snapshot-manual/blob/main/exploratory/docs/reviewer/sans-outreach.md 
+ (facts to cover\; your own words) and send to the SANS Technology Institut
+ e or another SANS contact that reaches the right people\, with the invitat
+ ion letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027)\;
+  optional: a second coder. Disclose that you worked at SANS and that the s
+ tudy uses Internet Storm Center data\; ask for someone you did not work wi
+ th. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
