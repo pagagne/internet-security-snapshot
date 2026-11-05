@@ -193,6 +193,18 @@ chosen before the rule, meets it (CVSS 9.2; CERT-EU and NCSC advised).
     `docs/cases/php2shell.md` by 3 Feb (points collected so far are already in that file): what each step recorded, and anything to change before
     the first scored quarter.
 
+- **Watch item: the next stages of AI-run attacks (added 5 Nov 2026, author's decision).**
+  Google's Threat Intelligence Group and Mandiant ("ARTEX and Friends: Enter Agentic Offensive
+  Frameworks", 30 Oct 2026) place attackers at stage 5 of a seven-stage model: several stages of
+  an intrusion run by AI tooling in the wild, "messy, noisy but yet successful". They forecast
+  stage 6 (multi-agent, unsophisticated attacks with little human interaction) within one to
+  three months and stage 7 (sophisticated, fully autonomous attacks, possibly on self-hosted
+  models) within three to six. At each quarterly report, Claude checks whether primary reports
+  in the AI-attack log (X3) show either stage, and notes it with the date it first appears.
+  Context for the race (T1): the intrusions described start mostly from stolen credentials,
+  not new flaws, so they leave no trace in CISA's KEV list; this is the known limit on
+  targeted intrusions, now growing. Never part of a label.
+
 ## Fix-date pre-fill coverage after the kernel and CSAF additions (29 Oct 2026)
 Research task `prefill_coverage` on the 175 KEV additions of Apr-Sep 2026 (run-reports
 `research/2026-10-29T2345Z-prefill_coverage`): dated by Microsoft 21, GitHub 18, Cisco 13,

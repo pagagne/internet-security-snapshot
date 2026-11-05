@@ -165,3 +165,13 @@ Started 25 Oct 2026 at the author's request.
   Later revenue figures are third-party estimates. Relevant to the study as context for AI
   credits (T7) and the tool sweeps (X25); no change. Conflict of interest noted: the report
   favours Claude Code, made by Claude's developer.
+
+- **5 Nov 2026: Google and Mandiant, "ARTEX and Friends: Enter Agentic Offensive Frameworks"
+  (30 Oct 2026; author's review).** Open-source agentic attack frameworks (ARTEX, PentAGI,
+  CAIRN, Hexstrike) seen in real intrusions since late August, mostly starting from stolen
+  credentials; no models or CVEs named. Missed by the monthly feed screen because Google's blog
+  had no working feed. **Author's decisions:** three new cases added to the AI-attack log
+  awaiting his check (a PentAGI-based campaign in Asia, PentAGI against aerospace, ARTEX in US
+  extortion cases), Google added as a source for the Storm-0940 case; the feed screen retries
+  Google's blog through its topic feed; a watch item for the next stages of AI-run attacks
+  (RESEARCH_PLAN, pilot watch cases).
