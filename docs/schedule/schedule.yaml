@@ -1218,6 +1218,31 @@ items:
     which it dominates without being security tooling, and count originals only. Details in
     the private x25-checks. Decided with the GitHub search refinement on 20 Nov.
 
+- id: x25-lure-checks
+  owner: claude
+  title: Add lure, mislabel, clone and search-cap checks to the AI tool sweeps (X25), for the 18 Nov refinement
+  date: 2026-11-17
+  details: >
+    Author's decisions 5 Nov 2026, after comparing the sweeps with a published audit of an
+    agent-skill registry (private review in the private repository). Build and test, without
+    downloading or running any code: (1) a text-only red-flag scan of the READMEs already read
+    (encoded payloads, install lines piping downloads into a shell, antivirus or OS-protection
+    bypass, password-protected archives, oversized files); (2) a mislabel sample of about fifty items
+    a sweep read against their labels, with a published error rate; (3) flags for renamed clones,
+    bursts of projects from new accounts (usernames never published) and star bursts, with item
+    counts as the headline and stars as context; (4) GitHub searches split by creation date so no
+    query hits GitHub's result cap; (5) anything else found along the way. Proposal to the author
+    on 18 Nov with the X25 refinement.
+
+- id: skill-registry-probe
+  owner: claude
+  title: Probe agent-skill registries (ClawHub, MCP registries) - terms and public metadata only
+  date: 2026-11-16
+  details: >
+    Author's decision 5 Nov 2026: read the terms of use of the main agent-skill registries and what
+    public metadata they offer (counts, publish dates, publishers as organisations), with a research
+    probe that never installs or runs a skill. Decide on 18 Nov whether registries join the sweeps.
+
 - id: gitee-recheck
   owner: claude
   title: Anonymous Gitee re-check, and a label check of the most-starred tools under the new rules

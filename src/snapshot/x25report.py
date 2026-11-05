@@ -31,8 +31,9 @@ FIGS = "exploratory/ai_tool_landscape"
 SIDES = GROUPS[:3]                      # offensive, defensive, dual_use (charted side by side)
 COLOURS = {"offensive": "#b85c1e", "defensive": "#1f4e79", "dual_use": "#7a7a7a", "unclassified": "#c8c8c8"}
 AI_COLOURS = {"closed": "#6a51a3", "open_local": "#2a9d8f", "both": "#e0a526", "none": "#d0d0d0"}
-NOTE = ("Labels describe what a tool does, not who uses it or why; offensive-security tools are built "
-        "mainly for authorised testing.")
+NOTE = ("Labels describe what a tool says it does, not who uses it or why; offensive-security tools are built "
+        "mainly for authorised testing. Counts are of advertised projects; some may be renamed copies or "
+        "malware lures posing as tools.")
 LABS = ["OpenAI", "Anthropic", "Google", "Meta", "Mistral", "DeepSeek", "Alibaba", "Nous Research", "Moonshot",
         "Zhipu", "xAI", "Microsoft", "Local runner"]
 TARGETS = ["web apps and APIs", "cloud accounts", "Windows and Active Directory", "networks and hosts",

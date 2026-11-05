@@ -591,6 +591,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nSince 27 Oct: #1\, #2 and #9 deci
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:skill-registry-probe@2026-11-16@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Probe agent-skill registries (ClawHub\, MCP regi
+ stries) - terms and public metadata only
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 5 Nov 2026: read the t
+ erms of use of the main agent-skill registries and what public metadata th
+ ey offer (counts\, publish dates\, publishers as organisations)\, with a r
+ esearch probe that never installs or runs a skill. Decide on 18 Nov whethe
+ r registries join the sweeps.\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-16@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261116
@@ -631,6 +647,30 @@ DESCRIPTION:Responsible: Claude\n\nsnapshot.validate against https://github
  .com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_refe
  rence.csv (pass = 4 of 5 cases).\n\nSource: https://github.com/pagagne/int
  ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:x25-lure-checks@2026-11-17@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261117
+DTEND;VALUE=DATE:20261118
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Add lure\, mislabel\, clone and search-cap check
+ s to the AI tool sweeps (X25)\, for the 18 Nov refinement
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 5 Nov 2026\, after co
+ mparing the sweeps with a published audit of an agent-skill registry (priv
+ ate review in the private repository). Build and test\, without downloadin
+ g or running any code: (1) a text-only red-flag scan of the READMEs alread
+ y read (encoded payloads\, install lines piping downloads into a shell\, a
+ ntivirus or OS-protection bypass\, password-protected archives\, oversized
+  files)\; (2) a mislabel sample of about fifty items a sweep read against 
+ their labels\, with a published error rate\; (3) flags for renamed clones\
+ , bursts of projects from new accounts (usernames never published) and sta
+ r bursts\, with item counts as the headline and stars as context\; (4) Git
+ Hub searches split by creation date so no query hits GitHub's result cap\;
+  (5) anything else found along the way. Proposal to the author on 18 Nov w
+ ith the X25 refinement.\n\nSource: https://github.com/pagagne/internet-sec
+ urity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

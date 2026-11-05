@@ -453,10 +453,10 @@ def exploratory_parts(key: str, R: dict, explo: Path, rdir: Path) -> list[str]:
         L += ["### Trends we noticed this quarter", "", trends.read_text().strip(), ""]
     L += ["## Part 3. Tool and model sweeps: GitHub and Hugging Face (exploratory)", "",
           "*Context only: never part of a score or label.* Each month GitHub is searched for public security tools "
-          "in several languages. Each tool is counted once by how it uses AI (a hosted closed model, an open-weight or "
+          "in several languages. Each advertised tool is counted once by how it uses AI (a hosted closed model, an open-weight or "
           "local model, both, or none named) and by what it does. Labels describe what a tool does, not who uses it or "
           "why: much attack tooling serves defenders' red teams and the reverse. Tools are counted, never named by "
-          "their owners' usernames.", "", "### GitHub: AI security tools", ""]
+          "their owners' usernames. Counts are of advertised projects, judged by what each says about itself; some may be renamed copies or malware lures posing as tools (checks for both are being added before the 2027 sweeps).", "", "### GitHub: AI security tools", ""]
     sweeps = sorted((explo / "ai_tool_sweeps").glob("*.csv"))
     figs = explo / "ai_tool_landscape"
     if sweeps:

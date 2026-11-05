@@ -238,8 +238,9 @@ def draft_section(root: Path, name: str) -> list[str]:
         date, figs = x25_figures(root)
         if figs:
             L += [f"## AI security tools on GitHub (X25), sweep of {date}", "",
-                  "How many security tools on GitHub use AI, on which kind of model, how fast they are "
-                  "appearing, and what they do. Labels describe what a tool does, not who uses it or why.", ""]
+                  "How many advertised security tools on GitHub use AI, on which kind of model, how fast they are "
+                  "appearing, and what they say they do. Labels describe what a tool says it does, not who uses it or why. "
+                  "Counts are of advertised projects, judged by what each says about itself; some may be renamed copies or malware lures posing as tools (checks for both are being added before the 2027 sweeps).", ""]
             L += [x for f in figs for x in (f"![{f}](../{FIGS}/{f})", "")]
     elif name == "attack_log" and (root / "exploratory/ai_attack_campaigns.csv").exists():
         fig, n, ev = attack_log_chart(root)
@@ -257,7 +258,8 @@ def draft_section(root: Path, name: str) -> list[str]:
                   "Security-related AI models and apps published on Hugging Face, and, apart from them, models "
                   "advertised as safety-removed (a floor, from their own names and tags), originals only, by month and "
                   "by the lab of the model modified. Nothing is downloaded or run; individuals' items are never named "
-                  "by username.", ""]
+                  "by username. Counts are of advertised items, judged by their own names, tags and cards; some may "
+                  "be copies or lures.", ""]
             L += [x for s in ("1-new-per-month", "3-safety-removed-per-month", "2-safety-removed-by-lab")
                   if (figs / f"hf-{d}-{s}.png").exists() for x in (f"![{s}](../{FIGS}/hf-{d}-{s}.png)", "")]
     elif name == "feed_screen":
