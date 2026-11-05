@@ -71,7 +71,7 @@ def main(argv=None) -> int:
         w.writeheader(); w.writerows(rows)
     ok = sum(r.get("status") == 200 for r in rows)
     L = ["# Gitee probe", "", f"Searches: {len(rows)}; answered: {ok}; token: {'yes' if token else 'no'}. "
-         "Counts only; no names kept. See docs/AFTER_ACTION_GITEE_2026-10-31.md.", ""]
+         "Counts only; no names kept. See exploratory/docs/AFTER_ACTION_GITEE_2026-10-31.md.", ""]
     L += [f"- {r['query']}: status {r.get('status')}; total {r.get('total_count', '-')}; items {r.get('items', '-')}"
           f"; fields {r.get('fields', '-')}" + (f"; message {r['message']}" if r.get('message') else "") for r in rows]
     (a.out / "summary.md").write_text("\n".join(L) + "\n")

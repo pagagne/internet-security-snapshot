@@ -122,7 +122,7 @@ that race.
   (baseline `core-v1.1`, checksums in `prereg/LOCKED.yaml`) and an exploratory add-on
   layer (`config/exploratory.yaml`) that never decides a label
 - **Hand checks:** criteria in [`docs/HAND_CHECK.md`](docs/HAND_CHECK.md); the author works
-  through them in the Hand Check app ([user guide](docs/HAND_CHECK_APP.md))
+  through them in the Hand Check app (user guide kept privately)
 - **Cohort rules:** [`config/cohort_rules.yaml`](config/cohort_rules.yaml),
   [`config/ai_credit_terms.yaml`](config/ai_credit_terms.yaml),
   [`config/root_cause_map.yaml`](config/root_cause_map.yaml)
@@ -241,7 +241,7 @@ Details for each workflow: [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md). Dates for s
 - No scanning, no exploitation, no host-level data, no victim names.
 - Private by design: data a provider has not yet allowed us to publish, and personal details,
   never appear in this repository or its public run outputs. They are kept in a private backup
-  ([`docs/BACKUP.md`](docs/BACKUP.md)); a scan on every change and every day checks this
+  (setup notes kept privately); a scan on every change and every day checks this
   ([`docs/OPERATIONS.md`](docs/OPERATIONS.md), "Private by design").
 
 ## AI involvement and conflict of interest

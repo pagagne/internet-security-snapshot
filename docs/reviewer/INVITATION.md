@@ -75,6 +75,7 @@ The study uses only public data. You won't handle anything confidential or perso
 - Your review is published as you write it, with my response beside it. I won't edit it, and you're free to disagree with me in public.
 - Your second-coder answers are published under your name, or your initials if you prefer, and never change my own answers.
 - You can step away at any time; the project will just note that the review role ended on that date.
+- A separate person, the pilot witness, follows the December dry run and the pilot quarter (December 2026 to February 2027) and publishes a short note before the procedures are locked. You and the witness never work together, so your review starts fresh; you can read the witness's published note like anyone else.
 - Please tell me about any ties to AI labs (Anthropic included), cybersecurity vendors, or the data providers. A tie doesn't rule you out; it gets disclosed beside your review, just as the project discloses its own.
 
 ## Next steps

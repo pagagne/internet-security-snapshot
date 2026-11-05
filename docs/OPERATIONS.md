@@ -68,7 +68,7 @@ Questions about how the study would handle an outside event or source go in
 at the March review.
 
 ## Sync review
-`docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
+`exploratory/docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
 scheduled tasks and the Reviewer's Desk in step: weekly until the cutover, then three days
 before each provisional report, and on request. Questions for the author are always asked
 together, in one list.
@@ -166,7 +166,7 @@ that day (author's request, 27 Oct).
 (Decided 27 Oct 2026.) The repository stays public. Three rules keep private material out of it:
 1. A source whose `publish` switch is off (`config/sources.yaml`) never appears in a public
    run download, run report or quality report; the quarterly pull moves it to the author's
-   private Drive backup (`snapshot.private`, `docs/BACKUP.md`).
+   private Drive backup (`snapshot.private`, `exploratory/docs/BACKUP.md`).
 2. Personal and third-party details (candidates, contacts, family, private emails) stay in the
    Claude project or Drive; repository documents describe people by role. One exception, the
    author's own choice (31 Oct 2026): his name, GitHub profile photo and approved short bio on
@@ -233,12 +233,24 @@ eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). 
 cutover the work queue takes over the dated work; new dates go into the schedule, not into
 chat reminders.
 
+## Documents moved to the private repository (5 Nov 2026)
+The author decided on 3 Nov 2026 to keep the public `docs/` folder to documents that explain or
+record the study. On 5 Nov these moved to the private repository (`pagagne/snapshot-manual`,
+under `exploratory/docs/`), still in the private manual: the copies of the Claude documents
+(`artifacts/`); the reviewer outreach drafts and the Handshake posting notes; and the internal
+working notes (sync review checklist, build plan, backup setup, Hand Check app guide, the Gitee
+after-action report, the 27 Oct workflow security review, publication options, capacity). They
+stay in the public history. Kept public on purpose: the schedule, the decisions and core-freeze
+list, the reviewer invitation, second-coder page and sample worksheet, and this guide and the
+handover (the daily work queue reads them). Public files mention moved documents by their
+private path, `exploratory/docs/...`, and do not link to them.
+
 ## Documents: repository first, artifacts as backup
 - The repository is the **source of truth** for every project document. The Claude artifacts
   (the author's Claude artifacts list) are readable, shareable copies and a backup.
 - When a document changes, change the repository file and the artifact in the same session.
-  `docs/artifacts/README.md` maps each file to its artifact and says which way it is kept in
-  step.
+  `exploratory/docs/artifacts/README.md` (private repository) maps each file to its artifact
+  and says which way it is kept in step.
 - The Hand Check app's answers live in the app's own database; the app's source is
   `apps/hand-check.html`.
 
@@ -246,7 +258,7 @@ chat reminders.
 - [ ] Schedule workflow green for 7 days in a row.
 - [x] Author subscribed to the calendar feed (24 Oct 2026).
 - [ ] Claude work-queue task live and has confirmed it can see the queue.
-- [x] Private Google Drive backup configured and tested (`docs/BACKUP.md`; 27 Oct 2026).
+- [x] Private Google Drive backup configured and tested (`exploratory/docs/BACKUP.md`; 27 Oct 2026).
 - [ ] This file current.
 - [ ] Remaining one-off check-ins in the original chat retired.
 

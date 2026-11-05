@@ -82,7 +82,7 @@ The registration states that selection never uses EPSS or other outcome measures
   by digest, tested on every push) and the monthly rebuild check
   (`.github/workflows/rebuild-check.yml`, `snapshot.rebuild`).
 - Still to do: archive the container image with each Zenodo release (with the Zenodo item in
-  `docs/BUILD_PLAN.md`), and move the quarterly pull itself into the container once the
+  `exploratory/docs/BUILD_PLAN.md`), and move the quarterly pull itself into the container once the
   1 December dry run has passed on the runner.
 
 ## Reproducing the numbers

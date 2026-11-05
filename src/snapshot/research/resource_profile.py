@@ -6,7 +6,7 @@ Runs each source of the quarterly pull on its own (as `python -m snapshot.pull`,
 the monthly ISC honeypot capture, and records per step: wall time, peak memory (max RSS of the
 child process, from wait4) and bytes written. Also records the runner (CPUs, memory, free
 disk). Sources that need secrets (Cloudflare Radar, ransomware.live) are skipped here; their
-sizes are known from earlier runs. Used for the capacity estimate (docs/CAPACITY.md).
+sizes are known from earlier runs. Used for the capacity estimate (exploratory/docs/CAPACITY.md).
 """
 from __future__ import annotations
 

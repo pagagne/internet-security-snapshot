@@ -122,7 +122,7 @@ See `docs/RECONCILIATION_2026-10.md`. Added to this window:
 - Every timing figure names its population (recent CVEs vs all newly exploited flaws).
 
 ## Brainstorm of 25 Oct: more free sources and process
-Claude doc "Brainstorm: Data Sources and Process" (copy: `docs/artifacts/brainstorm-data-sources-2026-10-25.md`).
+Claude doc "Brainstorm: Data Sources and Process" (copy: `exploratory/docs/artifacts/brainstorm-data-sources-2026-10-25.md`).
 Adopted by the author on 25 Oct, all exploratory (registered before first look, never scored
 until a March review), scheduled in `docs/schedule/schedule.yaml`: daily SANS ISC honeypot
 capture (from 2 Nov); KEV-lag back-test against EUVD, Project Zero's sheet and inthewild.io,

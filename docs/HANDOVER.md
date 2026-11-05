@@ -6,7 +6,7 @@
 
 From now on, **one Claude session works on this repository, the author's calendar and the
 artifacts below**. This file and the project doc `claude/handover-session-1.md` hold what the
-new session needs. Read this first, then `docs/BUILD_PLAN.md`, `docs/RESEARCH_PLAN.md` and
+new session needs. Read this first, then `exploratory/docs/BUILD_PLAN.md`, `docs/RESEARCH_PLAN.md` and
 `docs/CORE_FREEZE_DECISIONS.md`.
 
 ## Repository

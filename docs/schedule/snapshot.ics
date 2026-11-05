@@ -77,12 +77,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
- ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
- t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
+  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
+ erything that runs on its own. Findings to the author as Confirmed / Fixed
+  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -94,12 +94,13 @@ TRANSP:TRANSPARENT
 SUMMARY:✅ DONE [Claude] Snapshot: Draft the CCRI outreach email and the s
  econd-coder role summary - done
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/reviewer/ccri-outreach.md (draft for the auth
- or to rewrite) and https://github.com/pagagne/internet-security-snapshot/b
- lob/main/docs/reviewer/SECOND_CODER.md (one-page role summary). Author's d
- ecision\, 26 Oct: approach CCRI (the author's alma mater\; NSA CAE in Cybe
- r Defense) mainly for the second coder.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/reviewer/ccri-outreach.md (draft 
+ for the author to rewrite) and https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/reviewer/SECOND_CODER.md (one-page role summary)
+ . Author's decision\, 26 Oct: approach CCRI (the author's alma mater\; NSA
+  CAE in Cyber Defense) mainly for the second coder.\n\nSource: https://git
+ hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
+ e.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -364,13 +365,31 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
- ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
- t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
+  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
+ erything that runs on its own. Findings to the author as Confirmed / Fixed
+  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-post@2026-11-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261104
+TRANSP:TRANSPARENT
+SUMMARY:✅ DONE [Paul] Snapshot: Post the pilot-witness role on Handshake 
+ (UGA\, Georgia State\, Georgia Tech\, MIT)
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decisions 3 Nov 2026: a 
+ pilot witness\, separate from the independent reviewer so the first does n
+ ot influence the second\, follows the 15 Dec dry run and the whole pilot a
+ nd writes a short published note before the procedures are locked. Text: P
+ osting 1 in https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/exploratory/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 30 No
+ v.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/m
+ ain/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:drive-to-claude-copy@2026-11-04@internet-security-snapshot
@@ -399,14 +418,14 @@ DTEND:20261104T152000Z
 SUMMARY:[Paul] Snapshot: Email CCRI's cybersecurity program director (alumn
  i route\, second coder)
 DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/reviewer/ccri-outreach.md in y
- our own words and send it to the program director\, with https://github.co
- m/pagagne/internet-security-snapshot/blob/main/docs/reviewer/SECOND_CODER.
- md. Mainly for the second coder\; also asks about CCRI graduates now in a 
- bachelor's programme for the full review. Disclose your alumni tie if a CC
- RI candidate is chosen (the invitation's conflict-of-interest section). Te
- ll Claude\, who logs it.\n\nSource: https://github.com/pagagne/internet-se
- curity-snapshot/blob/main/docs/schedule/schedule.yaml
+ e/internet-security-snapshot/blob/main/exploratory/docs/reviewer/ccri-outr
+ each.md in your own words and send it to the program director\, with https
+ ://github.com/pagagne/internet-security-snapshot/blob/main/docs/reviewer/S
+ ECOND_CODER.md. Mainly for the second coder\; also asks about CCRI graduat
+ es now in a bachelor's programme for the full review. Disclose your alumni
+  tie if a CCRI candidate is chosen (the invitation's conflict-of-interest 
+ section). Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne
+ /internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -417,14 +436,14 @@ DTEND:20261105T153000Z
 SUMMARY:[Paul] Snapshot: Email SANS asking them to suggest a reviewer (form
  er-employer route)
 DESCRIPTION:Responsible: Paul (author)\n\nWrite from https://github.com/pag
- agne/internet-security-snapshot/blob/main/docs/reviewer/sans-outreach.md (
- facts to cover\; your own words) and send to the SANS Technology Institute
-  or another SANS contact that reaches the right people\, with the invitati
- on letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027)\; 
- optional: a second coder. Disclose that you worked at SANS and that the st
- udy uses Internet Storm Center data\; ask for someone you did not work wit
- h. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ agne/internet-security-snapshot/blob/main/exploratory/docs/reviewer/sans-o
+ utreach.md (facts to cover\; your own words) and send to the SANS Technolo
+ gy Institute or another SANS contact that reaches the right people\, with 
+ the invitation letter. Main ask: the independent reviewer (confirmed by 1 
+ Mar 2027)\; optional: a second coder. Disclose that you worked at SANS and
+  that the study uses Internet Storm Center data\; ask for someone you did 
+ not work with. Tell Claude\, who logs it.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -509,12 +528,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
- ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
- t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
+  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
+ erything that runs on its own. Findings to the author as Confirmed / Fixed
+  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -615,12 +634,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
- ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
- t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
+  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
+ erything that runs on its own. Findings to the author as Confirmed / Fixed
+  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -856,12 +875,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
- ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
- t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
+  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
+ erything that runs on its own. Findings to the author as Confirmed / Fixed
+  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1033,12 +1052,12 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review (three passes\; findings to the auth
  or)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
- ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
- t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md: repository\, sync
+  between repository\, Claude docs\, calendars and scheduled tasks\, and ev
+ erything that runs on its own. Findings to the author as Confirmed / Fixed
+  / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1061,11 +1080,11 @@ SUMMARY:[Claude] Snapshot: Read the dry-run quality report\; prepare the ha
  nd-check lists
 DESCRIPTION:Responsible: Claude\n\nFirst check that the Schedule workflow r
  eally started the quarterly pull (first end-to-end test\, https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/WORKFLOW_REVIEW_2026-
- 10-27.md item 4)\; if not\, start it by hand. Then load the review lists (
- including the race list) into the Hand Check app.\n\nSource: https://githu
- b.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.
- yaml
+ om/pagagne/internet-security-snapshot/blob/main/exploratory/docs/WORKFLOW_
+ REVIEW_2026-10-27.md item 4)\; if not\, start it by hand. Then load the re
+ view lists (including the race list) into the Hand Check app.\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1090,6 +1109,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks\, slot (c)
  t: note anything awkward. Approve or hold the dry-run page.\n\nSource: htt
  ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
  /schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-select@2026-12-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Choose and confirm the pilot witness (applications
+  closed 30 Nov)
+DESCRIPTION:Responsible: Paul (author)\n\nRead the applications (Claude can
+  sort them by the posting's criteria\, without judging people)\, choose on
+ e\, and confirm by 6 Dec. The witness must not be the person later chosen 
+ as the independent reviewer\, and the two never work together. Tell Claude
+ \, who logs it (role only in public files) and sends the getting-started n
+ otes.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blo
+ b/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1154,9 +1190,9 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
  ools requested: UGA\, Georgia State\, Georgia Tech\, Clemson\, University 
  of South Carolina\, College of Charleston\, The Citadel\, Emory\, MIT. Pos
  ting saved as a draft (https://github.com/pagagne/internet-security-snapsh
- ot/blob/main/docs/reviewer/HANDSHAKE_POSTING.md)\, live 4 Jan - 15 Feb 202
- 7.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/m
- ain/docs/schedule/schedule.yaml
+ ot/blob/main/exploratory/docs/reviewer/HANDSHAKE_POSTING.md)\, live 4 Jan 
+ - 15 Feb 2027.\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1197,6 +1233,24 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
  Also on the 22nd (newsletter-read-2).\n\nSource: https://github.com/pagagn
  e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-onboarding@2026-12-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261208T150000Z
+DTEND:20261208T160000Z
+SUMMARY:[Paul] Snapshot: Pilot witness getting started (one video call\; Cl
+ aude prepares the notes)
+DESCRIPTION:Responsible: Paul (author)\n\nWindow 7-14 Dec (2 to 3 hours for
+  the witness). Claude prepares a short guide: where the run logs\, the fro
+ zen data copies and the quality reports are\; what the dry run and the pil
+ ot do and when\; what the note by 5 Feb should cover (problems seen\; the 
+ timing of locking the procedures). The witness gets read access to what an
+ y member of the public can see\, plus the hand-check sample the author cho
+ oses to show\; never private data\, keys or the private repository.\n\nSou
+ rce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
+ schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:landing-flip-workflow@2026-12-10@internet-security-snapshot
@@ -1280,20 +1334,20 @@ SUMMARY:[Claude] Snapshot: Document and test every GitHub workflow\; draft
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/WORKFLOWS.md (written 27 Oct in plain languag
  e\; extend it from https://github.com/pagagne/internet-security-snapshot/b
- lob/main/docs/WORKFLOW_REVIEW_2026-10-27.md): for each workflow\, what sta
- rts it\, its permissions and secrets\, inputs and outputs\, what happens o
- n failure and who notices\, and its latest successful run (link). Run any 
- workflow without a successful run since its last change (rebuild check on 
- the dry run's bundle\; quarterly pull inside the container\; the daily hon
- eypot collector). Draft the lock list for decision item 22: data workflows
-  (quarterly pull\, rebuild check\, daily collectors\, Dockerfile) locked l
- ike the core\; support workflows (Checks\, Schedule\, Diagrams\, Research\
- , Pages\, Backup) under a change log. Evaluate each workflow's function an
- d how critical it is to the study (author\, 29 Oct): confirm or change the
-  role table in https://github.com/pagagne/internet-security-snapshot/blob/
- main/docs/WORKFLOWS.md\, "How they depend on each other".\n\nSource: https
- ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
- chedule.yaml
+ lob/main/exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md): for each workflo
+ w\, what starts it\, its permissions and secrets\, inputs and outputs\, wh
+ at happens on failure and who notices\, and its latest successful run (lin
+ k). Run any workflow without a successful run since its last change (rebui
+ ld check on the dry run's bundle\; quarterly pull inside the container\; t
+ he daily honeypot collector). Draft the lock list for decision item 22: da
+ ta workflows (quarterly pull\, rebuild check\, daily collectors\, Dockerfi
+ le) locked like the core\; support workflows (Checks\, Schedule\, Diagrams
+ \, Research\, Pages\, Backup) under a change log. Evaluate each workflow's
+  function and how critical it is to the study (author\, 29 Oct): confirm o
+ r change the role table in https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/WORKFLOWS.md\, "How they depend on each other".\n\nS
+ ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
+ s/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1311,6 +1365,21 @@ DESCRIPTION:Responsible: Claude\n\nQuality report\, gaps per source\, the e
  or the author with anything that needs a decision on 21 Dec.\n\nSource: ht
  tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
  e/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-dry-run@2026-12-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Pilot witness follows the full dry run (15-16 De
+ c)
+DESCRIPTION:Responsible: Claude\n\nSend the witness the dry run's public ru
+ n log\, quality report and timings when it finishes\; note any questions t
+ hey raise in the session log and answer them. About 2 hours for the witnes
+ s.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/m
+ ain/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1446,11 +1515,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
- sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
+ e each provisional report so it starts from a consistent state. Findings t
+ o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1477,6 +1546,22 @@ DESCRIPTION:Responsible: Claude\n\nFrom the run's frozen outputs only\; rea
  d the data-quality report\; load the quarter's review lists (with 20 re-sh
  own items) into the Hand Check app.\n\nSource: https://github.com/pagagne/
  internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-pilot@2027-01-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Pilot witness follows the pilot pull (1 Jan) and
+  the final run (1 Feb)
+DESCRIPTION:Responsible: Claude\n\nAfter each run\, send the witness the pu
+ blic run log\, the frozen copy's manifest and the quality report\, and the
+  report page once published. In January the author shows the witness a sam
+ ple of the hand checks (author's choice of items). About 4 to 5 hours for 
+ the witness in all.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1572,9 +1657,10 @@ TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Post the reviewer ad\; email statistics department
   coordinators
 DESCRIPTION:Responsible: Paul (author)\n\nOn each approved board (UGA first
- )\; applications close 15 Feb. The UGA posting is already written and save
- d in Handshake as a draft (28 Oct\; text in https://github.com/pagagne/int
- ernet-security-snapshot/blob/main/docs/reviewer/HANDSHAKE_POSTING.md): che
+ )\; applications close 15 Feb. The text is in https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/exploratory/docs/reviewer/HANDSHAKE_PO
+ STING.md (Posting 2\, independent reviewer). The draft saved on 28 Oct bec
+ ame the pilot-witness posting on 3 Nov\, so create this posting again: che
  ck the links work (the site opens 4 Dec) and set it live today. First past
  e your bio into the Handshake employer profile (short version\, Claude pro
  ject doc author-bio).\n\nSource: https://github.com/pagagne/internet-secur
@@ -1830,6 +1916,22 @@ DESCRIPTION:Responsible: Claude\n\nLate KEV listings and credits\, hand-che
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:witness-pilot@2027-02-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Pilot witness follows the pilot pull (1 Jan) and
+  the final run (1 Feb)
+DESCRIPTION:Responsible: Claude\n\nAfter each run\, send the witness the pu
+ blic run log\, the frozen copy's manifest and the quality report\, and the
+  report page once published. In January the author shows the witness a sam
+ ple of the hand checks (author's choice of items). About 4 to 5 hours for 
+ the witness in all.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:pull-final@2027-02-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270201T060000Z
@@ -1902,6 +2004,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
  y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-note@2027-02-05@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270206
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Pilot witness note due\; read it before the proced
+ ures are locked (SOP adoption 8 Feb)
+DESCRIPTION:Responsible: Paul (author)\n\nThe witness's short note on any p
+ roblems seen and on the timing of locking the procedures. Claude publishes
+  it under the witness's name (with consent) beside the pilot report and li
+ sts any points for the 8 Feb SOP adoption. Advice is on process and timing
+  only\, never on the scored rules.\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:go-live-review@2027-02-06@internet-security-snapshot
@@ -2277,11 +2395,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
- sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
+ e each provisional report so it starts from a consistent state. Findings t
+ o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2835,11 +2953,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
- sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
+ e each provisional report so it starts from a consistent state. Findings t
+ o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3244,14 +3362,14 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Prepare the publication decision (where to publi
  sh the 2027 results)
 DESCRIPTION:Responsible: Claude\n\nUpdate https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/PUBLICATION_OPTIONS.md (written 28 Oct
-  2026): confirm the 2028 calls and dates (WEIS 2028 and the Journal of Cyb
- ersecurity special issue and its open-access fee\; CVE/FIRST VulnCon 2028\
- ; IMC 2028\; PAM 2029)\, check arXiv endorsement options\, and what the Q1
-  and Q2 2027 results suggest is worth a paper (the author also has a figsh
- are preprint\, so a copy there is an option). Questions to the author as o
- ption cards on 12 Aug.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ et-security-snapshot/blob/main/exploratory/docs/PUBLICATION_OPTIONS.md (wr
+ itten 28 Oct 2026): confirm the 2028 calls and dates (WEIS 2028 and the Jo
+ urnal of Cybersecurity special issue and its open-access fee\; CVE/FIRST V
+ ulnCon 2028\; IMC 2028\; PAM 2029)\, check arXiv endorsement options\, and
+  what the Q1 and Q2 2027 results suggest is worth a paper (the author also
+  has a figshare preprint\, so a copy there is an option). Questions to the
+  author as option cards on 12 Aug.\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3275,21 +3393,22 @@ SUMMARY:[Paul] Snapshot: Decide where to publish the 2027 results
 DESCRIPTION:Responsible: Paul (author)\n\nAsked 28 Oct 2026 to evaluate in 
  Q3 2027\; nothing decided yet (figshare included). Every option from 28 Oc
  t\, compared in https://github.com/pagagne/internet-security-snapshot/blob
- /main/docs/PUBLICATION_OPTIONS.md: (1) Self-published report with a DOI\, 
- March 2028\, on one or more of OSF Preprints (beside the registration)\, Z
- enodo (data and code\, already planned)\, figshare (where the author alrea
- dy has a preprint) or arXiv (needs an endorser for a first-time independen
- t author). (2) WEIS 2028\, Workshop on the Economics of Information Securi
- ty (deadline ~1 Feb 2028\, workshop ~June\; double-anonymous review)\, the
- n the Journal of Cybersecurity special issue (open-access fee to confirm)\
- ; paper written Nov 2027 - Jan 2028. (3) CVE/FIRST VulnCon 2028 talk (prop
- osal ~Dec 2027\, event ~April 2028). (4) PAM 2029\, Passive and Active Mea
- surement\, methods paper (deadline ~Oct 2028\, online). (5) IMC 2028\, Int
- ernet Measurement Conference (deadline ~May 2028)\, only if findings are s
- triking. (6) SANS Internet Storm Center diary (any time\; former employer\
- , disclose the tie). (7) FIRST Conference talk (~June 2028). The chosen de
- adlines then go into this schedule.\n\nSource: https://github.com/pagagne/
- internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ /main/exploratory/docs/PUBLICATION_OPTIONS.md: (1) Self-published report w
+ ith a DOI\, March 2028\, on one or more of OSF Preprints (beside the regis
+ tration)\, Zenodo (data and code\, already planned)\, figshare (where the 
+ author already has a preprint) or arXiv (needs an endorser for a first-tim
+ e independent author). (2) WEIS 2028\, Workshop on the Economics of Inform
+ ation Security (deadline ~1 Feb 2028\, workshop ~June\; double-anonymous r
+ eview)\, then the Journal of Cybersecurity special issue (open-access fee 
+ to confirm)\; paper written Nov 2027 - Jan 2028. (3) CVE/FIRST VulnCon 202
+ 8 talk (proposal ~Dec 2027\, event ~April 2028). (4) PAM 2029\, Passive an
+ d Active Measurement\, methods paper (deadline ~Oct 2028\, online). (5) IM
+ C 2028\, Internet Measurement Conference (deadline ~May 2028)\, only if fi
+ ndings are striking. (6) SANS Internet Storm Center diary (any time\; form
+ er employer\, disclose the tie). (7) FIRST Conference talk (~June 2028). T
+ he chosen deadlines then go into this schedule.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3413,11 +3532,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
- sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
+ e each provisional report so it starts from a consistent state. Findings t
+ o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3929,11 +4048,11 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
   passes\; findings to the author)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
- sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ rity-snapshot/blob/main/exploratory/docs/SYNC_REVIEW.md\, three days befor
+ e each provisional report so it starts from a consistent state. Findings t
+ o the author as Confirmed / Fixed / Conflicts resolved / Still for you.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

@@ -1,6 +1,8 @@
 # "The Snapshot": the study's single manual, assembled from its documents (author's request,
 # 29 Oct 2026). Every document appears in full, in this order; build with
 #   python -m snapshot.manual build      (Checks runs `check` and fails if it is out of date)
+# Paths may be globs (sorted). Internal notes, outreach drafts and the Claude-document copies
+# moved to the private repository on 5 Nov 2026 (author) and are listed under exploratory/docs/.
 # Paths may be globs (sorted). Every Markdown file in the repository must be listed here or in
 # `excluded` (with a reason); a test enforces it, so nothing new is left out by accident.
 title: "The Snapshot"
@@ -11,7 +13,7 @@ parts:
     docs: [README.md, prereg/PREREGISTRATION.md, prereg/DEVIATIONS.md, docs/HOW_IT_WORKS.md,
            docs/RESEARCH_PLAN.md, docs/PILOT_EXPECTATIONS.md]
   - name: "Part II. Methods"
-    docs: [docs/EVALUATION_FLOW.md, docs/HAND_CHECK.md, docs/HAND_CHECK_APP.md, docs/CHANGE_POLICY.md,
+    docs: [docs/EVALUATION_FLOW.md, docs/HAND_CHECK.md, exploratory/docs/HAND_CHECK_APP.md, docs/CHANGE_POLICY.md,
            docs/CORE_FREEZE_DECISIONS.md, proposals/T1_OPTIONS.md, proposals/ROOT_CAUSE_MAP.md,
            exploratory/README.md, exploratory/SOURCES.md, exploratory/credit_groups.md,
            exploratory/sweep-trial-2026.md, exploratory/feed-screen-2026-10.md]
@@ -21,28 +23,28 @@ parts:
     docs: [exploratory/ai_tool_landscape.md, exploratory/x25-checks.md, exploratory/ai_attack_catalogue.md]
   - name: "Part IV. Operations"
     docs: [docs/OPERATIONS.md, docs/WORKFLOWS.md, docs/SOP_MANUAL_RUNS.md, docs/PRIVACY.md,
-           docs/BACKUP.md, docs/CAPACITY.md, docs/SYNC_REVIEW.md, docs/HANDOVER.md, docs/BUILD_PLAN.md]
+           exploratory/docs/BACKUP.md, exploratory/docs/CAPACITY.md, exploratory/docs/SYNC_REVIEW.md, docs/HANDOVER.md, exploratory/docs/BUILD_PLAN.md]
   - name: "Part V. Sources, permissions and publication"
-    docs: [docs/PERMISSIONS.md, docs/TERMS_OF_USE.md, docs/PUBLICATION_OPTIONS.md]
+    docs: [docs/PERMISSIONS.md, docs/TERMS_OF_USE.md, exploratory/docs/PUBLICATION_OPTIONS.md]
   - name: "Part VI. Schedule, reviews and the reviewer"
     docs: [docs/ANNUAL_PLAN.md, "docs/decisions/*.md", docs/reviewer/INVITATION.md,
            docs/reviewer/SECOND_CODER.md, docs/reviewer/sample-worksheet/README.md,
-           docs/reviewer/HANDSHAKE_POSTING.md, docs/reviewer/ccri-outreach.md,
-           docs/reviewer/sans-outreach.md]
+           exploratory/docs/reviewer/HANDSHAKE_POSTING.md, exploratory/docs/reviewer/ccri-outreach.md,
+           exploratory/docs/reviewer/sans-outreach.md]
   - name: "Appendix A. Records: inquiries, cases, reviews and session logs"
     docs: [docs/INQUIRIES.md, "docs/cases/*.md", docs/RECONCILIATION_2026-10.md,
-           docs/STATISTICAL_REVIEW_2026-10-24.md, docs/WORKFLOW_REVIEW_2026-10-27.md,
-           docs/INDICATOR_REVIEW_2026-10-29.md, docs/AFTER_ACTION_GITEE_2026-10-31.md,
+           docs/STATISTICAL_REVIEW_2026-10-24.md, exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md,
+           docs/INDICATOR_REVIEW_2026-10-29.md, exploratory/docs/AFTER_ACTION_GITEE_2026-10-31.md,
            exploratory/sessions/README.md, "exploratory/sessions/*/*.md"]   # private since 1 Nov 2026
   - name: "Appendix B. Report and artifact sources"
-    docs: [docs/artifacts/README.md, docs/artifacts/combined-report-2026.md,
-           docs/artifacts/methodology-report.md, docs/artifacts/technical-spec.md,
-           docs/artifacts/october-assessment-full-report.md,
-           docs/artifacts/october-assessment-how-we-got-here.md,
-           docs/artifacts/statistical-review-2026-10-24.md,
-           docs/artifacts/statistical-review-2026-10-24-review-points.md,
-           docs/artifacts/brainstorm-data-sources-2026-10-25.md]
+    docs: [exploratory/docs/artifacts/README.md, exploratory/docs/artifacts/combined-report-2026.md,
+           exploratory/docs/artifacts/methodology-report.md, exploratory/docs/artifacts/technical-spec.md,
+           exploratory/docs/artifacts/october-assessment-full-report.md,
+           exploratory/docs/artifacts/october-assessment-how-we-got-here.md,
+           exploratory/docs/artifacts/statistical-review-2026-10-24.md,
+           exploratory/docs/artifacts/statistical-review-2026-10-24-review-points.md,
+           exploratory/docs/artifacts/brainstorm-data-sources-2026-10-25.md]
 excluded:
   docs/manual/THE_SNAPSHOT.md: the manual itself
-  docs/artifacts/listening-version.md: spoken version of a report already included
-  docs/artifacts/october-assessment-listening-script.md: spoken version of a report already included
+  exploratory/docs/artifacts/listening-version.md: spoken version of a report already included
+  exploratory/docs/artifacts/october-assessment-listening-script.md: spoken version of a report already included

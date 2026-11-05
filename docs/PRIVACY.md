@@ -2,7 +2,7 @@
 
 "Snapshot backup" is a Google sign-in app used by one person, the author of the Internet
 Security Snapshot study, so that the study's automatic jobs can save private backups to a
-folder in his own Google Drive (`docs/BACKUP.md`).
+folder in his own Google Drive (`exploratory/docs/BACKUP.md`).
 
 - **Who uses it:** only the study's author. It is not offered to anyone else.
 - **What it accesses:** one folder in the author's own Google Drive, where the study's run

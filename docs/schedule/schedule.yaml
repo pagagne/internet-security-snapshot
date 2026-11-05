@@ -56,7 +56,7 @@ items:
   title: Draft the CCRI outreach email and the second-coder role summary - done
   date: 2026-10-26
   details: >
-    docs/reviewer/ccri-outreach.md (draft for the author to rewrite) and
+    exploratory/docs/reviewer/ccri-outreach.md (draft for the author to rewrite) and
     docs/reviewer/SECOND_CODER.md (one-page role summary). Author's decision, 26 Oct: approach
     CCRI (the author's alma mater; NSA CAE in Cyber Defense) mainly for the second coder.
 
@@ -67,7 +67,7 @@ items:
   time: "10:00"
   minutes: 20
   details: >
-    Rewrite docs/reviewer/ccri-outreach.md in your own words and send it to the program
+    Rewrite exploratory/docs/reviewer/ccri-outreach.md in your own words and send it to the program
     director, with docs/reviewer/SECOND_CODER.md. Mainly
     for the second coder; also asks about CCRI graduates now in a bachelor's programme for the
     full review. Disclose your alumni tie if a CCRI candidate is chosen (the invitation's
@@ -80,7 +80,7 @@ items:
   time: "10:00"
   minutes: 30
   details: >
-    Write from docs/reviewer/sans-outreach.md (facts to cover; your own words) and send to the
+    Write from exploratory/docs/reviewer/sans-outreach.md (facts to cover; your own words) and send to the
     SANS Technology Institute or another SANS contact that reaches the right people, with the
     invitation letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027); optional:
     a second coder. Disclose that you worked at SANS and that the study uses Internet Storm
@@ -447,7 +447,7 @@ items:
   title: Sync review (three passes; findings to the author)
   dates: [2026-10-25, 2026-11-02, 2026-11-09, 2026-11-16, 2026-11-23, 2026-11-30]
   details: >
-    docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
+    exploratory/docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
     scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed /
     Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.
 
@@ -456,7 +456,7 @@ items:
   title: Sync review before the provisional report (three passes; findings to the author)
   repeat: {months: [3, 6, 9, 12], day: 28, from: 2026-12, until: 2027-12}
   details: >
-    docs/SYNC_REVIEW.md, three days before each provisional report so it starts from a
+    exploratory/docs/SYNC_REVIEW.md, three days before each provisional report so it starts from a
     consistent state. Findings to the author as Confirmed / Fixed / Conflicts resolved /
     Still for you.
 
@@ -500,7 +500,7 @@ items:
   date: 2026-12-01
   details: >
     First check that the Schedule workflow really started the quarterly pull (first end-to-end
-    test, docs/WORKFLOW_REVIEW_2026-10-27.md item 4); if not, start it by hand. Then load the
+    test, exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md item 4); if not, start it by hand. Then load the
     review lists (including the race list) into the Hand Check app.
 
 - id: dry-run-hand-check
@@ -564,7 +564,7 @@ items:
     email, the GitHub page as website. Approvals arrive during the RV trip. Started 28 Oct;
     schools requested: UGA, Georgia State, Georgia Tech, Clemson, University of South Carolina,
     College of Charleston, The Citadel, Emory, MIT. Posting saved as a draft
-    (docs/reviewer/HANDSHAKE_POSTING.md), live 4 Jan - 15 Feb 2027.
+    (exploratory/docs/reviewer/HANDSHAKE_POSTING.md), live 4 Jan - 15 Feb 2027.
 
 - id: dry-run-full-prep
   owner: claude
@@ -619,7 +619,7 @@ items:
   title: Document and test every GitHub workflow; draft the lock list
   date: 2026-12-14
   details: >
-    docs/WORKFLOWS.md (written 27 Oct in plain language; extend it from docs/WORKFLOW_REVIEW_2026-10-27.md): for each
+    docs/WORKFLOWS.md (written 27 Oct in plain language; extend it from exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md): for each
     workflow, what starts it, its permissions and secrets, inputs
     and outputs, what happens on failure and who notices, and its latest successful run (link).
     Run any workflow without a successful run since its last change (rebuild check on the dry
@@ -699,14 +699,81 @@ items:
     update (Claude gives you the text).
 
 # ---------------------------------------------------------------- 2027-2028
+- id: witness-post
+  owner: author
+  done: "3 Nov 2026 (Handshake job 11854388; title and dates corrected by the author)"
+  title: Post the pilot-witness role on Handshake (UGA, Georgia State, Georgia Tech, MIT)
+  date: 2026-11-03
+  details: >
+    Author's decisions 3 Nov 2026: a pilot witness, separate from the independent reviewer so the
+    first does not influence the second, follows the 15 Dec dry run and the whole pilot and writes
+    a short published note before the procedures are locked. Text: Posting 1 in
+    exploratory/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 30 Nov.
+
+- id: witness-select
+  owner: author
+  title: Choose and confirm the pilot witness (applications closed 30 Nov)
+  date: 2026-12-03
+  minutes: 45
+  details: >
+    Read the applications (Claude can sort them by the posting's criteria, without judging
+    people), choose one, and confirm by 6 Dec. The witness must not be the person later chosen as
+    the independent reviewer, and the two never work together. Tell Claude, who logs it (role
+    only in public files) and sends the getting-started notes.
+
+- id: witness-onboarding
+  owner: author
+  title: Pilot witness getting started (one video call; Claude prepares the notes)
+  date: 2026-12-08
+  time: "10:00"
+  minutes: 60
+  details: >
+    Window 7-14 Dec (2 to 3 hours for the witness). Claude prepares a short guide: where the run
+    logs, the frozen data copies and the quality reports are; what the dry run and the pilot do
+    and when; what the note by 5 Feb should cover (problems seen; the timing of locking the
+    procedures). The witness gets read access to what any member of the public can see, plus
+    the hand-check sample the author chooses to show; never private data, keys or the private
+    repository.
+
+- id: witness-dry-run
+  owner: claude
+  title: Pilot witness follows the full dry run (15-16 Dec)
+  date: 2026-12-15
+  details: >
+    Send the witness the dry run's public run log, quality report and timings when it finishes;
+    note any questions they raise in the session log and answer them. About 2 hours for the
+    witness.
+
+- id: witness-pilot
+  owner: claude
+  title: Pilot witness follows the pilot pull (1 Jan) and the final run (1 Feb)
+  dates: [2027-01-01, 2027-02-01]
+  details: >
+    After each run, send the witness the public run log, the frozen copy's manifest and the
+    quality report, and the report page once published. In January the author shows the witness
+    a sample of the hand checks (author's choice of items). About 4 to 5 hours for the witness in
+    all.
+
+- id: witness-note
+  owner: author
+  title: Pilot witness note due; read it before the procedures are locked (SOP adoption 8 Feb)
+  date: 2027-02-05
+  minutes: 30
+  details: >
+    The witness's short note on any problems seen and on the timing of locking the procedures.
+    Claude publishes it under the witness's name (with consent) beside the pilot report and lists
+    any points for the 8 Feb SOP adoption. Advice is on process and timing only, never on the
+    scored rules.
+
 - id: reviewer-post
   owner: author
   title: Post the reviewer ad; email statistics department coordinators
   date: 2027-01-04
   minutes: 60
   details: >
-    On each approved board (UGA first); applications close 15 Feb. The UGA posting is already
-    written and saved in Handshake as a draft (28 Oct; text in docs/reviewer/HANDSHAKE_POSTING.md):
+    On each approved board (UGA first); applications close 15 Feb. The text is in
+    exploratory/docs/reviewer/HANDSHAKE_POSTING.md (Posting 2, independent reviewer). The draft
+    saved on 28 Oct became the pilot-witness posting on 3 Nov, so create this posting again:
     check the links work (the site opens 4 Dec) and set it live today. First paste your bio
     into the Handshake employer profile (short version, Claude project doc author-bio).
 
@@ -791,7 +858,7 @@ items:
   title: Prepare the publication decision (where to publish the 2027 results)
   date: 2027-08-10
   details: >
-    Update docs/PUBLICATION_OPTIONS.md (written 28 Oct 2026): confirm the 2028 calls and dates
+    Update exploratory/docs/PUBLICATION_OPTIONS.md (written 28 Oct 2026): confirm the 2028 calls and dates
     (WEIS 2028 and the Journal of Cybersecurity special issue and its open-access fee; CVE/FIRST
     VulnCon 2028; IMC 2028; PAM 2029), check arXiv endorsement options, and what the Q1 and Q2
     2027 results suggest is worth a paper (the author also has a figshare preprint, so a copy
@@ -805,7 +872,7 @@ items:
   minutes: 45
   details: >
     Asked 28 Oct 2026 to evaluate in Q3 2027; nothing decided yet (figshare included). Every
-    option from 28 Oct, compared in docs/PUBLICATION_OPTIONS.md:
+    option from 28 Oct, compared in exploratory/docs/PUBLICATION_OPTIONS.md:
     (1) Self-published report with a DOI, March 2028, on one or more of OSF Preprints (beside
     the registration), Zenodo (data and code, already planned), figshare (where the author
     already has a preprint) or arXiv (needs an endorser for a first-time independent author).

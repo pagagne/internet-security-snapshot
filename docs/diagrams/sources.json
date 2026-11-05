@@ -98,7 +98,7 @@
    "reviewed_on": "2026-11-02"
   },
   "build_plan": {
-   "doc": "docs/BUILD_PLAN.md",
+   "doc": "exploratory/docs/BUILD_PLAN.md",
    "source": "docs/diagrams/build_plan.mmd",
    "depends_on": [
     "docs/RESEARCH_PLAN.md"

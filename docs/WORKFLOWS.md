@@ -1,7 +1,7 @@
 # The study's workflows
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
-was tested the same evening (`docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec workflow review
+was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec workflow review
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
@@ -116,7 +116,7 @@ by hand, it also writes a small test file under `tests/` to prove the connection
 quarterly pull backs up its own data separately, as its last step. It also copies The Snapshot
 manual, as Markdown, to `manual/`, replacing the previous copy (no PDFs since 31 Oct 2026,
 author's decision; the private appendix stays in Drive).
-Setup: `docs/BACKUP.md`.
+Setup: `exploratory/docs/BACKUP.md`.
 
 ## 6. Research probe: the testing bench
 

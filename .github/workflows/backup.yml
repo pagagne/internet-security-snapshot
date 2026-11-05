@@ -1,7 +1,7 @@
 name: Backup to Google Drive
 
 # Private backup in the author's Google Drive folder Internet-Security-Snapshot-2027
-# (docs/BACKUP.md; the rclone remote's root_folder_id points at it): a monthly copy of the whole
+# (exploratory/docs/BACKUP.md; the rclone remote's root_folder_id points at it): a monthly copy of the whole
 # repository, and a connection test when run by hand. Each quarterly pull backs up its own full
 # bundle (including private data) in its last step. Needs the RCLONE_CONF secret (set up by the author);
 # without it the job only reports that the backup is not configured.
@@ -28,7 +28,7 @@ jobs:
       - name: Configured?
         run: |
           if [ "$HAVE_CONF" != "true" ]; then
-            echo "::warning title=Backup not configured::RCLONE_CONF secret missing; see docs/BACKUP.md"
+            echo "::warning title=Backup not configured::RCLONE_CONF secret missing; see exploratory/docs/BACKUP.md"
           fi
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
         if: env.HAVE_CONF == 'true'

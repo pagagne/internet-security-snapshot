@@ -202,14 +202,14 @@ jobs:
 
       - name: Backup to the private Drive folder
         # The full bundle (public part, plus the private part kept out of every public output)
-        # goes to the author's Drive (docs/BACKUP.md). Done here rather than by a separate
+        # goes to the author's Drive (exploratory/docs/BACKUP.md). Done here rather than by a separate
         # workflow, so it also happens for runs started by the Schedule workflow.
         if: always()
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         run: |
           if [ -z "$RCLONE_CONF" ]; then
-            echo "::warning title=Backup not configured::RCLONE_CONF missing; this run's full bundle (and any private data) was not backed up (docs/BACKUP.md)"
+            echo "::warning title=Backup not configured::RCLONE_CONF missing; this run's full bundle (and any private data) was not backed up (exploratory/docs/BACKUP.md)"
             exit 0
           fi
           sudo apt-get install -y -qq rclone >/dev/null
