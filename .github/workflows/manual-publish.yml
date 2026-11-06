@@ -13,7 +13,8 @@ on:
   push:
     branches: [main]
     paths: ["**.md", "config/manual.yaml", "src/snapshot/manual.py", "tools/manual_publish.py",
-            "docs/diagrams/**", "src/snapshot/x25report.py", "src/snapshot/x3catalogue.py"]
+            "docs/diagrams/**", "src/snapshot/x25report.py", "src/snapshot/x3catalogue.py",
+            "src/snapshot/golive.py", "src/snapshot/reportpage.py", "config/landing_layout.yaml"]
   repository_dispatch:
     types: [manual-publish]
   workflow_dispatch:
