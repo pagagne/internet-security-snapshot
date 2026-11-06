@@ -195,4 +195,7 @@ Started 25 Oct 2026 at the author's request.
   over a whole task rather than work with the model; open data; Claude only, and a conflict of
   interest because Claude does the study's analysis). Security link: the more autonomy agents
   get, the bigger the target (X5). Proposal to the author: an exploratory question for 2027
-  (never scored), probed in November. Decision pending.
+  (never scored), probed in November. **Author's decision (6 Nov):** add it for the final 2027
+  report, even if partly from news reports, as X26 (planned; probe 19 Nov); the X3 and X5 logs
+  gain a column for whether a human approval step is mentioned, to look at whether keeping some
+  control goes with better or worse security (descriptive; no view on good or bad).
