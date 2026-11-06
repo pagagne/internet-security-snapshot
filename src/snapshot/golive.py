@@ -174,7 +174,7 @@ def _n(v, pct=False):
 RUN_REPORTS = "https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/"
 # Draft introduction for the landing page (author, 1 Nov 2026: Claude drafts, reviewed on 6 Nov)
 INTRO_DRAFT = [
-    "## What this page is",
+    "## What this project is about",
     "",
     "The Internet Security Snapshot measures, every quarter through 2027, whether defenders are fixing "
     "internet-facing software flaws faster than attackers start exploiting them, and how AI is changing "
