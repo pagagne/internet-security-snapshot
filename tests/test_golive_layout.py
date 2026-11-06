@@ -17,7 +17,7 @@ def test_compose_mirror_and_flip(tmp_path, monkeypatch):
                            {"readme": "Mission", "status": "live"}, {"readme": "Licence", "status": "live"}]}
     page, probs = G.compose(tmp_path, README, layout)
     assert not probs and page.index("banner") < page.index("Latest results") < page.index("## Mission")
-    assert "DRAFT section" in page and "SIMULATION" in page and "results.md" in page and "scorecard" in page
+    assert "DRAFT section" in page and "SIMULATION" in page and "results.md" in page and "results.md" in page
     results = G.results_page(tmp_path)                                     # the results page (author, 5 Nov 2026)
     assert "| 15 |" in results and "How to read this page" in results and "T7 AI's share" in results
     text, flip = G.flip_check(tmp_path, README, layout)

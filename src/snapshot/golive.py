@@ -184,8 +184,8 @@ INTRO_DRAFT = [
     "**How to read it.** The banner at the top shows whether each core data source answered today. The "
     "timeline under it shows where the study stands, and the line under that what happened last and what "
     "comes next. The mission follows, then the rings, which show how much of the data the study needs is "
-    "already collected. The latest results have their own page: the scorecard here opens it, with every "
-    "question explained, and each quarter's provisional and final report is kept as its own page and PDF. "
+    "already collected. The latest results have their own page, linked here, with every question explained "
+    "and a scorecard; each quarter's provisional and final report is kept as its own page and PDF. "
     "A result is labelled Improving, Worsening, Rising or Falling only when the registered rule says so; a "
     "label is never proof of a cause, including AI.",
     "",
@@ -218,10 +218,8 @@ def results_section(root: Path, simulate: bool = True) -> list[str]:
         return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
     run = R.get("run", "final").replace("-", " ")
     L += [f"**Latest results: {R['quarter'][:4]} {R['quarter'][4:]} {run}** (SIMULATION until the pilot report). "
-          "Every question, explained, on the [results page](results.md).", "",
-          f'<a href="results.md"><img src="reports/charts/{key}-scorecard.png" width="640" '
-          'alt="Scorecard: every question by quarter; opens the results page"></a>', ""]
-    return L
+          "Every question, explained, with the scorecard and charts, on the [results page](results.md).", ""]
+    return L                      # the scorecard stays on the results page only (author, 6 Nov 2026)
 
 
 def results_page(root: Path, simulate: bool = True) -> str:
@@ -342,7 +340,9 @@ def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple
                 L.append("\n".join(part + badge).rstrip() + "\n")
                 continue
             if mirror and s.get("status") == "draft":
+                ok = s.get("wording_approved")
                 part.insert(2, f"> 🟧 **DRAFT section** (`{s['draft']}`): private, goes live at the flip"
+                               + (f"; wording and layout approved by the author {ok}" if ok else "")
                                + ("" if s.get("cleared") else "; figures not yet cleared by the author") + ".")
                 part.insert(3, "")
             if not mirror and not s.get("cleared"):

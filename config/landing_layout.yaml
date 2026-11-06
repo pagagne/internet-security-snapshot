@@ -8,6 +8,8 @@
 #           feed_screen); never public until flipped
 #   status: live (on the public page now) or draft (mirror only; goes live at the flip)
 #   bare:   a draft section without a heading (the news line), placed as is
+#   wording_approved: date the author approved the section's wording and layout (6 Nov 2026 on:
+#           sections are approved in two steps, wording first, figures at the 18 Dec clearance)
 #   cleared: true when the author has cleared the section's figures for publication; the flip
 #           refuses any draft section that is not cleared
 # Structure only: no figures live in this file.
@@ -18,12 +20,12 @@ sections:
   # the introduction, the mission, the data coverage rings, then a short results line linking
   # to the results page; About the author moves down above AI involvement.
   - {readme: top,                      status: live}
-  - {draft: timeline,                  status: draft, cleared: false}
+  - {draft: timeline,                  status: draft, cleared: false, wording_approved: 2026-11-06}
   - {draft: news,                      status: draft, cleared: false, bare: true}
-  - {draft: intro,                     status: draft, cleared: false}
+  - {draft: intro,                     status: draft, cleared: false, wording_approved: 2026-11-06}
   - {readme: Mission,                  status: live}
   - {readme: "Data coverage: what the study collects so far", status: live}
-  - {draft: results,                   status: draft, cleared: false}   # a line and the scorecard; the page is results.md
+  - {draft: results,                   status: draft, cleared: false}   # one line linking to results.md (scorecard there only, 6 Nov)
   - {draft: x25,                       status: draft, cleared: false}
   - {draft: hf,                        status: draft, cleared: false}   # added 1 Nov 2026 (author)
   - {draft: attack_log,                status: draft, cleared: false}
