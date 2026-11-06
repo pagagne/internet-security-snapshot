@@ -452,3 +452,29 @@ measures:
       The January 2027 sweep is part of the pilot (author, 30 Oct 2026). Every sweep is kept as
       exploratory/ai_tool_sweeps/<date>.csv and catalogued with three charts in
       exploratory/ai_tool_landscape.md (snapshot.x25report), which is part of The Snapshot.
+
+  - id: X26
+    name: How much people hand over to AI (autonomy given to AI models and apps)
+    question: How many everyday internet tasks are people handing from themselves to AI, in which kinds of task, and how much control do they keep; does handing over more control, or holding some back, go with better or worse security? (Author, 6 Nov 2026; no view taken on whether handing over is good or bad.)
+    sources: [github_search, cloudflare_radar, anthropic_econ_index, curated]
+    added: 2026-11-06
+    feeds_labels: false
+    status: planned   # author's decision 6 Nov 2026: for the final 2027 report, even if partly from news reports; probe 19 Nov
+    method: >
+      No single public measure exists, so several free signals are read side by side, quarter by
+      quarter through 2027, and reported together in the final 2027 report (never scored).
+      (1) Software work: the share of public GitHub pull requests opened by AI coding agents, and
+      the share of those merged with no human change (GitHub's public search; exact for agents
+      that open pull requests under their own accounts, estimated for the rest; checked against a
+      third-party tracker, amplifying.ai). (2) Web tasks: Cloudflare Radar's AI traffic by
+      purpose, especially fetches made on a user's behalf (free API; same source as X4).
+      (3) Conversations: the Anthropic Economic Index share of conversations where the user hands
+      over a whole task rather than working with the model (open data; Claude only, and a
+      conflict of interest because Claude does the study's analysis, so reported with that note
+      and never alone). (4) News and surveys: dated reports of people or organisations handing
+      tasks to AI agents, by task category (shopping, email, payments, coding, IT and security
+      operations), logged like X3 from the monthly feed screen and the author's reading.
+      Security link, descriptive only: the X3 and X5 logs record whether each case's report
+      mentions a human approval step (yes, no, not stated), so the final report can show
+      whether incidents with agents acting on their own differ from those where people kept a
+      check. Data terms, access and a first test count are checked in the 19 Nov probe.

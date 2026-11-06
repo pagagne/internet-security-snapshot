@@ -31,6 +31,7 @@ pieces:
   - {name: "Public exploit code",              tier: companion, collected: false, measures: [X7]}
   - {name: "AI attack campaigns",              tier: companion, collected: true,  measures: [X3]}
   - {name: "AI tool supply",                   tier: companion, collected: true,  measures: [X25]}
+  - {name: "Autonomy handed to AI",            tier: companion, collected: false, measures: [X26]}   # planned 6 Nov 2026 (author)
   - {name: "Bot and AI traffic",               tier: companion, collected: true,  measures: [X4, X21]}
   - {name: "National alerts",                  tier: companion, collected: false, measures: [X19]}   # no collector yet (checked 31 Oct 2026)
   - {name: "Breaches outside the US, HHS",     tier: companion, collected: false, measures: [X17, X22]}   # no collector yet (checked 31 Oct 2026)

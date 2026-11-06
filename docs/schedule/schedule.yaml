@@ -1308,6 +1308,20 @@ items:
     query hits GitHub's result cap; (5) anything else found along the way. Proposal to the author
     on 18 Nov with the X25 refinement.
 
+- id: x26-autonomy-probe
+  owner: claude
+  title: "Probe the 'autonomy handed to AI' sources (X26)"
+  date: 2026-11-19
+  details: >
+    Author's idea, 6 Nov 2026 (docs/INQUIRIES.md; config/exploratory.yaml X26): for each source,
+    check the terms of use and free access, and make one test reading: GitHub pull requests opened
+    by AI coding agents and how many are merged unchanged; Cloudflare Radar AI traffic by purpose
+    (fetches on a user's behalf); the Anthropic Economic Index task-delegation share (conflict of
+    interest noted); news and surveys by task category. Add a human-approval-step column to the
+    X3 and X5 logs. Report to the author with option cards: which signals to keep, how often to
+    read them, and the first reading with the Q1 2027 report; all of it reported together in the
+    final 2027 report.
+
 - id: skill-registry-probe
   owner: claude
   title: Probe agent-skill registries (ClawHub, MCP registries) - terms and public metadata only

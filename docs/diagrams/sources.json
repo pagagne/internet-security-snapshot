@@ -176,10 +176,10 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "13292e578de5856e",
-    "docs/OPERATIONS.md": "cd8b00a12f281df4",
+    "docs/OPERATIONS.md": "098dd74cf6e538ed",
     "docs/diagrams/sync_flow_now.dot": "dbd54aeb6c10ee53"
    },
-   "reviewed_on": "2026-11-05"
+   "reviewed_on": "2026-11-06"
   },
   "sync_flow_locked": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -190,10 +190,10 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "13292e578de5856e",
-    "docs/OPERATIONS.md": "cd8b00a12f281df4",
+    "docs/OPERATIONS.md": "098dd74cf6e538ed",
     "docs/diagrams/sync_flow_locked.dot": "1d7ddf0bd220b250"
    },
-   "reviewed_on": "2026-11-05"
+   "reviewed_on": "2026-11-06"
   }
  }
 }

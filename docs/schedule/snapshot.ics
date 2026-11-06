@@ -816,6 +816,28 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:x26-autonomy-probe@2026-11-19@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Probe the 'autonomy handed to AI' sources (X26)
+DESCRIPTION:Responsible: Claude\n\nAuthor's idea\, 6 Nov 2026 (https://gith
+ ub.com/pagagne/internet-security-snapshot/blob/main/docs/INQUIRIES.md\; ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/config/explo
+ ratory.yaml X26): for each source\, check the terms of use and free access
+ \, and make one test reading: GitHub pull requests opened by AI coding age
+ nts and how many are merged unchanged\; Cloudflare Radar AI traffic by pur
+ pose (fetches on a user's behalf)\; the Anthropic Economic Index task-dele
+ gation share (conflict of interest noted)\; news and surveys by task categ
+ ory. Add a human-approval-step column to the X3 and X5 logs. Report to the
+  author with option cards: which signals to keep\, how often to read them\
+ , and the first reading with the Q1 2027 report\; all of it reported toget
+ her in the final 2027 report.\n\nSource: https://github.com/pagagne/intern
+ et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:x25-refine-approve@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120
