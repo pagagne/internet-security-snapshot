@@ -356,6 +356,33 @@ def readme_table(occ: list[dict], milestones: list[dict]) -> str:
     return "\n".join(["| Date | Milestone |", "|---|---|", *(r for _, r in rows)])
 
 
+def news_events(occ: list[dict], milestones: list[dict]) -> list[tuple[dt.date, str]]:
+    """Dated plain headlines for the news line (author, 6 Nov 2026): each milestone's `news`
+    (one per date), plus an automatic headline for every quarterly report not already listed."""
+    by_uid = {o["uid"]: o for o in occ}
+    by_id: dict[str, list[dict]] = {}
+    for o in occ:
+        by_id.setdefault(o["id"], []).append(o)
+    ev: list[tuple[dt.date, str]] = []
+    for m in milestones:
+        heads = m.get("news") or m["text"]
+        if "when" in m:
+            ev.append((dt.datetime.strptime(str(m["when"]), "%d %b %Y").date(), heads if isinstance(heads, str) else heads[0]))
+            continue
+        heads = [heads] * len(m["at"]) if isinstance(heads, str) else heads
+        for ref, h in zip(m["at"], heads):
+            o = by_uid.get(ref) or by_id[ref][0]
+            ev.append((o["date"], h))
+    taken = {d for d, _ in ev}
+    for o in occ:
+        if o["id"] in ("pull-provisional", "pull-final") and o["date"] not in taken:
+            q = o["date"] - dt.timedelta(days=1 if o["id"] == "pull-provisional" else 32)
+            name = f"Q{(q.month - 1) // 3 + 1} {q.year}"
+            ev.append((o["date"], f"{name} results published (" +
+                       ("first look)" if o["id"] == "pull-provisional" else "final version)")))
+    return sorted(ev)
+
+
 def readme(text: str, table: str) -> str:
     if BEGIN not in text or END not in text:
         raise ValueError(f"README.md needs {BEGIN} and {END} around the schedule table")

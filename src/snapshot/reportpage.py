@@ -293,20 +293,12 @@ NEWS_THEMES = {"light": {"text": "#1f2328", "muted": "#59636e", "accent": "#1D9E
 
 def news(today: dt.date) -> tuple[str, str]:
     """Latest and next milestone from the study calendar (author, 1 Nov 2026: a one-line status
-    under the banner, written automatically)."""
+    under the banner, written automatically; plain headlines from 6 Nov 2026)."""
     from . import schedule as S
-    table = S.readme_table(S.expand(S.load()), S.load_milestones())
-    rows = []
-    for line in table.split("\n")[2:]:
-        when, text = [c.strip() for c in line.strip().strip("|").split("|", 1)]
-        first = re.search(r"(\d{1,2})(?:-\d{1,2})? ([A-Z][a-z]{2})", when)
-        year = re.search(r"(\d{4})", when)
-        if first and year:
-            rows.append((dt.datetime.strptime(f"{first[1]} {first[2]} {year[1]}", "%d %b %Y").date(), text.strip()))
-    rows.sort()
+    rows = S.news_events(S.expand(S.load()), S.load_milestones())
     last = [r for r in rows if r[0] <= today][-1:] or [(None, "")]
     nxt = [r for r in rows if r[0] > today][:1] or [(None, "")]
-    f = lambda r: f"{r[1]} ({r[0].day} {r[0]:%b %Y})" if r[0] else "-"
+    f = lambda r: f"{r[0].day} {r[0]:%b %Y} · {r[1]}" if r[0] else "-"   # date first (6 Nov 2026)
     return f(last[0]), f(nxt[0])
 
 

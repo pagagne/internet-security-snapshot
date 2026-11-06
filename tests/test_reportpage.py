@@ -79,3 +79,12 @@ def test_part3_hugging_face_and_optional_trends(tmp_path):
     assert "Trends we noticed" not in L                                    # optional: absent unless written
     (explo / "trends").mkdir(); (explo / "trends" / "2026Q3.md").write_text("Our own words.")
     assert "Our own words." in "\n".join(RP.exploratory_parts("2026Q3-final", R, explo, tmp_path / "reports"))
+
+
+def test_news_line_plain_headlines():
+    """News line (author, 6 Nov 2026): plain headlines, date first, every results release shown."""
+    import datetime as dt
+    from snapshot import reportpage as R
+    last, nxt = R.news(dt.date(2027, 6, 1))
+    assert last.startswith("1 May 2027 · First scored results") and nxt == "1 Jul 2027 · Q2 2027 results published (first look)"
+    assert "docs/" not in "".join(R.news(dt.date(2026, 11, 6)))

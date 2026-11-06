@@ -1526,36 +1526,54 @@ items:
 # build). Each row takes its date(s) from the items above, so a date changed there changes the
 # README too. `at` lists occurrence ids (item id, or item-id@YYYY-MM-DD for a repeating item);
 # `when` is only for past, fixed facts; `prefix`/`suffix` add words around the dates.
+# `news`: the plain headline for the news line under the banner (author, 6 Nov 2026); a list when
+# `at` has several dates, one headline each. Quarterly reports not listed here get an automatic
+# headline, so every results release shows in the news line.
 milestones:
 - when: 20 Oct 2026
   text: Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82)
+  news: "Study plan registered in advance on OSF"
 - at: [cutover]
   text: Cutover - the repository's schedule runs the study (docs/OPERATIONS.md)
+  news: "The study starts running on its own automatic schedule"
 - at: [dry-run]
   text: Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow)
+  news: "Practice run on October and November data (not scored)"
 - at: [dry-run-full]
   text: Full dry run with all available sources (1 Oct-14 Dec data; unscored)
+  news: "Full practice run with every available data source (not scored)"
 - at: [landing-page]
   text: Public landing page (GitHub Pages) and Discussions opened; project links shared from here on
+  news: "Project website opens to the public"
 - at: [freeze-session]
   text: Core-freeze decision session (docs/CORE_FREEZE_DECISIONS.md)
+  news: "Final decisions on the study's core methods"
 - at: [freeze]
   text: "Final core freeze: tag core-v1.2, OSF update"
+  news: "Core methods locked; the registration on OSF updated"
 - at: [pull-provisional@2027-01-01, pull-final@2027-02-01]
   text: "Q4 2026 pilot: provisional / final"
+  news: ["Pilot results for Q4 2026 published (first look)", "Pilot results for Q4 2026 published (final version)"]
 - at: [censys]
   text: Censys research-access application sent (written by the author)
+  news: "Applied to Censys for research access to internet scan data"
 - at: [annual-review@2027-03-15]
   suffix: ", then yearly"
   text: Annual review and change window; annual check of free numbers from March 2028
+  news: "Yearly review of the study's methods (the only time changes are allowed)"
 - at: [reviewer-confirm]
   text: External reviewer confirmed (decision item 17)
+  news: "Independent reviewer confirmed"
 - at: [pull-provisional@2027-04-01, pull-final@2027-05-01]
   text: "Q1 2027, first scored (confirmatory) quarter: provisional / final, with the external review published beside the final"
+  news: ["First scored results, Q1 2027, published (first look)", "First scored results, Q1 2027, published (final version, with the independent review)"]
 - at: [external-review]
   text: Independent external review of the Q1 2027 provisional report
+  news: "Independent review of the Q1 2027 results begins"
 - at: [pull-final@2028-02-01]
   text: "Q4 2027 final: last quarter of the first year"
+  news: "Final Q4 2027 results published: the first year is complete"
 - at: [closing-rerun]
   text: 2027 closing re-run with full follow-up
+  news: "Closing re-run of all of 2027 with full follow-up data"
 
