@@ -425,8 +425,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -452,15 +456,18 @@ DTEND:20261106T163500Z
 SUMMARY:[Paul] Snapshot: Check the AI-attack entries awaiting review (trial
   sweep\, Wiz\, TrendAI) and rate their evidence
 DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/snapsh
- ot-manual/blob/main/exploratory/ai_attack_campaigns.csv\, the 17 rows mark
- ed "awaiting author check" (the trial sweep's\, in https://github.com/paga
- gne/snapshot-manual/blob/main/exploratory/sweep-trial-2026.md\, plus Wiz a
- nd the three TrendAI cases): keep or exclude each\, and rate ai_evidence c
- onfirmed or assessed for every row still "unrated" (added 29 Oct)\; two qu
- estions in the trial tables (Shai-Hulud: X3 or X5? keep the single-source 
- Brazil case?). Claude's recheck of the primary reports is done by 2 Nov.\n
- \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
- docs/schedule/schedule.yaml
+ ot-manual/blob/main/exploratory/ai_attack_campaigns.csv\, the rows marked 
+ "awaiting author check" (the trial sweep's\, in https://github.com/pagagne
+ /snapshot-manual/blob/main/exploratory/sweep-trial-2026.md\, plus Wiz and 
+ the three TrendAI cases): keep or exclude each\, and rate ai_evidence conf
+ irmed or assessed for every row still "unrated" (added 29 Oct)\; two quest
+ ions in the trial tables (Shai-Hulud: X3 or X5? keep the single-source Bra
+ zil case?). Claude's recheck of the primary reports is done by 2 Nov. Resc
+ oped 6 Nov 2026 (author's decisions): Claude has rated every case\; the au
+ thor checks only the rows marked author_check (a random sample of about on
+ e in five\, plus the cases marked doubtful\, with the question in author_c
+ heck_note) and keeps or excludes each.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1210,8 +1217,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1765,8 +1776,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2051,8 +2066,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2318,8 +2337,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2365,12 +2388,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
  ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
  our AI-attack sweeps compared (what each found that the usual channels mis
- sed\, and incidents reported late)\; any change run side by side for four 
- quarters. From 2028 (the annual wrap-up): review the annual check of the p
- revious year's free results against reference scan data and published insu
- rance-claims and ransom-payment figures (pre-registration section 13)\, an
- d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ sed\, and incidents reported late)\; the AI-attack log's future (author\, 
+ 6 Nov 2026): stay exploratory\, become a scored measure\, or close\; any c
+ hange run side by side for four quarters. From 2028 (the annual wrap-up): 
+ review the annual check of the previous year's free results against refere
+ nce scan data and published insurance-claims and ransom-payment figures (p
+ re-registration section 13)\, and approve it for publishing.\n\nSource: ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
+ e/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2600,8 +2625,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2811,8 +2840,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2910,8 +2943,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3113,8 +3150,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3344,8 +3385,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3488,8 +3533,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3691,8 +3740,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3859,8 +3912,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -3958,8 +4015,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
  rror of the landing page built from https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/config/landing_layout.yaml\, with a simulated re
  sults section (latest practice evaluation) and a practice flip (go-live/FL
- IP_PREVIEW.md).\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+ IP_PREVIEW.md). From 6 Nov 2026 (author's decisions): the month's AI-attac
+ k log check is part of this review\, only the new cases marked author_chec
+ k (a random one in five plus any marked doubtful)\; Claude rates every cas
+ e on entry. Since 6 Nov the draft has three pages (landing\, results\, app
+ endix).\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -4400,12 +4461,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
  ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
  our AI-attack sweeps compared (what each found that the usual channels mis
- sed\, and incidents reported late)\; any change run side by side for four 
- quarters. From 2028 (the annual wrap-up): review the annual check of the p
- revious year's free results against reference scan data and published insu
- rance-claims and ransom-payment figures (pre-registration section 13)\, an
- d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ sed\, and incidents reported late)\; the AI-attack log's future (author\, 
+ 6 Nov 2026): stay exploratory\, become a scored measure\, or close\; any c
+ hange run side by side for four quarters. From 2028 (the annual wrap-up): 
+ review the annual check of the previous year's free results against refere
+ nce scan data and published insurance-claims and ransom-payment figures (p
+ re-registration section 13)\, and approve it for publishing.\n\nSource: ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
+ e/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -4488,12 +4551,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
  ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
  our AI-attack sweeps compared (what each found that the usual channels mis
- sed\, and incidents reported late)\; any change run side by side for four 
- quarters. From 2028 (the annual wrap-up): review the annual check of the p
- revious year's free results against reference scan data and published insu
- rance-claims and ransom-payment figures (pre-registration section 13)\, an
- d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ sed\, and incidents reported late)\; the AI-attack log's future (author\, 
+ 6 Nov 2026): stay exploratory\, become a scored measure\, or close\; any c
+ hange run side by side for four quarters. From 2028 (the annual wrap-up): 
+ review the annual check of the previous year's free results against refere
+ nce scan data and published insurance-claims and ransom-payment figures (p
+ re-registration section 13)\, and approve it for publishing.\n\nSource: ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
+ e/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -4537,12 +4602,14 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe one time each year core rules
   inquiry log (https://github.com/pagagne/internet-security-snapshot/blob/m
  ain/docs/INQUIRIES.md) and the year's exploratory additions\; the year's f
  our AI-attack sweeps compared (what each found that the usual channels mis
- sed\, and incidents reported late)\; any change run side by side for four 
- quarters. From 2028 (the annual wrap-up): review the annual check of the p
- revious year's free results against reference scan data and published insu
- rance-claims and ransom-payment figures (pre-registration section 13)\, an
- d approve it for publishing.\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ sed\, and incidents reported late)\; the AI-attack log's future (author\, 
+ 6 Nov 2026): stay exploratory\, become a scored measure\, or close\; any c
+ hange run side by side for four quarters. From 2028 (the annual wrap-up): 
+ review the annual check of the previous year's free results against refere
+ nce scan data and published insurance-claims and ransom-payment figures (p
+ re-registration section 13)\, and approve it for publishing.\n\nSource: ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
+ e/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 END:VCALENDAR
