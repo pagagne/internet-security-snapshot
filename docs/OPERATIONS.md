@@ -120,6 +120,9 @@ little detail), in one short sitting at the monthly go-live review on the 6th, c
 that month's new cases. A rated case is not checked again. At the annual review in March 2027
 the author decides whether the log stays exploratory, becomes a scored measure, or closes (the
 cases collected stay as a record).
+The log counts cases reported from 1 July 2026 onward (author, 6 Nov 2026); older reports, and
+cases where AI is the target rather than the attacker's tool (X5), are recorded as excluded in
+`exploratory/ai_attack_sweeps.csv` with the reason.
 
 ## Articles the author forwards
 (Author's request, 29 Oct 2026.) The author reads security news to find AI attack methods and
