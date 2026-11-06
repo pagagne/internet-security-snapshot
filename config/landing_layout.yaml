@@ -35,7 +35,7 @@ sections:
   - {readme: AI involvement and conflict of interest, status: live}
   - {readme: Licence,                  status: live}
   - {readme: Schedule,                 status: live, page: results}
-  - {draft: results_page,              status: draft, cleared: false, page: results}
+  - {draft: results_page,              status: draft, cleared: false, page: results, wording_approved: 2026-11-06}
   - {draft: x25,                       status: draft, cleared: false, page: results, wording_approved: 2026-11-06}
   - {draft: hf,                        status: draft, cleared: false, page: results, wording_approved: 2026-11-06}   # added 1 Nov 2026 (author)
   - {draft: attack_log,                status: draft, cleared: false, page: results, wording_approved: 2026-11-06}
