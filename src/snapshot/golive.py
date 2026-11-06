@@ -355,7 +355,9 @@ def draft_section(root: Path, name: str) -> list[str]:
         if ms:
             L += ["## Monthly news feed screen (X3)", "",
                   "Each month about sixty security research, government and news feeds are read for items that "
-                  "mention both AI and an attack; each is then sorted by hand. Shown by site host name only.", ""]
+                  "mention both AI and an attack; each is then sorted by hand. Shown by site host name only. "
+                  "Items already screened, AI brands used as bait, and political content are set aside "
+                  "automatically before sorting.", ""]
             for m in reversed(ms):
                 hosts, decs, n = feed_counts(root, m)
                 L += [f"![Feed screen {m}](../{FEED_CHARTS}/feed-screen-{m}.png)", "",
