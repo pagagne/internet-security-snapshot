@@ -182,3 +182,17 @@ Started 25 Oct 2026 at the author's request.
   author for each approval once the private draft shows the new results, records it, and the
   workflow publishes only with that approval, a clean privacy scan and no simulation left. The
   page layout stays fixed after the switch. Built by 10 Dec; rehearsed on the 15 Dec dry run.
+
+- **6 Nov 2026: how much do people hand over to AI? (author, idea for 2027).** Can the study
+  measure the autonomy people give AI models and apps, and how many internet tasks pass from
+  humans to AI? No single public measure exists. Free, repeatable candidates found: (1) the
+  share of public GitHub pull requests opened by AI coding agents, and how many are merged
+  without human changes (measurable with the X25 GitHub tooling; exact for agents that open pull
+  requests under their own accounts, estimated for the rest; a third-party tracker,
+  amplifying.ai, publishes a daily figure to cross-check); (2) Cloudflare Radar's AI traffic
+  data (AI crawlers by purpose, including fetches made on a user's behalf; free API; already a
+  context source); (3) the Anthropic Economic Index (share of conversations where users hand
+  over a whole task rather than work with the model; open data; Claude only, and a conflict of
+  interest because Claude does the study's analysis). Security link: the more autonomy agents
+  get, the bigger the target (X5). Proposal to the author: an exploratory question for 2027
+  (never scored), probed in November. Decision pending.
