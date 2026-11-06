@@ -8,12 +8,11 @@
 ## Mission
 
 Artificial intelligence has officially entered the cybersecurity fight. No one can say exactly
-when it started, but 2026 unleashed an unprecedented wave of global data breaches and AI-driven
-attacks ([IBM, Cost of a Data Breach 2026](https://www.helpnetsecurity.com/2026/07/30/ibm-cost-of-a-data-breach-2026/);
-[Verizon DBIR 2026](https://www.techrepublic.com/article/news-verizon-dbir-vulnerability-exploitation-2026/);
-[record ransomware victims, Q3 2026](https://www.webull.com/news/15712183178626048)), and experts
-warn that 2027 will escalate even faster and at a much greater scale
-([UK NCSC, the impact of AI on the cyber threat to 2027](https://www.ncsc.gov.uk/pdfs/report/impact-ai-cyber-threat-now-2027.pdf)).
+when it started, but 2026 unleashed an [unprecedented wave](https://www.webull.com/news/15712183178626048)
+of [global data breaches](https://www.helpnetsecurity.com/2026/07/30/ibm-cost-of-a-data-breach-2026/)
+and [AI-driven attacks](https://www.techrepublic.com/article/news-verizon-dbir-vulnerability-exploitation-2026/),
+and [experts warn](https://www.ncsc.gov.uk/pdfs/report/impact-ai-cyber-threat-now-2027.pdf) that 2027
+will escalate even faster and at a much greater scale.
 The mission is to measure the internet's vulnerability lifecycle and plot the cybersecurity shift
 quarter by quarter, using free, public reporting services from the US and around the world.
 
@@ -59,29 +58,35 @@ later. Q4 2026 is a labelled pilot; Q1 2027 is the first scored quarter. Additio
 from news reporting, internet traffic data from Cloudflare Radar, and open repositories of
 software code and AI models and datasets.
 
-## Data coverage
+## Data coverage: what the study collects so far
+
+Two rings, kept apart and never combined. Each slice is one kind of data the study needs; a slice
+is coloured only when a quarterly pull or a sweep actually collects that data, and gray while it
+is still missing. A slice's size is how many measures in its ring the data feeds, and the number
+in the middle is the share of the ring that is collected.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/landing/coverage-core-dark.svg">
   <img alt="Core data: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-core-light.svg">
 </picture>
 
+**Reading the core ring.** The core is the data behind the eight pre-registered indicators that
+the study is scored on: flaw records, the exploited-flaw lists, exploit likelihood, fix dates, ransomware postings,
+company breach filings and AI credits. Gray slices are mostly sources waiting for permission
+(VulnCheck and Shadowserver).
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/landing/coverage-exploratory-dark.svg">
   <img alt="Exploratory data: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-exploratory-light.svg">
 </picture>
 
-**Reading the rings.** Each slice is one kind of data the study needs. The first ring is the
-core: the data behind the eight pre-registered indicators that the study is scored on. The
-second is the exploratory work: the companion measures (X1-X25) that add context, such as AI
-attack campaigns, AI tools on GitHub and bot traffic. The two are kept apart and never combined;
-data used by both, such as flaw records, appears in both. A slice is coloured only when a
-quarterly pull or a sweep actually collects that data, and gray while it is still missing
-(mostly sources waiting for permission, such as VulnCheck and Shadowserver, or collectors not yet
-built). A slice's size is how many measures in its ring the data feeds. The number in the middle
-is the share of the ring that is collected.
+**Reading the exploratory ring.** The exploratory work is the companion measures (X1-X25) that
+add context but never decide a label: AI attack campaigns, AI tools on GitHub and Hugging Face,
+bot traffic, honeypot activity, views from other countries and more. Data used by both rings,
+such as flaw records, appears in both. Gray slices are collectors not yet built or sources not yet
+in use.
 
-**How they change.** The rings are redrawn whenever `config/coverage.yaml` changes. A slice turns
+**How the rings change.** The rings are redrawn whenever `config/coverage.yaml` changes. A slice turns
 from gray to colour when its data starts arriving (for example, when Shadowserver or VulnCheck
 grant permission and their collectors run), and back to gray if a source stops or is withdrawn.
 A slice grows when a new measure starts using that data and shrinks when one is retired, and new
@@ -94,21 +99,6 @@ cutover, the pilot run and every quarterly run:
 **Standard operating procedure:** [`docs/SOP_MANUAL_RUNS.md`](docs/SOP_MANUAL_RUNS.md), how
 every workflow is run, checked and recovered. The banner is redrawn daily by the Source status
 workflow; the rings come from `config/coverage.yaml` (`docs/WORKFLOWS.md`, section 14).
-
-## About the author
-
-<img src="https://github.com/pagagne.png?size=160" alt="Paul A. Gagne" width="110" align="left" style="margin-right:12px">
-
-**Paul A. Gagne** retired from the U.S. Navy after 20 years as a quartermaster (Petty Officer
-Second Class). From 2005 to 2009 he worked in Baghdad as an IT contractor supporting the U.S.
-Army Corps of Engineers and the U.S. Embassy, and he later retired from the SANS Institute, where
-he was a systems administrator on the operations team. He holds an associate degree in applied
-science (chemical technology) from the Community College of Rhode Island and has more than 30
-years in IT. He now runs the Internet Security Snapshot, a free, independent study of how quickly
-software flaws are fixed compared with how quickly attackers exploit them, and how AI is changing
-that race.
-
-<br clear="left">
 
 ## Key documents
 
@@ -243,6 +233,21 @@ Details for each workflow: [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md). Dates for s
   never appear in this repository or its public run outputs. They are kept in a private backup
   (setup notes kept privately); a scan on every change and every day checks this
   ([`docs/OPERATIONS.md`](docs/OPERATIONS.md), "Private by design").
+
+## About the author
+
+<img src="https://github.com/pagagne.png?size=160" alt="Paul A. Gagne" width="110" align="left" style="margin-right:12px">
+
+**Paul A. Gagne** retired from the U.S. Navy after 20 years as a quartermaster (Petty Officer
+Second Class). From 2005 to 2009 he worked in Baghdad as an IT contractor supporting the U.S.
+Army Corps of Engineers and the U.S. Embassy, and he later retired from the SANS Institute, where
+he was a systems administrator on the operations team. He holds an associate degree in applied
+science (chemical technology) from the Community College of Rhode Island and has more than 30
+years in IT. He now runs the Internet Security Snapshot, a free, independent study of how quickly
+software flaws are fixed compared with how quickly attackers exploit them, and how AI is changing
+that race.
+
+<br clear="left">
 
 ## AI involvement and conflict of interest
 

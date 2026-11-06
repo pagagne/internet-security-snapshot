@@ -181,43 +181,86 @@ INTRO_DRAFT = [
     "that race. It uses free public data only, on a plan registered in advance, so the results cannot be "
     "bent to fit a story.",
     "",
-    "**How to read it.** The banner at the top shows whether each data source answered today, and the line "
-    "under it what happened last in the study and what comes next. The rings show how much of the data the "
-    "study needs is already collected. The timeline shows where the study stands. The latest results follow: "
-    "one chart per question, each linking to the full report, with every quarter's provisional and final "
-    "report kept as its own page and PDF. A result is labelled Improving, Worsening, Rising or Falling only "
-    "when the registered rule says so; a label is never proof of a cause, including AI.",
+    "**How to read it.** The banner at the top shows whether each core data source answered today. The "
+    "timeline under it shows where the study stands, and the line under that what happened last and what "
+    "comes next. The mission follows, then the rings, which show how much of the data the study needs is "
+    "already collected. The latest results have their own page: the scorecard here opens it, with every "
+    "question explained, and each quarter's provisional and final report is kept as its own page and PDF. "
+    "A result is labelled Improving, Worsening, Rising or Falling only when the registered rule says so; a "
+    "label is never proof of a cause, including AI.",
     "",
 ]
 REPORTS: dict = {}    # filled by main() from snapshot.reportpage.build (report pages and charts)
 
 
-def results_section(root: Path, simulate: bool = True) -> list[str]:
-    """Latest results on the landing page: a summary table, one chart per question (each linking
-    to its section of the full report) and a link to the report (author, 1 Nov 2026). Until the
-    pilot it is a simulation built end to end from the latest private practice evaluation."""
-    from . import reportpage as RP
-    info = REPORTS
-    L = ["## Latest results", ""]
-    key, R = info.get("latest"), info.get("latest_R")
+def _latest(root: Path, simulate: bool = True):
+    key, R = REPORTS.get("latest"), REPORTS.get("latest_R")
     if not key:
         run, R0 = latest_practice(root) if simulate else (None, None)
         if not R0:
-            return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
+            return None, None
         key, R = f"{R0['quarter']}-{R0.get('run', 'final')}", R0 | {"_source": run}
-    L += [f"> **SIMULATION, not a result.** Built end to end from the private evaluation of {R['quarter']} "
-          f"({R.get('_source')}), a quarter outside the registered study, with fix dates before the author's hand "
-          "check. The real section starts with the pilot report (1 Jan 2027) and the first scored quarter "
-          "(Q1 2027, reported 1 Apr 2027).", "",
+    return key, R
+
+
+SIM_NOTE = ("> **SIMULATION, not a result.** Built end to end from the private evaluation of {q} ({src}), a "
+            "quarter outside the registered study, with fix dates before the author's hand check. The real "
+            "results start with the pilot report (1 Jan 2027) and the first scored quarter (Q1 2027, reported "
+            "1 Apr 2027).")
+
+
+def results_section(root: Path, simulate: bool = True) -> list[str]:
+    """Latest results on the landing page: one line and the scorecard, linking to the results page
+    (author, 5 Nov 2026: the results get their own page; the landing page only points to it)."""
+    L = ["## Latest results", ""]
+    key, R = _latest(root, simulate)
+    if not key:
+        return L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""]
+    run = R.get("run", "final").replace("-", " ")
+    L += [f"**Latest results: {R['quarter'][:4]} {R['quarter'][4:]} {run}** (SIMULATION until the pilot report). "
+          "Every question, explained, on the [results page](results.md).", "",
+          f'<a href="results.md"><img src="reports/charts/{key}-scorecard.png" width="640" '
+          'alt="Scorecard: every question by quarter; opens the results page"></a>', ""]
+    return L
+
+
+def results_page(root: Path, simulate: bool = True) -> str:
+    """The results page (author, 5 Nov 2026): how to read it, what each question asks, the table
+    the author approved, the scorecard and the questions grouped by theme, then the full report."""
+    from . import reportpage as RP
+    key, R = _latest(root, simulate)
+    L = ["# Latest results", ""]
+    if not key:
+        return "\n".join(L + ["The first results appear with the Q4 2026 pilot report on 1 January 2027.", ""])
+    L += [SIM_NOTE.format(q=R["quarter"], src=R.get("_source", key)), "",
+          "## How to read this page", "",
+          "Each quarter the study answers seven questions, numbered T1 to T7, that were registered in "
+          "advance. Each question is measured by one or two numbers; the table has one row per number.", ""]
+    L += [f"- **{q} {name}.** {ask} {how}" for q, name, ask, how in RP.QUESTIONS] + [""]
+    L += ["**The columns.**", "",
+          "- **Question:** the question's number and what is measured.",
+          "- **This quarter:** the measured value for the quarter. \"Not available\" means the data source has "
+          "not given permission yet (Shadowserver, for T2 and T4).",
+          "- **90% interval or range:** how uncertain the value is. A 90% interval means the true value is "
+          "likely to lie between the two numbers; for the AI share it is the floor and ceiling of what credits "
+          "can show. A dash means none applies.",
+          "- **Label:** the direction, given only when the registered rule calls it: Improving or Worsening "
+          "for questions where better and worse are clear, Rising or Falling for the rest, otherwise No clear "
+          "direction. A label needs two quarters moving the same way against the previous four, so the first "
+          "labels can appear with the Q1 2027 report. A practice quarter gets no label.", "",
           f"**Quarter:** {R['quarter']} ({R.get('run', 'final').replace('-', ' ')}) &nbsp;·&nbsp; **Full report:** "
           f"[{key}](reports/{key}.md) &nbsp;·&nbsp; **Label:** none in a practice quarter.", "",
           "| Question | This quarter | 90% interval or range | Label |", "|---|---|---|---|"]
     L += [f"| {a} | {b} | {c} | simulation |" for a, b, c in RP.summary_rows(R)]
-    L += ["", "*One chart per question; each opens its section of the full report.*", ""]
-    cells = [f'<a href="reports/{key}.md#{q[0].lower()}-{q[1].lower().replace(" ", "-").replace(chr(39), "")}">'
-             f'<img src="reports/charts/{key}-{q[0]}.png" width="420" alt="{q[0]} {q[1]}"></a>' for q in RP.QUESTIONS]
-    L += ["<p>"] + cells + ["</p>", ""]
-    return L
+    L += ["", "## Every question at a glance", "",
+          "One row per measure and one column per quarter; each cell is coloured by its label once labels "
+          "begin.", "", f"![Scorecard](reports/charts/{key}-scorecard.png)", "",
+          "## The questions by theme", ""]
+    for n, (title, qids, why) in enumerate(RP.GROUPS, 1):
+        L += [f"### {title} ({', '.join(qids)})", "", why, "",
+              f"![{title}](reports/charts/{key}-theme-{n}.png)", ""]
+    L += [f"Full report, with every chart and the method: [{key}](reports/{key}.md) (PDF beside it).", ""]
+    return "\n".join(L)
 
 
 def draft_section(root: Path, name: str) -> list[str]:
@@ -291,18 +334,12 @@ def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple
             part = draft_section(root, s["draft"])
             if not part:
                 continue
-            if s.get("under_banner"):            # spliced in right under the banner picture (the news line)
+            if s.get("bare"):                    # a section without a heading (the news line)
                 if not mirror and not s.get("cleared"):
                     problems.append(f"draft section not cleared by the author: {s['draft']}")
                 badge = ([f"<sub>🟧 DRAFT (`{s['draft']}`): goes live at the flip</sub>", ""]
                          if mirror and s.get("status") == "draft" else [])
-                block = "\n".join(part + badge)
-                for i, prev in enumerate(L):
-                    if "</picture>" in prev:
-                        L[i] = prev.replace("</picture>", "</picture>\n\n" + block, 1)
-                        break
-                else:
-                    L.append(block)
+                L.append("\n".join(part + badge).rstrip() + "\n")
                 continue
             if mirror and s.get("status") == "draft":
                 part.insert(2, f"> 🟧 **DRAFT section** (`{s['draft']}`): private, goes live at the flip"
@@ -358,6 +395,7 @@ def main(argv=None) -> int:
     REPORTS.update(reportpage.build(_practice_dir(root), a.out, simulation=True,
                                     explo=(root / "exploratory").resolve()))   # every run, end to end
     (a.out / "README.md").write_text(build_text(root, readme))
+    (a.out / "results.md").write_text(results_page(root))
     preview, _ = flip_check(root, readme, load_layout(root))
     (a.out / "FLIP_PREVIEW.md").write_text("<!-- What the public README would be after the flip (dry run). -->\n" + preview)
     print(f"go-live draft written to {a.out}/README.md")

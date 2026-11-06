@@ -92,9 +92,8 @@ def _point_range(plt, ax, labels, vals, los, his, unit):
     ax.set_ylim(bottom=0)
 
 
-def chart(qid: str, series: list[tuple[str, dict]], path: Path, simulation: bool) -> bool:
-    """One chart per question across every available quarter. Returns False if not available."""
-    plt, fig, ax = _ax()
+def _draw(qid: str, series: list[tuple[str, dict]], plt, ax) -> bool:
+    """Draw one question across every available quarter on ax. Returns False if not available."""
     labels = [k.split("-")[0] for k, _ in series]
     R = series[-1][1]
     ok = True
@@ -151,13 +150,90 @@ def chart(qid: str, series: list[tuple[str, dict]], path: Path, simulation: bool
     if qid in ("T5", "T6") and ok:
         from matplotlib.ticker import FuncFormatter
         ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
+    return ok
+
+
+def _finish(plt, fig, path: Path, simulation: bool) -> None:
     if simulation:
         fig.text(0.99, 0.02, "SIMULATION", ha="right", fontsize=8, color="#BA7517", weight="bold")
     fig.tight_layout()
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path)
     plt.close(fig)
+
+
+def chart(qid: str, series: list[tuple[str, dict]], path: Path, simulation: bool) -> bool:
+    """One chart per question across every available quarter (kept for the full report)."""
+    plt, fig, ax = _ax()
+    ok = _draw(qid, series, plt, ax)
+    _finish(plt, fig, path, simulation)
     return ok
+
+
+def theme_panels(key: str, series: list[tuple[str, dict]], out: Path, simulation: bool) -> list[str]:
+    """The questions grouped by theme, one picture per theme with its questions side by side
+    (author, 5 Nov 2026: replaces seven separate charts on the results page). Returns file names."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    names = []
+    for n, (title, qids, _) in enumerate(GROUPS, 1):
+        fig, axes = plt.subplots(1, len(qids), figsize=(6.4 * len(qids), 3.4), dpi=110, squeeze=False)
+        for ax, q in zip(axes[0], qids):
+            for sp in ("top", "right"):
+                ax.spines[sp].set_visible(False)
+            _draw(q, series, plt, ax)
+        fig.suptitle(title, x=0.01, ha="left", fontsize=12, color="#2C2C2A")
+        name = f"{key}-theme-{n}.png"
+        _finish(plt, fig, out / name, simulation)
+        names.append(name)
+    return names
+
+
+LABEL_COLOURS = {"Improving": "#C0DD97", "Worsening": "#F5C4B3", "Rising": "#FAC775", "Falling": "#B5D4F4",
+                 "No clear direction": "#F1EFE8", "simulation": "#F1EFE8", "": "#FFFFFF"}
+
+
+def scorecard(series: list[tuple[str, dict]], path: Path, simulation: bool,
+              labels: dict | None = None) -> None:
+    """Every question at a glance: one row per measure, one column per quarter, each cell the
+    quarter's value, coloured by its label (author, 5 Nov 2026). In a practice quarter every cell
+    is gray: no labels are given."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Rectangle
+    cols = [k.split("-")[0] for k, _ in series]
+    rows = [r[0] for r in summary_rows(series[-1][1])]
+    vals = {k: {a: b for a, b, _ in summary_rows(R)} for k, R in series}
+    w_label, w_col, h = 5.2, 1.3, 0.42
+    fig = plt.figure(figsize=(w_label + w_col * len(cols) + 0.4, h * (len(rows) + 1) + 1.1), dpi=130)
+    ax = fig.add_axes([0, 0, 1, 1]); ax.axis("off")
+    W, H = w_label + w_col * len(cols) + 0.4, h * (len(rows) + 1) + 1.1
+    ax.set_xlim(0, W); ax.set_ylim(0, H)
+    y0 = H - 0.6
+    ax.text(0.15, y0 + 0.12, "Question and measure", fontsize=9, color="#5F5E5A", weight="bold")
+    for j, c in enumerate(cols):
+        ax.text(w_label + w_col * j + w_col / 2, y0 + 0.12, c, fontsize=9, color="#5F5E5A", ha="center", weight="bold")
+    for i, r in enumerate(rows):
+        y = y0 - h * (i + 1)
+        ax.text(0.15, y + h / 2, r if len(r) <= 62 else r[:60] + "…", fontsize=8.5, va="center", color="#2C2C2A")
+        for j, (k, _) in enumerate(series):
+            lab = (labels or {}).get((k, r), "simulation" if simulation else "")
+            ax.add_patch(Rectangle((w_label + w_col * j + 0.05, y + 0.04), w_col - 0.1, h - 0.08,
+                                   facecolor=LABEL_COLOURS.get(lab, "#FFFFFF"), edgecolor="#D3D1C7", lw=0.6))
+            ax.text(w_label + w_col * j + w_col / 2, y + h / 2, vals[k].get(r, "-"), fontsize=8.5,
+                    ha="center", va="center", color="#2C2C2A")
+    ax.text(0.15, 0.42, "Gray: practice quarter, no labels.", fontsize=7.5, color="#5F5E5A")
+    ax.text(0.15, 0.18, "Scored quarters: green Improving, coral Worsening, amber Rising, blue Falling, "
+            "light gray No clear direction.", fontsize=7.5, color="#5F5E5A")
+    if simulation:
+        ax.text(W - 0.1, H - 0.2, "SIMULATION", fontsize=8, color="#BA7517", ha="right", weight="bold")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path)
+    plt.close(fig)
+
+
 
 
 def timeline(milestones: list[tuple[dt.date, str]], today: dt.date, path: Path) -> None:
@@ -546,8 +622,12 @@ def build(results_dir: Path, out: Path, simulation: bool = True, today: dt.date 
                 reportpdf.make(md)
             except Exception as e:  # noqa: BLE001  (a PDF problem never blocks the page)
                 print(f"::warning::PDF of {key} failed: {e}")
-    info["latest"] = res[-1][0]
-    info["latest_R"] = res[-1][1]
+    key, R = res[-1]
+    series = [(k, r) for k, r in res if k.endswith(R.get("run", "final"))]
+    scorecard(series, out / "reports" / "charts" / f"{key}-scorecard.png", simulation)
+    info["themes"] = theme_panels(key, series, out / "reports" / "charts", simulation)
+    info["latest"] = key
+    info["latest_R"] = R
     return info
 
 

@@ -24,7 +24,8 @@ def test_build_end_to_end(tmp_path, monkeypatch):
     info = RP.build(res, tmp_path / "out", today=dt.date(2026, 11, 1), pdf=False)
     assert info["keys"] == ["2026Q3-provisional", "2026Q3-final"] and info["latest"] == "2026Q3-final" and info["available"]["T2"] is False
     out = tmp_path / "out"
-    assert (out / "timeline.png").exists() and len(list((out / "reports/charts").glob("*.png"))) == 16   # 7 questions + flow, twice
+    assert (out / "timeline.png").exists() and len(list((out / "reports/charts").glob("*.png"))) == 21   # 7 questions + flow, twice; scorecard and 4 theme panels for the latest
+    assert (out / "reports/charts/2026Q3-final-scorecard.png").exists() and info["themes"][0] == "2026Q3-final-theme-1.png"
     prov = (out / "reports/2026Q3-provisional.md").read_text()
     assert "SIMULATION" in prov and "[2026Q3-final](2026Q3-final.md)" in prov      # provisional links to its final
     final = (out / "reports/2026Q3-final.md").read_text()
