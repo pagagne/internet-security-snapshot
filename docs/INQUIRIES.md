@@ -199,3 +199,14 @@ Started 25 Oct 2026 at the author's request.
   report, even if partly from news reports, as X26 (planned; probe 19 Nov); the X3 and X5 logs
   gain a column for whether a human approval step is mentioned, to look at whether keeping some
   control goes with better or worse security (descriptive; no view on good or bad).
+
+- **6 Nov 2026: Grok places phone calls for users (author's find).** xAI's Grok Bot can call a
+  business for the user (for example to cancel a subscription), from 3-4 Nov 2026, in the US
+  for paying X subscribers. The user approves each call on a card before it is dialled and can
+  take over or end the call while watching a live transcript; the bot reportedly says it is a
+  virtual assistant. **Handled:** the first news case for X26 (how much people hand over to
+  AI), task category "consumer services", with a human approval step. Security angle for the
+  final report: voice agents that act on accounts raise caller-verification and
+  social-engineering questions in both directions. Two secondary sources; xAI's own page not
+  yet read.
+
