@@ -43,7 +43,7 @@ jobs:
         run: tools/private.sh checkout /tmp/private
       - name: Screen the feeds (counts only in this public log)
         run: |
-          set +e; python -m snapshot.feedscreen --out research-out > screen.log 2>&1; rc=$?; set -e
+          set +e; python -m snapshot.feedscreen --out research-out --seen-dir /tmp/private/exploratory > screen.log 2>&1; rc=$?; set -e
           n=$( [ -f research-out/candidates.csv ] && tail -n +2 research-out/candidates.csv | wc -l || echo 0 )
           echo "exit $rc; $n candidates (saved privately)" | tee -a "$GITHUB_STEP_SUMMARY"; exit $rc
       - name: Spreadsheet, save privately and open the issue
@@ -64,6 +64,7 @@ jobs:
             # a re-run in the same month gets its own name, so a sorted month is never overwritten
             [ -e "$base-candidates.csv" ] && base="exploratory/feed-screen-$stamp"
             cp research-out/candidates.csv "$base-candidates.csv"
+            [ -f research-out/filtered.csv ] && cp research-out/filtered.csv "$base-filtered.csv"
             python -m snapshot.feedsheet --candidates "$base-candidates.csv" --out "$base.xlsx" \
               --note "Source: AI-attack feed screen run of $stamp ($n candidates). Not yet sorted: Claude adds abstracts, findings and decisions in $base-decisions.csv and rebuilds this file."
           fi

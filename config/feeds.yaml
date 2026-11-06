@@ -21,6 +21,14 @@ ai_terms: ["AI agent", "AI agents", "agentic", "LLM", "large language model", "g
 attack_terms: ["attack", "attacker", "campaign", "intrusion", "breach", "breached", "compromise", "compromised",
                "malware", "ransomware", "threat actor", "hacker", "hackers", "exploit", "exploited", "phishing",
                "espionage", "stolen", "drainer", "heist", "rug pull", "pig butchering", "攻击", "入侵", "攻撃", "атак", "взлом", "Angriff", "attaque"]
+# Tighter filter (author, 6 Nov 2026: cut the Claude sorting work, keep the monthly rhythm).
+# Built from the October sort: every rule below removes only items that were excluded there, and
+# none that were logged, second sources or left to the author's judgement. Removed items are not
+# lost: they go to filtered.csv with the rule's name, for a glance at the monthly review.
+title_only_terms: ["ИИ"]     # Russian "AI": in October it matched only in passing in long digests
+exclude_rules:
+  ai_brand_bait: '\bfake\b[^.]{0,40}\b(ChatGPT|Claude|Gemini|Copilot|AI)\b|\b(AI|Anthropic|OpenAI|ChatGPT|Claude|Gemini)-themed\b|\bimpersonat\w*\s+AI\b'
+  political_content: '\bpolitical ads?\b|\bdisinformation\b|\belection\b'
 added: 2026-10-29
 feeds:
   - {name: "Unit 42", url: "https://unit42.paloaltonetworks.com/feed/", domain: unit42.paloaltonetworks.com, trust: primary_research, verified: "yes", verified_on: 2026-10-31, added: 2026-10-29}

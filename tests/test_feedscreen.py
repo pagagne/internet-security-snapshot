@@ -55,3 +55,19 @@ def test_unsafe_feeds_are_refused():
     assert not F.in_domain(feed["url"], feed)
     assert not F.in_domain("http://securelist.com/feed/", {"domain": "securelist.com"})
     assert F.in_domain("https://www.securelist.com/feed/", {"domain": "securelist.com"})
+
+
+def test_filter_rules_and_title_only(tmp_path):
+    """Tighter filter (author, 6 Nov 2026): rules set items aside, never drop them silently."""
+    import datetime as dt, re
+    since = dt.datetime(2026, 1, 1, tzinfo=dt.timezone.utc)
+    when = dt.datetime(2026, 10, 30, tzinfo=dt.timezone.utc)
+    items = [{"title": "Fake ChatGPT app spreads malware", "summary": "", "link": "a", "date": when},
+             {"title": "Crypto exchange breach", "summary": "ИИ упомянут", "link": "b", "date": when},
+             {"title": "Hackers use LLM in espionage campaign", "summary": "", "link": "c", "date": when}]
+    ai, attack = F._rx(["LLM", "ChatGPT"]), F._rx(["malware", "breach", "campaign"])
+    rules = {"ai_brand_bait": re.compile(r"\bfake\b[^.]{0,40}\bChatGPT\b", re.I)}
+    out = []
+    hits = F.screen(items, ai, attack, since, F._rx(["ИИ"]), rules, out)
+    assert [h["link"] for h in hits] == ["c"]
+    assert [o["rule"] for o in out] == ["ai_brand_bait"]       # "b": ИИ only in the summary, not a match

@@ -114,15 +114,27 @@ def _rx(terms: list[str]) -> re.Pattern:
     return re.compile("|".join(parts), re.I)
 
 
-def screen(items: list[dict], ai: re.Pattern, attack: re.Pattern, since: dt.datetime) -> list[dict]:
+def screen(items: list[dict], ai: re.Pattern, attack: re.Pattern, since: dt.datetime,
+           title_ai: re.Pattern | None = None, rules: dict | None = None,
+           filtered: list | None = None) -> list[dict]:
+    """Items naming both AI and an attack. title_ai: AI terms counted only in the title. rules:
+    {name: pattern} that set a match aside (into `filtered`, with the rule's name) (6 Nov 2026)."""
     keep = []
     for it in items:
         if it["date"] and it["date"] < since:
             continue
         text = f"{it['title']} {it['summary']}"
-        a, b = ai.search(text), attack.search(text)
-        if a and b:
-            keep.append({**it, "ai_term": a.group(0), "attack_term": b.group(0)})
+        a = ai.search(text) or (title_ai.search(it["title"]) if title_ai else None)
+        b = attack.search(text)
+        if not (a and b):
+            continue
+        hit = {**it, "ai_term": a.group(0), "attack_term": b.group(0)}
+        rule = next((n for n, rx in (rules or {}).items() if rx.search(it["title"])), None)
+        if rule:
+            if filtered is not None:
+                filtered.append({**hit, "rule": rule})
+            continue
+        keep.append(hit)
     return keep
 
 
@@ -130,10 +142,16 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--days", type=int, default=35)
+    ap.add_argument("--seen-dir", type=Path, help="folder with earlier feed-screen-*-candidates.csv files; "
+                    "items already screened there are set aside (6 Nov 2026)")
     ap.add_argument("--start"); ap.add_argument("--end")   # unused; kept for the Research workflow
     a = ap.parse_args(argv)
     cfg = yaml.safe_load((_repo_root() / CONFIG).read_text())
-    ai, attack = _rx(cfg["ai_terms"]), _rx(cfg["attack_terms"])
+    only = set(cfg.get("title_only_terms", []))
+    ai, attack = _rx([t for t in cfg["ai_terms"] if t not in only]), _rx(cfg["attack_terms"])
+    title_ai = _rx(sorted(only)) if only else None
+    rules = {n: re.compile(p, re.I) for n, p in (cfg.get("exclude_rules") or {}).items()}
+    filtered: list[dict] = []
     since = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=a.days)
     a.out.mkdir(parents=True, exist_ok=True)
     health, cands = [], []
@@ -146,29 +164,42 @@ def main(argv=None) -> int:
             status, body = fetch(f)
             items = parse(body) if status == 200 else []
             # an item linking outside news-only feeds' domains is kept (news points elsewhere)
-            hits = screen(items, ai, attack, since)
+            hits = screen(items, ai, attack, since, title_ai, rules, filtered)
             health.append({"feed": f["name"], "status": status, "items": len(items), "candidates": len(hits),
                            "trust": f.get("trust", "")})
             hits = [{**h, "trust": f.get("trust", "")} for h in hits]
             cands += [{"feed": f["name"], **h} for h in hits]
         except Exception as e:  # noqa: BLE001 - a broken feed is recorded, never fatal
             health.append({"feed": f["name"], "status": "error", "items": 0, "candidates": 0, "error": repr(e)[:120]})
+    earlier = set()
+    if a.seen_dir and a.seen_dir.exists():
+        for f in a.seen_dir.glob("feed-screen-*-candidates.csv"):
+            earlier |= {r.get("link", "") for r in csv.DictReader(f.open(newline=""))}
     seen, unique = set(), []
     for c in sorted(cands, key=lambda c: c["date"] or since, reverse=True):
         key = re.sub(r"\W+", " ", c["title"].lower()).strip()
         if key in seen:
             continue
         seen.add(key)
+        if c["link"] in earlier:                 # sorted in an earlier month: not sorted twice
+            filtered.append({**c, "rule": "already_screened"})
+            continue
         unique.append(c)
     with (a.out / "candidates.csv").open("w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["date", "feed", "trust", "title", "link", "ai_term", "attack_term"])
         for c in unique:
             w.writerow([(c["date"] or since).date(), c["feed"], c.get("trust", ""), c["title"], c["link"], c["ai_term"], c["attack_term"]])
+    with (a.out / "filtered.csv").open("w", newline="") as fh:     # set aside by a rule, kept for a glance
+        w = csv.writer(fh)
+        w.writerow(["date", "rule", "title", "link"])
+        for c in filtered:
+            w.writerow([(c["date"] or since).date(), c["rule"], c["title"], c["link"]])
     (a.out / "feed_health.json").write_text(json.dumps(health, indent=1, ensure_ascii=False))
     ok = sum(1 for h in health if h["status"] == 200 and h["items"])
     lines = [f"# AI-attack feed screen, last {a.days} days", "",
-             f"Feeds read: {ok} of {len(health)} answered with items; candidates: {len(unique)} (after removing duplicates).",
+             f"Feeds read: {ok} of {len(health)} answered with items; candidates: {len(unique)} (after removing duplicates); "
+             f"set aside by the filter rules: {len(filtered)} (filtered.csv).",
              "", "Feeds that failed or returned nothing: " + (", ".join(
                  f"{h['feed']} ({h['status']})" for h in health if not (h["status"] == 200 and h["items"])) or "none"),
              "", "## Candidates (newest first)", ""]

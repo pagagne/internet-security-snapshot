@@ -127,6 +127,13 @@ with their official domain (checked against the organisation's own website), HTT
 level; a test refuses anything else.
 The same routine applies to the wider channels added 29 Oct (author): the monthly Feed screen
 issue (`found_via: feed_screen`) and the twice-yearly conference scan (`found_via: conference`).
+Tighter filter (author, 6 Nov 2026, to cut the Claude sorting work while staying monthly): items
+already screened in an earlier month are not sorted again; the Russian term for AI counts only in
+a title; titles that use AI brands as bait or are about political content are set aside. Rules in
+`config/feeds.yaml`, built from the October sort (they remove only items excluded there). Set-aside
+items are listed privately in `feed-screen-YYYY-MM-filtered.csv` with the rule's name, for a
+glance at the monthly review. After the November sort, the author compares his Claude usage
+before and after and decides whether full reads are also capped (about ten a month).
 The newsletters in the author's Gmail label "Snapshot newsletters" (read on the 8th and 22nd)
 are research only since 1 Nov 2026 (author): never shown in a report or on the landing page,
 and a case first spotted in a newsletter is not entered in the AI attack log. What they show
