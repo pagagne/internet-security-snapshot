@@ -334,7 +334,8 @@ def draft_section(root: Path, name: str) -> list[str]:
               "the AI did, how the attackers got in, and how strong the evidence of AI use is. Evidence ratings are:", "",
               "- Confirmed — backed by technical evidence",
               "- Assessed — the reporter's judgement (for example, based on the style of the code)",
-              "- Not yet rated — waiting for the author's check", "",
+              "- Not yet rated — waiting for a check against the original report", "",
+              "The author checks a sample of the ratings each month.", "",
               "Cases confirmed by a second source are marked, and no case is counted twice. The log only shows "
               "attacks that have been made public, not every attack.", ""]
     elif name == "hf":
