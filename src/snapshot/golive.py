@@ -222,6 +222,34 @@ def results_section(root: Path, simulate: bool = True) -> list[str]:
     return L                      # the scorecard stays on the results page only (author, 6 Nov 2026)
 
 
+PRINCIPLES_DRAFT = [
+    "## How the study keeps itself honest: its working rules", "",
+    "Six rules decide how every number on these pages is collected and reported. They were fixed "
+    "before the first data came in, so that the results cannot be bent to fit a story.", "",
+    "- **Free, open data only, and no guessing.** Every source is free to use and every tool runs on "
+    "free services, so anyone can repeat the work without a budget. When a source is missing or late, "
+    "the gap is shown as \"not available\"; nothing is estimated or filled in to make a chart look complete.",
+    "- **Rates, not raw counts.** A count on its own can rise just because more is being watched. Each "
+    "measure is therefore a share of something stated (for example, flaws exploited out of all flaws "
+    "published that quarter), so quarters can be compared fairly.",
+    "- **Frozen data, numbers anyone can rebuild.** On collection day an exact copy of each source is "
+    "saved with a checksum, a digital fingerprint that shows if a file was later changed. One command "
+    "rebuilds every published number from those copies, so any reader can check the arithmetic.",
+    "- **Every question, every quarter.** The seven tracking questions were registered in advance. All "
+    "seven are reported each quarter whether the answer is interesting, dull or unwelcome, so good news "
+    "is not shown while bad news is quietly dropped.",
+    "- **Watch, never touch.** The study does not scan anyone's computers, test or exploit any flaw, "
+    "collect data about individual machines, or name the victims of attacks. It only reads what others "
+    "have already published.",
+    "- **Private by design.** Data a provider has not yet allowed us to publish, and personal details, "
+    "never appear in the public repository or its run outputs. They are kept in a private backup, and an "
+    "automatic scan on every change and every day checks that nothing slips through "
+    "([`docs/OPERATIONS.md`](docs/OPERATIONS.md), \"Private by design\").", ""]
+
+APPENDIX_LINE = ("**Appendix:** the key documents, every data source and the workflow schedule are on the "
+                 "[appendix page](appendix.md).")
+
+
 def results_page(root: Path, simulate: bool = True) -> str:
     """The results page (author, 5 Nov 2026): how to read it, what each question asks, the table
     the author approved, the scorecard and the questions grouped by theme, then the full report."""
@@ -265,6 +293,10 @@ def draft_section(root: Path, name: str) -> list[str]:
     L: list[str] = []
     if name == "results":
         return results_section(root)
+    if name == "results_page":                 # the results content on page 2 (author, 6 Nov 2026)
+        return results_page(root).split("\n")[2:]
+    if name == "principles":
+        return list(PRINCIPLES_DRAFT)
     if name == "timeline":
         return ["## Where the study stands", "", f"![Study timeline]({RUN_REPORTS}landing/timeline.png)", "",
                 "*Drawn daily from the study calendar (docs/schedule/schedule.yaml): ticks are done, the dashed "
@@ -317,11 +349,24 @@ def draft_section(root: Path, name: str) -> list[str]:
     return L
 
 
-def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple[str, list[str]]:
-    """The page in layout order. mirror=True: every section, drafts badged (the private mirror).
-    mirror=False: what the page would be after the flip. Returns (text, problems)."""
+PAGES = {"landing": "README.md", "results": "results.md", "appendix": "appendix.md"}
+PAGE_HEADS = {
+    "results": ["# Latest results", "", "[Back to the landing page](README.md)", ""],
+    "appendix": ["# Appendix: documents, data sources and workflows", "",
+                 "[Back to the landing page](README.md) · [Results page](results.md)", ""]}
+
+
+def compose(root: Path, readme: str, layout: dict, mirror: bool = True,
+            page: str = "landing") -> tuple[str, list[str]]:
+    """One page in layout order (pages: landing, results, appendix; author, 6 Nov 2026).
+    mirror=True: every section, drafts badged (the private mirror). mirror=False: what the page
+    would be after the flip. Returns (text, problems)."""
     secs, problems, L = readme_sections(readme), [], []
+    if page in PAGE_HEADS:
+        L.append("\n".join(PAGE_HEADS[page]))
     for s in layout["sections"]:
+        if s.get("page", "landing") != page:
+            continue
         if "readme" in s:
             body = secs.get(s["readme"])
             if body is None:
@@ -348,27 +393,35 @@ def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple
             if not mirror and not s.get("cleared"):
                 problems.append(f"draft section not cleared by the author: {s['draft']}")
             L.append("\n".join(part).rstrip() + "\n")
+    if page in ("landing", "results"):
+        L.append(APPENDIX_LINE + "\n")
     listed = {s["readme"] for s in layout["sections"] if "readme" in s}
     problems += [f"README section not in the layout (it would be missing from this page): {k}"
                  for k in secs if k not in listed]          # guard added 5 Nov 2026 (author's sync question)
     return "\n".join(L), problems
 
 
-def flip_check(root: Path, readme: str, layout: dict) -> tuple[str, list[str]]:
-    """Dry run of the flip: the page as it would go public, and every reason it may not yet."""
+def flip_check(root: Path, readme: str, layout: dict, page: str = "landing") -> tuple[str, list[str]]:
+    """Dry run of the flip: the page as it would go public, and every reason it may not yet
+    (problems checked across all three pages)."""
     from . import privacy
-    text, problems = compose(root, readme, layout, mirror=False)
-    problems += [f"line {line}: {kind}" for _, line, kind in privacy.scan_text("README.md", text)]
-    if "SIMULATION" in text:
-        problems.append("results section still shows the practice simulation (needs the pilot report)")
+    text, problems = "", []
+    for pg, fname in PAGES.items():
+        t, pr = compose(root, readme, layout, mirror=False, page=pg)
+        problems += [p for p in pr if p not in problems]
+        problems += [f"{fname} line {line}: {kind}" for _, line, kind in privacy.scan_text(fname, t)]
+        if "SIMULATION" in t and not any("simulation" in p for p in problems):
+            problems.append("results still show the practice simulation (needs the pilot report)")
+        if pg == page:
+            text = t
     return text, problems
 
 
-def build_text(root: Path, readme: str) -> str:
+def build_text(root: Path, readme: str, which: str = "landing") -> str:
     layout = load_layout(root)
-    page, problems = compose(root, readme, layout, mirror=True)
+    page, problems = compose(root, readme, layout, mirror=True, page=which)
     _, flip = flip_check(root, readme, layout)
-    head = ["# Go-live mirror of the landing page (private)", "",
+    head = [f"# Go-live mirror of the {which} page (private)", "",
             "> **Private mirror** (author's decisions, 31 Oct and 1 Nov 2026). This is the landing page as it "
             f"will look after the flip on {layout.get('flip_date')}: the public sections exactly as they are "
             "today, with the draft sections in place and badged. Tweak it here; the flip makes it the real "
@@ -397,8 +450,8 @@ def main(argv=None) -> int:
         attack_log_chart(root)                   # the report's Part 2 uses it
     REPORTS.update(reportpage.build(_practice_dir(root), a.out, simulation=True,
                                     explo=(root / "exploratory").resolve()))   # every run, end to end
-    (a.out / "README.md").write_text(build_text(root, readme))
-    (a.out / "results.md").write_text(results_page(root))
+    for pg, fname in PAGES.items():           # three pages (author, 6 Nov 2026)
+        (a.out / fname).write_text(build_text(root, readme, pg))
     preview, _ = flip_check(root, readme, load_layout(root))
     (a.out / "FLIP_PREVIEW.md").write_text("<!-- What the public README would be after the flip (dry run). -->\n" + preview)
     print(f"go-live draft written to {a.out}/README.md")

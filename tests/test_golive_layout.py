@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 from snapshot import golive as G
 
 README = "# T\n\nbanner\n\n## Mission\n\nm\n\n## Licence\n\nl\n"
@@ -36,3 +37,15 @@ def test_real_readme_and_layout_match(tmp_path, monkeypatch):
     monkeypatch.setattr(G, "PRACTICE", str(tmp_path))
     _, probs = G.compose(tmp_path, (root / "README.md").read_text(), G.load_layout(root))
     assert not [p for p in probs if "README section" in p], probs
+
+
+def test_three_pages_real_layout():
+    """Landing, results and appendix pages (author, 6 Nov 2026): each README section on one page."""
+    root = Path(__file__).resolve().parents[1]
+    readme, layout = (root / "README.md").read_text(), G.load_layout(root)
+    pages = {s.get("page", "landing") for s in layout["sections"]}
+    assert pages <= {"landing", "results", "appendix", "none"}
+    order = [s.get("readme") for s in layout["sections"] if s.get("page") == "results"]
+    assert order[0] == "Schedule"                                  # schedule at the top of page 2
+    assert {s["readme"] for s in layout["sections"] if s.get("page") == "appendix"} == {
+        "Key documents", "Data sources", "Workflow schedule"}
