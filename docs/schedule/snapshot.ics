@@ -1257,17 +1257,26 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build the guarded landing-page flip workflow (ru
- n button\, practice flip\, privacy checks)
-DESCRIPTION:Responsible: Claude\n\nAuthor's decision\, 1 Nov 2026. A Run-bu
- tton workflow that builds the page from https://github.com/pagagne/interne
- t-security-snapshot/blob/main/config/landing_layout.yaml with every sectio
- n live\, refuses unless every draft section is cleared by the author\, the
-  privacy scan is clean and the results section holds the pilot report (not
-  the simulation)\, and otherwise shows the practice flip only. Tested end 
- to end with a practice flip before the 15 Dec dry run.\n\nSource: https://
- github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sche
- dule.yaml
+SUMMARY:[Claude] Snapshot: Build the "Publish results" workflow (the 2 Jan 
+ switch and every later results update)
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions\, 1 Nov 2026 (guarded
+  flip) and 5 Nov 2026 (one process for every update). One Run-button workf
+ low\, used the same way for the 2 Jan switch\, each provisional and final 
+ quarterly report\, the annual report and the 2028 closing re-run: it build
+ s the public page from https://github.com/pagagne/internet-security-snapsh
+ ot/blob/main/config/landing_layout.yaml\, copies the results page\, scorec
+ ard\, theme panels\, report and PDF to the public repository\, and refuses
+  unless the author's approval for that report is recorded\, the privacy sc
+ an is clean\, no section still says SIMULATION and\, for the first switch\
+ , every draft section is cleared. Approvals: Claude prompts the author for
+  each one (option card) once the private draft has rebuilt with the new re
+ sults\, and records his answer\, dated\, in a public approvals file the wo
+ rkflow reads. After the switch the page layout stays fixed\; only the resu
+ lts line\, scorecard and results page change. One-page checklist in https:
+ //github.com/pagagne/internet-security-snapshot/blob/main/docs/SOP_MANUAL_
+ RUNS.md. Rehearsed on the 15 Dec dry run with the simulated results (nothi
+ ng published).\n\nSource: https://github.com/pagagne/internet-security-sna
+ pshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1624,11 +1633,13 @@ DTSTAMP:20261024T000000Z
 DTSTART:20270102T150000Z
 DTEND:20270102T153000Z
 SUMMARY:[Paul] Snapshot: Flip the landing page live with the pilot report
-DESCRIPTION:Responsible: Paul (author)\n\nAfter the pilot report is publish
- ed: run the practice flip\, read go-live/FLIP_PREVIEW.md with Claude\, the
- n press the flip workflow's Run button. Claude confirms the checks and the
-  public page.\n\nSource: https://github.com/pagagne/internet-security-snap
- shot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nThe first run of the Publish resu
+ lts workflow (5 Nov 2026: one process for the switch and every later updat
+ e). Claude prompts for the approval of the pilot report\; read the practic
+ e flip (go-live/FLIP_PREVIEW.md) with Claude\, then press Publish results.
+  Claude confirms the checks and the public page.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

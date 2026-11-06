@@ -1480,14 +1480,21 @@ items:
 
 - id: landing-flip-workflow
   owner: claude
-  title: Build the guarded landing-page flip workflow (run button, practice flip, privacy checks)
+  title: Build the "Publish results" workflow (the 2 Jan switch and every later results update)
   date: 2026-12-10
   details: >
-    Author's decision, 1 Nov 2026. A Run-button workflow that builds the page from
-    config/landing_layout.yaml with every section live, refuses unless every draft section is
-    cleared by the author, the privacy scan is clean and the results section holds the pilot
-    report (not the simulation), and otherwise shows the practice flip only. Tested end to end
-    with a practice flip before the 15 Dec dry run.
+    Author's decisions, 1 Nov 2026 (guarded flip) and 5 Nov 2026 (one process for every
+    update). One Run-button workflow, used the same way for the 2 Jan switch, each provisional
+    and final quarterly report, the annual report and the 2028 closing re-run: it builds the
+    public page from config/landing_layout.yaml, copies the results page, scorecard, theme
+    panels, report and PDF to the public repository, and refuses unless the author's approval
+    for that report is recorded, the privacy scan is clean, no section still says SIMULATION
+    and, for the first switch, every draft section is cleared. Approvals: Claude prompts the
+    author for each one (option card) once the private draft has rebuilt with the new results,
+    and records his answer, dated, in a public approvals file the workflow reads. After the
+    switch the page layout stays fixed; only the results line, scorecard and results page
+    change. One-page checklist in docs/SOP_MANUAL_RUNS.md. Rehearsed on the 15 Dec dry run with
+    the simulated results (nothing published).
 
 - id: landing-clear-sections
   owner: author
@@ -1506,8 +1513,10 @@ items:
   time: "10:00"
   minutes: 30
   details: >
-    After the pilot report is published: run the practice flip, read go-live/FLIP_PREVIEW.md with
-    Claude, then press the flip workflow's Run button. Claude confirms the checks and the public page.
+    The first run of the Publish results workflow (5 Nov 2026: one process for the switch and
+    every later update). Claude prompts for the approval of the pilot report; read the practice
+    flip (go-live/FLIP_PREVIEW.md) with Claude, then press Publish results. Claude confirms the
+    checks and the public page.
 
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule

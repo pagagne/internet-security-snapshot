@@ -175,3 +175,10 @@ Started 25 Oct 2026 at the author's request.
   extortion cases), Google added as a source for the Storm-0940 case; the feed screen retries
   Google's blog through its topic feed; a watch item for the next stages of AI-run attacks
   (RESEARCH_PLAN, pilot watch cases).
+
+- **5 Nov 2026: one process for every results update (author).** The landing-page switch on
+  2 Jan 2027 and every later results update (provisional and final each quarter, the annual
+  report and the 2028 closing re-run) use one "Publish results" workflow: Claude prompts the
+  author for each approval once the private draft shows the new results, records it, and the
+  workflow publishes only with that approval, a clean privacy scan and no simulation left. The
+  page layout stays fixed after the switch. Built by 10 Dec; rehearsed on the 15 Dec dry run.
