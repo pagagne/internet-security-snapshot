@@ -37,7 +37,7 @@ sections:
   - {readme: Schedule,                 status: live, page: results}
   - {draft: results_page,              status: draft, cleared: false, page: results}
   - {draft: x25,                       status: draft, cleared: false, page: results}
-  - {draft: hf,                        status: draft, cleared: false, page: results}   # added 1 Nov 2026 (author)
+  - {draft: hf,                        status: draft, cleared: false, page: results, wording_approved: 2026-11-06}   # added 1 Nov 2026 (author)
   - {draft: attack_log,                status: draft, cleared: false, page: results}
   - {draft: feed_screen,               status: draft, cleared: false, page: results}
   - {readme: Key documents,            status: live, page: appendix}

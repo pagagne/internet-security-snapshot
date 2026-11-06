@@ -321,6 +321,16 @@ def draft_section(root: Path, name: str) -> list[str]:
               "Publicly reported cases where a real attacker used AI against real systems, or an AI under "
               "test reached real systems, from organisations' own reports. No victim names are recorded. "
               "Evidence of AI use: " + ", ".join(f"{k} {v}" for k, v in sorted(ev.items())) + ".", "",
+              "**Where the cases come from and how they are collected.** Every case comes from a public report "
+              "by the organisation that found it: AI companies' threat reports, security firms' research and "
+              "government agencies. Cases are found four ways: the monthly news feed screen below (about sixty "
+              "feeds read automatically, each match then sorted); a search of the web in nine languages; "
+              "research by Claude, checked against the original report; and reports the author finds himself. "
+              "Each case is entered by hand with who reported it, a link to the report, what the AI did, how the "
+              "attackers got in, and how strong the evidence of AI use is: confirmed (shown with technical "
+              "evidence), assessed (the reporter's judgement, for example from the style of the code) or not yet "
+              "rated (awaiting the author's check). Cases confirmed by a second source are marked, and no case "
+              "is counted twice. The log shows what has been made public, not every attack.", "",
               f"![Attack log](../{FEED_CHARTS}/{fig})", ""]
     elif name == "hf":
         figs = root / FIGS
