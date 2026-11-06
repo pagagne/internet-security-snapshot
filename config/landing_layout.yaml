@@ -24,7 +24,7 @@ sections:
   # feed screen. Appendix: key documents, data sources, workflow schedule.
   - {readme: top,                      status: live}
   - {draft: timeline,                  status: draft, cleared: false, wording_approved: 2026-11-06}
-  - {draft: news,                      status: draft, cleared: false, bare: true}
+  - {draft: news,                      status: draft, cleared: false, bare: true, wording_approved: 2026-11-06}
   - {draft: intro,                     status: draft, cleared: false, wording_approved: 2026-11-06}
   - {readme: Mission,                  status: live}
   - {readme: "Data coverage: what the study collects so far", status: live}
