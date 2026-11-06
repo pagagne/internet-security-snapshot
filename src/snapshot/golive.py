@@ -348,6 +348,9 @@ def compose(root: Path, readme: str, layout: dict, mirror: bool = True) -> tuple
             if not mirror and not s.get("cleared"):
                 problems.append(f"draft section not cleared by the author: {s['draft']}")
             L.append("\n".join(part).rstrip() + "\n")
+    listed = {s["readme"] for s in layout["sections"] if "readme" in s}
+    problems += [f"README section not in the layout (it would be missing from this page): {k}"
+                 for k in secs if k not in listed]          # guard added 5 Nov 2026 (author's sync question)
     return "\n".join(L), problems
 
 

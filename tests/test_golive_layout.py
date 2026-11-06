@@ -25,3 +25,14 @@ def test_compose_mirror_and_flip(tmp_path, monkeypatch):
     assert any("not cleared" in p for p in flip) and any("simulation" in p for p in flip)
     layout["sections"].append({"readme": "Gone", "status": "live"})
     assert G.compose(tmp_path, README, layout)[1] == ["README section missing: Gone"]
+    layout["sections"] = [x for x in layout["sections"] if x.get("readme") != "Licence"]   # a public section left out
+    assert any("not in the layout" in p and "Licence" in p for p in G.compose(tmp_path, README, layout)[1])
+
+
+def test_real_readme_and_layout_match(tmp_path, monkeypatch):
+    """Every public README section is in the landing layout and every layout section exists (5 Nov 2026)."""
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    monkeypatch.setattr(G, "PRACTICE", str(tmp_path))
+    _, probs = G.compose(tmp_path, (root / "README.md").read_text(), G.load_layout(root))
+    assert not [p for p in probs if "README section" in p], probs
