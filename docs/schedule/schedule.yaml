@@ -658,6 +658,9 @@ items:
     I5/T5 is scored with the 2026 surge in the baseline year (notes in
     docs/decisions/I5_BASELINE_NOTES.md; rec. option 1). Claude asks these as option
     cards with recommendations, as on 12 Nov.
+    After the session (author, 6 Nov): the "Being tested" part of Data sources and the
+    "being tested" line in Mission are rewritten before the 2 Jan switch; sources that pass
+    join the main table as exploratory, the rest get one "tried and dropped" line.
 
 - id: i5-baseline-evidence
   owner: claude

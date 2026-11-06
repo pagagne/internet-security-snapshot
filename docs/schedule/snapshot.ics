@@ -1484,8 +1484,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
   with the 2026 surge in the baseline year (notes in https://github.com/pag
  agne/internet-security-snapshot/blob/main/docs/decisions/I5_BASELINE_NOTES
  .md\; rec. option 1). Claude asks these as option cards with recommendatio
- ns\, as on 12 Nov.\n\nSource: https://github.com/pagagne/internet-security
- -snapshot/blob/main/docs/schedule/schedule.yaml
+ ns\, as on 12 Nov. After the session (author\, 6 Nov): the "Being tested" 
+ part of Data sources and the "being tested" line in Mission are rewritten 
+ before the 2 Jan switch\; sources that pass join the main table as explora
+ tory\, the rest get one "tried and dropped" line.\n\nSource: https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.
+ yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

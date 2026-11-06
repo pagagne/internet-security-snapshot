@@ -30,7 +30,7 @@ sections:
   - {readme: "Data coverage: what the study collects so far", status: live}
   - {draft: results,                   status: draft, cleared: false}   # one line linking to results.md (scorecard there only, 6 Nov)
   - {readme: Principles,               status: live, page: none}        # replaced by the draft below (proposed 6 Nov)
-  - {draft: principles,                status: draft, cleared: true}    # no figures; wording awaits the author
+  - {draft: principles,                status: draft, cleared: true, wording_approved: 2026-11-06}   # no figures
   - {readme: About the author,         status: live}
   - {readme: AI involvement and conflict of interest, status: live}
   - {readme: Licence,                  status: live}
