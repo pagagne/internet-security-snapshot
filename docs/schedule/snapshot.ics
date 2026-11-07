@@ -237,35 +237,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nDone 29 Oct (author): BigQuery AP
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-setup@2026-11-02@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261102
-DTEND;VALUE=DATE:20261103
-TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Subscribe the project address to security newslett
- ers (7 listed)\; add a Gmail label
-DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 29 Oct (widenin
- g the AI-attack search)\; list confirmed 1 Nov. Subscribe the project addr
- ess (the study's Gmail) to each (free tier only\; untick marketing extras)
- : 1. Risky Bulletin (Risky Business News)\, daily: https://riskybiznews.su
- bstack.com/ \; 2. The Record\, Recorded Future News\, daily: https://there
- cord.media/subscribe \; 3. TLDR InfoSec\, daily: https://tldr.tech/ (choos
- e InfoSec) \; 4. tl\;dr sec\, weekly\, strong on AI and security: https://
- tldrsec.com/subscribe \; 5. Unsupervised Learning\, weekly\, AI and securi
- ty: https://newsletter.danielmiessler.com/subscribe \; 6. CISA email updat
- es\, alerts and advisories: https://www.cisa.gov/subscribe-updates-cisa \;
-  7. Seriously Risky Business\, weekly policy: https://srslyriskybiz.substa
- ck.com/ . SANS NewsBites is left out for now (author\, 1 Nov: its terms re
- strict AI use\; revisited 18 Nov). Then in your own Gmail make a filter fo
- r mail delivered to the project address that has "unsubscribe": apply the 
- label "Snapshot newsletters" and skip the inbox. Tell Claude which ones yo
- u subscribed to\; Claude reads that label twice a month (8th and 22nd) for
-  research only: nothing from them is shown\, and they do not feed the AI a
- ttack log (author\, 1 Nov).\n\nSource: https://github.com/pagagne/internet
- -security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:project-email@2026-11-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261102
@@ -540,6 +511,35 @@ DESCRIPTION:Responsible: Paul (author)\n\nClaude's draft: https://github.co
  the study uses Internet Storm Center data\; ask for someone you did not wo
  rk with. Tell Claude\, who logs it.\n\nSource: https://github.com/pagagne/
  internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-setup@2026-11-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261111
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Subscribe the project address to security newslett
+ ers (7 listed)\; add a Gmail label
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 29 Oct (widenin
+ g the AI-attack search)\; list confirmed 1 Nov. Subscribe the project addr
+ ess (the study's Gmail) to each (free tier only\; untick marketing extras)
+ : 1. Risky Bulletin (Risky Business News)\, daily: https://riskybiznews.su
+ bstack.com/ \; 2. The Record\, Recorded Future News\, daily: https://there
+ cord.media/subscribe \; 3. TLDR InfoSec\, daily: https://tldr.tech/ (choos
+ e InfoSec) \; 4. tl\;dr sec\, weekly\, strong on AI and security: https://
+ tldrsec.com/subscribe \; 5. Unsupervised Learning\, weekly\, AI and securi
+ ty: https://newsletter.danielmiessler.com/subscribe \; 6. CISA email updat
+ es\, alerts and advisories: https://www.cisa.gov/subscribe-updates-cisa \;
+  7. Seriously Risky Business\, weekly policy: https://srslyriskybiz.substa
+ ck.com/ . SANS NewsBites is left out for now (author\, 1 Nov: its terms re
+ strict AI use\; revisited 18 Nov). Then in your own Gmail make a filter fo
+ r mail delivered to the project address that has "unsubscribe": apply the 
+ label "Snapshot newsletters" and skip the inbox. Tell Claude which ones yo
+ u subscribed to\; Claude reads that label twice a month (8th and 22nd) for
+  research only: nothing from them is shown\, and they do not feed the AI a
+ ttack log (author\, 1 Nov).\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1380,9 +1380,11 @@ DESCRIPTION:Responsible: Claude\n\nPrivately (snapshot-manual): quarterly p
  aseline median\; PELT changepoints\; the five-largest-CNA sensitivity\; wh
  at each option in https://github.com/pagagne/internet-security-snapshot/bl
  ob/main/docs/decisions/I5_BASELINE_NOTES.md would label for the pilot\, us
- ing the 15 Dec full dry run. Send the author a short summary before 21 Dec
- .\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/ma
- in/docs/schedule/schedule.yaml
+ ing the 15 Dec full dry run. Rerun the surge breakdown (research task cve_
+ surge\, author 7 Nov 2026) so it includes November\, and update the privat
+ e briefing 'Where the 2026 flaw surge comes from'. Send the author a short
+  summary before 21 Dec.\n\nSource: https://github.com/pagagne/internet-sec
+ urity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

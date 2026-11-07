@@ -128,7 +128,7 @@ items:
 - id: newsletter-setup
   owner: author
   title: Subscribe the project address to security newsletters (7 listed); add a Gmail label
-  date: 2026-11-02
+  date: 2026-11-10  # was 2 Nov; moved to a lighter day (author, 7 Nov 2026)
   minutes: 30
   details: >
     Author's decision 29 Oct (widening the AI-attack search); list confirmed 1 Nov. Subscribe
@@ -688,7 +688,9 @@ items:
     NVD cross-check; the 2026 quarters as growth rates and as seasonally adjusted levels
     against each baseline median; PELT changepoints; the five-largest-CNA sensitivity; what
     each option in docs/decisions/I5_BASELINE_NOTES.md would label for the pilot, using the
-    15 Dec full dry run. Send the author a short summary before 21 Dec.
+    15 Dec full dry run. Rerun the surge breakdown (research task cve_surge, author 7 Nov 2026)
+    so it includes November, and update the private briefing 'Where the 2026 flaw surge comes
+    from'. Send the author a short summary before 21 Dec.
 
 - id: i5-baseline-read
   owner: author
