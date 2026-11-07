@@ -1575,8 +1575,12 @@ DTEND:20261229T154500Z
 SUMMARY:[Paul] Snapshot: Freeze the core (core-v1.2) and update OSF
 DESCRIPTION:Responsible: Paul (author)\n\nPublish release core-v1.2 on GitH
  ub (scored rules and the locked workflows)\; file the OSF update (Claude g
- ives you the text).\n\nSource: https://github.com/pagagne/internet-securit
- y-snapshot/blob/main/docs/schedule/schedule.yaml
+ ives you the text): one update listing every deviation\, saying which were
+  informed by test data\, the settled form of I5\, and a description of the
+  exploratory layer (author\, 7 Nov 2026\; https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/CHANGE_POLICY.md).\n\nSource: https:/
+ /github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sch
+ edule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

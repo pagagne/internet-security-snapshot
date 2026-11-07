@@ -702,7 +702,9 @@ items:
   minutes: 45
   details: >
     Publish release core-v1.2 on GitHub (scored rules and the locked workflows); file the OSF
-    update (Claude gives you the text).
+    update (Claude gives you the text): one update listing every deviation, saying which were
+    informed by test data, the settled form of I5, and a description of the exploratory layer
+    (author, 7 Nov 2026; docs/CHANGE_POLICY.md).
 
 # ---------------------------------------------------------------- 2027-2028
 - id: witness-post
