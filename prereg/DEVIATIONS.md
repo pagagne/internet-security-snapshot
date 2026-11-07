@@ -7,7 +7,9 @@ February 2027, the methods recorded here are fixed: no entry below is edited or 
 nothing is changed to suit a result. The only later changes allowed are those in
 [`docs/CHANGE_POLICY.md`](../docs/CHANGE_POLICY.md): fixing an error or a measure that has
 stopped working, decided only at the March annual review, reported side by side with the old
-version for four quarters, and added at the end of this log as a new dated entry.
+version for four quarters, and added at the end of this log as a new dated entry. After the
+lock, new questions and proposals are recorded in the inquiry log
+([`docs/INQUIRIES.md`](../docs/INQUIRIES.md)) and weighed only at the March review.
 
 Every change made after the pre-registration is frozen is recorded here: the date, what
 changed, why, and which results it affects. The frozen original is never edited.
