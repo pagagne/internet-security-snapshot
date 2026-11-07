@@ -243,22 +243,36 @@ items:
 
 - id: permission-follow-ups
   owner: author
-  title: Data-permission follow-ups
-  date: 2026-11-20
+  title: Data-permission follow-ups (VulnCheck, Shadowserver, Censys)
+  date: 2026-11-12  # moved up from 20 Nov (author, 7 Nov 2026: no replies since 20 and 28 Oct)
   time: "09:00"
   minutes: 30
   details: >
-    Claude drafts follow-ups for VulnCheck (community@vulncheck.com) and Shadowserver (ticket
-    pqaytmyy) if they have not replied (ransomware.live granted 27 Oct); you
-    send them. Log in docs/PERMISSIONS.md. Cutoff: the 21 Dec session.
+    Claude's drafts (ready 11 Nov): VulnCheck (community@vulncheck.com, request of 20 Oct);
+    Shadowserver (ticket pqaytmyy, 20 Oct): resubmit the web form and also email their general
+    contact address; Censys (research access request of 28 Oct). You send them. Log in
+    docs/PERMISSIONS.md and the correspondence index. Cutoff for the core sources: the 21 Dec
+    session. GreyNoise and CrowdSec stay on 20 Nov.
+
+- id: permission-follow-ups-exploratory
+  owner: author
+  title: Follow-ups to GreyNoise and CrowdSec (exploratory sources)
+  date: 2026-11-20
+  time: "09:00"
+  minutes: 15
+  details: >
+    If still unanswered: GreyNoise (Research Community Access form, 29 Oct) and CrowdSec (Live
+    Exploit Tracker API key, 29 Oct). Claude drafts them the day before. Log as above.
 
 - id: permission-drafts
   owner: claude
   title: Draft the permission follow-ups and update the log
-  date: 2026-11-20
+  date: 2026-11-11  # moved up with the follow-ups (author, 7 Nov 2026)
   details: >
     docs/PERMISSIONS.md (request texts as sent, and the points for the Shadowserver
     follow-up, including the hand-read fallback); decision item 16 sets the 21 Dec cutoff.
+    Drafts for VulnCheck, Shadowserver (form text plus an email to its general contact,
+    address checked on its site) and Censys, saved privately for the author's 12 Nov send.
 
 - id: baseline-hand-check-1
   owner: author

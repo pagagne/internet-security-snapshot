@@ -572,6 +572,24 @@ DESCRIPTION:Responsible: Claude\n\nThe backup was set up and tested on 27 O
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:permission-drafts@2026-11-11@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
+ og
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/PERMISSIONS.md (request texts as sent\, and t
+ he points for the Shadowserver follow-up\, including the hand-read fallbac
+ k)\; decision item 16 sets the 21 Dec cutoff. Drafts for VulnCheck\, Shado
+ wserver (form text plus an email to its general contact\, address checked 
+ on its site) and Censys\, saved privately for the author's 12 Nov send.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:research-review-prep@2026-11-11@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261111
@@ -589,6 +607,24 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  n cards with the recommendation first.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:permission-follow-ups@2026-11-12@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261112T140000Z
+DTEND:20261112T143000Z
+SUMMARY:[Paul] Snapshot: Data-permission follow-ups (VulnCheck\, Shadowserv
+ er\, Censys)
+DESCRIPTION:Responsible: Paul (author)\n\nClaude's drafts (ready 11 Nov): V
+ ulnCheck (community@vulncheck.com\, request of 20 Oct)\; Shadowserver (tic
+ ket pqaytmyy\, 20 Oct): resubmit the web form and also email their general
+  contact address\; Censys (research access request of 28 Oct). You send th
+ em. Log in https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/PERMISSIONS.md and the correspondence index. Cutoff for the core sou
+ rces: the 21 Dec session. GreyNoise and CrowdSec stay on 20 Nov.\n\nSource
+ : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
+ edule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:research-review@2026-11-12@internet-security-snapshot
@@ -853,32 +889,17 @@ DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's proposal of 18 Nov
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:permission-drafts@2026-11-20@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261120
-DTEND;VALUE=DATE:20261121
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
- og
-DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/PERMISSIONS.md (request texts as sent\, and t
- he points for the Shadowserver follow-up\, including the hand-read fallbac
- k)\; decision item 16 sets the 21 Dec cutoff.\n\nSource: https://github.co
- m/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:permission-follow-ups@2026-11-20@internet-security-snapshot
+UID:permission-follow-ups-exploratory@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261120T140000Z
-DTEND:20261120T143000Z
-SUMMARY:[Paul] Snapshot: Data-permission follow-ups
-DESCRIPTION:Responsible: Paul (author)\n\nClaude drafts follow-ups for Vuln
- Check (community@vulncheck.com) and Shadowserver (ticket pqaytmyy) if they
-  have not replied (ransomware.live granted 27 Oct)\; you send them. Log in
-  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/PERM
- ISSIONS.md. Cutoff: the 21 Dec session.\n\nSource: https://github.com/paga
- gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DTEND:20261120T141500Z
+SUMMARY:[Paul] Snapshot: Follow-ups to GreyNoise and CrowdSec (exploratory 
+ sources)
+DESCRIPTION:Responsible: Paul (author)\n\nIf still unanswered: GreyNoise (R
+ esearch Community Access form\, 29 Oct) and CrowdSec (Live Exploit Tracker
+  API key\, 29 Oct). Claude drafts them the day before. Log as above.\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
