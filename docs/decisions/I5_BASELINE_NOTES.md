@@ -65,6 +65,18 @@ companion check (item 19) beside the label then shows whether the movement is be
 - What each option would have labelled for the pilot quarter, computed on the 15 December
   full dry run, so the choice is made on method, not on a result we prefer.
 
+## Q4 2026 is only partly in at the decision (author, 7 Nov 2026)
+
+On 14 December, when the evidence is prepared, the pilot quarter (October to December 2026)
+is about two and a half months complete, and the full quarter arrives only with the pilot pull
+on 1 January 2027, after the core is locked. This does not block the decision, which is about
+the form I5 takes (level or growth rate), not about a final figure. The evidence states plainly
+which months are in, shows the partial quarter as it stands and, where an option needs a full
+quarter, a projection from the months in hand, marked as a projection. The breakdown of where
+the 2026 surge comes from (by issuing CNA, severity, root cause and AI credit, each quarter from
+2024, with the registered "five largest CNAs excluded" sensitivity) is run early, from November,
+as the private research task `cve_surge`.
+
 ## After the decision
 
 The chosen form and any wording fix go into `prereg/DEVIATIONS.md` (clarification or

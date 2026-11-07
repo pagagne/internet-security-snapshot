@@ -22,6 +22,12 @@ the open questions are settled at the 21 December decision session
 (`docs/CORE_FREEZE_DECISIONS.md`). The freeze tags `core-v1.2` and files an update on OSF.
 From then on the rules in section 4 apply.
 
+**The OSF update at the lock (author, 7 Nov 2026)** is a single update filed at the 29 December
+lock. It lists every entry in `prereg/DEVIATIONS.md`, says plainly which changes were informed by
+test data (made after test runs, before any quarter was scored), records the settled form of I5,
+and describes the exploratory layer (section 2), so that later exploratory additions are covered
+by the registration in so many words.
+
 Checksums of the locked files are in `prereg/LOCKED.yaml`. `tests/test_locks.py` runs on
 every push and fails if a locked file changes without its checksum and a dated deviation
 row being updated, so no core change can happen quietly.
@@ -32,6 +38,11 @@ New measures, breakdowns and data sources go in `config/exploratory.yaml`, each 
 dated entry. They appear in a separate "Exploratory" section of the quarterly report, are
 clearly labeled, and never decide a label or change the cohort (`feeds_labels: false`,
 enforced by a test). They can be added at any time.
+
+After the pilot lock (author, 7 Nov 2026), a new exploratory measure still can be added, but
+it starts as an entry in the inquiry log (`docs/INQUIRIES.md`), gets a dated entry here, and
+begins with the next quarter, clearly labeled; it is never back-dated into a quarter already
+reported.
 
 ## 3. Raw data is kept
 
