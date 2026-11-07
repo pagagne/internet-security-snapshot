@@ -76,11 +76,11 @@ items:
 - id: sans-email
   owner: author
   title: Email SANS asking them to suggest a reviewer (former-employer route)
-  date: 2026-11-06  # moved up 29 Oct (author; was 11-10); moved to 6 Nov afternoon (author, 5 Nov)
+  date: 2026-11-09  # moved up 29 Oct (author; was 11-10); to 6 Nov (author, 5 Nov); to Mon 9 Nov, Claude drafts (author, 7 Nov)
   time: "13:30"
   minutes: 30
   details: >
-    Write from exploratory/docs/reviewer/sans-outreach.md (facts to cover; your own words) and send to the
+    Claude's draft: exploratory/docs/reviewer/sans-email-draft.md (from sans-outreach.md); edit and send to the
     SANS Technology Institute or another SANS contact that reaches the right people, with the
     invitation letter. Main ask: the independent reviewer (confirmed by 1 Mar 2027); optional:
     a second coder. Disclose that you worked at SANS and that the study uses Internet Storm
