@@ -1,6 +1,6 @@
 # The Internet Security Snapshot: How It Works and What It Will Show
 
-23 October 2026 · Paul Gagne
+23 October 2026, updated 7 November 2026 · Paul Gagne
 
 ## Abstract
 
@@ -16,12 +16,12 @@ Every number in the report travels the same path, left to right: free sources, a
 
 ![Architecture: free sources flow through the quarterly pull, frozen bundles, normalize and analysis to four published outputs](diagrams/architecture.svg)
 
-1. **Free sources.** Public records of software flaws (CVE records), CISA's list of flaws known to be attacked, CISA's added analysis (Vulnrichment), daily attack-likelihood scores (EPSS), NVD, vendor advisories, company breach filings with the SEC, and Cloudflare Radar's internet traffic data.
-2. **Quarterly pull.** GitHub Actions collects everything at 06:00 UTC on 1 January, April, July and October, and again one month later for the final report.
+1. **Free sources.** Public records of software flaws (CVE records), CISA's list of flaws known to be attacked, CISA's added analysis (Vulnrichment), daily attack-likelihood scores (EPSS), NVD, vendor advisories, company breach filings with the SEC, ransomware leak-site post counts (ransomware.live), and Cloudflare Radar's internet traffic data. International sources (JPCERT/CC, APNIC Labs and others) are being tested for the exploratory part, and Censys internet scan data is requested for a yearly cross-check.
+2. **Quarterly pull.** GitHub Actions collects everything on 1 January, April, July and October (timer set for 06:00 UTC), and again one month later for the final report. GitHub often starts timed runs a few hours late; the study allows for that, and a watchdog raises an alert only if a run is more than ten hours late.
 3. **Frozen bundles.** An exact copy of every input is kept with checksums and archived on Zenodo, so anyone can recompute any number later. A private backup in the author's Google Drive also keeps the full data, including anything not yet allowed to be published.
 4. **Normalize.** Automatic data checks flag missing fields or sudden changes in a source, then the fixed rules pick which flaws to study.
 5. **Analysis.** The author's hand checks are added. Claude drafts the analysis and the author approves it before anything is published.
-6. **Publish.** The evaluation page, a quarter-by-quarter archive, timelines for the sampled flaws, and a citable Zenodo bundle of data and code.
+6. **Publish.** Three web pages (a landing page, a results page and an appendix), a quarter-by-quarter archive of reports and PDFs, timelines for the sampled flaws, and a citable Zenodo bundle of data and code. The pages are refreshed by a "Publish results" workflow that runs only after the author approves each step and stops if a privacy check finds anything; its first run, on 2 January 2027, switches the pages from practice data to the pilot results.
 
 **ransomware.live said yes on 27 October 2026,** so its leak-site post counts are used and published as aggregates, credited to ransomware.live. **Two sources are placeholders for now.** Shadowserver (internet exposure counts and honeypot attack data) and VulnCheck KEV (earlier attack dates) were asked for permission on 20 October 2026. Follow-ups go out on 20 November, and replies are hoped for by 1 January 2027, before the pilot report. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly. Each has its own on/off switch in the study's settings, so including or leaving one out is a settings change, not a code change.
 
@@ -44,7 +44,7 @@ Track A is picked by a fixed random draw that anyone can repeat, so nobody choos
 
 ## Why some checks are done by hand
 
-A few questions need a person reading a vendor's page or a credit line, not a program matching words. The author answers them in a private Hand Check app, about 1½ hours a quarter if every flagged race fix date is checked, or about 50 minutes if a sample is (decided 12 Nov), under written rules ([HAND_CHECK.md](HAND_CHECK.md)).
+A few questions need a person reading a vendor's page or a credit line, not a program matching words. The author answers them in a private Hand Check app, about 1½ hours a quarter if every flagged race fix date is checked, or about 50 minutes if a sample is (to be decided on 12 November 2026), under written rules ([HAND_CHECK.md](HAND_CHECK.md)).
 
 | Hand check | Why a program cannot do it alone |
 | --- | --- |
@@ -52,7 +52,7 @@ A few questions need a person reading a vendor's page or a credit line, not a pr
 | **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Can't find". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
 | **AI-credit edge cases** (Yes / No). Any mention of an AI tool or AI lab is counted automatically, with 1 in 10 re-checked. | Name collisions (a person named Claude) and credits where the AI product is the thing that had the flaw need a reader. |
 
-Three safeguards keep the hand checks honest. Each quarter, 20 earlier answers are shown again unmarked, and the share answered the same way is reported. A second, independent coder answers 20 of the quarter's items without seeing the author's answers, and the agreement is reported. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
+Three safeguards keep the hand checks honest. Each quarter, 20 earlier answers are shown again unmarked, and the share answered the same way is reported. A second checker (in research terms, a second coder) answers 20 of the quarter's items without seeing the author's answers, and the agreement is reported. During the pilot, an outside pilot witness (7 December 2026 to 5 February 2027) watches the full practice run and the pilot quarter and publishes a short note before the procedures are locked. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
 
 ## The race, and the decision on how to measure it
 
@@ -87,15 +87,19 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 **Attacker side: AI-assisted attacks (exploratory, clearly labelled, never deciding a label).**
 
 - **Speed in the tail:** the share of newly attacked flaws hit within 1 day and within 7 days of going public, and the share attacked before any fix existed. Faster exploitation is the first place AI-built attacks would show.
-- **A log of publicly reported AI-operated attack campaigns:** what they targeted, and whether they used known flaws or bugs that never got a CVE. Each quarter the log is topped up by a fixed web search in nine languages across about 20 regular sources, so reports outside the usual channels are found. Attacks nobody reports stay invisible, so the count is a minimum.
+- **A log of publicly reported AI-operated attack campaigns,** counted from reports published on or after 1 July 2026: what they targeted, how the attackers got in, and whether they used known flaws or bugs that never got a CVE. Cases come from a monthly automated screen of about sixty news and research feeds (each match sorted), a quarterly web search in nine languages, research by Claude checked against the original report, and the author's own reading. Claude rates the evidence of AI use for each case (confirmed or assessed), and the author checks a random sample and any doubtful case each month. Attacks nobody reports stay invisible, so the count is a minimum.
 - **AI software as a target:** flaws in model servers, agent platforms and AI gateways, and self-hosted AI servers left exposed on the internet.
 - **Capable models attackers can run privately:** a log of open-weight model releases, to line up with any change in attack speed.
+- **AI security tools on offer:** monthly sweeps of security-related AI tools on GitHub and models on Hugging Face, counted by what they say about themselves (advertised, not tested), with checks for clones, lures and inflated stars added from November 2026.
+- **How much people hand over to AI (planned, added 6 November 2026):** signals of tasks passing from people to AI agents (pull requests opened by coding agents, AI fetching web pages on a user's behalf, news and surveys by kind of task), and whether incidents differ when a person kept an approval step. Reported in the final 2027 report.
 
-**Beyond the US (being tested).** The main attack list (CISA's) and the harm data (SEC, HHS) see the internet mostly from the US. Four exploratory additions are being tested in autumn 2026: other countries' attack alerts (France, Japan, Germany, Korea) compared with CISA's list; how widely basic internet protections (DNSSEC and route checking) are used, country by country; attack, bot and ransomware trends by region; and data-breach counts from other countries' regulators.
+**Beyond the US (being tested).** The main attack list (CISA's) and the harm data (SEC, HHS) see the internet mostly from the US. Four exploratory additions are being tested in autumn 2026: other countries' attack alerts (France, Japan, Germany, Korea) compared with CISA's list; how widely basic internet protections (DNSSEC and route checking) are used, country by country; attack, bot and ransomware trends by region; and data-breach counts from other countries' regulators. The test ends at the 21 December 2026 decision session: sources that pass join the exploratory set, and the rest are listed as tried and dropped.
 
 **How the year builds.** The Q4 2026 pilot (January) gives the first look. Q1 2027 (April) is the first scored quarter. At the March 2027 annual review, an exploratory AI measure that has proved reliable can be promoted into the scored core. By Q3 2027 (November) there are four comparable quarters, enough to see whether AI-credited discovery and the attacker's clock are moving together. The first check against better reference data, covering 2027, follows in March 2028.
 
 ## The 2027 calendar
+
+**Before the pilot (2026).** From 30 November the repository's own schedule runs the study. A practice run on October and November data follows on 1 December, the project website opens on 4 December, the pilot witness starts on 7 December, and a full practice run with every available source runs on 15 December. The core methods are decided on 21 December and locked on 29 December, and the pages switch to the pilot results on 2 January 2027.
 
 The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand-check window from the 4th to the 28th, and a final report a month later.
 
@@ -105,7 +109,7 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 | --- | --- | --- | --- |
 | Fri 1 Jan | Q4 2026 provisional report | The automatic pull for October to December 2026, labelled **pilot** | Tests the whole system on real data before any result is scored |
 | 4–28 Jan | Q4 2026 hand-check window | About 1½ hours in the Hand Check app (about 50 minutes if race fix dates are sampled), at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
-| Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included | Sources keep updating; a month's wait catches late listings and corrections |
+| Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included; the pilot witness's note follows by 5 Feb | Sources keep updating; a month's wait catches late listings and corrections |
 | 2–12 Feb | Evaluation of the AI-credit rule | The pilot's two AI numbers compared, with a sample of lab-affiliated credits checked | Decides at the 15 March review whether any mention of an AI lab should keep counting |
 | Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by 1 March | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |
