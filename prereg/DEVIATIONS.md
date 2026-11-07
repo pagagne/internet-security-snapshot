@@ -1,5 +1,14 @@
 # Deviations from the pre-registration
 
+**Locked after the pilot (author, 7 Nov 2026).** This log is where the study's methods were
+settled before it starts counting. It stays open through the pilot quarter (Q4 2026, reported
+on 1 January and 1 February 2027). Once the pilot is over and the procedures are locked in
+February 2027, the methods recorded here are fixed: no entry below is edited or removed, and
+nothing is changed to suit a result. The only later changes allowed are those in
+[`docs/CHANGE_POLICY.md`](../docs/CHANGE_POLICY.md): fixing an error or a measure that has
+stopped working, decided only at the March annual review, reported side by side with the old
+version for four quarters, and added at the end of this log as a new dated entry.
+
 Every change made after the pre-registration is frozen is recorded here: the date, what
 changed, why, and which results it affects. The frozen original is never edited.
 
