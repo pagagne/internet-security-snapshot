@@ -210,3 +210,11 @@ Started 25 Oct 2026 at the author's request.
   social-engineering questions in both directions. Two secondary sources; xAI's own page not
   yet read.
 
+
+- **8 Nov 2026: CERT-In warns Indian finance of "CRAFTY FALCON" (author's find).** India's CERT-In
+  (advisory dated 4 Nov 2026, update 5 Nov) warns banks, NBFCs, fintechs and crypto exchanges of
+  an AI-assisted group that runs publicly available AI attack tools (ARTEX, PentAGI, Cairn,
+  CyberStrikeAI) against payment and disbursement APIs, getting in through internet-exposed test
+  and development environments and timing attacks for holidays. **Handled:** entered in the
+  private AI-attack log as a new case (finance and crypto, India), rated from secondary coverage
+  until the advisory itself is read; the same tools already appear in earlier cases.
