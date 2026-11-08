@@ -151,7 +151,9 @@ items:
   title: Read the "Snapshot newsletters" label (research only)
   repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 8, from: 2026-11, until: 2027-12}
   details: >
-    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address).
+    Gmail label "Snapshot newsletters" (author's Gmail, forwarded from the project address), and
+    as a backstop any mail sent to the project address since the last read, skipping the
+    author's own mail, GitHub notices and correspondence (author, 7 Nov 2026).
     Research only (author, 1 Nov 2026): nothing from the newsletters is shown in a report or on
     the landing page, and cases first spotted there are not entered in the AI attack log. Note
     trends worth discussing with the author, for an optional trends summary in our own words
