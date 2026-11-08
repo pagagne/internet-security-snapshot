@@ -732,27 +732,27 @@ items:
     Author's decisions 3 Nov 2026: a pilot witness, separate from the independent reviewer so the
     first does not influence the second, follows the 15 Dec dry run and the whole pilot and writes
     a short published note before the procedures are locked. Text: Posting 1 in
-    exploratory/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 30 Nov.
+    exploratory/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 7 Dec (Handshake 30-day window; author, 7 Nov 2026).
 
 - id: witness-select
   owner: author
-  title: Choose and confirm the pilot witness (applications closed 30 Nov)
-  date: 2026-12-03
+  title: Choose and confirm the pilot witness (applications closed 7 Dec)
+  date: 2026-12-08  # Handshake's free tier fixes a 30-day window, so applications close 7 Dec (author, 7 Nov 2026)
   minutes: 45
   details: >
     Read the applications (Claude can sort them by the posting's criteria, without judging
-    people), choose one, and confirm by 6 Dec. The witness must not be the person later chosen as
+    people), choose one, and confirm by 9 Dec. The witness must not be the person later chosen as
     the independent reviewer, and the two never work together. Tell Claude, who logs it (role
     only in public files) and sends the getting-started notes.
 
 - id: witness-onboarding
   owner: author
   title: Pilot witness getting started (one video call; Claude prepares the notes)
-  date: 2026-12-08
+  date: 2026-12-10  # was 8 Dec (author, 7 Nov 2026)
   time: "10:00"
   minutes: 60
   details: >
-    Window 7-14 Dec (2 to 3 hours for the witness). Claude prepares a short guide: where the run
+    Window 9-14 Dec (2 to 3 hours for the witness). Claude prepares a short guide: where the run
     logs, the frozen data copies and the quality reports are; what the dry run and the pilot do
     and when; what the note by 5 Feb should cover (problems seen; the timing of locking the
     procedures). The witness gets read access to what any member of the public can see, plus

@@ -356,9 +356,9 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decisions 3 Nov 2026: a
  ot influence the second\, follows the 15 Dec dry run and the whole pilot a
  nd writes a short published note before the procedures are locked. Text: P
  osting 1 in https://github.com/pagagne/snapshot-manual/blob/main/explorato
- ry/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 30 Nov.\n\nSourc
- e: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sc
- hedule/schedule.yaml
+ ry/docs/reviewer/HANDSHAKE_POSTING.md. Applications close 7 Dec (Handshake
+  30-day window\; author\, 7 Nov 2026).\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1161,23 +1161,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks\, slot (c)
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:witness-select@2026-12-03@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261203
-DTEND;VALUE=DATE:20261204
-TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Choose and confirm the pilot witness (applications
-  closed 30 Nov)
-DESCRIPTION:Responsible: Paul (author)\n\nRead the applications (Claude can
-  sort them by the posting's criteria\, without judging people)\, choose on
- e\, and confirm by 6 Dec. The witness must not be the person later chosen 
- as the independent reviewer\, and the two never work together. Tell Claude
- \, who logs it (role only in public files) and sends the getting-started n
- otes.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blo
- b/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:container-pull@2026-12-03@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261203T150000Z
@@ -1269,6 +1252,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:witness-select@2026-12-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Choose and confirm the pilot witness (applications
+  closed 7 Dec)
+DESCRIPTION:Responsible: Paul (author)\n\nRead the applications (Claude can
+  sort them by the posting's criteria\, without judging people)\, choose on
+ e\, and confirm by 9 Dec. The witness must not be the person later chosen 
+ as the independent reviewer\, and the two never work together. Tell Claude
+ \, who logs it (role only in public files) and sends the getting-started n
+ otes.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blo
+ b/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2026-12-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261208
@@ -1286,24 +1286,6 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
   22nd (newsletter-read-2).\n\nSource: https://github.com/pagagne/internet-
  security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:witness-onboarding@2026-12-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261208T150000Z
-DTEND:20261208T160000Z
-SUMMARY:[Paul] Snapshot: Pilot witness getting started (one video call\; Cl
- aude prepares the notes)
-DESCRIPTION:Responsible: Paul (author)\n\nWindow 7-14 Dec (2 to 3 hours for
-  the witness). Claude prepares a short guide: where the run logs\, the fro
- zen data copies and the quality reports are\; what the dry run and the pil
- ot do and when\; what the note by 5 Feb should cover (problems seen\; the 
- timing of locking the procedures). The witness gets read access to what an
- y member of the public can see\, plus the hand-check sample the author cho
- oses to show\; never private data\, keys or the private repository.\n\nSou
- rce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
- schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:landing-flip-workflow@2026-12-10@internet-security-snapshot
@@ -1344,6 +1326,24 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-onboarding@2026-12-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261210T150000Z
+DTEND:20261210T160000Z
+SUMMARY:[Paul] Snapshot: Pilot witness getting started (one video call\; Cl
+ aude prepares the notes)
+DESCRIPTION:Responsible: Paul (author)\n\nWindow 9-14 Dec (2 to 3 hours for
+  the witness). Claude prepares a short guide: where the run logs\, the fro
+ zen data copies and the quality reports are\; what the dry run and the pil
+ ot do and when\; what the note by 5 Feb should cover (problems seen\; the 
+ timing of locking the procedures). The witness gets read access to what an
+ y member of the public can see\, plus the hand-check sample the author cho
+ oses to show\; never private data\, keys or the private repository.\n\nSou
+ rce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
+ schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:dry-run-full-prep@2026-12-11@internet-security-snapshot
