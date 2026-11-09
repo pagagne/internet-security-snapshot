@@ -12,7 +12,7 @@ status below changes, change the matching switch in the same commit; a test chec
 |---|---|---|---|---|---|---|
 | ransomware.live | 2026-10-20 | Support form ("Other") | Ticket #3425 | Aggregate posting counts only, credited; victim names dropped at capture; no raw data published | **Granted** 2026-10-27 (Julien, 06:16 UTC) on seven conditions, below; publishing switched on the same day (author) | Conditions accepted in the author's reply of 2026-10-28 (12:32 UTC); full thread in the private correspondence record |
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply | — |
-| Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow up by reply to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject if no answer by 20 Nov 2026 | — |
+| Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow-up drafted 9 Nov 2026 for the author to send on 10 Nov: the web form again, plus an email to contact@shadowserver.org with "[Ticket #pqaytmyy]" in the subject (address to be checked against their acknowledgement) | — |
 
 ## ransomware.live conditions (ticket #3425, 27 Oct 2026)
 Authorized for this non-commercial research use on these conditions, which the study meets:
@@ -91,7 +91,7 @@ of 26 Oct, although the confirmation promised one within 2 business days):
 **Shadowserver** (web contact form, topic "Dashboard Data/Visualization", ticket pqaytmyy):
 text not kept; no copy in the author's mail. What was asked is in the table above.
 
-**Points for the 20 Nov Shadowserver follow-up** (reply to contact@shadowserver.org with
+**Points for the Shadowserver follow-up** (moved to 10 Nov 2026) (reply to contact@shadowserver.org with
 "[Ticket #pqaytmyy]" in the subject; Claude drafts, the author sends):
 - Recap: free, non-commercial, pre-registered study (OSF DOI 10.17605/OSF.IO/3XT82); aggregate
   country- and CVE-level figures only, credited; no host-level data, nothing resold.

@@ -482,6 +482,24 @@ DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:permission-drafts@2026-11-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
+ og
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/PERMISSIONS.md (request texts as sent\, and t
+ he points for the Shadowserver follow-up\, including the hand-read fallbac
+ k)\; decision item 16 sets the 21 Dec cutoff. Drafts for VulnCheck\, Shado
+ wserver (form text plus an email to its general contact\, address checked 
+ on its site) and Censys\, saved privately for the author's 10 Nov send.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261109
@@ -558,6 +576,24 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:permission-follow-ups@2026-11-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261110T140000Z
+DTEND:20261110T143000Z
+SUMMARY:[Paul] Snapshot: Data-permission follow-ups (VulnCheck\, Shadowserv
+ er\, Censys)
+DESCRIPTION:Responsible: Paul (author)\n\nClaude's drafts (ready 9 Nov): Vu
+ lnCheck (community@vulncheck.com\, request of 20 Oct)\; Shadowserver (tick
+ et pqaytmyy\, 20 Oct): resubmit the web form and also email their general 
+ contact address\; Censys (research access request of 28 Oct). You send the
+ m. Log in https://github.com/pagagne/internet-security-snapshot/blob/main/
+ docs/PERMISSIONS.md and the correspondence index. Cutoff for the core sour
+ ces: the 21 Dec session. GreyNoise and CrowdSec stay on 20 Nov.\n\nSource:
+  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sche
+ dule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-backup-test@2026-11-11@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261111
@@ -572,24 +608,6 @@ DESCRIPTION:Responsible: Claude\n\nThe backup was set up and tested on 27 O
  agne/internet-security-snapshot/blob/main/docs/WORKFLOWS.md and the lock l
  ist.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob
  /main/docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:permission-drafts@2026-11-11@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261111
-DTEND;VALUE=DATE:20261112
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Draft the permission follow-ups and update the l
- og
-DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/PERMISSIONS.md (request texts as sent\, and t
- he points for the Shadowserver follow-up\, including the hand-read fallbac
- k)\; decision item 16 sets the 21 Dec cutoff. Drafts for VulnCheck\, Shado
- wserver (form text plus an email to its general contact\, address checked 
- on its site) and Censys\, saved privately for the author's 12 Nov send.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -610,24 +628,6 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  n cards with the recommendation first.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:permission-follow-ups@2026-11-12@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261112T140000Z
-DTEND:20261112T143000Z
-SUMMARY:[Paul] Snapshot: Data-permission follow-ups (VulnCheck\, Shadowserv
- er\, Censys)
-DESCRIPTION:Responsible: Paul (author)\n\nClaude's drafts (ready 11 Nov): V
- ulnCheck (community@vulncheck.com\, request of 20 Oct)\; Shadowserver (tic
- ket pqaytmyy\, 20 Oct): resubmit the web form and also email their general
-  contact address\; Censys (research access request of 28 Oct). You send th
- em. Log in https://github.com/pagagne/internet-security-snapshot/blob/main
- /docs/PERMISSIONS.md and the correspondence index. Cutoff for the core sou
- rces: the 21 Dec session. GreyNoise and CrowdSec stay on 20 Nov.\n\nSource
- : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
- edule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:research-review@2026-11-12@internet-security-snapshot

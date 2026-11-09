@@ -251,7 +251,7 @@ check-ins are retired once they have run.
 | Wed 4 Nov, 09:00 | Censys reply check | The session created 28 Oct |
 | Mon 9, 16 and 23 Nov, 09:00 | Weekly sync reviews and due issues | The session created 28 Oct |
 | Thu 12 Nov, 09:15 | Research review decision cards | The session created 28 Oct |
-| Fri 20 Nov, 09:00 | Data-permission follow-ups | The session created 28 Oct |
+| Tue 10 Nov, 09:00 | Data-permission follow-ups (VulnCheck, Shadowserver, Censys); moved up from 20 Nov, then from 12 Nov (author, 7 and 9 Nov); drafts ready 9 Nov | The schedule (author sends) |
 | Wed 25 Nov, 09:00 | Race fix-date list ready for the dry run | The session created 28 Oct |
 
 Some one-off tasks are tied to the author's computer "Shofar" and wait until it is on. The
