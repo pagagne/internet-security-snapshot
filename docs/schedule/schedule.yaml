@@ -692,7 +692,9 @@ items:
     each option in docs/decisions/I5_BASELINE_NOTES.md would label for the pilot, using the
     15 Dec full dry run. Rerun the surge breakdown (research task cve_surge, author 7 Nov 2026)
     so it includes November, and update the private briefing 'Where the 2026 flaw surge comes
-    from'. Send the author a short summary before 21 Dec.
+    from'. Also check (author's find, 8 Nov): the share of severity scores from issuers rather
+    than NIST since NIST stopped scoring every record in April, and that fake or rejected records
+    are excluded. Send the author a short summary before 21 Dec.
 
 - id: i5-baseline-read
   owner: author

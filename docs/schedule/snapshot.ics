@@ -1388,9 +1388,12 @@ DESCRIPTION:Responsible: Claude\n\nPrivately (snapshot-manual): quarterly p
  ob/main/docs/decisions/I5_BASELINE_NOTES.md would label for the pilot\, us
  ing the 15 Dec full dry run. Rerun the surge breakdown (research task cve_
  surge\, author 7 Nov 2026) so it includes November\, and update the privat
- e briefing 'Where the 2026 flaw surge comes from'. Send the author a short
-  summary before 21 Dec.\n\nSource: https://github.com/pagagne/internet-sec
- urity-snapshot/blob/main/docs/schedule/schedule.yaml
+ e briefing 'Where the 2026 flaw surge comes from'. Also check (author's fi
+ nd\, 8 Nov): the share of severity scores from issuers rather than NIST si
+ nce NIST stopped scoring every record in April\, and that fake or rejected
+  records are excluded. Send the author a short summary before 21 Dec.\n\nS
+ ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
+ s/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
