@@ -218,3 +218,16 @@ Started 25 Oct 2026 at the author's request.
   and development environments and timing attacks for holidays. **Handled:** entered in the
   private AI-attack log as a new case (finance and crypto, India), rated from secondary coverage
   until the advisory itself is read; the same tools already appear in earlier cases.
+
+- **8 Nov 2026: "The haystack tripled" (paddo.dev blog, author's find).** Argues that AI made
+  flaws cheap to find, flooding the CVE system (about 4,300 records in January 2026, about 17,000
+  in October, nearly 90,000 so far against about 48,000 in all of 2025), while few are ever
+  exploited, so defenders should patch what is attacked and keep basic hygiene. Also reports:
+  NIST stopped scoring every new record in April; one account filed 54 fake CVEs in July, rated
+  critical before removal; an Alpine Linux login bug found by AI "agent swarms" had no CVE when
+  fixed. **Handled:** the monthly counts match the study's own surge breakdown, an independent
+  check on I5 (decision item 25, 21 Dec); the argument is the reason the core scores exploited
+  shares rather than raw counts. To check before the I5 evidence (14 Dec): how much of the
+  severity data comes from issuers rather than NIST since April, and that fake or rejected
+  records are excluded (rejected records already are). A blog with secondary figures: context
+  only.
