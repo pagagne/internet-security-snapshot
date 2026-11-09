@@ -147,8 +147,9 @@ already screened in an earlier month are not sorted again; the Russian term for 
 a title; titles that use AI brands as bait or are about political content are set aside. Rules in
 `config/feeds.yaml`, built from the October sort (they remove only items excluded there). Set-aside
 items are listed privately in `feed-screen-YYYY-MM-filtered.csv` with the rule's name, for a
-glance at the monthly review. After the November sort, the author compares his Claude usage
-before and after and decides whether full reads are also capped (about ten a month).
+glance at the monthly review. Measured cost of the November sort (9 Nov 2026; 20 new items,
+four full reads, plus small side tasks in the same stretch): about 1 point of the author's weekly
+Claude allowance and about 8 points of one session; no cap on full reads is needed.
 The newsletters in the author's Gmail label "Snapshot newsletters" (read on the 8th and 22nd)
 are research only since 1 Nov 2026 (author): never shown in a report or on the landing page,
 and a case first spotted in a newsletter is not entered in the AI attack log. What they show
