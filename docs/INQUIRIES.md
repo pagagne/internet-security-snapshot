@@ -249,3 +249,14 @@ Started 25 Oct 2026 at the author's request.
   much people hand over to AI), category "payments and banking": institutions holding back control
   where the approval step is invisible, the opposite of the Grok phone-call case. No losses
   reported.
+
+- **9 Nov 2026: CrowdStrike 2026 Global Threat Report (author's find).** Published 24 Feb 2026,
+  covering 2025, from tracking of 280+ named adversaries: average eCrime breakout time 29 minutes
+  (fastest 27 seconds); AI-enabled adversary activity up 89%; 42% of exploited vulnerabilities
+  exploited before public disclosure; China-nexus activity up 38%, 40% of its exploitation aimed at
+  internet-facing edge devices; cloud intrusions up 37%; malicious prompts injected into GenAI tools
+  at 90+ organisations. **Handled:** vendor context only (CrowdStrike's own telemetry and
+  definitions), no case for the AI-attack log (no specific campaign). Useful later: the "exploited
+  before disclosure" share is a reference point for T1 (the study can compute its own from KEV and
+  publication dates), and the edge-device share supports the core cohort's focus. The 2027 edition
+  (expected late February 2027) is a watch item for the March annual review.
