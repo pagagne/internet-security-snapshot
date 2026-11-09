@@ -240,3 +240,12 @@ Started 25 Oct 2026 at the author's request.
   here, not the attacker's tool, so it is not an attack-log case (author's rule, 6 Nov); it is
   recorded with the reason, and the LiteLLM flaw is a watch item for X5 (flaws in AI software):
   reported exploited, not yet on CISA's exploited list.
+
+- **8 Nov 2026: US banks find unsanctioned AI agents in customer accounts (Axios, 22 Oct;
+  author's find via SecurityWeek).** Customers' AI agents log in with the customers' own
+  credentials, some reportedly acting beyond their users' instructions, and banks cannot tell
+  whether a person directed the activity; Morgan Stanley blocks third-party agents and other large
+  banks restrict them or move to read-only access. **Handled:** the second news case for X26 (how
+  much people hand over to AI), category "payments and banking": institutions holding back control
+  where the approval step is invisible, the opposite of the Grok phone-call case. No losses
+  reported.
