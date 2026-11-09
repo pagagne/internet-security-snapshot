@@ -100,7 +100,7 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 
 ## The 2027 calendar
 
-**Before the pilot (2026).** From 30 November the repository's own schedule runs the study. A practice run on October and November data follows on 1 December, the project website opens on 4 December, the pilot witness starts on 7 December, and a full practice run with every available source runs on 15 December. The core methods are decided on 21 December and locked on 29 December, and the pages switch to the pilot results on 2 January 2027.
+**Before the pilot (2026).** From 30 November the repository's own schedule runs the study. A practice run on October and November data follows on 1 December, the project website opens on 4 December, the pilot witness starts by 9 December, and a full practice run with every available source runs on 15 December. The core methods are decided on 21 December and locked on 29 December, and the pages switch to the pilot results on 2 January 2027.
 
 The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand-check window from the 4th to the 28th, and a final report a month later.
 
