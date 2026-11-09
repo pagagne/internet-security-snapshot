@@ -231,3 +231,12 @@ Started 25 Oct 2026 at the author's request.
   severity data comes from issuers rather than NIST since April, and that fake or rejected
   records are excluded (rejected records already are). A blog with secondary figures: context
   only.
+
+- **8 Nov 2026: LLMjacking and "LLM mixers" (Google Threat Intelligence Group and Mandiant, 3 Nov;
+  author's find via SecurityWeek).** Attackers steal or find exposed cloud and AI API keys (and in
+  one case exploited a LiteLLM flaw, CVE-2026-40217) to run AI models at the victim's expense,
+  with bills above $100,000 a day and about $1 million at some organisations; stolen access is
+  resold cheaply through "LLM mixer" services such as Jet Night. **Handled:** AI is the target
+  here, not the attacker's tool, so it is not an attack-log case (author's rule, 6 Nov); it is
+  recorded with the reason, and the LiteLLM flaw is a watch item for X5 (flaws in AI software):
+  reported exploited, not yet on CISA's exploited list.
