@@ -115,7 +115,7 @@ def report(R: dict, note: str) -> str:
     L += ["", "| Records published in | Records | In KEV | Share |", "|---|---|---|---|"]
     for y in (2024, 2025, 2026):
         v = K[f"share_of_{y}_records_in_kev"]
-        L.append(f"| {y} | {v['records']:,} | {v['in_kev']:,} | {v['share']:.3%} |")
+        L.append(f"| {y} | {v['records']:,} | {v['in_kev']:,} | " + (f"{v['share']:.3%}" if v['share'] is not None else "-") + " |")
     L += ["", "KEV additions by month are in `cve_deep.json`.", ""]
     return "\n".join(L)
 
