@@ -150,7 +150,8 @@ items are listed privately in `feed-screen-YYYY-MM-filtered.csv` with the rule's
 glance at the monthly review. Measured cost of the November sort (9 Nov 2026; 20 new items,
 four full reads, plus small side tasks in the same stretch): about 1 point of the author's weekly
 Claude allowance and about 8 points of one session; no cap on full reads is needed.
-The newsletters in the author's Gmail label "Snapshot newsletters" (read on the 8th and 22nd)
+The newsletters in the author's Gmail label "Snapshot newsletters" (reviewed every Saturday
+morning since 9 Nov 2026, reporting only what helps the study)
 are research only since 1 Nov 2026 (author): never shown in a report or on the landing page,
 and a case first spotted in a newsletter is not entered in the AI attack log. What they show
 may inform an optional trends summary written in our own words.

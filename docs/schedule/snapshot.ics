@@ -460,28 +460,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nRewrite https://github.com/pagagn
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2026-11-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261108
-DTEND;VALUE=DATE:20261109
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:permission-drafts@2026-11-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261109
@@ -653,6 +631,25 @@ DESCRIPTION:Responsible: Paul (author)\n\nSince 27 Oct: #1\, #2 and #9 deci
  l patch flow.\n\nSource: https://github.com/pagagne/internet-security-snap
  shot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:newsletter-read@2026-11-14@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261114T130000Z
+DTEND:20261114T131500Z
+SUMMARY:[Claude] Snapshot: Weekly newsletter review (Saturdays 08:00 ET\, r
+ esearch only)
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 9 Nov 2026: every Satu
+ rday morning\, a short review of the Gmail label "Snapshot newsletters" (p
+ lus mail to the project address outside the label) for the past week\, rep
+ orting only what helps the study and leaving out the rest. Run as a weekly
+  check-in in the author's chat\, each one setting the next\; replaces the 
+ reads on the 8th and 22nd. Research only (author\, 1 Nov 2026): nothing fr
+ om the newsletters is shown in a report or on the landing page\, and a cas
+ e first spotted there is not entered in the AI attack log.\n\nSource: http
+ s://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/
+ schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:skill-registry-probe@2026-11-16@internet-security-snapshot
@@ -904,19 +901,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nIf still unanswered: GreyNoise (R
  urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
  /schedule/schedule.yaml
 CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2026-11-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261122
-DTEND;VALUE=DATE:20261123
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-23@internet-security-snapshot
@@ -1272,28 +1256,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nRead the applications (Claude can
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2026-12-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261208
-DTEND;VALUE=DATE:20261209
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:landing-flip-workflow@2026-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261210
@@ -1568,19 +1530,6 @@ DESCRIPTION:Responsible: Claude\n\nDeviation rows\, LOCKED.yaml checksums (
  including the workflows locked under decision item 22)\, freeze summary an
  d the OSF update text.\n\nSource: https://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2026-12-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261222
-DTEND;VALUE=DATE:20261223
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1859,28 +1808,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nClaude's sorted list from the swe
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-01-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270108
-DTEND;VALUE=DATE:20270109
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-01-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270110T071700Z
@@ -1947,19 +1874,6 @@ DESCRIPTION:Responsible: Claude\n\nExtend the sample (https://github.com/pa
  heck that each worksheet can be followed in a spreadsheet with no code.\n\
  nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
  ocs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-01-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270122
-DTEND;VALUE=DATE:20270123
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2152,28 +2066,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-02-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270208
-DTEND;VALUE=DATE:20270209
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:ai-rule-session@2027-02-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270208T150000Z
@@ -2245,19 +2137,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  on cards in chat\; recommendation first.\n\nSource: https://github.com/pag
  agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-02-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270222
-DTEND;VALUE=DATE:20270223
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-confirm@2027-03-01@internet-security-snapshot
@@ -2410,28 +2289,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-03-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270308
-DTEND;VALUE=DATE:20270309
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-03-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270310T071700Z
@@ -2478,19 +2335,6 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nVideo call\; the o
  6)\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/m
  ain/docs/schedule/schedule.yaml
 CATEGORIES:External reviewer
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-03-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270322
-DTEND;VALUE=DATE:20270323
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-03-28@internet-security-snapshot
@@ -2701,28 +2545,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-04-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270408
-DTEND;VALUE=DATE:20270409
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-04-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270410T071700Z
@@ -2747,19 +2569,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAnswer questions\; confirm the re
  ub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule
  .yaml
 CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-04-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270422
-DTEND;VALUE=DATE:20270423
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2027-04-25@internet-security-snapshot
@@ -2919,28 +2728,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-05-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270508
-DTEND;VALUE=DATE:20270509
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-05-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270510T071700Z
@@ -2966,19 +2753,6 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
  or can send a reminder\; do not contact the reviewer directly.\n\nSource: 
  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
  ule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-05-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270522
-DTEND;VALUE=DATE:20270523
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3025,28 +2799,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-06-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270608
-DTEND;VALUE=DATE:20270609
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-06-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270610T071700Z
@@ -3057,19 +2809,6 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-06-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270622
-DTEND;VALUE=DATE:20270623
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-06-28@internet-security-snapshot
@@ -3265,28 +3004,6 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-07-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270708
-DTEND;VALUE=DATE:20270709
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:github-tool-review@2027-07-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270709
@@ -3329,19 +3046,6 @@ DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3
   published paper or slides as the source\; the author confirms in the next
   hand-check window.\n\nSource: https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-07-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270722
-DTEND;VALUE=DATE:20270723
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3473,28 +3177,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-08-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270808
-DTEND;VALUE=DATE:20270809
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:publication-prep@2027-08-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270810
@@ -3568,19 +3250,6 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read-2@2027-08-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270822
-DTEND;VALUE=DATE:20270823
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-09-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270904
@@ -3624,28 +3293,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-09-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270908
-DTEND;VALUE=DATE:20270909
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-09-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20270910T071700Z
@@ -3656,19 +3303,6 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-09-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20270922
-DTEND;VALUE=DATE:20270923
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-09-28@internet-security-snapshot
@@ -3834,28 +3468,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-10-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20271008
-DTEND;VALUE=DATE:20271009
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-10-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271010T071700Z
@@ -3866,19 +3478,6 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-10-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20271022
-DTEND;VALUE=DATE:20271023
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2027-10-25@internet-security-snapshot
@@ -4009,28 +3608,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-11-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20271108
-DTEND;VALUE=DATE:20271109
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:rebuild-check@2027-11-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20271110T071700Z
@@ -4056,19 +3633,6 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
  or can send a reminder\; do not contact the reviewer directly.\n\nSource: 
  https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
  ule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-11-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20271122
-DTEND;VALUE=DATE:20271123
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4145,28 +3709,6 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 30 Oct 2026: run by h
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:newsletter-read@2027-12-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20271208
-DTEND;VALUE=DATE:20271209
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only)
-DESCRIPTION:Responsible: Claude\n\nGmail label "Snapshot newsletters" (auth
- or's Gmail\, forwarded from the project address)\, and as a backstop any m
- ail sent to the project address since the last read\, skipping the author'
- s own mail\, GitHub notices and correspondence (author\, 7 Nov 2026). Rese
- arch only (author\, 1 Nov 2026): nothing from the newsletters is shown in 
- a report or on the landing page\, and cases first spotted there are not en
- tered in the AI attack log. Note trends worth discussing with the author\,
-  for an optional trends summary in our own words (https://github.com/pagag
- ne/snapshot-manual/tree/main/exploratory/trends<quarter>.md\, private unti
- l used). Also on the 22nd (newsletter-read-2).\n\nSource: https://github.c
- om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
- l
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:github-tool-review@2027-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271210
@@ -4193,19 +3735,6 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
-END:VEVENT
-BEGIN:VEVENT
-UID:newsletter-read-2@2027-12-22@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20271222
-DTEND;VALUE=DATE:20271223
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Read the "Snapshot newsletters" label (research 
- only\; second half of the month)
-DESCRIPTION:Responsible: Claude\n\nAs newsletter-read.\n\nSource: https://g
- ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
- ule.yaml
-CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review-quarterly@2027-12-28@internet-security-snapshot

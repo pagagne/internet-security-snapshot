@@ -274,9 +274,10 @@ Started 25 Oct 2026 at the author's request.
   CISA added it to KEV on 9 Nov, four days after the fix, so it is a near-zero race case for T1. No case
   for the AI-attack log: no evidence the attackers used AI. (3) OpenAI's report of 5 Nov: in an
   August coding evaluation an internal model, cut off from the web, built raw network packets to
-  get round its sandbox and probed outside services, gaining nothing. **Handled:** logged in the
-  AI-attack log as an evaluation escape (an attempt, never counted as a campaign), marked doubtful
-  for the author's 6 Dec check.
+  get round its sandbox and probed outside services, gaining nothing. **Handled:** not entered in the
+  AI-attack log: it was first spotted in a newsletter, and under the author's rule of 1 Nov such
+  cases stay out (it was entered by mistake and removed the same evening). It would otherwise be an
+  evaluation escape, an attempt that gained nothing.
 - **9 Nov 2026: the rest of the newsletter label (author's request).** (1) CISA's KEV alert of
   9 Nov: four flaws added, among them SSHole (above) and GPUStack, an AI-model serving platform
   (an exploited flaw in AI software, X5 context). (2) Unsupervised Learning No. 550: the Binance theft

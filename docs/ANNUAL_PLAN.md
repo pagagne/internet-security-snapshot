@@ -21,9 +21,7 @@ opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or
 | Claude | Quarterly web sweep for AI-run attack reports (X3) | day 2, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
 | Claude | Copy the Drive backup's inventory and small private data into the Claude project | day 4, every month, 2026-11 to 2027-12 |
 | Claude | Choose this quarter's watch cases by the rule | day 6, Jan, Apr, Jul, Oct, 2027-01 to 2028-01 |
-| Claude | Read the "Snapshot newsletters" label (research only) | day 8, every month, 2026-11 to 2027-12 |
 | Claude | Scan conference talk lists for AI-attack cases (twice a year) | day 15, Jan, Jul, 2027-01 to 2028-01 |
-| Claude | Read the "Snapshot newsletters" label (research only; second half of the month) | day 22, every month, 2026-11 to 2027-12 |
 | Claude | Send the second coder this quarter's blinded sample | day 29, Jan, Apr, Jul, Oct, 2027-04 to 2028-01 |
 | Claude | Summarize provisional-to-final changes; prepare the release | day 1, Feb, May, Aug, Nov, 2027-02 to 2028-02 |
 | Claude | Score the second coder's answer file; publish agreement | day 13, Feb, May, Aug, Nov, 2027-05 to 2028-02 |
@@ -63,7 +61,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 06 Nov 2026, 10:30 ET | Paul | Review Claude's draft introduction for the landing page |
 | Fri 06 Nov 2026, 11:00 ET | Paul | Check the AI-attack entries awaiting review (trial sweep, Wiz, TrendAI) and rate their evidence |
 | Fri 06 Nov 2026, 13:00 ET | Paul | Email CCRI's cybersecurity program director (alumni route, second coder) |
-| Sun 08 Nov 2026 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Mon 09 Nov 2026 | Claude | Draft the permission follow-ups and update the log |
 | Mon 09 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 09 Nov 2026, 13:30 ET | Paul | Email SANS asking them to suggest a reviewer (former-employer route) |
@@ -73,6 +70,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 11 Nov 2026 | Claude | Restore test of the Drive backup |
 | Wed 11 Nov 2026 | Claude | Fill in the 12 Nov decision sheet with the probe and trial results |
 | Thu 12 Nov 2026, 10:00 ET | Paul | Research review - exceptions only (8 of 11 approved conditionally on 27 Oct; 1, 2, 9 decided) |
+| Sat 14 Nov 2026, 08:00 ET | Claude | Weekly newsletter review (Saturdays 08:00 ET, research only) |
 | Mon 16 Nov 2026 | Claude | Probe agent-skill registries (ClawHub, MCP registries) - terms and public metadata only |
 | Mon 16 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 16 Nov 2026, 10:00 ET | Paul | Validation fix dates, then spot-check references |
@@ -87,7 +85,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 19 Nov 2026 | Claude | Probe the 'autonomy handed to AI' sources (X26) |
 | Fri 20 Nov 2026 | Paul | Approve the refined GitHub tool-sweep searches (X25) before the January pilot sweep |
 | Fri 20 Nov 2026, 09:00 ET | Paul | Follow-ups to GreyNoise and CrowdSec (exploratory sources) |
-| Sun 22 Nov 2026 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Mon 23 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 23 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 1 of 2 |
 | Tue 24 Nov 2026 | Claude | Wire the race list and the quarterly evaluation into the pull, before the 1 Dec dry run |
@@ -109,7 +106,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sat 05 Dec 2026 | Paul | Register on Handshake and connect the approved schools - started early, 28 Oct |
 | Sun 06 Dec 2026, 10:00 ET | Paul | Review the go-live draft with Claude |
 | Tue 08 Dec 2026 | Paul | Choose and confirm the pilot witness (applications closed 7 Dec) |
-| Tue 08 Dec 2026 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Thu 10 Dec 2026 | Claude | Build the "Publish results" workflow (the 2 Jan switch and every later results update) |
 | Thu 10 Dec 2026, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 10 Dec 2026, 10:00 ET | Paul | Pilot witness getting started (one video call; Claude prepares the notes) |
@@ -125,7 +121,6 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 18 Dec 2026, 10:00 ET | Paul | Review the workflow page and the lock list |
 | Mon 21 Dec 2026, 10:00 ET | Paul | Core-freeze decision session |
 | Tue 22 Dec 2026 | Claude | Prepare the core freeze (core-v1.2) |
-| Tue 22 Dec 2026 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Mon 28 Dec 2026 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Tue 29 Dec 2026, 10:00 ET | Paul | Freeze the core (core-v1.2) and update OSF |
 | Fri 01 Jan 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
@@ -142,12 +137,10 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Wed 06 Jan 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Wed 06 Jan 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
 | Fri 08 Jan 2027 | Paul | Confirm the new entries in the AI attack-tool register (X25) |
-| Fri 08 Jan 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Sun 10 Jan 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Tue 12 Jan 2027, 10:00 ET | Paul | Line up the external reviewer and second coder |
 | Fri 15 Jan 2027 | Claude | Scan conference talk lists for AI-attack cases (twice a year) |
 | Wed 20 Jan 2027 | Claude | Build the figure worksheets for the reviewer's spot check |
-| Fri 22 Jan 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Mon 25 Jan 2027 | Claude | Outside AI-found CVE lists against our AI-credit counts, on pilot data |
 | Mon 25 Jan 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Mon 01 Feb 2027 | Claude | Summarize provisional-to-final changes; prepare the release |
@@ -160,13 +153,11 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 05 Feb 2027 | Paul | Pilot witness note due; read it before the procedures are locked (SOP adoption 8 Feb) |
 | Sat 06 Feb 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
 | Mon 08 Feb 2027 | Paul | Adopt the SOP for running workflows by hand (in force from 9 Feb) |
-| Mon 08 Feb 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Mon 08 Feb 2027, 10:00 ET | Paul | Evaluate the AI-credit rule on pilot data; PHP2Shell case |
 | Wed 10 Feb 2027 | Claude | Evaluate the registered plan on the pilot's results (draft) |
 | Wed 10 Feb 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Feb 2027 | Paul | Reviewer applications close; schedule calls |
 | Wed 17 Feb 2027, 10:00 ET | Paul | Review the registered-plan evaluation (changes for the 15 Mar review) |
-| Mon 22 Feb 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Mon 01 Mar 2027 | Paul | Confirm the external reviewer |
 | Tue 02 Mar 2027 to 14 Mar | Reviewer | Getting started - read the overview, plan and statistical review |
 | Tue 02 Mar 2027 to 14 Mar | Reviewer | Optional - practice round as second coder (pilot quarter) |
@@ -175,11 +166,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Thu 04 Mar 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Thu 04 Mar 2027, 10:00 ET | Paul | Onboarding call with the external reviewer |
 | Sat 06 Mar 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Mon 08 Mar 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Wed 10 Mar 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Mon 15 Mar 2027, 11:00 ET | Paul | Annual review and change window |
 | Mon 15 Mar 2027, 11:00 ET | Reviewer | Optional - join the 2027 annual review |
-| Mon 22 Mar 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Sun 28 Mar 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Apr 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Apr 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -192,10 +181,8 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 04 Apr 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Tue 06 Apr 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Tue 06 Apr 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Thu 08 Apr 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Sat 10 Apr 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 15 Apr 2027, 10:00 ET | Paul | Optional mid-review check-in with the reviewer |
-| Thu 22 Apr 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Sun 25 Apr 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Thu 29 Apr 2027 | Paul | Write the response to the external review |
 | Thu 29 Apr 2027 to 12 May | Reviewer | Second coder - 20 blinded items |
@@ -206,15 +193,11 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Sun 02 May 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Tue 04 May 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Thu 06 May 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Sat 08 May 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Mon 10 May 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 13 May 2027 | Claude | Score the second coder's answer file; publish agreement |
-| Sat 22 May 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Fri 04 Jun 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Sun 06 Jun 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Tue 08 Jun 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Thu 10 Jun 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
-| Tue 22 Jun 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Mon 28 Jun 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Thu 01 Jul 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Thu 01 Jul 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -226,11 +209,9 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 06 Jul 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Tue 06 Jul 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
 | Wed 07 Jul 2027 | Claude | Run the AI tool sweeps (X25, GitHub and Hugging Face) and sort them for the author |
-| Thu 08 Jul 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Fri 09 Jul 2027 | Paul | Confirm the new entries in the AI attack-tool register (X25) |
 | Sat 10 Jul 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 15 Jul 2027 | Claude | Scan conference talk lists for AI-attack cases (twice a year) |
-| Thu 22 Jul 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Sun 25 Jul 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Thu 29 Jul 2027 to 11 Aug | Reviewer | Second coder - 20 blinded items |
 | Thu 29 Jul 2027 | Claude | Send the second coder this quarter's blinded sample |
@@ -239,17 +220,13 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 02 Aug 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Wed 04 Aug 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Fri 06 Aug 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Sun 08 Aug 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Tue 10 Aug 2027 | Claude | Prepare the publication decision (where to publish the 2027 results) |
 | Tue 10 Aug 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Thu 12 Aug 2027, 10:00 ET | Paul | Decide where to publish the 2027 results |
 | Fri 13 Aug 2027 | Claude | Score the second coder's answer file; publish agreement |
-| Sun 22 Aug 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Sat 04 Sep 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Mon 06 Sep 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Wed 08 Sep 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Fri 10 Sep 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
-| Wed 22 Sep 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Tue 28 Sep 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Fri 01 Oct 2027 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Fri 01 Oct 2027, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -260,9 +237,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 04 Oct 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Wed 06 Oct 2027 | Claude | Choose this quarter's watch cases by the rule |
 | Wed 06 Oct 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Fri 08 Oct 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Sun 10 Oct 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
-| Fri 22 Oct 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Mon 25 Oct 2027, 10:00 ET | Paul | Hand-check answers due by the 28th |
 | Fri 29 Oct 2027 to 11 Nov | Reviewer | Second coder - 20 blinded items |
 | Fri 29 Oct 2027 | Claude | Send the second coder this quarter's blinded sample |
@@ -271,17 +246,13 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Tue 02 Nov 2027, 10:00 ET | Paul | Final-run check and approve the final results |
 | Thu 04 Nov 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Sat 06 Nov 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
-| Mon 08 Nov 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Wed 10 Nov 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
 | Sat 13 Nov 2027 | Claude | Score the second coder's answer file; publish agreement |
-| Mon 22 Nov 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Sat 04 Dec 2027 | Claude | Copy the Drive backup's inventory and small private data into the Claude project |
 | Mon 06 Dec 2027, 10:00 ET | Paul | Review the go-live draft with Claude |
 | Wed 08 Dec 2027 | Claude | Run the AI tool sweeps (X25, GitHub and Hugging Face) and sort them for the author |
-| Wed 08 Dec 2027 | Claude | Read the "Snapshot newsletters" label (research only) |
 | Fri 10 Dec 2027 | Paul | Confirm the new entries in the AI attack-tool register (X25) |
 | Fri 10 Dec 2027, 07:17 UTC | GitHub | Rebuild check of the latest frozen bundle |
-| Wed 22 Dec 2027 | Claude | Read the "Snapshot newsletters" label (research only; second half of the month) |
 | Tue 28 Dec 2027 | Claude | Sync review before the provisional report (three passes; findings to the author) |
 | Sat 01 Jan 2028 | Claude | Draft the provisional evaluation; load the hand-check lists |
 | Sat 01 Jan 2028, 06:00 UTC | GitHub | Quarterly pull, provisional run |
@@ -401,6 +372,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 09 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Wed 11 Nov 2026 | Restore test of the Drive backup | The backup was set up and tested on 27 Oct (own Google client ID; connection test and a 7 MB repository copy arrived in the Drive folder). Now restore: clone the newest repository bundle and confirm it matches main; after the 1 Dec dry run, check its bundle and private part arrived. Add the Backup workflow to docs/WORKFLOWS.md and the lock list. |
 | Wed 11 Nov 2026 | Fill in the 12 Nov decision sheet with the probe and trial results | docs/decisions/2026-11-12-research-review.md: the Evidence line under each decision (27 Oct global probes, 2 Nov tests, 5 Nov trial sweep); change a recommendation only if the evidence says so, and say why. Since 27 Oct: apply each conditionally approved item (#3-8, #10, #11) whose evidence meets its condition, and list the exceptions for 12 Nov. On 12 Nov before 10:00, ask the same decisions in chat as option cards with the recommendation first. |
+| Sat 14 Nov 2026, 08:00 ET | Weekly newsletter review (Saturdays 08:00 ET, research only) | Author's decision 9 Nov 2026: every Saturday morning, a short review of the Gmail label "Snapshot newsletters" (plus mail to the project address outside the label) for the past week, reporting only what helps the study and leaving out the rest. Run as a weekly check-in in the author's chat, each one setting the next; replaces the reads on the 8th and 22nd. Research only (author, 1 Nov 2026): nothing from the newsletters is shown in a report or on the landing page, and a case first spotted there is not entered in the AI attack log. |
 | Mon 16 Nov 2026 | Probe agent-skill registries (ClawHub, MCP registries) - terms and public metadata only | Author's decision 5 Nov 2026: read the terms of use of the main agent-skill registries and what public metadata they offer (counts, publish dates, publishers as organisations), with a research probe that never installs or runs a skill. Decide on 18 Nov whether registries join the sweeps. |
 | Mon 16 Nov 2026 | Sync review (three passes; findings to the author) | docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed / Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover. |
 | Tue 17 Nov 2026 | Run the validation and report pass/fail | snapshot.validate against prereg/ground_truth_reference.csv (pass = 4 of 5 cases). |
