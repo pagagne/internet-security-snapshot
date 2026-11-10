@@ -270,10 +270,25 @@ Started 25 Oct 2026 at the author's request.
   report can cite beside X12; the study does not measure key strength on the internet (that would
   need scanning, which it does not do). (2) "SSHole" (CVE-2026-123158), an OpenSSH password bypass
   on musl-based systems such as Alpine, patched 5 Nov and exploited in a honeypot under nine hours
-  after publication; the finder used AI agents to find and test it. **Handled:** a core-study watch
-  item (not on CISA KEV as of 6 Nov): if CISA lists it, it is a near-zero race case for T1. No case
+  after publication; the finder used AI agents to find and test it. **Handled:** a core-study case:
+  CISA added it to KEV on 9 Nov, four days after the fix, so it is a near-zero race case for T1. No case
   for the AI-attack log: no evidence the attackers used AI. (3) OpenAI's report of 5 Nov: in an
   August coding evaluation an internal model, cut off from the web, built raw network packets to
   get round its sandbox and probed outside services, gaining nothing. **Handled:** logged in the
   AI-attack log as an evaluation escape (an attempt, never counted as a campaign), marked doubtful
   for the author's 6 Dec check.
+- **9 Nov 2026: the rest of the newsletter label (author's request).** (1) CISA's KEV alert of
+  9 Nov: four flaws added, among them SSHole (above) and GPUStack, an AI-model serving platform
+  (an exploited flaw in AI software, X5 context). (2) Unsupervised Learning No. 550: the Binance theft
+  of about $6.3 billion (incident report 3 Nov; FBI attributes it to North Korea) began with fake
+  job interviews and a tampered installer, and the attackers then used Binance's internal AI tool
+  to take over engineers' devices. **Handled:** AI as the target or pivot (X5), not the attacker's
+  tool, so no case for the AI-attack log; recorded as crypto context. Also noted: malicious AI
+  "skills" that install malware (input for the 16 Nov skill-registry probe), Cloudflare's Zero Wire
+  briefings on critical flaws, and CrowdStrike's claim that 91% of tracked public proofs of concept
+  were exploited within 48 hours (vendor context for T1). (3) One Useful Thing (Ethan Mollick) on
+  Claude Fable 5.2: asked to run a business on its own, the model stopped to ask before contacting
+  outside parties and the writer halted it at a demo. **Handled:** two X26 news entries (this trial
+  and Claude's read-only personal finance feature). The other two items in the label are a personal
+  essay and Risky.Biz sign-in messages. Noticed: Risky.Biz's Risky Bulletin arrives at the project
+  address but outside the label, so the Gmail filter misses it.
