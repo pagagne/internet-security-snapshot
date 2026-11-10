@@ -293,3 +293,18 @@ Started 25 Oct 2026 at the author's request.
   and Claude's read-only personal finance feature). The other two items in the label are a personal
   essay and Risky.Biz sign-in messages. Noticed: Risky.Biz's Risky Bulletin arrives at the project
   address but outside the label, so the Gmail filter misses it.
+- **9 Nov 2026: UK DSIT, "Thematic review and gap analysis on AI security" (author's find).**
+  Published 10 July 2026 by the Department for Science, Innovation and Technology; research by
+  Lancaster University; not UK government policy. A map of 9,109 peer-reviewed papers (January
+  2021 to January 2026) on attacks on AI systems, sorted into 12 themes along the AI lifecycle.
+  Training-time attacks and data privacy dominate; infrastructure, end users, asset tracking,
+  agent security and model disposal are thin (agent-security papers rose 216% from 2024 to 2025).
+  AI used by attackers was out of its scope. Its one policy suggestion is a widely used AI
+  vulnerability database like CVE, noting that the existing ones (AVID, an LM security database)
+  have few entries, with the OECD AI Incidents Monitor as a model. **Handled:** context only; no
+  case and no new figures for the study. It supports X5's design: with no working AI-specific
+  database, flaws in AI software are best counted through CVE and KEV, as X5 does. AVID is already
+  on the X3 sweep list; the OECD AI Incidents Monitor is not, and is noted as a possible extra
+  sweep page for the March review. Some of the report's percentages do not match its own paper
+  counts (for example themes said to be "about 8%" have about 200 of 9,109 papers), so its
+  figures are not quoted without a check.
