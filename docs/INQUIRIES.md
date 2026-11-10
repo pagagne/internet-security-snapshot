@@ -308,3 +308,20 @@ Started 25 Oct 2026 at the author's request.
   sweep page for the March review. Some of the report's percentages do not match its own paper
   counts (for example themes said to be "about 8%" have about 200 of 9,109 papers), so its
   figures are not quoted without a check.
+- **9 Nov 2026: the OECD AI Incidents and Hazards Monitor (AIM), looked at on the author's request.**
+  How it works (OECD methodology page): news clusters from Event Registry (about 150,000 articles a
+  day) tagged with AI terms are sorted by OpenAI models into incident, hazard or unrelated, grouped
+  by similarity, and summarised by a model; no human review is described, and the OECD says it does
+  not verify the content. No API or bulk download (the web page exports up to 100 records at a
+  time), and no open licence is stated. What it holds for cyber cases: composite, news-driven
+  records. One "incident" is a trend story about AI finding more flaws (11 articles, one
+  unsupported breach claim in the model-written summary); another merges the OpenAI and Hugging
+  Face escape with three other claimed model escapes and about 250 articles, many off-topic. An
+  independent study (Mengesha and others, MIT FutureTech and the Responsible AI Collaborative, July
+  2026) found many duplicates and composite narratives: 77 AIM matches for one question came down
+  to 3 real cases. **Handled:** not a source and not a count for the study; every case would still
+  need its primary report, which X3 already requires. The AI Incident Database, already in the feed
+  list, covers the same ground with curated entries (AIM links to it). The one thing AIM might add
+  is non-English press coverage (Arabic and Vietnamese reports appeared days before English ones in
+  the escape record), so at most it could be a lead-only page in the quarterly sweep. Decision at
+  the March review.
