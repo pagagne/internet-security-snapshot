@@ -952,7 +952,8 @@ items:
   repeat: {months: [1], day: 31, from: 2028-01, until: 2030-01}
   details: >
     Censys research access or a one-off licence, by 31 January. Tell Claude either way: it
-    decides whether the annual check includes the exposure reference.
+    decides whether the annual check includes the exposure reference. (Censys declined the
+    first research-access request on 10 Nov 2026; see docs/PERMISSIONS.md.)
 
 - id: annual-check-later
   owner: claude
