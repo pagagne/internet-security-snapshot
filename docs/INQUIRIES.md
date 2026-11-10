@@ -260,3 +260,20 @@ Started 25 Oct 2026 at the author's request.
   before disclosure" share is a reference point for T1 (the study can compute its own from KEV and
   publication dates), and the edge-device share supports the core cohort's focus. The 2027 edition
   (expected late February 2027) is a watch item for the March annual review.
+- **9 Nov 2026: SecurityWeek Briefing of 9 Nov (author's find): DeepMind and RSA-1024, SSHole, an
+  OpenAI sandbox bypass.** Three items read. (1) Google DeepMind (announced 6 Nov) used AI agents,
+  under human supervision with UC San Diego and Inria, to find two weaknesses in legacy 1024-bit
+  RSA: a theoretical improvement for forging padded signatures, and cheaper batch factoring of many
+  keys. No key was newly broken (an already-solved benchmark key was reproduced); 2048-bit and
+  modern encryption are not affected. **Handled:** context only, not an attack (no case for the
+  AI-attack log). It is a clear example of AI speeding up attack research, which the final 2027
+  report can cite beside X12; the study does not measure key strength on the internet (that would
+  need scanning, which it does not do). (2) "SSHole" (CVE-2026-123158), an OpenSSH password bypass
+  on musl-based systems such as Alpine, patched 5 Nov and exploited in a honeypot under nine hours
+  after publication; the finder used AI agents to find and test it. **Handled:** a core-study watch
+  item (not on CISA KEV as of 6 Nov): if CISA lists it, it is a near-zero race case for T1. No case
+  for the AI-attack log: no evidence the attackers used AI. (3) OpenAI's report of 5 Nov: in an
+  August coding evaluation an internal model, cut off from the web, built raw network packets to
+  get round its sandbox and probed outside services, gaining nothing. **Handled:** logged in the
+  AI-attack log as an evaluation escape (an attempt, never counted as a campaign), marked doubtful
+  for the author's 6 Dec check.
