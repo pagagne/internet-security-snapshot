@@ -99,4 +99,4 @@ at most one download an hour (the capture takes its two files back to back).
 **Decided by the author, 11 Nov 2026:** ransomware.live's three calls a pull are now 30 minutes
 apart; ransomware.live is no longer in the daily status check (shown as checked at each pull);
 the ISC capture waits an hour between its two files; and a short courtesy note telling ISC how
-the study uses its data is drafted for the author to send.
+the study uses its data was sent by the author to ISC's named contact on 11 Nov 2026.
