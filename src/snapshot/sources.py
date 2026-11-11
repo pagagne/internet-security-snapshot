@@ -29,6 +29,8 @@ def load(path: Path = CONFIG) -> dict[str, dict]:
             raise ValueError(f"{key}: publish needs permission: granted")
         if s["collect"] and s["permission"] == "declined":
             raise ValueError(f"{key}: collect is on but permission was declined")
+        if not isinstance(s.get("raw_public", True), bool):
+            raise ValueError(f"{key}: raw_public must be true or false")
         if s["collect"] and not s.get("pull"):
             raise ValueError(f"{key}: collect is on but no collector exists yet (pull: null)")
     return data

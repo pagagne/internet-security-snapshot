@@ -79,7 +79,43 @@ def registrants() -> int | None:
         return None
 
 
-def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataFrame]:
+def i6_agreement(kev: pd.DataFrame, vc: pd.DataFrame, qs: pd.Timestamp, qe: pd.Timestamp) -> dict:
+    """The CISA KEV / VulnCheck KEV part of I6 (registered methods check, never labelled): agreement
+    over CVEs with an exploitation signal in the trailing two quarters (the quarter and the one
+    before), Cohen's kappa, and the median lag between the two listings. Shadowserver joins (and
+    Fleiss' kappa replaces Cohen's) when its data arrives."""
+    lo = (qs - pd.offsets.QuarterBegin(startingMonth=1)).normalize()
+    hi = qe + pd.Timedelta(days=1)
+    c = kev.groupby("cve_id")["added"].min()
+    v = pd.to_datetime(vc.set_index("cve_id")["vc_date_added"], utc=True).dt.tz_localize(None)
+    cw, vw = c[(c >= lo) & (c < hi)], v[(v >= lo) & (v < hi)]
+    pop = sorted(set(cw.index) | set(vw.index))
+    if not pop:
+        return {"n": 0}
+    on_c = pd.Series([x in c.index for x in pop])
+    on_v = pd.Series([x in v.index for x in pop])
+    n = len(pop)
+    po = float((on_c == on_v).mean())
+    pc, pv = float(on_c.mean()), float(on_v.mean())
+    pe = pc * pv + (1 - pc) * (1 - pv)
+    kappa = None if pe == 1 else round((po - pe) / (1 - pe), 3)
+    both = [x for x in pop if x in c.index and x in v.index]
+    lag = (c[both] - v[both]).dt.days if both else pd.Series(dtype=float)
+    return {"n": n, "on_cisa": int(on_c.sum()), "on_vulncheck": int(on_v.sum()), "on_both": len(both),
+            "cohen_kappa": kappa,
+            "median_days_vulncheck_before_cisa": float(lag.median()) if len(lag) else None,
+            "share_vulncheck_first": round(float((lag > 0).mean()), 3) if len(lag) else None,
+            "note": "VulnCheck KEV and CISA KEV; Shadowserver pending. Credit: VulnCheck KEV."}
+
+
+def _vulncheck(bundle: Path, private: Path | None) -> pd.DataFrame | None:
+    for base in (private, bundle):
+        if base is not None and (base / "vulncheck/vulncheck_kev.parquet").exists():
+            return pd.read_parquet(base / "vulncheck/vulncheck_kev.parquet")
+    return None
+
+
+def evaluate(bundle: Path, pause: float = 0.3, nvd=None, private: Path | None = None) -> tuple[dict, pd.DataFrame]:
     man = json.loads((bundle / "manifest.json").read_text())
     q = Quarter.parse(man["quarter"])
     qs, qe = pd.Timestamp(q.start), pd.Timestamp(q.end)
@@ -132,7 +168,12 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataF
         prefills[r.cve_id] = (d, src, hand)
         sources[r.cve_id] = bucket(src)
         time.sleep(pause)
-    ev = build_events(sub, kq.rename(columns={"date_added": "date_added"}), prefills=prefills)
+    vc = _vulncheck(bundle, private)   # VulnCheck KEV (permission 11 Nov 2026), from the private part
+    other = None
+    if vc is not None and len(vc):
+        from ..collect.vulncheck import exploit_rows
+        other = exploit_rows(vc)
+    ev = build_events(sub, kq.rename(columns={"date_added": "date_added"}), prefills=prefills, other_exploit=other)
     for c in ("t0", "t_patch", "t_exploit", "t_kev", "fix_lo", "fix_hi", "exploit_hi"):
         ev[c] = pd.to_datetime(ev[c], errors="coerce")
     ev["prefill_source"] = ev["cve_id"].map(sources)
@@ -157,8 +198,14 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None) -> tuple[dict, pd.DataF
         R["I7b_sec_8k_item105"] = {"filings": n8k, "registrants": reg,
                                    "per_1000": round(1000 * n8k / reg, 3) if reg else None}
     R["not_computable"] = {"I1": "exposure half-life needs Shadowserver scan data (awaiting permission)",
-                           "I4": "share of attacks on old flaws needs Shadowserver honeypot data (awaiting permission)",
-                           "I6": "agreement between exploited lists needs VulnCheck and Shadowserver (awaiting permission)"}
+                           "I4": "share of attacks on old flaws needs Shadowserver honeypot data (awaiting permission)"}
+    # I6 as registered needs all three lists; without Shadowserver it is "not available" (author,
+    # 29 Oct 2026: no substitutes inside the registered indicators). The VulnCheck-CISA part is
+    # computed for the record, privately, and is never reported as I6.
+    R["not_computable"]["I6"] = "agreement among CISA KEV, VulnCheck KEV and Shadowserver needs Shadowserver (awaiting permission)"
+    if vc is not None and len(vc):
+        R["I6_part_vulncheck_cisa"] = i6_agreement(kev, vc, qs, qe)
+        R["exploit_sources"] = "CISA KEV and VulnCheck KEV"
     return R, ev
 
 
@@ -240,6 +287,15 @@ def report(R: dict) -> str:
         s = R["I7b_sec_8k_item105"]
         L.append(f"- SEC 8-K Item 1.05 cyber-incident filings: {_fmt(s['filings'])}"
                  + (f" of {_fmt(s['registrants'])} registrants, {s['per_1000']} per 1,000" if s.get("registrants") else ""))
+    if "I6_part_vulncheck_cisa" in R:
+        i6 = R["I6_part_vulncheck_cisa"]
+        L += ["", "## VulnCheck KEV and CISA KEV (part of I6, for the record; I6 itself needs Shadowserver)", "",
+              f"- Flaws with an exploitation signal in the two quarters: {_fmt(i6.get('n'))}",
+              f"- On CISA KEV: {_fmt(i6.get('on_cisa'))}; on VulnCheck KEV: {_fmt(i6.get('on_vulncheck'))}; on both: {_fmt(i6.get('on_both'))}",
+              f"- Cohen's kappa: {_fmt(i6.get('cohen_kappa'))}",
+              f"- Median days VulnCheck KEV listed a shared flaw before CISA: {_fmt(i6.get('median_days_vulncheck_before_cisa'))}",
+              f"- Share listed first by VulnCheck KEV: {_pct(i6['share_vulncheck_first']) if i6.get('share_vulncheck_first') is not None else '-'}",
+              "", "Source: VulnCheck KEV (community data), with CISA KEV; Shadowserver pending."]
     L += ["", "## Not computable yet", ""] + [f"- {k}: {v}" for k, v in R["not_computable"].items()]
     L += ["", "No Improving or Worsening labels: this is a practice quarter outside the study.", "",
           "Files: `practice_eval.json` (all figures) and `events.csv` (one row per flaw first added to "

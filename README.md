@@ -72,8 +72,8 @@ in the middle is the share of the ring that is collected.
 
 **Reading the core ring.** The core is the data behind the eight pre-registered indicators that
 the study is scored on: flaw records, the exploited-flaw lists, exploit likelihood, fix dates, ransomware postings,
-company breach filings and AI credits. Gray slices are mostly sources waiting for permission
-(VulnCheck and Shadowserver).
+company breach filings and AI credits. Gray slices are mostly sources still waiting for permission
+(Shadowserver) or not yet collected (VulnCheck, from the 1 December 2026 dry run).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/landing/coverage-exploratory-dark.svg">
@@ -150,7 +150,7 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 | Source | What it would give the study | Request | Status |
 |---|---|---|---|
 | Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | Awaiting reply; follow-up 20 Nov |
-| VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Awaiting written permission; used privately only until then |
+| VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Granted 11 Nov 2026 (attribution only); derived figures credited "VulnCheck KEV", entries not republished |
 | Censys | Internet exposure counts (T1b, T2) and the annual check | Applied 28 Oct 2026 | Awaiting reply |
 
 Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived

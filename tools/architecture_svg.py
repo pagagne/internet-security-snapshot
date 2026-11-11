@@ -17,9 +17,9 @@ BOXES = [
     ("epss", "src", 130, 44, "box", [("epss-1", "EPSS daily archive,", 0), ("epss-2", "NVD, vendor advisories", 0)]),
     ("sec", "src", 184, 44, "box", [("sec-1", "Harm: SEC 8-K", 0), ("sec-2", "breach filings", 0)]),
     ("radar", "src", 238, 30, "box", [("radar-1", "Cloudflare Radar", 0)]),
-    ("shadow", "src", 300, 58, "pending", [("shadow-1", "Shadowserver: exposure", 0), ("shadow-2", "series, honeypot stats", 0), ("shadow-3", "hoped for by 1 Jan 2027", 0)]),
-    ("vulncheck", "src", 368, 58, "pending", [("vc-1", "VulnCheck KEV", 0), ("vc-2", "(community tier)", 0), ("vc-3", "hoped for by 1 Jan 2027", 0)]),
-    ("ransom", "src", 436, 58, "pending", [("rl-1", "Harm: ransomware.live", 0), ("rl-2", "leak-site post counts", 0), ("rl-3", "hoped for by 1 Jan 2027", 0)]),
+    ("shadow", "src", 300, 58, "pending", [("shadow-1", "Shadowserver: exposure", 0), ("shadow-2", "series, honeypot stats", 0), ("shadow-3", "hoped for by 21 Dec 2026", 0)]),
+    ("vulncheck", "src", 368, 58, "box", [("vc-1", "VulnCheck KEV", 0), ("vc-2", "(community tier)", 0), ("vc-3", "granted 11 Nov 2026", 0)]),
+    ("ransom", "src", 436, 58, "box", [("rl-1", "Harm: ransomware.live", 0), ("rl-2", "leak-site post counts", 0), ("rl-3", "granted 27 Oct 2026", 0)]),
     ("pull", "pull", 76, 418, "box", [("pull-1", "Quarterly pull", 1), ("pull-2", "GitHub Actions,", 0), ("pull-3", "1 Jan, Apr,", 0), ("pull-4", "Jul, Oct", 0), ("pull-5", "", 0), ("pull-6", "final re-run", 0), ("pull-7", "one month later", 0)]),
     ("store", "store", 76, 296, "box", [("store-1", "Frozen bundles", 1), ("store-2", "repo releases", 0), ("store-3", "+ Zenodo;", 0), ("store-4", "git pinned", 0), ("store-5", "by commit", 0)]),
     ("private", "store", 382, 112, "box", [("pv-1", "Private backup", 1), ("pv-2", "author's Drive:", 0), ("pv-3", "full data, incl.", 0), ("pv-4", "not yet", 0), ("pv-5", "publishable", 0)]),
@@ -32,7 +32,7 @@ BOXES = [
     ("zenodo", "pub", 400, 94, "box", [("zb-1", "Zenodo bundle", 1), ("zb-2", "data + code, DOI", 0)]),
 ]
 NOTES = [("await", 16, 291, "Awaiting permission"),
-         ("key", 16, 522, "Dashed: sources awaiting permission (asked 20 Oct 2026, follow-up 20 Nov). Highlighted: the author's hand checks.")]
+         ("key", 16, 522, "Dashed: sources awaiting permission (asked 20 Oct 2026, followed up 10 Nov). Highlighted: the author's hand checks.")]
 
 
 def geom(col, y, h):

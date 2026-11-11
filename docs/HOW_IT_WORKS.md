@@ -1,4 +1,4 @@
-# The Internet Security Snapshot: How It Works and What It Will Show (updated 9 Nov 2026)
+# The Internet Security Snapshot: How It Works and What It Will Show (updated 11 Nov 2026)
 
 23 October 2026, updated 7 November 2026 · Paul Gagne
 
@@ -23,7 +23,7 @@ Every number in the report travels the same path, left to right: free sources, a
 5. **Analysis.** The author's hand checks are added. Claude drafts the analysis and the author approves it before anything is published.
 6. **Publish.** Three web pages (a landing page, a results page and an appendix), a quarter-by-quarter archive of reports and PDFs, timelines for the sampled flaws, and a citable Zenodo bundle of data and code. The pages are refreshed by a "Publish results" workflow that runs only after the author approves each step and stops if a privacy check finds anything; its first run, on 2 January 2027, switches the pages from practice data to the pilot results.
 
-**ransomware.live said yes on 27 October 2026,** so its leak-site post counts are used and published as aggregates, credited to ransomware.live. **Two sources are placeholders for now.** Shadowserver (internet exposure counts and honeypot attack data) and VulnCheck KEV (earlier attack dates) were asked for permission on 20 October 2026. Follow-ups go out on 20 November, and replies are hoped for by 1 January 2027, before the pilot report. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly. Each has its own on/off switch in the study's settings, so including or leaving one out is a settings change, not a code change.
+**ransomware.live said yes on 27 October 2026,** so its leak-site post counts are used and published as aggregates, credited to ransomware.live. **VulnCheck said yes on 11 November 2026:** its only requirement is credit, so VulnCheck KEV (earlier attack dates) is collected from the 1 December dry run, and figures derived from it are published credited "VulnCheck KEV" while its entries stay private. **Shadowserver** (internet exposure counts and honeypot attack data) was asked on 20 October and followed up on 10 November; a reply is hoped for before the 21 December decision session. Nothing derived from a source is published until it says yes; a source that says no is dropped and the change is logged publicly. Each has its own on/off switch in the study's settings, so including or leaving one out is a settings change, not a code change.
 
 ## What the study looks at: flaws and four tracks
 

@@ -6,7 +6,8 @@ T_patch    the author's hand-checked fix date (review/decisions.csv); else the p
            marked as such; "no fix yet" stays empty with that status
 T_kev      CISA KEV dateAdded
 T_exploit  earliest dated record in Shadowserver honeypot data, VulnCheck KEV or CISA KEV.
-           Only CISA KEV is available today (VulnCheck stays off until written permission,
+           VulnCheck KEV joined on 11 Nov 2026 (permission: attribution only; collected from the
+           1 Dec dry run). Shadowserver is still awaited (
            Shadowserver awaits approval), so T_exploit = T_kev for now and the source used
            is recorded per CVE.
 T_poc      not yet collected (Exploit-DB, Metasploit, Nuclei, GitHub; see exploratory X7)

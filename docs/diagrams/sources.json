@@ -132,10 +132,10 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "f4c7a50537f302db",
-    ".github/workflows/quarterly-pull.yml": "4ef2736082c60b7b",
-    "tools/architecture_svg.py": "bc1bc52ccafcacdd",
-    "docs/diagrams/architecture.svg": "3e741b8366e559e5"
+    "docs/PERMISSIONS.md": "9f7507014fca1b52",
+    ".github/workflows/quarterly-pull.yml": "a1a9db688d0dbc1c",
+    "tools/architecture_svg.py": "c462e4cd10d46eb6",
+    "docs/diagrams/architecture.svg": "c8e9bf1c41d1fce4"
    },
    "reviewed_on": "2026-11-11"
   },
@@ -162,10 +162,10 @@
    ],
    "fingerprints": {
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    "config/sources.yaml": "153fcf62e6420560",
-    "docs/diagrams/indicator_sources.dot": "6e52fc810f97ded6"
+    "config/sources.yaml": "98f0257b03fd635d",
+    "docs/diagrams/indicator_sources.dot": "c321c4d10976a93c"
    },
-   "reviewed_on": "2026-10-29"
+   "reviewed_on": "2026-11-11"
   },
   "sync_flow_now": {
    "doc": "docs/SOP_MANUAL_RUNS.md",

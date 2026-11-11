@@ -25,10 +25,10 @@ import json
 import os
 
 from . import sources as switches
-from .collect import cve, epss, http, kev, nvd, radar, ransomware, sec
+from .collect import cve, epss, http, kev, nvd, radar, ransomware, sec, vulncheck
 from .util import Manifest, Quarter, utcnow
 
-SOURCES = ("kev", "cve", "nvd", "epss", "sec", "radar", "ransomware")
+SOURCES = ("kev", "cve", "nvd", "epss", "sec", "radar", "ransomware", "vulncheck")
 # Set by main(): the quarter being pulled, the last day with complete data, EPSS step.
 CTX: dict = {}
 
@@ -165,8 +165,22 @@ def pull_ransomware(out: Path, manifest: Manifest, work: Path) -> None:
                       note=f"aggregate counts only, no victim names; {len(table)} rows")
 
 
+def pull_vulncheck(out: Path, manifest: Manifest, work: Path) -> None:
+    """VulnCheck KEV (permission 11 Nov 2026: attribution only). The per-CVE table is kept out of
+    every public output (config/sources.yaml raw_public: false; snapshot.private); the raw backup
+    is not kept at all, only the table the study needs."""
+    blob, meta = vulncheck.download()
+    table = vulncheck.build_table(vulncheck.records(blob))
+    dest = out / "vulncheck"
+    dest.mkdir(parents=True, exist_ok=True)
+    pq = dest / "vulncheck_kev.parquet"
+    table.to_parquet(pq, index=False)
+    manifest.add_file("vulncheck_kev", pq, f"VulnCheck backup {meta.get('filename')} (sha256 {meta.get('sha256')}), "
+                      f"retrieved {utcnow()}", note="kept privately; derived statistics only are published, credited VulnCheck KEV")
+
+
 PULLERS = {"kev": pull_kev, "cve": pull_cve, "nvd": pull_nvd, "epss": pull_epss,
-           "sec": pull_sec, "radar": pull_radar, "ransomware": pull_ransomware}
+           "sec": pull_sec, "radar": pull_radar, "ransomware": pull_ransomware, "vulncheck": pull_vulncheck}
 
 
 def _annotate(level: str, source: str, text: str) -> None:

@@ -11,7 +11,7 @@ status below changes, change the matching switch in the same commit; a test chec
 | Source | Asked | Channel | Reference | What was asked | Status | Reply |
 |---|---|---|---|---|---|---|
 | ransomware.live | 2026-10-20 | Support form ("Other") | Ticket #3425 | Aggregate posting counts only, credited; victim names dropped at capture; no raw data published | **Granted** 2026-10-27 (Julien, 06:16 UTC) on seven conditions, below; publishing switched on the same day (author) | Conditions accepted in the author's reply of 2026-10-28 (12:32 UTC); full thread in the private correspondence record |
-| VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | — | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply. Follow-up sent 9 Nov 2026 (author, 17:08 UTC) to the community and support addresses, asking directly whether derived statistics count as Services Data under Service Terms section 6 | — |
+| VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | **Granted 11 Nov 2026** (VulnCheck's Head of Customer Success Engineering, by email): "our only requirement is attribution of the source data ... you have satisfied our requirements." Follow-up of 9 Nov answered | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply. Follow-up sent 9 Nov 2026 (author, 17:08 UTC) to the community and support addresses, asking directly whether derived statistics count as Services Data under Service Terms section 6 | **Granted 11 Nov 2026** (VulnCheck's Head of Customer Success Engineering, by email): "our only requirement is attribution of the source data ... you have satisfied our requirements." Follow-up of 9 Nov answered |
 | Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow-up sent 10 Nov 2026 (author, 17:37 ET) through the web contact form, same topic, citing ticket pqaytmyy; auto-acknowledged as new ticket z25efzfv, which confirms their contact address for replies (the ticket number goes in the subject) | — |
 
 ## ransomware.live conditions (ticket #3425, 27 Oct 2026)
@@ -173,7 +173,15 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   "Customer may not make the Services Data available for free or under an open source
   or similar license" and bars derivative works. Whether derived statistics (agreement
   scores, median lags) count as Services Data is unclear, so **nothing derived from
-  VulnCheck is published until VulnCheck confirms in writing**. Until then VulnCheck KEV
+  VulnCheck is published until VulnCheck confirms in writing**. **Confirmed 11 Nov 2026:** VulnCheck
+  replied that for community data its only requirement is attribution of the source data and
+  that the study's plan (derived statistics labelled "VulnCheck KEV", no entries republished)
+  satisfies its requirements. **Switched on by the author, 11 Nov 2026,** from the 1 Dec dry run
+  (config/sources.yaml: collect and publish on, raw_public off): the collector
+  (`snapshot.collect.vulncheck`) takes VulnCheck's offline backup once a pull, keeps a per-CVE table
+  in the bundle's private part only, and feeds T_exploit (T1, T3); the VulnCheck-CISA part of I6 is
+  computed for the record, but I6 stays "not available" until Shadowserver (decision of 29 Oct).
+  Every chart or table using it says "VulnCheck KEV". Until then VulnCheck KEV
   and XDB are used privately only; published T1/T3 dates and the I6 agreement check use
   CISA KEV and Shadowserver. If VulnCheck declines, the change is logged in
   `prereg/DEVIATIONS.md`.

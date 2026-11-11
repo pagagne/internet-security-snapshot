@@ -21,10 +21,11 @@ permissioned:
     pull: ransomware
   vulncheck:
     name: VulnCheck KEV (community)
-    permission: awaiting
-    collect: false    # standing rule: VulnCheck-derived data stays private until written permission
-    publish: false
-    pull: null        # no collector yet; would feed T_exploit (snapshot.events other_exploit)
+    permission: granted   # 11 Nov 2026: attribution of the source data is the only requirement (docs/PERMISSIONS.md)
+    collect: true         # author, 11 Nov 2026: on from the 1 Dec dry run
+    publish: true         # derived statistics only, labelled "VulnCheck KEV"
+    raw_public: false     # entries never republished: the per-CVE table stays in the private part
+    pull: vulncheck       # feeds T_exploit (snapshot.events other_exploit) and I6
   shadowserver:
     name: Shadowserver
     permission: awaiting

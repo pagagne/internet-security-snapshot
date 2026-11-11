@@ -3,7 +3,7 @@
 // Render: dot -Tpng -Gdpi=150 docs/diagrams/indicator_sources.dot -o docs/diagrams/indicator_sources.png
 digraph indicators {
   graph [rankdir=LR, fontname="Helvetica", fontsize=12, nodesep=0.18, ranksep=1.1, pad=0.3, newrank=true,
-         label="Solid line = registered source (pre-registration, 20 Oct 2026). Dashed grey = exploratory companion, shown beside the indicator, never replacing it.\nGreen = free and public. Blue = permission granted (ransomware.live, 27 Oct). Orange = permission requested, assumed granted here.",
+         label="Solid line = registered source (pre-registration, 20 Oct 2026). Dashed grey = exploratory companion, shown beside the indicator, never replacing it.\nGreen = free and public. Blue = permission granted (ransomware.live 27 Oct, VulnCheck 11 Nov). Orange = permission requested, assumed granted here. Grey = declined (Censys, 10 Nov).",
          labelloc=b];
   node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", width=2.6];
   edge  [color="#4a4a4a", arrowsize=0.6];
@@ -18,10 +18,10 @@ digraph indicators {
     vend  [label="Vendor advisories\n(CSAF, MSRC, PSIRT): fix dates", fillcolor="#e3f4e1", color="#2e7d32"];
     sec   [label="SEC EDGAR\n(8-K Item 1.05)", fillcolor="#e3f4e1", color="#2e7d32"];
     rlive [label="ransomware.live\n(leak-site postings)", fillcolor="#dcebfa", color="#1f4e79"];
-    vchk  [label="VulnCheck KEV\n(earlier attack dates)", fillcolor="#fde9d6", color="#b85c1e"];
+    vchk  [label="VulnCheck KEV\n(earlier attack dates)", fillcolor="#dcebfa", color="#1f4e79"];
     ssexp [label="Shadowserver\nexposure counts", fillcolor="#fde9d6", color="#b85c1e"];
     sshp  [label="Shadowserver\nhoneypot statistics", fillcolor="#fde9d6", color="#b85c1e"];
-    cens  [label="Censys\n(internet scans)", fillcolor="#fde9d6", color="#b85c1e"];
+    cens  [label="Censys\n(internet scans; declined)", fillcolor="#eeeeee", color="#888888"];
     gncs  [label="GreyNoise, CrowdSec\n(attack sightings)", fillcolor="#fde9d6", color="#b85c1e"];
     isc   [label="SANS ISC honeypot\n(X14)", fillcolor="#e3f4e1", color="#2e7d32"];
     natl  [label="National alerts\nCERT-FR, JPCERT/CC (X19)", fillcolor="#e3f4e1", color="#2e7d32"];

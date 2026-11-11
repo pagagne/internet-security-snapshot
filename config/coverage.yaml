@@ -50,5 +50,5 @@ sources:
   - {name: Red Hat fix dates, url: "https://security.access.redhat.com/data/csaf/v2/vex/2021/cve-2021-44228.json"}
   - {name: Palo Alto fix dates, url: "https://security.paloaltonetworks.com/json/CVE-2024-3400"}
   - {name: ransomware.live,   url: "https://www.ransomware.live/", ping: false}   # access only through api-pro (condition 1): checked at each pull, not daily (author, 11 Nov 2026)
-  - {name: VulnCheck,         pending: true}
+  - {name: VulnCheck,         url: "https://vulncheck.com/kev", ping: false}   # API needs the token: checked at each pull (permission 11 Nov 2026)
   - {name: Shadowserver,      pending: true}

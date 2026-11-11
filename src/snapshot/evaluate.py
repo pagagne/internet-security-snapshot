@@ -20,10 +20,12 @@ from .research.practice_eval import evaluate, report
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--bundle", required=True, type=Path)
+    ap.add_argument("--private-bundle", type=Path, default=None,
+                    help="the bundle's private part (data/private/<quarter>/<run>), e.g. VulnCheck KEV")
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
-    R, ev = evaluate(a.bundle)
+    R, ev = evaluate(a.bundle, private=a.private_bundle)
     (a.out / "evaluation.json").write_text(json.dumps(R, indent=1, default=str))
     ev.to_csv(a.out / "events.csv", index=False)
     (a.out / "summary.md").write_text(report(R))

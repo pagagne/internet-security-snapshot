@@ -2,7 +2,8 @@
 
     python -m snapshot.private data/raw data/private
 
-For every source in config/sources.yaml whose `publish` switch is off, moves its folder out of
+For every source in config/sources.yaml whose `publish` switch is off, or whose raw data may not
+be republished (`raw_public: false`, for example VulnCheck KEV), moves its folder out of
 each bundle under RAW (data/raw/<quarter>/<run>/<pull name>) to the same place under PRIVATE.
 The quarterly workflow uploads RAW as the public run download and sends PRIVATE only to the
 author's private Google Drive backup. Manifests keep their entries (paths and checksums, no
@@ -19,7 +20,8 @@ from . import sources as switches
 
 
 def private_pulls() -> set[str]:
-    return {s["pull"] for s in switches.load().values() if s.get("pull") and not s["publish"]}
+    return {s["pull"] for s in switches.load().values()
+            if s.get("pull") and (not s["publish"] or s.get("raw_public") is False)}
 
 
 def split(raw: Path, private: Path) -> list[Path]:
