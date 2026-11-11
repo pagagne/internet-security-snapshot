@@ -1,0 +1,124 @@
+# CERT-FR legal notice
+# https://www.cert.ssi.gouv.fr/mentions-legales/
+# copied 2026-11-11
+
+Mentions légales - CERT-FR
+Contenu
+Menu
+Pied de page
+Menu
+Paramètres d'affichage
+Déclarer un
+incident
+Fermer
+Paramètres
+d'affichage
+Déclarer un
+incident
+Nous connaître
+A propos du CERT-FR
+RFC2350
+Ecosystème des CERT/CSIRT
+Politique de partage des informations
+Publications
+Alertes de sécurité
+Rapports menaces et incidents
+Avis de sécurité
+Indicateurs de compromission
+Durcissement et recommandations
+Bulletins d'actualité
+Fiches réflexes
+Nos services
+Nous rejoindre
+Mentions légales
+Imprimer
+Informations légales
+Agence nationale de la sécurité des systèmes d'information (ANSSI)
+CERT-FR
+51 boulevard de la Tour-Maubourg
+75700 Paris 07 SP France
+Mél : cert-fr[at]ssi.gouv.fr
+Directeur de la publication
+Vincent Strubel, directeur général de l'ANSSI.
+La conception éditoriale, le suivi, la maintenance technique, les mises à jour du site internet sont
+assurés par les services de l'ANSSI.
+Hébergeur
+L'hébergement du site est assuré par l'ANSSI.
+Données à caractère personnel
+Traçabilité
+Le site internet du CERT-FR n'utilise pas de cookies ou autres types de traçeurs.
+Droit d'accès, de modification, de suppression et d'opposition
+Conformément à la réglementation en vigueur relative à la protection des données à caractère personnel,
+toute personne peut obtenir communication et, le cas échéant, rectification, suppression ou opposition des
+informations la concernant. Vous pouvez exercer ces droits de plusieurs façons :
+en envoyant un courriel à l'ANSSI à l'adresse suivante : contact.rgpd[at]sgdsn.gouv.fr
+en envoyant un courriel au Délégué à la protection des données à l'adresse suivante :
+dpd[at]pm.gouv.fr
+en envoyant un courrier à l'ANSSI à l'adresse suivante : Agence nationale de la sécurité des systèmes
+d'information — À l'attention de contact RGPD ANSSI — 51 boulevard de La Tour-Maubourg — 75700 PARIS 07
+SP
+en envoyant un courrier au Délégué à la protection des données à l'adresse suivante : Service du Premier
+ministre — À l'attention du délégué à la protection des données (DPD) — 56 rue de Varenne — 75700
+PARIS
+Toute demande d'exercice de droits doit être accompagnée de la photocopie d'un justificatif d'identité.
+Réclamation (plainte) auprès de la CNIL
+Si vous estimez, après nous avoir contactés, que vos droits sur vos données ne sont pas respectés, vous
+pouvez adresser une réclamation (plainte) à la CNIL.
+Liens hypertextes
+Les liens hypertextes renvoyant vers la page d'accueil du site internet du CERT-FR ou l'une de ses
+rubriques sont autorisés.
+Sauf mention expresse contraire, sont autorisés les liens pointant vers des contenus dont la diffusion et
+la reproduction sont permises au titre du paragraphe « propriété intellectuelle ».
+En outre, les pages du site internet du CERT-FR ne doivent pas être imbriquées à l'intérieur des pages d'un
+autre site (framing).
+En toute hypothèse, l'établissement d'un lien vers le site du CERT-FR ne constitue pas une approbation par
+l'ANSSI du contenu du site établissant ce lien.
+Propriété intellectuelle et droit de reproduction
+Sauf mention explicite contraire, les contenus présents sur le site internet du CERT-FR sont couverts par
+la
+Licence ouverte / open licence, version 2.0 .
+De manière générale, toute utilisation d'un nom ou logotype protégé par le droit des marques nécessite
+l'accord de son propriétaire.
+Notamment, le logotype de l'ANSSI est protégé par une marque enregistrée auprès de l'Institut national de
+la propriété industrielle. Toute utilisation de ce logotype est soumise à une autorisation préalable de
+l'ANSSI.
+En toute hypothèse, la reprise ou modification de tout ou partie du contenu du site du CERT-FR sur tout
+support ne vaut pas approbation par l'ANSSI de ce support.
+Demande d'autorisation
+Le cas échéant, les demandes d'autorisation de reproduction d'un contenu doivent au préalable être
+adressées à l'ANSSI, en écrivant à l'adresse suivante :
+communication[at]ssi.gouv.fr
+La demande devra préciser le contenu visé ainsi que le contexte d'utilisation prévu (supports concernés,
+période, destinataires, etc.).
+Haut de page
+Accédez au portail authentifié du CERT-FR (ClubSSI)
+Se connecter au portail des services numériques du CERT-FR
+Je me connecte
+Suivez-nous sur les réseaux
+LinkedIn
+X (anciennement Twitter)
+Mastodon
+GitHub
+RSS
+République
+Française
+Le site du CERT-FR est édité par l’Agence nationale de la sécurité des systèmes d’information (ANSSI).
+info.gouv.fr
+service-public.fr
+legifrance.gouv.fr
+data.gouv.fr
+Plan du site
+Accessibilité : partiellement conforme
+Mentions légales
+Conditions générales
+ANSSI
+Contact
+Recrutement
+API
+Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous licence etalab-2.0
+Fermer
+Paramètres d'affichage
+Choisissez un thème pour personnaliser l'apparence du site.
+Thème clair
+Thème sombre
+Système Utilise les paramètres système

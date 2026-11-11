@@ -9,7 +9,7 @@
   "ctype": "application/json",
   "bytes": 6232,
   "shape": "json keys: allow_forking,archive_url,archived,assignees_url,blobs_url,branches_url,clone_url,collaborators_url,comments_url,commits_url,compare_url,contents_url,contributors_url,created_at,custom_properties,default_branch,deployments_url,description,disabled,downloads_url,events_url,fork,forks,forks_count,fork",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json": {
   "name": "CISA KEV catalogue (CISA feed)",
@@ -19,9 +19,9 @@
   "status": 200,
   "final": "www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "ctype": "application/json",
-  "bytes": 1830574,
+  "bytes": 1850831,
   "shape": "json keys: catalogVersion,count,dateReleased,title,vulnerabilities",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://api.github.com/repos/cisagov/kev-data": {
   "name": "CISA KEV repository (kev-data)",
@@ -33,7 +33,7 @@
   "ctype": "application/json",
   "bytes": 6048,
   "shape": "json keys: allow_forking,archive_url,archived,assignees_url,blobs_url,branches_url,clone_url,collaborators_url,comments_url,commits_url,compare_url,contents_url,contributors_url,created_at,custom_properties,default_branch,deployments_url,description,disabled,downloads_url,events_url,fork,forks,forks_count,fork",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1": {
   "name": "NVD API",
@@ -45,7 +45,7 @@
   "ctype": "application/json",
   "bytes": 2517,
   "shape": "json keys: format,resultsPerPage,startIndex,timestamp,totalResults,version,vulnerabilities",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.meta": {
   "name": "NVD feed files",
@@ -55,9 +55,9 @@
   "status": 200,
   "final": "nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-modified.meta",
   "ctype": "text/plain",
-  "bytes": 165,
+  "bytes": 166,
   "shape": "fields: lastModifiedDate,size,zipSize,gzSize,sha256",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://api.github.com/repos/fkie-cad/nvd-json-data-feeds": {
   "name": "NVD mirror (fkie-cad)",
@@ -69,7 +69,7 @@
   "ctype": "application/json",
   "bytes": 6642,
   "shape": "json keys: allow_forking,archive_url,archived,assignees_url,blobs_url,branches_url,clone_url,collaborators_url,comments_url,commits_url,compare_url,contents_url,contributors_url,created_at,custom_properties,default_branch,deployments_url,description,disabled,downloads_url,events_url,fork,forks,forks_count,fork",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://api.first.org/data/v1/epss?limit=1": {
   "name": "EPSS API",
@@ -81,7 +81,7 @@
   "ctype": "application/json",
   "bytes": 206,
   "shape": "json keys: access,data,limit,offset,status,status-code,total,version",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://epss.cyentia.com/epss_scores-current.csv.gz": {
   "name": "EPSS daily file",
@@ -89,11 +89,11 @@
   "url": "https://epss.cyentia.com/epss_scores-current.csv.gz",
   "used_by": "core epss",
   "status": 200,
-  "final": "epss.empiricalsecurity.com/epss_scores-2026-11-04.csv.gz",
+  "final": "epss.empiricalsecurity.com/epss_scores-2026-11-11.csv.gz",
   "ctype": "binary/octet-stream",
-  "bytes": 2805897,
+  "bytes": 2837556,
   "shape": "text: first data line has 3 fields",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.sec.gov/files/company_tickers.json": {
   "name": "SEC company list",
@@ -103,9 +103,9 @@
   "status": 200,
   "final": "www.sec.gov/files/company_tickers.json",
   "ctype": "application/json",
-  "bytes": 796507,
+  "bytes": 796325,
   "shape": "json numbered entries of: cik_str,ticker,title",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://security.access.redhat.com/data/csaf/v2/vex/2021/cve-2021-44228.json": {
   "name": "Red Hat VEX (fix dates)",
@@ -117,7 +117,7 @@
   "ctype": "application/json",
   "bytes": 3622781,
   "shape": "json keys: document,product_tree,vulnerabilities",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://security.paloaltonetworks.com/json/CVE-2024-3400": {
   "name": "Palo Alto advisories (fix dates)",
@@ -129,7 +129,7 @@
   "ctype": "application/json",
   "bytes": 18486,
   "shape": "json keys: containers,cveMetadata,dataType,dataVersion",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://isc.sans.edu/feeds/urlsummary.txt": {
   "name": "SANS ISC honeypot URL summary",
@@ -139,9 +139,9 @@
   "status": 200,
   "final": "isc.sans.edu/feeds/urlsummary.txt",
   "ctype": "text/plain",
-  "bytes": 20004864,
+  "bytes": 20054016,
   "shape": "text: first data line has 4 fields",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://isc.sans.edu/feeds/urlcategories.txt": {
   "name": "SANS ISC honeypot URL categories",
@@ -151,9 +151,9 @@
   "status": 200,
   "final": "isc.sans.edu/feeds/urlcategories.txt",
   "ctype": "text/plain",
-  "bytes": 20054016,
+  "bytes": 20037632,
   "shape": "text: first data line has 3 fields",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://nvd.nist.gov/developers/terms-of-use": {
   "name": "NVD terms of use",
@@ -168,7 +168,7 @@
   "words_sha256": "292ad2c13ba05e942353c1e709d5bdb3b51433f3a551ee6cb7926c6ed25f0ad6",
   "words": 3,
   "archive_url": "https://web.archive.org/web/20261030121244/https://nvd.nist.gov/developers/terms-of-use",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.cve.org/Legal/TermsOfUse": {
   "name": "CVE Program terms of use",
@@ -183,7 +183,7 @@
   "words_sha256": "7834fedb6efff6635986d274c5dc8ee3ade56b9580f60da889ddabdebf2db72f",
   "words": 5,
   "archive_url": "https://web.archive.org/web/20261030121420/https://www.cve.org/Legal/TermsOfUse",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://github.com/cisagov/kev-data": {
   "name": "CISA kev-data repository (licence)",
@@ -193,12 +193,12 @@
   "status": 200,
   "final": "github.com/cisagov/kev-data",
   "ctype": "text/html",
-  "bytes": 240785,
-  "text_sha256": "ad7c27b49ede03bb914f65865f647d3e57e91f707c81cc058a7fd081a566f578",
-  "words_sha256": "5240682fc078b0b00857bb87593db83760b3b00af6fe70315d66a349671b1897",
-  "words": 876,
-  "archive_url": "https://web.archive.org/web/20261031014155/https://github.com/cisagov/kev-data",
-  "checked": "2026-11-04"
+  "bytes": 233607,
+  "text_sha256": "6e53d942f431b92ee8ec58f964cfb35aa4c9e8feca5448a6fdfc9064981ee207",
+  "words_sha256": "1d40a8bdea749b132458e74f5f4a374b9b2ad167737d3d4e625939a8a5c9921d",
+  "words": 880,
+  "archive_url": "save requested (HTTP 520)",
+  "checked": "2026-11-11"
  },
  "https://www.first.org/epss/": {
   "name": "FIRST EPSS page",
@@ -213,7 +213,7 @@
   "words_sha256": "550a2a05fe8d6c7e30ba857933ad9e922ef74b4811bd48b942a8a95139bdff38",
   "words": 1204,
   "archive_url": "error ConnectTimeout",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data": {
   "name": "SEC accessing EDGAR data",
@@ -223,12 +223,12 @@
   "status": 200,
   "final": "www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data",
   "ctype": "text/html",
-  "bytes": 80377,
+  "bytes": 80370,
   "text_sha256": "c6df4af2607959911a83ae46d87c6e78f668e93cf436a5394d04f5f38902ca69",
   "words_sha256": "e0ea84560cde8a7a393f845406f1898c997f4565f675e4a330d3102ca01ec515",
   "words": 2042,
   "archive_url": "save requested (HTTP 520)",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://access.redhat.com/security/data": {
   "name": "Red Hat security data",
@@ -243,7 +243,7 @@
   "words_sha256": "1b6d18f3eeac7cac8adfd522ee4bd5d849c4c55b2b486fbf9e00982156ffc6e8",
   "words": 1024,
   "archive_url": "error ReadTimeout",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://isc.sans.edu/feeds_doc.html": {
   "name": "SANS ISC data feeds",
@@ -254,11 +254,11 @@
   "final": "isc.sans.edu/feeds_doc.html",
   "ctype": "text/html",
   "bytes": 33402,
-  "text_sha256": "9882f471a1a323a3f02706c6d874484d083ce9a42d8543246a6debd296c108c2",
+  "text_sha256": "68be10dc2ca1428fa26858d995e89651b757b6f34a06d242977ea6b6932a8289",
   "words_sha256": "a983d5c0063fce09eb8b653db79120cde1c0d47b4c73a8327301f9ad078e461d",
   "words": 479,
   "archive_url": "https://web.archive.org/web/20261031014306/https://isc.sans.edu/feeds_doc.html",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.ransomware.live/t&c": {
   "name": "ransomware.live terms",
@@ -269,11 +269,11 @@
   "final": "www.ransomware.live/t&c",
   "ctype": "text/html",
   "bytes": 35503,
-  "text_sha256": "3d5908152f07a06b50feea0564580201f0fe8ae4d75189d223cddf2717ccd047",
+  "text_sha256": "265ea959ad8390dd066a9ea00b0b79f0d2b72752e47b0519a0e4c58b6515ee7b",
   "words_sha256": "6eceaf065b58892d74818e99712f974717ed22b459411459e70aee80be74d776",
   "words": 1133,
   "archive_url": "error ConnectionError",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://developers.cloudflare.com/radar/": {
   "name": "Cloudflare Radar documentation",
@@ -288,7 +288,7 @@
   "words_sha256": "31643cfa8efd2328130ad4a960b04a43f7844ed1f6dfef8235d66dcfb0a03dea",
   "words": 566,
   "archive_url": "https://web.archive.org/web/20261030123145/https://developers.cloudflare.com/radar/",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.jpcert.or.jp/guide.html": {
   "name": "JPCERT/CC site terms",
@@ -303,7 +303,7 @@
   "words_sha256": "c6fd2e7392c92cca807827d2fd975416b9ef57ca6910684d60bab963b1e37f0f",
   "words": 222,
   "archive_url": "https://web.archive.org/web/20261030122350/https://www.jpcert.or.jp/guide.html",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.cert.ssi.gouv.fr/mentions-legales/": {
   "name": "CERT-FR legal notice",
@@ -313,12 +313,12 @@
   "status": 200,
   "final": "cert.cyber.gouv.fr/mentions-legales/",
   "ctype": "text/html",
-  "bytes": 23939,
-  "text_sha256": "73c86c05d54224216da2f14e8b1963a9fa10d5229243b8e952b19446104df69d",
-  "words_sha256": "7e2d3db3d1e547ecb6c6998d22380c81b5a056dc83faa41f8ee8c2d4c3ed9ba5",
-  "words": 722,
-  "archive_url": "error ConnectionError",
-  "checked": "2026-11-04"
+  "bytes": 23514,
+  "text_sha256": "d968dcce885adf630b3b086bca7192ae30f2b462e568b8a3936e199dc3fe2f36",
+  "words_sha256": "a64de2bee5b135ecce5c3ef37a9aa437d61261f1f1bef44c857c5461c8701e25",
+  "words": 707,
+  "archive_url": "https://web.archive.org/web/20261111201708/https://cert.cyber.gouv.fr/mentions-legales/",
+  "checked": "2026-11-11"
  },
  "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies": {
   "name": "GitHub Acceptable Use Policies",
@@ -328,12 +328,12 @@
   "status": 200,
   "final": "docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
   "ctype": "text/html",
-  "bytes": 171125,
+  "bytes": 170998,
   "text_sha256": "6c5c2547e78188624dfc4ad7f1c3fc50f877a17a0edf8b473192c22ead577a7e",
   "words_sha256": "e54b8a78aea6750beee62e7f38a16cbd43cdd063c7991de6c8e1b29e07bc2c32",
   "words": 1904,
   "archive_url": "error ConnectionError",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service": {
   "name": "GitHub Terms of Service",
@@ -343,12 +343,12 @@
   "status": 200,
   "final": "docs.github.com/en/site-policy/github-terms/github-terms-of-service",
   "ctype": "text/html",
-  "bytes": 366687,
+  "bytes": 366560,
   "text_sha256": "c986e4747a338fad61881d49fcbd54d3a29187aed6053787b6e4077ac655d56f",
   "words_sha256": "02e663b31153807fefa61cbce6dffcf76902cab84baeafea5e5614f3edfbc8f6",
   "words": 7870,
   "archive_url": "error ConnectionError",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://huggingface.co/terms-of-service": {
   "name": "Hugging Face terms of service",
@@ -358,12 +358,12 @@
   "status": 200,
   "final": "huggingface.co/terms-of-service",
   "ctype": "text/html",
-  "bytes": 114250,
-  "text_sha256": "9c43fcccb90b3c54fda1c015653242a9e87690f9389d9b562b1c3c224414380a",
-  "words_sha256": "1231626dd05aed3b6570f21eb07332f9751b6af508b27947750a4c78475638ea",
-  "words": 4823,
-  "archive_url": "error ConnectionError",
-  "checked": "2026-11-04"
+  "bytes": 115077,
+  "text_sha256": "bd2bce3aa8e720278f47d112ecf25f421585d3793605083e025b67e359eeb746",
+  "words_sha256": "0eef5d6cc2458cfcaf63b28808403beac6e1e6d2711d500b58e1c5dda39e9511",
+  "words": 4829,
+  "archive_url": "https://web.archive.org/web/20261111173247/https://huggingface.co/terms-of-service",
+  "checked": "2026-11-11"
  },
  "https://huggingface.co/content-policy": {
   "name": "Hugging Face content policy",
@@ -373,12 +373,12 @@
   "status": 200,
   "final": "huggingface.co/content-policy",
   "ctype": "text/html",
-  "bytes": 84808,
-  "text_sha256": "e7e0e38f724cb28846520581df7a082120d03ef1b36c1d424137a882f67a1a08",
-  "words_sha256": "b2437ec4ee960ec03f1e35a9418e5f4e2e7f051d45956303541d303cbc97fc9e",
-  "words": 2151,
-  "archive_url": "error ConnectionError",
-  "checked": "2026-11-04"
+  "bytes": 85635,
+  "text_sha256": "3ac683b851348dd520ad3b35fbf5b72842b152da3359df0d265cb595f36c4519",
+  "words_sha256": "4df23f07aa981715d3c2ea1320eed11da2160c8908803290582924cd20b05dab",
+  "words": 2157,
+  "archive_url": "https://web.archive.org/web/20261111201752/https://huggingface.co/content-policy",
+  "checked": "2026-11-11"
  },
  "https://huggingface.co/docs/hub/rate-limits": {
   "name": "Hugging Face rate limits",
@@ -388,12 +388,12 @@
   "status": 200,
   "final": "huggingface.co/docs/hub/rate-limits",
   "ctype": "text/html",
-  "bytes": 201665,
-  "text_sha256": "9584cb742a9d4e8ff8f6526871967512f0254e94e3f1fb664a4d490e8f05caf2",
-  "words_sha256": "7cb4ab4b2cd4aa76c9337cedbd99fa79cdaaffe2c4f937df12b1b055dca8e274",
-  "words": 1402,
-  "archive_url": "error ReadTimeout",
-  "checked": "2026-11-04"
+  "bytes": 203662,
+  "text_sha256": "1814ae74374fee221cb1852f14d2bdf105d5fc0203a4e63551258ab4d720ff39",
+  "words_sha256": "07b345a8611bd58767a48bbbc882cf4a64b6fcbbd98ceee79715c101fc5c88a0",
+  "words": 1410,
+  "archive_url": "https://web.archive.org/web/20261111201814/https://huggingface.co/docs/hub/rate-limits",
+  "checked": "2026-11-11"
  },
  "https://gitee.com/terms": {
   "name": "Gitee terms",
@@ -408,7 +408,7 @@
   "words_sha256": "6d449bcb816a32912c572089769adc496145a5a38cc18e7b4b722b717ac1153b",
   "words": 161,
   "archive_url": "https://web.archive.org/web/20261031014832/https://gitee.com/terms",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://docs.deps.dev/api/v3/index.html": {
   "name": "deps.dev API terms and data licence",
@@ -423,7 +423,7 @@
   "words_sha256": "9ad25a4193747af84e13933a14753fda661313e8a7e8ebb9d6057078374a2d37",
   "words": 7024,
   "archive_url": "https://web.archive.org/web/20261104202923/https://docs.deps.dev/api/v3/index.html",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.sans.org/legal/terms-conditions": {
   "name": "SANS terms and conditions (NewsBites)",
@@ -433,26 +433,12 @@
   "status": 200,
   "final": "www.sans.org/legal/terms-conditions",
   "ctype": "text/html",
-  "bytes": 213300,
+  "bytes": 215366,
   "text_sha256": "52fd8b4620910199dd9d6ed0c987a3f00692a9d617fb306a6898c433169e5dea",
   "words_sha256": "8ae4084b4b8763cf7d46edca5cb23274f0c5b124bc913698216de642be92d18c",
   "words": 2624,
   "archive_url": "save requested (HTTP 520)",
-  "checked": "2026-11-04"
- },
- "https://substack.com/tos": {
-  "name": "Substack terms (Risky Bulletin",
-  "kind": "terms",
-  "url": "https://substack.com/tos",
-  "used_by": "exploratory X3 newsletters",
-  "status": 403,
-  "final": "substack.com/tos",
-  "ctype": "text/html",
-  "bytes": 5558,
-  "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
-  "words_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
-  "words": 3,
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.recordedfuture.com/legal/terms-of-use": {
   "name": "Recorded Future terms of use (The Record)",
@@ -467,7 +453,7 @@
   "words_sha256": "54fe04278cee6b975614b427ea0ff834529ad421660fd415abc560618b4e0844",
   "words": 8456,
   "archive_url": "https://web.archive.org/web/20261104202955/https://www.recordedfuture.com/legal/terms-of-use",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://tldr.tech/terms": {
   "name": "TLDR terms of service",
@@ -477,12 +463,12 @@
   "status": 200,
   "final": "tldr.tech/terms",
   "ctype": "text/html",
-  "bytes": 38454,
+  "bytes": 38511,
   "text_sha256": "b8b2473a8919e58e0b5fa51a558d84795b07559ea6cbc4504a37021651b0e83d",
   "words_sha256": "c9bb7aea59361729db56bee3f3c041cbfb049078cf33cbd4d9ae4bad17970f18",
   "words": 610,
   "archive_url": "https://web.archive.org/web/20261104203042/https://tldr.tech/terms",
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  },
  "https://www.beehiiv.com/tou": {
   "name": "beehiiv terms of use (tl;dr sec",
@@ -492,25 +478,11 @@
   "status": 200,
   "final": "www.beehiiv.com/tou",
   "ctype": "text/html",
-  "bytes": 252783,
+  "bytes": 249991,
   "text_sha256": "a88d393f4ee8a280efe51e42552d32afe2f02d549f3ec48bb0ff325b5114b7b3",
   "words_sha256": "5910ee79e753a85f874373f81edbd926a14acdce69044057ab26dc0969ddc963",
   "words": 8760,
   "archive_url": "https://web.archive.org/web/20261104203134/https://www.beehiiv.com/tou",
-  "checked": "2026-11-04"
- },
- "https://www.cisa.gov/terms-use": {
-  "name": "CISA terms of use (email updates)",
-  "kind": "terms",
-  "url": "https://www.cisa.gov/terms-use",
-  "used_by": "exploratory X3 newsletters",
-  "status": 403,
-  "final": "www.cisa.gov/terms-use",
-  "ctype": "text/html",
-  "bytes": 379,
-  "text_sha256": "6e3953f73625de06e2bfbc11b0a5949a483b77b39e445bb96e70c7c0aa0dc5f5",
-  "words_sha256": "6bda58265519b2030e7f8be0e0c55ce61f8057891a2412849ff35aea5e1cdea0",
-  "words": 17,
-  "checked": "2026-11-04"
+  "checked": "2026-11-11"
  }
 }
