@@ -25,7 +25,7 @@ pieces:
   - {name: "Ransomware postings",              tier: core,      collected: true,  measures: [I7, X21]}
   - {name: "SEC breach filings",               tier: core,      collected: true,  measures: [I7]}
   - {name: "AI credits in flaws",              tier: core,      collected: true,  measures: [I8, X1, X13, X18]}
-  - {name: "Second exploited list (VulnCheck)", tier: core,     collected: false, measures: [I6, X24]}
+  - {name: "Second exploited list (VulnCheck)", tier: core,     collected: false, measures: [I2, I3, I6]}   # permission 11 Nov 2026; collected: true once the 1 Dec dry run brings its data (schedule item vulncheck-ring)
   - {name: "Exposure scans (Shadowserver)",    tier: core,      collected: false, measures: [I1]}
   - {name: "Honeypot CVE hits (Shadowserver)", tier: core,      collected: false, measures: [I4, I6]}
   - {name: "Public exploit code",              tier: companion, collected: false, measures: [X7]}

@@ -1135,6 +1135,25 @@ DESCRIPTION:Responsible: GitHub\n\nStarted by the Schedule workflow (Decemb
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:vulncheck-ring@2026-12-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Colour the VulnCheck slice of the core ring if t
+ he dry run brought its data
+DESCRIPTION:Responsible: Claude\n\nVulnCheck gave permission on 11 Nov 2026
+  and its collector runs for the first time in the 1 Dec dry run. If that r
+ un's VulnCheck pull succeeded (run log and the bundle's private part)\, se
+ t collected: true for "Second exploited list (VulnCheck)" in https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/config/coverage.yaml\; 
+ the landing rings redraw on the push. If it failed\, fix the collector fir
+ st and say so in the morning report. Shadowserver's two slices stay gray u
+ ntil its permission and collector.\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:dry-run-hand-check@2026-12-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261202T150000Z

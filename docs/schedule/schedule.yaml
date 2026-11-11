@@ -1564,6 +1564,18 @@ items:
     flip (go-live/FLIP_PREVIEW.md) with Claude, then press Publish results. Claude confirms the
     checks and the public page.
 
+- id: vulncheck-ring
+  owner: claude
+  title: Colour the VulnCheck slice of the core ring if the dry run brought its data
+  date: 2026-12-02
+  minutes: 10
+  details: >
+    VulnCheck gave permission on 11 Nov 2026 and its collector runs for the first time in the
+    1 Dec dry run. If that run's VulnCheck pull succeeded (run log and the bundle's private part),
+    set collected: true for "Second exploited list (VulnCheck)" in config/coverage.yaml; the
+    landing rings redraw on the push. If it failed, fix the collector first and say so in the
+    morning report. Shadowserver's two slices stay gray until its permission and collector.
+
 - id: results-link-to-sources
   owner: claude
   title: Draft short notes sending the first published results to the data sources
