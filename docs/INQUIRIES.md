@@ -1,4 +1,4 @@
-# Inquiry log (updated 9 Nov 2026)
+# Inquiry log (updated 11 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles
@@ -325,3 +325,14 @@ Started 25 Oct 2026 at the author's request.
   is non-English press coverage (Arabic and Vietnamese reports appeared days before English ones in
   the escape record), so at most it could be a lead-only page in the quarterly sweep. Decision at
   the March review.
+- **11 Nov 2026: OSF projects transition (notice to all users, forwarded by the author).** From
+  16 Nov 2026 OSF stops creating new projects and components; on 19 Feb 2027 every existing project
+  becomes read-only (public ones stay viewable at the same URLs and DOIs). Registrations and
+  preprints are unaffected: a registration can still be updated and have research outputs linked
+  (a linked output needs a DOI). **Handled:** the registered plan and the 29 Dec update are on the
+  registration, so nothing in the study changes; the update text goes through the registration's
+  Update process, later material is linked through Zenodo DOIs, and on 29 Dec the author adds a
+  pointer to GitHub and Zenodo in the project's description before it locks
+  (docs/CHANGE_POLICY.md; schedule item `freeze`). The March 2028 option of OSF Preprints is also
+  unaffected. Note: OSF's details page gives "February 19, 2026" once for the API, a likely typo
+  for 2027.

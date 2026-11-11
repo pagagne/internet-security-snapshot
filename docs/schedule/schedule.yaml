@@ -720,6 +720,11 @@ items:
     update (Claude gives you the text): one update listing every deviation, saying which were
     informed by test data, the settled form of I5, and a description of the exploratory layer
     (author, 7 Nov 2026; docs/CHANGE_POLICY.md).
+    OSF transition (notice of 11 Nov 2026): the update goes through the registration's own
+    Update process, which is unaffected; any linked research output needs a DOI (the Zenodo
+    bundle). While on OSF, add to the description of the project osf.io/3smuq a line pointing to
+    the GitHub repository, the private-manual note and the Zenodo record: the project becomes
+    read-only on 19 Feb 2027, and no new projects or components can be made from 16 Nov 2026.
 
 # ---------------------------------------------------------------- 2027-2028
 - id: witness-post
