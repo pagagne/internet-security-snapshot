@@ -254,15 +254,16 @@ check-ins are retired once they have run.
 | When (ET) | Task | Where it reports |
 |---|---|---|
 | Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from 30 Nov does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
-| Daily, about 07:00 | Morning report: the previous day's session log, overnight failures, today's list; each run schedules the next | The original chat |
-| Fri 30 Oct, 07:30 | Source-stability question (option cards) | The original chat |
-| Mon 2 Nov, 09:00 | Weekly sync review and due `owner:claude` issues | The session created 28 Oct |
-| Tue 3 Nov, 09:00 | GreyNoise, CrowdSec and APNIC reply checks | The original chat |
-| Wed 4 Nov, 09:00 | Censys reply check | The session created 28 Oct |
-| Mon 9, 16 and 23 Nov, 09:00 | Weekly sync reviews and due issues | The session created 28 Oct |
-| Thu 12 Nov, 09:15 | Research review decision cards | The session created 28 Oct |
-| Tue 10 Nov, 09:00 | Data-permission follow-ups (VulnCheck, Shadowserver, Censys); moved up from 20 Nov, then from 12 Nov (author, 7 and 9 Nov); drafts ready 9 Nov | The schedule (author sends) |
-| Wed 25 Nov, 09:00 | Race fix-date list ready for the dry run | The session created 28 Oct |
+| Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; each run schedules the next | The author's current chat |
+| Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study (from 14 Nov); each run schedules the next | The author's current chat |
+| Thu 12 Nov, 09:15 and 09:30 | Evening-timer trial review; research review decision cards (review at 10:00) | The author's current chat |
+| Mon 16 and 23 Nov, 09:00 | Weekly sync reviews and due `owner:claude` issues | The author's current chat |
+| Thu 19 Nov, 09:00 | GreyNoise and CrowdSec follow-up drafts (the author sends 20 Nov) | The author's current chat |
+| Wed 25 Nov, 09:00 | Race fix-date list ready for the dry run | The author's current chat |
+
+Refreshed 11 Nov 2026. Every task above except the work queue delivers into one chat and stops
+if that chat is lost: a new chat recreates them from section 6 of `START_HERE_NEW_CHAT.md`
+(private repository, root; the full message of each task is there).
 
 Some one-off tasks are tied to the author's computer "Shofar" and wait until it is on. The
 eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). From the 30 Nov

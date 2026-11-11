@@ -1,8 +1,11 @@
-# Handover: session 1 to the continuing session (24 Oct 2026) (updated 5 Nov 2026)
+# Handover: session 1 to the continuing session (24 Oct 2026) (updated 11 Nov 2026)
 
-> **Since 24 Oct:** day-to-day work is driven from the repository. Start with
-> `docs/OPERATIONS.md` (how any session picks up work) and `docs/ANNUAL_PLAN.md` (every action
-> item by owner). Dates below are kept for the record; `docs/schedule/schedule.yaml` is current.
+> **NEW CHAT? START HERE.** A new Claude chat taking over the study reads
+> `START_HERE_NEW_CHAT.md` first (private repository `pagagne/snapshot-manual`, root; copy in the
+> Claude project as `claude/START-HERE-NEW-CHAT.md`). It has the setup steps, the reading order,
+> how the author works, the standing rules, where things stand, and the scheduled tasks to
+> recreate (author's request, 11 Nov 2026). This file keeps the repository rules below; the rest
+> is the 24 Oct handover, kept for the record.
 
 From now on, **one Claude session works on this repository, the author's calendar and the
 artifacts below**. This file and the project doc `claude/handover-session-1.md` hold what the
@@ -50,15 +53,8 @@ reminder; 2nd Feb/May/Aug/Nov final-run check · 12 Jan 2027 line up the externa
 15 Mar annual review (yearly). Descriptions were updated 24 Oct to the current rules.
 
 ## Scheduled check-ins to recreate in the new session
-Session 1's check-ins fired into session 1 and were removed when it was retired. Recreate them
-(one-off messages to the new session):
-
-| When (UTC) | What |
-|---|---|
-| 2026-10-26 13:00 | Continue the research window (`docs/RESEARCH_PLAN.md`): item 5 (an on/off switch per permissioned source in config), then item 4 (remaining evaluation code: labels T2, T4-T6; X6-X12; NVD root-cause fill; draft evaluation page); consider the CISA active-exploitation first-assessment date as a research-flag T_exploit candidate; then Plan 1 / Plan 2 research. Message the author only for findings worth knowing. |
-| 2026-11-20 14:00 | Permission follow-ups: read `docs/PERMISSIONS.md`; ask which of ransomware.live (ticket #3425), VulnCheck (community@vulncheck.com) and Shadowserver ([Ticket #pqaytmyy], contact@shadowserver.org) replied; draft polite follow-ups; update the log. Cutoff is the 21 Dec session (decision item 16). |
-| 2026-11-25 14:00 | Before the dry run: the Hand Check app's "Race: newly attacked flaw" fix-date list (list builder in `snapshot.review`, report table, time estimate) built, tested and published, alongside `snapshot.race.t1_kev_race` and X10. Tell the author only if something will not be ready for 1-2 Dec. |
-| 2027-02-03 14:00 | Prepare the 8 Feb session: AI-credit rule evaluation on the pilot's final data (headline vs narrow count, sample of lab-affiliation-only credits, spot checks) and the PHP2Shell case note `docs/cases/php2shell.md` (watch case in `docs/RESEARCH_PLAN.md`); send the author a heads-up. |
+Superseded (11 Nov 2026): the current list, with each task's full message, is section 6 of
+`START_HERE_NEW_CHAT.md` in the private repository.
 
 ## Decisions made in session 1 (all logged)
 - Race (T1a): days from fix to first attack over every flaw first added to CISA KEV in the quarter;

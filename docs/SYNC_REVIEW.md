@@ -1,4 +1,4 @@
-# Sync review: keeping everything in step (updated 5 Nov 2026)
+# Sync review: keeping everything in step (updated 11 Nov 2026)
 
 A repeatable check that the repository, the Claude docs, the calendars, the scheduled tasks
 and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the author's request.
@@ -41,6 +41,9 @@ cannot see.
 8. Scheduled tasks (Claude account): the work queue is enabled and its prompt matches
    `docs/OPERATIONS.md`; one-off check-ins are still needed, and none duplicate a schedule item
    after the cutover.
+   `START_HERE_NEW_CHAT.md` (private repository, root, and its Claude project copy) matches:
+   its "where things stand" and its list of chat-tied tasks with their messages (author,
+   11 Nov 2026), so a new chat could take over the same day.
 9. GitHub issues: open `schedule` issues match what is due; done work is closed with a comment.
 10. The README's data-source tables match `docs/PERMISSIONS.md` (status of every request) and the
     switches in `config/sources.yaml` (a test checks the switches against PERMISSIONS.md).
