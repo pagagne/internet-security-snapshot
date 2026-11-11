@@ -1,16 +1,17 @@
 # Handover: session 1 to the continuing session (24 Oct 2026) (updated 11 Nov 2026)
 
-> **NEW CHAT? START HERE.** A new Claude chat taking over the study reads
-> `START_HERE_NEW_CHAT.md` first (private repository `pagagne/snapshot-manual`, root; copy in the
-> Claude project as `claude/START-HERE-NEW-CHAT.md`). It has the setup steps, the reading order,
-> how the author works, the standing rules, where things stand, and the scheduled tasks to
-> recreate (author's request, 11 Nov 2026). This file keeps the repository rules below; the rest
-> is the 24 Oct handover, kept for the record.
+> **NEW CHAT? This is not the starting point.** A new Claude chat taking over the study starts
+> with **START HERE: NEW CHAT**, the file `START_HERE_NEW_CHAT.md` (private repository
+> `pagagne/snapshot-manual`, root; copy in the Claude project as `claude/START-HERE-NEW-CHAT.md`).
+> It has the setup steps, the reading order, how the author works, the standing rules, where
+> things stand, and the scheduled tasks to recreate (author's request, 11 Nov 2026; procedure in
+> `docs/SOP_MANUAL_RUNS.md`, section 7). Read this file after it, for the repository rules below;
+> the rest is the 24 Oct handover, kept for the record.
 
 From now on, **one Claude session works on this repository, the author's calendar and the
 artifacts below**. This file and the project doc `claude/handover-session-1.md` hold what the
-new session needs. Read this first, then `exploratory/docs/BUILD_PLAN.md`, `docs/RESEARCH_PLAN.md` and
-`docs/CORE_FREEZE_DECISIONS.md`.
+new session needed on 24 Oct. (Then: read this first, then `exploratory/docs/BUILD_PLAN.md`, `docs/RESEARCH_PLAN.md` and
+`docs/CORE_FREEZE_DECISIONS.md`. Now superseded by START HERE.)
 
 ## Repository
 - `main` is the only working branch (plus `run-reports` for run logs). Push to `main` directly or

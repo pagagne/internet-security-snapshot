@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 5 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 11 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on 18 Dec 2026; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -161,6 +161,28 @@ does not depend on Claude to keep collecting data.
       again, leave it red and note it in the session log for Claude to investigate later.
 4. **What waits for Claude:** research probes, the BigQuery check, fixes to failing code, and
    the reports. None of these stops the data collection.
+
+### When a new Claude chat takes over
+
+Added 11 Nov 2026 (author's request). If the working chat ends, fills up or stops responding,
+the author opens a new chat in the Claude project "AI Internet Security 2027 Research Project".
+
+1. **The author's first message** tells the new chat to read **START HERE: NEW CHAT** first.
+   That is the file `START_HERE_NEW_CHAT.md` at the root of the private repository
+   `pagagne/snapshot-manual`; a copy is in the project as `claude/START-HERE-NEW-CHAT.md`, so the
+   chat can read it before it has attached any repository. A first message that works:
+   *"You are taking over the Internet Security Snapshot. Read claude/START-HERE-NEW-CHAT.md and
+   follow it."*
+2. **The new chat follows that file:** it attaches and sets up both repositories, reads the
+   documents in the order listed there, recreates the chat-tied scheduled tasks, and tells the
+   author it is ready and what is due next.
+3. **Not the handover.** `docs/HANDOVER.md` is the 24 Oct handover from the first session. It
+   is read for its repository rules, after START HERE, never as the starting point.
+4. **Nothing on GitHub needs to change.** The timers, the watchdog and the daily work queue keep
+   running across the change of chat (`docs/OPERATIONS.md`, "How a Claude session picks up
+   work").
+5. **Keeping START HERE current** is part of every weekly sync review (`docs/SYNC_REVIEW.md`);
+   after each change the project copy is re-uploaded.
 
 ## 8. Who keeps everything in step (sync flow)
 

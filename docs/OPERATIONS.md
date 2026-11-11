@@ -229,7 +229,18 @@ and in each sync review together with a reading of new logs for what patterns ca
 `gh issue`, `gh pr` or `gh workflow run`. The Schedule workflow itself runs on GitHub and is
 not affected.)
 
-1. Read this file, then `docs/HANDOVER.md` (repository rules and standing rules).
+**Where to start depends on who you are** (author's request, 11 Nov 2026):
+
+- **A new Claude chat taking over the study** (attached to both repositories): start with
+  **START HERE: NEW CHAT**, the file `START_HERE_NEW_CHAT.md` at the root of the private
+  repository `pagagne/snapshot-manual` (Claude project copy: `claude/START-HERE-NEW-CHAT.md`). It
+  has the setup, the reading order and where things stand, and sends you back here. Do not start
+  from `docs/HANDOVER.md`: that is the 24 Oct handover, kept for its repository rules.
+- **The daily work queue** (scheduled task; public repository only): start at step 1 below.
+
+The full takeover procedure is in `docs/SOP_MANUAL_RUNS.md`, section 7.
+
+1. Read this file, then `docs/HANDOVER.md` for the repository rules and standing rules only.
 2. If the Schedule workflow has no successful run today, start it
    (`gh api -X POST repos/pagagne/internet-security-snapshot/actions/workflows/schedule.yml/dispatches -f ref=main`)
    so today's issues exist.
