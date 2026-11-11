@@ -118,10 +118,10 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "3b7b163d6bb9c433",
-    "README.md": "e78a0c87fadd99a1",
+    "README.md": "aaf905df894655bd",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-11-09"
+   "reviewed_on": "2026-11-11"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
