@@ -30,6 +30,7 @@ CATEGORIES = "https://isc.sans.edu/feeds/urlcategories.txt"
 SUMMARY = "https://isc.sans.edu/feeds/urlsummary.txt"
 CVE = re.compile(r"CVE-(\d{4})-(\d{4,7})", re.I)
 CREDIT = "SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"
+GAP_S = 3600   # ISC's feed page asks for at most one download an hour (author, 11 Nov 2026)
 
 
 def _lines(url: str):
@@ -107,9 +108,13 @@ def _fmt(v):
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--gap", type=float, default=GAP_S, help="seconds between the two downloads")
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
-    rows_cat, rows_cve, counts = aggregate(_lines(CATEGORIES), _lines(SUMMARY))
+    import time
+    categories = list(_lines(CATEGORIES))
+    time.sleep(a.gap)
+    rows_cat, rows_cve, counts = aggregate(categories, _lines(SUMMARY))
     for name, rows in (("categories.csv", rows_cat), ("cves.csv", rows_cve)):
         with open(a.out / name, "w", newline="") as f:
             if rows:

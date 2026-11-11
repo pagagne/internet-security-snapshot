@@ -18,8 +18,10 @@ status below changes, change the matching switch in the same commit; a test chec
 Authorized for this non-commercial research use on these conditions, which the study meets:
 1. **Access** only through the dedicated api-pro endpoint with a personal token (free). The
    collector has no fallback to any other endpoint and records a gap without the token.
-2. **Fair usage:** no excessive polling or abusive request volumes. Three requests a pull, 5 s
-   apart; the study's own rule of no more than one call every 30 minutes; server pushback logged.
+2. **Fair usage:** no excessive polling or abusive request volumes. Three requests a pull, 30 minutes
+   apart (the study's own rule of no more than one call every 30 minutes; 5 s apart until 11 Nov
+   2026); the daily status check no longer reads the ransomware.live site (11 Nov 2026); server
+   pushback logged.
 3. **Attribution:** ransomware.live named as the source on any page, dashboard, interface,
    report, publication or deliverable using its data (quality report, README, evaluation page,
    status page, Zenodo archive).
@@ -116,7 +118,7 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
 
 | Source | Terms that matter | How the project complies |
 |---|---|---|
-| SANS Internet Storm Center web-honeypot files | Attribution required ("SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"); no reselling; the site carries a non-commercial licence; at most one download an hour | One download a month; aggregates only (no URLs, no IP addresses); credited on every output |
+| SANS Internet Storm Center web-honeypot files | Attribution required ("SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"); no reselling; the site carries a non-commercial licence; at most one download an hour | Two files once a month, an hour apart (from 11 Nov 2026); aggregates only (no URLs, no IP addresses); credited on every output |
 | ENISA EU Vulnerability Database | Public EU service | Dropped 25 Oct: its exploited list mirrors KEV |
 | Google Project Zero "0day In the Wild" sheet | Public community resource | Zero-day check (X15); cited |
 | deps.dev | Generated data under CC-BY 4.0 | Aggregates; credited |

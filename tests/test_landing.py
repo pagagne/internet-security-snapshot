@@ -21,6 +21,7 @@ def test_pending_sources_are_never_contacted(tmp_path, monkeypatch):
     res = L.status(tmp_path, pause=0)
     pending = {s["name"] for s in L.load()["sources"] if s.get("pending")}
     assert pending and not pending & set(called)
+    assert "ransomware.live" not in called and res["ransomware.live"]["state"] == "unchecked"
     svg = (tmp_path / "banner-light.svg").read_text()
     assert 'fill="none"' in svg and L.THEMES["light"]["error"] in svg and "checked " in svg
     assert res["NVD"]["state"] == "error" and (tmp_path / "status.json").exists()

@@ -193,6 +193,9 @@ def status(out: Path, now: dt.datetime | None = None, pause: float = 2.0) -> dic
         if s.get("pending"):
             results[s["name"]] = {"state": "pending"}
             continue
+        if s.get("ping") is False:
+            results[s["name"]] = {"state": "unchecked", "detail": "checked at each quarterly pull, not daily"}
+            continue
         results[s["name"]] = ping(s)
         time.sleep(pause)
     checked = now.strftime("%Y-%m-%d %H:%M UTC")

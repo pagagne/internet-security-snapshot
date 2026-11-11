@@ -64,7 +64,8 @@ def aggregate(victims: list[dict], year: int, month: int) -> pd.DataFrame:
     return agg
 
 
-def build_table(months: list[tuple[int, int]], pause: float = 5.0) -> pd.DataFrame:
+def build_table(months: list[tuple[int, int]], pause: float = 1800.0) -> pd.DataFrame:
+    # one api-pro call every 30 minutes at most (study rule; author, 11 Nov 2026)
     frames = []
     for i, (y, m) in enumerate(months):
         if i:

@@ -24,7 +24,7 @@ concurrency:
 jobs:
   pull:
     runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
-    timeout-minutes: 120
+    timeout-minutes: 180   # includes 2 x 30 min between ransomware.live calls (author, 11 Nov 2026)
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
 

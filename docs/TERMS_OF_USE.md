@@ -23,7 +23,7 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 | SEC EDGAR | https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data | Fair access: a User-Agent naming the requester with a contact address; request-rate ceiling | Contact User-Agent (secret `SEC_USER_AGENT`); few requests |
 | Red Hat security data | https://access.redhat.com/security/data | To summarise | CSAF/VEX fix dates only |
 | Microsoft, Cisco, Palo Alto, Siemens advisories | (vendor sites) | To summarise | Fix dates only, few requests |
-| SANS Internet Storm Center | https://isc.sans.edu/feeds_doc.html | Attribution; no reselling; non-commercial licence; at most one download an hour | One download a month; aggregates only; credited |
+| SANS Internet Storm Center | https://isc.sans.edu/feeds_doc.html | Attribution; no reselling; non-commercial licence; at most one download an hour | Two files once a month, an hour apart; aggregates only; credited |
 | ransomware.live | https://www.ransomware.live/t&c | Fair Usage Policy; written yes on seven conditions (ticket 3425) | Aggregates only; no raw data; credited (`docs/PERMISSIONS.md`) |
 | VulnCheck | (accepted at sign-up) | Nothing derived published without written leave | Private use only until VulnCheck confirms |
 | Cloudflare Radar | https://developers.cloudflare.com/radar/ | To summarise (radar.cloudflare.com refuses automated readers) | API with the author's token; aggregates |
@@ -59,3 +59,43 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 | CISA email updates | https://www.cisa.gov/terms-use | General-information disclaimer; no reuse limits stated; US government | Email only; advisories cited by title and link |
 | Internet Archive (Wayback Machine) | Save requests are a public service; fair use of its capacity | One save per changed page or logged report |
 | GitHub Actions, Google Drive, Google Cloud (BigQuery) | The author's own accounts and their terms | Free tiers, capped queries, private data in Drive only |
+
+## Request volume against each source's limits (audit, 11 Nov 2026)
+
+The author asked for a check that no source is called more often than its rules allow. Every
+automated request the study makes, by schedule:
+
+- **Daily** (Source status, 21:47 UTC): one light request (status and first 512 bytes) to each of
+  eight sources: the CVE List and CISA KEV repositories (GitHub API), NVD (one result), FIRST EPSS
+  (one result), SEC EDGAR (contact User-Agent), Red Hat and Palo Alto (one advisory each) and the
+  ransomware.live home page; 2 s apart, one retry after 5 s on an error. The Schedule and Privacy
+  runs call only GitHub.
+- **Weekly** (Source watch, Wednesdays): about 35 terms and documentation pages on about 25
+  sites, at most three on any one site.
+- **Monthly:** the ISC web-honeypot capture (two feed files, the 2nd); the AI-attack feed screen
+  (one request to each of 68 feeds, the 5th); the Drive backup and the rebuild check (no outside
+  requests).
+- **Quarterly** (the pull and the final run a month later): the CVE List, KEV and the NVD mirror
+  by git from GitHub (NVD's own feed files only as a fallback); four NVD API count queries 7 s
+  apart; about 92 EPSS daily files 1 s apart and EPSS API pages 0.5 s apart; SEC full-text search
+  0.2 s apart with the contact User-Agent; a few Cloudflare Radar calls with the token; three
+  ransomware.live api-pro calls 5 s apart.
+- **On demand:** Research tasks, started only by the author or the schedule.
+
+Against the published limits: NVD allows 5 requests in 30 s without a key and 50 with one, and
+asks for about 6 s between requests (the study waits 6.5 s without a key, 0.7 s with it, and 7 s
+for the count queries); SEC asks for at most 10 requests a second and a contact User-Agent (5 a
+second, contact set); ISC asks bots for at most 1 request a second, a contact in the User-Agent
+(a URL is accepted) and no screen-scraping (two feed files a month, project URL in the
+User-Agent). GitHub, FIRST, Red Hat, Palo Alto and Cloudflare are called far below any limit.
+
+Three points went to the author (11 Nov): ransomware.live's three calls a pull are 5 s apart
+while the study's own rule says one call every 30 minutes; the daily status ping reads the
+ransomware.live home page although condition 1 says access only through the api-pro endpoint;
+and ISC's bot rules ask researchers to tell ISC how its data is used, and its feed page asks for
+at most one download an hour (the capture takes its two files back to back).
+
+**Decided by the author, 11 Nov 2026:** ransomware.live's three calls a pull are now 30 minutes
+apart; ransomware.live is no longer in the daily status check (shown as checked at each pull);
+the ISC capture waits an hour between its two files; and a short courtesy note telling ISC how
+the study uses its data is drafted for the author to send.
