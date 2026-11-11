@@ -48,3 +48,13 @@ def test_changed_file_and_changed_figure_fail(tmp_path):
 def test_diff_ignores_last_digits_and_drift_flags():
     assert rebuild.diff({"a": 0.1 + 0.2, "drift_flags": ["x"]}, {"a": 0.3}) == []
     assert rebuild.diff({"a": 1}, {"a": 2}) == ["/a: published 1, recomputed 2"]
+
+
+def test_recorded_nvd_counts_kept():
+    from snapshot.rebuild import _keep_recorded_nvd_counts, diff
+    pub = {"count_check": {"rows": [{"year": 2026, "ours": 10, "nvd": 11, "diff": -0.091}], "flags": ["x"]}}
+    rec = {"count_check": {"rows": [{"year": 2026, "ours": 10, "nvd": None, "diff": None}], "flags": []}}
+    _keep_recorded_nvd_counts(pub, rec)
+    assert list(diff(pub, rec)) == []
+    rec["count_check"]["rows"][0]["ours"] = 9
+    assert list(diff(pub, rec))

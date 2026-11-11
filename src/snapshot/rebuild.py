@@ -8,7 +8,8 @@ schedule, against the most recent frozen bundle. Three checks:
 1. Frozen data: every file listed in manifest.json still has its recorded SHA-256.
 2. Data quality report: recomputed from the bundle and compared with the bundle's own
    quality.json (numbers at reporting precision; the drift flags, which depend on the
-   previous run, are left out).
+   previous run, are left out; so are NVD's own counts in the published-count cross-check,
+   which come from a live NVD lookup at pull time and are taken as recorded).
 3. Published figures: when the bundle holds figures.json (written by the evaluation step),
    they are recomputed with snapshot.evaluate and compared at reporting precision.
 
@@ -82,7 +83,24 @@ def check_quality(bundle: Path) -> list[str]:
         return []
     _, metrics = build(bundle)
     recomputed = json.loads(json.dumps(metrics, default=str))
-    return [f"quality.json {d}" for d in diff(json.loads(pub.read_text()), recomputed)]
+    published = json.loads(pub.read_text())
+    _keep_recorded_nvd_counts(published, recomputed)
+    return [f"quality.json {d}" for d in diff(published, recomputed)]
+
+
+def _keep_recorded_nvd_counts(published: dict, recomputed: dict) -> None:
+    """The count cross-check (quality report 2b) asks NVD live at pull time; an offline rebuild
+    cannot repeat that, so NVD's counts and the differences and flags built on them are taken as
+    recorded. Our own counts are still recomputed and compared."""
+    pc, rc = published.get("count_check"), recomputed.get("count_check")
+    if not isinstance(pc, dict) or not isinstance(rc, dict):
+        return
+    rc["flags"] = pc.get("flags", rc.get("flags"))
+    prow = {r.get("year"): r for r in pc.get("rows", [])}
+    for r in rc.get("rows", []):
+        if r.get("year") in prow:
+            r["nvd"] = prow[r["year"]].get("nvd")
+            r["diff"] = prow[r["year"]].get("diff")
 
 
 def check_figures(bundle: Path) -> tuple[list[str], str]:
