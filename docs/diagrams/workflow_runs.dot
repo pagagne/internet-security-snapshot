@@ -21,13 +21,15 @@ digraph workflows {
     rebuild [label="Rebuild check\n10th monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
     diag    [label="Diagrams\nwhen a diagram changes"];
     backup  [label="Backup\n3rd monthly"];
+    manual  [label="Manual publish\nwhen documents change"];
+    landing [label="Landing snapshot\ncutover, pilot, quarters"];
   }
 
   subgraph cluster_ext {
     label="EXTERNAL: contacts outside sources, no Run button"; style="rounded,filled"; fillcolor="#fdf6f0"; color="#b85c1e"; fontcolor="#b85c1e";
     node [fillcolor="#fbe7d6", color="#b85c1e"];
     pull  [label="Quarterly pull\n1st of Jan/Apr/Jul/Oct\nand a month later\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
-    honey [label="Honeypot capture\n2nd monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
+    honey [label="Honeypot capture\n2nd monthly, 2 files\nan hour apart\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
     probe [label="Research probe\nwhen asked"];
     bq    [label="BigQuery check\nwhen asked"];
     feeds [label="Feed screen\n5th monthly"];
@@ -43,12 +45,13 @@ digraph workflows {
     gcp     [label="Your Google Cloud\n(BigQuery)"];
     drive   [label="Your Google Drive\n(private copies)"];
     news    [label="Security research\nand news feeds"];
+    private [label="Private repository\n(the manual)"];
   }
 
   // one column each: who starts it | the workflows | what they reach
   { rank=same; you; claude; }
-    { rank=same; sources; sans; gcp; drive; news; }
+    { rank=same; sources; sans; gcp; drive; news; private; }
   you -> privacy [lhead=cluster_int, color="#1f4e79", label="any of these"];
   claude -> probe [lhead=cluster_ext, color="#b85c1e", label="probes, checks"];
-  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive; feeds -> news; watch -> sources [style=dashed, label="addresses\nand terms"]; watch -> sans [style=dashed]; status -> sources [style=dashed, label="one light\ncheck a day"];
+  pull -> sources; pull -> drive; probe -> sources; honey -> sans; bq -> gcp; backup -> drive; feeds -> news; watch -> sources [style=dashed, label="addresses\nand terms"]; watch -> sans [style=dashed]; status -> sources [style=dashed, label="one light check a day\n(not ransomware.live)"]; manual -> private;
 }

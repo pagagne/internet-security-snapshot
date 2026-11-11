@@ -1,4 +1,4 @@
-# Terms of use: every site the study reads
+# Terms of use: every site the study reads (updated 11 Nov 2026)
 
 Register added 30 Oct 2026 at the author's request ("include all the terms of use of the sites
 we're accessing"). One row per site: its terms page, the rules that matter to the study, and how

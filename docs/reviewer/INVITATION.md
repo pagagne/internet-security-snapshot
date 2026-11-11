@@ -1,4 +1,4 @@
-# Invitation: Independent Reviewer for the Internet Security Snapshot
+# Invitation: Independent Reviewer for the Internet Security Snapshot (updated 5 Nov 2026)
 
 > Copy of the Claude doc [Invitation: Independent Reviewer](https://claude.ai/artifact/VJaEuiADo22MGeEGadAGnm) (the editable original). The reviewer's tasks and dates are in `docs/schedule/schedule.yaml` (owner `reviewer`) and the reviewer's calendar feed `docs/schedule/reviewer.ics`. Personal details (the reviewer's name, contact details) are never added here.
 

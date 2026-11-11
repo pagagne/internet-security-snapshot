@@ -1,4 +1,4 @@
-# Core freeze: decisions before scoring starts
+# Core freeze: decisions before scoring starts (updated 1 Nov 2026)
 
 The core (rules that decide the Improving/Worsening labels) must be final before the
 Q4 2026 pilot is scored on 1-2 January 2027. After the freeze it changes only at a March

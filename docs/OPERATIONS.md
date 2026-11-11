@@ -1,4 +1,4 @@
-# Operations: how the study runs without depending on one Claude chat
+# Operations: how the study runs without depending on one Claude chat (updated 11 Nov 2026)
 
 From the **cutover on Mon 30 Nov 2026**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
@@ -25,7 +25,16 @@ author's private repository `pagagne/snapshot-manual` (secret `MANUAL_REPO_TOKEN
 fine-grained token with Contents read and write on that repository only), where it reads on
 GitHub with a dropdown contents page, one file per part, split further as it grows. The working
 documents stay public. Checks fails if the manual cannot be built or a new Markdown file is in
-neither the manual nor its `excluded` list. **The manual is kept as Markdown only, no PDFs
+neither the manual nor its `excluded` list. **Numbering, dates and cross-references (author,
+11 Nov 2026):** the contents page numbers every document part.document (4.1, 4.2 ...) and lists
+each one's chapters (4.1.1 ...); every study document's title carries the date of its last real
+change, written from git by `python -m snapshot.docdates stamp` (run it after editing; Checks
+fails when a date is out of date; the registered plan, the landing page, generated files and
+logs keep their titles, listed under `undated` in `config/manual.yaml`); and
+`python -m snapshot.links check` (also in Checks) confirms that every link between documents
+reaches an existing file and section. The schedule, `docs/ANNUAL_PLAN.md`, sits in Part IV
+beside this guide and now also lists every automatic workflow timer, read from the workflow
+files. **The manual is kept as Markdown only, no PDFs
 (author's decision, 31 Oct 2026).** The Backup workflow (monthly, or its Run button) copies it
 to Drive `manual/` (single file, parts, contents page). Its private Appendix C (full bio,
 correspondence index, Drive inventory) stays as Markdown in Drive `manual/private/appendix-c.md`,

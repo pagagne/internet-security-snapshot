@@ -92,10 +92,10 @@
    "fingerprints": {
     "README.md": "e78a0c87fadd99a1",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "86540eea58d10618",
+    ".github/workflows/quarterly-pull.yml": "4ef2736082c60b7b",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
-   "reviewed_on": "2026-11-09"
+   "reviewed_on": "2026-11-11"
   },
   "build_plan": {
    "doc": "exploratory/docs/BUILD_PLAN.md",
@@ -132,12 +132,12 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "8c18bb6054b7614c",
-    ".github/workflows/quarterly-pull.yml": "86540eea58d10618",
+    "docs/PERMISSIONS.md": "f4c7a50537f302db",
+    ".github/workflows/quarterly-pull.yml": "4ef2736082c60b7b",
     "tools/architecture_svg.py": "bc1bc52ccafcacdd",
     "docs/diagrams/architecture.svg": "3e741b8366e559e5"
    },
-   "reviewed_on": "2026-11-05"
+   "reviewed_on": "2026-11-11"
   },
   "workflow_runs": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -148,10 +148,10 @@
    ],
    "fingerprints": {
     "docs/WORKFLOWS.md": "e8328a40a1601f43",
-    ".github/workflows/checks.yml": "31d6790266e8f665",
-    "docs/diagrams/workflow_runs.dot": "da4d816dad112913"
+    ".github/workflows/checks.yml": "80d79a7ef69d5957",
+    "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
-   "reviewed_on": "2026-11-05"
+   "reviewed_on": "2026-11-11"
   },
   "indicator_sources": {
    "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",
@@ -176,10 +176,10 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "13292e578de5856e",
-    "docs/OPERATIONS.md": "098dd74cf6e538ed",
+    "docs/OPERATIONS.md": "8e45fd0379d9f240",
     "docs/diagrams/sync_flow_now.dot": "dbd54aeb6c10ee53"
    },
-   "reviewed_on": "2026-11-06"
+   "reviewed_on": "2026-11-11"
   },
   "sync_flow_locked": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -190,10 +190,10 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "13292e578de5856e",
-    "docs/OPERATIONS.md": "098dd74cf6e538ed",
+    "docs/OPERATIONS.md": "8e45fd0379d9f240",
     "docs/diagrams/sync_flow_locked.dot": "1d7ddf0bd220b250"
    },
-   "reviewed_on": "2026-11-06"
+   "reviewed_on": "2026-11-11"
   }
  }
 }

@@ -22,7 +22,14 @@ MANIFEST = "docs/diagrams/sources.json"
 
 
 def _sha(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()[:16] if path.exists() else "missing"
+    """Fingerprint of a source file; a Markdown title's last-updated date is ignored, so dating a
+    document does not flag its diagrams (author, 11 Nov 2026)."""
+    if not path.exists():
+        return "missing"
+    if path.suffix == ".md":
+        from .docdates import _strip_title
+        return hashlib.sha256(_strip_title(path.read_text()).encode()).hexdigest()[:16]
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
 
 
 def _load(root: Path) -> dict:

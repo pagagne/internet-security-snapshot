@@ -1,4 +1,4 @@
-# Change policy: locked core and add-on layer
+# Change policy: locked core and add-on layer (updated 7 Nov 2026)
 
 The study keeps a stable baseline while still learning new things by keeping two layers apart.
 

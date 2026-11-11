@@ -1,4 +1,4 @@
-# How the quarterly report is built
+# How the quarterly report is built (updated 25 Oct 2026)
 
 Every quarter the study collects public data about software flaws and answers a small set
 of questions about them. The work runs on four separate tracks. This page explains each

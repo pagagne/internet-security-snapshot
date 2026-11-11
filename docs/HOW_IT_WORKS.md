@@ -1,4 +1,4 @@
-# The Internet Security Snapshot: How It Works and What It Will Show
+# The Internet Security Snapshot: How It Works and What It Will Show (updated 9 Nov 2026)
 
 23 October 2026, updated 7 November 2026 · Paul Gagne
 

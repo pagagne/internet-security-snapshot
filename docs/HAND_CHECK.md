@@ -1,4 +1,4 @@
-# Hand-check procedure
+# Hand-check procedure (updated 5 Nov 2026)
 
 Some items are flagged by code but need a person to confirm them before they count.
 Nothing unverified is ever estimated or filled in: an item that is not confirmed is left

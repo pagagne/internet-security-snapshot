@@ -1,4 +1,4 @@
-# Handover: session 1 to the continuing session (24 Oct 2026)
+# Handover: session 1 to the continuing session (24 Oct 2026) (updated 5 Nov 2026)
 
 > **Since 24 Oct:** day-to-day work is driven from the repository. Start with
 > `docs/OPERATIONS.md` (how any session picks up work) and `docs/ANNUAL_PLAN.md` (every action

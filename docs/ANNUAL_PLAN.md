@@ -5,6 +5,22 @@ The same items are in the calendar feeds `docs/schedule/snapshot.ics` (everythin
 `docs/schedule/reviewer.ics` (the external reviewer's items), and each author or Claude item
 opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or `owner:claude`).
 
+## Automatic workflow timers
+
+Every workflow that GitHub starts on its own timer, read from `.github/workflows/` at build time (GitHub often starts timed runs hours late; what each one does: `docs/WORKFLOWS.md`). Runs started by the Schedule workflow on a given date are in the calendar below.
+
+| Workflow | File | Timer |
+|---|---|---|
+| Backup to Google Drive | `backup.yml` | day 3, every month, 10:17 UTC (05:17 ET in winter, 06:17 in summer) |
+| Feed screen | `feed-screen.yml` | day 5, every month, 08:41 UTC (03:41 ET in winter, 04:41 in summer) |
+| Honeypot capture | `honeypot.yml` | day 2, every month, 09:43 UTC (04:43 ET in winter, 05:43 in summer) |
+| Privacy scan | `privacy.yml` | daily, 21:13 UTC (16:13 ET in winter, 17:13 in summer); daily, 23:51 UTC (18:51 ET in winter, 19:51 in summer) |
+| Quarterly pull | `quarterly-pull.yml` | day 1, Jan, Apr, Jul, Oct, 06:00 UTC (01:00 ET in winter, 02:00 in summer); day 1, Feb, May, Aug, Nov, 06:00 UTC (01:00 ET in winter, 02:00 in summer) |
+| Rebuild check | `rebuild-check.yml` | day 10, every month, 07:17 UTC (02:17 ET in winter, 03:17 in summer) |
+| Schedule | `schedule.yml` | daily, 15:37 UTC (10:37 ET in winter, 11:37 in summer); daily, 20:07 UTC (15:07 ET in winter, 16:07 in summer); daily, 21:23 UTC (16:23 ET in winter, 17:23 in summer); daily, 22:37 UTC (17:37 ET in winter, 18:37 in summer); daily, 23:43 UTC (18:43 ET in winter, 19:43 in summer) |
+| Source status | `source-status.yml` | daily, 21:47 UTC (16:47 ET in winter, 17:47 in summer) |
+| Source watch | `source-watch.yml` | Wednesdays, 13:17 UTC (08:17 ET in winter, 09:17 in summer) |
+
 ## Every quarter and every month
 
 | Who | What | When |

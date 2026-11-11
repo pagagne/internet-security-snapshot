@@ -1,4 +1,4 @@
-# Root-cause map: findings and proposal (for decision item 1, 21 Dec 2026)
+# Root-cause map: findings and proposal (for decision item 1, 21 Dec 2026) (updated 23 Oct 2026)
 
 Analysis of the 36,732 CVEs published in Q3 2026 (test data, 2026-10-22).
 

@@ -206,12 +206,52 @@ def _when(o: dict) -> str:
     return d
 
 
+WORKFLOWS_DIR = REPO_ROOT / ".github/workflows"
+_DOW = ["Sundays", "Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays"]
+
+
+def _cron_words(expr: str) -> str:
+    """Plain words for the cron forms the study uses (minute hour day month weekday, UTC)."""
+    mi, hr, dom, mon, dow = expr.split()
+    t = f"{int(hr):02d}:{int(mi):02d} UTC"
+    w, s = (int(hr) - 5) % 24, (int(hr) - 4) % 24
+    t += f" ({w:02d}:{int(mi):02d} ET in winter, {s:02d}:{int(mi):02d} in summer)"
+    if dom == "*" and mon == "*" and dow == "*":
+        return f"daily, {t}"
+    if dom == "*" and mon == "*":
+        return f"{', '.join(_DOW[int(d)] for d in dow.split(','))}, {t}"
+    months = "every month" if mon == "*" else ", ".join(dt.date(2000, int(m), 1).strftime("%b") for m in mon.split(","))
+    return f"day {dom}, {months}, {t}"
+
+
+def workflow_timers(root: Path = WORKFLOWS_DIR) -> list[tuple[str, str, list[str]]]:
+    """(workflow name, file, plain-word timers) for every workflow with a GitHub timer."""
+    import re
+    out = []
+    for f in sorted(root.glob("*.yml")):
+        text = f.read_text()
+        crons = re.findall(r'cron:\s*"([^"]+)"', text)
+        if not crons:
+            continue
+        m = re.search(r"^name:\s*(.+)$", text, re.M)
+        out.append((m.group(1).strip().strip('"') if m else f.stem, f.name, [_cron_words(c) for c in crons]))
+    return out
+
+
 def plan(items: list[dict], occ: list[dict]) -> str:
     L = ["# Annual plan: every action item, by who does it", "",
          "Generated from `docs/schedule/schedule.yaml` by `python -m snapshot.schedule build`; do not edit by hand.",
          "The same items are in the calendar feeds `docs/schedule/snapshot.ics` (everything) and",
          "`docs/schedule/reviewer.ics` (the external reviewer's items), and each author or Claude item",
          "opens a GitHub issue when it falls due (label `schedule`, plus `owner:author` or `owner:claude`).", ""]
+    L += ["## Automatic workflow timers", "",
+          "Every workflow that GitHub starts on its own timer, read from `.github/workflows/` at build time "
+          "(GitHub often starts timed runs hours late; what each one does: `docs/WORKFLOWS.md`). Runs started "
+          "by the Schedule workflow on a given date are in the calendar below.", "",
+          "| Workflow | File | Timer |", "|---|---|---|"]
+    for name, fname, timers in workflow_timers():
+        L.append(f"| {name} | `{fname}` | {'; '.join(timers)} |")
+    L.append("")
     repeating = [it for it in items if "repeat" in it]
     L += ["## Every quarter and every month", "", "| Who | What | When |", "|---|---|---|"]
     for it in sorted(repeating, key=lambda i: (OWNERS.index(i["owner"]), min(i["repeat"]["months"]), i["repeat"]["day"])):

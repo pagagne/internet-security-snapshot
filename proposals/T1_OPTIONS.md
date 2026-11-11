@@ -1,4 +1,4 @@
-# T1, the race: why the registered version cannot be estimated, and the options
+# T1, the race: why the registered version cannot be estimated, and the options (updated 24 Oct 2026)
 (for decision item 0, 21 Dec 2026; numbers from Q3 2026 test data, 2026-10-22)
 
 ## The question

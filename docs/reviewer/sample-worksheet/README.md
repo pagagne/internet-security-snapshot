@@ -1,4 +1,4 @@
-# Sample spot-check worksheet: the race measure T1(a), Q3 2026
+# Sample spot-check worksheet: the race measure T1(a), Q3 2026 (updated 26 Oct 2026)
 
 > **New to the project?** Start with the [project README](../../../README.md) (what the study is, its
 > data sources and schedule) and the plain-language [How It Works](../../HOW_IT_WORKS.md). This

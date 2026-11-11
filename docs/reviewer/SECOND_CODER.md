@@ -1,4 +1,4 @@
-# Second coder: one-page role summary
+# Second coder: one-page role summary (updated 26 Oct 2026)
 
 **Internet Security Snapshot** - an open, unfunded study that measures each quarter whether
 defenders fix exploitable software flaws faster than attackers use them, and how AI is changing

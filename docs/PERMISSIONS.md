@@ -1,4 +1,4 @@
-# Data permissions log
+# Data permissions log (updated 11 Nov 2026)
 
 Requests to data providers to confirm that this free, non-commercial project may publish
 derived results from their data. Any source that declines is dropped and the change is

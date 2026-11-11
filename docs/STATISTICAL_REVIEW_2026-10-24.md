@@ -1,4 +1,4 @@
-# Statistical review, 24 October 2026
+# Statistical review, 24 October 2026 (updated 5 Nov 2026)
 
 Response to the external document EVAL-2026-ISS-01 ("Statistical Evaluation & Methodological
 Enhancement Program", no named author), checked against the repository at commit `eaec47b`.

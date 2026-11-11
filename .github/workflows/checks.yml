@@ -21,6 +21,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+        with:
+          fetch-depth: 0   # full history: document dates come from git (snapshot.docdates)
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
         with:
           python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
@@ -33,6 +35,14 @@ jobs:
         # The manual must build and list every document (config/manual.yaml). Its outputs are
         # private and never committed (author, 30 Oct 2026; Manual publish workflow).
         run: python -m snapshot.manual check
+      - name: Document dates current?
+        # Each study document's title carries the date of its last real change (author,
+        # 11 Nov 2026); run  python -m snapshot.docdates stamp  after editing one.
+        run: python -m snapshot.docdates check
+      - name: Cross-references land?
+        # Every link between study documents must reach an existing file and section (author,
+        # 11 Nov 2026). Links into the private repository are checked where it is checked out.
+        run: python -m snapshot.links check
       - name: Privacy scan
         # Fails if a key, token, personal contact detail or not-yet-publishable figure is in the
         # repository (docs/OPERATIONS.md, "Private by design").

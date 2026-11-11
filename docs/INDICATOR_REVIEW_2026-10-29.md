@@ -1,4 +1,4 @@
-# Indicator review, I1 to I8 (29 Oct 2026)
+# Indicator review, I1 to I8 (29 Oct 2026) (updated 29 Oct 2026)
 
 Asked by the author on 29 Oct 2026: explain each registered indicator in depth, review each
 before the 29 Dec freeze, relate them to TrendAI's "Not only ARTEX" report (`docs/INQUIRIES.md`,

@@ -1,4 +1,4 @@
-# What we expect from the Q4 2026 pilot (written 26 Oct 2026, before any Q4 result)
+# What we expect from the Q4 2026 pilot (written 26 Oct 2026, before any Q4 result) (updated 26 Oct 2026)
 
 Recorded at the author's request so the pilot can be compared with what we expected before we
 saw it. These are best guesses from the Q2-Q3 2026 previews and what had been reported in

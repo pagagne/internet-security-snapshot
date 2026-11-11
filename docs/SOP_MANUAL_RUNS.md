@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand
+# Standard operating procedure: running workflows by hand (updated 5 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on 18 Dec 2026; adopted at the 8 Feb 2027 pilot session; **in force from

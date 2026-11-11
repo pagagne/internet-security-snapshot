@@ -1,4 +1,4 @@
-# Reconciliation with the October 2026 assessment "Is AI Cleaning Up the Internet?"
+# Reconciliation with the October 2026 assessment "Is AI Cleaning Up the Internet?" (updated 23 Oct 2026)
 
 The one-off assessment (another Claude session, around 19 Oct 2026; its own document and
 `ai_cleanup_assessment.zip` bundle) and this project ask the same question. The assessment is

@@ -1,4 +1,4 @@
-# Case note: PHP2Shell (CVE-2026-109618, CVE-2026-109619)
+# Case note: PHP2Shell (CVE-2026-109618, CVE-2026-109619) (updated 28 Oct 2026)
 
 Pilot watch case (`docs/RESEARCH_PLAN.md`, "Pilot watch cases"). The full note is due
 3 Feb 2027 and reviewed with the author on 8 Feb 2027 (AI-credit rule evaluation session).

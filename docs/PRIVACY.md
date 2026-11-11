@@ -1,4 +1,4 @@
-# Privacy notice: "Snapshot backup" Google app
+# Privacy notice: "Snapshot backup" Google app (updated 5 Nov 2026)
 
 "Snapshot backup" is a Google sign-in app used by one person, the author of the Internet
 Security Snapshot study, so that the study's automatic jobs can save private backups to a

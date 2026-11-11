@@ -1,4 +1,4 @@
-# Decision notes: I5 / T5 and the 2026 surge in the baseline year
+# Decision notes: I5 / T5 and the 2026 surge in the baseline year (updated 7 Nov 2026)
 
 For the core-freeze decision session, 21 December 2026 (`docs/CORE_FREEZE_DECISIONS.md`,
 item 25). Raised by the author on 1 November 2026. Written by Claude in method terms; the

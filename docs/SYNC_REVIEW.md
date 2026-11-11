@@ -1,4 +1,4 @@
-# Sync review: keeping everything in step
+# Sync review: keeping everything in step (updated 5 Nov 2026)
 
 A repeatable check that the repository, the Claude docs, the calendars, the scheduled tasks
 and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the author's request.

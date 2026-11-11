@@ -1,4 +1,4 @@
-# Inquiry log
+# Inquiry log (updated 9 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles

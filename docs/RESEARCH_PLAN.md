@@ -1,4 +1,4 @@
-# Research window, 23 Oct - 15 Nov 2026: improving the project under two plans
+# Research window, 23 Oct - 15 Nov 2026: improving the project under two plans (updated 5 Nov 2026)
 
 Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 16 Nov validation.
 Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for the

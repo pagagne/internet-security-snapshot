@@ -1,4 +1,4 @@
-# The study's workflows
+# The study's workflows (updated 5 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec workflow review
