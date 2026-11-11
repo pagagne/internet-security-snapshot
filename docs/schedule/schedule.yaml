@@ -1564,6 +1564,18 @@ items:
     flip (go-live/FLIP_PREVIEW.md) with Claude, then press Publish results. Claude confirms the
     checks and the public page.
 
+- id: results-link-to-sources
+  owner: claude
+  title: Draft short notes sending the first published results to the data sources
+  date: 2027-01-04
+  minutes: 20
+  details: >
+    Promised to VulnCheck on 11 Nov 2026 (the author's thank-you to their Head of Customer
+    Success Engineering: "I'll send you a link when the first quarterly results are published").
+    Draft one short note each for VulnCheck, and as a courtesy for ransomware.live, APNIC Labs,
+    JPCERT/CC and the SANS Internet Storm Center, with the link to the results page and where
+    their credit appears; the author sends them. Log each in the correspondence index.
+
 # ---------------------------------------------------------------- README milestones
 # The "Schedule" table in README.md is generated from this list (python -m snapshot.schedule
 # build). Each row takes its date(s) from the items above, so a date changed there changes the
