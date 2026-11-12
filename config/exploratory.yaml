@@ -235,6 +235,17 @@ measures:
       History backfilled to January 2023 (author's choice, 26 Oct), so the curve and its
       doubling time are known before the first 2027 report. Measures supply only: who downloads these models and what they do with them cannot be
       seen; changes are read next to the attack-speed fingerprints (X6-X11), never as cause.
+    decided_2026-11-12: >
+      Research review, decisions 7 and 8 (author, after the evidence run
+      runs/research/2026-11-12T1221Z-x12_evidence, private). Releases: counted from the Hugging
+      Face Hub for a fixed list of 25 major labs, text models only (pipeline text-generation),
+      derivatives dropped (quantized copies, adapters, embedding, reward and guard models) and
+      near-duplicate versions of one model grouped as a single release; Epoch AI's database
+      checks only quarters more than six months old (it runs about two quarters behind).
+      Capable bar: a coding bar now, Terminal-Bench (agents working in a command line) at 30%
+      or above, from Epoch AI's benchmark data (204 models scored since June 2025, 33 of them
+      open-weight; 12 open models clear 30%); a security bar is added once a public security
+      benchmark scores enough open-weight models (Epoch's data has none; search by 14 Dec).
 
   - id: X13
     name: AI-credited versus other serious flaws, whole population

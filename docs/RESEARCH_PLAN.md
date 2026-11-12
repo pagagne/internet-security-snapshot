@@ -1,4 +1,4 @@
-# Research window, 23 Oct - 15 Nov 2026: improving the project under two plans (updated 5 Nov 2026)
+# Research window, 23 Oct - 15 Nov 2026: improving the project under two plans (updated 12 Nov 2026)
 
 Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 16 Nov validation.
 Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for the
@@ -213,3 +213,11 @@ assumed 83 (47%), down from 88 before the additions. Siemens added no dates in t
 130 of 175 still go to the hand check, as before; the gain is small, so the 12 Nov decision on
 hand-check effort (#1, decided early: every flagged date) stands.
 
+
+## Research review, 12 Nov 2026 (held 07:15 ET)
+Decision sheet: `docs/decisions/2026-11-12-research-review.md`. Settled: X19 (CERT-FR, JPCERT/CC),
+X20 (APNIC Labs), X21, X22 as applied 29 Oct; web patch adoption registered as X27 (planned);
+X16 deps.dev retried by the 7 Dec prototype. Decided: X12 releases counted from Hugging Face by 25
+labs (text models, near-duplicates grouped; Epoch checks older quarters) and a coding "capable"
+bar on Terminal-Bench at 30%, with a security bar once a public benchmark scores enough open
+models (search by 14 Dec; schedule item `x12-security-bench`).

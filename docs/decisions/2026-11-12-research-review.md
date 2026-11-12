@@ -38,6 +38,8 @@ cards. Anything decided here that touches the core is confirmed at the 21 Dec fr
   worked around) and ENISA (no regular counts found) go to the March review.
 Still for 12 Nov from these four: nothing, unless the JPCERT/CC terms or APNIC's answer say no.
 
+**Review held 12 Nov at 07:15 ET (moved up from 10:00 by the author).**
+
 **Status on the morning of 12 Nov (Claude, filled 12 Nov 08:00 ET; due 11 Nov, done a day late):**
 - #3 X19: **settled.** JPCERT/CC confirmed on 3 Nov that its published documents may be used as
   proposed with credit (docs/PERMISSIONS.md), so CERT-FR and JPCERT/CC both stand.
@@ -50,10 +52,18 @@ Still for 12 Nov from these four: nothing, unless the JPCERT/CC terms or APNIC's
 - #11 X16 deps.dev: **did not run cleanly** (25 Oct: one run found no package entries, the second
   stopped without a result). Under ★A it gets its one retry: the deps.dev prototype due 7 Dec, then
   the 21 Dec session. No choice needed today.
-- #7 and #8 X12: **evidence not gathered.** The lab list, counts per quarter since January 2023
-  and the candidate benchmarks were due by 11 Nov and were not done. The one choice for today:
-  move both to the 21 Dec session with the evidence by 14 Dec, or decide now on the ★ options
-  without it.
+- #7 and #8 X12: evidence gathered during the review (moved up to 07:15 ET by the author;
+  Research task x12_evidence, private runs/research/2026-11-12T1221Z-x12_evidence). Hugging Face
+  (25 labs): 1,862 language-model repositories since January 2023 after dropping derivatives, but
+  still including vision and OCR models and many near-duplicate versions (Google alone 337).
+  Epoch AI: about 90-120 open-weight models a quarter in 2025, only about 20 a quarter in 2026 (it
+  runs behind). Benchmarks in Epoch's data: no security benchmark; Terminal-Bench scores 204
+  models since June 2025 (33 open-weight; 24/12/6 open models clear 20/30/40%); SWE-bench
+  Verified only 35 models.
+  **Decided 12 Nov (author, option cards):** #7, Hugging Face by the 25 labs, text models only,
+  near-duplicates grouped, Epoch as the check for quarters over six months old. #8, a coding bar
+  now (Terminal-Bench at 30%); a security bar once a public security benchmark scores enough
+  open-weight models (search by 14 Dec). Recorded in config/exploratory.yaml (X12).
 - #2 follow-up (can the first "active exploitation" date be read from the repository history?):
   still open; it belongs to the 21 Dec item 23, with the evidence by 14 Dec.
 - New since 27 Oct and relevant to #2 and the race: VulnCheck KEV was granted on 11 Nov and joins

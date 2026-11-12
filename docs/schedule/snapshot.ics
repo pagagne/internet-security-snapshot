@@ -1405,6 +1405,25 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:x12-security-bench@2026-12-14@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Find a public security benchmark for the X12 "ca
+ pable" bar\; build the grouped release count
+DESCRIPTION:Responsible: Claude\n\n12 Nov research review\, decisions 7 and
+  8 (https://github.com/pagagne/internet-security-snapshot/blob/main/config
+ /exploratory.yaml X12): look for a public security benchmark (capture-the-
+ flag or vulnerability tasks) that scores enough open-weight models to set 
+ a second bar\, and propose a threshold for the 21 Dec session\; build the 
+ X12 collector (Hugging Face by the 25 labs\, text models\, near-duplicates
+  grouped\, history from January 2023) and check it against Epoch AI for qu
+ arters over six months old.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:dry-run-full-review@2026-12-15@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261215

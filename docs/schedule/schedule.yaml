@@ -1569,6 +1569,18 @@ items:
     flip (go-live/FLIP_PREVIEW.md) with Claude, then press Publish results. Claude confirms the
     checks and the public page.
 
+- id: x12-security-bench
+  owner: claude
+  title: Find a public security benchmark for the X12 "capable" bar; build the grouped release count
+  date: 2026-12-14
+  minutes: 90
+  details: >
+    12 Nov research review, decisions 7 and 8 (config/exploratory.yaml X12): look for a public
+    security benchmark (capture-the-flag or vulnerability tasks) that scores enough open-weight
+    models to set a second bar, and propose a threshold for the 21 Dec session; build the X12
+    collector (Hugging Face by the 25 labs, text models, near-duplicates grouped, history from
+    January 2023) and check it against Epoch AI for quarters over six months old.
+
 - id: vulncheck-ring
   owner: claude
   title: Colour the VulnCheck slice of the core ring if the dry run brought its data
