@@ -90,12 +90,12 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "e78a0c87fadd99a1",
+    "README.md": "37633d71d303391f",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
-    ".github/workflows/quarterly-pull.yml": "4ef2736082c60b7b",
+    ".github/workflows/quarterly-pull.yml": "a1a9db688d0dbc1c",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
-   "reviewed_on": "2026-11-11"
+   "reviewed_on": "2026-11-12"
   },
   "build_plan": {
    "doc": "exploratory/docs/BUILD_PLAN.md",
@@ -117,11 +117,11 @@
     "README.md"
    ],
    "fingerprints": {
-    "docs/CHANGE_POLICY.md": "3b7b163d6bb9c433",
-    "README.md": "aaf905df894655bd",
+    "docs/CHANGE_POLICY.md": "32c85347bceacdf0",
+    "README.md": "37633d71d303391f",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-11-11"
+   "reviewed_on": "2026-11-12"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
