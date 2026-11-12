@@ -39,6 +39,10 @@ jobs:
         # Each study document's title carries the date of its last real change (author,
         # 11 Nov 2026); run  python -m snapshot.docdates stamp  after editing one.
         run: python -m snapshot.docdates check
+      - name: Written dates match the schedule?
+        # Dates and permission statuses marked in the documents must match docs/schedule/schedule.yaml
+        # and config/sources.yaml (author, 11 Nov 2026: update one place, every copy follows).
+        run: python -m snapshot.refs check
       - name: Cross-references land?
         # Every link between study documents must reach an existing file and section (author,
         # 11 Nov 2026). Links into the private repository are checked where it is checked out.

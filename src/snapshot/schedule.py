@@ -481,7 +481,10 @@ def main(argv=None) -> int:
         REVIEWER_JSON.parent.mkdir(parents=True, exist_ok=True)
         REVIEWER_JSON.write_text(build_reviewer_json())
         README.write_text(build_readme())
-        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the reviewer feed and the README schedule table")
+        from .refs import run as stamp_refs   # every marked date in the documents follows (snapshot.refs)
+        moved = stamp_refs(REPO_ROOT, write=True)
+        print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the reviewer feed and the README schedule table"
+              + (f"; updated {len(moved)} marked dates in the documents" if moved else ""))
         return 0
     stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (REVIEWER_ICS, build_reviewer_ics().encode()), (REVIEWER_JSON, build_reviewer_json().encode()), (README, build_readme().encode()))
              if not p.exists() or p.read_bytes() != want]

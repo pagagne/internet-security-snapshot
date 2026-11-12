@@ -1,6 +1,6 @@
-# Operations: how the study runs without depending on one Claude chat (updated 11 Nov 2026)
+# Operations: how the study runs without depending on one Claude chat (updated 12 Nov 2026)
 
-From the **cutover on Mon 30 Nov 2026**, everything the annual study needs lives in this
+From the **cutover on Mon <!-- date:cutover -->30 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
 person, can pick up the work from the files and issues below.
 
@@ -45,13 +45,21 @@ never in the repository; Claude keeps it current.
   `python -m snapshot.schedule build`, which rewrites `docs/ANNUAL_PLAN.md`, the calendar
   feeds `docs/schedule/snapshot.ics` and `docs/schedule/reviewer.ics` and the Schedule table in `README.md` (from the
   `milestones:` list, which takes its dates from the items). The Checks workflow fails if you forget.
+- **Dates written in documents follow the schedule (11-12 Nov 2026, author's request):** a date
+  that names a schedule item is written with an invisible mark, for example
+  `<!-- date:freeze -->29 Dec 2026<!-- /date -->`, and a source's permission status the same way
+  (`<!-- status:vulncheck -->Granted<!-- /status -->`, from `config/sources.yaml`). The schedule
+  build rewrites every marked copy, so a date is changed in `schedule.yaml` only; `python -m
+  snapshot.refs check` (in Checks) fails when a copy differs or names an item that does not
+  exist, including any "schedule item `<id>`" written in a document. Records of what happened
+  (`docs/INQUIRIES.md`, `docs/decisions/`, session logs) keep the dates they had and are not marked.
 - **Daily job:** `.github/workflows/schedule.yml` runs at 15:37, 20:07, 21:23, 22:37 and 23:43
   UTC. GitHub starts scheduled runs late at busy times (4 to 8 hours late, measured 28 Oct -
   5 Nov 2026), so the daily timers moved to the evening on 5 Nov for a one-week trial (author).
   As a last safety net the daily Claude work queue (08:32 ET) starts it by hand if no run has
   succeeded that day. It opens each due
   author/Claude issue once (each issue carries a hidden `schedule-uid` marker, so reruns never
-  duplicate) and starts any `dispatch:` run that has no cron of its own, such as the 1 Dec dry
+  duplicate) and starts any `dispatch:` run that has no cron of its own, such as the <!-- date:dry-run -->1 Dec<!-- /date --> dry
   run. If a day is missed, the next run catches up on anything from the previous 6 days.
   Run it by hand from the Actions tab with a date and "dry run" to preview.
 - Starting the API-only workflows (no Run button since 29 Oct: Quarterly pull, Research probe,
@@ -67,7 +75,7 @@ never in the repository; Claude keeps it current.
 schedule as the calendars, via `site/reviewer/tasks.json`), the spot-check draw and worksheets
 with an automatic match check (and, for a reviewer who prefers it, a guided check that shows every step of the arithmetic, recorded as "guided"), a guided second-coder round that opens the quarter's answer file (CSV) and saves the completed file to send back, and
 the April review steps with a draft template. Progress stays in the reviewer's browser; they
-send results by copying or saving them. It goes live with GitHub Pages on 4 Dec 2026; until
+send results by copying or saving them. It goes live with GitHub Pages on <!-- date:landing-page -->4 Dec 2026<!-- /date -->; until
 then, a private preview is a Claude artifact. Worksheets are listed in
 `site/reviewer/worksheets.json`; its `draw_from` list (the headline figures reported that
 quarter) is what the reviewer's seeded draw picks from.
@@ -81,7 +89,7 @@ at the March review.
 `docs/SYNC_REVIEW.md` is the checklist for keeping the repository, Claude docs, calendars,
 scheduled tasks and the Reviewer's Desk in step: weekly until the cutover, then three days
 before each provisional report, and on request. Questions for the author are always asked
-together, in one list. Who does what before and after the cutover and the 29 Dec lock (the two Claude
+together, in one list. Who does what before and after the cutover and the <!-- date:freeze -->29 Dec<!-- /date --> lock (the two Claude
 sessions, the public and private repositories): diagrams in `docs/SOP_MANUAL_RUNS.md`,
 section 8.
 
@@ -168,7 +176,7 @@ may inform an optional trends summary written in our own words.
 ## The project's email address
 `internetsecuritysnapshot@gmail.com` (created by the author 29 Oct 2026; 2-step verification on)
 is the study's public contact: university postings, the reviewer invitation, outreach and, from
-4 Dec, the website. Its mail is forwarded to the author's own Gmail, so replies reach the same
+<!-- date:landing-page -->4 Dec<!-- /date -->, the website. Its mail is forwarded to the author's own Gmail, so replies reach the same
 inbox Claude checks and are filed the same day (correspondence rule below). The password is
 the author's alone and never appears in chat or the repository.
 
@@ -264,20 +272,20 @@ check-ins are retired once they have run.
 
 | When (ET) | Task | Where it reports |
 |---|---|---|
-| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from 30 Nov does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
+| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from <!-- date:cutover -->30 Nov<!-- /date --> does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
 | Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; each run schedules the next | The author's current chat |
 | Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study (from 14 Nov); each run schedules the next | The author's current chat |
 | Thu 12 Nov, 09:15 and 09:30 | Evening-timer trial review; research review decision cards (review at 10:00) | The author's current chat |
 | Mon 16 and 23 Nov, 09:00 | Weekly sync reviews and due `owner:claude` issues | The author's current chat |
-| Thu 19 Nov, 09:00 | GreyNoise and CrowdSec follow-up drafts (the author sends 20 Nov) | The author's current chat |
-| Wed 25 Nov, 09:00 | Race fix-date list ready for the dry run | The author's current chat |
+| Thu 19 Nov, 09:00 | GreyNoise and CrowdSec follow-up drafts (the author sends <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date -->) | The author's current chat |
+| Wed <!-- date:race-list-ready -->25 Nov<!-- /date -->, 09:00 | Race fix-date list ready for the dry run | The author's current chat |
 
 Refreshed 11 Nov 2026. Every task above except the work queue delivers into one chat and stops
 if that chat is lost: a new chat recreates them from section 6 of `START_HERE_NEW_CHAT.md`
 (private repository, root; the full message of each task is there).
 
 Some one-off tasks are tied to the author's computer "Shofar" and wait until it is on. The
-eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). From the 30 Nov
+eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). From the <!-- date:cutover -->30 Nov<!-- /date -->
 cutover the work queue takes over the dated work; new dates go into the schedule, not into
 chat reminders.
 
@@ -314,4 +322,4 @@ private path, `exploratory/docs/...`, and do not link to them.
 ## Standing rules
 See `docs/HANDOVER.md`. In short: no keys or tokens in chat or issues (GitHub secrets only);
 VulnCheck-derived data private until written permission; ransomware.live aggregates only;
-no scanning or host-level data; no project links shared publicly before 4 Dec 2026.
+no scanning or host-level data; no project links shared publicly before <!-- date:landing-page -->4 Dec 2026<!-- /date -->.

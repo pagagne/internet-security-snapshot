@@ -1,8 +1,8 @@
 # Research window, 23 Oct - 15 Nov 2026: improving the project under two plans (updated 12 Nov 2026)
 
 Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 16 Nov validation.
-Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for the
-21 Dec decisions. Nothing here changes the locked core; results feed decision items.
+Permission follow-ups: <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date -->. If still no reply then, Plan 2 is the default for the
+<!-- date:freeze-session -->21 Dec<!-- /date --> decisions. Nothing here changes the locked core; results feed decision items.
 
 ## Either way (first)
 1. **Fix dates for exploited flaws (option a).** Finding 2026-10-22: the GitHub-based pre-fill
@@ -40,7 +40,7 @@ Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for
 - Patch speed without exposure scans: for open-source flaws, share of downloads/dependents on
   the fixed version over time (npm, PyPI, deps.dev). Feasibility research.
 - Other exposure options: see the 25 Oct brainstorm (below). Censys application on
-  28 Oct 2026, written by the author (decided 25 Oct); Shodan's academic tier needs a university email.
+  28 Oct 2026, written by the author (decided 25 Oct), declined 10 Nov 2026; Shodan's academic tier needs a university email.
 - Free substitutes if a permission is refused: Shadowserver -> SANS ISC honeypot data plus
   HTTP Archive and deps.dev for patch adoption; VulnCheck -> EUVD plus inthewild.io.
 - **Shadowserver read by hand (added 26 Oct).** The public dashboard is free to use with
@@ -49,7 +49,7 @@ Permission follow-ups: 20 Nov. If still no reply then, Plan 2 is the default for
   for the cohort and race flaws that Shadowserver tracks, records the counts with the
   dashboard link and date in a small credited table, and T1b/T2 are reported for those flaws
   alone, marked "hand-read, coverage n of N". About 15-30 minutes a quarter; no automated
-  download. Mentioned in the 20 Nov follow-up so it is not mistaken for scraping, and logged
+  download. Mentioned in the <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> follow-up so it is not mistaken for scraping, and logged
   in `prereg/DEVIATIONS.md` if adopted for the pilot.
 - Fallback wording for core-v1.2: T1b and T2 "not measured" with the reason; T1(a) under
   option (a) becomes the headline race measure.
@@ -127,9 +127,11 @@ Adopted by the author on 25 Oct, all exploratory (registered before first look, 
 until a March review), scheduled in `docs/schedule/schedule.yaml`: daily SANS ISC honeypot
 capture (from 2 Nov); KEV-lag back-test against EUVD, Project Zero's sheet and inthewild.io,
 and Linux kernel/distribution fix dates (9 Nov); HTTP Archive version test (16 Nov); Censys
-application (17 Nov, by the author); deps.dev patch-adoption prototype (7 Dec); AI labs'
-lists against our credit counts (25 Jan); GreyNoise and CrowdSec requests (11 Jan); HHS OCR
-harm series (18 Jan). Also an inquiry log (`docs/INQUIRIES.md`) and watch cases chosen by rule.
+application (17 Nov, by the author); deps.dev patch-adoption prototype (<!-- date:deps-dev-retry -->7 Dec<!-- /date -->); AI labs'
+lists against our credit counts (25 Jan); GreyNoise and CrowdSec requests (sent 29 Oct; follow-up
+<!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date -->); HHS OCR harm series (no export, so the author downloads it by hand each
+quarter: research review 12 Nov, decision 11). Dates other than the marked ones are as first planned
+on 25 Oct; the current dates are in the schedule. Also an inquiry log (`docs/INQUIRIES.md`) and watch cases chosen by rule.
 
 ### Brainstorm probes (2026-10-25)
 Research probes run on GitHub (outputs under `research/2026-10-25T18*` on the run-reports
@@ -160,7 +162,7 @@ leave the registered core unchanged:
 - **X3 sweep** in nine languages, with research blogs from Korea, China and Japan.
 
 Probes on 27 Oct (`global-probes`); decisions at the 12 Nov review; anything adopted is active
-before the 29 Dec freeze. The final report states what each finding covers.
+before the <!-- date:freeze -->29 Dec<!-- /date --> freeze. The final report states what each finding covers.
 
 ## Pilot watch cases
 Real cases to follow through the Q4 2026 pilot, to see how the study's rules and free
@@ -217,7 +219,7 @@ hand-check effort (#1, decided early: every flagged date) stands.
 ## Research review, 12 Nov 2026 (held 07:15 ET)
 Decision sheet: `docs/decisions/2026-11-12-research-review.md`. Settled: X19 (CERT-FR, JPCERT/CC),
 X20 (APNIC Labs), X21, X22 as applied 29 Oct; web patch adoption registered as X27 (planned);
-X16 deps.dev retried by the 7 Dec prototype. Decided: X12 releases counted from Hugging Face by 25
+X16 deps.dev retried by the <!-- date:deps-dev-retry -->7 Dec<!-- /date --> prototype. Decided: X12 releases counted from Hugging Face by 25
 labs (text models, near-duplicates grouped; Epoch checks older quarters) and a coding "capable"
 bar on Terminal-Bench at 30%, with a security bar once a public benchmark scores enough open
-models (search by 14 Dec; schedule item `x12-security-bench`).
+models (search by <!-- date:x12-security-bench -->14 Dec<!-- /date -->; schedule item `x12-security-bench`).

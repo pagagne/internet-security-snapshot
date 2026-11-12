@@ -1,4 +1,4 @@
-# What we expect from the Q4 2026 pilot (written 26 Oct 2026, before any Q4 result) (updated 26 Oct 2026)
+# What we expect from the Q4 2026 pilot (written 26 Oct 2026, before any Q4 result) (updated 12 Nov 2026)
 
 Recorded at the author's request so the pilot can be compared with what we expected before we
 saw it. These are best guesses from the Q2-Q3 2026 previews and what had been reported in
@@ -6,7 +6,7 @@ October; they are **not** registered hypotheses and decide nothing. Compared wit
 after the final run (schedule item `pilot-expectations-check`, 3 Feb 2027).
 
 ## What the pilot is for
-- Prove the machinery: provisional pull on 1 Jan and final on 1 Feb on time with every
+- Prove the machinery: provisional pull on <!-- date:pull-provisional@1 -->1 Jan<!-- /date --> and final on <!-- date:pull-final@1 -->1 Feb<!-- /date --> on time with every
   approved source, a clean manifest, the author's review gate, the hand check in about 1½
   hours, and the first Zenodo archive on 1 Feb.
 - Find the rough edges before Q1 2027, the first scored quarter.
@@ -24,7 +24,7 @@ after the final run (schedule item `pilot-expectations-check`, 3 Feb 2027).
 | AI-run attack log (X3), Q4 entries | roughly as many as the whole first half of 2026 | about a dozen Q4 cases logged by 26 Oct (Cairn, ARTEX, CERT-In, "Skynet") |
 | Open-weight releases (X12) | curve still climbing; gap to the frontier a matter of months | DeepSeek, OpenClaw, Hermes already in attacks |
 | SEC Item 1.05 filings (T6b) | around a dozen | Q3 test pull |
-| Exposure (T1b, T2) | "not measured" or "baseline building" unless Shadowserver or Censys arrive | permissions pending |
+| Exposure (T1b, T2) | "not measured" or "baseline building" unless Shadowserver arrives (Censys declined 10 Nov 2026) | Shadowserver permission pending |
 | Web patch adoption (HTTP Archive, PHP2Shell) | a large share of PHP sites still on unfixed or never-fixable versions | author's concern, 26 Oct |
 
 ## The story we expect

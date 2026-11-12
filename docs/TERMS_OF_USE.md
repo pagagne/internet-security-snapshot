@@ -1,4 +1,4 @@
-# Terms of use: every site the study reads (updated 11 Nov 2026)
+# Terms of use: every site the study reads (updated 12 Nov 2026)
 
 Register added 30 Oct 2026 at the author's request ("include all the terms of use of the sites
 we're accessing"). One row per site: its terms page, the rules that matter to the study, and how
@@ -25,7 +25,7 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 | Microsoft, Cisco, Palo Alto, Siemens advisories | (vendor sites) | To summarise | Fix dates only, few requests |
 | SANS Internet Storm Center | https://isc.sans.edu/feeds_doc.html | Attribution; no reselling; non-commercial licence; at most one download an hour | Two files once a month, an hour apart; aggregates only; credited |
 | ransomware.live | https://www.ransomware.live/t&c | Fair Usage Policy; written yes on seven conditions (ticket 3425) | Aggregates only; no raw data; credited (`docs/PERMISSIONS.md`) |
-| VulnCheck | (accepted at sign-up) | Attribution of the source data (VulnCheck, 11 Nov 2026) | Collected from the 1 Dec dry run; derived figures credited "VulnCheck KEV"; the per-CVE table stays private, entries never republished |
+| VulnCheck | (accepted at sign-up) | Attribution of the source data (VulnCheck, 11 Nov 2026) | Collected from the <!-- date:dry-run -->1 Dec<!-- /date --> dry run; derived figures credited "VulnCheck KEV"; the per-CVE table stays private, entries never republished |
 | Cloudflare Radar | https://developers.cloudflare.com/radar/ | To summarise (radar.cloudflare.com refuses automated readers) | API with the author's token; aggregates |
 | JPCERT/CC | https://www.jpcert.or.jp/guide.html | Quoting free with source, document and URL; courtesy email; addresses may change | Titles, CVE IDs and dates; courtesy notice sent 29 Oct |
 | CERT-FR (ANSSI) | https://www.cert.ssi.gouv.fr/mentions-legales/ | Licence ouverte; no logos; no framing | Titles, CVE IDs and dates, credited |
@@ -79,7 +79,7 @@ automated request the study makes, by schedule:
   by git from GitHub (NVD's own feed files only as a fallback); four NVD API count queries 7 s
   apart; about 92 EPSS daily files 1 s apart and EPSS API pages 0.5 s apart; SEC full-text search
   0.2 s apart with the contact User-Agent; a few Cloudflare Radar calls with the token; three
-  ransomware.live api-pro calls 5 s apart (30 minutes apart from 11 Nov); from 1 Dec, one VulnCheck
+  ransomware.live api-pro calls 5 s apart (30 minutes apart from 11 Nov); from <!-- date:dry-run -->1 Dec<!-- /date -->, one VulnCheck
   backup request and one download.
 - **On demand:** Research tasks, started only by the author or the schedule.
 

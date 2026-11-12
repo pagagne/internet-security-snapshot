@@ -1,9 +1,9 @@
-# Standard operating procedure: running workflows by hand (updated 11 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 12 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
-workflow lock list on 18 Dec 2026; adopted at the 8 Feb 2027 pilot session; **in force from
+workflow lock list on <!-- date:workflows-review -->18 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
 9 Feb 2027**, after the Q4 2026 pilot. Until then the pilot rules apply (dry runs on 1 and
-15 Dec, freeze on 29 Dec), and this draft may be used as guidance.
+<!-- date:dry-run-full -->15 Dec<!-- /date -->, freeze on <!-- date:freeze -->29 Dec<!-- /date -->), and this draft may be used as guidance.
 
 **Applies to:** the author and Claude. **Background:** `docs/WORKFLOWS.md` (what each workflow
 does, how they depend on each other, and how critical each is).
@@ -32,7 +32,7 @@ click must never start them. See section 5.
 
 *Blue: internal, repository only, with a Run button. Orange: external, no Run button, started
 on a timer or by Claude through GitHub's API. Red with a thick border: proposed to be locked at
-the 29 Dec 2026 freeze (decision item 22), so they cannot change while the study runs; all
+the <!-- date:freeze -->29 Dec 2026<!-- /date --> freeze (decision item 22), so they cannot change while the study runs; all
 others may change, with every change logged. Source: `docs/diagrams/workflow_runs.dot`.*
 
 ## 3. Quiet periods: when no workflow is run by hand
@@ -42,7 +42,7 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
    its run shows a green check or a red cross.
 2. **While any quarterly pull is running**, at any time (including a dry run or a re-run).
 3. **While a `privacy` issue is open.** Fix the leak first; then run Checks, then the rest.
-4. **During a freeze or decision session** (for example 29 Dec 2026), unless the session asks
+4. **During a freeze or decision session** (for example <!-- date:freeze -->29 Dec 2026<!-- /date -->), unless the session asks
    for a run.
 
 ## 4. The six Run-button workflows
@@ -114,7 +114,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 
 | Workflow | When a manual start is acceptable | Never |
 |---|---|---|
-| Quarterly pull | Dry runs (1 and 15 Dec 2026); re-running a failed official pull, with the author's yes, the same day, once (the author can also do this with the Re-run button, section 7) | More than one re-run per quarter without a written reason; any change to its sources or settings after the 29 Dec freeze except by the change policy |
+| Quarterly pull | Dry runs (1 and 15 Dec 2026); re-running a failed official pull, with the author's yes, the same day, once (the author can also do this with the Re-run button, section 7) | More than one re-run per quarter without a written reason; any change to its sources or settings after the <!-- date:freeze -->29 Dec<!-- /date --> freeze except by the change policy |
 | Research probe | Testing a new or changed source the author asked about | More than once a day per source; any probe that scans hosts or collects personal data |
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
@@ -194,17 +194,17 @@ Added 5 Nov 2026 (author's request). Two Claude sessions work on the study, with
   (`exploratory/docs/artifacts/README.md`).
 - **The daily work queue** is a scheduled Claude task that starts fresh each morning with the
   public repository only; a test on 5 Nov 2026 confirmed it cannot attach the private one. Until
-  30 Nov 2026 it only comments on issues. From the cutover it works the owner:claude issues and
+  <!-- date:cutover -->30 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works the owner:claude issues and
   does the quarterly sync review from the public checklist (`docs/SYNC_REVIEW.md`). When a
   document with a Claude copy changes, it lists the documents in the issue and the chat session
   updates the copies.
 
-Until 30 Nov 2026:
+Until <!-- date:cutover -->30 Nov 2026<!-- /date -->:
 
 ![Sync flow until the 30 Nov 2026 cutover](diagrams/sync_flow_now.png)
 
-From the 29 Dec 2026 lock (core freeze and workflow lock), through the pilot (1 Jan 2027) and
-after the procedures are adopted (8 Feb 2027):
+From the <!-- date:freeze -->29 Dec 2026<!-- /date --> lock (core freeze and workflow lock), through the pilot (<!-- date:pull-provisional@1 -->1 Jan 2027<!-- /date -->) and
+after the procedures are adopted (<!-- date:sop-adopt -->8 Feb 2027<!-- /date -->):
 
 ![Sync flow after the 29 Dec 2026 lock](diagrams/sync_flow_locked.png)
 

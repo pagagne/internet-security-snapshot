@@ -1,8 +1,8 @@
-# Sync review: keeping everything in step (updated 11 Nov 2026)
+# Sync review: keeping everything in step (updated 12 Nov 2026)
 
 A repeatable check that the repository, the Claude docs, the calendars, the scheduled tasks
 and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the author's request.
-Scheduled weekly until the 30 Nov 2026 cutover, then three days before each provisional report
+Scheduled weekly until the <!-- date:cutover -->30 Nov 2026<!-- /date --> cutover, then three days before each provisional report
 (`sync-review` and `sync-review-quarterly` in `docs/schedule/schedule.yaml`), and on request.
 
 Who runs it: the original chat session until the cutover; the daily work queue after it, from

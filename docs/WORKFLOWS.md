@@ -1,7 +1,7 @@
 # The study's workflows (updated 12 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
-was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec workflow review
+was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The <!-- date:workflows-doc -->14 Dec<!-- /date --> workflow review
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
@@ -35,7 +35,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
-| Landing snapshot | `landing-snapshot.yml` | Schedule: 30 Nov 2026, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
+| Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->30 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
 | Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
@@ -82,7 +82,7 @@ skipped. On 27 Oct: "frozen files and recomputed figures match".
 that day.
 
 **What it does:** reads `docs/schedule/schedule.yaml` and opens a GitHub issue for each item that
-falls due, for the author, for Claude, or for a review. On dry-run dates (1 Dec, 15 Dec) it starts
+falls due, for the author, for Claude, or for a review. On dry-run dates (<!-- date:dry-run -->1 Dec<!-- /date -->, <!-- date:dry-run-full -->15 Dec<!-- /date -->) it starts
 the quarterly pull itself. (Until 29 Oct it also ran the daily privacy scan, now its own
 workflow: section 10.)
 
@@ -250,7 +250,7 @@ a pull or sweep actually collects it. The landing page links the SOP, not the pr
 
 ## 15. Landing snapshot: the page's history
 
-**When:** started by the Schedule workflow at the cutover (30 Nov 2026), the pilot run (1 Jan
+**When:** started by the Schedule workflow at the cutover (<!-- date:cutover -->30 Nov 2026<!-- /date -->), the pilot run (<!-- date:pull-provisional@1 -->1 Jan<!-- /date -->
 2027) and each quarterly run (1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028), after that day's source
 check; also by its Run button (added 31 Oct 2026, author's request). **What it does:** copies the
 coverage ring, its settings and the day's banner into run-reports
@@ -260,7 +260,7 @@ writes up the 2027 roll-up on 4 Jan 2028. The baseline was taken on 31 Oct 2026.
 
 ## How they depend on each other
 
-Added 29 Oct 2026 at the author's request, as the starting point for the 14 Dec lock list.
+Added 29 Oct 2026 at the author's request, as the starting point for the <!-- date:workflows-doc -->14 Dec<!-- /date --> lock list.
 
 ```
 Claude work queue (08:32 ET, outside GitHub)
@@ -300,7 +300,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Manual publish | **Support**: the private reading copy of the manual | The private copy goes stale; the Markdown copy in Drive and the public documents are unaffected. |
 | Source watch | **Support**: early warning for the core and companion sources | A moved or changed source would be found on pull day instead of weeks earlier; data unaffected. |
 
-The pilot (1 Jan provisional, 1 Feb final) needs Schedule -> Quarterly pull -> Rebuild check, with
+The pilot (<!-- date:pull-provisional@1 -->1 Jan<!-- /date --> provisional, <!-- date:pull-final@1 -->1 Feb<!-- /date --> final) needs Schedule -> Quarterly pull -> Rebuild check, with
 Checks guarding every change. If any of the other five failed, the pilot would still run.
 
 ## How they fit together

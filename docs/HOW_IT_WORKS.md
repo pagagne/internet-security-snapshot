@@ -1,4 +1,4 @@
-# The Internet Security Snapshot: How It Works and What It Will Show (updated 11 Nov 2026)
+# The Internet Security Snapshot: How It Works and What It Will Show (updated 12 Nov 2026)
 
 23 October 2026, updated 7 November 2026 · Paul Gagne
 
@@ -108,9 +108,9 @@ The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1s
 
 | Date | Event | What it is | Why it is needed |
 | --- | --- | --- | --- |
-| Fri 1 Jan | Q4 2026 provisional report | The automatic pull for October to December 2026, labelled **pilot** | Tests the whole system on real data before any result is scored |
+| Fri <!-- date:pull-provisional@1 -->1 Jan<!-- /date --> | Q4 2026 provisional report | The automatic pull for October to December 2026, labelled **pilot** | Tests the whole system on real data before any result is scored |
 | 4–28 Jan | Q4 2026 hand-check window | About 1½ hours in the Hand Check app (about 50 minutes if race fix dates are sampled), at any time in the window | Supplies fix dates and AI-credit decisions no program can make |
-| Mon 1 Feb | Q4 2026 final report | Data pulled again, hand checks included; the pilot witness's note follows by 5 Feb | Sources keep updating; a month's wait catches late listings and corrections |
+| Mon <!-- date:pull-final@1 -->1 Feb<!-- /date --> | Q4 2026 final report | Data pulled again, hand checks included; the pilot witness's note follows by 5 Feb | Sources keep updating; a month's wait catches late listings and corrections |
 | 2–12 Feb | Evaluation of the AI-credit rule | The pilot's two AI numbers compared, with a sample of lab-affiliated credits checked | Decides at the 15 March review whether any mention of an AI lab should keep counting |
 | Mon 15 Mar | Annual review and change window | The only time the scored rules may change, logged on OSF; external reviewer confirmed by 1 March | Lets the study fix errors in the open without moving the goalposts mid-year |
 | Thu 1 Apr | Q1 2027 provisional report | **The first scored quarter**, the first with Improving / Worsening labels | The point where results start to count |

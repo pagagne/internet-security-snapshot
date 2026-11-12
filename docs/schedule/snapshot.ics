@@ -1258,6 +1258,22 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 31 Oct 2026:
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:deps-dev-retry@2026-12-07@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Retry the deps.dev patch-adoption prototype (X16
+ \, one retry)
+DESCRIPTION:Responsible: Claude\n\nResearch review 12 Nov\, decision 11: th
+ e 25 Oct runs did not finish cleanly\, so X16 gets its one retry here: a l
+ ighter research run of depsdev_adoption (today's share of dependents on af
+ fected versions). Result goes to the 21 Dec decision session\; no clean re
+ sult means X16 is dropped there.\n\nSource: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:witness-select@2026-12-08@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261208

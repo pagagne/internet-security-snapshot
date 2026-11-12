@@ -64,6 +64,7 @@ BASELINE = Path(__file__).resolve().parents[2] / "config" / "privacy_baseline.tx
 
 def _line_key(name: str, line: str) -> str:
     import hashlib
+    line = re.sub(r"<!-- (?:/?(?:date|status))(?::[\w.@-]+)? -->", "", line)   # snapshot.refs marks
     return hashlib.sha1(f"{name}\t{line.strip()}".encode()).hexdigest()[:16]
 
 

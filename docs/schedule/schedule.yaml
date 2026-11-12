@@ -5,6 +5,8 @@
 #   .github/workflows/schedule.yml  opens a GitHub issue for each author/Claude item when it is
 #                                   due, and starts scheduled GitHub runs that have no cron
 # After editing: python -m snapshot.schedule build   (the Checks workflow fails if you forget)
+# The build also updates every date written in the documents with a mark such as
+#   <!-- date:dry-run -->1 Dec<!-- /date -->   (snapshot.refs), so a date is changed here only.
 #
 # Fields
 #   id      unique slug; with the date it names the issue and the calendar entry
@@ -413,6 +415,16 @@ items:
     Research probe depsdev_adoption, 25 Oct: today's share of dependents on affected
     versions for attacked open-source flaws (deps.dev free API). History over time needs
     deps.dev's BigQuery tables (httparchive-test, after the BigQuery project).
+
+- id: deps-dev-retry
+  owner: claude
+  title: Retry the deps.dev patch-adoption prototype (X16, one retry)
+  date: 2026-12-07
+  details: >
+    Research review 12 Nov, decision 11: the 25 Oct runs did not finish cleanly, so X16 gets
+    its one retry here: a lighter research run of depsdev_adoption (today's share of dependents
+    on affected versions). Result goes to the 21 Dec decision session; no clean result means
+    X16 is dropped there.
 
 - id: ai-lists-crosscheck
   owner: claude

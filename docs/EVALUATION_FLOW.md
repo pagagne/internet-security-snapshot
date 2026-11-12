@@ -1,4 +1,4 @@
-# How the quarterly report is built (updated 25 Oct 2026)
+# How the quarterly report is built (updated 12 Nov 2026)
 
 Every quarter the study collects public data about software flaws and answers a small set
 of questions about them. The work runs on four separate tracks. This page explains each
@@ -213,9 +213,9 @@ gantt
 
 | Date | What happens |
 |---|---|
-| Fri 1 Jan | Q4 2026 (pilot quarter) data pulled automatically; provisional draft reviewed by the author and published within two days, labelled **pilot** |
+| Fri <!-- date:pull-provisional@1 -->1 Jan<!-- /date --> | Q4 2026 (pilot quarter) data pulled automatically; provisional draft reviewed by the author and published within two days, labelled **pilot** |
 | 4–28 Jan | Hand-check window for Q4 2026 (about 1½ hours of work, or about 50 minutes if race fix dates are sampled, at any time in the window; answers due by the 28th) |
-| Mon 1 Feb | Q4 2026 final report (data pulled again, hand-check results included) |
+| Mon <!-- date:pull-final@1 -->1 Feb<!-- /date --> | Q4 2026 final report (data pulled again, hand-check results included) |
 | 2–12 Feb | Evaluation of the AI-credit rule on the pilot data: headline (any AI tool or lab mentioned) against the narrow count (AI tool named), a sample of lab-affiliated credits, and spot-check results; outcome goes to the 15 March review |
 | Mon 1 Mar | External reviewer confirmed |
 | Mon 15 Mar | Annual review and change window: the only time the core rules may change; changes logged on OSF |

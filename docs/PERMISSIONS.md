@@ -1,4 +1,4 @@
-# Data permissions log (updated 11 Nov 2026)
+# Data permissions log (updated 12 Nov 2026)
 
 Requests to data providers to confirm that this free, non-commercial project may publish
 derived results from their data. Any source that declines is dropped and the change is
@@ -104,7 +104,7 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   few series by hand from the public dashboard each quarter and cite them; does that fit the
   dashboard's terms?
 - Attribution: ask for their preferred credit wording.
-- Timing: decisions are fixed on 21 Dec 2026; a later yes is switched on the next quarter.
+- Timing: decisions are fixed on <!-- date:freeze-session -->21 Dec 2026<!-- /date -->; a later yes is switched on the next quarter.
 
 ## Requests planned (25 Oct 2026 brainstorm)
 
@@ -176,7 +176,7 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
   VulnCheck is published until VulnCheck confirms in writing**. **Confirmed 11 Nov 2026:** VulnCheck
   replied that for community data its only requirement is attribution of the source data and
   that the study's plan (derived statistics labelled "VulnCheck KEV", no entries republished)
-  satisfies its requirements. **Switched on by the author, 11 Nov 2026,** from the 1 Dec dry run
+  satisfies its requirements. **Switched on by the author, 11 Nov 2026,** from the <!-- date:dry-run -->1 Dec<!-- /date --> dry run
   (config/sources.yaml: collect and publish on, raw_public off): the collector
   (`snapshot.collect.vulncheck`) takes VulnCheck's offline backup once a pull, keeps a per-CVE table
   in the bundle's private part only, and feeds T_exploit (T1, T3); the VulnCheck-CISA part of I6 is

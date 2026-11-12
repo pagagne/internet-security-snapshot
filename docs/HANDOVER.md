@@ -1,4 +1,4 @@
-# Handover: session 1 to the continuing session (24 Oct 2026) (updated 11 Nov 2026)
+# Handover: session 1 to the continuing session (24 Oct 2026) (updated 12 Nov 2026)
 
 > **NEW CHAT? This is not the starting point.** A new Claude chat taking over the study starts
 > with **START HERE: NEW CHAT**, the file `START_HERE_NEW_CHAT.md` (private repository
@@ -45,12 +45,12 @@ new session needed on 24 Oct. (Then: read this first, then `exploratory/docs/BUI
 > the hand-made events listed below were removed. Kept for the record.
 
 12 Nov research review (includes the decision on race hand-check effort) · 16 Nov validation ·
-20 Nov permission follow-ups · 23-24 Nov baseline hand check · 1 Dec dry run · 2 Dec dry-run hand
-check · 3 Dec move the pull into the container (added by the other session) · 4 Dec landing page,
-Discussions, Zenodo, delete leftover branch · 21 Dec decision session · 29 Dec freeze ·
+<!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> permission follow-ups · 23-24 Nov baseline hand check · <!-- date:dry-run -->1 Dec<!-- /date --> dry run · 2 Dec dry-run hand
+check · 3 Dec move the pull into the container (added by the other session) · <!-- date:landing-page -->4 Dec<!-- /date --> landing page,
+Discussions, Zenodo, delete leftover branch · <!-- date:freeze-session -->21 Dec<!-- /date --> decision session · <!-- date:freeze -->29 Dec<!-- /date --> freeze ·
 quarterly: 2nd Jan/Apr/Jul/Oct approve draft and open the 4th-28th hand-check window; 25th
 reminder; 2nd Feb/May/Aug/Nov final-run check · 12 Jan 2027 line up the external reviewer ·
-8 Feb 2027 AI-credit rule evaluation and PHP2Shell case · 15 Feb Censys application (moved to 17 Nov 2026 on 25 Oct) ·
+<!-- date:ai-rule-session -->8 Feb 2027<!-- /date --> AI-credit rule evaluation and PHP2Shell case · Censys application sent 28 Oct 2026, declined 10 Nov (reapply decided 15 March 2027) ·
 15 Mar annual review (yearly). Descriptions were updated 24 Oct to the current rules.
 
 ## Scheduled check-ins to recreate in the new session
@@ -65,14 +65,14 @@ Superseded (11 Nov 2026): the current list, with each task's full message, is se
 - Provisional reports: drafted on the 1st, published after the author's review within two days;
   hand-check window 4th-28th (23 Oct).
 - External reviewer for Q1 2027 (decision item 17; confirm by 1 Mar (was 15 Mar; moved 24 Oct), review 3-28 Apr).
-- Decided items 0, 7 and 12 only need confirming at the 21 Dec session.
+- Decided items 0, 7 and 12 only need confirming at the <!-- date:freeze-session -->21 Dec<!-- /date --> session.
 
 ## Open for the author
 - 12 Nov: every flagged race fix date or a sample (sets the quarterly and baseline workload).
-- 21 Dec agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-22; 22 = the workflow lock, added 25 Oct).
+- <!-- date:freeze-session -->21 Dec<!-- /date --> agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-22; 22 = the workflow lock, added 25 Oct).
 
 ## Standing rules (unchanged)
 Never paste keys or tokens into chat (GitHub secrets only); VulnCheck-derived data private until
 written permission; ransomware.live aggregates only, no victim names, no polling more often than
 every 30 minutes; no scanning or host-level data; the Censys application is written by the author;
-research organisations, not individuals; no project links shared publicly before 4 Dec.
+research organisations, not individuals; no project links shared publicly before <!-- date:landing-page -->4 Dec<!-- /date -->.

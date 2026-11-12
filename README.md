@@ -44,7 +44,7 @@ Three are pending permission:
 9. **Exposure scans:** how many internet systems are still exposed to a flaw, from Shadowserver.
 10. **Honeypot hits:** real-world attack observations, from Shadowserver's honeypots.
 
-**Yearly cross-check:** internet scan data from Censys, once research access is granted.
+**Yearly cross-check:** internet scan data for the exposure reference. Censys declined research access on 10 Nov 2026; the author decides at the 15 March 2027 review whether to reapply, license it, or drop it.
 
 **International views, being tested:** national alerts on actively exploited flaws from France
 (CERT-FR) and Japan (JPCERT/CC); routing security by country from APNIC Labs (with written
@@ -145,13 +145,15 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 | HHS OCR breach register | Health-sector hacking breaches (in testing) | Exploratory (X17) |
 | [ransomware.live](https://www.ransomware.live) (with permission, 27 Oct 2026) | Ransomware leak-site postings, aggregate counts only, credited (T6a) | Core |
 
-### Awaiting permission or access
+### Sources that need permission or access
 
 | Source | What it would give the study | Request | Status |
 |---|---|---|---|
-| Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | Awaiting reply; follow-up 20 Nov |
-| VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | Granted 11 Nov 2026 (attribution only); derived figures credited "VulnCheck KEV", entries not republished |
-| Censys | Internet exposure counts (T1b, T2) and the annual check | Applied 28 Oct 2026 | Awaiting reply |
+| Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | <!-- status:shadowserver -->Awaiting<!-- /status --> reply (form sent 10 Nov); follow-up <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> |
+| VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | <!-- status:vulncheck -->Granted<!-- /status --> 11 Nov 2026 (attribution only); derived figures credited "VulnCheck KEV", entries not republished |
+| Censys | Internet exposure counts (T1b, T2) and the annual check | Applied 28 Oct 2026 | Declined 10 Nov 2026; the author decides at the 15 March 2027 review whether to reapply |
+| GreyNoise | Attack activity by CVE (exploratory) | Requested 29 Oct 2026 | Awaiting reply; follow-up <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> |
+| CrowdSec | Exploitation timelines by CVE (exploratory) | Requested 29 Oct 2026 | Awaiting reply; follow-up <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> |
 
 Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived
 from one is published until its permission is granted.
@@ -161,14 +163,12 @@ from one is published until its permission is granted.
 | Source | What it would give the study | Role |
 |---|---|---|
 | CERT-FR, JPCERT/CC, BSI, KrCERT/CC alerts | Other countries' active-exploitation alerts, compared with CISA KEV | Exploratory (X19) |
-| APNIC Labs (written permission 1 Nov 2026; RIPE NCC not used, its terms forbid redistribution) | DNSSEC validation and RPKI route checking by country | Exploratory (X20), collector to build by 25 Nov |
+| APNIC Labs (written permission 1 Nov 2026; RIPE NCC not used, its terms forbid redistribution) | DNSSEC validation and RPKI route checking by country | Exploratory (X20), collector to build by <!-- date:x20-collector -->25 Nov<!-- /date --> |
 | Cloudflare Radar and ransomware.live by region | Attack, bot and ransomware trends by world region | Exploratory (X21) |
 | UK ICO, OAIC, PDPC, ENISA | Data-breach notifications outside the US | Exploratory (X22) |
 | Quarterly web sweep, nine languages | AI-run attack reports outside the usual channels | Exploratory (X3) |
-| GreyNoise | Attack activity by CVE | Requested 29 Oct 2026 | Awaiting reply |
-| CrowdSec | Exploitation timelines by CVE | Requested 29 Oct 2026 | Awaiting reply |
 
-A source without a written yes by the 21 Dec 2026 decision session runs without it for the
+A source without a written yes by the <!-- date:freeze-session -->21 Dec 2026<!-- /date --> decision session runs without it for the
 Q4 2026 pilot; a later yes is switched on at the next quarter's run. Gaps are never filled by
 estimation.
 
