@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-11 01:29 UTC",
+ "checked": "2026-11-12 02:32 UTC",
  "results": {
   "CVE List": {
    "state": "ok",
@@ -30,11 +30,12 @@
    "code": 200
   },
   "ransomware.live": {
-   "state": "ok",
-   "code": 200
+   "state": "unchecked",
+   "detail": "checked at each quarterly pull, not daily"
   },
   "VulnCheck": {
-   "state": "pending"
+   "state": "unchecked",
+   "detail": "checked at each quarterly pull, not daily"
   },
   "Shadowserver": {
    "state": "pending"
