@@ -55,7 +55,7 @@ def load(root: Path | None = None) -> dict:
 RINGS = {   # author, 31 Oct 2026: core and exploratory data in separate rings, never combined
     "core": {"title": "Core data: the eight pre-registered indicators", "fill": "core",
              "size": "Slice size: how many of the eight core indicators the data feeds."},
-    "exploratory": {"title": "Exploratory data: the companion measures (X1-X26)", "fill": "companion",
+    "exploratory": {"title": "Exploratory data: the companion measures (X1-X27)", "fill": "companion",
                     "size": "Slice size: how many exploratory measures the data feeds."},
 }
 

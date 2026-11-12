@@ -478,3 +478,20 @@ measures:
       mentions a human approval step (yes, no, not stated), so the final report can show
       whether incidents with agents acting on their own differ from those where people kept a
       check. Data terms, access and a first test count are checked in the 19 Nov probe.
+
+  - id: X27
+    name: Web patch adoption (HTTP Archive server versions)
+    question: After a fix ships for a flaw in widely used web server software, how quickly do the sites that announce their version move to a fixed release, and how many stay on releases that will never get an upstream fix?
+    sources: [httparchive]   # HTTP Archive crawl on BigQuery (httparchive.crawl.pages, technologies[].info); free, keyless, within the 1 TB monthly free tier
+    added: 2026-11-12
+    feeds_labels: false
+    status: planned   # 12 Nov research review, decision 10: condition met (29 Oct test found versions recorded); first case PHP2Shell
+    method: >
+      Monthly, the share of HTTP Archive pages that report a version of the affected software
+      (PHP first) on a fixed release, and on a release line with no upstream fix, 30 and 90 days
+      after the fix. Covers only servers that announce their version (about one in five PHP
+      pages in the 29 Oct test), reported as that subset. Distribution backports keep the old
+      version number, so shares on unfixed versions are an upper bound on unpatched sites, and
+      "never fixed" means "no upstream fix". Exploratory, never scored. Test run:
+      run-reports research/2026-10-29T2336Z-httparchive_versions; case notes docs/cases/php2shell.md.
+

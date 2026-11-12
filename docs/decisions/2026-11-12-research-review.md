@@ -45,7 +45,7 @@ Still for 12 Nov from these four: nothing, unless the JPCERT/CC terms or APNIC's
   source); the collector is due 25 Nov.
 - #5 X21 and #6 X22: active since 29 Oct; nothing new.
 - #10 web patch adoption: **condition met** (the 29 Oct test found versions recorded). Claude
-  registers it as an exploratory measure with the agreed wording (version shares are an upper
+  registered it as exploratory measure X27 on 12 Nov (planned; config/exploratory.yaml) with the agreed wording (version shares are an upper
   bound; "never fixed" means no upstream fix). No choice needed.
 - #11 X16 deps.dev: **did not run cleanly** (25 Oct: one run found no package entries, the second
   stopped without a result). Under ★A it gets its one retry: the deps.dev prototype due 7 Dec, then
