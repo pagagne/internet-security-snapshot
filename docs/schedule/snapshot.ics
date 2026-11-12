@@ -612,8 +612,8 @@ UID:research-review@2026-11-12@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261112T150000Z
 DTEND:20261112T152000Z
-SUMMARY:[Paul] Snapshot: Research review - exceptions only (8 of 11 approve
- d conditionally on 27 Oct\; 1\, 2\, 9 decided)
+SUMMARY:✅ DONE [Paul] Snapshot: Research review - exceptions only (8 of 1
+ 1 approved conditionally on 27 Oct\; 1\, 2\, 9 decided)
 DESCRIPTION:Responsible: Paul (author)\n\nSince 27 Oct: #1\, #2 and #9 deci
  ded\; #3-8\, #10\, #11 approved on their stated conditions\, so only those
   whose evidence fails a condition come back as option cards. Original list
@@ -662,9 +662,11 @@ SUMMARY:[Claude] Snapshot: Probe agent-skill registries (ClawHub\, MCP regi
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 5 Nov 2026: read the t
  erms of use of the main agent-skill registries and what public metadata th
  ey offer (counts\, publish dates\, publishers as organisations)\, with a r
- esearch probe that never installs or runs a skill. Decide on 18 Nov whethe
- r registries join the sweeps.\n\nSource: https://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ esearch probe that never installs or runs a skill. Findings go to the auth
+ or with the 23 Nov sync review (the 18 Nov refinement session was settled 
+ early on 1 Nov)\, who decides whether registries join the sweeps.\n\nSourc
+ e: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sc
+ hedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -717,7 +719,7 @@ DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Add lure\, mislabel\, clone and search-cap check
- s to the AI tool sweeps (X25)\, for the 18 Nov refinement
+ s to the AI tool sweeps (X25)
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 5 Nov 2026\, after co
  mparing the sweeps with a published audit of an agent-skill registry (priv
  ate review in the private repository). Build and test\, without downloadin
@@ -729,9 +731,10 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 5 Nov 2026\, after co
  , bursts of projects from new accounts (usernames never published) and sta
  r bursts\, with item counts as the headline and stars as context\; (4) Git
  Hub searches split by creation date so no query hits GitHub's result cap\;
-  (5) anything else found along the way. Proposal to the author on 18 Nov w
- ith the X25 refinement.\n\nSource: https://github.com/pagagne/internet-sec
- urity-snapshot/blob/main/docs/schedule/schedule.yaml
+  (5) anything else found along the way. Proposal to the author with the 23
+  Nov sync review (the 18 Nov refinement was settled early on 1 Nov).\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -832,6 +835,25 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 1 Nov 2026: NewsBites
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:terms-summaries@2026-11-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Summarise the terms pages still marked "To summa
+ rise"
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/TERMS_OF_USE.md promised these for the 18 Nov
+  refinement\, which was settled early on 1 Nov: CVE Program\, FIRST EPSS\,
+  Red Hat security data\, the vendor advisories (Microsoft\, Cisco\, Palo A
+ lto\, Siemens) and OSV. Read each page\; write the rules that matter and h
+ ow the study complies\; flag to the author anything that needs a request (
+ process in https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/PERMISSIONS.md).\n\nSource: https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:x25-refine@2026-11-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
@@ -897,9 +919,14 @@ SUMMARY:[Paul] Snapshot: Follow-ups to GreyNoise and CrowdSec (exploratory
  sources)
 DESCRIPTION:Responsible: Paul (author)\n\nIf still unanswered: GreyNoise (R
  esearch Community Access form\, 29 Oct) and CrowdSec (Live Exploit Tracker
-  API key\, 29 Oct). Claude drafts them the day before. Log as above.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
+  API key\, 29 Oct). Drafts ready 12 Nov (private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/permission-requests-2026-11-1
+ 2.md): CrowdSec by its own key form (tracker.crowdsec.net/request-api-key)
+  plus an email with the subject "API key request"\, which its tracker page
+  requires\; GreyNoise by resubmitting the research form\, its only channel
+ . Claude recommended sending both early\; if sent before today\, this is a
+  check for replies. Log as above.\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1018,17 +1045,17 @@ TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Test run of every X25 piece before the pilot (Gi
  tHub and Hugging Face sweeps\, charts\, privacy\, terms)
 DESCRIPTION:Responsible: Claude\n\nAuthor's request 30 Oct 2026: a full reh
- earsal before the pilot\, after the refined searches are approved (20 Nov)
-  and before the 1 Dec dry run. Run the Research tasks github_tools and hf_
- tools\; confirm the private lists reach the author's Drive (x25-private/) 
- and no individual's username appears in any public file (tests and privacy
-  scan)\; rebuild https://github.com/pagagne/snapshot-manual/blob/main/expl
- oratory/ai_tool_landscape.md (Part III of the manual) and look at every ch
- art\; confirm the Source watch has dated copies of every terms page in htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/TERMS_OF
- _USE.md\; fix anything that fails and note it in the session log. Nothing 
- from this run is published.\n\nSource: https://github.com/pagagne/internet
- -security-snapshot/blob/main/docs/schedule/schedule.yaml
+ earsal before the pilot\, after the refined searches were approved (early\
+ , 1 Nov) and before the 1 Dec dry run. Run the Research tasks github_tools
+  and hf_tools\; confirm the private lists reach the author's Drive (x25-pr
+ ivate/) and no individual's username appears in any public file (tests and
+  privacy scan)\; rebuild https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/ai_tool_landscape.md (Part III of the manual) and look at 
+ every chart\; confirm the Source watch has dated copies of every terms pag
+ e in https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
+ TERMS_OF_USE.md\; fix anything that fails and note it in the session log. 
+ Nothing from this run is published.\n\nSource: https://github.com/pagagne/
+ internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

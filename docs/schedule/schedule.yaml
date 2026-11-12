@@ -203,6 +203,7 @@ items:
   owner: author
   title: Research review - exceptions only (8 of 11 approved conditionally on 27 Oct; 1, 2, 9 decided)
   date: 2026-11-12
+  done: "12 Nov 2026, held early at the author's request; all 13 decisions in docs/decisions/2026-11-12-research-review.md"
   time: "10:00"
   minutes: 20
   details: >
@@ -261,7 +262,12 @@ items:
   minutes: 15
   details: >
     If still unanswered: GreyNoise (Research Community Access form, 29 Oct) and CrowdSec (Live
-    Exploit Tracker API key, 29 Oct). Claude drafts them the day before. Log as above.
+    Exploit Tracker API key, 29 Oct). Drafts ready 12 Nov (private
+    exploratory/docs/permission-requests-2026-11-12.md): CrowdSec by its own key form
+    (tracker.crowdsec.net/request-api-key) plus an email with the subject "API key request",
+    which its tracker page requires; GreyNoise by resubmitting the research form, its only
+    channel. Claude recommended sending both early; if sent before today, this is a check for
+    replies. Log as above.
 
 - id: shadowserver-follow-up-2
   owner: author
@@ -1344,7 +1350,7 @@ items:
 
 - id: x25-lure-checks
   owner: claude
-  title: Add lure, mislabel, clone and search-cap checks to the AI tool sweeps (X25), for the 18 Nov refinement
+  title: Add lure, mislabel, clone and search-cap checks to the AI tool sweeps (X25)
   date: 2026-11-17
   details: >
     Author's decisions 5 Nov 2026, after comparing the sweeps with a published audit of an
@@ -1356,7 +1362,7 @@ items:
     bursts of projects from new accounts (usernames never published) and star bursts, with item
     counts as the headline and stars as context; (4) GitHub searches split by creation date so no
     query hits GitHub's result cap; (5) anything else found along the way. Proposal to the author
-    on 18 Nov with the X25 refinement.
+    with the 23 Nov sync review (the 18 Nov refinement was settled early on 1 Nov).
 
 - id: x26-autonomy-probe
   owner: claude
@@ -1379,7 +1385,19 @@ items:
   details: >
     Author's decision 5 Nov 2026: read the terms of use of the main agent-skill registries and what
     public metadata they offer (counts, publish dates, publishers as organisations), with a research
-    probe that never installs or runs a skill. Decide on 18 Nov whether registries join the sweeps.
+    probe that never installs or runs a skill. Findings go to the author with the 23 Nov sync review
+    (the 18 Nov refinement session was settled early on 1 Nov), who decides whether registries join the sweeps.
+
+- id: terms-summaries
+  owner: claude
+  title: Summarise the terms pages still marked "To summarise"
+  date: 2026-11-18
+  details: >
+    docs/TERMS_OF_USE.md promised these for the 18 Nov refinement, which was settled early on
+    1 Nov: CVE Program, FIRST EPSS, Red Hat security data, the vendor advisories (Microsoft,
+    Cisco, Palo Alto, Siemens) and OSV. Read each page; write the rules that matter and how the
+    study complies; flag to the author anything that needs a request (process in
+    docs/PERMISSIONS.md).
 
 - id: gitee-recheck
   owner: claude
@@ -1410,7 +1428,7 @@ items:
   date: 2026-11-25
   details: >
     Author's request 30 Oct 2026: a full rehearsal before the pilot, after the refined searches
-    are approved (20 Nov) and before the 1 Dec dry run. Run the Research tasks github_tools and
+    were approved (early, 1 Nov) and before the 1 Dec dry run. Run the Research tasks github_tools and
     hf_tools; confirm the private lists reach the author's Drive (x25-private/) and no
     individual's username appears in any public file (tests and privacy scan); rebuild
     exploratory/ai_tool_landscape.md (Part III of the manual) and look at every chart; confirm

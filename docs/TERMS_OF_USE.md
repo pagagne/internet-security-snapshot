@@ -10,7 +10,7 @@ workflow (`config/source_watch.yaml`): a dated text copy is kept on the run-repo
 (`source-watch/terms/`) and in the Internet Archive whenever its wording changes, so the terms in
 force when the data was used can always be shown (`docs/CHANGE_POLICY.md` section 7).
 "To summarise" means the page is watched and copied but its rules have not yet been written up
-here; Claude summarises them at the 18 Nov refinement. Nothing here is legal advice.
+here; Claude summarises them on <!-- date:terms-summaries -->18 Nov<!-- /date --> (schedule item `terms-summaries`). Nothing here is legal advice.
 
 ## Core and companion data
 
