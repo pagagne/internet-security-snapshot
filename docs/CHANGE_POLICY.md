@@ -1,4 +1,4 @@
-# Change policy: locked core and add-on layer (updated 11 Nov 2026)
+# Change policy: locked core and add-on layer (updated 12 Nov 2026)
 
 The study keeps a stable baseline while still learning new things by keeping two layers apart.
 
@@ -26,7 +26,9 @@ From then on the rules in section 4 apply.
 projects or components, and existing projects (this study's is osf.io/3smuq) become read-only on
 19 Feb 2027. Registrations are not affected: the registration (DOI 10.17605/OSF.IO/3XT82) keeps
 its Update process and can still have research outputs linked, if they carry a DOI. So every
-OSF update below is filed on the registration, and later material is linked from Zenodo.
+OSF update below is filed on the registration, and later material is linked from Zenodo. The project
+holds nothing but the registration (author, 12 Nov 2026), so nothing has to be moved before it
+becomes read-only; only the pointer line is added at the lock.
 
 **The OSF update at the lock (author, 7 Nov 2026)** is a single update filed at the 29 December
 lock. It lists every entry in `prereg/DEVIATIONS.md`, says plainly which changes were informed by
