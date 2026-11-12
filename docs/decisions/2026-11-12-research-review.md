@@ -38,6 +38,27 @@ cards. Anything decided here that touches the core is confirmed at the 21 Dec fr
   worked around) and ENISA (no regular counts found) go to the March review.
 Still for 12 Nov from these four: nothing, unless the JPCERT/CC terms or APNIC's answer say no.
 
+**Status on the morning of 12 Nov (Claude, filled 12 Nov 08:00 ET; due 11 Nov, done a day late):**
+- #3 X19: **settled.** JPCERT/CC confirmed on 3 Nov that its published documents may be used as
+  proposed with credit (docs/PERMISSIONS.md), so CERT-FR and JPCERT/CC both stand.
+- #4 X20: **settled.** APNIC granted on 1 Nov (credit APNIC Labs, figures faithful to the
+  source); the collector is due 25 Nov.
+- #5 X21 and #6 X22: active since 29 Oct; nothing new.
+- #10 web patch adoption: **condition met** (the 29 Oct test found versions recorded). Claude
+  registers it as an exploratory measure with the agreed wording (version shares are an upper
+  bound; "never fixed" means no upstream fix). No choice needed.
+- #11 X16 deps.dev: **did not run cleanly** (25 Oct: one run found no package entries, the second
+  stopped without a result). Under ★A it gets its one retry: the deps.dev prototype due 7 Dec, then
+  the 21 Dec session. No choice needed today.
+- #7 and #8 X12: **evidence not gathered.** The lab list, counts per quarter since January 2023
+  and the candidate benchmarks were due by 11 Nov and were not done. The one choice for today:
+  move both to the 21 Dec session with the evidence by 14 Dec, or decide now on the ★ options
+  without it.
+- #2 follow-up (can the first "active exploitation" date be read from the repository history?):
+  still open; it belongs to the 21 Dec item 23, with the evidence by 14 Dec.
+- New since 27 Oct and relevant to #2 and the race: VulnCheck KEV was granted on 11 Nov and joins
+  T_exploit from the 1 Dec dry run (docs/PERMISSIONS.md).
+
 **Quick list (11 decisions; since 27 Oct only exceptions remain for 12 Nov)**
 
 | # | Decision | ★ Recommendation |
@@ -67,6 +88,7 @@ How many flagged fix dates in the race list does the author check each quarter?
   zero-day share's range shrinks. The author's leaning on 24 Oct.
 - B A random sample of flagged cases (about 50 minutes); wider ranges.
 
+Decided 27 Oct (A). The race fix-date list for the 1 Dec dry run is built at that size (check-in 25 Nov).
 Evidence: about 120 of 175 flagged per half-year, mostly quick "fix available at the advisory?"
 checks (`docs/RESEARCH_PLAN.md`, item 1).
 
@@ -196,7 +218,7 @@ script can fetch it reliably. X17 options: the author downloads the public CSV b
 quarter in the hand-check window (about 5 minutes; counts only), or defer X17 to March.
 **Decided 29 Oct (author), X17:** download by hand once a quarter; X17 active from the Q4 2026
 pilot. deps.dev (X16) still decided on 12 Nov.
-deps.dev: _to fill_ (lighter run, 2 Nov).
+deps.dev (filled 12 Nov): the 25 Oct runs did not finish cleanly (the first found no package entries, the second stopped without a result); the lighter run planned for 2 Nov did not happen. Retry: the prototype due 7 Dec.
 
 ## 12. Open-source AI attack frameworks (added 29 Oct, author's request)
 Raised by TrendAI's "Not only ARTEX" report (`docs/INQUIRIES.md`, 29 Oct): attackers ran
