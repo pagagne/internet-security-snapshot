@@ -1386,6 +1386,10 @@ items:
     X3 and X5 logs. Report to the author with option cards: which signals to keep, how often to
     read them, and the first reading with the Q1 2027 report; all of it reported together in the
     final 2027 report.
+    Also (author, 12 Nov 2026): AI browsers that act for the user (agent modes in Perplexity Comet,
+    ChatGPT Atlas, Norton Neo, Opera Neon, Dia) as another case of people handing control to AI:
+    look for a free, repeatable signal of how widely they are used and how much they are allowed
+    to do (for example published user counts, or agent traffic in Cloudflare Radar).
 
 - id: skill-registry-probe
   owner: claude

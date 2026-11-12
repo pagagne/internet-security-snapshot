@@ -918,7 +918,12 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's idea\, 6 Nov 2026 (https://gith
  ory. Add a human-approval-step column to the X3 and X5 logs. Report to the
   author with option cards: which signals to keep\, how often to read them\
  , and the first reading with the Q1 2027 report\; all of it reported toget
- her in the final 2027 report.\n\nSource: https://github.com/pagagne/intern
+ her in the final 2027 report. Also (author\, 12 Nov 2026): AI browsers tha
+ t act for the user (agent modes in Perplexity Comet\, ChatGPT Atlas\, Nort
+ on Neo\, Opera Neon\, Dia) as another case of people handing control to AI
+ : look for a free\, repeatable signal of how widely they are used and how 
+ much they are allowed to do (for example published user counts\, or agent 
+ traffic in Cloudflare Radar).\n\nSource: https://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT

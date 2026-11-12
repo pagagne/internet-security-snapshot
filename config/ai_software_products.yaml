@@ -1,6 +1,6 @@
 # Products counted as "AI software" for exploratory measure X5. Matched whole-word,
 # case-insensitive, against CVE affected vendor|product strings. Additions are dated.
-version: 1.0   # 2026-10-22
+version: 1.1   # 2026-10-22; 1.1 on 2026-11-12 (AI browsers, author)
 products:
   # model servers and runtimes
   - ollama
@@ -38,3 +38,15 @@ products:
   - gradio
   - streamlit
   - jupyter
+  # AI browsers (added 2026-11-12, author: browsers with built-in AI agents). Exact names only:
+  # "comet", "atlas", "neo" or "dia" alone would match unrelated products (MongoDB Atlas, Neo4j).
+  # Checked against NVD on 12 Nov: Opera Neon has a CVE; Perplexity Comet and Norton Neo have none
+  # yet (Comet's reported flaws were disclosed without CVEs). Edge's Copilot Mode is not matchable
+  # apart from Edge itself, so it is left out.
+  - perplexity comet
+  - chatgpt atlas
+  - norton neo
+  - opera neon
+  - browser company dia
+  - dia browser
+  - genspark
