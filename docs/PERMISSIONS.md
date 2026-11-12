@@ -14,6 +14,34 @@ status below changes, change the matching switch in the same commit; a test chec
 | VulnCheck KEV (community) | 2026-10-20 | Email to community@vulncheck.com | **Granted 11 Nov 2026** (VulnCheck's Head of Customer Success Engineering, by email): "our only requirement is attribution of the source data ... you have satisfied our requirements." Follow-up of 9 Nov answered | Derived statistics only (agreement scores, median lags), labeled "VulnCheck KEV"; entries not republished | Awaiting reply. Follow-up sent 9 Nov 2026 (author, 17:08 UTC) to the community and support addresses, asking directly whether derived statistics count as Services Data under Service Terms section 6 | **Granted 11 Nov 2026** (VulnCheck's Head of Customer Success Engineering, by email): "our only requirement is attribution of the source data ... you have satisfied our requirements." Follow-up of 9 Nov answered |
 | Shadowserver | 2026-10-20 | Web contact form ("Dashboard Data/Visualization") | Ticket pqaytmyy | Aggregate figures and charts from public dashboard series, credited; no host-level data; asked about export/API for researchers | Awaiting reply (auto-acknowledged; volunteer team, may be slow). Follow-up sent 10 Nov 2026 (author, 17:37 ET) through the web contact form, same topic, citing ticket pqaytmyy; auto-acknowledged as new ticket z25efzfv, which confirms their contact address for replies (the ticket number goes in the subject) | — |
 
+## How a permission request is made (written 12 Nov 2026)
+
+1. **Terms first.** Every site's terms are read and recorded in `docs/TERMS_OF_USE.md`. Most
+   sources are under open licences or are public services: the study credits them, keeps to their
+   limits and asks nothing.
+2. **Ask only when needed:** the terms are silent or unclear about what the study needs
+   (publishing derived figures, automated access, a key), or forbid it. Organisations only, never
+   individuals.
+3. **Use the channel the source names**: its form, its ticket address, its required subject line.
+   A message to a general address under another subject can go unrouted.
+4. **One plain request:** who is asking, the open registration and repository, exactly which data
+   and how often, what is published (aggregates only, credited), what is never kept (IP
+   addresses, host data, names), and one clear question. Where a source requires the author's own
+   words (Censys), he writes it.
+5. **Follow up after two to three weeks, at most twice**, on the same channel, quoting the ticket.
+6. **Cutoff: the <!-- date:freeze-session -->21 Dec<!-- /date --> decision session.** A source without a written yes runs under
+   Plan 2 from the pilot; a later yes is switched on from the next quarter (decision item 16).
+7. **Recorded the same day** here (no contact details), in the private correspondence index, and
+   as the switch in `config/sources.yaml`.
+
+Review of 12 Nov 2026: no new requests are needed. Cloudflare Radar's API data is CC BY-NC 4.0
+(non-commercial use with credit, which fits the study), and the AI Incident Database's collections
+are CC BY-SA 4.0 (the study uses it only as leads, by hand, citing each incident page). Still
+open: CrowdSec (its tracker has its own key form and an email fallback with the subject "API key
+request"; the 29 Oct email used another subject, so the author resends by the form), GreyNoise
+(resubmit the research form, the only channel; members agree to quarterly check-ins and to share
+their published work) and Shadowserver (second follow-up <!-- date:shadowserver-follow-up-2 -->1 Dec<!-- /date --> if still silent).
+
 ## ransomware.live conditions (ticket #3425, 27 Oct 2026)
 Authorized for this non-commercial research use on these conditions, which the study meets:
 1. **Access** only through the dedicated api-pro endpoint with a personal token (free). The

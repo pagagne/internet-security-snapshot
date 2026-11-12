@@ -114,6 +114,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 30 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
 | Mon 30 Nov 2026, 12:41 UTC | GitHub | Landing-page snapshot (cutover) |
 | Tue 01 Dec 2026 | Claude | Read the dry-run quality report; prepare the hand-check lists |
+| Tue 01 Dec 2026, 09:30 ET | Paul | Second Shadowserver follow-up, if still no reply |
 | Tue 01 Dec 2026, 11:00 UTC | GitHub | Dry run of the quarterly pull (Oct-Nov data) |
 | Wed 02 Dec 2026 | Claude | Colour the VulnCheck slice of the core ring if the dry run brought its data |
 | Wed 02 Dec 2026, 10:00 ET | Paul | Hand check on the dry run |
@@ -331,6 +332,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 23 Nov 2026, 10:00 ET | Baseline-year hand check, part 1 of 2 | AI-credit spot checks and edge cases, then cohort fix dates. docs/HAND_CHECK.md. |
 | Tue 24 Nov 2026, 10:00 ET | Baseline-year hand check, part 2 of 2 | Slot (c) internet-facing checks and fix dates for the 12 baseline months. |
 | Wed 25 Nov 2026 | Ask Georgia Tech College of Computing about a research internship posting | Main board (CareerBuzz) does not accept unpaid remote roles; ask the College of Computing Career Center whether an unpaid remote research internship for course credit qualifies. If no, drop Georgia Tech. |
+| Tue 01 Dec 2026, 09:30 ET | Second Shadowserver follow-up, if still no reply | Draft C in the private exploratory/docs/permission-requests-2026-11-12.md: an email to the ticket address quoting z25efzfv and pqaytmyy, with three simple choices (script, by hand, or no). Last follow-up before the 21 Dec cutoff. Log in docs/PERMISSIONS.md and the correspondence index. |
 | Wed 02 Dec 2026, 10:00 ET | Hand check on the dry run | AI-credit spot checks, slot (c) checks, fix dates (cohort and race list). First real test of the race list: note anything awkward. Approve or hold the dry-run page. |
 | Thu 03 Dec 2026, 10:00 ET | Move the quarterly pull into the container (if the dry run passed) | Claude opens the pull request; you review and merge; then Actions > Quarterly pull > Run workflow (2026Q4, dry-run) to test it before 1 Jan. If the dry run failed, leave it for the 21 Dec session. |
 | Fri 04 Dec 2026, 10:00 ET | Landing page, Discussions, Zenodo | Claude has built the landing page, the publishing workflow (27 Nov) and the Discussions welcome post. You: Settings > Pages > Source: GitHub Actions, then run the Pages workflow once from the Actions tab; switch on Discussions; and Zenodo archiving (zenodo.org, sign in with GitHub). Project links may be shared publicly from today. |

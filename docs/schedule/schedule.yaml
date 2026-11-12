@@ -263,6 +263,18 @@ items:
     If still unanswered: GreyNoise (Research Community Access form, 29 Oct) and CrowdSec (Live
     Exploit Tracker API key, 29 Oct). Claude drafts them the day before. Log as above.
 
+- id: shadowserver-follow-up-2
+  owner: author
+  title: Second Shadowserver follow-up, if still no reply
+  date: 2026-12-01
+  time: "09:30"
+  minutes: 10
+  details: >
+    Draft C in the private exploratory/docs/permission-requests-2026-11-12.md: an email to the
+    ticket address quoting z25efzfv and pqaytmyy, with three simple choices (script, by hand, or
+    no). Last follow-up before the 21 Dec cutoff. Log in docs/PERMISSIONS.md and the
+    correspondence index.
+
 - id: permission-drafts
   owner: claude
   title: Draft the permission follow-ups and update the log

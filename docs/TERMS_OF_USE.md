@@ -26,7 +26,7 @@ here; Claude summarises them at the 18 Nov refinement. Nothing here is legal adv
 | SANS Internet Storm Center | https://isc.sans.edu/feeds_doc.html | Attribution; no reselling; non-commercial licence; at most one download an hour | Two files once a month, an hour apart; aggregates only; credited |
 | ransomware.live | https://www.ransomware.live/t&c | Fair Usage Policy; written yes on seven conditions (ticket 3425) | Aggregates only; no raw data; credited (`docs/PERMISSIONS.md`) |
 | VulnCheck | (accepted at sign-up) | Attribution of the source data (VulnCheck, 11 Nov 2026) | Collected from the <!-- date:dry-run -->1 Dec<!-- /date --> dry run; derived figures credited "VulnCheck KEV"; the per-CVE table stays private, entries never republished |
-| Cloudflare Radar | https://developers.cloudflare.com/radar/ | To summarise (radar.cloudflare.com refuses automated readers) | API with the author's token; aggregates |
+| Cloudflare Radar | https://developers.cloudflare.com/radar/ | Read 12 Nov 2026 (radar.cloudflare.com/about): API data and downloads under CC BY-NC 4.0, graphs CC BY 4.0; attribution encouraged; exceptions through Radar's address | API with the author's token; aggregates; non-commercial; credited "Cloudflare Radar" |
 | JPCERT/CC | https://www.jpcert.or.jp/guide.html | Quoting free with source, document and URL; courtesy email; addresses may change | Titles, CVE IDs and dates; courtesy notice sent 29 Oct |
 | CERT-FR (ANSSI) | https://www.cert.ssi.gouv.fr/mentions-legales/ | Licence ouverte; no logos; no framing | Titles, CVE IDs and dates, credited |
 | UK ICO, OAIC | (see `docs/PERMISSIONS.md`) | OGL v3.0; CC BY 4.0 | Counts, credited |

@@ -1124,6 +1124,22 @@ DESCRIPTION:Responsible: Claude\n\nFirst check that the Schedule workflow r
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:shadowserver-follow-up-2@2026-12-01@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261201T143000Z
+DTEND:20261201T144000Z
+SUMMARY:[Paul] Snapshot: Second Shadowserver follow-up\, if still no reply
+DESCRIPTION:Responsible: Paul (author)\n\nDraft C in the private https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/docs/permission-req
+ uests-2026-11-12.md: an email to the ticket address quoting z25efzfv and p
+ qaytmyy\, with three simple choices (script\, by hand\, or no). Last follo
+ w-up before the 21 Dec cutoff. Log in https://github.com/pagagne/internet-
+ security-snapshot/blob/main/docs/PERMISSIONS.md and the correspondence ind
+ ex.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:dry-run@2026-12-01@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261201T110000Z
