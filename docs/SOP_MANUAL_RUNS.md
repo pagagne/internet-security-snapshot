@@ -1,7 +1,7 @@
 # Standard operating procedure: running workflows by hand (updated 12 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
-workflow lock list on <!-- date:workflows-review -->18 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
+workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
 9 Feb 2027**, after the Q4 2026 pilot. Until then the pilot rules apply (dry runs on 1 and
 <!-- date:dry-run-full -->15 Dec<!-- /date -->, freeze on <!-- date:freeze -->29 Dec<!-- /date -->), and this draft may be used as guidance.
 

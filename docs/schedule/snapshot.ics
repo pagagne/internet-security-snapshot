@@ -577,7 +577,7 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Restore test of the Drive backup
+SUMMARY:✅ DONE [Claude] Snapshot: Restore test of the Drive backup
 DESCRIPTION:Responsible: Claude\n\nThe backup was set up and tested on 27 O
  ct (own Google client ID\; connection test and a 7 MB repository copy arri
  ved in the Drive folder). Now restore: clone the newest repository bundle 
@@ -594,8 +594,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261112
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Fill in the 12 Nov decision sheet with the probe
-  and trial results
+SUMMARY:✅ DONE [Claude] Snapshot: Fill in the 12 Nov decision sheet with 
+ the probe and trial results
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/decisions/2026-11-12-research-review.md: the 
  Evidence line under each decision (27 Oct global probes\, 2 Nov tests\, 5 
@@ -1324,13 +1324,15 @@ DTEND;VALUE=DATE:20261209
 TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Choose and confirm the pilot witness (applications
   closed 7 Dec)
-DESCRIPTION:Responsible: Paul (author)\n\nRead the applications (Claude can
-  sort them by the posting's criteria\, without judging people)\, choose on
- e\, and confirm by 9 Dec. The witness must not be the person later chosen 
- as the independent reviewer\, and the two never work together. Tell Claude
- \, who logs it (role only in public files) and sends the getting-started n
- otes.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blo
- b/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nDuring the RV trip (7-19 Dec\; au
+ thor\, 12 Nov 2026: internet some days only): a reading task that can be d
+ one from the road. Claude sorts the applications on 7 Dec. Read the applic
+ ations (Claude can sort them by the posting's criteria\, without judging p
+ eople)\, choose one\, and confirm by 9 Dec. The witness must not be the pe
+ rson later chosen as the independent reviewer\, and the two never work tog
+ ether. Tell Claude\, who logs it (role only in public files) and sends the
+  getting-started notes.\n\nSource: https://github.com/pagagne/internet-sec
+ urity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1380,15 +1382,16 @@ DTSTART:20261210T150000Z
 DTEND:20261210T160000Z
 SUMMARY:[Paul] Snapshot: Pilot witness getting started (one video call\; Cl
  aude prepares the notes)
-DESCRIPTION:Responsible: Paul (author)\n\nWindow 9-14 Dec (2 to 3 hours for
-  the witness). Claude prepares a short guide: where the run logs\, the fro
- zen data copies and the quality reports are\; what the dry run and the pil
- ot do and when\; what the note by 5 Feb should cover (problems seen\; the 
- timing of locking the procedures). The witness gets read access to what an
- y member of the public can see\, plus the hand-check sample the author cho
- oses to show\; never private data\, keys or the private repository.\n\nSou
- rce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
- schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nDuring the RV trip: hold the call
+  on any day from 9 to 14 Dec with good signal\; 10 Dec is a placeholder. W
+ indow 9-14 Dec (2 to 3 hours for the witness). Claude prepares a short gui
+ de: where the run logs\, the frozen data copies and the quality reports ar
+ e\; what the dry run and the pilot do and when\; what the note by 5 Feb sh
+ ould cover (problems seen\; the timing of locking the procedures). The wit
+ ness gets read access to what any member of the public can see\, plus the 
+ hand-check sample the author chooses to show\; never private data\, keys o
+ r the private repository.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1543,10 +1546,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nA shorter pass than 2 Dec (only i
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:i5-baseline-read@2026-12-18@internet-security-snapshot
+UID:i5-baseline-read@2026-12-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261218
-DTEND;VALUE=DATE:20261219
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
 TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Read the I5/T5 decision notes and Claude's evidenc
  e (item 25)
@@ -1559,10 +1562,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:landing-clear-sections@2026-12-18@internet-security-snapshot
+UID:landing-clear-sections@2026-12-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261218
-DTEND;VALUE=DATE:20261219
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
 TRANSP:TRANSPARENT
 SUMMARY:[Paul] Snapshot: Clear the draft landing-page sections for the flip
 DESCRIPTION:Responsible: Paul (author)\n\nIn the private mirror (go-live/RE
@@ -1575,10 +1578,10 @@ DESCRIPTION:Responsible: Paul (author)\n\nIn the private mirror (go-live/RE
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:workflows-review@2026-12-18@internet-security-snapshot
+UID:workflows-review@2026-12-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
-DTSTART:20261218T150000Z
-DTEND:20261218T153000Z
+DTSTART:20261220T150000Z
+DTEND:20261220T153000Z
 SUMMARY:[Paul] Snapshot: Review the workflow page and the lock list
 DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  et-security-snapshot/blob/main/docs/WORKFLOWS.md and the draft lock list (

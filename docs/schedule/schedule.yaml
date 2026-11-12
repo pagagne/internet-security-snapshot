@@ -18,7 +18,9 @@
 #   minutes duration (default 30)
 #   days    number of days for an all-day span (default 1)
 #   repeat  {months: [..], day: N, from: YYYY-MM, until: YYYY-MM}: one item per listed month
-#   open    days before the date to open the GitHub issue (default 0; author items default 2)
+#   open    days before the date to open the GitHub issue (default 0; author items default 2;
+#           Claude items default 1, author 12 Nov 2026: the daily Schedule run lands mid-afternoon ET,
+#           after the 08:32 ET work queue, so a same-day issue would be picked up a day late)
 #   dispatch {workflow: file.yml, inputs: {...}}: the daily schedule job runs this workflow
 #   feeds   [reviewer]: also show this author/Claude item in the reviewer's own calendar feed
 #   done    when finished (date or short note): the item stays in the calendar marked DONE and
@@ -104,6 +106,7 @@ items:
   owner: claude
   title: Restore test of the Drive backup
   date: 2026-11-11
+  done: "11 Nov 2026: the restore test now runs inside the Backup workflow (Restore test step; first monthly run 3 Dec), because the bundle is too large to bring into a chat session"
   details: >
     The backup was set up and tested on 27 Oct (own Google client ID; connection test and a
     7 MB repository copy arrived in the Drive folder). Now restore: clone the newest repository
@@ -192,6 +195,7 @@ items:
   owner: claude
   title: Fill in the 12 Nov decision sheet with the probe and trial results
   date: 2026-11-11
+  done: "12 Nov 2026: the sheet and the 13 decisions are in docs/decisions/2026-11-12-research-review.md"
   details: >
     docs/decisions/2026-11-12-research-review.md: the Evidence line under each decision (27 Oct
     global probes, 2 Nov tests, 5 Nov trial sweep); change a recommendation only if the
@@ -677,7 +681,7 @@ items:
 - id: workflows-review
   owner: author
   title: Review the workflow page and the lock list
-  date: 2026-12-18
+  date: 2026-12-20  # moved from 18 Dec: RV trip 7-19 Dec (author, 12 Nov 2026)
   time: "10:00"
   minutes: 30
   details: >
@@ -724,7 +728,7 @@ items:
 - id: i5-baseline-read
   owner: author
   title: Read the I5/T5 decision notes and Claude's evidence (item 25)
-  date: 2026-12-18
+  date: 2026-12-20  # moved from 18 Dec: RV trip 7-19 Dec (author, 12 Nov 2026)
   minutes: 20
   details: >
     docs/decisions/I5_BASELINE_NOTES.md and Claude's private summary. Decide at the 21 Dec
@@ -774,7 +778,8 @@ items:
   date: 2026-12-08  # Handshake's free tier fixes a 30-day window, so applications close 7 Dec (author, 7 Nov 2026)
   minutes: 45
   details: >
-    Read the applications (Claude can sort them by the posting's criteria, without judging
+    During the RV trip (7-19 Dec; author, 12 Nov 2026: internet some days only): a reading task
+    that can be done from the road. Claude sorts the applications on 7 Dec. Read the applications (Claude can sort them by the posting's criteria, without judging
     people), choose one, and confirm by 9 Dec. The witness must not be the person later chosen as
     the independent reviewer, and the two never work together. Tell Claude, who logs it (role
     only in public files) and sends the getting-started notes.
@@ -782,11 +787,12 @@ items:
 - id: witness-onboarding
   owner: author
   title: Pilot witness getting started (one video call; Claude prepares the notes)
-  date: 2026-12-10  # was 8 Dec (author, 7 Nov 2026)
+  date: 2026-12-10  # was 8 Dec (author, 7 Nov 2026); any day 9-14 Dec with good signal (RV trip, 12 Nov)
   time: "10:00"
   minutes: 60
   details: >
-    Window 9-14 Dec (2 to 3 hours for the witness). Claude prepares a short guide: where the run
+    During the RV trip: hold the call on any day from 9 to 14 Dec with good signal; 10 Dec is a
+    placeholder. Window 9-14 Dec (2 to 3 hours for the witness). Claude prepares a short guide: where the run
     logs, the frozen data copies and the quality reports are; what the dry run and the pilot do
     and when; what the note by 5 Feb should cover (problems seen; the timing of locking the
     procedures). The witness gets read access to what any member of the public can see, plus
@@ -1592,7 +1598,7 @@ items:
 - id: landing-clear-sections
   owner: author
   title: Clear the draft landing-page sections for the flip
-  date: 2026-12-18
+  date: 2026-12-20  # moved from 18 Dec: RV trip 7-19 Dec (author, 12 Nov 2026)
   minutes: 30
   details: >
     In the private mirror (go-live/README.md), decide section by section which draft sections go

@@ -35,7 +35,9 @@ OWNERS = ("author", "reviewer", "claude", "github")
 OWNER_NAME = {"author": "Author", "reviewer": "External reviewer", "claude": "Claude", "github": "GitHub (automatic)"}
 # Who is responsible, as shown at the start of every calendar title and in the plan's Who column
 RESPONSIBLE = {"author": "Paul", "reviewer": "Reviewer", "claude": "Claude", "github": "GitHub"}
-DEFAULT_OPEN = {"author": 2, "reviewer": 0, "claude": 0, "github": 0}
+# Claude items open a day early (author, 12 Nov 2026): GitHub starts the daily Schedule run about
+# 4 hours late, after the 08:32 ET work queue, so a same-day issue would wait a day.
+DEFAULT_OPEN = {"author": 2, "reviewer": 0, "claude": 1, "github": 0}
 
 
 # --- time zone: America/New_York without relying on system tz data ---------------------
