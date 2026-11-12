@@ -639,6 +639,24 @@ DESCRIPTION:Responsible: Paul (author)\n\nSince 27 Oct: #1\, #2 and #9 deci
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:permission-follow-ups-exploratory@2026-11-13@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261113T150000Z
+DTEND:20261113T152000Z
+SUMMARY:[Paul] Snapshot: Send the GreyNoise and CrowdSec follow-ups (drafts
+  in Drive)
+DESCRIPTION:Responsible: Paul (author)\n\nDrafts (12 Nov) in the Drive corr
+ espondence folder\, file "2026-11-13 DRAFTS CrowdSec and GreyNoise follow-
+ ups (to send)"\; the link is in the author's own calendar event (Drive lin
+ ks stay out of this public file). CrowdSec: its key form (tracker.crowdsec
+ .net/request-api-key)\, then an email to its contact address with the subj
+ ect "API key request"\, which its tracker page requires. GreyNoise: resubm
+ it the research form\, its only channel. Tell Claude when sent\; it logs b
+ oth the same day.\n\nSource: https://github.com/pagagne/internet-security-
+ snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:newsletter-read@2026-11-14@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261114T130000Z
@@ -943,23 +961,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's proposal of 18 Nov
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:permission-follow-ups-exploratory@2026-11-20@internet-security-snapshot
+UID:permission-replies-check@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
-DTSTART:20261120T140000Z
-DTEND:20261120T141500Z
-SUMMARY:[Paul] Snapshot: Follow-ups to GreyNoise and CrowdSec (exploratory 
- sources)
-DESCRIPTION:Responsible: Paul (author)\n\nIf still unanswered: GreyNoise (R
- esearch Community Access form\, 29 Oct) and CrowdSec (Live Exploit Tracker
-  API key\, 29 Oct). Drafts ready 12 Nov (private https://github.com/pagagn
- e/snapshot-manual/blob/main/exploratory/docs/permission-requests-2026-11-1
- 2.md): CrowdSec by its own key form (tracker.crowdsec.net/request-api-key)
-  plus an email with the subject "API key request"\, which its tracker page
-  requires\; GreyNoise by resubmitting the research form\, its only channel
- . Claude recommended sending both early\; if sent before today\, this is a
-  check for replies. Log as above.\n\nSource: https://github.com/pagagne/in
- ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Check for GreyNoise and CrowdSec replies
+DESCRIPTION:Responsible: Claude\n\nA week after the 13 Nov follow-ups: look
+  for replies in the author's Gmail\; record any in https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/PERMISSIONS.md and the corre
+ spondence index\; if none\, note it for the 21 Dec cutoff (decision item 1
+ 6).\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-23@internet-security-snapshot

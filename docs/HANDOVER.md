@@ -45,7 +45,7 @@ new session needed on 24 Oct. (Then: read this first, then `exploratory/docs/BUI
 > the hand-made events listed below were removed. Kept for the record.
 
 12 Nov research review (includes the decision on race hand-check effort) · 16 Nov validation ·
-<!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> permission follow-ups · 23-24 Nov baseline hand check · <!-- date:dry-run -->1 Dec<!-- /date --> dry run · 2 Dec dry-run hand
+<!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date --> permission follow-ups · 23-24 Nov baseline hand check · <!-- date:dry-run -->1 Dec<!-- /date --> dry run · 2 Dec dry-run hand
 check · 3 Dec move the pull into the container (added by the other session) · <!-- date:landing-page -->4 Dec<!-- /date --> landing page,
 Discussions, Zenodo, delete leftover branch · <!-- date:freeze-session -->21 Dec<!-- /date --> decision session · <!-- date:freeze -->29 Dec<!-- /date --> freeze ·
 quarterly: 2nd Jan/Apr/Jul/Oct approve draft and open the 4th-28th hand-check window; 25th

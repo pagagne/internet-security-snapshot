@@ -260,18 +260,26 @@ items:
 
 - id: permission-follow-ups-exploratory
   owner: author
-  title: Follow-ups to GreyNoise and CrowdSec (exploratory sources)
-  date: 2026-11-20
-  time: "09:00"
-  minutes: 15
+  title: Send the GreyNoise and CrowdSec follow-ups (drafts in Drive)
+  date: 2026-11-13  # moved up from 20 Nov (author, 12 Nov 2026)
+  time: "10:00"
+  minutes: 20
   details: >
-    If still unanswered: GreyNoise (Research Community Access form, 29 Oct) and CrowdSec (Live
-    Exploit Tracker API key, 29 Oct). Drafts ready 12 Nov (private
-    exploratory/docs/permission-requests-2026-11-12.md): CrowdSec by its own key form
-    (tracker.crowdsec.net/request-api-key) plus an email with the subject "API key request",
-    which its tracker page requires; GreyNoise by resubmitting the research form, its only
-    channel. Claude recommended sending both early; if sent before today, this is a check for
-    replies. Log as above.
+    Drafts (12 Nov) in the Drive correspondence folder, file "2026-11-13 DRAFTS CrowdSec and
+    GreyNoise follow-ups (to send)"; the link is in the author's own calendar event (Drive links
+    stay out of this public file). CrowdSec: its key form (tracker.crowdsec.net/request-api-key),
+    then an email to its contact address with the subject "API key request", which its tracker
+    page requires. GreyNoise: resubmit the research form, its only channel. Tell Claude when
+    sent; it logs both the same day.
+
+- id: permission-replies-check
+  owner: claude
+  title: Check for GreyNoise and CrowdSec replies
+  date: 2026-11-20
+  details: >
+    A week after the 13 Nov follow-ups: look for replies in the author's Gmail; record any in
+    docs/PERMISSIONS.md and the correspondence index; if none, note it for the 21 Dec cutoff
+    (decision item 16).
 
 - id: shadowserver-follow-up-2
   owner: author

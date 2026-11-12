@@ -277,7 +277,7 @@ check-ins are retired once they have run.
 | Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study (from 14 Nov); each run schedules the next | The author's current chat |
 | Thu 12 Nov, 09:15 and 09:30 | Evening-timer trial review; research review decision cards (review at 10:00) | The author's current chat |
 | Mon 16 and 23 Nov, 09:00 | Weekly sync reviews and due `owner:claude` issues | The author's current chat |
-| Thu 19 Nov, 09:00 | GreyNoise and CrowdSec follow-up drafts (the author sends <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date -->) | The author's current chat |
+| ~~Thu 19 Nov, 09:00~~ | GreyNoise and CrowdSec follow-up drafts: done early, 12 Nov (in Drive; the author sends <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->) | The author's current chat |
 | Wed <!-- date:race-list-ready -->25 Nov<!-- /date -->, 09:00 | Race fix-date list ready for the dry run | The author's current chat |
 
 Refreshed 11 Nov 2026. Every task above except the work queue delivers into one chat and stops

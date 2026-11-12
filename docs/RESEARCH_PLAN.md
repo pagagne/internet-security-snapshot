@@ -1,7 +1,7 @@
 # Research window, 23 Oct - 15 Nov 2026: improving the project under two plans (updated 12 Nov 2026)
 
 Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 16 Nov validation.
-Permission follow-ups: <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date -->. If still no reply then, Plan 2 is the default for the
+Permission follow-ups: GreyNoise and CrowdSec <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->, Shadowserver <!-- date:shadowserver-follow-up-2 -->1 Dec<!-- /date -->. Without a reply by then, Plan 2 is the default for the
 <!-- date:freeze-session -->21 Dec<!-- /date --> decisions. Nothing here changes the locked core; results feed decision items.
 
 ## Either way (first)
@@ -49,7 +49,7 @@ Permission follow-ups: <!-- date:permission-follow-ups-exploratory -->20 Nov<!--
   for the cohort and race flaws that Shadowserver tracks, records the counts with the
   dashboard link and date in a small credited table, and T1b/T2 are reported for those flaws
   alone, marked "hand-read, coverage n of N". About 15-30 minutes a quarter; no automated
-  download. Mentioned in the <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> follow-up so it is not mistaken for scraping, and logged
+  download. Mentioned in the 10 Nov Shadowserver follow-up so it is not mistaken for scraping, and logged
   in `prereg/DEVIATIONS.md` if adopted for the pilot.
 - Fallback wording for core-v1.2: T1b and T2 "not measured" with the reason; T1(a) under
   option (a) becomes the headline race measure.
@@ -129,7 +129,7 @@ capture (from 2 Nov); KEV-lag back-test against EUVD, Project Zero's sheet and i
 and Linux kernel/distribution fix dates (9 Nov); HTTP Archive version test (16 Nov); Censys
 application (17 Nov, by the author); deps.dev patch-adoption prototype (<!-- date:deps-dev-retry -->7 Dec<!-- /date -->); AI labs'
 lists against our credit counts (25 Jan); GreyNoise and CrowdSec requests (sent 29 Oct; follow-up
-<!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date -->); HHS OCR harm series (no export, so the author downloads it by hand each
+<!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->); HHS OCR harm series (no export, so the author downloads it by hand each
 quarter: research review 12 Nov, decision 11). Dates other than the marked ones are as first planned
 on 25 Oct; the current dates are in the schedule. Also an inquiry log (`docs/INQUIRIES.md`) and watch cases chosen by rule.
 

@@ -149,11 +149,11 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 
 | Source | What it would give the study | Request | Status |
 |---|---|---|---|
-| Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | <!-- status:shadowserver -->Awaiting<!-- /status --> reply (form sent 10 Nov); follow-up <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> |
+| Shadowserver | Exposure series (T1b, T2) and honeypot attack statistics (T1, T3, T4) | Asked 20 Oct 2026 | <!-- status:shadowserver -->Awaiting<!-- /status --> reply (form sent 10 Nov); follow-up <!-- date:shadowserver-follow-up-2 -->1 Dec<!-- /date --> |
 | VulnCheck KEV (community) | Earlier exploitation dates (T1, T3); agreement checks | Asked 20 Oct 2026 | <!-- status:vulncheck -->Granted<!-- /status --> 11 Nov 2026 (attribution only); derived figures credited "VulnCheck KEV", entries not republished |
 | Censys | Internet exposure counts (T1b, T2) and the annual check | Applied 28 Oct 2026 | Declined 10 Nov 2026; the author decides at the 15 March 2027 review whether to reapply |
-| GreyNoise | Attack activity by CVE (exploratory) | Requested 29 Oct 2026 | Awaiting reply; follow-up <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> |
-| CrowdSec | Exploitation timelines by CVE (exploratory) | Requested 29 Oct 2026 | Awaiting reply; follow-up <!-- date:permission-follow-ups-exploratory -->20 Nov<!-- /date --> |
+| GreyNoise | Attack activity by CVE (exploratory) | Requested 29 Oct 2026 | Awaiting reply; follow-up <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date --> |
+| CrowdSec | Exploitation timelines by CVE (exploratory) | Requested 29 Oct 2026 | Awaiting reply; follow-up <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date --> |
 
 Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived
 from one is published until its permission is granted.
