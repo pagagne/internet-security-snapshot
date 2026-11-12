@@ -498,6 +498,7 @@ items:
     docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
     scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed /
     Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.
+    Also glance at the risk watch list (private exploratory/docs/RISK_REVIEW.md) and report any signal that has turned red.
 
 - id: sync-review-quarterly
   owner: claude
@@ -507,6 +508,7 @@ items:
     docs/SYNC_REVIEW.md, three days before each provisional report so it starts from a
     consistent state. Findings to the author as Confirmed / Fixed / Conflicts resolved /
     Still for you.
+    Also read the risk watch list (private exploratory/docs/RISK_REVIEW.md) and report any signal that has turned red before the release.
 
 - id: cutover
   owner: claude
@@ -626,6 +628,7 @@ items:
     for any permission granted by then. Check the evaluation steps run end to end (labels,
     draft page, hand-check lists, reviewer worksheets). Note anything not ready in the run's
     issue, so its absence is a known gap rather than a surprise.
+    Risk review (R5, R14): a source not in the 15 Dec run does not enter the pilot; any newly permitted source is reported both with and without it in its first quarter.
 
 - id: dry-run-full
   owner: github
@@ -695,7 +698,7 @@ items:
   time: "10:00"
   minutes: 90
   details: >
-    docs/CORE_FREEZE_DECISIONS.md items 0-22 (confirm 0, 7, 12; decide 1-3, 9-11, 13-22,
+    docs/CORE_FREEZE_DECISIONS.md items 0-27 (26 and 27 and the additions to 19 and 20 from the 12 Nov risk review) (confirm 0, 7, 12; decide 1-3, 9-11, 13-22,
     including the companion label check, X13 and hand-check reliability, the 2028 closing
     re-run, and the workflow lock), with the findings of the 15 Dec full dry run. Any source
     without a written yes runs without it for the pilot. Added 26 Oct: item 16, the
@@ -1404,6 +1407,7 @@ items:
     Cisco, Palo Alto, Siemens) and OSV. Read each page; write the rules that matter and how the
     study complies; flag to the author anything that needs a request (process in
     docs/PERMISSIONS.md).
+    Also set up the one-week rule (R20): every wording change Source watch finds is summarised for the author within a week.
 
 - id: gitee-recheck
   owner: claude
@@ -1661,6 +1665,144 @@ items:
 # `news`: the plain headline for the news line under the banner (author, 6 Nov 2026); a list when
 # `at` has several dates, one headline each. Quarterly reports not listed here get an automatic
 # headline, so every results release shows in the news line.
+
+# ------------------------------------------------ Risk reviews (author, 12 Nov 2026)
+# "What Could Go Wrong in 2027" (Claude Doc, 12 Nov 2026; register in the private exploratory/docs/RISK_REVIEW.md): a review every
+# two months through the run, and one dated step for each safeguard not yet in place.
+
+- id: risk-review-prep
+  owner: claude
+  title: Prepare the two-monthly risk review (watch list readings, safeguard status)
+  dates: [2027-01-21, 2027-03-22, 2027-05-20, 2027-07-22, 2027-09-22, 2027-11-22, 2028-01-20]
+  open: 2
+  details: >
+    In the private exploratory/docs/RISK_REVIEW.md: read every watch-list signal (W1-W22) against the latest runs, quality reports,
+    Source watch, issues and news; mark each green, amber or red with one line of evidence;
+    update the status of each safeguard (R1-R25); list new risks seen since the last review.
+    Send the author a short summary (red and amber first, one decision per card).
+
+- id: risk-review
+  owner: author
+  title: Two-monthly risk review (what could go wrong)
+  dates: [2027-01-21, 2027-03-22, 2027-05-20, 2027-07-22, 2027-09-22, 2027-11-22, 2028-01-20]
+  time: "10:00"
+  minutes: 45
+  details: >
+    Read Claude's summary of the private exploratory/docs/RISK_REVIEW.md: anything red or amber, safeguards still open, new risks.
+    Decide one item at a time; Claude records each decision and schedules its follow-up.
+
+- id: risk-r10-key-register
+  owner: claude
+  title: Draft the key register (R10) - every key, issuer, expiry, renewal reminder
+  date: 2026-11-19
+  details: >
+    Private, no key values: RANSOMWARE_LIVE_KEY, NVD_API_KEY, VULNCHECK_TOKEN, CLOUDFLARE_TOKEN,
+    SEC_USER_AGENT, the Google Cloud and Drive backup credentials, and any GreyNoise or CrowdSec
+    key when granted. For each: who issued it, where it is kept (GitHub secret name), expiry or
+    "none stated", and how to renew. Expiries become schedule items 30 days ahead.
+
+- id: risk-r10-expiry-check
+  owner: author
+  title: Check the key register's expiry dates (R10)
+  date: 2026-11-27
+  time: "10:00"
+  minutes: 15
+  details: >
+    Look up each key's expiry in its service's account page (Claude cannot see them) and tell
+    Claude the dates; never paste a key into chat.
+
+- id: risk-r9-row-check
+  owner: claude
+  title: Add a row-count check against history to the quality report (R9)
+  date: 2026-11-25
+  details: >
+    snapshot.quality: for each source, compare this run's rows with the average of the last four
+    quarters (backfilled where no run exists); flag below half or zero as "hold the release"
+    (watch-list W1). Tested on the 1 Dec dry run.
+
+- id: risk-r18-hand-on-note
+  owner: claude
+  title: Draft the hand-on note (R18) - how the study continues if the author cannot
+  date: 2026-11-27
+  details: >
+    Private: which accounts the study needs (GitHub, the project Gmail, Google Cloud, Drive, OSF,
+    Zenodo, Handshake), what each holds, and what a named successor would need; no passwords or
+    codes in it.
+
+- id: risk-r18-accounts
+  owner: author
+  title: Confirm two-factor sign-in and offline recovery codes on every study account (R18)
+  date: 2026-11-28
+  time: "10:00"
+  minutes: 30
+  details: >
+    GitHub, both Gmail accounts, Google Cloud, OSF, Zenodo: two-factor on, recovery codes printed
+    or stored offline, recovery email and phone current. Read Claude's hand-on note and name a
+    successor if you wish. Tell Claude only "done"; never the codes.
+
+- id: risk-freeze-proposals
+  owner: claude
+  title: Write the risk-review proposals for the 21 Dec session (items 19, 20, 26, 27)
+  date: 2026-12-14
+  details: >
+    docs/CORE_FREEZE_DECISIONS.md: the case count beside every label (added to item 19); a pass
+    mark for second-coder agreement (added to item 20); item 26, the rule for big
+    provisional-to-final changes; item 27, contingency plans for CVE, KEV, NVD and SEC disruption.
+    Options and a recommendation for each, with evidence from the 1 Dec dry run.
+
+- id: risk-r23-r24-draft
+  owner: claude
+  title: Draft the release checklist and the corrections policy (R23, R24)
+  date: 2026-12-23
+  details: >
+    Checklist used before every public release from 1 Jan (privacy scan clean, permission
+    conditions met, credits, case counts shown, wording checked for overreach); corrections
+    policy: how a published error is fixed, dated and announced, the original kept visible.
+
+- id: risk-r23-r24-approve
+  owner: author
+  title: Approve the release checklist and the corrections policy (R23, R24)
+  date: 2026-12-28
+  time: "10:00"
+  minutes: 20
+  details: >
+    Read Claude's drafts; approve or change. Both are in force for the 1 Jan provisional release.
+
+- id: risk-r7-two-counts
+  owner: claude
+  title: Add the two AI-attack counts to the X3 log (R7) before the 2 Jan sweep
+  date: 2026-12-30
+  details: >
+    Each quarter report the count from the same sources as the previous quarter and the count
+    from all sources (watch-list W14), so a wider search is not read as more attacks.
+
+- id: risk-r16-min-hand-check
+  owner: claude
+  title: Draft the minimum hand check for a heavy quarter (R16)
+  date: 2026-12-30
+  details: >
+    Which hand-check items must be done every quarter and which may be deferred, and how a
+    deferral is recorded (watch-list W12). For the author's approval on 3 Jan.
+
+- id: risk-r16-approve
+  owner: author
+  title: Approve the minimum hand check (R16)
+  date: 2027-01-03
+  time: "10:00"
+  minutes: 15
+  details: >
+    Read Claude's draft before the 4 Jan hand-check window opens; approve or change.
+
+- id: risk-r17-reviewer-fallback
+  owner: author
+  title: Reviewer fallback, if no external reviewer is confirmed (R17)
+  date: 2027-03-02
+  time: "10:00"
+  minutes: 20
+  details: >
+    If the 1 March confirmation found nobody: choose a university second coder, or say "no
+    external review" in each release from Q1 2027 (watch-list W16).
+
 milestones:
 - when: 20 Oct 2026
   text: Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82)
@@ -1708,4 +1850,3 @@ milestones:
 - at: [closing-rerun]
   text: 2027 closing re-run with full follow-up
   news: "Closing re-run of all of 2027 with full follow-up data"
-

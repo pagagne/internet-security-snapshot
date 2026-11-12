@@ -80,9 +80,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
+  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
+ lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
+ urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -338,9 +340,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
+  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
+ lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
+ urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -489,9 +493,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
+  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
+ lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
+ urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -681,9 +687,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
+  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
+ lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
+ urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -849,8 +857,10 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  lto\, Siemens) and OSV. Read each page\; write the rules that matter and h
  ow the study complies\; flag to the author anything that needs a request (
  process in https://github.com/pagagne/internet-security-snapshot/blob/main
- /docs/PERMISSIONS.md).\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ /docs/PERMISSIONS.md). Also set up the one-week rule (R20): every wording 
+ change Source watch finds is summarised for the author within a week.\n\nS
+ ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
+ s/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -871,6 +881,23 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
  ithub_tools\, with the effect of each on the baseline counts. Written to t
  he 20 Nov issue for the author.\n\nSource: https://github.com/pagagne/inte
  rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r10-key-register@2026-11-19@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the key register (R10) - every key\, issue
+ r\, expiry\, renewal reminder
+DESCRIPTION:Responsible: Claude\n\nPrivate\, no key values: RANSOMWARE_LIVE
+ _KEY\, NVD_API_KEY\, VULNCHECK_TOKEN\, CLOUDFLARE_TOKEN\, SEC_USER_AGENT\,
+  the Google Cloud and Drive backup credentials\, and any GreyNoise or Crow
+ dSec key when granted. For each: who issued it\, where it is kept (GitHub 
+ secret name)\, expiry or "none stated"\, and how to renew. Expiries become
+  schedule items 30 days ahead.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -941,9 +968,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
+  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
+ lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
+ urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1018,6 +1047,21 @@ DESCRIPTION:Responsible: Claude\n\nList builder in snapshot.review\, report
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-r9-row-check@2026-11-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Add a row-count check against history to the qua
+ lity report (R9)
+DESCRIPTION:Responsible: Claude\n\nsnapshot.quality: for each source\, comp
+ are this run's rows with the average of the last four quarters (backfilled
+  where no run exists)\; flag below half or zero as "hold the release" (wat
+ ch-list W1). Tested on the 1 Dec dry run.\n\nSource: https://github.com/pa
+ gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:x20-collector@2026-11-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
@@ -1089,6 +1133,48 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-r18-hand-on-note@2026-11-27@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the hand-on note (R18) - how the study con
+ tinues if the author cannot
+DESCRIPTION:Responsible: Claude\n\nPrivate: which accounts the study needs 
+ (GitHub\, the project Gmail\, Google Cloud\, Drive\, OSF\, Zenodo\, Handsh
+ ake)\, what each holds\, and what a named successor would need\; no passwo
+ rds or codes in it.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r10-expiry-check@2026-11-27@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261127T150000Z
+DTEND:20261127T151500Z
+SUMMARY:[Paul] Snapshot: Check the key register's expiry dates (R10)
+DESCRIPTION:Responsible: Paul (author)\n\nLook up each key's expiry in its 
+ service's account page (Claude cannot see them) and tell Claude the dates\
+ ; never paste a key into chat.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r18-accounts@2026-11-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261128T150000Z
+DTEND:20261128T153000Z
+SUMMARY:[Paul] Snapshot: Confirm two-factor sign-in and offline recovery co
+ des on every study account (R18)
+DESCRIPTION:Responsible: Paul (author)\n\nGitHub\, both Gmail accounts\, Go
+ ogle Cloud\, OSF\, Zenodo: two-factor on\, recovery codes printed or store
+ d offline\, recovery email and phone current. Read Claude's hand-on note a
+ nd name a successor if you wish. Tell Claude only "done"\; never the codes
+ .\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/ma
+ in/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:cutover@2026-11-30@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261130
@@ -1118,9 +1204,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
+  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
+ lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
+ urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
+ t/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1411,8 +1499,11 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 26 Oct: a second dry
  s.yaml switched on for any permission granted by then. Check the evaluatio
  n steps run end to end (labels\, draft page\, hand-check lists\, reviewer 
  worksheets). Note anything not ready in the run's issue\, so its absence i
- s a known gap rather than a surprise.\n\nSource: https://github.com/pagagn
- e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ s a known gap rather than a surprise. Risk review (R5\, R14): a source not
+  in the 15 Dec run does not enter the pilot\; any newly permitted source i
+ s reported both with and without it in its first quarter.\n\nSource: https
+ ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
+ chedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1437,6 +1528,24 @@ DESCRIPTION:Responsible: Claude\n\nPrivately (snapshot-manual): quarterly p
   records are excluded. Send the author a short summary before 21 Dec.\n\nS
  ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
  s/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-freeze-proposals@2026-12-14@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Write the risk-review proposals for the 21 Dec s
+ ession (items 19\, 20\, 26\, 27)
+DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/CORE_FREEZE_DECISIONS.md: the case count besi
+ de every label (added to item 19)\; a pass mark for second-coder agreement
+  (added to item 20)\; item 26\, the rule for big provisional-to-final chan
+ ges\; item 27\, contingency plans for CVE\, KEV\, NVD and SEC disruption. 
+ Options and a recommendation for each\, with evidence from the 1 Dec dry r
+ un.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1598,25 +1707,26 @@ DTSTART:20261221T150000Z
 DTEND:20261221T163000Z
 SUMMARY:[Paul] Snapshot: Core-freeze decision session
 DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
- et-security-snapshot/blob/main/docs/CORE_FREEZE_DECISIONS.md items 0-22 (c
- onfirm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-22\, including the companion la
- bel check\, X13 and hand-check reliability\, the 2028 closing re-run\, and
-  the workflow lock)\, with the findings of the 15 Dec full dry run. Any so
- urce without a written yes runs without it for the pilot. Added 26 Oct: it
- em 16\, the Shadowserver hand-read fallback for the pilot (rec. yes if no 
- permission)\; item 20\, the early-patch (embargo) note on fix dates (rec. 
- yes)\; the CISA active-exploitation date as T_exploit (12 Nov decision 2)\
- ; item 8\, fixing the sweep's searches and the X12 capable bar and the ado
- pted X19-X22 before the freeze. Added 1 Nov: item 25\, how I5/T5 is scored
-  with the 2026 surge in the baseline year (notes in https://github.com/pag
- agne/internet-security-snapshot/blob/main/docs/decisions/I5_BASELINE_NOTES
- .md\; rec. option 1). Claude asks these as option cards with recommendatio
- ns\, as on 12 Nov. After the session (author\, 6 Nov): the "Being tested" 
- part of Data sources and the "being tested" line in Mission are rewritten 
- before the 2 Jan switch\; sources that pass join the main table as explora
- tory\, the rest get one "tried and dropped" line.\n\nSource: https://githu
- b.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.
- yaml
+ et-security-snapshot/blob/main/docs/CORE_FREEZE_DECISIONS.md items 0-27 (2
+ 6 and 27 and the additions to 19 and 20 from the 12 Nov risk review) (conf
+ irm 0\, 7\, 12\; decide 1-3\, 9-11\, 13-22\, including the companion label
+  check\, X13 and hand-check reliability\, the 2028 closing re-run\, and th
+ e workflow lock)\, with the findings of the 15 Dec full dry run. Any sourc
+ e without a written yes runs without it for the pilot. Added 26 Oct: item 
+ 16\, the Shadowserver hand-read fallback for the pilot (rec. yes if no per
+ mission)\; item 20\, the early-patch (embargo) note on fix dates (rec. yes
+ )\; the CISA active-exploitation date as T_exploit (12 Nov decision 2)\; i
+ tem 8\, fixing the sweep's searches and the X12 capable bar and the adopte
+ d X19-X22 before the freeze. Added 1 Nov: item 25\, how I5/T5 is scored wi
+ th the 2026 surge in the baseline year (notes in https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/decisions/I5_BASELINE_NOTES.md
+ \; rec. option 1). Claude asks these as option cards with recommendations\
+ , as on 12 Nov. After the session (author\, 6 Nov): the "Being tested" par
+ t of Data sources and the "being tested" line in Mission are rewritten bef
+ ore the 2 Jan switch\; sources that pass join the main table as explorator
+ y\, the rest get one "tried and dropped" line.\n\nSource: https://github.c
+ om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
+ l
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1633,6 +1743,22 @@ DESCRIPTION:Responsible: Claude\n\nDeviation rows\, LOCKED.yaml checksums (
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-r23-r24-draft@2026-12-23@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the release checklist and the corrections 
+ policy (R23\, R24)
+DESCRIPTION:Responsible: Claude\n\nChecklist used before every public relea
+ se from 1 Jan (privacy scan clean\, permission conditions met\, credits\, 
+ case counts shown\, wording checked for overreach)\; corrections policy: h
+ ow a published error is fixed\, dated and announced\, the original kept vi
+ sible.\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review-quarterly@2026-12-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261228
@@ -1643,10 +1769,25 @@ SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
  sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  as Confirmed / Fixed / Conflicts resolved / Still for you. Also read the 
+ risk watch list (private https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/docs/RISK_REVIEW.md) and report any signal that has turned
+  red before the release.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r23-r24-approve@2026-12-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261228T150000Z
+DTEND:20261228T152000Z
+SUMMARY:[Paul] Snapshot: Approve the release checklist and the corrections 
+ policy (R23\, R24)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's drafts\; approve or
+  change. Both are in force for the 1 Jan provisional release.\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:freeze@2026-12-29@internet-security-snapshot
@@ -1669,6 +1810,36 @@ DESCRIPTION:Responsible: Paul (author)\n\nPublish release core-v1.2 on GitH
  : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
  edule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r16-min-hand-check@2026-12-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261230
+DTEND;VALUE=DATE:20261231
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Draft the minimum hand check for a heavy quarter
+  (R16)
+DESCRIPTION:Responsible: Claude\n\nWhich hand-check items must be done ever
+ y quarter and which may be deferred\, and how a deferral is recorded (watc
+ h-list W12). For the author's approval on 3 Jan.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r7-two-counts@2026-12-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261230
+DTEND;VALUE=DATE:20261231
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Add the two AI-attack counts to the X3 log (R7) 
+ before the 2 Jan sweep
+DESCRIPTION:Responsible: Claude\n\nEach quarter report the count from the s
+ ame sources as the previous quarter and the count from all sources (watch-
+ list W14)\, so a wider search is not read as more attacks.\n\nSource: http
+ s://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/
+ schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:draft-provisional@2027-01-01@internet-security-snapshot
@@ -1766,6 +1937,18 @@ DESCRIPTION:Responsible: Paul (author)\n\nThe first run of the Publish resu
  e). Claude prompts for the approval of the pilot report\; read the practic
  e flip (go-live/FLIP_PREVIEW.md) with Claude\, then press Publish results.
   Claude confirms the checks and the public page.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-r16-approve@2027-01-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270103T150000Z
+DTEND:20270103T151500Z
+SUMMARY:[Paul] Snapshot: Approve the minimum hand check (R16)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's draft before the 4 
+ Jan hand-check window opens\; approve or change.\n\nSource: https://github
  .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
  aml
 CATEGORIES:Author
@@ -1999,6 +2182,38 @@ DESCRIPTION:Responsible: Claude\n\nExtend the sample (https://github.com/pa
  nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
  ocs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review-prep@2027-01-21@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2027-01-21@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270121T150000Z
+DTEND:20270121T154500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:ai-lists-crosscheck@2027-01-25@internet-security-snapshot
@@ -2355,6 +2570,19 @@ DESCRIPTION:Responsible: Claude\n\nClaude emails the reviewer a small answe
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-r17-reviewer-fallback@2027-03-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270302T150000Z
+DTEND:20270302T152000Z
+SUMMARY:[Paul] Snapshot: Reviewer fallback\, if no external reviewer is con
+ firmed (R17)
+DESCRIPTION:Responsible: Paul (author)\n\nIf the 1 March confirmation found
+  nobody: choose a university second coder\, or say "no external review" in
+  each release from Q1 2027 (watch-list W16).\n\nSource: https://github.com
+ /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-03-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270304
@@ -2465,6 +2693,38 @@ DESCRIPTION:Responsible: Reviewer (external reviewer)\n\nVideo call\; the o
 CATEGORIES:External reviewer
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-review-prep@2027-03-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270322
+DTEND;VALUE=DATE:20270323
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2027-03-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270322T140000Z
+DTEND:20270322T144500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review-quarterly@2027-03-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270328
@@ -2475,9 +2735,11 @@ SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
  sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  as Confirmed / Fixed / Conflicts resolved / Still for you. Also read the 
+ risk watch list (private https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/docs/RISK_REVIEW.md) and report any signal that has turned
+  red before the release.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2884,6 +3146,38 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-review-prep@2027-05-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2027-05-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270520T140000Z
+DTEND:20270520T144500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-06-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270604
@@ -2949,9 +3243,11 @@ SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
  sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  as Confirmed / Fixed / Conflicts resolved / Still for you. Also read the 
+ risk watch list (private https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/docs/RISK_REVIEW.md) and report any signal that has turned
+  red before the release.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3175,6 +3471,38 @@ DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3
   hand-check window.\n\nSource: https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review-prep@2027-07-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270722
+DTEND;VALUE=DATE:20270723
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2027-07-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270722T140000Z
+DTEND:20270722T144500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2027-07-25@internet-security-snapshot
@@ -3433,6 +3761,38 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-review-prep@2027-09-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270922
+DTEND;VALUE=DATE:20270923
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2027-09-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270922T140000Z
+DTEND:20270922T144500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review-quarterly@2027-09-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270928
@@ -3443,9 +3803,11 @@ SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
  sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  as Confirmed / Fixed / Conflicts resolved / Still for you. Also read the 
+ risk watch list (private https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/docs/RISK_REVIEW.md) and report any signal that has turned
+  red before the release.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3764,6 +4126,38 @@ DESCRIPTION:Responsible: Claude\n\npython -m snapshot.agreement score on th
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-review-prep@2027-11-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20271122
+DTEND;VALUE=DATE:20271123
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2027-11-22@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20271122T150000Z
+DTEND:20271122T154500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:drive-to-claude-copy@2027-12-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20271204
@@ -3875,9 +4269,11 @@ SUMMARY:[Claude] Snapshot: Sync review before the provisional report (three
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md\, three days before each provi
  sional report so it starts from a consistent state. Findings to the author
-  as Confirmed / Fixed / Conflicts resolved / Still for you.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+  as Confirmed / Fixed / Conflicts resolved / Still for you. Also read the 
+ risk watch list (private https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/docs/RISK_REVIEW.md) and report any signal that has turned
+  red before the release.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4029,6 +4425,38 @@ DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3
   hand-check window.\n\nSource: https://github.com/pagagne/internet-securit
  y-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review-prep@2028-01-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20280120
+DTEND;VALUE=DATE:20280121
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Prepare the two-monthly risk review (watch list 
+ readings\, safeguard status)
+DESCRIPTION:Responsible: Claude\n\nIn the private https://github.com/pagagn
+ e/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md: read every wa
+ tch-list signal (W1-W22) against the latest runs\, quality reports\, Sourc
+ e watch\, issues and news\; mark each green\, amber or red with one line o
+ f evidence\; update the status of each safeguard (R1-R25)\; list new risks
+  seen since the last review. Send the author a short summary (red and ambe
+ r first\, one decision per card).\n\nSource: https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-review@2028-01-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20280120T150000Z
+DTEND:20280120T154500Z
+SUMMARY:[Paul] Snapshot: Two-monthly risk review (what could go wrong)
+DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's summary of the priv
+ ate https://github.com/pagagne/snapshot-manual/blob/main/exploratory/docs/
+ RISK_REVIEW.md: anything red or amber\, safeguards still open\, new risks.
+  Decide one item at a time\; Claude records each decision and schedules it
+ s follow-up.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:hand-check-reminder@2028-01-25@internet-security-snapshot
