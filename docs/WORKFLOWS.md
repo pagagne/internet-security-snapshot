@@ -1,4 +1,4 @@
-# The study's workflows (updated 5 Nov 2026)
+# The study's workflows (updated 12 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The 14 Dec workflow review
@@ -118,7 +118,10 @@ file in the author's Drive folder "Internet-Security-Snapshot-2027", under `repo
 by hand, it also writes a small test file under `tests/` to prove the connection works. Each
 quarterly pull backs up its own data separately, as its last step. It also copies The Snapshot
 manual, as Markdown, to `manual/`, replacing the previous copy (no PDFs since 31 Oct 2026,
-author's decision; the private appendix stays in Drive).
+author's decision; the private appendix stays in Drive). Since 12 Nov 2026 its last step is a
+**restore test**: it downloads both repository copies back from Drive, verifies them, clones each
+and checks that its main branch matches the repository's, so every month proves the backup can
+be restored (first run 3 Dec 2026).
 Setup: `exploratory/docs/BACKUP.md`.
 
 ## 6. Research probe: the testing bench

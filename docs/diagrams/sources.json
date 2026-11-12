@@ -35,11 +35,11 @@
     "proposals/T1_OPTIONS.md"
    ],
    "fingerprints": {
-    "src/snapshot/events.py": "3c5d94b3f5a6b71e",
+    "src/snapshot/events.py": "586b1d4edf3b9151",
     "proposals/T1_OPTIONS.md": "edcd012d29217e1d",
     "docs/diagrams/track_b.mmd": "dcb3fc86ebf2ee72"
    },
-   "reviewed_on": "2026-10-24"
+   "reviewed_on": "2026-11-12"
   },
   "track_c": {
    "doc": "docs/EVALUATION_FLOW.md",
@@ -147,11 +147,11 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "e8328a40a1601f43",
+    "docs/WORKFLOWS.md": "ceadbd35eef8525d",
     ".github/workflows/checks.yml": "80d79a7ef69d5957",
     "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
-   "reviewed_on": "2026-11-11"
+   "reviewed_on": "2026-11-12"
   },
   "indicator_sources": {
    "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",

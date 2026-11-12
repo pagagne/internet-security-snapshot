@@ -84,3 +84,25 @@ jobs:
           rclone copyto docs/manual/README.md gdrive:manual/README.md
           rclone sync docs/manual/parts gdrive:manual/parts
           echo "Manual copied to Drive (manual/)."
+      - name: Restore test (download the copies back and check them)
+        # Added 12 Nov 2026 (schedule item drive-backup-test): proves each month that the copies in
+        # Drive can be restored, not only that they were written. Downloads both bundles back,
+        # verifies them, clones each and compares its main branch with the repository's.
+        if: env.HAVE_CONF == 'true'
+        run: |
+          set -euo pipefail
+          d=$(date -u +%Y-%m-%d); mkdir -p /tmp/restore
+          rclone copy "gdrive:repository/internet-security-snapshot-$d.bundle" /tmp/restore/
+          git bundle verify "/tmp/restore/internet-security-snapshot-$d.bundle" >/dev/null
+          git clone -q "/tmp/restore/internet-security-snapshot-$d.bundle" /tmp/restore/public
+          want=$(git rev-parse origin/main); got=$(git -C /tmp/restore/public rev-parse origin/main)
+          [ "$want" = "$got" ] || { echo "::error::restored public copy's main $got differs from $want"; exit 1; }
+          echo "Public copy restored: main at ${got:0:7}, matches."
+          if [ -d /tmp/private/.git ]; then
+            rclone copy "gdrive:private-repository/snapshot-manual-$d.bundle" /tmp/restore/
+            git bundle verify "/tmp/restore/snapshot-manual-$d.bundle" >/dev/null
+            git clone -q "/tmp/restore/snapshot-manual-$d.bundle" /tmp/restore/private
+            want=$(git -C /tmp/private rev-parse HEAD); got=$(git -C /tmp/restore/private rev-parse HEAD)
+            [ "$want" = "$got" ] || { echo "::error::restored private copy differs"; exit 1; }
+            echo "Private copy restored: head at ${got:0:7}, matches."
+          fi
