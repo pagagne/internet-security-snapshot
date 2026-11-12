@@ -94,7 +94,7 @@ def epoch_benchmarks(models: pd.DataFrame) -> dict:
     name_col = next((c for c in models.columns if c.lower() in ("model", "system")), None)
     open_names = set()
     if acc and name_col:
-        open_names = {str(n).strip().lower() for n in
+        open_names = {re.sub(r"[^a-z0-9]", "", str(n).lower()) for n in
                       models.loc[models[acc].astype(str).str.contains("open weights", case=False, na=False), name_col]}
     files, cands = [], []
     for n in z.namelist():
@@ -113,9 +113,11 @@ def epoch_benchmarks(models: pd.DataFrame) -> dict:
             dcol = next((c for c in df.columns if re.search(r"release date|date", c, re.I)), None)
             if score and mcol:
                 s = pd.to_numeric(df[score], errors="coerce")
-                s = s * 100 if s.max() is not None and s.max() <= 1.0 else s
-                is_open = df[mcol].astype(str).str.strip().str.lower().map(
-                    lambda x: any(x.startswith(o) or o.startswith(x) for o in open_names) if open_names else False)
+                s = s * 100 if s.notna().any() and s.max() <= 1.0 else s
+                def _open(x) -> bool:
+                    x = re.sub(r"[^a-z0-9]", "", str(x).lower())
+                    return len(x) >= 4 and any(o and (x.startswith(o) or o.startswith(x)) for o in open_names)
+                is_open = df[mcol].map(_open)
                 bars = {}
                 for bar in (20, 30, 40, 50, 60):
                     hit = df[(s >= bar)]
