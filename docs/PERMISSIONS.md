@@ -39,7 +39,7 @@ Review of 12 Nov 2026: no new requests are needed. Cloudflare Radar's API data i
 are CC BY-SA 4.0 (the study uses it only as leads, by hand, citing each incident page). Still
 open: CrowdSec (its tracker has its own key form and an email fallback with the subject "API key
 request"; the 29 Oct email used another subject; resent 13 Nov by email, since the form refuses Gmail addresses), GreyNoise
-(resubmit the research form, the only channel; members agree to quarterly check-ins and to share
+(followed up 13 Nov through its in-app help chat, the account still on the free plan; members agree to quarterly check-ins and to share
 their published work) and Shadowserver (second follow-up <!-- date:shadowserver-follow-up-2 -->25 Nov<!-- /date --> if still silent).
 
 ## ransomware.live conditions (ticket #3425, 27 Oct 2026)
