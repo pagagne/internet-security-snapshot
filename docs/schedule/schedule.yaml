@@ -1412,6 +1412,12 @@ items:
     ChatGPT Atlas, Norton Neo, Opera Neon, Dia) as another case of people handing control to AI:
     look for a free, repeatable signal of how widely they are used and how much they are allowed
     to do (for example published user counts, or agent traffic in Cloudflare Radar).
+    Also OpenRouter (author, 13 Nov 2026; terms reviewed that day, docs/INQUIRIES.md): a deeper look
+    at its Data API as the X26 usage signal (app rankings by category, task shares) and the X12
+    open-weight traffic share. Documents only, no account: which categories and tasks show agents,
+    how far back each series goes, how often figures are restated, and whether a key without
+    purchased credit works (ask OpenRouter if the documents do not say). Report to the author with a
+    recommendation; opening an account and any purchase are his decision.
 
 - id: skill-registry-probe
   owner: claude
