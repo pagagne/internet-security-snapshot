@@ -1,7 +1,7 @@
 # Research window, 23 Oct - 15 Nov 2026: improving the project under two plans (updated 12 Nov 2026)
 
 Review with the author: Thu 12 Nov, 10:00 (calendar). Next fixed date: 16 Nov validation.
-Permission follow-ups: GreyNoise and CrowdSec <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->, Shadowserver <!-- date:shadowserver-follow-up-2 -->1 Dec<!-- /date -->. Without a reply by then, Plan 2 is the default for the
+Permission follow-ups: GreyNoise and CrowdSec <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->, Shadowserver <!-- date:shadowserver-follow-up-2 -->25 Nov<!-- /date -->. Without a reply by then, Plan 2 is the default for the
 <!-- date:freeze-session -->21 Dec<!-- /date --> decisions. Nothing here changes the locked core; results feed decision items.
 
 ## Either way (first)

@@ -40,7 +40,7 @@ are CC BY-SA 4.0 (the study uses it only as leads, by hand, citing each incident
 open: CrowdSec (its tracker has its own key form and an email fallback with the subject "API key
 request"; the 29 Oct email used another subject, so the author resends by the form), GreyNoise
 (resubmit the research form, the only channel; members agree to quarterly check-ins and to share
-their published work) and Shadowserver (second follow-up <!-- date:shadowserver-follow-up-2 -->1 Dec<!-- /date --> if still silent).
+their published work) and Shadowserver (second follow-up <!-- date:shadowserver-follow-up-2 -->25 Nov<!-- /date --> if still silent).
 
 ## ransomware.live conditions (ticket #3425, 27 Oct 2026)
 Authorized for this non-commercial research use on these conditions, which the study meets:
