@@ -1438,8 +1438,12 @@ DESCRIPTION:Responsible: Paul (author)\n\nDuring the RV trip (7-19 Dec\; au
  eople)\, choose one\, and confirm by 9 Dec. The witness must not be the pe
  rson later chosen as the independent reviewer\, and the two never work tog
  ether. Tell Claude\, who logs it (role only in public files) and sends the
-  getting-started notes.\n\nSource: https://github.com/pagagne/internet-sec
- urity-snapshot/blob/main/docs/schedule/schedule.yaml
+  getting-started notes. If nobody suitable applied (author\, 13 Nov 2026):
+  open a late window to about 20 Dec (repost on Handshake after it closes\;
+  also students who write directly). A late witness starts with the 1 Jan p
+ ilot and reviews the 15 Dec dry run afterwards from its public logs.\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1717,6 +1721,21 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
   runs after the pilot (https://github.com/pagagne/internet-security-snapsh
  ot/blob/main/docs/SOP_MANUAL_RUNS.md).\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-late-choice@2026-12-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261220T190000Z
+DTEND:20261220T193000Z
+SUMMARY:[Paul] Snapshot: Choose a late pilot witness - only if none was cho
+ sen on 8 Dec
+DESCRIPTION:Responsible: Paul (author)\n\nLate window (author\, 13 Nov 2026
+ ): applications to about 20 Dec. Choose one\, confirm\, and hold the start
+ -up call before 1 Jan\; the witness reviews the 15 Dec dry run from its lo
+ gs and watches the pilot (1 Jan - 5 Feb). Skip this item if a witness was 
+ chosen on 8 Dec.\n\nSource: https://github.com/pagagne/internet-security-s
+ napshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

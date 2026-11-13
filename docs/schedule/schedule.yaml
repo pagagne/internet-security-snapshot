@@ -794,6 +794,20 @@ items:
     people), choose one, and confirm by 9 Dec. The witness must not be the person later chosen as
     the independent reviewer, and the two never work together. Tell Claude, who logs it (role
     only in public files) and sends the getting-started notes.
+    If nobody suitable applied (author, 13 Nov 2026): open a late window to about 20 Dec (repost on
+    Handshake after it closes; also students who write directly). A late witness starts with the
+    1 Jan pilot and reviews the 15 Dec dry run afterwards from its public logs.
+
+- id: witness-late-choice
+  owner: author
+  title: Choose a late pilot witness - only if none was chosen on 8 Dec
+  date: 2026-12-20
+  time: "14:00"
+  minutes: 30
+  details: >
+    Late window (author, 13 Nov 2026): applications to about 20 Dec. Choose one, confirm, and hold
+    the start-up call before 1 Jan; the witness reviews the 15 Dec dry run from its logs and watches
+    the pilot (1 Jan - 5 Feb). Skip this item if a witness was chosen on 8 Dec.
 
 - id: witness-onboarding
   owner: author
