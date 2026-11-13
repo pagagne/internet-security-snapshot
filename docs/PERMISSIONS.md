@@ -1,4 +1,4 @@
-# Data permissions log (updated 12 Nov 2026)
+# Data permissions log (updated 13 Nov 2026)
 
 Requests to data providers to confirm that this free, non-commercial project may publish
 derived results from their data. Any source that declines is dropped and the change is
@@ -38,7 +38,7 @@ Review of 12 Nov 2026: no new requests are needed. Cloudflare Radar's API data i
 (non-commercial use with credit, which fits the study), and the AI Incident Database's collections
 are CC BY-SA 4.0 (the study uses it only as leads, by hand, citing each incident page). Still
 open: CrowdSec (its tracker has its own key form and an email fallback with the subject "API key
-request"; the 29 Oct email used another subject, so the author resends by the form), GreyNoise
+request"; the 29 Oct email used another subject; resent 13 Nov by email, since the form refuses Gmail addresses), GreyNoise
 (resubmit the research form, the only channel; members agree to quarterly check-ins and to share
 their published work) and Shadowserver (second follow-up <!-- date:shadowserver-follow-up-2 -->25 Nov<!-- /date --> if still silent).
 
@@ -140,7 +140,7 @@ text not kept; no copy in the author's mail. What was asked is in the table abov
 |---|---|---|---|---|
 | Censys research access | 28 Oct 2026 | Email to research-access-request@censys.com (written by the author, no AI tools, as Censys requires), sent 20:29 UTC | Research access for the exposure reference (annual check) and exposure counts; aggregates only, no host-level data, no scanning | Sent; follow-up 21:07 UTC added the access type (extra API credits; BigQuery on the author's Google account) and agreement to the Terms of Service. Reply expected within a few days (reminder 4 Nov). Censys username is his Gmail address, already in both emails. Not stated: recency, explicit non-commercial and citation. **Declined 10 Nov 2026** (ticket RS-536): "doesn't fall under our requirements for research access", no further reason, with a pointer to their research-access article. No effect on the pilot or the quarterly results: Censys was only for the annual check's exposure reference (first check published March 2028; scan data needed by 31 Jan 2028). Next step decided by the author on 10 Nov: no action now; at the 15 March 2027 annual review he decides whether to reapply (in his own words, to the research address in their article, stating recency, non-commercial use and citation), plan a paid licence, or drop the scan-data reference |
 | GreyNoise research (VIP) access | 29 Oct 2026 | GreyNoise Research Community Access form | Research access for an open, published study: tags and first-seen activity for 80-100 CVEs a quarter; aggregates only, credited; no IP or host data | Sent 29 Oct (author); awaiting contact from their Community team |
-| CrowdSec CVE tracker | 29 Oct 2026 | Email / API key request form | An API key, and whether publishing aggregate figures (phase, dates, counts per CVE), credited, is allowed; no IP addresses stored or published | Sent 29 Oct (author); they usually reply within one business day |
+| CrowdSec CVE tracker | 29 Oct 2026 | Email / API key request form | An API key, and whether publishing aggregate figures (phase, dates, counts per CVE), credited, is allowed; no IP addresses stored or published | Sent 29 Oct (author), no reply; followed up 13 Nov by email under the required subject "API key request" (the key form refuses Gmail addresses) |
 
 ## Free sources used without a request (terms read 25 Oct 2026)
 
