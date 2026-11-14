@@ -1,4 +1,4 @@
-# Handover: session 1 to the continuing session (24 Oct 2026) (updated 12 Nov 2026)
+# Handover: session 1 to the continuing session (24 Oct 2026) (updated 14 Nov 2026)
 
 > **NEW CHAT? This is not the starting point.** A new Claude chat taking over the study starts
 > with **START HERE: NEW CHAT**, the file `START_HERE_NEW_CHAT.md` (private repository
@@ -75,4 +75,4 @@ Superseded (11 Nov 2026): the current list, with each task's full message, is se
 Never paste keys or tokens into chat (GitHub secrets only); VulnCheck-derived data private until
 written permission; ransomware.live aggregates only, no victim names, no polling more often than
 every 30 minutes; no scanning or host-level data; the Censys application is written by the author;
-research organisations, not individuals; no project links shared publicly before <!-- date:landing-page -->4 Dec<!-- /date -->.
+research organisations, not individuals; no project links in public postings, social media or forums before <!-- date:landing-page -->4 Dec<!-- /date --> (private emails to sources, schools and candidates may include them; author, 14 Nov 2026).

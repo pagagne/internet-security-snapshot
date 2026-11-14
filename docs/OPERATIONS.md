@@ -1,4 +1,4 @@
-# Operations: how the study runs without depending on one Claude chat (updated 12 Nov 2026)
+# Operations: how the study runs without depending on one Claude chat (updated 14 Nov 2026)
 
 From the **cutover on Mon <!-- date:cutover -->30 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
@@ -322,4 +322,4 @@ private path, `exploratory/docs/...`, and do not link to them.
 ## Standing rules
 See `docs/HANDOVER.md`. In short: no keys or tokens in chat or issues (GitHub secrets only);
 VulnCheck-derived data private until written permission; ransomware.live aggregates only;
-no scanning or host-level data; no project links shared publicly before <!-- date:landing-page -->4 Dec 2026<!-- /date -->.
+no scanning or host-level data; no project links in public postings, social media or forums before <!-- date:landing-page -->4 Dec 2026<!-- /date --> (private emails to sources, schools and candidates may include them; author, 14 Nov 2026).
