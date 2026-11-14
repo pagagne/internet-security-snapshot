@@ -706,7 +706,7 @@ items:
   time: "10:00"
   minutes: 90
   details: >
-    docs/CORE_FREEZE_DECISIONS.md items 0-27 (26 and 27 and the additions to 19 and 20 from the 12 Nov risk review) (confirm 0, 7, 12; decide 1-3, 9-11, 13-22,
+    docs/CORE_FREEZE_DECISIONS.md items 0-28 (26 and 27 and the additions to 19 and 20 from the 12 Nov risk review; 28 from the 14 Nov newsletter review) (confirm 0, 7, 12; decide 1-3, 9-11, 13-22,
     including the companion label check, X13 and hand-check reliability, the 2028 closing
     re-run, and the workflow lock), with the findings of the 15 Dec full dry run. Any source
     without a written yes runs without it for the pilot. Added 26 Oct: item 16, the
@@ -1778,13 +1778,14 @@ items:
 
 - id: risk-freeze-proposals
   owner: claude
-  title: Write the risk-review proposals for the 21 Dec session (items 19, 20, 26, 27)
+  title: Write the proposals for the 21 Dec session (items 19, 20, 26, 27, 28)
   date: 2026-12-14
   details: >
     docs/CORE_FREEZE_DECISIONS.md: the case count beside every label (added to item 19); a pass
     mark for second-coder agreement (added to item 20); item 26, the rule for big
     provisional-to-final changes; item 27, contingency plans for CVE, KEV, NVD and SEC disruption.
-    Options and a recommendation for each, with evidence from the 1 Dec dry run.
+    Options and a recommendation for each, with evidence from the 1 Dec dry run. Also item 28 (author, 14 Nov
+    2026): where the race clock starts, given the growing gap between a public fix and its CVE record.
 
 - id: risk-r23-r24-draft
   owner: claude

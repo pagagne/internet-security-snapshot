@@ -31,6 +31,10 @@ offensive:
   - "AI vulnerability exploitation agent in:description"
   - "CyberStrikeAI in:name,description"
   - "ARTEX agent in:name,description"
+  # added 2026-11-14 (author): reported with ARTEX and CyberStrikeAI in real attacks (Google, Mandiant,
+  # Datadog, Palo Alto Networks, Wiz; newsletter review 14 Nov); before the 6 Jan 2027 fix of this list
+  - "PentAGI in:name,description"
+  - "Hexstrike in:name,description"
   - "渗透测试 AI in:description"
   - "渗透 智能体 in:description"
   - "пентест ИИ in:description"
