@@ -951,9 +951,10 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's idea\, 6 Nov 2026 (https://gith
  he documents do not say). Report to the author with a recommendation\; ope
  ning an account and any purchase are his decision. The author opened a fre
  e account on 13 Nov (no credit bought). If he has stored its key as the Gi
- tHub secret OPENROUTER_API_KEY\, test it once inside GitHub Actions (never
-  in chat): the key-status call (limits and is_free_tier) and one Data API 
- call\, to settle whether the data needs credit.\n\nSource: https://github.
+ tHub secret OPENROUTER_API_KEY. Tested early\, 14 Nov (research task openr
+ outer_probe): the free key reaches every Data API endpoint with no credit.
+  Left for the probe: which app categories and task shares show agents\, ho
+ w stable the series are\, and a recommendation.\n\nSource: https://github.
  com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
  ml
 CATEGORIES:Claude
