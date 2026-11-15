@@ -718,11 +718,21 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261116T150000Z
 DTEND:20261116T154500Z
 SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
-DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Val
- idation: reference cases": record the fix dates BEFORE opening https://git
- hub.com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_r
- eference.csv. Then tell Claude.\n\nSource: https://github.com/pagagne/inte
- rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nWhat it is: before real data\, th
+ e study must get the right answers on five well-known cases whose answers 
+ were written down in advance (pre-registration Section 11). You act as the
+  hand checker\, finding each fix date yourself\, without looking at the wr
+ itten answers. Steps: (1) open claude.ai\, Artifacts\, "Snapshot Hand Chec
+ k"\; (2) in the List menu at the top\, pick "Validation: reference cases" 
+ (six flaws: PAN-OS CVE-2024-3400\, Langflow CVE-2025-3248\, two PaperCut\,
+  two Zammad)\; (3) on each card open the advisory links\, find the day the
+  first fixed version was available\, and confirm or correct the pre-filled
+  date\; (4) do NOT open https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/prereg/ground_truth_reference.csv until all six are answered
+ \; (5) tell Claude "validation dates done". Claude runs the check on 17 No
+ v (pass = at least 4 of the 5 cases match). (Notes reworded 15 Nov 2026 at
+  the author's request.)\n\nSource: https://github.com/pagagne/internet-sec
+ urity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
