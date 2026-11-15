@@ -90,7 +90,9 @@ Started 25 Oct 2026 at the author's request.
   Private task `fixdate_wide` on exploited flaws: CSAF looked up through the BSI aggregator,
   security.txt and vendors' main domains (commercial vendors with exploited flaws still rarely
   publish CSAF); vendor release calendars (confirm some Microsoft, Adobe and Oracle dates); Wayback
-  Machine first captures (most lookups failed to connect, so inconclusive). Main lesson: the gain
+  Machine first captures (failed to connect at first; a slow retry, private task `fixdate_wayback`,
+  worked: captures agree with vendor dates and flag some weak ones for a look, but a generic
+  release-notes page can be years older than the fix, so only advisory-specific links count). Main lesson: the gain
   is in aiming the hand check (dates near the line between attacked-before-fix and after), not in
   new sources. Proposal for the author; any rule change goes to the 21 Dec freeze session.
 
