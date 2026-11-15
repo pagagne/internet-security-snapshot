@@ -77,8 +77,12 @@ DOMAINS = {
     "rockwell": ["rockwellautomation.com"], "phoenix": ["phoenixcontact.com"], "bosch": ["bosch.com"],
     "netscaler": ["citrix.com", "cloud.com"], "watchguard": ["watchguard.com"], "sangoma": ["sangoma.com"],
 }
-DOCS_PER_PROVIDER = 2500
-PAUSE = {"default": 0.3, "web.archive.org": 1.2}
+DOCS_PER_PROVIDER = 800      # 15 Nov rerun: the first run hit the 90-minute limit indexing CSAF
+CSAF_BUDGET_S = 25 * 60       # stop indexing providers after 25 minutes
+RUN_BUDGET_S = 75 * 60        # stop Wayback lookups after 75 minutes (rows still written)
+COVERED = {"cisco.com", "siemens.com", "redhat.com", "microsoft.com", "kernel.org", "paloaltonetworks.com"}
+PAUSE = {"default": 0.15, "web.archive.org": 1.0}
+T0 = time.time()
 _cache: dict = {}
 _refused: Counter = Counter()
 STATUS: dict = defaultdict(Counter)
@@ -228,13 +232,18 @@ def main(argv=None) -> int:
     vendors = {vkey(v) for v in kev["vendorProject"]}
     domains = {d for v in vendors for d in DOMAINS.get(v, [f"{v}.com"] if v.isalnum() else [])}
     providers = provider_urls(domains)
-    since = (dt.date.fromisoformat(a.start) - dt.timedelta(days=400)).isoformat()
+    since = (dt.date.fromisoformat(a.start) - dt.timedelta(days=180)).isoformat()
     csaf: dict = {}
     prov_note = {}
     for d, url in sorted(providers.items()):
-        if url in prov_note:
+        if url in prov_note or d in COVERED:
+            prov_note.setdefault(url, f"{d}: already used by the pre-fill, not indexed")
+            continue
+        if time.time() - T0 > CSAF_BUDGET_S:
+            prov_note[url] = f"{d}: not indexed (time budget)"
             continue
         idx, note = index_provider(url, since)
+        print(f"csaf {d}: {note}, {len(idx)} CVEs, {int(time.time() - T0)} s", flush=True)
         prov_note[url] = f"{d}: {note}, {len(idx)} CVEs indexed"
         for c, val in idx.items():
             if c not in csaf or val[0] < csaf[c][0]:
@@ -254,7 +263,8 @@ def main(argv=None) -> int:
         vendor_date = d0 if base not in ("assumed", "CNA disclosure date") else (e[0] if e else "")
         cal = calendar_day(k.vendorProject, vendor_date or pub)
         tagged = [r.get("url", "") for r in refs if REF_TAGS & set(r.get("tags") or [])]
-        caps = [c for c in (first_capture(u) for u in tagged[:3]) if c]
+        wb_on = time.time() - T0 < RUN_BUDGET_S
+        caps = [c for c in (first_capture(u) for u in tagged[:2]) if c] if wb_on else []
         g = min(caps) if caps else ""
         cands = [x for x in (d0 if base != "assumed" else "", e[0] if e else "", g) if x]
         best = min(cands) if cands else pub
@@ -263,7 +273,7 @@ def main(argv=None) -> int:
             "cve_id": k.cveID, "vendor": k.vendorProject, "product": k.product, "kev_added": k.dateAdded,
             "published": pub, "baseline": base, "baseline_date": d0, "baseline_flagged": bool(flagged),
             "E_csaf_date": e[0] if e else "", "E_csaf_fix_later": bool(e and e[1]), "E_csaf_doc": e[2] if e else "",
-            "F_calendar_day": cal, "G_wayback_first": g, "G_tagged_refs": len(tagged),
+            "F_calendar_day": cal, "G_wayback_first": g, "G_tagged_refs": len(tagged), "G_checked": wb_on,
             "G_minus_baseline": days(g, d0) if g and base != "assumed" else None,
             "G_minus_published": days(g, pub) if g else None,
             "best_date": best, "kev_minus_best": gap,
@@ -296,6 +306,7 @@ def main(argv=None) -> int:
     gb = df["G_minus_baseline"].dropna()
     gp = df["G_minus_published"].dropna()
     L += ["", "## G. Wayback Machine first capture of advisory and patch links", "",
+          f"Wayback looked up for {int(df['G_checked'].sum())} of {n} flaws (time budget). "
           f"Flaws with a tagged vendor-advisory/patch/release-notes link: {int((df['G_tagged_refs'] > 0).sum())}; "
           f"with a first capture: {int(g_has.sum())} (assumed in the baseline: {int((g_has & assumed).sum())}).",
           f"First capture minus the baseline's real date (days): median {gb.median() if len(gb) else 'n/a'}, "
