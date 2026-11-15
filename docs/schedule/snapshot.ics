@@ -1574,7 +1574,7 @@ DTSTART;VALUE=DATE:20261214
 DTEND;VALUE=DATE:20261215
 TRANSP:TRANSPARENT
 SUMMARY:[Claude] Snapshot: Write the proposals for the 21 Dec session (item
- s 19\, 20\, 26\, 27\, 28)
+ s 19\, 20\, 26\, 27\, 28\, 29)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/CORE_FREEZE_DECISIONS.md: the case count besi
  de every label (added to item 19)\; a pass mark for second-coder agreement
@@ -1582,9 +1582,11 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  ges\; item 27\, contingency plans for CVE\, KEV\, NVD and SEC disruption. 
  Options and a recommendation for each\, with evidence from the 1 Dec dry r
  un. Also item 28 (author\, 14 Nov 2026): where the race clock starts\, giv
- en the growing gap between a public fix and its CVE record.\n\nSource: htt
- ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
- /schedule.yaml
+ en the growing gap between a public fix and its CVE record. Also item 29 (
+ author\, 15 Nov 2026): aim the fix-date hand check by how close the call i
+ s (fixdate_wide and fixdate_wayback results\; sample size for the far flaw
+ s).\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

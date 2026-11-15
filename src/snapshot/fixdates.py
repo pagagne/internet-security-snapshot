@@ -91,8 +91,52 @@ def _vendor_json(url: str) -> dict | None:
         return None
 
 
+CALENDAR_HINT = " [on the vendor's scheduled release day]"
+
+
+def release_day(vendor: str, date: str) -> str:
+    """The vendor's scheduled security release day within one day of `date`, or ''.
+
+    Added 15 Nov 2026 (author, after the private fixdate_wide probe): a hint shown beside the
+    pre-filled date in the hand check. It never changes the date or whether it is checked.
+    Microsoft, Adobe and SAP: second Tuesday; Oracle: third Tuesday of Jan, Apr, Jul, Oct;
+    Android: the monthly bulletin on the 1st.
+    """
+    import datetime as dt
+    try:
+        d = dt.date.fromisoformat(str(date)[:10])
+    except ValueError:
+        return ""
+    v = (vendor or "").lower()
+
+    def nth_tuesday(y: int, m: int, n: int) -> dt.date:
+        first = dt.date(y, m, 1)
+        return first + dt.timedelta(days=(1 - first.weekday()) % 7 + 7 * (n - 1))
+
+    cands = []
+    for k in (-1, 0, 1):
+        y, m = d.year + (d.month - 1 + k) // 12, (d.month - 1 + k) % 12 + 1
+        if any(x in v for x in ("microsoft", "adobe")) or v.split()[:1] == ["sap"]:
+            cands.append(nth_tuesday(y, m, 2))
+        if "oracle" in v and m in (1, 4, 7, 10):
+            cands.append(nth_tuesday(y, m, 3))
+        if "android" in v:
+            cands.append(dt.date(y, m, 1))
+    best = min(cands, key=lambda c: abs((c - d).days), default=None)
+    return best.isoformat() if best and abs((best - d).days) <= 1 else ""
+
+
 def prefill_exploited(cve_id: str, refs: list[str], vendor: str, published: str,
                       date_public: str = "") -> tuple[str, str, bool]:
+    """prefill_exploited_core plus the release-calendar hint on the source note."""
+    d, note, hand = prefill_exploited_core(cve_id, refs, vendor, published, date_public)
+    if release_day(vendor, d):
+        note += CALENDAR_HINT
+    return d, note, hand
+
+
+def prefill_exploited_core(cve_id: str, refs: list[str], vendor: str, published: str,
+                           date_public: str = "") -> tuple[str, str, bool]:
     """Fix-date pre-fill for a CVE in the exploited set (option (a)).
 
     Returns (YYYY-MM-DD, source note, needs_hand_check). Order: GitHub links; Microsoft
