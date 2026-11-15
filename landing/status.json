@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-14 01:49 UTC",
+ "checked": "2026-11-15 01:20 UTC",
  "results": {
   "CVE List": {
    "state": "ok",
@@ -10,8 +10,8 @@
    "code": 200
   },
   "NVD": {
-   "state": "error",
-   "code": 503
+   "state": "ok",
+   "code": 200
   },
   "FIRST EPSS": {
    "state": "ok",
