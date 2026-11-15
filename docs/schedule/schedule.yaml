@@ -599,6 +599,22 @@ items:
     state, rebuild verdict, integrity checks, evaluations list and recent runs. Health only, no
     findings or counts (those follow the author's review on the evaluation page); covered by
     the daily privacy scan. Rebuilt after every workflow run.
+    Added 15 Nov 2026 (author): a "Pilot, start to finish" section for the pilot witness, one row
+    per pilot step (1 Dec practice run, 15-16 Dec full test run, 21 Dec decisions, 29 Dec lock,
+    1 Jan collection, 4-28 Jan hand-check window, 1 Feb final run) with its state (waiting,
+    running, done, late), links to the public run log and, from 1 Jan, the frozen copy and its
+    checksum; hand-check progress as items done out of the total (never answers); and a
+    "changes from the plan" list. Same rule: health only, no findings before the author's review.
+    Built from the mock-up the author approves (schedule item pilot-timeline-mockup).
+
+- id: pilot-timeline-mockup
+  owner: claude
+  title: Mock-up of the pilot timeline section of the run-health page, for the author's approval
+  date: 2026-11-23
+  details: >
+    Update the run-health mock-up with the "Pilot, start to finish" section (author, 15 Nov 2026)
+    and show it to the author; his changes go into the 27 Nov build (pages-build). Live from the
+    1 Dec practice run, before the pilot witness starts on 9 Dec.
 
 - id: landing-page
   owner: author
