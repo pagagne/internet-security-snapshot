@@ -1,4 +1,4 @@
-# Inquiry log (updated 14 Nov 2026)
+# Inquiry log (updated 15 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles
@@ -86,6 +86,13 @@ Started 25 Oct 2026 at the author's request.
   real gains (OSV fixing commits, deps.dev releases, dated advisory links); GitHub advisory
   publication dates are CVE mirror dates, not fix dates; commercial vendors rarely publish CSAF.
   The hand check remains the route for most commercial flaws.
+- **15 Nov 2026: fix-date process, wider test (author).** Asked whether the net is broad enough.
+  Private task `fixdate_wide` on exploited flaws: CSAF looked up through the BSI aggregator,
+  security.txt and vendors' main domains (commercial vendors with exploited flaws still rarely
+  publish CSAF); vendor release calendars (confirm some Microsoft, Adobe and Oracle dates); Wayback
+  Machine first captures (most lookups failed to connect, so inconclusive). Main lesson: the gain
+  is in aiming the hand check (dates near the line between attacked-before-fix and after), not in
+  new sources. Proposal for the author; any rule change goes to the 21 Dec freeze session.
 
 - **1 Nov 2026: I5 baseline year.** The 2026 surge in published CVE records falls inside the
   baseline for the first growth labels (Q1 2027), and the registration describes I5 both as a
