@@ -1,0 +1,7 @@
+item,cve_id,decided_by,fix_date,fix_status,answered_at,note
+v01,CVE-2024-3400,author,2024-04-14,corrected,2026-11-16T15:20:27.735Z,
+v02,CVE-2025-3248,author,2025-03-31,corrected,2026-11-16T15:31:49.565Z,
+v03,CVE-2026-81578,author,2026-08-27,corrected,2026-11-16T15:45:17.899Z,
+v04,CVE-2026-82078,author,2026-08-27,corrected,2026-11-16T15:46:29.956Z,
+v05,CVE-2026-102489,author,2026-10-05,corrected,2026-11-16T16:00:47.563Z,"Old versions are not patched. This advisory came out October 5th, 2026 to upgrade software to newer version."
+v06,CVE-2026-102490,author,2026-10-05,corrected,2026-11-16T16:01:59.368Z,The advisory says to upgrade older unsupported versions.
