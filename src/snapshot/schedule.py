@@ -460,13 +460,40 @@ def build_readme() -> str:
     return readme(README.read_text(), readme_table(expand(load()), load_milestones()))
 
 
+def whats_due(occ: list[dict], today: dt.date, days: int = 14) -> str:
+    """Plain list of the next `days` days by owner, for the project doc claude/WHATS-DUE.md.
+
+    Added 16 Nov 2026 after the first handover test: a chat that cannot attach the repositories
+    (for example on claude.ai) reads this project doc to say what is due. The primary chat
+    refreshes it with every morning report.
+    """
+    end = today + dt.timedelta(days=days)
+    who = {"author": "Paul (author)", "claude": "Claude", "reviewer": "Reviewer", "github": "GitHub (automatic)"}
+    L = [f"# What's due: {today:%a %d %b %Y} to {end:%a %d %b %Y}", "",
+         "Written by the primary chat from docs/schedule/schedule.yaml (refreshed with each morning",
+         f"report; this copy {today:%d %b %Y}). Open GitHub issues and the latest session log come first",
+         "when you can reach them. Items marked done are left out.", ""]
+    for owner in ("author", "claude", "github"):
+        rows = [o for o in occ if today <= o["date"] <= end and o["owner"] == owner and not o["done"]]
+        L.append(f"## {who[owner]}")
+        L.append("")
+        L += [f"- {_when(o)}: {o['title']}" for o in rows] or ["- nothing scheduled"]
+        L.append("")
+    return "\n".join(L)
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("build"); sub.add_parser("check")
     d = sub.add_parser("due"); d.add_argument("--date")
+    w = sub.add_parser("whats-due"); w.add_argument("--date"); w.add_argument("--days", type=int, default=14)
     x = sub.add_parser("act"); x.add_argument("--date"); x.add_argument("--dry-run", action="store_true")
     a = ap.parse_args(argv)
+    if a.cmd == "whats-due":
+        today = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(dt.timezone.utc).date()
+        print(whats_due(expand(load()), today, a.days))
+        return 0
     if a.cmd in ("due", "act"):
         today = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(dt.timezone.utc).date()
         if a.cmd == "due":

@@ -122,3 +122,10 @@ def test_done_items_open_no_issue():
     log = S.act(dt.date(2026, 11, 2), dry=True, gh=lambda a: calls.append(a) or "[]")
     assert not any("kernel-fixdates-prefill" in x for x in log)
     assert all(o.get("done") == "" or o.get("done") for o in d["issues"])
+
+
+def test_whats_due_lists_by_owner():
+    import datetime as dt
+    from snapshot import schedule as S
+    md = S.whats_due(S.expand(S.load()), dt.date(2026, 11, 17), 14)
+    assert md.startswith("# What's due") and "## Paul (author)" in md and "## Claude" in md
