@@ -14,9 +14,12 @@ out and reported as pending.
    - **The fix date is the day the first fixed version was released** (the hotfix, release or
      package the vendor says fixes this flaw), even when the advisory or bulletin came out
      later. A later advisory date is not the fix date.
-   - **Upgrade advice is not a fix** unless the vendor says the version fixes this flaw. If the
-     vendor only recommends upgrading, or the fix is disputed, record "no fix yet" (or
-     "unknown") and note why.
+   - **An upgrade counts as the fix** when the vendor, or its release notes, says the newer
+     version fixes, or is not affected by, this flaw; the fix date is that version's release
+     date. Advice to upgrade without that statement, or a disputed fix, is "no fix yet" (or
+     "unknown"), with a note why. The fix date is when the fix was available from the vendor,
+     not how easy it is to apply: note any cost or hardware limit (a paid licence, new hardware)
+     on the card without changing the date (reworded 16 Nov 2026, author).
 4. **Ground-truth reference dates** for the validation cases (done once, before the run).
 5. **HHS breach list download** (X17, since 29 Oct 2026): once a quarter, download the public
    CSV from the HHS OCR breach portal (ocrportal.hhs.gov/ocr/breach) and give it to Claude,
