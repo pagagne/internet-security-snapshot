@@ -162,27 +162,61 @@ does not depend on Claude to keep collecting data.
 4. **What waits for Claude:** research probes, the BigQuery check, fixes to failing code, and
    the reports. None of these stops the data collection.
 
-### When a new Claude chat takes over
+### When a new Claude chat takes over: one primary chat
 
-Added 11 Nov 2026 (author's request). If the working chat ends, fills up or stops responding,
-the author opens a new chat in the Claude project "AI Internet Security 2027 Research Project".
+Added 11 Nov 2026 (author's request); rewritten 16 Nov 2026 when the author chose the
+one-primary-chat design. Only one chat in the Claude project "AI Internet Security 2027 Research
+Project" is the **primary**: it runs the morning report, the sync reviews and the chat-bound
+reminders. Every other chat is **read-only** until the author promotes it. Three things make this
+work without anyone remembering it:
 
-1. **The author's first message** tells the new chat to read **START HERE: NEW CHAT** first.
-   That is the file `START_HERE_NEW_CHAT.md` at the root of the private repository
-   `pagagne/snapshot-manual`; a copy is in the project as `claude/START-HERE-NEW-CHAT.md`, so the
-   chat can read it before it has attached any repository. A first message that works:
-   *"You are taking over the Internet Security Snapshot. Read claude/START-HERE-NEW-CHAT.md and
-   follow it."*
-2. **The new chat follows that file:** it attaches and sets up both repositories, reads the
-   documents in the order listed there, recreates the chat-tied scheduled tasks, and tells the
-   author it is ready and what is due next.
-3. **Not the handover.** `docs/HANDOVER.md` is the 24 Oct handover from the first session. It
-   is read for its repository rules, after START HERE, never as the starting point.
-4. **Nothing on GitHub needs to change.** The timers, the watchdog and the daily work queue keep
-   running across the change of chat (`docs/OPERATIONS.md`, "How a Claude session picks up
-   work").
-5. **Keeping START HERE current** is part of every weekly sync review (`docs/SYNC_REVIEW.md`);
-   after each change the project copy is re-uploaded.
+- **The project's custom instructions** (Project settings, Instructions) hold how the author
+  works, his standing rules and the one-primary rule. Every chat in the project reads them before
+  its first reply. Source text: `PROJECT_INSTRUCTIONS.md` at the root of the private repository.
+- **The primary-chat note** names the primary: `PRIMARY_CHAT.md` at the root of the private
+  repository, and the project doc `claude/PRIMARY-CHAT.md`.
+- **START HERE: NEW CHAT** (`START_HERE_NEW_CHAT.md`, private root; project copy
+  `claude/START-HERE-NEW-CHAT.md`) is the short reference: setup, reading order, where things
+  stand, and the scheduled tasks a new primary recreates.
+
+**A. One-time setup (author, 16 Nov 2026).**
+1. Open the Claude project, open its settings, and paste the text of `PROJECT_INSTRUCTIONS.md`
+   into the custom-instructions box. Save.
+2. Check the project lists `claude/PRIMARY-CHAT.md` and `claude/START-HERE-NEW-CHAT.md`.
+
+**B. Handover test (author; first test Tue 24 Nov 2026, after the 23 Nov cutover).**
+1. Open a new chat in the project. Do not tell it to take over.
+2. Ask only: *"What's due next?"*
+3. A pass: it says it is not the primary and works read-only; it finds the repositories, the
+   latest session log and the open issues; its list matches the calendar; it changes nothing (no
+   pushes, documents, mail drafts, calendar entries or scheduled tasks).
+4. Tell the primary chat what it said. The primary fixes any gap in the instructions or in
+   START HERE. Close the test chat, or keep it as a read-only helper.
+
+**C. Promoting a new chat (when the primary is lost, full or broken).**
+1. Open a new chat in the project and write: *"You are now primary. Read
+   claude/START-HERE-NEW-CHAT.md and take over."*
+2. The new chat attaches and sets up both repositories and runs the checks (START HERE,
+   section 1). If a check fails, it reports that first.
+3. It updates the primary-chat note in both places (date, which chat, who promoted it).
+4. It lists the scheduled tasks (`list_triggers`), pauses the old primary's chat-bound tasks
+   (those tied to the old chat's session), and recreates them for itself from START HERE,
+   section 6. The daily work queue is not tied to a chat and is left alone.
+5. It reads the latest session logs and open issues, then tells the author in one message that it
+   is the primary and what is due next.
+6. If the old chat comes back, it is now read-only: the instructions and the note say so.
+
+**D. If the project instructions are lost or changed by mistake.** Paste
+`PROJECT_INSTRUCTIONS.md` back in. Any change to the instructions is made in that file first, then
+pasted, so the two never differ.
+
+**What never changes with the chat.** The GitHub timers, the watchdog, the study calendar feed
+(built from `docs/schedule/schedule.yaml`) and the daily work queue keep running whichever chat
+is primary. From the 23 Nov 2026 cutover the work queue does the dated `owner:claude` issues; the
+morning report, sync reviews and validation stay with the primary chat. `docs/HANDOVER.md` (the
+24 Oct handover from the first session) is read for its repository rules only, never as the
+starting point. Keeping START HERE and the note current is part of every sync review
+(`docs/SYNC_REVIEW.md`).
 
 ## 8. Who keeps everything in step (sync flow)
 
