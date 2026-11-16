@@ -1,4 +1,4 @@
-# Critical documents register
+# Critical documents register (updated 16 Nov 2026)
 
 The documents the study depends on: what each is for, who keeps it, where every copy lives,
 whether it is a **reference** document (rules and procedures, changed rarely and deliberately) or
