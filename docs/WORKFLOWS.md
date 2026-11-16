@@ -1,4 +1,4 @@
-# The study's workflows (updated 12 Nov 2026)
+# The study's workflows (updated 16 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The <!-- date:workflows-doc -->14 Dec<!-- /date --> workflow review
@@ -35,7 +35,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
-| Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->30 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
+| Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->23 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
 | Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
@@ -250,7 +250,7 @@ a pull or sweep actually collects it. The landing page links the SOP, not the pr
 
 ## 15. Landing snapshot: the page's history
 
-**When:** started by the Schedule workflow at the cutover (<!-- date:cutover -->30 Nov 2026<!-- /date -->), the pilot run (<!-- date:pull-provisional@1 -->1 Jan<!-- /date -->
+**When:** started by the Schedule workflow at the cutover (<!-- date:cutover -->23 Nov 2026<!-- /date -->), the pilot run (<!-- date:pull-provisional@1 -->1 Jan<!-- /date -->
 2027) and each quarterly run (1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028), after that day's source
 check; also by its Run button (added 31 Oct 2026, author's request). **What it does:** copies the
 coverage ring, its settings and the day's banner into run-reports

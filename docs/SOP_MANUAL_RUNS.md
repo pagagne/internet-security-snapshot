@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 12 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 16 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -194,14 +194,14 @@ Added 5 Nov 2026 (author's request). Two Claude sessions work on the study, with
   (`exploratory/docs/artifacts/README.md`).
 - **The daily work queue** is a scheduled Claude task that starts fresh each morning with the
   public repository only; a test on 5 Nov 2026 confirmed it cannot attach the private one. Until
-  <!-- date:cutover -->30 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works the owner:claude issues and
+  <!-- date:cutover -->23 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works the owner:claude issues and
   does the quarterly sync review from the public checklist (`docs/SYNC_REVIEW.md`). When a
   document with a Claude copy changes, it lists the documents in the issue and the chat session
   updates the copies.
 
-Until <!-- date:cutover -->30 Nov 2026<!-- /date -->:
+Until <!-- date:cutover -->23 Nov 2026<!-- /date -->:
 
-![Sync flow until the 30 Nov 2026 cutover](diagrams/sync_flow_now.png)
+![Sync flow until the 23 Nov 2026 cutover](diagrams/sync_flow_now.png)
 
 From the <!-- date:freeze -->29 Dec 2026<!-- /date --> lock (core freeze and workflow lock), through the pilot (<!-- date:pull-provisional@1 -->1 Jan 2027<!-- /date -->) and
 after the procedures are adopted (<!-- date:sop-adopt -->8 Feb 2027<!-- /date -->):

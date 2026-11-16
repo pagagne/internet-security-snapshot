@@ -80,11 +80,12 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
-  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
- lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
- urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  resolved / Still for you. Weekly through 30 Nov\, done by the primary cha
+ t (the daily work queue leaves sync-review issues to it\; author\, 16 Nov 
+ 2026). Also glance at the risk watch list (private https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md) and report 
+ any signal that has turned red.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -340,11 +341,12 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
-  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
- lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
- urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  resolved / Still for you. Weekly through 30 Nov\, done by the primary cha
+ t (the daily work queue leaves sync-review issues to it\; author\, 16 Nov 
+ 2026). Also glance at the risk watch list (private https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md) and report 
+ any signal that has turned red.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -493,11 +495,12 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
-  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
- lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
- urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  resolved / Still for you. Weekly through 30 Nov\, done by the primary cha
+ t (the daily work queue leaves sync-review issues to it\; author\, 16 Nov 
+ 2026). Also glance at the risk watch list (private https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md) and report 
+ any signal that has turned red.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -705,11 +708,12 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
-  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
- lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
- urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  resolved / Still for you. Weekly through 30 Nov\, done by the primary cha
+ t (the daily work queue leaves sync-review issues to it\; author\, 16 Nov 
+ 2026). Also glance at the risk watch list (private https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md) and report 
+ any signal that has turned red.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1000,6 +1004,28 @@ DESCRIPTION:Responsible: Claude\n\nA week after the 13 Nov follow-ups: look
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:cutover@2026-11-23@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Cutover check (study no longer depends on one Cl
+ aude chat)
+DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
+ reen for 7 days\; the author has subscribed to the calendar feed\; the Cla
+ ude work-queue scheduled task is live\; https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/OPERATIONS.md is current. Then retire a
+ ny remaining one-off check-ins in the old chat. https://github.com/pagagne
+ /internet-security-snapshot/blob/main/docs/OPERATIONS.md. Moved up from 30
+  Nov (author\, 16 Nov 2026): from today the daily work queue does the date
+ d owner:claude issues\; the morning report and sync reviews stay with the 
+ primary chat (private PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT.
+ md\; other chats are read-only). Update the work-queue task's prompt if an
+ ything changed.\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:pilot-timeline-mockup@2026-11-23@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261123
@@ -1027,11 +1053,12 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
-  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
- lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
- urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  resolved / Still for you. Weekly through 30 Nov\, done by the primary cha
+ t (the daily work queue leaves sync-review issues to it\; author\, 16 Nov 
+ 2026). Also glance at the risk watch list (private https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md) and report 
+ any signal that has turned red.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1045,6 +1072,16 @@ DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks and edge ca
  snapshot/blob/main/docs/HAND_CHECK.md.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:landing-snapshot-cutover@2026-11-23@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261123T124100Z
+DTEND:20261123T124600Z
+SUMMARY:[GitHub] Snapshot: Landing-page snapshot (cutover)
+DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
+ nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
 UID:race-list-build@2026-11-24@internet-security-snapshot
@@ -1259,24 +1296,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nGitHub\, both Gmail accounts\, Go
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:cutover@2026-11-30@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261130
-DTEND;VALUE=DATE:20261201
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Cutover check (study no longer depends on one Cl
- aude chat)
-DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
- reen for 7 days\; the author has subscribed to the calendar feed\; the Cla
- ude work-queue scheduled task is live\; https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/OPERATIONS.md is current. Then retire a
- ny remaining one-off check-ins in the old chat. https://github.com/pagagne
- /internet-security-snapshot/blob/main/docs/OPERATIONS.md.\n\nSource: https
- ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
- chedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:sync-review@2026-11-30@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261130
@@ -1288,22 +1307,13 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/SYNC_REVIEW.md: repository\, sync between rep
  ository\, Claude docs\, calendars and scheduled tasks\, and everything tha
  t runs on its own. Findings to the author as Confirmed / Fixed / Conflicts
-  resolved / Still for you. Weekly until the 30 Nov cutover. Also glance at
-  the risk watch list (private https://github.com/pagagne/snapshot-manual/b
- lob/main/exploratory/docs/RISK_REVIEW.md) and report any signal that has t
- urned red.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+  resolved / Still for you. Weekly through 30 Nov\, done by the primary cha
+ t (the daily work queue leaves sync-review issues to it\; author\, 16 Nov 
+ 2026). Also glance at the risk watch list (private https://github.com/paga
+ gne/snapshot-manual/blob/main/exploratory/docs/RISK_REVIEW.md) and report 
+ any signal that has turned red.\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
-UID:landing-snapshot-cutover@2026-11-30@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261130T124100Z
-DTEND:20261130T124600Z
-SUMMARY:[GitHub] Snapshot: Landing-page snapshot (cutover)
-DESCRIPTION:Responsible: GitHub\n\n\n\nSource: https://github.com/pagagne/i
- nternet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
 UID:dry-run-review@2026-12-01@internet-security-snapshot

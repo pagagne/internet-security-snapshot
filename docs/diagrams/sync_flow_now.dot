@@ -1,9 +1,9 @@
-// Sync flow until the 30 Nov 2026 cutover (author's request, 5 Nov 2026).
+// Sync flow until the 23 Nov 2026 cutover (moved up from 30 Nov) (author's request, 5 Nov 2026).
 // Source of truth: docs/SYNC_REVIEW.md, docs/OPERATIONS.md, docs/SOP_MANUAL_RUNS.md.
 // Render: dot -Tpng -Gdpi=150 docs/diagrams/sync_flow_now.dot -o docs/diagrams/sync_flow_now.png
 digraph sync_now {
   graph [rankdir=TB, fontname="Helvetica", fontsize=12, nodesep=0.6, ranksep=0.55, pad=0.3,
-         label="Until 30 Nov 2026. Teal = public, purple = private, coral = Claude sessions, gray = everything else.\nThe daily work queue starts fresh each day and cannot reach the private repository (tested 5 Nov).",
+         label="Until the 23 Nov 2026 cutover. Teal = public, purple = private, coral = Claude sessions, gray = everything else.\nThe daily work queue starts fresh each day and cannot reach the private repository (tested 5 Nov).",
          labelloc=b];
   node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", width=2.4, height=0.7, penwidth=0.8];
   edge  [color="#5F5E5A", arrowsize=0.7];

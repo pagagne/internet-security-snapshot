@@ -1,6 +1,6 @@
 # Operations: how the study runs without depending on one Claude chat (updated 16 Nov 2026)
 
-From the **cutover on Mon <!-- date:cutover -->30 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
+From the **cutover on Mon <!-- date:cutover -->23 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
 person, can pick up the work from the files and issues below.
 
@@ -264,6 +264,17 @@ The daily **Claude work-queue** scheduled task (on the author's Claude account) 
 this and ends silently when no `owner:claude` issue is open. Until the cutover it only
 confirms it can see the queue; the dated check-ins below do the work until then.
 
+## One primary chat (author, 16 Nov 2026)
+Only one chat in the Claude project is the primary; it is named in the private
+`PRIMARY_CHAT.md` and the project doc `claude/PRIMARY-CHAT.md`. Every other chat works read-only
+(read, check, report; no pushes, records, mail drafts, workflow starts or scheduled-task
+changes) until the author tells it "you are now primary"; it then updates both notes, retires
+the old primary's chat-bound scheduled tasks and recreates them for itself. The rule is also in
+the project's custom instructions, which every chat in the project reads first. The cutover moved
+up to <!-- date:cutover -->23 Nov<!-- /date -->: from then the daily work queue does the dated
+`owner:claude` issues, while the morning report (it reads the private session logs) and the sync
+reviews stay with the primary chat.
+
 ## Claude's scheduled tasks (outside GitHub)
 Listed 29 Oct 2026 at the author's request. These run on the author's Claude account, not on
 GitHub, so they stop if the account is unavailable; nothing in data collection depends on them
@@ -272,7 +283,7 @@ check-ins are retired once they have run.
 
 | When (ET) | Task | Where it reports |
 |---|---|---|
-| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from <!-- date:cutover -->30 Nov<!-- /date --> does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
+| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from <!-- date:cutover -->23 Nov<!-- /date --> does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
 | Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; each run schedules the next | The author's current chat |
 | Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study (from 14 Nov); each run schedules the next | The author's current chat |
 | ~~Thu 12 Nov, 09:15 and 09:30~~ | Evening-timer trial review; research review decision cards: done 12 Nov | The author's current chat |
@@ -286,7 +297,7 @@ if that chat is lost: a new chat recreates them from section 6 of `START_HERE_NE
 (private repository, root; the full message of each task is there).
 
 Some one-off tasks are tied to the author's computer "Shofar" and wait until it is on. The
-eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). From the <!-- date:cutover -->30 Nov<!-- /date -->
+eight duplicates of 28 Oct that were tied to it were paused on 29 Oct (author). From the <!-- date:cutover -->23 Nov<!-- /date -->
 cutover the work queue takes over the dated work; new dates go into the schedule, not into
 chat reminders.
 
@@ -312,7 +323,7 @@ private path, `exploratory/docs/...`, and do not link to them.
 - The Hand Check app's answers live in the app's own database; the app's source is
   `apps/hand-check.html`.
 
-## Cutover checklist (30 Nov 2026; issue opens that day)
+## Cutover checklist (<!-- date:cutover -->23 Nov 2026<!-- /date -->; issue opens that day)
 - [ ] Schedule workflow green for 7 days in a row.
 - [x] Author subscribed to the calendar feed (24 Oct 2026).
 - [ ] Claude work-queue task live and has confirmed it can see the queue.

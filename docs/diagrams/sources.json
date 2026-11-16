@@ -104,10 +104,10 @@
     "docs/RESEARCH_PLAN.md"
    ],
    "fingerprints": {
-    "docs/RESEARCH_PLAN.md": "2c1710502587a732",
-    "docs/diagrams/build_plan.mmd": "f7017bfe99a376b3"
+    "docs/RESEARCH_PLAN.md": "50d989a9f4cf633c",
+    "docs/diagrams/build_plan.mmd": "5eecba4b9c64d199"
    },
-   "reviewed_on": "2026-11-12"
+   "reviewed_on": "2026-11-16"
   },
   "freeze_year": {
    "doc": "docs/CORE_FREEZE_DECISIONS.md",
@@ -117,11 +117,11 @@
     "README.md"
    ],
    "fingerprints": {
-    "docs/CHANGE_POLICY.md": "32c85347bceacdf0",
-    "README.md": "37633d71d303391f",
+    "docs/CHANGE_POLICY.md": "6751dbf7026830ce",
+    "README.md": "79a3e62f31a28f52",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-11-12"
+   "reviewed_on": "2026-11-16"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
@@ -132,12 +132,12 @@
     "tools/architecture_svg.py"
    ],
    "fingerprints": {
-    "docs/PERMISSIONS.md": "9f7507014fca1b52",
+    "docs/PERMISSIONS.md": "a4adb488990228dd",
     ".github/workflows/quarterly-pull.yml": "a1a9db688d0dbc1c",
     "tools/architecture_svg.py": "c462e4cd10d46eb6",
     "docs/diagrams/architecture.svg": "c8e9bf1c41d1fce4"
    },
-   "reviewed_on": "2026-11-11"
+   "reviewed_on": "2026-11-16"
   },
   "workflow_runs": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -147,7 +147,7 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "93aeff45c115b9fd",
+    "docs/WORKFLOWS.md": "1d9248f6111b40d6",
     ".github/workflows/checks.yml": "cff8c18606a657f6",
     "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
@@ -175,9 +175,9 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "b6ddc7e0ca767410",
-    "docs/OPERATIONS.md": "3b704d6a10341055",
-    "docs/diagrams/sync_flow_now.dot": "dbd54aeb6c10ee53"
+    "docs/SYNC_REVIEW.md": "be4e8ff504b7cfe9",
+    "docs/OPERATIONS.md": "6ce06e343db1b391",
+    "docs/diagrams/sync_flow_now.dot": "0b20efad73b73560"
    },
    "reviewed_on": "2026-11-16"
   },
@@ -189,8 +189,8 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "b6ddc7e0ca767410",
-    "docs/OPERATIONS.md": "3b704d6a10341055",
+    "docs/SYNC_REVIEW.md": "be4e8ff504b7cfe9",
+    "docs/OPERATIONS.md": "6ce06e343db1b391",
     "docs/diagrams/sync_flow_locked.dot": "1d7ddf0bd220b250"
    },
    "reviewed_on": "2026-11-16"

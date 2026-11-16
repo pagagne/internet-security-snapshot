@@ -513,7 +513,8 @@ items:
   details: >
     docs/SYNC_REVIEW.md: repository, sync between repository, Claude docs, calendars and
     scheduled tasks, and everything that runs on its own. Findings to the author as Confirmed /
-    Fixed / Conflicts resolved / Still for you. Weekly until the 30 Nov cutover.
+    Fixed / Conflicts resolved / Still for you. Weekly through 30 Nov, done by the primary chat
+    (the daily work queue leaves sync-review issues to it; author, 16 Nov 2026).
     Also glance at the risk watch list (private exploratory/docs/RISK_REVIEW.md) and report any signal that has turned red.
 
 - id: sync-review-quarterly
@@ -529,11 +530,15 @@ items:
 - id: cutover
   owner: claude
   title: Cutover check (study no longer depends on one Claude chat)
-  date: 2026-11-30
+  date: 2026-11-23
   details: >
     Confirm: the Schedule workflow has run green for 7 days; the author has subscribed to the
     calendar feed; the Claude work-queue scheduled task is live; docs/OPERATIONS.md is current.
     Then retire any remaining one-off check-ins in the old chat. docs/OPERATIONS.md.
+    Moved up from 30 Nov (author, 16 Nov 2026): from today the daily work queue does the dated
+    owner:claude issues; the morning report and sync reviews stay with the primary chat (private
+    PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT.md; other chats are read-only). Update the
+    work-queue task's prompt if anything changed.
 
 - id: dry-run
   owner: github
@@ -1539,7 +1544,7 @@ items:
 - id: landing-snapshot-cutover
   owner: github
   title: Landing-page snapshot (cutover)
-  date: 2026-11-30
+  date: 2026-11-23
   time: "12:41"
   utc: true
   minutes: 5
