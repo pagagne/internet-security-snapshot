@@ -222,16 +222,16 @@ starting point. Keeping START HERE and the note current is part of every sync re
 
 Added 5 Nov 2026 (author's request). Two Claude sessions work on the study, with different reach:
 
-- **The original chat session** can read and write both repositories. It does the private work
+- **The primary chat** (section 7; named in `PRIMARY_CHAT.md`) can read and write both repositories. It does the private work
   (the AI-attack log, the tool sweeps, session logs, morning reports) and keeps the Claude
   documents in step with their repository copies, using the private artifact map
   (`exploratory/docs/artifacts/README.md`).
 - **The daily work queue** is a scheduled Claude task that starts fresh each morning with the
   public repository only; a test on 5 Nov 2026 confirmed it cannot attach the private one. Until
-  <!-- date:cutover -->23 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works the owner:claude issues and
-  does the quarterly sync review from the public checklist (`docs/SYNC_REVIEW.md`). When a
-  document with a Claude copy changes, it lists the documents in the issue and the chat session
-  updates the copies.
+  <!-- date:cutover -->23 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works the dated owner:claude issues,
+  leaving the morning report, the sync reviews and the validation to the primary chat (author,
+  16 Nov 2026). When a document with a Claude copy changes, it lists the documents in the issue
+  and the primary chat updates the copies.
 
 Until <!-- date:cutover -->23 Nov 2026<!-- /date -->:
 
