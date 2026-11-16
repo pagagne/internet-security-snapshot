@@ -553,6 +553,13 @@ items:
     next?". It should say it is not the primary chat, work read-only, find the repositories, the
     latest session log and the open issues, give an accurate list, and change nothing. Tell the
     primary chat what it said; gaps are fixed in START HERE or the instructions.
+    Two parts (author, 16 Nov 2026): (1) an ordinary chat started from the project page, asked
+    "what's due next?" (passed 16 Nov; repeat after the cutover); (2) a Claude Code session
+    (claude.ai/code, the same kind as the primary chat, with a workspace and GitHub tools)
+    attached to the project, told: "Handover test, read-only. Attach both repositories with read
+    access, set them up as in START HERE section 1, run the checks, and tell me the results and
+    what is due. Do not push, edit, write anything or touch scheduled tasks." A pass: it reaches
+    BOTH repositories, the private one included, and the checks come back clean.
 
 - id: dry-run
   owner: github

@@ -179,6 +179,14 @@ work without anyone remembering it:
   `claude/START-HERE-NEW-CHAT.md`) is the short reference: setup, reading order, where things
   stand, and the scheduled tasks a new primary recreates.
 
+**Which kind of chat (author, 16 Nov 2026).** Only a **Claude Code session** (started at
+claude.ai/code, attached to the project) has a workspace and the GitHub tools needed to clone the
+repositories, run the checks, push and keep the session logs; the primary chat is one. An
+ordinary Claude chat started from the project page can read the project docs, calendar and mail
+and say what is due (from `claude/WHATS-DUE.md`), but cannot reach GitHub, so it can never be the
+primary. A takeover (C) must therefore start a Claude Code session; the handover test (B) checks
+both kinds.
+
 **A. One-time setup (author, 16 Nov 2026).**
 1. Open the Claude project, open its settings, and paste the text of `PROJECT_INSTRUCTIONS.md`
    into the custom-instructions box. Save.
@@ -193,11 +201,16 @@ work without anyone remembering it:
    `claude/WHATS-DUE.md` (a chat on claude.ai cannot reach GitHub; the primary refreshes that doc
    each morning); its list matches the study calendar; it changes nothing (no
    pushes, documents, mail drafts, calendar entries or scheduled tasks).
-4. Tell the primary chat what it said. The primary fixes any gap in the instructions or in
-   START HERE. Close the test chat, or keep it as a read-only helper.
+4. Then start a **Claude Code session** attached to the project and write: *"Handover test,
+   read-only. Attach both repositories with read access, set them up as in START HERE section 1,
+   run the checks, and tell me the results and what is due. Do not push, edit, write anything or
+   touch scheduled tasks."* A pass: it reaches both repositories, the private one included (a
+   fresh scheduled session could not on 5 Nov 2026), and the checks come back clean.
+5. Tell the primary chat what both said. The primary fixes any gap in the instructions or in
+   START HERE. Close the test chats, or keep them as read-only helpers.
 
 **C. Promoting a new chat (when the primary is lost, full or broken).**
-1. Open a new chat from the project page and write: *"You are now primary. Read
+1. Start a **Claude Code session** attached to the project and write: *"You are now primary. Read
    claude/START-HERE-NEW-CHAT.md and take over."*
 2. The new chat attaches and sets up both repositories and runs the checks (START HERE,
    section 1). If a check fails, it reports that first.
