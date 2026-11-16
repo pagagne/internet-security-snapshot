@@ -1,4 +1,4 @@
-# Operations: how the study runs without depending on one Claude chat (updated 14 Nov 2026)
+# Operations: how the study runs without depending on one Claude chat (updated 16 Nov 2026)
 
 From the **cutover on Mon <!-- date:cutover -->30 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
@@ -275,8 +275,9 @@ check-ins are retired once they have run.
 | Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from <!-- date:cutover -->30 Nov<!-- /date --> does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
 | Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; each run schedules the next | The author's current chat |
 | Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study (from 14 Nov); each run schedules the next | The author's current chat |
-| Thu 12 Nov, 09:15 and 09:30 | Evening-timer trial review; research review decision cards (review at 10:00) | The author's current chat |
-| Mon 16 and 23 Nov, 09:00 | Weekly sync reviews and due `owner:claude` issues | The author's current chat |
+| ~~Thu 12 Nov, 09:15 and 09:30~~ | Evening-timer trial review; research review decision cards: done 12 Nov | The author's current chat |
+| Mon 23 Nov, 09:00 | Weekly sync review and due `owner:claude` issues (16 Nov done) | The author's current chat |
+| Fri 20 Nov, 09:00 | Reply check: GreyNoise, CrowdSec, Shadowserver | The author's current chat |
 | ~~Thu 19 Nov, 09:00~~ | GreyNoise and CrowdSec follow-up drafts: done early, 12 Nov (in Drive; the author sends <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->) | The author's current chat |
 | Wed <!-- date:race-list-ready -->25 Nov<!-- /date -->, 09:00 | Race fix-date list ready for the dry run | The author's current chat |
 

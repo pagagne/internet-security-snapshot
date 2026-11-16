@@ -1,4 +1,4 @@
-# Handover: session 1 to the continuing session (24 Oct 2026) (updated 14 Nov 2026)
+# Handover: session 1 to the continuing session (24 Oct 2026) (updated 16 Nov 2026)
 
 > **NEW CHAT? This is not the starting point.** A new Claude chat taking over the study starts
 > with **START HERE: NEW CHAT**, the file `START_HERE_NEW_CHAT.md` (private repository
@@ -68,8 +68,9 @@ Superseded (11 Nov 2026): the current list, with each task's full message, is se
 - Decided items 0, 7 and 12 only need confirming at the <!-- date:freeze-session -->21 Dec<!-- /date --> session.
 
 ## Open for the author
-- 12 Nov: every flagged race fix date or a sample (sets the quarterly and baseline workload).
-- <!-- date:freeze-session -->21 Dec<!-- /date --> agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-22; 22 = the workflow lock, added 25 Oct).
+- 12 Nov: every flagged race fix date or a sample: decided early, every flagged date (27 Oct);
+  how the check is aimed is freeze item 29 (15 Nov).
+- <!-- date:freeze-session -->21 Dec<!-- /date --> agenda: `docs/CORE_FREEZE_DECISIONS.md` (items 1-29; 22 = the workflow lock, added 25 Oct).
 
 ## Standing rules (unchanged)
 Never paste keys or tokens into chat (GitHub secrets only); VulnCheck-derived data private until
