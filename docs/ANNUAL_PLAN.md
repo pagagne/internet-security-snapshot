@@ -111,6 +111,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 23 Nov 2026, 12:41 UTC | GitHub | Landing-page snapshot (cutover) |
 | Tue 24 Nov 2026 | Claude | Wire the race list and the quarterly evaluation into the pull, before the 1 Dec dry run |
 | Tue 24 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 2 of 2 |
+| Tue 24 Nov 2026, 10:00 ET | Paul | Handover test - a new chat in the Claude project, read-only |
 | Wed 25 Nov 2026 | Paul | Ask Georgia Tech College of Computing about a research internship posting |
 | Wed 25 Nov 2026 | Claude | Race fix-date list ready in the Hand Check app |
 | Wed 25 Nov 2026 | Claude | Add a row-count check against history to the quality report (R9) |
@@ -361,6 +362,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Fri 20 Nov 2026 | Approve the refined GitHub tool-sweep searches (X25) before the January pilot sweep | Read Claude's proposal of 18 Nov and keep or reject each change. After this, the searches and word lists are fixed from the 6 Jan 2027 pilot sweep on, so the 2027 sweeps compare. |
 | Mon 23 Nov 2026, 10:00 ET | Baseline-year hand check, part 1 of 2 | AI-credit spot checks and edge cases, then cohort fix dates. docs/HAND_CHECK.md. |
 | Tue 24 Nov 2026, 10:00 ET | Baseline-year hand check, part 2 of 2 | Slot (c) internet-facing checks and fix dates for the 12 baseline months. |
+| Tue 24 Nov 2026, 10:00 ET | Handover test - a new chat in the Claude project, read-only | Author's decision, 16 Nov 2026: after the 23 Nov cutover. Check the project's custom instructions are pasted, open a new chat in the Claude project and ask only "what's due next?". It should say it is not the primary chat, work read-only, find the repositories, the latest session log and the open issues, give an accurate list, and change nothing. Tell the primary chat what it said; gaps are fixed in START HERE or the instructions. |
 | Wed 25 Nov 2026 | Ask Georgia Tech College of Computing about a research internship posting | Main board (CareerBuzz) does not accept unpaid remote roles; ask the College of Computing Career Center whether an unpaid remote research internship for course credit qualifies. If no, drop Georgia Tech. |
 | Wed 25 Nov 2026, 09:30 ET | Second Shadowserver follow-up, if still no reply | Draft C in the private exploratory/docs/permission-requests-2026-11-12.md: an email to the ticket address quoting z25efzfv and pqaytmyy, with three simple choices (script, by hand, or no). Last follow-up before the 21 Dec cutoff. Log in docs/PERMISSIONS.md and the correspondence index. |
 | Fri 27 Nov 2026, 10:00 ET | Check the key register's expiry dates (R10) | Look up each key's expiry in its service's account page (Claude cannot see them) and tell Claude the dates; never paste a key into chat. |

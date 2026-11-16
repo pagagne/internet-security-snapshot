@@ -1114,6 +1114,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nSlot (c) internet-facing checks a
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:handover-test@2026-11-24@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261124T150000Z
+DTEND:20261124T151500Z
+SUMMARY:[Paul] Snapshot: Handover test - a new chat in the Claude project\,
+  read-only
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 16 Nov 2026: 
+ after the 23 Nov cutover. Check the project's custom instructions are past
+ ed\, open a new chat in the Claude project and ask only "what's due next?"
+ . It should say it is not the primary chat\, work read-only\, find the rep
+ ositories\, the latest session log and the open issues\, give an accurate 
+ list\, and change nothing. Tell the primary chat what it said\; gaps are f
+ ixed in START HERE or the instructions.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:gatech-contact@2026-11-25@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125

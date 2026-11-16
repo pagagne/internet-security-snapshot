@@ -540,6 +540,19 @@ items:
     PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT.md; other chats are read-only). Update the
     work-queue task's prompt if anything changed.
 
+- id: handover-test
+  owner: author
+  title: Handover test - a new chat in the Claude project, read-only
+  date: 2026-11-24
+  time: "10:00"
+  minutes: 15
+  details: >
+    Author's decision, 16 Nov 2026: after the 23 Nov cutover. Check the project's custom
+    instructions are pasted, open a new chat in the Claude project and ask only "what's due
+    next?". It should say it is not the primary chat, work read-only, find the repositories, the
+    latest session log and the open issues, give an accurate list, and change nothing. Tell the
+    primary chat what it said; gaps are fixed in START HERE or the instructions.
+
 - id: dry-run
   owner: github
   title: Dry run of the quarterly pull (Oct-Nov data)
