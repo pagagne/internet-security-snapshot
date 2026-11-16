@@ -227,6 +227,7 @@ items:
   owner: author
   title: Validation fix dates, then spot-check references
   date: 2026-11-16
+  done: 2026-11-16 (blind dates in review/validation-decisions.csv; 4 of 5 cases match on fix dates)
   time: "10:00"
   minutes: 45
   details: >
@@ -1469,6 +1470,7 @@ items:
   owner: claude
   title: Probe agent-skill registries (ClawHub, MCP registries) - terms and public metadata only
   date: 2026-11-16
+  done: 2026-11-16 (findings private; the author decides on 23 Nov)
   details: >
     Author's decision 5 Nov 2026: read the terms of use of the main agent-skill registries and what
     public metadata they offer (counts, publish dates, publishers as organisations), with a research

@@ -185,16 +185,19 @@ work without anyone remembering it:
 2. Check the project lists `claude/PRIMARY-CHAT.md` and `claude/START-HERE-NEW-CHAT.md`.
 
 **B. Handover test (author; first test Tue 24 Nov 2026, after the 23 Nov cutover).**
-1. Open a new chat in the project. Do not tell it to take over.
+1. Open a new chat **from the project page** (a chat started with the general "New chat" button
+   is outside the project and never sees the instructions or project docs; found 16 Nov 2026). Do
+   not tell it to take over.
 2. Ask only: *"What's due next?"*
-3. A pass: it says it is not the primary and works read-only; it finds the repositories, the
-   latest session log and the open issues; its list matches the calendar; it changes nothing (no
+3. A pass: its first line says it is read-only; it gives what is due from the project doc
+   `claude/WHATS-DUE.md` (a chat on claude.ai cannot reach GitHub; the primary refreshes that doc
+   each morning); its list matches the study calendar; it changes nothing (no
    pushes, documents, mail drafts, calendar entries or scheduled tasks).
 4. Tell the primary chat what it said. The primary fixes any gap in the instructions or in
    START HERE. Close the test chat, or keep it as a read-only helper.
 
 **C. Promoting a new chat (when the primary is lost, full or broken).**
-1. Open a new chat in the project and write: *"You are now primary. Read
+1. Open a new chat from the project page and write: *"You are now primary. Read
    claude/START-HERE-NEW-CHAT.md and take over."*
 2. The new chat attaches and sets up both repositories and runs the checks (START HERE,
    section 1). If a check fails, it reports that first.

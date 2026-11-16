@@ -684,8 +684,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Probe agent-skill registries (ClawHub\, MCP regi
- stries) - terms and public metadata only
+SUMMARY:✅ DONE [Claude] Snapshot: Probe agent-skill registries (ClawHub\,
+  MCP registries) - terms and public metadata only
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 5 Nov 2026: read the t
  erms of use of the main agent-skill registries and what public metadata th
  ey offer (counts\, publish dates\, publishers as organisations)\, with a r
@@ -721,7 +721,8 @@ UID:validation-fix-dates@2026-11-16@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261116T150000Z
 DTEND:20261116T154500Z
-SUMMARY:[Paul] Snapshot: Validation fix dates\, then spot-check references
+SUMMARY:✅ DONE [Paul] Snapshot: Validation fix dates\, then spot-check re
+ ferences
 DESCRIPTION:Responsible: Paul (author)\n\nWhat it is: before real data\, th
  e study must get the right answers on five well-known cases whose answers 
  were written down in advance (pre-registration Section 11). You act as the
