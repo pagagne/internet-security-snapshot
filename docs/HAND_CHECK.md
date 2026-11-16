@@ -1,4 +1,4 @@
-# Hand-check procedure (updated 5 Nov 2026)
+# Hand-check procedure (updated 16 Nov 2026)
 
 Some items are flagged by code but need a person to confirm them before they count.
 Nothing unverified is ever estimated or filled in: an item that is not confirmed is left
@@ -10,6 +10,13 @@ out and reported as pending.
    `config/ai_credit_terms.yaml`.
 2. **Internet-facing status** for cohort CVEs in category (c), "any other product".
 3. **Patch dates** (T_patch) for cohort CVEs, confirmed against the vendor's advisory.
+   Two rules for every fix date (author, 16 Nov 2026, after the validation check):
+   - **The fix date is the day the first fixed version was released** (the hotfix, release or
+     package the vendor says fixes this flaw), even when the advisory or bulletin came out
+     later. A later advisory date is not the fix date.
+   - **Upgrade advice is not a fix** unless the vendor says the version fixes this flaw. If the
+     vendor only recommends upgrading, or the fix is disputed, record "no fix yet" (or
+     "unknown") and note why.
 4. **Ground-truth reference dates** for the validation cases (done once, before the run).
 5. **HHS breach list download** (X17, since 29 Oct 2026): once a quarter, download the public
    CSV from the HHS OCR breach portal (ocrportal.hhs.gov/ocr/breach) and give it to Claude,
