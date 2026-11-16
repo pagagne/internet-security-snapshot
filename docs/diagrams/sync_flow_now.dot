@@ -11,7 +11,7 @@ digraph sync_now {
   gh      [label="GitHub runs\ntimers, watchdog, pulls", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
   pub     [label="Public repository\ncode, docs, sync checklist", fillcolor="#E1F5EE", color="#0F6E56", fontcolor="#04342C"];
   priv    [label="Private repository\nlogs, sweeps, artifact map", fillcolor="#EEEDFE", color="#534AB7", fontcolor="#26215C"];
-  chat    [label="This chat (Claude)\nweekly sync review, private work", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
+  chat    [label="Primary chat (Claude)\nweekly sync review, private work", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
   queue   [label="Daily work queue (Claude)\npublic only, comments only", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
   outside [label="Claude docs, calendar,\nscheduled tasks\nchecked every Monday", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
 
