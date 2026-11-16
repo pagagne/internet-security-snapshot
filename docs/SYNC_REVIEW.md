@@ -39,6 +39,8 @@ cannot see.
    redrawn since.
 7. The author's Google Calendar: subscribed to the feed; no hand-made "Snapshot:" events added
    since (any found are moved into the schedule and removed, with the author's agreement).
+8a. The critical-documents register (`docs/DOCUMENT_REGISTER.md`) lists every document the
+   study depends on and where each copy lives; add any new one.
 8. Scheduled tasks (Claude account): the work queue is enabled and its prompt matches
    `docs/OPERATIONS.md`; one-off check-ins are still needed, and none duplicate a schedule item
    after the cutover.

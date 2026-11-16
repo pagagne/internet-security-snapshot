@@ -2545,6 +2545,25 @@ DESCRIPTION:Responsible: Paul (author)\n\nOutcome goes to the 15 March revi
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:document-cleanup@2027-02-10@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270210
+DTEND;VALUE=DATE:20270211
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Clean up the critical-documents register and che
+ ck every cross-reference (before the lock)
+DESCRIPTION:Responsible: Claude\n\nAuthor's request\, 16 Nov 2026: after th
+ e pilot\, bring https://github.com/pagagne/internet-security-snapshot/blob
+ /main/docs/DOCUMENT_REGISTER.md up to date (every critical document\, ever
+ y copy\, reference or living)\, check every cross-reference in and between
+  the documents (snapshot.links\, snapshot.refs\, the manual check\, the ar
+ tifact map and the Claude project copies)\, fix stale text\, and prepare t
+ he lock list for 17 Feb with a fingerprint guard like the locked core. Not
+ e what the pilot changed.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:plan-evaluation-prep@2027-02-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270210
@@ -2589,6 +2608,22 @@ SUMMARY:[Paul] Snapshot: Reviewer applications close\; schedule calls
 DESCRIPTION:Responsible: Paul (author)\n\nCalls with finalists 16-26 Feb\, 
  with the three-item fix-date trial.\n\nSource: https://github.com/pagagne/
  internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:document-lock@2027-02-17@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270217T150000Z
+DTEND:20270217T153000Z
+SUMMARY:[Paul] Snapshot: Approve the document lock (no more changes to the 
+ locked project documents after the pilot)
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's request\, 16 Nov 2026. R
+ ead Claude's lock list from 10 Feb and decide what locks (the scope is dec
+ ided here: reference documents only\, or everything\; the implications wer
+ e set out on 16 Nov). From then on a locked document changes only by a dat
+ ed\, logged entry under https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/CHANGE_POLICY.md.\n\nSource: https://github.com/pagagne
+ /internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
