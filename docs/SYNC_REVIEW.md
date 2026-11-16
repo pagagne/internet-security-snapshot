@@ -2,12 +2,13 @@
 
 A repeatable check that the repository, the Claude docs, the calendars, the scheduled tasks
 and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the author's request.
-Scheduled weekly until the <!-- date:cutover -->23 Nov 2026<!-- /date --> cutover, then three days before each provisional report
+Scheduled weekly through 30 Nov 2026 (one week past the <!-- date:cutover -->23 Nov 2026<!-- /date --> cutover), then three days before each provisional report
 (`sync-review` and `sync-review-quarterly` in `docs/schedule/schedule.yaml`), and on request.
 
-Who runs it: the original chat session until the cutover; the daily work queue after it, from
-this public checklist, handing changed Claude documents to the chat session (the artifact map is
-private). Diagrams of both stages: `docs/SOP_MANUAL_RUNS.md`, section 8.
+Who runs it: the primary chat (named in the private `PRIMARY_CHAT.md` and the project doc
+`claude/PRIMARY-CHAT.md`), before and after the cutover (author, 16 Nov 2026); the daily work queue
+leaves sync-review issues to it. Each review also checks that the primary-chat note, the project
+instructions (source `PROJECT_INSTRUCTIONS.md`) and START HERE agree. Diagrams of both stages: `docs/SOP_MANUAL_RUNS.md`, section 8.
 
 ![Sync flow after the 29 Dec 2026 lock](diagrams/sync_flow_locked.png)
 
