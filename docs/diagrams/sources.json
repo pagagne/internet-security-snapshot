@@ -175,11 +175,11 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "459fb3e74189b939",
-    "docs/OPERATIONS.md": "bbafcbe950485a1d",
+    "docs/SYNC_REVIEW.md": "b6ddc7e0ca767410",
+    "docs/OPERATIONS.md": "2f5c52a3c2216c71",
     "docs/diagrams/sync_flow_now.dot": "dbd54aeb6c10ee53"
    },
-   "reviewed_on": "2026-11-11"
+   "reviewed_on": "2026-11-16"
   },
   "sync_flow_locked": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -189,11 +189,11 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "459fb3e74189b939",
-    "docs/OPERATIONS.md": "bbafcbe950485a1d",
+    "docs/SYNC_REVIEW.md": "b6ddc7e0ca767410",
+    "docs/OPERATIONS.md": "2f5c52a3c2216c71",
     "docs/diagrams/sync_flow_locked.dot": "1d7ddf0bd220b250"
    },
-   "reviewed_on": "2026-11-11"
+   "reviewed_on": "2026-11-16"
   }
  }
 }
