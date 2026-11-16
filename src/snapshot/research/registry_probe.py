@@ -87,6 +87,7 @@ def walk(name, url, list_key, cursor_param, next_names, date_names, pages):
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, type=Path); ap.add_argument("--pages", type=int, default=30)
+    ap.add_argument("--start"); ap.add_argument("--end")  # passed by the workflow; not used
     a = ap.parse_args(argv)
     a.out.mkdir(parents=True, exist_ok=True)
     L = ["# Agent-skill registry metadata probe", "", "Read-only; nothing installed or run; aggregates only.", ""]
