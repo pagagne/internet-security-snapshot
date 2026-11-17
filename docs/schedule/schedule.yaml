@@ -1863,8 +1863,29 @@ items:
   time: "10:00"
   minutes: 15
   details: >
-    Look up each key's expiry in its service's account page (Claude cannot see them) and tell
-    Claude the dates; never paste a key into chat.
+    Look up each key's expiry on its service's own page (Claude cannot see them) and tell Claude
+    what you find; never paste or read out a key. Steps per key (written 17 Nov 2026):
+    (1) ransomware.live (RANSOMWARE_LIVE_KEY): done 17 Nov, the portal shows no expiry ("none
+    stated"); limits 60 a minute, 500,000 a month.
+    (2) NVD (NVD_API_KEY): NVD has no account page and publishes no expiry. Nothing to look up:
+    record "none stated". Two things end a key: requesting a new key with the same email
+    deactivates the old one, so never request another; and NVD may block keys that break its
+    limits. A dead key shows as an NVD error in the daily Source status run.
+    (3) VulnCheck (VULNCHECK_TOKEN): sign in at vulncheck.com, open the account's API tokens
+    page and note each token's status and last-used date. VulnCheck expires any token not used
+    for 30 days, so this one matters most (see the 17 Nov session log; checked early that day).
+    (4) Cloudflare (CLOUDFLARE_TOKEN): sign in at dash.cloudflare.com, My Profile, API Tokens.
+    The study's token (Account, Radar, Read) should show Active; tokens do not expire unless a
+    TTL was set, and ours was made with none (PERMISSIONS, 20 Oct). Note the status.
+    (5) Google backup (RCLONE_CONF, the Drive sign-in used by Backup and Research): it has no
+    expiry date. It stops working only if you remove its access in your Google Account's
+    third-party connections, if it goes unused for six months, or if the Google Cloud app it
+    uses is in "Testing" (then 7 days; ours has worked since October, so it is not). Look in
+    your Google Account's security page, third-party connections, that the rclone access is
+    still listed. BigQuery uses no stored key (GitHub proves its identity to Google each run),
+    so there is nothing to check there.
+    Tell Claude the results; Claude records them in the key register and schedules any renewal
+    30 days ahead.
 
 - id: openrouter-key-renewal
   owner: author
