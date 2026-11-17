@@ -27,6 +27,7 @@ sections:
   - {draft: news,                      status: draft, cleared: false, bare: true, wording_approved: 2026-11-06}
   - {draft: intro,                     status: draft, cleared: false, wording_approved: 2026-11-06}
   - {readme: Mission,                  status: live}
+  - {readme: "How the study works: four tracks", status: live}   # author, 17 Nov 2026 (wording approved)
   - {readme: "Data coverage: what the study collects so far", status: live}
   - {draft: results,                   status: draft, cleared: false, wording_approved: 2026-11-06}   # one line linking to results.md (scorecard there only, 6 Nov)
   - {readme: Principles,               status: live, page: none}        # replaced by the draft below (proposed 6 Nov)

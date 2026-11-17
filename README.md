@@ -58,6 +58,30 @@ later. Q4 2026 is a labelled pilot; Q1 2027 is the first scored quarter. Additio
 from news reporting, internet traffic data from Cloudflare Radar, and open repositories of
 software code and AI models and datasets.
 
+## How the study works: four tracks
+
+Each quarter the study's work runs on four separate tracks, each answering its own part of the
+question.
+
+- **Track A: a fair sample of new serious flaws.** A fixed random draw that anyone can repeat
+  picks up to 12 new serious flaws a quarter, one per group per month: firewalls and VPNs; web
+  and collaboration software; other software reachable from the internet; and flaws credited to
+  an AI tool. Question: once a fix exists, how fast do exposed systems on the internet get
+  updated?
+- **Track B: every flaw attackers started using.** Every flaw newly confirmed as attacked in the
+  quarter, typically 75 to 100. Questions: how soon are flaws attacked, how old are they, and is
+  the fix usually out first? This is the race itself: the days from a fix's release to the first
+  attack.
+- **Track C: was AI involved in finding the flaw?** The credits of every new flaw are read.
+  Question: what share of new flaws credit an AI tool or an AI lab?
+- **Track D: background trends.** The number of new flaws, ransomware leak-site postings (counted
+  only, never named) and companies' breach disclosures. Question: is flaw discovery rising, and is
+  visible harm rising or falling?
+
+Alongside the tracks, exploratory measures follow AI's wider role, such as AI tools and models in
+open code repositories and internet security by country. They are reported as exploratory, never
+scored. Details, with diagrams and each track's current status: [How it works](docs/HOW_IT_WORKS.md).
+
 ## Data coverage: what the study collects so far
 
 Two rings, kept apart and never combined. Each slice is one kind of data the study needs; a slice
