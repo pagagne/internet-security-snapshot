@@ -1870,7 +1870,7 @@ items:
     (2) NVD (NVD_API_KEY): NVD has no account page and publishes no expiry. Nothing to look up:
     record "none stated". Two things end a key: requesting a new key with the same email
     deactivates the old one, so never request another; and NVD may block keys that break its
-    limits. A dead key shows as an NVD error in the daily Source status run.
+    limits. A dead key would show as an NVD error in the next quarterly pull (the 1 Dec dry run).
     (3) VulnCheck (VULNCHECK_TOKEN): sign in at vulncheck.com, open the account's API tokens
     page and note each token's status and last-used date. VulnCheck expires any token not used
     for 30 days, so this one matters most (see the 17 Nov session log; checked early that day).
