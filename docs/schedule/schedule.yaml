@@ -569,6 +569,7 @@ items:
   title: Set the OpenRouter key's spending limit to 0
   date: 2026-11-17
   time: "09:35"
+  done: "17 Nov 2026, 10:25 ET: limit set to 0 by the author; he reports the key expires 12 May 2027"
   minutes: 5
   details: >
     Added 16 Nov 2026 (author's request). The free OpenRouter key (GitHub secret
@@ -1849,8 +1850,9 @@ items:
   date: 2026-11-19
   details: >
     Private, no key values: RANSOMWARE_LIVE_KEY, NVD_API_KEY, VULNCHECK_TOKEN, CLOUDFLARE_TOKEN,
-    SEC_USER_AGENT, the Google Cloud and Drive backup credentials, and any GreyNoise or CrowdSec
-    key when granted. For each: who issued it, where it is kept (GitHub secret name), expiry or
+    SEC_USER_AGENT, OPENROUTER_API_KEY (expires 12 May 2027, author 17 Nov 2026; spending limit
+    0), the Google Cloud and Drive backup credentials, and any GreyNoise or CrowdSec key when
+    granted. For each: who issued it, where it is kept (GitHub secret name), expiry or
     "none stated", and how to renew. Expiries become schedule items 30 days ahead.
 
 - id: risk-r10-expiry-check
@@ -1862,6 +1864,20 @@ items:
   details: >
     Look up each key's expiry in its service's account page (Claude cannot see them) and tell
     Claude the dates; never paste a key into chat.
+
+- id: openrouter-key-renewal
+  owner: author
+  title: Renew the OpenRouter key before it expires on 12 May 2027
+  date: 2027-04-12
+  time: "10:00"
+  minutes: 10
+  details: >
+    Added 17 Nov 2026 (author: the key expires 12 May 2027), 30 days ahead as the key register
+    rule says. Decide first whether the study still uses OpenRouter's data (rankings, apps,
+    tasks). If yes: make a new key on openrouter.ai with a spending limit of 0, put it straight
+    into the GitHub secret OPENROUTER_API_KEY (never into chat), tell Claude, and let Claude check
+    it with the next openrouter_probe run. If no: let it expire and Claude removes the secret's
+    uses.
 
 - id: risk-r9-row-check
   owner: claude

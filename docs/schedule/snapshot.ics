@@ -816,7 +816,8 @@ UID:openrouter-key-limit-zero@2026-11-17@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261117T143500Z
 DTEND:20261117T144000Z
-SUMMARY:[Paul] Snapshot: Set the OpenRouter key's spending limit to 0
+SUMMARY:✅ DONE [Paul] Snapshot: Set the OpenRouter key's spending limit t
+ o 0
 DESCRIPTION:Responsible: Paul (author)\n\nAdded 16 Nov 2026 (author's reque
  st). The free OpenRouter key (GitHub secret OPENROUTER_API_KEY) has a $100
   spending limit set on the key (probe\, 14 Nov). No credit has been bought
@@ -975,11 +976,12 @@ SUMMARY:[Claude] Snapshot: Draft the key register (R10) - every key\, issue
  r\, expiry\, renewal reminder
 DESCRIPTION:Responsible: Claude\n\nPrivate\, no key values: RANSOMWARE_LIVE
  _KEY\, NVD_API_KEY\, VULNCHECK_TOKEN\, CLOUDFLARE_TOKEN\, SEC_USER_AGENT\,
-  the Google Cloud and Drive backup credentials\, and any GreyNoise or Crow
- dSec key when granted. For each: who issued it\, where it is kept (GitHub 
- secret name)\, expiry or "none stated"\, and how to renew. Expiries become
-  schedule items 30 days ahead.\n\nSource: https://github.com/pagagne/inter
- net-security-snapshot/blob/main/docs/schedule/schedule.yaml
+  OPENROUTER_API_KEY (expires 12 May 2027\, author 17 Nov 2026\; spending l
+ imit 0)\, the Google Cloud and Drive backup credentials\, and any GreyNois
+ e or CrowdSec key when granted. For each: who issued it\, where it is kept
+  (GitHub secret name)\, expiry or "none stated"\, and how to renew. Expiri
+ es become schedule items 30 days ahead.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3396,6 +3398,24 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:openrouter-key-renewal@2027-04-12@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20270412T140000Z
+DTEND:20270412T141000Z
+SUMMARY:[Paul] Snapshot: Renew the OpenRouter key before it expires on 12 M
+ ay 2027
+DESCRIPTION:Responsible: Paul (author)\n\nAdded 17 Nov 2026 (author: the ke
+ y expires 12 May 2027)\, 30 days ahead as the key register rule says. Deci
+ de first whether the study still uses OpenRouter's data (rankings\, apps\,
+  tasks). If yes: make a new key on openrouter.ai with a spending limit of 
+ 0\, put it straight into the GitHub secret OPENROUTER_API_KEY (never into 
+ chat)\, tell Claude\, and let Claude check it with the next openrouter_pro
+ be run. If no: let it expire and Claude removes the secret's uses.\n\nSour
+ ce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/s
+ chedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:reviewer-check-in@2027-04-15@internet-security-snapshot
