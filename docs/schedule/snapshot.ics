@@ -771,8 +771,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Add lure\, mislabel\, clone and search-cap check
- s to the AI tool sweeps (X25)
+SUMMARY:✅ DONE [Claude] Snapshot: Add lure\, mislabel\, clone and search-
+ cap checks to the AI tool sweeps (X25)
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 5 Nov 2026\, after co
  mparing the sweeps with a published audit of an agent-skill registry (priv
  ate review in the private repository). Build and test\, without downloadin

@@ -1508,6 +1508,7 @@ items:
   owner: claude
   title: Add lure, mislabel, clone and search-cap checks to the AI tool sweeps (X25)
   date: 2026-11-17
+  done: "17 Nov 2026: built and tested (commit 0809fe8); first real run with the 25 Nov X25 test run; proposal (publish counts, who checks the sample, thresholds) for the 23 Nov sync review"
   details: >
     Author's decisions 5 Nov 2026, after comparing the sweeps with a published audit of an
     agent-skill registry (private review in the private repository). Build and test, without
