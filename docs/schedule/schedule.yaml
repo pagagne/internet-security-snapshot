@@ -327,6 +327,19 @@ items:
     Drafts for VulnCheck, Shadowserver (form text plus an email to its general contact,
     address checked on its site) and Censys, saved privately for the author's 10 Nov send.
 
+- id: baseline-list-ready
+  owner: claude
+  title: Build the baseline-year review list and load it into the Hand Check app
+  date: 2026-11-20
+  details: >
+    Added 17 Nov 2026 (author): the 23-24 Nov baseline hand check had no step that prepares its
+    list. Apply the frozen selection rule to the retrospective cohort, Q4 2025 to Q3 2026
+    (pre-registration Section 10), with snapshot.review; load the AI-credit items, the slot (c)
+    internet-facing checks and the fix dates for the 12 months into the Hand Check app (read the
+    app artifact before republishing; HAND_CHECK.md rules of 16 Nov apply). Tell the author the
+    number of items and the time estimate; if it will not fit two 75-minute sessions, say so by
+    20 Nov with a proposal.
+
 - id: baseline-hand-check-1
   owner: author
   title: Baseline-year hand check, part 1 of 2
@@ -339,7 +352,7 @@ items:
   owner: author
   title: Baseline-year hand check, part 2 of 2
   date: 2026-11-24
-  time: "10:00"
+  time: "13:00"   # moved from 10:00 (author, 17 Nov 2026): the handover test is at 10:00
   minutes: 75
   details: Slot (c) internet-facing checks and fix dates for the 12 baseline months.
 

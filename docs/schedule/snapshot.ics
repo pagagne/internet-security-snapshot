@@ -1046,6 +1046,26 @@ DESCRIPTION:Responsible: Paul (author)\n\nRead Claude's proposal of 18 Nov
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:baseline-list-ready@2026-11-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the baseline-year review list and load it 
+ into the Hand Check app
+DESCRIPTION:Responsible: Claude\n\nAdded 17 Nov 2026 (author): the 23-24 No
+ v baseline hand check had no step that prepares its list. Apply the frozen
+  selection rule to the retrospective cohort\, Q4 2025 to Q3 2026 (pre-regi
+ stration Section 10)\, with snapshot.review\; load the AI-credit items\, t
+ he slot (c) internet-facing checks and the fix dates for the 12 months int
+ o the Hand Check app (read the app artifact before republishing\; HAND_CHE
+ CK.md rules of 16 Nov apply). Tell the author the number of items and the 
+ time estimate\; if it will not fit two 75-minute sessions\, say so by 20 N
+ ov with a proposal.\n\nSource: https://github.com/pagagne/internet-securit
+ y-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:permission-replies-check@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120
@@ -1163,17 +1183,6 @@ DESCRIPTION:Responsible: Claude\n\nFound in the 1 Nov quality check: the qu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:baseline-hand-check-2@2026-11-24@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261124T150000Z
-DTEND:20261124T161500Z
-SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 2 of 2
-DESCRIPTION:Responsible: Paul (author)\n\nSlot (c) internet-facing checks a
- nd fix dates for the 12 baseline months.\n\nSource: https://github.com/pag
- agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:handover-test@2026-11-24@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261124T150000Z
@@ -1197,6 +1206,17 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision\, 16 Nov 2026:
  ches BOTH repositories\, the private one included\, and the checks come ba
  ck clean.\n\nSource: https://github.com/pagagne/internet-security-snapshot
  /blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:baseline-hand-check-2@2026-11-24@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261124T180000Z
+DTEND:20261124T191500Z
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 2 of 2
+DESCRIPTION:Responsible: Paul (author)\n\nSlot (c) internet-facing checks a
+ nd fix dates for the 12 baseline months.\n\nSource: https://github.com/pag
+ agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
