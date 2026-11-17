@@ -39,6 +39,8 @@ cannot see.
    redrawn since.
 7. The author's Google Calendar: subscribed to the feed; no hand-made "Snapshot:" events added
    since (any found are moved into the schedule and removed, with the author's agreement).
+8b. The project doc `claude/WHATS-DUE.md` is dated today or yesterday (the morning report
+   refreshes it), and no issue labelled `primary-chat` is overdue.
 8a. The critical-documents register (`docs/DOCUMENT_REGISTER.md`) lists every document the
    study depends on and where each copy lives; add any new one.
 8. Scheduled tasks (Claude account): the work queue is enabled and its prompt matches
