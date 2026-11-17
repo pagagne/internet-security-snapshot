@@ -90,12 +90,12 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "6877a4c03c01fb26",
+    "README.md": "b99643e8dccdbb21",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "a1a9db688d0dbc1c",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
    },
-   "reviewed_on": "2026-11-16"
+   "reviewed_on": "2026-11-17"
   },
   "build_plan": {
    "doc": "exploratory/docs/BUILD_PLAN.md",
@@ -118,10 +118,10 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "6751dbf7026830ce",
-    "README.md": "6877a4c03c01fb26",
+    "README.md": "b99643e8dccdbb21",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
-   "reviewed_on": "2026-11-16"
+   "reviewed_on": "2026-11-17"
   },
   "architecture": {
    "doc": "docs/EVALUATION_FLOW.md (How the data flows)",
@@ -147,11 +147,11 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "3fa17f141ce26f9c",
+    "docs/WORKFLOWS.md": "82d265d22a55142c",
     ".github/workflows/checks.yml": "cff8c18606a657f6",
     "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
-   "reviewed_on": "2026-11-16"
+   "reviewed_on": "2026-11-17"
   },
   "indicator_sources": {
    "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",

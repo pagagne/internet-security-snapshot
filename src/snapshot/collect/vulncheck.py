@@ -110,3 +110,43 @@ def exploit_rows(table: pd.DataFrame) -> pd.DataFrame:
     t = table.dropna(subset=["vc_date_added"])
     return pd.DataFrame({"cve_id": t["cve_id"], "source": "vulncheck_kev",
                          "date": t["vc_date_added"].dt.tz_convert(None).dt.date.astype(str)})
+
+
+# Token keep-alive (author's decision, 17 Nov 2026). VulnCheck expires any token not used for 30
+# days (docs.vulncheck.com, API tokens), and the study uses its token only at the quarterly pull,
+# so without this it would lapse between pulls. Twice a month the daily Source status run makes
+# this one listing request (no download), keeps nothing from the reply, and reports only whether
+# the token still works. Run on the 1st-2nd and 15th-16th (UTC) so a late or missed day still
+# leaves a second chance well inside the 30 days.
+KEEPALIVE_DAYS = (1, 2, 15, 16)
+# One-off first calls (17 Nov 2026): the token may not have been used since it was made on 20 Oct,
+# so it could lapse about 19-20 Nov, before the first regular day (1 Dec).
+KEEPALIVE_DATES = ("2026-11-17", "2026-11-18")
+
+
+def keepalive(day: int | None = None, date: str | None = None) -> str:
+    """One listing request on keep-alive days; returns a one-line, data-free status message."""
+    import datetime as _dt
+    import requests as _rq
+
+    from .http import UA
+    now = _dt.datetime.now(_dt.timezone.utc)
+    d = day if day is not None else now.day
+    iso = date if date is not None else (now.date().isoformat() if day is None else "")
+    if d not in KEEPALIVE_DAYS and iso not in KEEPALIVE_DATES:
+        return f"VulnCheck token keep-alive: not due today (runs on days {', '.join(map(str, KEEPALIVE_DAYS))})"
+    r = _rq.get(API, headers={"Authorization": f"Bearer {_token()}", "User-Agent": UA,
+                              "Accept": "application/json"}, timeout=60)
+    if not r.ok:
+        raise RuntimeError(f"VulnCheck token keep-alive failed: HTTP {r.status_code}. The token may "
+                           "have expired: make a new one on vulncheck.com and put it in the GitHub "
+                           "secret VULNCHECK_TOKEN (docs/SOP_MANUAL_RUNS.md, section 10)")
+    return f"VulnCheck token keep-alive: OK (HTTP {r.status_code}); nothing kept from the reply"
+
+
+if __name__ == "__main__":
+    import sys
+    if sys.argv[1:] == ["keepalive"]:
+        print(keepalive())
+    else:
+        raise SystemExit("usage: python -m snapshot.collect.vulncheck keepalive")

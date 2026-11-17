@@ -1,4 +1,4 @@
-# The study's workflows (updated 16 Nov 2026)
+# The study's workflows (updated 17 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The <!-- date:workflows-doc -->14 Dec<!-- /date --> workflow review
@@ -36,7 +36,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
 | Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->23 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
-| Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT` | 31 Oct |
+| Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT`, `VULNCHECK_TOKEN` (keep-alive only, from 17 Nov 2026) | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
 
@@ -242,14 +242,20 @@ decision. Tests that read the private data skip in a public checkout (`tests/con
 
 **When:** daily at 21:47 UTC (added 31 Oct 2026, author's decision; moved from 11:23 UTC on 5 Nov 2026). No Run button: it reads
 outside websites. **What it does:** makes one light request to each core data source in
-`config/coverage.yaml`, reading only the first bytes (sources awaiting permission, VulnCheck and
-Shadowserver, are never contacted), and draws the README's status banner: green answered, red
+`config/coverage.yaml`, reading only the first bytes (Shadowserver, awaiting permission, is never
+contacted; VulnCheck needs its token, so its square is checked at each pull, not daily), and draws the README's status banner: green answered, red
 error, gray not checked, outlined awaiting permission, with the check time. It saves the banner
 and `status.json` on the run-reports branch (`landing/`), so main gets no daily commits. The
 README's second picture, the coverage ring, is drawn from the same file by
 `python -m snapshot.landing build` and kept current by a test: one slice per kind of data the
 study needs, sized 3 per core indicator and 1 per exploratory measure it feeds, coloured only when
-a pull or sweep actually collects it. The landing page links the SOP, not the private manual.
+a pull or sweep actually collects it. The landing page links the SOP, not the private manual. **VulnCheck token keep-alive (author's decision, 17 Nov 2026):**
+VulnCheck expires any token not used for 30 days, and the study uses its token only at the
+quarterly pull, so the run's last step makes one listing request with `VULNCHECK_TOKEN` on the
+1st-2nd and 15th-16th of each month (plus one-off calls on 17 and 18 Nov 2026), keeps nothing from
+the reply, and writes only "OK" or the error code to the run summary. On other days it makes no
+request. If the token has expired the step fails, so the run shows red the same evening; the fix
+is a new token in the secret (`docs/SOP_MANUAL_RUNS.md`, section 10).
 
 ## 15. Landing snapshot: the page's history
 

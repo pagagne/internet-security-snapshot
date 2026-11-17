@@ -2,7 +2,8 @@ name: Source status
 
 # The landing page's status banner (author's decisions, 31 Oct 2026): once a day, one light
 # request to each core data source in config/coverage.yaml (only the first bytes are read;
-# sources awaiting permission are never contacted), then draws the banner in light and dark
+# sources awaiting permission are never contacted; VulnCheck only through the twice-monthly token
+# keep-alive at the end, author 17 Nov 2026), then draws the banner in light and dark
 # (src/snapshot/landing.py) and saves it with status.json on the run-reports branch under
 # landing/, which the README shows. Green answered, red error, gray not checked, outlined
 # awaiting permission; the picture carries its check time. Nothing is written to main.
@@ -48,3 +49,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A && { git diff --cached --quiet && exit 0; git commit -qm "Source status $(date -u +%Y-%m-%dT%H%MZ)"; }
           for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && exit 0; sleep $((i * 4)); git pull -q --rebase origin run-reports; done; exit 1
+      - name: Keep the VulnCheck token alive (1st-2nd and 15th-16th of each month)
+        # Author's decision, 17 Nov 2026: VulnCheck expires a token unused for 30 days, and the study
+        # uses it only at the quarterly pull. One listing request on those days, nothing kept; on
+        # other days no request. Runs last, so a failure (expired token) shows as a red run without
+        # stopping the banner.
+        if: always()
+        shell: bash   # bash -eo pipefail, so a failed request is not hidden by tee
+        env:
+          VULNCHECK_TOKEN: ${{ secrets.VULNCHECK_TOKEN }}
+        run: python -m snapshot.collect.vulncheck keepalive | tee -a "$GITHUB_STEP_SUMMARY"

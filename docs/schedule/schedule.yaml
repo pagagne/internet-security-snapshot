@@ -1873,7 +1873,8 @@ items:
     limits. A dead key would show as an NVD error in the next quarterly pull (the 1 Dec dry run).
     (3) VulnCheck (VULNCHECK_TOKEN): sign in at vulncheck.com, open the account's API tokens
     page and note each token's status and last-used date. VulnCheck expires any token not used
-    for 30 days, so this one matters most (see the 17 Nov session log; checked early that day).
+    for 30 days; a keep-alive request now runs on the 1st-2nd and 15th-16th of each month (and
+    once on 17-18 Nov), so the token should show as used recently.
     (4) Cloudflare (CLOUDFLARE_TOKEN): sign in at dash.cloudflare.com, My Profile, API Tokens.
     The study's token (Account, Radar, Read) should show Active; tokens do not expire unless a
     TTL was set, and ours was made with none (PERMISSIONS, 20 Oct). Note the status.
@@ -1884,6 +1885,11 @@ items:
     your Google Account's security page, third-party connections, that the rclone access is
     still listed. BigQuery uses no stored key (GitHub proves its identity to Google each run),
     so there is nothing to check there.
+    (6) GitHub private-repository token (MANUAL_REPO_TOKEN): GitHub, Settings, Developer
+    settings, Personal access tokens, Fine-grained tokens; note its expiry date. If it lapses,
+    the private manual, backups and private sweeps stop, so this date matters.
+    (7) OpenRouter: done 17 Nov (expires 12 May 2027; reminder 12 Apr 2027).
+    Full requirements per key: docs/SOP_MANUAL_RUNS.md, section 10.
     Tell Claude the results; Claude records them in the key register and schedules any renewal
     30 days ahead.
 

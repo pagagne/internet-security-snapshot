@@ -1,4 +1,4 @@
-# Terms of use: every site the study reads (updated 16 Nov 2026)
+# Terms of use: every site the study reads (updated 17 Nov 2026)
 
 Register added 30 Oct 2026 at the author's request ("include all the terms of use of the sites
 we're accessing"). One row per site: its terms page, the rules that matter to the study, and how
@@ -82,6 +82,9 @@ automated request the study makes, by schedule:
   0.2 s apart with the contact User-Agent; a few Cloudflare Radar calls with the token; three
   ransomware.live api-pro calls 5 s apart (30 minutes apart from 11 Nov); from <!-- date:dry-run -->1 Dec<!-- /date -->, one VulnCheck
   backup request and one download.
+- **Twice a month** (from 17 Nov 2026, author's decision): one VulnCheck listing request on the
+  1st-2nd and 15th-16th, nothing kept, only to stop the token expiring (VulnCheck expires tokens
+  unused for 30 days).
 - **On demand:** Research tasks, started only by the author or the schedule.
 
 Against the published limits: NVD allows 5 requests in 30 s without a key and 50 with one, and

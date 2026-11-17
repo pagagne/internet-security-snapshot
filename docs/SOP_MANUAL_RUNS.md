@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 16 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 17 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -269,3 +269,69 @@ show them. Sources: `docs/diagrams/sync_flow_now.dot`, `docs/diagrams/sync_flow_
 
 Changes after 9 Feb 2027 follow `docs/CHANGE_POLICY.md` for support material: written here with
 the date and reason, noted in the session log, and raised at the next review.
+
+## 10. API keys: what each one needs
+
+Added 17 Nov 2026 (author's request). Every key lives only as a GitHub secret (repository
+Settings, Secrets and variables, Actions). Never paste or read out a key, in chat, a file or an
+email. Claude cannot see the values or the expiry dates; the author looks them up on each
+service's own page. The private key register (risk R10) holds the dates, and every expiry gets a
+reminder 30 days ahead in the schedule. Keys are checked at least once a year, and whenever a run
+fails with an "unauthorised" or "forbidden" error. To replace a key: make the new one on the
+service's page, paste it straight into the GitHub secret of the same name (Update secret), tell
+Claude, and let the next scheduled run confirm it. Only the author handles keys.
+
+**ransomware.live (`RANSOMWARE_LIVE_KEY`).** Used by: the quarterly pull. Managed at: the
+ransomware.live portal (the green "Get your free API Key" button on the API page; sign-in by a
+one-time link emailed to the address the account was made with, 20 Oct 2026). Expiry: none
+stated (checked 17 Nov 2026). Limits: 60 requests a minute, 500,000 a month; the study's own rule
+is never more often than every 30 minutes. If it stops working: the pull records a ransomware.live
+gap. To renew: make a new key in the portal.
+
+**NVD (`NVD_API_KEY`).** Used by: the quarterly pull. Managed at: no account page; a key is
+requested on NVD's "Request an API Key" page and shown once through a one-time link emailed to
+the requester, which must be opened within seven days. Expiry: none stated. Trap: requesting
+another key with the same email deactivates the old one, so request one only to replace it, and
+update the secret the same day. Limits: 50 requests in 30 seconds with a key (5 without). If it
+stops working: the pull slows to the keyless rate.
+
+**VulnCheck (`VULNCHECK_TOKEN`).** Used by: the quarterly pull (from the 1 Dec 2026 dry run), and a
+keep-alive request on the 1st-2nd and 15th-16th of each month in the daily Source status run.
+Managed at: the author's vulncheck.com account, API tokens page (status and last use). Expiry:
+VulnCheck expires any token not used for 30 days; the keep-alive (author's decision, 17 Nov 2026)
+stops that. If it stops working: the keep-alive step turns the Source status run red, and the pull
+records a VulnCheck gap. To renew: make a new token on the tokens page.
+
+**Cloudflare Radar (`CLOUDFLARE_TOKEN`).** Used by: the quarterly pull and research tasks. Managed
+at: the Cloudflare dashboard, My Profile, API Tokens. Scope: Account, Radar, Read only; no IP
+filter. Expiry: Cloudflare tokens do not expire unless a time limit is set; ours has none
+(20 Oct 2026). To renew: the token's menu, Roll, which replaces it with the same permissions.
+
+**OpenRouter (`OPENROUTER_API_KEY`).** Used by: the research task `openrouter_probe` only.
+Managed at: openrouter.ai, Keys. Expiry: 12 May 2027 (author, 17 Nov 2026); renewal reminder
+12 Apr 2027. Spending limit 0 and no credit bought, so it cannot spend money.
+
+**Private-repository token (`MANUAL_REPO_TOKEN`).** Used by: Manual publish, Backup, Research,
+Honeypot capture and Feed screen. A GitHub fine-grained personal access token with Contents read
+and write on `pagagne/snapshot-manual` only. Managed at: GitHub, Settings, Developer settings,
+Personal access tokens, Fine-grained tokens, where its expiry date is shown. If it stops working:
+those five workflows fail (the private manual, backups and private sweeps stop). To renew:
+Regenerate the token with the same settings, update the secret, then press Run on Manual publish
+once (section 4).
+
+**Google Drive sign-in (`RCLONE_CONF`).** Used by: Backup, the quarterly pull and research tasks.
+An rclone configuration holding a Google sign-in for the author's Drive. Expiry: no date. It stops
+working only if its access is removed in the Google Account's third-party connections, if it is
+unused for six months (the monthly backup prevents that), or if the Google Cloud app it signs in
+through is put in "Testing" (then seven days). To renew: make a new rclone configuration for the
+same Drive and replace the secret (Claude has the steps).
+
+**SEC contact (`SEC_USER_AGENT`).** Used by: the quarterly pull and Source status. Not a key: the
+name and contact address the SEC requires on every request. No expiry; change it only if the
+contact address changes.
+
+**No stored key:** BigQuery (Google Cloud) signs in through Workload Identity Federation, a pass
+that lasts one run, so nothing expires; `GITHUB_TOKEN` is made by GitHub for each run.
+
+**Pending:** a GreyNoise, CrowdSec or Shadowserver key, if granted, is added here and to the key
+register the same day, with its expiry and limits.

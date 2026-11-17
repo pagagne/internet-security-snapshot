@@ -1369,22 +1369,29 @@ DESCRIPTION:Responsible: Paul (author)\n\nLook up each key's expiry on its
   error in the next quarterly pull (the 1 Dec dry run). (3) VulnCheck (VULN
  CHECK_TOKEN): sign in at vulncheck.com\, open the account's API tokens pag
  e and note each token's status and last-used date. VulnCheck expires any t
- oken not used for 30 days\, so this one matters most (see the 17 Nov sessi
- on log\; checked early that day). (4) Cloudflare (CLOUDFLARE_TOKEN): sign 
- in at dash.cloudflare.com\, My Profile\, API Tokens. The study's token (Ac
- count\, Radar\, Read) should show Active\; tokens do not expire unless a T
- TL was set\, and ours was made with none (PERMISSIONS\, 20 Oct). Note the 
- status. (5) Google backup (RCLONE_CONF\, the Drive sign-in used by Backup 
- and Research): it has no expiry date. It stops working only if you remove 
- its access in your Google Account's third-party connections\, if it goes u
- nused for six months\, or if the Google Cloud app it uses is in "Testing" 
- (then 7 days\; ours has worked since October\, so it is not). Look in your
-  Google Account's security page\, third-party connections\, that the rclon
- e access is still listed. BigQuery uses no stored key (GitHub proves its i
- dentity to Google each run)\, so there is nothing to check there. Tell Cla
- ude the results\; Claude records them in the key register and schedules an
- y renewal 30 days ahead.\n\nSource: https://github.com/pagagne/internet-se
- curity-snapshot/blob/main/docs/schedule/schedule.yaml
+ oken not used for 30 days\; a keep-alive request now runs on the 1st-2nd a
+ nd 15th-16th of each month (and once on 17-18 Nov)\, so the token should s
+ how as used recently. (4) Cloudflare (CLOUDFLARE_TOKEN): sign in at dash.c
+ loudflare.com\, My Profile\, API Tokens. The study's token (Account\, Rada
+ r\, Read) should show Active\; tokens do not expire unless a TTL was set\,
+  and ours was made with none (PERMISSIONS\, 20 Oct). Note the status. (5) 
+ Google backup (RCLONE_CONF\, the Drive sign-in used by Backup and Research
+ ): it has no expiry date. It stops working only if you remove its access i
+ n your Google Account's third-party connections\, if it goes unused for si
+ x months\, or if the Google Cloud app it uses is in "Testing" (then 7 days
+ \; ours has worked since October\, so it is not). Look in your Google Acco
+ unt's security page\, third-party connections\, that the rclone access is 
+ still listed. BigQuery uses no stored key (GitHub proves its identity to G
+ oogle each run)\, so there is nothing to check there. (6) GitHub private-r
+ epository token (MANUAL_REPO_TOKEN): GitHub\, Settings\, Developer setting
+ s\, Personal access tokens\, Fine-grained tokens\; note its expiry date. I
+ f it lapses\, the private manual\, backups and private sweeps stop\, so th
+ is date matters. (7) OpenRouter: done 17 Nov (expires 12 May 2027\; remind
+ er 12 Apr 2027). Full requirements per key: https://github.com/pagagne/int
+ ernet-security-snapshot/blob/main/docs/SOP_MANUAL_RUNS.md\, section 10. Te
+ ll Claude the results\; Claude records them in the key register and schedu
+ les any renewal 30 days ahead.\n\nSource: https://github.com/pagagne/inter
+ net-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
