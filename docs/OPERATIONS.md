@@ -190,6 +190,10 @@ The author listens to replies with a read-aloud tool (29 Oct): chat replies are 
 plain sentences, with tables, code and long links kept in the documents. Option cards
 cannot be read aloud, so before each card the same questions and options, with the
 recommendation, are sent as a plain message he can listen to.
+For any choice with real consequences (author, 16 Nov 2026, after a card offered "lock
+everything" without saying it would stop the daily records), that message says for every option
+what it would do and what it would break or risk; an option that would stop the study is left off
+or clearly marked, and no consequential choice goes on a card with only a one-line label.
 Every email or form exchange with an outside organisation about the study (data sources,
 reviewers, universities) is recorded the day it is sent or received (author, 28 Oct): the full
 text in the private Drive folder `correspondence/`, an index in the Claude project
