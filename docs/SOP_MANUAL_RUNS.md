@@ -333,5 +333,12 @@ contact address changes.
 **No stored key:** BigQuery (Google Cloud) signs in through Workload Identity Federation, a pass
 that lasts one run, so nothing expires; `GITHUB_TOKEN` is made by GitHub for each run.
 
-**Pending:** a GreyNoise, CrowdSec or Shadowserver key, if granted, is added here and to the key
+**GreyNoise (`GREYNOISE_API_KEY`).** Used by: the research task `greynoise_probe` (exploratory
+X28), later its collector. Research Community Access granted 17 Nov 2026 (credit "Data provided by
+GreyNoise"; 90 days of history; unlimited lookups) on the workspace of the study's project address;
+key made 17 Nov 2026. Managed at: GreyNoise, the workspace menu, API Key. Expiry: to be checked on
+that page (27 Nov). If it stops working: the probe or collector records a GreyNoise gap; nothing
+else depends on it. To renew: make a new key there.
+
+**Pending:** a CrowdSec or Shadowserver key, if granted, is added here and to the key
 register the same day, with its expiry and limits.

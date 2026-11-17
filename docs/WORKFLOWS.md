@@ -33,7 +33,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
 | Manual publish | `manual-publish.yml` | Every change to main that touches a document; after each private sweep; Run button | the private repository pagagne/snapshot-manual (manual only) | `MANUAL_REPO_TOKEN` | 30 Oct |
 | Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
-| Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25) | 27 Oct, run 40583022560 |
+| Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25); single tasks only: `CLOUDFLARE_TOKEN`, `RANSOMWARE_LIVE_KEY`, `SEC_USER_AGENT`, `OPENROUTER_API_KEY`, `GREYNOISE_API_KEY` | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
 | Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->23 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
 | Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT`, `VULNCHECK_TOKEN` (keep-alive only, from 17 Nov 2026) | 31 Oct |
@@ -232,7 +232,7 @@ list, credit groups, the sweep trial) and the raw results of the exploratory run
 The Feed screen, Honeypot capture and the exploratory Research tasks (ai_lists, ai_tools,
 cve_check, honeypot_capture, x3_sources, github_tools, repo_scout, hf_tools, x3_read,
 feed_verify, and the later private tasks named in the research workflow's private list, such as
-fixdate_wide, fixdate_wayback and registry_probe of 15-16 Nov 2026) write there through `tools/private.sh` and print only counts in their public logs.
+fixdate_wide, fixdate_wayback and registry_probe of 15-16 Nov 2026, greynoise_probe of 17 Nov 2026) write there through `tools/private.sh` and print only counts in their public logs.
 The core pull, its method research, the source watch and the working documents stay public.
 The exploratory files were moved on 31 Oct 2026 by a one-off Private move workflow (run 41218328062; removed afterwards); earlier
 versions remain in this repository's history, and erasing that history is the author's
