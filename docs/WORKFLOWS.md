@@ -78,8 +78,10 @@ skipped. On 27 Oct: "frozen files and recomputed figures match".
 
 ## 3. Schedule: the study's calendar, running itself
 
-**When:** three times a day. Claude's daily work queue (8:32 ET) also starts it if it has not run
-that day.
+**When:** five times a day, in the afternoon and evening Eastern time (15:37, 20:07, 21:23,
+22:37 and 23:43 UTC, since the 5 Nov 2026 timer move). Claude's daily work queue (8:32 ET) also
+starts it if it has not run that day. Each issue for Claude that needs the primary chat gets the
+label `primary-chat` (16 Nov 2026).
 
 **What it does:** reads `docs/schedule/schedule.yaml` and opens a GitHub issue for each item that
 falls due, for the author, for Claude, or for a review. On dry-run dates (<!-- date:dry-run -->1 Dec<!-- /date -->, <!-- date:dry-run-full -->15 Dec<!-- /date -->) it starts
@@ -310,7 +312,8 @@ nothing went wrong. Backup and the pull's own backup step keep a private copy in
 probe and Honeypot capture feed the exploratory side.
 
 **Not a GitHub workflow:** Claude's daily work queue, a scheduled Claude task at 8:32 ET. It
-checks that Schedule ran (and starts it if not) and picks up the items assigned to Claude.
+checks that Schedule ran (and starts it if not) and, from the 23 Nov 2026 cutover, picks up the
+Claude items it can finish from the public repository alone (those not labelled `primary-chat`).
 
 **Also not a workflow:** Dependabot, GitHub's own watchman (switched on 29 Oct). It reads the
 study's package list (`requirements.txt`, an exact copy of `requirements.lock`, 61 packages) and

@@ -244,7 +244,8 @@ not affected.)
 
 **Where to start depends on who you are** (author's request, 11 Nov 2026):
 
-- **A new Claude chat taking over the study** (attached to both repositories): start with
+- **A new Claude chat taking over the study** (a Claude Code session started from the Claude
+  project, promoted by the author; see "One primary chat" below): start with
   **START HERE: NEW CHAT**, the file `START_HERE_NEW_CHAT.md` at the root of the private
   repository `pagagne/snapshot-manual` (Claude project copy: `claude/START-HERE-NEW-CHAT.md`). It
   has the setup, the reading order and where things stand, and sends you back here. Do not start
@@ -257,7 +258,8 @@ The full takeover procedure is in `docs/SOP_MANUAL_RUNS.md`, section 7.
 2. If the Schedule workflow has no successful run today, start it
    (`gh api -X POST repos/pagagne/internet-security-snapshot/actions/workflows/schedule.yml/dispatches -f ref=main`)
    so today's issues exist.
-3. List open issues labelled `owner:claude`, oldest first. Each says what to do and points at
+3. List open issues labelled `owner:claude`, oldest first (the work queue skips those also
+   labelled `primary-chat`; the primary chat does them). Each says what to do and points at
    the files involved. Do it, commit (small doc fixes to `main`; code by one pull request at a
    time), comment with what was done, and close the issue.
 4. If an item needs the author, comment on the issue and, for anything time-critical, tell the
@@ -295,14 +297,15 @@ check-ins are retired once they have run.
 
 | When (ET) | Task | Where it reports |
 |---|---|---|
-| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from <!-- date:cutover -->23 Nov<!-- /date --> does the `owner:claude` issues | A fresh session each day (push notification if it reports) |
-| Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; each run schedules the next | The author's current chat |
-| Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study (from 14 Nov); each run schedules the next | The author's current chat |
-| ~~Thu 12 Nov, 09:15 and 09:30~~ | Evening-timer trial review; research review decision cards: done 12 Nov | The author's current chat |
-| Mon 23 Nov, 09:00 | Weekly sync review and due `owner:claude` issues (16 Nov done) | The author's current chat |
-| Fri 20 Nov, 09:00 | Reply check: GreyNoise, CrowdSec, Shadowserver | The author's current chat |
-| ~~Thu 19 Nov, 09:00~~ | GreyNoise and CrowdSec follow-up drafts: done early, 12 Nov (in Drive; the author sends <!-- date:permission-follow-ups-exploratory -->13 Nov<!-- /date -->) | The author's current chat |
-| Wed <!-- date:race-list-ready -->25 Nov<!-- /date -->, 09:00 | Race fix-date list ready for the dry run | The author's current chat |
+| Daily, 08:32 | Claude work queue: restarts Schedule if GitHub skipped it; from <!-- date:cutover -->23 Nov<!-- /date --> does the `owner:claude` issues not labelled `primary-chat` | A fresh session each day (push notification if it reports) |
+| Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; refreshes the project doc `claude/WHATS-DUE.md`; each run schedules the next | The primary chat |
+| Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study; each run schedules the next | The primary chat |
+| Mondays, 09:00, 23 Nov 2026 to 15 Feb 2027 | Weekly sync review and due `primary-chat` issues; each run schedules the next | The primary chat |
+| Fri 20 Nov, 09:00 | Reply check: GreyNoise, CrowdSec, Shadowserver | The primary chat |
+| Wed <!-- date:race-list-ready -->25 Nov<!-- /date -->, 09:00 | Race fix-date list ready for the dry run | The primary chat |
+
+The full message of each chat-bound task is in START HERE, section 6 (finished one-off tasks are
+in this file's history).
 
 Refreshed 11 Nov 2026. Every task above except the work queue delivers into one chat and stops
 if that chat is lost: a new chat recreates them from section 6 of `START_HERE_NEW_CHAT.md`

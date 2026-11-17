@@ -1030,12 +1030,12 @@ DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
  t-security-snapshot/blob/main/docs/OPERATIONS.md is current. Then retire a
  ny remaining one-off check-ins in the old chat. https://github.com/pagagne
  /internet-security-snapshot/blob/main/docs/OPERATIONS.md. Moved up from 30
-  Nov (author\, 16 Nov 2026): from today the daily work queue does the date
- d owner:claude issues\; the morning report and sync reviews stay with the 
- primary chat (private PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT.
- md\; other chats are read-only). Update the work-queue task's prompt if an
- ything changed.\n\nSource: https://github.com/pagagne/internet-security-sn
- apshot/blob/main/docs/schedule/schedule.yaml
+  Nov (author\, 16 Nov 2026): from today the daily work queue does the owne
+ r:claude issues not labelled primary-chat\; everything else stays with the
+  primary chat (private PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT
+ .md\; other chats are read-only). Update the work-queue task's prompt if a
+ nything changed.\n\nSource: https://github.com/pagagne/internet-security-s
+ napshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

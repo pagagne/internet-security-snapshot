@@ -542,8 +542,8 @@ items:
     Confirm: the Schedule workflow has run green for 7 days; the author has subscribed to the
     calendar feed; the Claude work-queue scheduled task is live; docs/OPERATIONS.md is current.
     Then retire any remaining one-off check-ins in the old chat. docs/OPERATIONS.md.
-    Moved up from 30 Nov (author, 16 Nov 2026): from today the daily work queue does the dated
-    owner:claude issues; the morning report and sync reviews stay with the primary chat (private
+    Moved up from 30 Nov (author, 16 Nov 2026): from today the daily work queue does the
+    owner:claude issues not labelled primary-chat; everything else stays with the primary chat (private
     PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT.md; other chats are read-only). Update the
     work-queue task's prompt if anything changed.
 

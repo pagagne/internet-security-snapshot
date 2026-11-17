@@ -147,7 +147,7 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "1d9248f6111b40d6",
+    "docs/WORKFLOWS.md": "19f8fdf8aa8c7302",
     ".github/workflows/checks.yml": "cff8c18606a657f6",
     "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
@@ -176,7 +176,7 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "5f5f3613dc65d09b",
-    "docs/OPERATIONS.md": "6a735b1b23f50d21",
+    "docs/OPERATIONS.md": "26fb4fddf136c8a9",
     "docs/diagrams/sync_flow_now.dot": "04a23ebfcfaab5b4"
    },
    "reviewed_on": "2026-11-16"
@@ -190,7 +190,7 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "5f5f3613dc65d09b",
-    "docs/OPERATIONS.md": "6a735b1b23f50d21",
+    "docs/OPERATIONS.md": "26fb4fddf136c8a9",
     "docs/diagrams/sync_flow_locked.dot": "5754832152dc9462"
    },
    "reviewed_on": "2026-11-16"

@@ -228,8 +228,9 @@ pasted, so the two never differ.
 
 **What never changes with the chat.** The GitHub timers, the watchdog, the study calendar feed
 (built from `docs/schedule/schedule.yaml`) and the daily work queue keep running whichever chat
-is primary. From the 23 Nov 2026 cutover the work queue does the dated `owner:claude` issues; the
-morning report, sync reviews and validation stay with the primary chat. `docs/HANDOVER.md` (the
+is primary. From the 23 Nov 2026 cutover the work queue does only the `owner:claude` issues not
+labelled `primary-chat`; the morning report, sync reviews and every labelled task stay with the
+primary chat. `docs/HANDOVER.md` (the
 24 Oct handover from the first session) is read for its repository rules only, never as the
 starting point. Keeping START HERE and the note current is part of every sync review
 (`docs/SYNC_REVIEW.md`).
@@ -244,8 +245,9 @@ Added 5 Nov 2026 (author's request). Two Claude sessions work on the study, with
   (`exploratory/docs/artifacts/README.md`).
 - **The daily work queue** is a scheduled Claude task that starts fresh each morning with the
   public repository only; a test on 5 Nov 2026 confirmed it cannot attach the private one. Until
-  <!-- date:cutover -->23 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works the dated owner:claude issues,
-  leaving the morning report, the sync reviews and the validation to the primary chat (author,
+  <!-- date:cutover -->23 Nov 2026<!-- /date --> it only comments on issues. From the cutover it works only the owner:claude issues
+  without the label `primary-chat` (those it can finish from the public repository alone); the
+  morning report, the sync reviews and every labelled task stay with the primary chat (author,
   16 Nov 2026). When a document with a Claude copy changes, it lists the documents in the issue
   and the primary chat updates the copies.
 
