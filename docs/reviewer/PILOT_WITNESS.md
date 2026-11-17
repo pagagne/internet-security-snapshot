@@ -1,4 +1,4 @@
-# Pilot witness: role summary
+# Pilot witness: role summary (updated 16 Nov 2026)
 
 **Internet Security Snapshot** - an independent, self-funded, non-commercial study that asks
 every quarter through 2027 whether defenders are fixing exploitable software flaws faster than
