@@ -234,6 +234,28 @@ Details for each workflow: [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md). Dates for s
   (setup notes kept privately); a scan on every change and every day checks this
   ([`docs/OPERATIONS.md`](docs/OPERATIONS.md), "Private by design").
 
+## Volunteer roles: help keep the study honest
+
+Three unpaid, fully remote roles check that the work is sound. None needs programming. Apply by
+email to [internetsecuritysnapshot@gmail.com](mailto:internetsecuritysnapshot@gmail.com) with the
+role's name in the subject line and a few lines about yourself.
+
+- **Pilot witness** (open now, apply by 7 December 2026). An independent observer of the
+  study's trial run: watch the full test run in mid-December and the first real quarter in
+  January through the public logs and results, and write a short note by 5 February 2027,
+  published under your name. About 9 to 12 hours in all. No coding or security background
+  needed. Details: [`docs/reviewer/PILOT_WITNESS.md`](docs/reviewer/PILOT_WITNESS.md).
+- **Independent reviewer** (applications 4 January to 15 February 2027). The study's outside
+  check: in April 2027, recompute three headline figures with guided worksheets and write a two-
+  to five-page review, published as written. About 15 to 19 hours over 14 months. Details:
+  [`docs/reviewer/INVITATION.md`](docs/reviewer/INVITATION.md).
+- **Second checker** (2027, four short rounds). A blind double-check of the hand decisions:
+  about 45 minutes a quarter, answering 20 sample questions without seeing the author's answers.
+  Details: [`docs/reviewer/SECOND_CODER.md`](docs/reviewer/SECOND_CODER.md).
+
+The pilot witness and the independent reviewer are always two different people, so the reviewer
+starts fresh.
+
 ## About the author
 
 <img src="https://github.com/pagagne.png?size=160" alt="Paul A. Gagne" width="110" align="left" style="margin-right:12px">

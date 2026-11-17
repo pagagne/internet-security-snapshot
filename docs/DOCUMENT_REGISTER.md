@@ -64,6 +64,15 @@ the private repository `pagagne/snapshot-manual`; everything else is in this pub
 | `docs/decisions/*.md` | Decision sheets | Claude | - | Record | Each closes when decided |
 | `docs/PILOT_EXPECTATIONS.md` | Expectations written before the pilot | Author | P `pilot-expectations.md` | Reference | Fixed record of 26 Oct 2026 |
 
+## 4a. Volunteer roles
+
+| Document | Purpose | Keeper | Copies | Kind | Locks |
+|---|---|---|---|---|---|
+| `docs/reviewer/PILOT_WITNESS.md` | The pilot-witness role | Claude, author approves | Google Doc "Volunteer Roles" (D), Claude page (A), Handshake posting | Reference | When the witness is confirmed (Dec 2026) |
+| `docs/reviewer/INVITATION.md` | The independent reviewer's invitation | Claude, author approves | A Invitation | Reference | 17 Feb 2027 |
+| `docs/reviewer/SECOND_CODER.md` | The second-checker role | Claude, author approves | Google Doc "Volunteer Roles" | Reference | 17 Feb 2027 |
+| README "Volunteer roles" section | Shows the three roles on the landing page | Claude, author approves wording | - | Reference | With the landing page |
+
 ## 5. Sources and permissions
 
 | Document | Purpose | Keeper | Copies | Kind | Locks |
