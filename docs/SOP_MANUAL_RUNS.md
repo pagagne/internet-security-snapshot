@@ -152,6 +152,18 @@ does not depend on Claude to keep collecting data.
    none dropped), so the wait was raised from 4 to 10 hours on 5 Nov 2026 and the daily timers
    moved to the evening (trial reviewed 12 Nov). Late is not missing: do not start a run by hand
    because it has not appeared by morning.
+
+   **Late or missing runs: the three layers (author's question, 17 Nov 2026).** Lateness is still
+   normal: in mid-November the Schedule timers, set for 10:37 to 18:43 ET, were arriving between
+   about 19:00 and midnight ET, three to eight hours late, and none was dropped. What covers a
+   run that never comes:
+   1. *The watchdog* (above): every Schedule run starts any important job that is 10 hours
+      overdue, once, and opens a watchdog issue.
+   2. *The morning work queue* (a fresh Claude session at 08:32 ET each day, from the
+      <!-- date:cutover -->23 Nov<!-- /date --> cutover): if GitHub skipped the Schedule run altogether, it starts it.
+   3. *The author*: a failed run gets the Re-run button (step 3 below); the six workflows with a
+      Run button (section 4) can be started by hand for the reasons listed there. Never for a run
+      that is only late.
 3. **If a run failed, rerun it yourself with GitHub's Re-run button.** This works for every
    workflow, including those without a Run button, and repeats the run with exactly the same
    settings:
@@ -193,6 +205,12 @@ both kinds.
 2. Check the project lists `claude/PRIMARY-CHAT.md` and `claude/START-HERE-NEW-CHAT.md`.
 
 **B. Handover test (author; first test Tue 24 Nov 2026, after the 23 Nov cutover).**
+*Why (author's question, 17 Nov 2026):* the test chats do not become primary. They prove that
+the handover works before it is ever needed: if the primary chat is lost one day (it runs out of
+room, is closed by mistake, or Claude has an outage), a new chat opened from the project page must
+know it is read-only until promoted, say what is due, and, as a Claude Code session, be able to
+set up both repositories and run the checks. If both parts pass, a stand-in is known to be ready;
+the test chats are then deleted and the primary carries on.
 1. Open a new chat **from the project page** (a chat started with the general "New chat" button
    is outside the project and never sees the instructions or project docs; found 16 Nov 2026). Do
    not tell it to take over.
