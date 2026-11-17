@@ -758,7 +758,7 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261117
 DTEND;VALUE=DATE:20261118
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Run the validation and report pass/fail
+SUMMARY:✅ DONE [Claude] Snapshot: Run the validation and report pass/fail
 DESCRIPTION:Responsible: Claude\n\nsnapshot.validate against https://github
  .com/pagagne/internet-security-snapshot/blob/main/prereg/ground_truth_refe
  rence.csv (pass = 4 of 5 cases).\n\nSource: https://github.com/pagagne/int
@@ -1465,6 +1465,24 @@ DESCRIPTION:Responsible: GitHub\n\nStarted by the Schedule workflow (Decemb
  er has no cron). Unscored.\n\nSource: https://github.com/pagagne/internet-
  security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:validation-rerun@2026-12-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Re-run the validation with VulnCheck exploitatio
+ n dates from the 1 Dec dry run
+DESCRIPTION:Responsible: Claude\n\nAdded 17 Nov 2026. The 17 Nov validation
+  passed 4 of 5\, but T_exploit was the KEV date for every case (VulnCheck 
+ not yet collected)\, so the exploitation checks passed only through the "l
+ ater\, explained by free-source coverage" clause. Re-run snapshot.validate
+  with the dry run's events (CISA KEV plus VulnCheck KEV) and add the resul
+ t to review/VALIDATION_RESULT.md\; the author's blind fix dates are not ch
+ anged.\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
+ ob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:vulncheck-ring@2026-12-02@internet-security-snapshot
