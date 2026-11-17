@@ -47,6 +47,7 @@ import yaml
 
 from ..collect.http import UA, note_status
 from ..util import _repo_root
+from . import x25_checks as X
 
 API = "https://api.github.com"
 CONFIG = "config/github_tool_queries.yaml"
@@ -284,6 +285,43 @@ def search(query: str, pause: float = 2.5) -> list[dict]:
     return items
 
 
+SPLITS: list[str] = []   # searches split by creation date in this run (check 4, 17 Nov 2026)
+
+
+def count(query: str, pause: float = 2.5) -> int:
+    """GitHub's total_count for a search (one call, one result)."""
+    time.sleep(pause)
+    r = gh("/search/repositories", {"q": query, "per_page": 1})
+    return int(r.json().get("total_count", 0)) if r.status_code == 200 else 0
+
+
+def search_all(query: str, pause: float = 2.5, count_fn=None, search_fn=None,
+               start: dt.date = dt.date(2008, 1, 1), end: dt.date | None = None) -> list[dict]:
+    """Every match of a search: a search over GitHub's 1,000-result cap is split by creation date
+    (halving the range until each part is under the cap), so ranking by stars cannot hide new
+    projects (author's decision, 5 Nov 2026; built 17 Nov 2026)."""
+    count_fn, search_fn = count_fn or count, search_fn or search
+    end = end or dt.date.today()
+    if count_fn(query, pause) <= PER_PAGE * MAX_PAGES:
+        return search_fn(query, pause)
+    SPLITS.append(query)
+    out, seen = [], set()
+
+    def part(lo: dt.date, hi: dt.date) -> None:
+        q = f"{query} created:{lo.isoformat()}..{hi.isoformat()}"
+        if lo >= hi or count_fn(q, pause) <= PER_PAGE * MAX_PAGES:
+            for it in search_fn(q, pause):
+                if it["full_name"] not in seen:
+                    seen.add(it["full_name"]); out.append(it)
+            return
+        mid = lo + (hi - lo) // 2
+        part(lo, mid)
+        part(mid + dt.timedelta(days=1), hi)
+
+    part(start, end)
+    return out
+
+
 def _readme(full_name: str) -> str:
     r = gh(f"/repos/{full_name}/readme")
     if r.status_code != 200:
@@ -314,6 +352,7 @@ def row(it: dict) -> dict:
         "topics": ";".join(topics), "description": desc[:240],
         "queries": "", "types": "", "group": "", "ai_use": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
         "readme_read": "no", "readme_safeguard": "",
+        "size_kb": it.get("size", 0) or 0, "red_flags": "",
     }
     _label(r, it.get("name", "") + " " + desc + " " + " ".join(topics))
     from .crypto_tag import is_crypto
@@ -322,10 +361,11 @@ def row(it: dict) -> dict:
     return r
 
 
-def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_top: int = README_TOP):
+def sweep(queries, pause: float = 2.5, search_fn=None, readme_fn=None, readme_top: int = README_TOP):
     """queries: {"offensive": [...], "defensive": [...]} (search lists; a plain list is one list)."""
     if isinstance(queries, list):
         queries = {"offensive": queries}
+    search_fn = search_fn or search_all
     found, hits = {}, {}
     for side, qs in queries.items():
         for q in qs:
@@ -346,8 +386,12 @@ def sweep(queries, pause: float = 2.5, search_fn=search, readme_fn=None, readme_
             continue
         r["readme_read"] = "yes"
         r["readme_safeguard"] = safeguard(text)
+        r["red_flags"] = ";".join(X.red_flags(text, r.get("size_kb")))   # check 1, 17 Nov 2026
         _label(r, text[:30000])
         finish(r)
+    for r in rows:   # oversized repositories, whether or not their README was read
+        if not r["red_flags"]:
+            r["red_flags"] = ";".join(X.red_flags("", r.get("size_kb")))
     return rows, hits
 
 
@@ -406,6 +450,42 @@ def summary(rows: list[dict], hits: dict, today: str) -> str:
     return "\n".join(L) + "\n"
 
 
+def checks(rows: list[dict], today: dt.date, owner_lookups: int = 100) -> dict:
+    """Checks 1-3 (author, 5 Nov 2026): flags written privately, counts returned for the summary."""
+    orig = [r for r in rows if not r["is_fork"]]
+    clones = X.clone_flags(orig)
+    bursts = X.burst_owners(orig)
+    stars = X.star_bursts(orig, today)
+    new = 0
+    first = {}
+    for r in orig:
+        o = r["full_name"].split("/")[0]
+        if o in bursts:
+            first[o] = min(first.get(o, "9999"), r.get("created", ""))
+    for o in sorted(bursts, key=lambda k: -bursts[k])[:owner_lookups]:   # one call per flagged owner
+        u = gh(f"/users/{o}")
+        if u.status_code == 200 and X.new_account(u.json().get("created_at", ""), first.get(o, "")):
+            new += 1
+    star_set = set(stars)
+    with (PRIVATE_OUT / "flags.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["full_name", "red_flags", "clone", "owner_burst", "star_burst"])
+        for r in orig:
+            o = r["full_name"].split("/")[0]
+            row_ = [r["full_name"], r.get("red_flags", ""), clones.get(r["full_name"], ""),
+                    bursts.get(o, ""), "yes" if r["full_name"] in star_set else ""]
+            if any(row_[1:]):
+                w.writerow(row_)
+    sample = X.mislabel_sample(orig, 50, seed=today.isoformat())
+    with (PRIVATE_OUT / "mislabel_sample.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=X.SAMPLE_COLUMNS)
+        w.writeheader(); w.writerows(sample)
+    return {"red_flags": {r["full_name"]: [f for f in r.get("red_flags", "").split(";") if f] for r in orig},
+            "clones": clones, "burst_owners": bursts,
+            "burst_projects": sum(1 for r in orig if r["full_name"].split("/")[0] in bursts),
+            "new_accounts": new, "star_bursts": stars, "split_searches": len(SPLITS)}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--start"); ap.add_argument("--end")   # unused; kept for the Research workflow
@@ -421,17 +501,18 @@ def main(argv=None) -> int:
     with (PRIVATE_OUT / "registry.csv").open("w", newline="") as fh:
         w = csv.writer(fh); w.writerow(["full_name", "code"]); w.writerows(sorted(registry.items(), key=lambda x: x[1]))
     with (PRIVATE_OUT / "tools_full.csv").open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=["full_name", "url"] + PUBLIC + ["queries"], extrasaction="ignore")
+        w = csv.DictWriter(fh, fieldnames=["full_name", "url"] + PUBLIC + ["queries", "size_kb", "red_flags"], extrasaction="ignore")
         w.writeheader(); w.writerows(rows)
     with (PRIVATE_OUT / "left_out.csv").open("w", newline="") as fh:   # for the author's spot check (1 Nov 2026)
         w = csv.writer(fh); w.writerow(["full_name"]); w.writerows([n] for n in sorted(LEFT_OUT))
+    flags = checks(rows, dt.date.today())
     orig = [r for r in rows if not r["is_fork"]]
     for fname, cols in (("tools.csv", PUBLIC), ("compact.csv", COMPACT)):
         with (a.out / fname).open("w", newline="") as fh:
             w = csv.DictWriter(fh, fieldnames=cols, extrasaction="ignore")
             w.writeheader(); w.writerows(public(r) for r in orig)
     (a.out / "queries.json").write_text(json.dumps(hits, indent=1, ensure_ascii=False))
-    s = summary(rows, hits, dt.date.today().isoformat())
+    s = summary(rows, hits, dt.date.today().isoformat()) + "\n" + "\n".join(X.summary_lines(orig, flags))
     (a.out / "summary.md").write_text(s)
     print(s[:3000])
     return 0

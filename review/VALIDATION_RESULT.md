@@ -1,4 +1,4 @@
-# Validation result, 17 Nov 2026
+# Validation result, 17 Nov 2026 (updated 17 Nov 2026)
 
 Pre-registration Section 11: the study's pipeline is run on five documented reference cases. Pass: for at least
 4 of 5 cases, the fix date (T_patch) and the CISA listing date (T_kev) match exactly, and the first-exploitation
