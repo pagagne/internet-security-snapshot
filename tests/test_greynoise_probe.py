@@ -22,3 +22,14 @@ def test_series_summary_reads_points_dates_and_first_activity():
     assert s["points"] == 3 and s["first"].startswith("2026-09-01") and s["step_hours"] == 24
     assert s["first_day_with_activity"] == "2026-09-02"
     assert s["count_fields"]["count"]["sum"] == 4
+
+
+def test_series_summary_reads_activity_windows():
+    body = {"slug": "x", "activity": {"malicious": [
+                {"start": "2026-11-06T00:00:00Z", "end": "2026-11-08T00:00:00Z", "timestamp": "2026-11-06T00:00:00Z"},
+                {"start": "2026-11-12T00:00:00Z", "end": "2026-11-16T00:00:00Z", "timestamp": "2026-11-12T00:00:00Z"}]},
+            "aggregations": {"classification": {"malicious": 18}},
+            "metadata": {"granularity": "1d", "start_date": "2026-08-19", "end_date": "2026-11-17"}}
+    s = g.series_summary(body)
+    assert s["points"] == 2 and s["first_day_with_activity"] == "2026-11-06"
+    assert s["metadata"]["start_date"] == "2026-08-19" and s["aggregations"]["malicious"] == 18

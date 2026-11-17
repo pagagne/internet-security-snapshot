@@ -88,6 +88,29 @@ def series_summary(body) -> dict:
                 rows = body[k]
                 break
     out = {"shape": shape(scrub(body))}
+    # Layout seen on 17 Nov 2026: {"activity": {"malicious": [{"start", "end", "timestamp", ...}]},
+    # "aggregations": {"classification": {"malicious": n}}, "metadata": {"granularity",
+    # "start_date", "end_date"}}: activity as time windows per classification, not daily counts.
+    if isinstance(body, dict) and isinstance(body.get("activity"), dict):
+        md = body.get("metadata") or {}
+        out["metadata"] = {k: md.get(k) for k in ("granularity", "start_date", "end_date")}
+        agg = (body.get("aggregations") or {}).get("classification") or {}
+        out["aggregations"] = {k: v for k, v in agg.items() if isinstance(v, (int, float))}
+        wins = {}
+        for cls, lst in body["activity"].items():
+            ws = [(w.get("start"), w.get("end")) for w in (lst or []) if isinstance(w, dict)]
+            ws = [(a, b) for a, b in ws if isinstance(a, str)]
+            if ws:
+                wins[cls] = {"windows": len(ws), "first_start": min(a for a, _ in ws),
+                             "last_end": max((b or a) for a, b in ws),
+                             "sample": [{"start": a, "end": b} for a, b in sorted(ws)[:5]]}
+        out["windows"] = wins
+        starts = [w["first_start"] for w in wins.values()]
+        out["points"] = sum(w["windows"] for w in wins.values())
+        out["first"] = min(starts) if starts else None
+        out["last"] = max(w["last_end"] for w in wins.values()) if wins else None
+        out["first_day_with_activity"] = out["first"][:10] if out["first"] else None
+        return out
     if not rows:
         out["points"] = 0
         return out
