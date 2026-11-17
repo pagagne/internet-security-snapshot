@@ -547,6 +547,35 @@ items:
     PRIMARY_CHAT.md and project doc claude/PRIMARY-CHAT.md; other chats are read-only). Update the
     work-queue task's prompt if anything changed.
 
+- id: project-instructions-card-rule
+  owner: author
+  title: Paste the card rule into the Claude project's instructions
+  date: 2026-11-17
+  time: "09:30"
+  minutes: 5
+  details: >
+    Added 16 Nov 2026 (author's request). In the Claude project "AI Internet Security 2027
+    Research Project", open the project's custom instructions. In the paragraph "HOW THE AUTHOR
+    LIKES TO WORK", after the sentence "Before any option card, send the same questions as a plain
+    message with the recommendation first.", paste: "For any choice with real consequences, the
+    plain message also says, for every option, what it would do and what it would break or risk;
+    an option that would stop the study is either left off or marked as such. Never put a
+    consequential choice on a card with only a one-line label." The full text is in the private
+    repository, file PROJECT_INSTRUCTIONS.md. Save, and tell the primary chat.
+
+- id: openrouter-key-limit-zero
+  owner: author
+  title: Set the OpenRouter key's spending limit to 0
+  date: 2026-11-17
+  time: "09:35"
+  minutes: 5
+  details: >
+    Added 16 Nov 2026 (author's request). The free OpenRouter key (GitHub secret
+    OPENROUTER_API_KEY) has a $100 spending limit set on the key (probe, 14 Nov). No credit has
+    been bought, so nothing can be spent today, but a limit of 0 keeps it that way if credit is
+    ever added. On openrouter.ai, open Keys, edit the study's key, set its credit limit to 0 and
+    save. Never paste the key anywhere. Tell the primary chat when done.
+
 - id: handover-test
   owner: author
   title: Handover test - a new chat in the Claude project, read-only
