@@ -2558,9 +2558,10 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request\, 16 Nov 2026: after th
  y copy\, reference or living)\, check every cross-reference in and between
   the documents (snapshot.links\, snapshot.refs\, the manual check\, the ar
  tifact map and the Claude project copies)\, fix stale text\, and prepare t
- he lock list for 17 Feb with a fingerprint guard like the locked core. Not
- e what the pilot changed.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+ he lock list for 17 Feb (reference documents only\, author 16 Nov) with a 
+ fingerprint guard like the locked core\, built and tested but not yet swit
+ ched on. Note what the pilot changed.\n\nSource: https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2617,13 +2618,15 @@ DTSTART:20270217T150000Z
 DTEND:20270217T153000Z
 SUMMARY:[Paul] Snapshot: Approve the document lock (no more changes to the 
  locked project documents after the pilot)
-DESCRIPTION:Responsible: Paul (author)\n\nAuthor's request\, 16 Nov 2026. R
- ead Claude's lock list from 10 Feb and decide what locks (the scope is dec
- ided here: reference documents only\, or everything\; the implications wer
- e set out on 16 Nov). From then on a locked document changes only by a dat
- ed\, logged entry under https://github.com/pagagne/internet-security-snaps
- hot/blob/main/docs/CHANGE_POLICY.md.\n\nSource: https://github.com/pagagne
- /internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's request\, 16 Nov 2026. S
+ cope decided 16 Nov (option 1): reference documents lock\, living records 
+ stay open (https://github.com/pagagne/internet-security-snapshot/blob/main
+ /docs/DOCUMENT_REGISTER.md). Read Claude's lock list from 10 Feb\, confirm
+  it\, and switch on the fingerprint guard. From then on a locked document 
+ changes only by a dated\, logged entry under https://github.com/pagagne/in
+ ternet-security-snapshot/blob/main/docs/CHANGE_POLICY.md.\n\nSource: https
+ ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
+ chedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

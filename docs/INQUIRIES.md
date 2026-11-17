@@ -86,6 +86,11 @@ Started 25 Oct 2026 at the author's request.
   real gains (OSV fixing commits, deps.dev releases, dated advisory links); GitHub advisory
   publication dates are CVE mirror dates, not fix dates; commercial vendors rarely publish CSAF.
   The hand check remains the route for most commercial flaws.
+- **16 Nov 2026: critical documents and the post-pilot lock (author).** A critical-documents
+  register now lists every document the study depends on, every copy and whether it is a
+  reference document or a living record (`docs/DOCUMENT_REGISTER.md`). After the pilot the
+  reference documents lock (option 1): Claude cleans up and checks cross-references by
+  10 Feb 2027, the author approves on 17 Feb; living records stay open so the study keeps running.
 - **15 Nov 2026: fix-date process, wider test (author).** Asked whether the net is broad enough.
   Private task `fixdate_wide` on exploited flaws: CSAF looked up through the BSI aggregator,
   security.txt and vendors' main domains (commercial vendors with exploited flaws still rarely

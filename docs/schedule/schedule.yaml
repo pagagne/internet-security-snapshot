@@ -952,8 +952,9 @@ items:
     Author's request, 16 Nov 2026: after the pilot, bring docs/DOCUMENT_REGISTER.md up to date
     (every critical document, every copy, reference or living), check every cross-reference in
     and between the documents (snapshot.links, snapshot.refs, the manual check, the artifact map
-    and the Claude project copies), fix stale text, and prepare the lock list for 17 Feb with a
-    fingerprint guard like the locked core. Note what the pilot changed.
+    and the Claude project copies), fix stale text, and prepare the lock list for 17 Feb (reference
+    documents only, author 16 Nov) with a fingerprint guard like the locked core, built and tested
+    but not yet switched on. Note what the pilot changed.
 
 - id: document-lock
   owner: author
@@ -962,10 +963,10 @@ items:
   time: "10:00"
   minutes: 30
   details: >
-    Author's request, 16 Nov 2026. Read Claude's lock list from 10 Feb and decide what locks (the
-    scope is decided here: reference documents only, or everything; the implications were set out
-    on 16 Nov). From then on a locked document changes only by a dated, logged entry under
-    docs/CHANGE_POLICY.md.
+    Author's request, 16 Nov 2026. Scope decided 16 Nov (option 1): reference documents lock,
+    living records stay open (docs/DOCUMENT_REGISTER.md). Read Claude's lock list from 10 Feb,
+    confirm it, and switch on the fingerprint guard. From then on a locked document changes only
+    by a dated, logged entry under docs/CHANGE_POLICY.md.
 
 - id: plan-evaluation-prep
   owner: claude
