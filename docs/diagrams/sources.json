@@ -175,8 +175,8 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "f3cb127951bc9810",
-    "docs/OPERATIONS.md": "6ce06e343db1b391",
+    "docs/SYNC_REVIEW.md": "07e1b067ab825c0d",
+    "docs/OPERATIONS.md": "9ec1e88fe6711474",
     "docs/diagrams/sync_flow_now.dot": "04a23ebfcfaab5b4"
    },
    "reviewed_on": "2026-11-16"
@@ -190,7 +190,7 @@
    ],
    "fingerprints": {
     "docs/SYNC_REVIEW.md": "07e1b067ab825c0d",
-    "docs/OPERATIONS.md": "6ce06e343db1b391",
+    "docs/OPERATIONS.md": "9ec1e88fe6711474",
     "docs/diagrams/sync_flow_locked.dot": "5f079999c5f37793"
    },
    "reviewed_on": "2026-11-16"
