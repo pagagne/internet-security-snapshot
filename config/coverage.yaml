@@ -41,6 +41,7 @@ pieces:
   - {name: "Zero-day list",                    tier: companion, collected: false, measures: [X15]}
   - {name: "Exposed AI servers",               tier: companion, collected: false, measures: [X11]}
   - {name: "Routing hygiene",                  tier: companion, collected: false, measures: [X20]}
+  - {name: "Attack sightings (GreyNoise)",     tier: companion, collected: false, measures: [X28]}   # access granted 17 Nov 2026; coloured when the first collection arrives
 
 sources:
   - {name: CVE List,          url: "https://api.github.com/repos/CVEProject/cvelistV5"}

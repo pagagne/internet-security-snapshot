@@ -506,3 +506,21 @@ measures:
       "never fixed" means "no upstream fix". Exploratory, never scored. Test run:
       run-reports research/2026-10-29T2336Z-httparchive_versions; case notes docs/cases/php2shell.md.
 
+
+  - id: X28
+    name: Age of attacked flaws seen by GreyNoise sensors (companion to I4)
+    question: Of the CVE-tagged attack traffic GreyNoise sees in the quarter, what share targets flaws more than 12 months old, and which of the quarter's newly exploited flaws did its sensors see, and when first?
+    sources: [greynoise, cve, kev]   # Research Community Access granted 17 Nov 2026; credit "Data provided by GreyNoise"
+    added: 2026-11-17
+    feeds_labels: false
+    status: planned   # author, 17 Nov 2026: access granted with 90 days of history; collector to build once the key is a GitHub secret
+    method: >
+      Per CVE tag, daily counts of scanning IPs (counts only; IP addresses are never collected),
+      read within GreyNoise's 90-day lookback. Each CVE aged from its CVE.org publication date;
+      share older than 12 months, computed as I4 is, reported beside I4 and X23 and never merged
+      with them. For the quarter's newly exploited flaws (Track B), the first day GreyNoise saw
+      activity is recorded beside the KEV and VulnCheck dates as a cross-check. With 90 days of
+      history this covers the age measure (author's rule, 16 Nov 2026: under four months, age
+      only); first-attack dates become usable only if GreyNoise agrees to a private six-month
+      rolling copy of daily tag counts (asked 17 Nov). Sensors see automated scanning only.
+      Exploratory, never scored. Credit: "Data provided by GreyNoise".

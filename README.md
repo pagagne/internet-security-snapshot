@@ -104,7 +104,7 @@ company breach filings and AI credits. Gray slices are mostly sources still wait
   <img alt="Exploratory data: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-exploratory-light.svg">
 </picture>
 
-**Reading the exploratory ring.** The exploratory work is the companion measures (X1-X27) that
+**Reading the exploratory ring.** The exploratory work is the companion measures (X1-X28) that
 add context but never decide a label: AI attack campaigns, AI tools on GitHub and Hugging Face,
 bot traffic, honeypot activity, views from other countries and more. Data used by both rings,
 such as flaw records, appears in both. Gray slices are collectors not yet built or sources not yet
