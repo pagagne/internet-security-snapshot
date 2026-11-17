@@ -1851,7 +1851,8 @@ items:
   details: >
     Private, no key values: RANSOMWARE_LIVE_KEY, NVD_API_KEY, VULNCHECK_TOKEN, CLOUDFLARE_TOKEN,
     SEC_USER_AGENT, OPENROUTER_API_KEY (expires 12 May 2027, author 17 Nov 2026; spending limit
-    0), GREYNOISE_API_KEY (made 17 Nov 2026, Researcher plan; no expiry shown, author 17 Nov), RANSOMWARE_LIVE_KEY (portal shows no expiry, author 17 Nov 2026: "none stated"; 60 requests
+    0), GREYNOISE_API_KEY (made 17 Nov 2026, Researcher plan; no expiry shown, author 17 Nov), VULNCHECK_TOKEN (replaced 17 Nov 2026: the 20 Oct token was unused for 28 days and
+    about to lapse; the new token is kept alive twice a month), RANSOMWARE_LIVE_KEY (portal shows no expiry, author 17 Nov 2026: "none stated"; 60 requests
     a minute, 500,000 a month per key), the Google Cloud and Drive backup credentials, and any GreyNoise or CrowdSec key when
     granted. For each: who issued it, where it is kept (GitHub secret name), expiry or
     "none stated", and how to renew. Expiries become schedule items 30 days ahead.
@@ -1872,8 +1873,9 @@ items:
     deactivates the old one, so never request another; and NVD may block keys that break its
     limits. A dead key would show as an NVD error in the next quarterly pull (the 1 Dec dry run).
     (3) VulnCheck (VULNCHECK_TOKEN): sign in at vulncheck.com, open the account's API tokens
-    page and note each token's status and last-used date. VulnCheck expires any token not used
-    for 30 days; a keep-alive request now runs on the 1st-2nd and 15th-16th of each month (and
+    page and note each token's status and last-used date (17 Nov: the 20 Oct token showed last
+    activity 28 days ago; a new one was made and stored the same day). VulnCheck expires any
+    token not used for 30 days; a keep-alive request now runs on the 1st-2nd and 15th-16th of each month (and
     once on 17-18 Nov), so the token should show as used recently.
     (4) Cloudflare (CLOUDFLARE_TOKEN): sign in at dash.cloudflare.com, My Profile, API Tokens.
     The study's token (Account, Radar, Read) should show Active; tokens do not expire unless a

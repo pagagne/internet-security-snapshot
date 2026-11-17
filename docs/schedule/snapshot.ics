@@ -978,13 +978,15 @@ DESCRIPTION:Responsible: Claude\n\nPrivate\, no key values: RANSOMWARE_LIVE
  _KEY\, NVD_API_KEY\, VULNCHECK_TOKEN\, CLOUDFLARE_TOKEN\, SEC_USER_AGENT\,
   OPENROUTER_API_KEY (expires 12 May 2027\, author 17 Nov 2026\; spending l
  imit 0)\, GREYNOISE_API_KEY (made 17 Nov 2026\, Researcher plan\; no expir
- y shown\, author 17 Nov)\, RANSOMWARE_LIVE_KEY (portal shows no expiry\, a
- uthor 17 Nov 2026: "none stated"\; 60 requests a minute\, 500\,000 a month
-  per key)\, the Google Cloud and Drive backup credentials\, and any GreyNo
- ise or CrowdSec key when granted. For each: who issued it\, where it is ke
- pt (GitHub secret name)\, expiry or "none stated"\, and how to renew. Expi
- ries become schedule items 30 days ahead.\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ y shown\, author 17 Nov)\, VULNCHECK_TOKEN (replaced 17 Nov 2026: the 20 O
+ ct token was unused for 28 days and about to lapse\; the new token is kept
+  alive twice a month)\, RANSOMWARE_LIVE_KEY (portal shows no expiry\, auth
+ or 17 Nov 2026: "none stated"\; 60 requests a minute\, 500\,000 a month pe
+ r key)\, the Google Cloud and Drive backup credentials\, and any GreyNoise
+  or CrowdSec key when granted. For each: who issued it\, where it is kept 
+ (GitHub secret name)\, expiry or "none stated"\, and how to renew. Expirie
+ s become schedule items 30 days ahead.\n\nSource: https://github.com/pagag
+ ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1369,31 +1371,33 @@ DESCRIPTION:Responsible: Paul (author)\n\nLook up each key's expiry on its
   NVD may block keys that break its limits. A dead key would show as an NVD
   error in the next quarterly pull (the 1 Dec dry run). (3) VulnCheck (VULN
  CHECK_TOKEN): sign in at vulncheck.com\, open the account's API tokens pag
- e and note each token's status and last-used date. VulnCheck expires any t
- oken not used for 30 days\; a keep-alive request now runs on the 1st-2nd a
- nd 15th-16th of each month (and once on 17-18 Nov)\, so the token should s
- how as used recently. (4) Cloudflare (CLOUDFLARE_TOKEN): sign in at dash.c
- loudflare.com\, My Profile\, API Tokens. The study's token (Account\, Rada
- r\, Read) should show Active\; tokens do not expire unless a TTL was set\,
-  and ours was made with none (PERMISSIONS\, 20 Oct). Note the status. (5) 
- Google backup (RCLONE_CONF\, the Drive sign-in used by Backup and Research
- ): it has no expiry date. It stops working only if you remove its access i
- n your Google Account's third-party connections\, if it goes unused for si
- x months\, or if the Google Cloud app it uses is in "Testing" (then 7 days
- \; ours has worked since October\, so it is not). Look in your Google Acco
- unt's security page\, third-party connections\, that the rclone access is 
- still listed. BigQuery uses no stored key (GitHub proves its identity to G
- oogle each run)\, so there is nothing to check there. (6) GitHub private-r
- epository token (MANUAL_REPO_TOKEN): GitHub\, Settings\, Developer setting
- s\, Personal access tokens\, Fine-grained tokens\; note its expiry date. I
- f it lapses\, the private manual\, backups and private sweeps stop\, so th
- is date matters. (7) OpenRouter: done 17 Nov (expires 12 May 2027\; remind
- er 12 Apr 2027). (8) GreyNoise (GREYNOISE_API_KEY): done 17 Nov\, no expir
- y shown ("none stated"). Full requirements per key: https://github.com/pag
- agne/internet-security-snapshot/blob/main/docs/SOP_MANUAL_RUNS.md\, sectio
- n 10. Tell Claude the results\; Claude records them in the key register an
- d schedules any renewal 30 days ahead.\n\nSource: https://github.com/pagag
- ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ e and note each token's status and last-used date (17 Nov: the 20 Oct toke
+ n showed last activity 28 days ago\; a new one was made and stored the sam
+ e day). VulnCheck expires any token not used for 30 days\; a keep-alive re
+ quest now runs on the 1st-2nd and 15th-16th of each month (and once on 17-
+ 18 Nov)\, so the token should show as used recently. (4) Cloudflare (CLOUD
+ FLARE_TOKEN): sign in at dash.cloudflare.com\, My Profile\, API Tokens. Th
+ e study's token (Account\, Radar\, Read) should show Active\; tokens do no
+ t expire unless a TTL was set\, and ours was made with none (PERMISSIONS\,
+  20 Oct). Note the status. (5) Google backup (RCLONE_CONF\, the Drive sign
+ -in used by Backup and Research): it has no expiry date. It stops working 
+ only if you remove its access in your Google Account's third-party connect
+ ions\, if it goes unused for six months\, or if the Google Cloud app it us
+ es is in "Testing" (then 7 days\; ours has worked since October\, so it is
+  not). Look in your Google Account's security page\, third-party connectio
+ ns\, that the rclone access is still listed. BigQuery uses no stored key (
+ GitHub proves its identity to Google each run)\, so there is nothing to ch
+ eck there. (6) GitHub private-repository token (MANUAL_REPO_TOKEN): GitHub
+ \, Settings\, Developer settings\, Personal access tokens\, Fine-grained t
+ okens\; note its expiry date. If it lapses\, the private manual\, backups 
+ and private sweeps stop\, so this date matters. (7) OpenRouter: done 17 No
+ v (expires 12 May 2027\; reminder 12 Apr 2027). (8) GreyNoise (GREYNOISE_A
+ PI_KEY): done 17 Nov\, no expiry shown ("none stated"). Full requirements 
+ per key: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/SOP_MANUAL_RUNS.md\, section 10. Tell Claude the results\; Claude reco
+ rds them in the key register and schedules any renewal 30 days ahead.\n\nS
+ ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
+ s/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

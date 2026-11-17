@@ -299,7 +299,7 @@ stops working: the pull slows to the keyless rate.
 keep-alive request on the 1st-2nd and 15th-16th of each month in the daily Source status run.
 Managed at: the author's vulncheck.com account, API tokens page (status and last use). Expiry:
 VulnCheck expires any token not used for 30 days; the keep-alive (author's decision, 17 Nov 2026)
-stops that. If it stops working: the keep-alive step turns the Source status run red, and the pull
+stops that. The first token (20 Oct) went unused for 28 days and was replaced on 17 Nov 2026. If it stops working: the keep-alive step turns the Source status run red, and the pull
 records a VulnCheck gap. To renew: make a new token on the tokens page.
 
 **Cloudflare Radar (`CLOUDFLARE_TOKEN`).** Used by: the quarterly pull and research tasks. Managed
