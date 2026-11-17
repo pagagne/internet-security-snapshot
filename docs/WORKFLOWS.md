@@ -90,7 +90,7 @@ workflow: section 10.)
 
 **Watchdog (since 29 Oct, author's decision):** on each run it also checks that the essential
 timed workflows actually ran: the quarterly pull, honeypot capture, backup and rebuild check. If
-GitHub skipped one (no run four hours after it was due, looking back three days), it starts it
+GitHub skipped one (no run ten hours after it was due since 5 Nov 2026, four before; looking back three days), it starts it
 once and opens a `watchdog` issue for the author. So the study keeps collecting even if no one,
 Claude included, is available (`src/snapshot/watchdog.py`; `docs/SOP_MANUAL_RUNS.md`, section 7).
 Since 1 Nov 2026 (author's decision) it also watches the daily Source status check behind the
@@ -105,7 +105,7 @@ delays were shorter, for a one-week trial reviewed on 12 Nov.
 
 **When:** every push to main and every pull request, and by hand (Run button, since 29 Oct).
 
-**What it does:** runs all the tests (122 on 29 Oct). They include the test confirming the locked
+**What it does:** runs all the tests (220 on 16 Nov 2026). They include the test confirming the locked
 pre-registration core has not been altered, and checks that the schedule outputs are current,
 the diagrams match their sources, and the privacy scan is clean. A second job builds the pinned
 container. Since 27 Oct a ruleset requires both jobs to pass before a change lands on main,
@@ -231,7 +231,8 @@ their spreadsheets, the GitHub and Hugging Face tool sweeps and their charts, th
 list, credit groups, the sweep trial) and the raw results of the exploratory runs (`runs/`).
 The Feed screen, Honeypot capture and the exploratory Research tasks (ai_lists, ai_tools,
 cve_check, honeypot_capture, x3_sources, github_tools, repo_scout, hf_tools, x3_read,
-feed_verify) write there through `tools/private.sh` and print only counts in their public logs.
+feed_verify, and the later private tasks named in the research workflow's private list, such as
+fixdate_wide, fixdate_wayback and registry_probe of 15-16 Nov 2026) write there through `tools/private.sh` and print only counts in their public logs.
 The core pull, its method research, the source watch and the working documents stay public.
 The exploratory files were moved on 31 Oct 2026 by a one-off Private move workflow (run 41218328062; removed afterwards); earlier
 versions remain in this repository's history, and erasing that history is the author's
@@ -267,7 +268,7 @@ Added 29 Oct 2026 at the author's request, as the starting point for the <!-- da
 ```
 Claude work queue (08:32 ET, outside GitHub)
    └─ starts Schedule if it missed its daily run
-Schedule (3x daily)
+Schedule (5x daily)
    ├─ opens the day's issues
    ├─ 1 and 15 Dec: starts Quarterly pull (dry runs)
    └─ watchdog: restarts a skipped Quarterly pull, Honeypot, Backup or Rebuild check
