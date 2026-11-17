@@ -90,7 +90,7 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "be72fc70db744fdc",
+    "README.md": "54d412e9f256b608",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "a1a9db688d0dbc1c",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
@@ -118,7 +118,7 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "6751dbf7026830ce",
-    "README.md": "be72fc70db744fdc",
+    "README.md": "54d412e9f256b608",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
    "reviewed_on": "2026-11-17"
@@ -175,11 +175,11 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "9bfa6b2c43e5951e",
-    "docs/OPERATIONS.md": "26fb4fddf136c8a9",
+    "docs/SYNC_REVIEW.md": "48b5d675a9655f1a",
+    "docs/OPERATIONS.md": "5d39ff308b13fdb2",
     "docs/diagrams/sync_flow_now.dot": "04a23ebfcfaab5b4"
    },
-   "reviewed_on": "2026-11-16"
+   "reviewed_on": "2026-11-17"
   },
   "sync_flow_locked": {
    "doc": "docs/SOP_MANUAL_RUNS.md",
@@ -189,11 +189,11 @@
     "docs/OPERATIONS.md"
    ],
    "fingerprints": {
-    "docs/SYNC_REVIEW.md": "9bfa6b2c43e5951e",
-    "docs/OPERATIONS.md": "26fb4fddf136c8a9",
+    "docs/SYNC_REVIEW.md": "48b5d675a9655f1a",
+    "docs/OPERATIONS.md": "5d39ff308b13fdb2",
     "docs/diagrams/sync_flow_locked.dot": "5754832152dc9462"
    },
-   "reviewed_on": "2026-11-16"
+   "reviewed_on": "2026-11-17"
   }
  }
 }

@@ -209,6 +209,11 @@ estimation.
 |---|---|
 | 20 Oct 2026 | Pre-registration registered on OSF (DOI 10.17605/OSF.IO/3XT82) |
 | 28 Oct 2026 | Censys research-access application sent (written by the author) |
+| 1 Nov 2026 | APNIC Labs permission to publish country figures (X20; docs/PERMISSIONS.md) |
+| 10 Nov 2026 | Censys declined research access; exposure figures from other sources (docs/PERMISSIONS.md) |
+| 11 Nov 2026 | VulnCheck permission for derived statistics from VulnCheck KEV (attribution only) |
+| 17 Nov 2026 | GreyNoise Research Community Access granted (X28; credit "Data provided by GreyNoise") |
+| 17 Nov 2026 | Validation passed, 4 of 5 reference cases (review/VALIDATION_RESULT.md) |
 | 23 Nov 2026 | Cutover - the repository's schedule runs the study (docs/OPERATIONS.md) |
 | 1 Dec 2026 | Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow) |
 | 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |

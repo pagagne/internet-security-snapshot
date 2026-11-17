@@ -1,4 +1,4 @@
-# Operations: how the study runs without depending on one Claude chat (updated 16 Nov 2026)
+# Operations: how the study runs without depending on one Claude chat (updated 17 Nov 2026)
 
 From the **cutover on Mon <!-- date:cutover -->23 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
@@ -201,6 +201,10 @@ text in the private Drive folder `correspondence/`, an index in the Claude proje
 (`claude/correspondence.md`), and a summary without personal contact details in
 `docs/PERMISSIONS.md` (permissions) or `docs/INQUIRIES.md` (everything else). The author
 forwards or attaches the email; Claude does the filing.
+Notable events (a permission granted or declined, a validation result, a run's outcome, a
+volunteer joining) also get a dated milestone in `docs/schedule/schedule.yaml` the same day, with a
+plain one-line `news` headline (author, 17 Nov 2026), so the landing page's Latest line never goes
+stale; headlines carry no figures from exploratory work.
 At the end of each working day the session writes a log (what was asked, decided and done, with
 the day's workflow runs) in weekly folders, Sunday to Saturday, named like
 `2026-10-25_to_2026-10-31`, and copies it to the Claude project. **Since 1 Nov 2026 the session

@@ -1,4 +1,4 @@
-# Sync review: keeping everything in step (updated 16 Nov 2026)
+# Sync review: keeping everything in step (updated 17 Nov 2026)
 
 A repeatable check that the repository, the Claude docs, the calendars, the scheduled tasks
 and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the author's request.
@@ -41,6 +41,8 @@ cannot see.
    since (any found are moved into the schedule and removed, with the author's agreement).
 8b. The project doc `claude/WHATS-DUE.md` is dated today or yesterday (the morning report
    refreshes it), and no issue labelled `primary-chat` is overdue.
+8c. The landing page's news line: the latest milestone in `docs/schedule/schedule.yaml` is no older
+   than the latest notable event in the session logs (author, 17 Nov 2026); add any missing one.
 8a. The critical-documents register (`docs/DOCUMENT_REGISTER.md`) lists every document the
    study depends on and where each copy lives; add any new one.
 8. Scheduled tasks (Claude account): the work queue is enabled and its prompt matches

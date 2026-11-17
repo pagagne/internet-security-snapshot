@@ -2047,6 +2047,23 @@ milestones:
 - at: [censys]
   text: Censys research-access application sent (written by the author)
   news: "Applied to Censys for research access to internet scan data"
+# Recent events (author, 17 Nov 2026: added so the news line does not go stale; from now on a
+# milestone is added the day each notable event is logged)
+- when: 1 Nov 2026
+  text: APNIC Labs permission to publish country figures (X20; docs/PERMISSIONS.md)
+  news: "APNIC Labs agrees the study may publish its country figures"
+- when: 10 Nov 2026
+  text: Censys declined research access; exposure figures from other sources (docs/PERMISSIONS.md)
+  news: "Censys declines research access; exposure figures will come from other sources"
+- when: 11 Nov 2026
+  text: VulnCheck permission for derived statistics from VulnCheck KEV (attribution only)
+  news: "VulnCheck agrees to the study's use of its exploited-flaw list"
+- when: 17 Nov 2026
+  text: GreyNoise Research Community Access granted (X28; credit "Data provided by GreyNoise")
+  news: "GreyNoise grants research access to its attack-sensor data"
+- when: 17 Nov 2026
+  text: Validation passed, 4 of 5 reference cases (review/VALIDATION_RESULT.md)
+  news: "Validation check passed, 4 of 5 reference cases"
 - at: [annual-review@2027-03-15]
   suffix: ", then yearly"
   text: Annual review and change window; annual check of free numbers from March 2028
