@@ -129,3 +129,20 @@ def test_whats_due_lists_by_owner():
     from snapshot import schedule as S
     md = S.whats_due(S.expand(S.load()), dt.date(2026, 11, 17), 14)
     assert md.startswith("# What's due") and "## Paul (author)" in md and "## Claude" in md
+
+
+def test_primary_chat_label():
+    import datetime as dt
+    from snapshot import schedule as S
+    occ = {o["id"]: o for o in S.expand(S.load())}
+    assert occ["race-list-ready"]["primary"] and not occ["terms-summaries"]["primary"]
+    assert not occ["dry-run"]["primary"]            # github items are never primary-chat
+    calls = []
+    def gh(a):
+        calls.append(a)
+        return "[]" if a[:2] == ["issue", "list"] else ""
+    S.act(dt.date(2026, 11, 24), gh=gh)
+    made = [c for c in calls if c[:2] == ["issue", "create"]]
+    race = [c for c in made if "Race fix-date list" in " ".join(c)]
+    assert race and "primary-chat" in race[0]
+    assert "Primary chat only" in " ".join(race[0])

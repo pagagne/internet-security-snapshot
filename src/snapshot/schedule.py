@@ -113,6 +113,9 @@ def expand(items: list[dict]) -> list[dict]:
                 "open": int(it.get("open", DEFAULT_OPEN[it["owner"]])),
                 "dispatch": it.get("dispatch"),
                 "feeds": list(it.get("feeds") or []),
+                # Claude items belong to the primary chat unless marked `queue: true` (author,
+                # 16 Nov 2026): the daily work queue sees only the public repository
+                "primary": it["owner"] == "claude" and not it.get("queue"),
                 # finished items stay in the calendar, marked done (author, 31 Oct 2026): a `done`
                 # field (date or note), or the older "- done ..." in the title
                 "done": str(it["done"]) if it.get("done") else ("yes" if re.search(r"\s-\s+done\b", it["title"]) else ""),
@@ -292,7 +295,8 @@ def due(occ: list[dict], today: dt.date, catch_up: int = CATCH_UP_DAYS) -> dict:
               and lo <= o["date"] - dt.timedelta(days=o["open"]) <= today]
     runs = [o for o in occ if o["dispatch"] and lo <= o["date"] <= today]
     js = lambda o: {"uid": o["uid"], "owner": o["owner"], "title": o["title"], "when": _when(o),
-                    "details": o["details"], "dispatch": o["dispatch"], "done": o.get("done", "")}   # done kept (2 Nov 2026 fix)
+                    "details": o["details"], "dispatch": o["dispatch"], "done": o.get("done", ""),
+                    "primary": o.get("primary", False)}   # done kept (2 Nov 2026 fix); primary-chat label (16 Nov)
     return {"date": today.isoformat(), "issues": [js(o) for o in issues], "runs": [js(o) for o in runs]}
 
 
@@ -317,7 +321,9 @@ MARKER = "<!-- schedule-uid: {} -->"
 
 def issue_body(o: dict) -> str:
     return "\n\n".join([
-        f"**When:** {o['when']}  \n**Who:** {OWNER_NAME[o['owner']]}",
+        f"**When:** {o['when']}  \n**Who:** {OWNER_NAME[o['owner']]}"
+        + ("  \n**Primary chat only** (label `primary-chat`: the daily work queue leaves it alone)" if o.get("primary") else
+           ("  \n**Daily work queue** (public repository only)" if o["owner"] == "claude" else "")),
         o["details"],
         "Close this issue when it is done (or comment why it was skipped). Source: "
         "`docs/schedule/schedule.yaml`; how the study runs: `docs/OPERATIONS.md`.",
@@ -340,6 +346,8 @@ def act(today: dt.date, dry: bool = False, gh=None) -> list[str]:
             continue
         args = ["issue", "create", "--title", f"[{OWNER_NAME[o['owner']]}] {o['title']} ({o['when']})",
                 "--label", "schedule", "--label", f"owner:{o['owner']}", "--body", issue_body(o)]
+        if o.get("primary"):
+            args += ["--label", "primary-chat"]
         log.append("open " + o["uid"])
         if not dry:
             gh(args)
@@ -477,7 +485,8 @@ def whats_due(occ: list[dict], today: dt.date, days: int = 14) -> str:
         rows = [o for o in occ if today <= o["date"] <= end and o["owner"] == owner and not o["done"]]
         L.append(f"## {who[owner]}")
         L.append("")
-        L += [f"- {_when(o)}: {o['title']}" for o in rows] or ["- nothing scheduled"]
+        L += [f"- {_when(o)}: {o['title']}" + (" (work queue)" if owner == "claude" and not o.get("primary") else "")
+              for o in rows] or ["- nothing scheduled"]
         L.append("")
     return "\n".join(L)
 

@@ -23,6 +23,9 @@
 #           after the 08:32 ET work queue, so a same-day issue would be picked up a day late)
 #   dispatch {workflow: file.yml, inputs: {...}}: the daily schedule job runs this workflow
 #   feeds   [reviewer]: also show this author/Claude item in the reviewer's own calendar feed
+#   queue   true: a Claude item the daily work queue may do (it can finish it from the public
+#           repository alone). Every other Claude item belongs to the primary chat: its issue
+#           carries the label primary-chat and the work queue leaves it alone (author, 16 Nov 2026)
 #   done    when finished (date or short note): the item stays in the calendar marked DONE and
 #           opens no issue or run (author, 31 Oct 2026); older items say "- done ..." in the title
 #   details what to do (plain text; links welcome)
@@ -725,6 +728,7 @@ items:
 
 - id: workflows-doc
   owner: claude
+  queue: true
   title: Document and test every GitHub workflow; draft the lock list
   date: 2026-12-14
   details: >
@@ -1261,6 +1265,7 @@ items:
 # docs/schedule/reviewer.ics, and the author/Claude items around them open issues as usual.
 - id: reviewer-worksheets
   owner: claude
+  queue: true
   title: Build the figure worksheets for the reviewer's spot check
   date: 2027-01-20
   details: >
@@ -1510,6 +1515,7 @@ items:
 
 - id: terms-summaries
   owner: claude
+  queue: true
   title: Summarise the terms pages still marked "To summarise"
   date: 2026-11-18
   details: >
@@ -1643,6 +1649,7 @@ items:
 
 - id: landing-rollup-2027
   owner: claude
+  queue: true
   title: Write up the annual landing-page roll-up
   date: 2028-01-04
   details: >
@@ -1746,6 +1753,7 @@ items:
 
 - id: vulncheck-ring
   owner: claude
+  queue: true
   title: Colour the VulnCheck slice of the core ring if the dry run brought its data
   date: 2026-12-02
   minutes: 10
@@ -1824,6 +1832,7 @@ items:
 
 - id: risk-r9-row-check
   owner: claude
+  queue: true
   title: Add a row-count check against history to the quality report (R9)
   date: 2026-11-25
   details: >

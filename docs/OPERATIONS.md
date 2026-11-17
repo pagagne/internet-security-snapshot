@@ -276,8 +276,15 @@ changes) until the author tells it "you are now primary"; it then updates both n
 the old primary's chat-bound scheduled tasks and recreates them for itself. The rule is also in
 the project's custom instructions, which every chat in the project reads first. The cutover moved
 up to <!-- date:cutover -->23 Nov<!-- /date -->: from then the daily work queue does the dated
-`owner:claude` issues, while the morning report (it reads the private session logs) and the sync
-reviews stay with the primary chat.
+`owner:claude` issues it can finish from the public repository alone, while the morning report
+(it reads the private session logs), the sync reviews and every other Claude task stay with the
+primary chat. **Who does which task (author, 16 Nov 2026):** a Claude item in
+`docs/schedule/schedule.yaml` belongs to the primary chat unless it is marked `queue: true`; its
+issue then carries the label `primary-chat`, and the work queue leaves it alone. Only tasks that
+need nothing but the public repository are marked `queue: true` (for example terms summaries, a
+quality-report check, the workflow documentation). Anything that needs the private repository, a
+Claude document or artifact, a project doc, mail or the author's approval cards stays with the
+primary chat, so no task is half-done by one session and redone by the other.
 
 ## Claude's scheduled tasks (outside GitHub)
 Listed 29 Oct 2026 at the author's request. These run on the author's Claude account, not on

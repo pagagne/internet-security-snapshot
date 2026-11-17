@@ -12,7 +12,7 @@ digraph sync_locked {
   gh     [label="GitHub runs\nworkflows locked 29 Dec", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
   pub    [label="Public repository\ncore frozen, sync checklist", fillcolor="#E1F5EE", color="#0F6E56", fontcolor="#04342C"];
   priv   [label="Private repository\nlogs, sweeps, artifact map", fillcolor="#EEEDFE", color="#534AB7", fontcolor="#26215C"];
-  queue  [label="Daily work queue (Claude)\ndated owner:claude issues", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
+  queue  [label="Daily work queue (Claude)\npublic-only Claude issues\n(not labelled primary-chat)", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
   chat   [label="Primary chat (Claude)\nprivate work, Claude docs, morning\nreports, sync reviews", fillcolor="#FAECE7", color="#993C1D", fontcolor="#4A1B0C"];
   people [label="Author, pilot witness, reviewer\nauthor approves;\nothers read the public side", fillcolor="#F1EFE8", color="#5F5E5A", fontcolor="#2C2C2A"];
 
