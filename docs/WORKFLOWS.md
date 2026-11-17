@@ -249,7 +249,7 @@ and `status.json` on the run-reports branch (`landing/`), so main gets no daily 
 README's second picture, the coverage ring, is drawn from the same file by
 `python -m snapshot.landing build` and kept current by a test: one slice per kind of data the
 study needs, sized 3 per core indicator and 1 per exploratory measure it feeds, coloured only when
-a pull or sweep actually collects it. The landing page links the SOP, not the private manual. **VulnCheck token keep-alive (author's decision, 17 Nov 2026):**
+a pull or sweep actually collects it. The landing page links the SOP, not the private manual. **Countdown (author's request, 17 Nov 2026):** the same run redraws `landing/countdown-{light,dark}.svg`, shown under the banner: the number of days (UTC) until the next dry run, pilot run or quarterly pull in `docs/schedule/schedule.yaml`, so it moves once a day and needs no clock on the page. **VulnCheck token keep-alive (author's decision, 17 Nov 2026):**
 VulnCheck expires any token not used for 30 days, and the study uses its token only at the
 quarterly pull, so the run's last step makes one listing request with `VULNCHECK_TOKEN` on the
 1st-2nd and 15th-16th of each month (plus one-off calls on 17 and 18 Nov 2026), keeps nothing from

@@ -316,12 +316,61 @@ def news_svg(today: dt.date, theme: str) -> str:
             "</svg>\n")
 
 
+# Countdown to the next study run (author's request, 17 Nov 2026): the dry runs, the pilot run
+# and the quarterly pulls, in days only. Drawn daily with the banner, so the count moves once a day.
+COUNTDOWN_IDS = ("dry-run", "dry-run-full", "pull-provisional", "pull-final")
+
+
+def _run_label(rid: str, d: dt.date) -> str:
+    if rid == "dry-run":
+        return "Dry run 1 of the quarterly pull"
+    if rid == "dry-run-full":
+        return "Dry run 2, with all available sources"
+    q_end = d.replace(day=1) - dt.timedelta(days=1) if rid == "pull-provisional" else \
+        (d.replace(day=1) - dt.timedelta(days=1)).replace(day=1) - dt.timedelta(days=1)
+    q = f"Q{(q_end.month - 1) // 3 + 1} {q_end.year}"
+    pilot = q == "Q4 2026"
+    if rid == "pull-provisional":
+        return f"Pilot run: {q} quarterly pull" if pilot else f"{q} quarterly pull"
+    return f"Pilot run: {q} final pull" if pilot else f"{q} final pull"
+
+
+def next_run(today: dt.date) -> tuple[dt.date, str] | None:
+    from . import schedule as S
+    runs = sorted((o["date"], o["id"]) for o in S.expand(S.load())
+                  if o["id"] in COUNTDOWN_IDS and o["date"] >= today)
+    return (runs[0][0], _run_label(runs[0][1], runs[0][0])) if runs else None
+
+
+def countdown_svg(today: dt.date, theme: str) -> str:
+    from xml.sax.saxutils import escape
+    c = NEWS_THEMES[theme]
+    nr = next_run(today)
+    if not nr:
+        head, when = "The study's scheduled runs are complete", ""
+    else:
+        d, label = nr
+        n = (d - today).days
+        head = "today" if n == 0 else "tomorrow" if n == 1 else f"in {n} days"
+        when = f"{label} · {d:%a} {d.day} {d:%b %Y}"
+    aria = f"Next study run {head}: {when}" if when else head
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="780" height="34" viewBox="0 0 780 34" '
+            f'font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" role="img" '
+            f'aria-label="{escape(aria)}">'
+            f'<text x="0" y="22" font-size="14" fill="{c["text"]}">'
+            f'<tspan font-weight="600" fill="{c["accent"]}">Next study run {escape(head)}</tspan>'
+            f'<tspan fill="{c["muted"]}">{" · " + escape(when) if when else ""}</tspan></text>'
+            "</svg>\n")
+
+
 def daily(out: Path, today: dt.date | None = None) -> None:
-    """Drawn every day by the Source status run: the timeline strip and the news line."""
+    """Drawn every day by the Source status run: the timeline strip, the news line and the
+    countdown to the next study run."""
     today = today or dt.date.today()
     timeline(schedule_points(), today, out / "timeline.png")
     for theme in NEWS_THEMES:
         (out / f"news-{theme}.svg").write_text(news_svg(today, theme))
+        (out / f"countdown-{theme}.svg").write_text(countdown_svg(today, theme))
 
 
 def _n(v, pct=False):

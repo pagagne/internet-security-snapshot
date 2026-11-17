@@ -36,8 +36,8 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: python -m snapshot.landing status --out landing-out | tee -a "$GITHUB_STEP_SUMMARY"
-      - name: Draw the study timeline and the news line
-        # Author's decisions, 1 Nov 2026: both redrawn daily from the study calendar (no outside contact)
+      - name: Draw the study timeline, the news line and the countdown to the next run
+        # Author's decisions, 1 Nov 2026 (countdown 17 Nov 2026): all redrawn daily from the study calendar (no outside contact)
         run: python -m snapshot.reportpage daily --out landing-out
       - name: Save to run-reports
         run: |

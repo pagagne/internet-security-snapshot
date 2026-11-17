@@ -5,6 +5,11 @@
   <img alt="Core data sources: green answered today's check, red error, gray not checked, outlined awaiting permission" src="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/landing/banner-light.svg">
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/landing/countdown-dark.svg">
+  <img alt="Days until the next study run (dry runs, the pilot run and the quarterly pulls), redrawn daily from the study calendar" src="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/run-reports/landing/countdown-light.svg">
+</picture>
+
 ## Mission
 
 Artificial intelligence has officially entered the cybersecurity fight. No one can say exactly

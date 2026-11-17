@@ -90,7 +90,7 @@
     ".github/workflows/quarterly-pull.yml"
    ],
    "fingerprints": {
-    "README.md": "c6cc89088f157994",
+    "README.md": "be72fc70db744fdc",
     "prereg/PREREGISTRATION.md": "53131e11644b13c4",
     ".github/workflows/quarterly-pull.yml": "a1a9db688d0dbc1c",
     "docs/diagrams/calendar_2027.mmd": "61779866380a9e86"
@@ -118,7 +118,7 @@
    ],
    "fingerprints": {
     "docs/CHANGE_POLICY.md": "6751dbf7026830ce",
-    "README.md": "c6cc89088f157994",
+    "README.md": "be72fc70db744fdc",
     "docs/diagrams/freeze_year.mmd": "c87914eeed6fa902"
    },
    "reviewed_on": "2026-11-17"
@@ -147,7 +147,7 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "47724f4f870ef371",
+    "docs/WORKFLOWS.md": "557033091711c4c9",
     ".github/workflows/checks.yml": "cff8c18606a657f6",
     "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
