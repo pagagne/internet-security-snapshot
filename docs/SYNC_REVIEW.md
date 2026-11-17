@@ -2,7 +2,7 @@
 
 A repeatable check that the repository, the Claude docs, the calendars, the scheduled tasks
 and the Reviewer's Desk all say the same thing. First run 24 Oct 2026 at the author's request.
-Scheduled weekly through 30 Nov 2026 (one week past the <!-- date:cutover -->23 Nov 2026<!-- /date --> cutover), then three days before each provisional report
+Scheduled weekly, every Monday, until the 17 Feb 2027 document lock (author, 16 Nov 2026), then three days before each provisional report
 (`sync-review` and `sync-review-quarterly` in `docs/schedule/schedule.yaml`), and on request.
 
 Who runs it: the primary chat (named in the private `PRIMARY_CHAT.md` and the project doc
