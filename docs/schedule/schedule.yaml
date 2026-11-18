@@ -307,6 +307,19 @@ items:
     (decision item 16). GreyNoise answered 18 Nov (weekly sweep and rolling window agreed), so
     this check is now for CrowdSec (and Shadowserver).
 
+- id: credits-block
+  owner: claude
+  title: One credits block on every output (data sources, their notices and links)
+  date: 2026-11-27
+  details: >
+    Found 18 Nov 2026 while summarising the terms pages: several sources ask for a credit or a
+    notice on what the study publishes (NVD's "not endorsed" notice, MITRE's CVE copyright
+    notice, Red Hat CC BY 4.0 credit and link, FIRST EPSS, VulnCheck KEV, GreyNoise, APNIC Labs,
+    Cloudflare Radar, ransomware.live, SANS ISC, CERT-FR, JPCERT/CC), but there is no single
+    place that prints them. Build one list (config) and show it on the website and in every
+    report, before the 4 Dec website goes live. Wording from docs/TERMS_OF_USE.md and
+    docs/PERMISSIONS.md.
+
 - id: greynoise-90-day-test
   owner: claude
   title: Test whether GreyNoise's API gives 90 days of tag activity, as its website does

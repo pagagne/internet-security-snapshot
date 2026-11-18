@@ -63,7 +63,7 @@ jobs:
             for i in 1 2 3 4 5; do git push -q origin HEAD:run-reports && break; sleep $((i * 4)); git pull -q --rebase origin run-reports; done )
           [ "$(cat watch-out/changed)" = "yes" ] || grep -q "Not answering normally" watch-out/changes.md || exit 0
           gh label create source-watch --color fbca04 --description "A data source or terms page changed" --force
-          body=$(printf 'The weekly source watch found a change. Handle it under docs/CHANGE_POLICY.md section 7 and note it in the session log. Full record: run-reports `%s`.\n\n%s' "$dest" "$(head -c 60000 watch-out/changes.md)")
+          body=$(printf 'The weekly source watch found a change. Handle it under docs/CHANGE_POLICY.md section 7 and note it in the session log. A changed terms page gets a plain summary for the author within seven days (risk safeguard R20, docs/TERMS_OF_USE.md). Full record: run-reports `%s`.\n\n%s' "$dest" "$(head -c 60000 watch-out/changes.md)")
           open=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=source-watch&state=open" --jq '.[0].number // empty')
           if [ -n "$open" ]; then
             gh api "repos/$GITHUB_REPOSITORY/issues/$open/comments" -f body="$body" >/dev/null

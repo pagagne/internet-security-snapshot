@@ -1346,6 +1346,28 @@ DESCRIPTION:Responsible: Paul (author)\n\nDraft C in the private https://gi
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:credits-block@2026-11-27@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: One credits block on every output (data sources\
+ , their notices and links)
+DESCRIPTION:Responsible: Claude\n\nFound 18 Nov 2026 while summarising the 
+ terms pages: several sources ask for a credit or a notice on what the stud
+ y publishes (NVD's "not endorsed" notice\, MITRE's CVE copyright notice\, 
+ Red Hat CC BY 4.0 credit and link\, FIRST EPSS\, VulnCheck KEV\, GreyNoise
+ \, APNIC Labs\, Cloudflare Radar\, ransomware.live\, SANS ISC\, CERT-FR\, 
+ JPCERT/CC)\, but there is no single place that prints them. Build one list
+  (config) and show it on the website and in every report\, before the 4 De
+ c website goes live. Wording from https://github.com/pagagne/internet-secu
+ rity-snapshot/blob/main/docs/TERMS_OF_USE.md and https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/PERMISSIONS.md.\n\nSource: htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule
+ /schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:pages-build@2026-11-27@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261127
