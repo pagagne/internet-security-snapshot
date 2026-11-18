@@ -1,4 +1,4 @@
-# The study's workflows (updated 17 Nov 2026)
+# The study's workflows (updated 18 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The <!-- date:workflows-doc -->14 Dec<!-- /date --> workflow review
@@ -32,7 +32,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Feed screen | `feed-screen.yml` | 08:41 on the 5th of each month; no button | issues (counts only), the private repository | `MANUAL_REPO_TOKEN` | 29 Oct; private since 31 Oct |
 | Source watch | `source-watch.yml` | Wednesdays 13:17 UTC (not on pull days); no button | issues, run-reports | none | 30 Oct |
 | Manual publish | `manual-publish.yml` | Every change to main that touches a document; after each private sweep; Run button | the private repository pagagne/snapshot-manual (manual only) | `MANUAL_REPO_TOKEN` | 30 Oct |
-| Backup | `backup.yml` | 10:17 on the 3rd of each month; Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
+| Backup | `backup.yml` | 10:17 UTC on the 3rd of each month and every Sunday (weekly from 18 Nov 2026; skipped on the 1st-2nd); Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25); single tasks only: `CLOUDFLARE_TOKEN`, `RANSOMWARE_LIVE_KEY`, `SEC_USER_AGENT`, `OPENROUTER_API_KEY`, `GREYNOISE_API_KEY` | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
 | Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->23 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
@@ -300,7 +300,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Checks | **Core safeguard**: guards the locked plan and every change | Errors and changes to the locked core could reach main unnoticed. |
 | Privacy scan | **Core safeguard**: keeps keys, personal details and unpublishable figures out of public view | A leak could stay public unnoticed until the next push (Checks scans every push, but not run-reports). |
 | Schedule | **Support**: runs the calendar, the dry runs and the watchdog | Reminders, dry runs and the watchdog stop; the Claude work queue restarts it. The quarterly pulls still run on their own timer, but a skipped one would go unnoticed. |
-| Backup | **Support**: monthly private copy in Drive | One fewer copy; the pull still saves its own data to Drive. |
+| Backup | **Support**: monthly and weekly private copies in Drive, restore and rebuild tests | One fewer copy; the pull still saves its own data to Drive. |
 | Diagrams | **Support**: cross-check of the pictures | None for the results; Checks still verifies the diagrams. |
 | Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |

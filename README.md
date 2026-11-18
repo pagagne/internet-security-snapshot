@@ -237,7 +237,7 @@ The study runs on GitHub workflows: automatic jobs that collect, check, back up 
 <!-- Generated from .github/workflows/*.yml by python -m snapshot.workflows build; do not edit here. -->
 | Workflow | Timer | Also runs |
 |---|---|---|
-| Backup to Google Drive | the 3rd of each month at 10:17 UTC | Run button |
+| Backup to Google Drive | the 3rd of each month at 10:17 UTC; Sundays at 10:17 UTC | Run button |
 | BigQuery check | no timer | started by the Schedule workflow or Claude |
 | Checks | no timer | after changes to main, on pull requests, Run button |
 | Diagrams | no timer | after changes to main, Run button |

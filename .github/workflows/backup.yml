@@ -8,6 +8,7 @@ name: Backup to Google Drive
 on:
   schedule:
     - cron: "17 10 3 * *"   # monthly repository copy, the 3rd at 10:17 UTC
+    - cron: "17 10 * * 0"   # weekly copy, Sundays (author, 18 Nov 2026: a lost GitHub account would cost at most a week of private work); skipped on pull days
   workflow_dispatch:
     inputs:
       about:
@@ -25,17 +26,21 @@ jobs:
     env:
       HAVE_CONF: ${{ secrets.RCLONE_CONF != '' }}
     steps:
+      - name: Not on a pull day (weekly timer only)
+        if: github.event.schedule == '17 10 * * 0'
+        run: |
+          case "$(date -u +%d)" in 01|02) echo "SKIP_PULL_DAY=true" >> "$GITHUB_ENV"; echo "Pull day: the weekly copy is skipped (the monthly one runs on the 3rd).";; esac
       - name: Configured?
         run: |
           if [ "$HAVE_CONF" != "true" ]; then
             echo "::warning title=Backup not configured::RCLONE_CONF secret missing; see exploratory/docs/BACKUP.md"
           fi
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
-        if: env.HAVE_CONF == 'true'
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
         with:
           fetch-depth: 0
       - name: rclone
-        if: env.HAVE_CONF == 'true'
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         run: |
@@ -50,7 +55,7 @@ jobs:
           rclone copyto connection-test.txt "gdrive:tests/connection-test-$(date -u +%Y-%m-%dT%H%MZ).txt"
           rclone lsf gdrive:   # top-level folder names only
       - name: Repository copy
-        if: env.HAVE_CONF == 'true'
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
         run: |
           git fetch -q origin '+refs/heads/*:refs/remotes/origin/*'
           name="internet-security-snapshot-$(date -u +%Y-%m-%d).bundle"
@@ -60,7 +65,7 @@ jobs:
       - name: Private repository copy (manual and exploratory work)
         # Author's decision 31 Oct 2026: every sweep in addition to the core lives in the private
         # repository pagagne/snapshot-manual; a full copy of it (all history) goes to private-repository/.
-        if: env.HAVE_CONF == 'true'
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
         env:
           MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
         run: |
@@ -75,7 +80,7 @@ jobs:
         # Author's decision 31 Oct 2026: the manual is kept as Markdown only, no PDFs. A copy of
         # the built manual (single file, parts and contents page) goes to manual/ in Drive,
         # replacing the previous copy. Its private appendix stays in Drive (manual/private/).
-        if: env.HAVE_CONF == 'true'
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
         run: |
           set -euo pipefail
           pip install -q --require-hashes -r requirements.lock && pip install -q --no-deps -e .
@@ -88,7 +93,7 @@ jobs:
         # Added 12 Nov 2026 (schedule item drive-backup-test): proves each month that the copies in
         # Drive can be restored, not only that they were written. Downloads both bundles back,
         # verifies them, clones each and compares its main branch with the repository's.
-        if: env.HAVE_CONF == 'true'
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
         run: |
           set -euo pipefail
           d=$(date -u +%Y-%m-%d); mkdir -p /tmp/restore
@@ -106,3 +111,16 @@ jobs:
             [ "$want" = "$got" ] || { echo "::error::restored private copy differs"; exit 1; }
             echo "Private copy restored: head at ${got:0:7}, matches."
           fi
+      - name: Rebuild test (run the study's checks from the restored copy)
+        # Added 18 Nov 2026 (author, risk safeguard R26): proves the Drive copy can actually run,
+        # not only that it matches. Runs the full test suite and the plan checks inside the copy
+        # restored from Drive, with nothing from the live checkout on the path.
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
+        run: |
+          set -euo pipefail
+          cd /tmp/restore/public
+          python -m venv /tmp/restore/venv && . /tmp/restore/venv/bin/activate
+          pip install -q --require-hashes -r requirements.lock && pip install -q --no-deps -e .
+          python -m pytest -q 2>&1 | tail -1
+          python -m snapshot.schedule check && python -m snapshot.refs check
+          echo "Restored copy runs: tests and plan checks pass."

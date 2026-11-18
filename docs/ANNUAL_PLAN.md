@@ -11,7 +11,7 @@ Every workflow that GitHub starts on its own timer, read from `.github/workflows
 
 | Workflow | File | Timer |
 |---|---|---|
-| Backup to Google Drive | `backup.yml` | day 3, every month, 10:17 UTC (05:17 ET in winter, 06:17 in summer) |
+| Backup to Google Drive | `backup.yml` | day 3, every month, 10:17 UTC (05:17 ET in winter, 06:17 in summer); Sundays, 10:17 UTC (05:17 ET in winter, 06:17 in summer) |
 | Feed screen | `feed-screen.yml` | day 5, every month, 08:41 UTC (03:41 ET in winter, 04:41 in summer) |
 | Honeypot capture | `honeypot.yml` | day 2, every month, 09:43 UTC (04:43 ET in winter, 05:43 in summer) |
 | Privacy scan | `privacy.yml` | daily, 21:13 UTC (16:13 ET in winter, 17:13 in summer); daily, 23:51 UTC (18:51 ET in winter, 19:51 in summer) |

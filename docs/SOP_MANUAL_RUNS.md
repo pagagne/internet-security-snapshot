@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 17 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 18 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -252,6 +252,35 @@ primary chat. `docs/HANDOVER.md` (the
 24 Oct handover from the first session) is read for its repository rules only, never as the
 starting point. Keeping START HERE and the note current is part of every sync review
 (`docs/SYNC_REVIEW.md`).
+
+### If GitHub itself is unavailable (risk safeguard R26)
+
+Added 18 Nov 2026 (author's question). GitHub hosts the code, the timers, the landing page, the
+issues and the study calendar feed, and holds the keys as secrets. The author's view: GitHub
+would be restored in good time and the study would carry on, so the plan is to wait, not to move
+the study elsewhere.
+
+- **What stops while it is down:** scheduled runs (skipped or late), the landing page and its
+  banner, the issues, the calendar feed (`snapshot.ics` is served from GitHub), and Claude's
+  pushes. Claude keeps working locally and in the session log, and pushes when GitHub returns.
+  The project doc `claude/WHATS-DUE.md` still lists the next two weeks.
+- **Hours or a few days:** nothing is lost. When GitHub returns, the watchdog starts any job
+  more than 10 hours overdue (section 7, point 2); a failed run gets the Re-run button. The
+  sources keep their own dated history (CVE records, the KEV list's dates added), so a pull made
+  a few days late collects the same data. Note the outage and any late pull in the session log.
+- **Longer, or across a pull day:** wait; when GitHub returns, run the missed pull once (section
+  5), note the delay in the quarter's report, and treat it as a deviation if it moved any date
+  the plan fixes.
+- **If the GitHub account were lost or locked for good:** everything is in the Drive folder
+  (repository/ and private-repository/: every branch with full history, weekly and monthly;
+  runs/: every pull bundle with its private part; manual/; correspondence/). Restore with
+  `git clone <bundle>` into a new account, re-make each key at its service (section 10) into
+  the new secrets, set up RCLONE_CONF again (`exploratory/docs/BACKUP.md`), and move the OSF
+  and Zenodo links. At most a week of private work could be missing (the last weekly copy).
+- **Proof the copies work:** every Backup run downloads both copies back from Drive, checks they
+  match, and (from 18 Nov 2026) runs the full test suite and the plan checks inside the restored
+  copy. A failure opens nothing by itself: it shows as a red run, and the risk review's W20 says
+  to fix it before the next pull.
 
 ## 8. Who keeps everything in step (sync flow)
 

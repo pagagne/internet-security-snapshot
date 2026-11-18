@@ -147,11 +147,11 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "557033091711c4c9",
+    "docs/WORKFLOWS.md": "a9c96920f113a0c0",
     ".github/workflows/checks.yml": "cff8c18606a657f6",
     "docs/diagrams/workflow_runs.dot": "9cc4925850875f19"
    },
-   "reviewed_on": "2026-11-17"
+   "reviewed_on": "2026-11-18"
   },
   "indicator_sources": {
    "doc": "docs/INDICATOR_REVIEW_2026-10-29.md",
