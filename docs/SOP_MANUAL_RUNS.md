@@ -356,7 +356,7 @@ records a VulnCheck gap. To renew: make a new token on the tokens page.
 **Cloudflare Radar (`CLOUDFLARE_TOKEN`).** Used by: the quarterly pull and research tasks. Managed
 at: the Cloudflare dashboard, My Profile, API Tokens. Scope: Account, Radar, Read only; no IP
 filter. Expiry: Cloudflare tokens do not expire unless a time limit is set; ours has none
-(20 Oct 2026). To renew: the token's menu, Roll, which replaces it with the same permissions.
+(20 Oct 2026). Checked 18 Nov 2026: the token "Read Cloudflare Radar data" is active, with no expiry. To renew: the token's menu, Roll, which replaces it with the same permissions.
 
 **OpenRouter (`OPENROUTER_API_KEY`).** Used by: the research task `openrouter_probe` only.
 Managed at: openrouter.ai, Keys. Expiry: 12 May 2027 (author, 17 Nov 2026); renewal reminder

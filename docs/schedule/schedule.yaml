@@ -1903,9 +1903,8 @@ items:
     activity 28 days ago; a new one was made and stored the same day). VulnCheck expires any
     token not used for 30 days; a keep-alive request now runs on the 1st-2nd and 15th-16th of each month (and
     once on 17-18 Nov), so the token should show as used recently.
-    (4) Cloudflare (CLOUDFLARE_TOKEN): sign in at dash.cloudflare.com, My Profile, API Tokens.
-    The study's token (Account, Radar, Read) should show Active; tokens do not expire unless a
-    TTL was set, and ours was made with none (PERMISSIONS, 20 Oct). Note the status.
+    (4) Cloudflare (CLOUDFLARE_TOKEN): done 18 Nov, "Read Cloudflare Radar data" is active
+    (Account.Radar, created 21 Oct, last used early November), no expiry set.
     (5) Google backup (RCLONE_CONF, the Drive sign-in used by Backup and Research): it has no
     expiry date. It stops working only if you remove its access in your Google Account's
     third-party connections, if it goes unused for six months, or if the Google Cloud app it
