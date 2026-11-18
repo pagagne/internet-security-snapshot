@@ -216,7 +216,9 @@ metadata names them; their answers go to `review/second_coder.csv`, never to
 Yes and No for the yes/no checks, and the share of fix dates within one day with the median
 difference, weighted back to the whole batch. Pooled over the year for the March review.
 Nothing here decides a label. The second coder is lined up with the external reviewer
-(decision item 17).
+(decision item 17). If no human second coder has joined by 1 Mar 2027, the proposed
+fallback (decision item 20, added 18 Nov 2026, decided 21 Dec) is a blind AI backup check by
+Claude, labelled as such, with any later human coding every saved sample.
 
 ## How to read T7: disclosed, not total
 
