@@ -1,4 +1,4 @@
-# Hand-check procedure (updated 16 Nov 2026)
+# Hand-check procedure (updated 18 Nov 2026)
 
 Some items are flagged by code but need a person to confirm them before they count.
 Nothing unverified is ever estimated or filled in: an item that is not confirmed is left
@@ -20,6 +20,34 @@ out and reported as pending.
      "unknown"), with a note why. The fix date is when the fix was available from the vendor,
      not how easy it is to apply: note any cost or hardware limit (a paid licence, new hardware)
      on the card without changing the date (reworded 16 Nov 2026, author).
+
+   **Where fix dates come from (added 18 Nov 2026, author's request).** Before the hand check,
+   the code proposes a date for each flaw, trying these sources in order and stopping at the
+   first that answers (`src/snapshot/fixdates.py`):
+   1. GitHub links in the CVE record: a release, a GitHub security advisory, or a fixing
+      commit.
+   2. Microsoft's Security Update Guide (release date).
+   3. Cisco's advisory, in its machine-readable (CSAF) form.
+   4. Linux kernel fixing commits named in the CVE record.
+   5. Siemens's advisory (CSAF).
+   6. Red Hat's machine-readable status file (CSAF VEX): its earliest vendor fix.
+   7. Palo Alto Networks's advisory.
+   8. OSV: a fixing commit named for the flaw.
+   9. deps.dev: the release date of the first patched version of an open-source package.
+   10. A full date written in the address of an advisory link.
+   11. The vendor's disclosure date in the CVE record. This is not a fix date, so it always
+       goes to the hand check.
+   12. Otherwise none: the date is marked "assumed" (the CVE's publication) and goes to the
+       hand check.
+
+   For Microsoft, Adobe, SAP, Oracle and Android, a note says when the date falls on the
+   vendor's regular release day (a sign it is right; the date is never changed). Commit dates,
+   OSV, advisory-link dates, disclosure dates, assumed dates, and vendor advisories whose history
+   says the fixed versions changed later are always flagged. Every flagged date is checked by
+   hand against the vendor's own advisory (12 Nov 2026 decision), which is how flaws from
+   vendors with no machine-readable advisories (Fortinet, Ivanti, Check Point and others) get
+   their fix dates. Proposal item 29 (aim the check by how close the call is) is decided at the
+   21 Dec 2026 session.
 4. **Ground-truth reference dates** for the validation cases (done once, before the run).
 5. **HHS breach list download** (X17, since 29 Oct 2026): once a quarter, download the public
    CSV from the HHS OCR breach portal (ocrportal.hhs.gov/ocr/breach) and give it to Claude,
