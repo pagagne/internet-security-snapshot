@@ -33,3 +33,11 @@ def test_series_summary_reads_activity_windows():
     s = g.series_summary(body)
     assert s["points"] == 2 and s["first_day_with_activity"] == "2026-11-06"
     assert s["metadata"]["start_date"] == "2026-08-19" and s["aggregations"]["malicious"] == 18
+
+
+def test_range_variants_include_days_and_dates():
+    import datetime as dt
+    from snapshot.research.greynoise_probe import range_variants
+    v = range_variants(dt.date(2026, 11, 18))
+    assert {} in v and {"days": 90} in v
+    assert {"start_date": "2026-08-20", "end_date": "2026-11-18"} in v

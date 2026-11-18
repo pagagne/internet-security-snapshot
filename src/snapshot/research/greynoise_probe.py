@@ -36,6 +36,20 @@ KEV = "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploite
 IP_RE = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b|(?<![\w:])[0-9a-f]{0,4}(?::[0-9a-f]{0,4}){3,7}(?![\w:])", re.I)
 PAUSE = 1.0
 MAX_CVES = 25
+# Tag used in GreyNoise's own example of a 90-day tag page (Martin Awabdeh, 18 Nov 2026)
+EXAMPLE_TAG = "214d5217-0870-41f5-891e-f5edb255c3e9"
+
+
+def range_variants(today: dt.date) -> list[dict]:
+    """Parameter sets to try on the tag activity call, to find the 90-day history the website shows
+    (18 Nov 2026: plain calls and start/end gave only the last day or two)."""
+    d90 = (today - dt.timedelta(days=90)).isoformat()
+    t = today.isoformat()
+    return [{}, {"days": 90}, {"days": 90, "scope": "greynoise"}, {"days": 90, "granularity": "1d"},
+            {"granularity": "1d"}, {"granularity": "24h"},
+            {"start_date": d90, "end_date": t}, {"start_date": d90, "end_date": t, "granularity": "1d"},
+            {"start_time": d90 + "T00:00:00Z", "end_time": t + "T00:00:00Z"},
+            {"from": d90, "to": t}, {"lookback": "90d"}, {"time_window": "90d"}]
 
 
 def scrub(x):
@@ -168,6 +182,19 @@ def main(argv=None) -> int:
 
     res: dict = {"run": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "calls": 0}
 
+    # 0. History depth (author, 18 Nov 2026): which parameters, if any, give the 90 days the website shows
+    tests = []
+    for p in range_variants(dt.date.today()):
+        st0, b0 = call(f"/v3/tags/{EXAMPLE_TAG}/activity", key, p); res["calls"] += 1
+        r0 = {"params": p, "status": st0}
+        if st0 == 200:
+            sm = series_summary(b0)
+            r0.update({k: sm.get(k) for k in ("metadata", "points", "first", "last")})
+        else:
+            r0["error"] = b0.get("error") if isinstance(b0, dict) else None
+        tests.append(r0)
+    res["range_tests"] = tests
+
     # 1. Every tag: how many carry a CVE (cost of a daily snapshot)
     st, body = call("/v3/tags", key); res["calls"] += 1
     tags = body.get("tags", []) if isinstance(body, dict) else []
@@ -237,6 +264,14 @@ def main(argv=None) -> int:
          f"{res['all_tags']['with_cve']} with a CVE, covering {res['all_tags']['cves_covered']} CVEs.",
          f"Flaws added to CISA's list in the last 90 days (up to {MAX_CVES}): {len(rows)}; "
          f"with a GreyNoise tag: {len(seen)}; GreyNoise activity seen: {len(active)}.", ""]
+    L.append(f"History depth, tag {EXAMPLE_TAG} (GreyNoise's own 90-day example):")
+    for r0 in res.get("range_tests", []):
+        md = r0.get("metadata") or {}
+        L.append(f"- params {r0['params'] or '(none)'}: status {r0['status']}"
+                 + (f", {r0.get('points')} windows, {r0.get('first')} to {r0.get('last')}; metadata "
+                    f"granularity {md.get('granularity')}, {md.get('start_date')} to {md.get('end_date')}"
+                    if r0["status"] == 200 else f", {r0.get('error')}"))
+    L.append("")
     if "activity_with_dates" in res:
         w = res["activity_with_dates"]
         L.append(f"Activity call with start/end dates: status {w.get('status')}, points {w.get('points')}, "
