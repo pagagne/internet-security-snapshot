@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: read
+  actions: read   # list runs and download logs and stored outputs before GitHub deletes them (18 Nov 2026)
 
 jobs:
   backup:
@@ -89,6 +90,39 @@ jobs:
           rclone copyto docs/manual/README.md gdrive:manual/README.md
           rclone sync docs/manual/parts gdrive:manual/parts
           echo "Manual copied to Drive (manual/)."
+      - name: Save logs and outputs before GitHub deletes them (90 days)
+        # Added 18 Nov 2026 (author, risk safeguard R26): each run log is saved to Drive (logs/)
+        # once it is 75 days old, and any quarterly-pull bundle not already on Drive is copied
+        # (runs/artifact-<run id>/). Diagram pictures are rebuilt on every change and not kept.
+        if: env.HAVE_CONF == 'true' && env.SKIP_PULL_DAY != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          pip install -q --require-hashes -r requirements.lock >/dev/null 2>&1 || true
+          pip install -q --no-deps -e . >/dev/null
+          since=$(date -u -d '-91 days' +%Y-%m-%d)
+          gh api --paginate "repos/$GITHUB_REPOSITORY/actions/runs?per_page=100&created=>$since" --jq '[.workflow_runs[]|{id,status,created_at,name}]' | jq -s 'add' > /tmp/runs.json
+          rclone lsf -R --files-only gdrive:logs/ > /tmp/archived.txt 2>/dev/null || : > /tmp/archived.txt
+          n=0
+          for id in $(python -m snapshot.archive logs /tmp/runs.json /tmp/archived.txt); do
+            month=$(jq -r --arg id "$id" '.[]|select((.id|tostring)==$id)|.created_at[0:7]' /tmp/runs.json)
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/logs" > "/tmp/$id.zip" 2>/dev/null; then
+              rclone copyto "/tmp/$id.zip" "gdrive:logs/$month/$id.zip"; n=$((n+1))
+            fi
+            rm -f "/tmp/$id.zip"
+          done
+          echo "Run logs saved to Drive: $n"
+          gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq '[.artifacts[]|{id,name,created_at,expired}]' | jq -s 'add' > /tmp/arts.json
+          rclone lsf --dirs-only gdrive:runs/ > /tmp/drive-runs.txt 2>/dev/null || : > /tmp/drive-runs.txt
+          m=0
+          for aid in $(python -m snapshot.archive artifacts /tmp/arts.json /tmp/drive-runs.txt); do
+            name=$(jq -r --arg a "$aid" '.[]|select((.id|tostring)==$a)|.name' /tmp/arts.json)
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$aid/zip" > "/tmp/$aid.zip"
+            rclone copyto "/tmp/$aid.zip" "gdrive:runs/artifact-${name#snapshot-}/$name.zip"; m=$((m+1))
+            rm -f "/tmp/$aid.zip"
+          done
+          echo "Pull bundles copied to Drive (were missing): $m"
       - name: Restore test (download the copies back and check them)
         # Added 12 Nov 2026 (schedule item drive-backup-test): proves each month that the copies in
         # Drive can be restored, not only that they were written. Downloads both bundles back,

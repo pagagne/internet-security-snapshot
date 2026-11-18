@@ -1,0 +1,70 @@
+name: GreyNoise collection
+
+# Exploratory X28 (author's decision, 18 Nov 2026, option B; src/snapshot/collect/greynoise.py).
+# GreyNoise Research Community Access, granted 17 Nov 2026: non-commercial use, credit "Data
+# provided by GreyNoise". Quarterly: the tag list (detection dates) and one CVE lookup for each
+# flaw CISA added to its known-exploited list in the quarter, about 100 requests. Weekly: one CVE
+# lookup for every CVE with a GreyNoise tag (about 3,300, one a second), kept in a private rolling
+# window of six months plus a permanent record of the first week activity was seen. The weekly
+# sweep runs only when the repository variable GREYNOISE_WEEKLY is "on": off until GreyNoise
+# agrees to it (asked 18 Nov 2026). Counts only, never IP addresses; results go to the private
+# repository (exploratory/greynoise/); this public log carries counts only.
+on:
+  schedule:
+    - cron: "23 14 2 1,4,7,10 *"   # quarterly, the 2nd of Jan/Apr/Jul/Oct, after the pull of the 1st
+    - cron: "23 14 * * 0"          # weekly, Sundays (only if GREYNOISE_WEEKLY is "on")
+  # No Run button (this workflow contacts an outside source): timer or GitHub's API only
+  # (repository_dispatch, payload mode quarterly|weekly, optional quarter YYYYQn). See docs/WORKFLOWS.md.
+  repository_dispatch:
+    types: [greynoise]
+
+permissions:
+  contents: write   # run log on the run-reports branch (status only)
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 150
+    env:
+      MODE: ${{ github.event.client_payload.mode || (github.event.schedule == '23 14 * * 0' && 'weekly') || 'quarterly' }}
+      QUARTER: ${{ github.event.client_payload.quarter }}
+      WEEKLY_ON: ${{ vars.GREYNOISE_WEEKLY == 'on' }}
+    steps:
+      - name: Weekly sweep allowed?
+        id: gate
+        run: |
+          if [ "$MODE" = "weekly" ] && [ "$WEEKLY_ON" != "true" ]; then
+            echo "Weekly sweep is off (repository variable GREYNOISE_WEEKLY is not 'on'): nothing contacted."
+            echo "go=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=yes" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+        if: steps.gate.outputs.go == 'yes'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        if: steps.gate.outputs.go == 'yes'
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - if: steps.gate.outputs.go == 'yes'
+        run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Private repository
+        if: steps.gate.outputs.go == 'yes'
+        env:
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+        run: tools/private.sh checkout /tmp/private
+      - name: Collect (counts only; the key is never printed)
+        if: steps.gate.outputs.go == 'yes'
+        env:
+          GREYNOISE_API_KEY: ${{ secrets.GREYNOISE_API_KEY }}
+        run: |
+          set -o pipefail
+          q=(); [ -n "$QUARTER" ] && q=(--quarter "$QUARTER")
+          python -m snapshot.collect.greynoise "$MODE" "${q[@]}" --out /tmp/private/exploratory/greynoise | tee summary.md
+      - name: Save to the private repository
+        if: steps.gate.outputs.go == 'yes'
+        env:
+          MANUAL_REPO_TOKEN: ${{ secrets.MANUAL_REPO_TOKEN }}
+        run: tools/private.sh save /tmp/private "GreyNoise $MODE $(date -u +%Y-%m-%d)"
+      - name: Record the run (run-reports branch)
+        if: always() && steps.gate.outputs.go == 'yes'
+        run: tools/run_log.sh "GreyNoise collection" "${{ job.status }}" summary.md

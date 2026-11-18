@@ -513,10 +513,15 @@ measures:
     sources: [greynoise, cve, kev]   # Research Community Access granted 17 Nov 2026; credit "Data provided by GreyNoise"
     added: 2026-11-17
     feeds_labels: false
-    status: planned   # author, 17 Nov 2026: access granted with 90 days of history; collector to build once the key is a GitHub secret
+    status: planned   # collector built 18 Nov 2026 (greynoise.yml); first quarterly run 2 Jan 2027; weekly sweep off until GreyNoise agrees
     method: >
-      Per CVE tag, daily counts of scanning IPs (counts only; IP addresses are never collected),
-      read within GreyNoise's 90-day lookback. Each CVE aged from its CVE.org publication date;
+      Quarterly (author's decision, 18 Nov 2026, option B): each CVE's earliest GreyNoise tag
+      creation date (the "GreyNoise detection date", not proof of first attack) and, for the
+      quarter's KEV additions, threat IP counts for the last 1, 10 and 30 days and last seen
+      (counts only; IP addresses are never collected). Weekly, once GreyNoise agrees: the same
+      lookup for every tagged CVE, kept six months, giving the first week each flaw showed
+      activity (the tag activity call returns only the last 24 hours, so history is built up
+      by the study). Each CVE aged from its CVE.org publication date;
       share older than 12 months, computed as I4 is, reported beside I4 and X23 and never merged
       with them. For the quarter's newly exploited flaws (Track B), the first day GreyNoise saw
       activity is recorded beside the KEV and VulnCheck dates as a cross-check. With 90 days of

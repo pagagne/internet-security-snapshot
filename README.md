@@ -242,6 +242,7 @@ The study runs on GitHub workflows: automatic jobs that collect, check, back up 
 | Checks | no timer | after changes to main, on pull requests, Run button |
 | Diagrams | no timer | after changes to main, Run button |
 | Feed screen | the 5th of each month at 08:41 UTC | started by the Schedule workflow or Claude |
+| GreyNoise collection | 2nd Jan/Apr/Jul/Oct at 14:23 UTC; Sundays at 14:23 UTC | started by the Schedule workflow or Claude |
 | Honeypot capture | the 2nd of each month at 09:43 UTC | started by the Schedule workflow or Claude |
 | Landing snapshot | no timer | started by the Schedule workflow or Claude, Run button |
 | Manual publish (private) | no timer | after changes to main, started by the Schedule workflow or Claude, Run button |

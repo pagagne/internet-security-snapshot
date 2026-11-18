@@ -5,7 +5,7 @@ was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). 
 (schedule item `workflows-doc`) adds failure handling and the lock list for decision item 22.
 
 A workflow is a script GitHub runs for the study on its own computers: on a timer, when
-something changes, or when the author or Claude starts it by hand. There are fifteen, in
+something changes, or when the author or Claude starts it by hand. There are sixteen, in
 `.github/workflows/`. All times are UTC.
 
 **Run buttons (author's decision, 29 Oct 2026).** Workflows that work only inside the repository
@@ -18,7 +18,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup, Manual publish | Quarterly pull, Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup, Manual publish | Quarterly pull, Research probe, Honeypot capture, GreyNoise collection, BigQuery check, Feed screen, Source watch |
 
 ## At a glance
 
@@ -35,6 +35,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Backup | `backup.yml` | 10:17 UTC on the 3rd of each month and every Sunday (weekly from 18 Nov 2026; skipped on the 1st-2nd); Run button | nothing in the repository (writes to Drive) | Drive, `MANUAL_REPO_TOKEN` (reads the private repository) | 27 Oct, run 40583019078 |
 | Research probe | `research.yml` | started by Claude through the API; no button | run-reports; the private repository for exploratory tasks | GitHub token, `MANUAL_REPO_TOKEN`, Drive (X25); single tasks only: `CLOUDFLARE_TOKEN`, `RANSOMWARE_LIVE_KEY`, `SEC_USER_AGENT`, `OPENROUTER_API_KEY`, `GREYNOISE_API_KEY` | 27 Oct, run 40583022560 |
 | Honeypot capture | `honeypot.yml` | 09:43 on the 2nd of each month; no button | the private repository; run-reports (status line only) | `MANUAL_REPO_TOKEN` | 27 Oct, run 40586462028 |
+| GreyNoise collection | `greynoise.yml` | 14:23 on the 2nd of Jan/Apr/Jul/Oct (quarterly); Sundays 14:23 only when the variable `GREYNOISE_WEEKLY` is `on` (off until GreyNoise agrees); no button | the private repository; run-reports (status line only) | `GREYNOISE_API_KEY`, `MANUAL_REPO_TOKEN` | built 18 Nov 2026; first quarterly run 2 Jan 2027 |
 | Landing snapshot | `landing-snapshot.yml` | Schedule: <!-- date:landing-snapshot-cutover -->23 Nov 2026<!-- /date -->, 1 Jan, 1 Apr, 1 Jul, 1 Oct 2027, 1 Jan 2028; Run button | run-reports (`landing/snapshots/`) | none | 31 Oct |
 | Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT`, `VULNCHECK_TOKEN` (keep-alive only, from 17 Nov 2026) | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
@@ -124,6 +125,12 @@ author's decision; the private appendix stays in Drive). Since 12 Nov 2026 its l
 **restore test**: it downloads both repository copies back from Drive, verifies them, clones each
 and checks that its main branch matches the repository's, so every month proves the backup can
 be restored (first run 3 Dec 2026).
+**From 18 Nov 2026 (author, risk safeguard R26):** it also runs every Sunday (skipped on the
+1st-2nd, pull days), so a lost GitHub account would cost at most a week of private work; after the
+restore test it **rebuilds** the study inside the restored copy and runs the full test suite and
+the plan checks; and before GitHub's 90-day deletion it saves every run log to Drive (`logs/`)
+once the log is 75 days old, and copies any quarterly-pull bundle not already on Drive
+(`runs/artifact-<run id>/`). Diagram pictures are rebuilt on every change and not kept.
 Setup: `exploratory/docs/BACKUP.md`.
 
 ## 6. Research probe: the testing bench
@@ -145,6 +152,19 @@ Run button (it downloads from SANS).
 reduces them to counts by attack category and by flaw. It then discards the raw files: no IP
 addresses and no attacked URLs are kept. About 40 KB of counts are saved to run-reports under
 `data/isc-honeypot/`. This is exploratory context (X14) and never decides a result.
+
+## 7a. GreyNoise collection: attack-sensor sightings (exploratory X28)
+
+**When:** the 2nd of January, April, July and October, after the pull (quarterly); and Sundays,
+only when the repository variable `GREYNOISE_WEEKLY` is `on` (the author sets it once GreyNoise
+agrees to the weekly sweep; asked 18 Nov 2026). No button. **What it does:** quarterly, lists
+every GreyNoise tag (each CVE's earliest tag creation date, reported as the "GreyNoise detection
+date", not proof of first attack) and looks up each flaw CISA added to its known-exploited list
+in the quarter, about 100 requests. Weekly, looks up every CVE with a tag (about 3,300, one a
+second), keeps the counts in a private rolling window of six months and records the first week
+each flaw showed activity. Counts only, never IP addresses; results in the private repository
+(`exploratory/greynoise/`). Credit: "Data provided by GreyNoise" (Research Community Access,
+granted 17 Nov 2026). Source: `src/snapshot/collect/greynoise.py`.
 
 ## 8. Diagrams: a cross-check for the pictures
 
@@ -303,6 +323,7 @@ be judged by how critical it is to the study; the 14 Dec review confirms or chan
 | Backup | **Support**: monthly and weekly private copies in Drive, restore and rebuild tests | One fewer copy; the pull still saves its own data to Drive. |
 | Diagrams | **Support**: cross-check of the pictures | None for the results; Checks still verifies the diagrams. |
 | Honeypot capture | **Exploratory** (X14) | One exploratory context series pauses; core results unaffected. |
+| GreyNoise collection | **Exploratory** (X28) | GreyNoise detection dates and first-seen weeks pause; core results unaffected. |
 | Research probe | **Exploratory**: tries sources before they join | New sources can't be tested; core results unaffected. |
 | BigQuery check | **Exploratory**: confirms the Google sign-in | The HTTP Archive and deps.dev work can't be checked; core results unaffected. |
 | Feed screen | **Exploratory**: widens the AI-attack search (X3) | Fewer AI-attack candidates found that month; core results unaffected. |

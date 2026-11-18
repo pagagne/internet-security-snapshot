@@ -23,7 +23,7 @@ Schedule, Rebuild check, Diagrams, Backup, Manual publish. They work inside the 
 Run box opens with a sentence saying what the workflow does.
 
 **API only, no button (Claude only, and only when asked or scheduled):** Quarterly pull,
-Research probe, Honeypot capture, BigQuery check, Feed screen, Source watch. They contact outside sources, so a stray
+Research probe, Honeypot capture, GreyNoise collection, BigQuery check, Feed screen, Source watch. They contact outside sources, so a stray
 click must never start them. See section 5.
 
 ### The workflows at a glance
@@ -107,7 +107,7 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
 - **Run it when:** the private copy looks out of date, or after the token was renewed.
 - **Allowed:** any time; it also runs by itself after every document change.
 
-## 5. The six API-only workflows
+## 5. The API-only workflows
 
 These are started only by Claude, and only when the author asked in chat or the schedule says
 so. Each manual start is recorded in that day's session log with the reason.
@@ -117,6 +117,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 | Quarterly pull | Dry runs (1 and 15 Dec 2026); re-running a failed official pull, with the author's yes, the same day, once (the author can also do this with the Re-run button, section 7) | More than one re-run per quarter without a written reason; any change to its sources or settings after the <!-- date:freeze -->29 Dec<!-- /date --> freeze except by the change policy |
 | Research probe | Testing a new or changed source the author asked about | More than once a day per source; any probe that scans hosts or collects personal data |
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
+| GreyNoise collection | Its quarterly run was missed or failed; a test of the collector the author asked about | The weekly sweep before GreyNoise agrees to it; more than one weekly sweep a week |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
 | Feed screen | Its monthly run failed or was missed; a feed list change needs testing | More than once a week |
 | Source watch | Its weekly run failed or was missed; after an address in `config/source_watch.yaml` was fixed | More than once a day; on a pull day |
@@ -281,6 +282,9 @@ the study elsewhere.
   match, and (from 18 Nov 2026) runs the full test suite and the plan checks inside the restored
   copy. A failure opens nothing by itself: it shows as a red run, and the risk review's W20 says
   to fix it before the next pull.
+- **GitHub's 90-day deletions:** GitHub deletes run logs and stored outputs after 90 days. The
+  weekly Backup saves each run log to Drive (`logs/`) at 75 days old and copies any pull bundle
+  not already on Drive, so nothing needs recreating; restoring means downloading from Drive.
 
 ## 8. Who keeps everything in step (sync flow)
 
