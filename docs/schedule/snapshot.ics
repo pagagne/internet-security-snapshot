@@ -1381,7 +1381,8 @@ UID:risk-r10-expiry-check@2026-11-27@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261127T150000Z
 DTEND:20261127T151500Z
-SUMMARY:[Paul] Snapshot: Check the key register's expiry dates (R10)
+SUMMARY:✅ DONE [Paul] Snapshot: Check the key register's expiry dates (R1
+ 0)
 DESCRIPTION:Responsible: Paul (author)\n\nLook up each key's expiry on its 
  service's own page (Claude cannot see them) and tell Claude what you find\
  ; never paste or read out a key. Steps per key (written 17 Nov 2026): (1) 
@@ -1400,24 +1401,25 @@ DESCRIPTION:Responsible: Paul (author)\n\nLook up each key's expiry on its
  18 Nov)\, so the token should show as used recently. (4) Cloudflare (CLOUD
  FLARE_TOKEN): done 18 Nov\, "Read Cloudflare Radar data" is active (Accoun
  t.Radar\, created 21 Oct\, last used early November)\, no expiry set. (5) 
- Google backup (RCLONE_CONF\, the Drive sign-in used by Backup and Research
- ): it has no expiry date. It stops working only if you remove its access i
- n your Google Account's third-party connections\, if it goes unused for si
- x months\, or if the Google Cloud app it uses is in "Testing" (then 7 days
- \; ours has worked since October\, so it is not). Look in your Google Acco
- unt's security page\, third-party connections\, that the rclone access is 
- still listed. BigQuery uses no stored key (GitHub proves its identity to G
- oogle each run)\, so there is nothing to check there. (6) GitHub private-r
- epository token (MANUAL_REPO_TOKEN): done 18 Nov\, the only token is the f
- ine-grained "snapshot-manual publish"\, expiring Fri 29 Jan 2027 (no class
- ic tokens)\; renewal reminder 30 Dec 2026. (7) OpenRouter: done 17 Nov (ex
- pires 12 May 2027\; reminder 12 Apr 2027). (8) GreyNoise (GREYNOISE_API_KE
- Y): done 17 Nov\, no expiry shown ("none stated"). Full requirements per k
- ey: https://github.com/pagagne/internet-security-snapshot/blob/main/docs/S
- OP_MANUAL_RUNS.md\, section 10. Tell Claude the results\; Claude records t
- hem in the key register and schedules any renewal 30 days ahead.\n\nSource
- : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
- edule/schedule.yaml
+ Google backup: done 18 Nov\, rclone is listed (access given 27 Oct 2026\, 
+ full Google Drive access). Background: (RCLONE_CONF\, the Drive sign-in us
+ ed by Backup and Research): it has no expiry date. It stops working only i
+ f you remove its access in your Google Account's third-party connections\,
+  if it goes unused for six months\, or if the Google Cloud app it uses is 
+ in "Testing" (then 7 days\; ours has worked since October\, so it is not).
+  Look in your Google Account's security page\, third-party connections\, t
+ hat the rclone access is still listed. BigQuery uses no stored key (GitHub
+  proves its identity to Google each run)\, so there is nothing to check th
+ ere. (6) GitHub private-repository token (MANUAL_REPO_TOKEN): done 18 Nov\
+ , the only token is the fine-grained "snapshot-manual publish"\, expiring 
+ Fri 29 Jan 2027 (no classic tokens)\; renewal reminder 30 Dec 2026. (7) Op
+ enRouter: done 17 Nov (expires 12 May 2027\; reminder 12 Apr 2027). (8) Gr
+ eyNoise (GREYNOISE_API_KEY): done 17 Nov\, no expiry shown ("none stated")
+ . Full requirements per key: https://github.com/pagagne/internet-security-
+ snapshot/blob/main/docs/SOP_MANUAL_RUNS.md\, section 10. Tell Claude the r
+ esults\; Claude records them in the key register and schedules any renewal
+  30 days ahead.\n\nSource: https://github.com/pagagne/internet-security-sn
+ apshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

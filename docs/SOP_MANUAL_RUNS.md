@@ -375,7 +375,7 @@ An rclone configuration holding a Google sign-in for the author's Drive. Expiry:
 working only if its access is removed in the Google Account's third-party connections, if it is
 unused for six months (the monthly backup prevents that), or if the Google Cloud app it signs in
 through is put in "Testing" (then seven days). To renew: make a new rclone configuration for the
-same Drive and replace the secret (Claude has the steps).
+same Drive and replace the secret (Claude has the steps). Checked 18 Nov 2026: rclone is listed in the Google Account's connections (access given 27 Oct 2026). Note it has access to all of the account's Drive files, not only the study folder; narrowing that is a possible later change (risk review).
 
 **SEC contact (`SEC_USER_AGENT`).** Used by: the quarterly pull and Source status. Not a key: the
 name and contact address the SEC requires on every request. No expiry; change it only if the

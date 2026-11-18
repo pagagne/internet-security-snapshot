@@ -1889,6 +1889,7 @@ items:
   date: 2026-11-27
   time: "10:00"
   minutes: 15
+  done: "18 Nov 2026 (done early, author): all keys checked; dates in SOP section 10 and the key register; renewal reminders 30 Dec 2026 (private-repository token) and 12 Apr 2027 (OpenRouter)"
   details: >
     Look up each key's expiry on its service's own page (Claude cannot see them) and tell Claude
     what you find; never paste or read out a key. Steps per key (written 17 Nov 2026):
@@ -1905,7 +1906,8 @@ items:
     once on 17-18 Nov), so the token should show as used recently.
     (4) Cloudflare (CLOUDFLARE_TOKEN): done 18 Nov, "Read Cloudflare Radar data" is active
     (Account.Radar, created 21 Oct, last used early November), no expiry set.
-    (5) Google backup (RCLONE_CONF, the Drive sign-in used by Backup and Research): it has no
+    (5) Google backup: done 18 Nov, rclone is listed (access given 27 Oct 2026, full Google
+    Drive access). Background: (RCLONE_CONF, the Drive sign-in used by Backup and Research): it has no
     expiry date. It stops working only if you remove its access in your Google Account's
     third-party connections, if it goes unused for six months, or if the Google Cloud app it
     uses is in "Testing" (then 7 days; ours has worked since October, so it is not). Look in
