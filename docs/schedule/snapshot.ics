@@ -969,9 +969,30 @@ DESCRIPTION:Responsible: Claude\n\nGreyNoise (18 Nov 2026): tags go back 90
  h task once (one run per source per day) trying the documented day-range o
  ptions on two tags\; never read the website automatically. If 90 days come
   back\, the quarterly pull can read first-seen attack dates per tag direct
- ly and the weekly sweep becomes a back-up\; tell the author either way.\n\
- nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/schedule/schedule.yaml
+ ly and the weekly sweep becomes a back-up\; tell the author either way. Re
+ sult 18 Nov 2026 (run early\, author): the parameter days=90 returns one 2
+ 4-hour window for every day the tag was active over the last 90 days (91 f
+ or GreyNoise's example tag)\; other parameters return only the last day\, 
+ and granularity=1d fails. The windows mark active days only (no daily coun
+ ts\; one total for the period). So the API gives the first day of attacks 
+ within the last 90 days for each tag. Next: the collector uses days=90 (gr
+ eynoise-collector-90-days).\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:greynoise-collector-90-days@2026-11-19@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: GreyNoise collector reads 90 days of tag activit
+ y (first active day per tag)
+DESCRIPTION:Responsible: Claude\n\nFollows the 18 Nov test. The quarterly a
+ nd weekly runs add\, per CVE tag\, the first and last active day and the n
+ umber of active days in the last 90 days (days=90). Counts and dates only\
+ ; tests first\; private outputs as before.\n\nSource: https://github.com/p
+ agagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
