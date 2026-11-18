@@ -99,7 +99,8 @@ items:
   repeat: {months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], day: 4, from: 2026-11, until: 2027-12}
   details: >
     Author's request of 27 Oct: what is kept privately in Drive is also backed up in Claude.
-    Through the Google Drive connector: list the folder Internet-Security-Snapshot-2027
+    Through the Google Drive connector: list the folder Snapshot-backup (where rclone writes since 18 Nov 2026)
+    and the archive folder Internet-Security-Snapshot-2027 (earlier backups, correspondence)
     (files, sizes, dates, IDs) into the project doc claude/private-backup-inventory.md, and
     copy the small private data in private/ (aggregate tables, as text) into
     claude/private-data-copy.md. Large bundles (runs/, repository/) stay in Drive and GitHub
@@ -2095,6 +2096,9 @@ milestones:
 - when: 17 Nov 2026
   text: Validation passed, 4 of 5 reference cases (review/VALIDATION_RESULT.md)
   news: "Validation check passed, 4 of 5 reference cases"
+- when: 18 Nov 2026
+  text: Backup sign-in narrowed to its own Drive folder (risk safeguard R27); weekly backup with rebuild test (R26)
+  news: "Private backup locked down to its own folder and now runs weekly"
 - at: [annual-review@2027-03-15]
   suffix: ", then yearly"
   text: Annual review and change window; annual check of free numbers from March 2028

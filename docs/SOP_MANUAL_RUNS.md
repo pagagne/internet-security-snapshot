@@ -93,7 +93,7 @@ others may change, with every change logged. Source: `docs/diagrams/workflow_run
 
 ### Backup
 - **Does:** copies the whole repository, with history, to the Drive folder
-  Internet-Security-Snapshot-2027, saves The Snapshot manual (Markdown) under
+  Snapshot-backup, saves The Snapshot manual (Markdown) under
   `manual/`, and writes a small file proving the connection works.
 - **Run it when:** after the manual changes and you want the Drive copy current; after a decision session or freeze; before a report is published; after the
   Drive connection was renewed; before any risky repository change.
@@ -375,7 +375,7 @@ An rclone configuration holding a Google sign-in for the author's Drive. Expiry:
 working only if its access is removed in the Google Account's third-party connections, if it is
 unused for six months (the monthly backup prevents that), or if the Google Cloud app it signs in
 through is put in "Testing" (then seven days). To renew: make a new rclone configuration for the
-same Drive and replace the secret (Claude has the steps). Checked 18 Nov 2026: rclone is listed in the Google Account's connections (access given 27 Oct 2026). Note it has access to all of the account's Drive files, not only the study folder; narrowing that is a possible later change (risk review).
+same Drive and replace the secret (Claude has the steps). Checked 18 Nov 2026: rclone is listed in the Google Account's connections (access given 27 Oct 2026). Narrowed 18 Nov 2026 (author, risk safeguard R27): rclone now has only Google's "files created by this app" permission (drive.file) and works inside the folder Snapshot-backup, so it cannot see or change anything else in the Drive, including the archive folder Internet-Security-Snapshot-2027. Anything a workflow must read from Drive (such as the X25 register) has to be put there through rclone. The sign-in uses the project's own app "Snapshot backup"; its client secret was replaced the same day. Check: Google Account connections should show rclone with access to "specific Google Drive files", not all of them.
 
 **SEC contact (`SEC_USER_AGENT`).** Used by: the quarterly pull and Source status. Not a key: the
 name and contact address the SEC requires on every request. No expiry; change it only if the

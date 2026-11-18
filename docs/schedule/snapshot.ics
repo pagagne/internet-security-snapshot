@@ -383,13 +383,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1562,13 +1564,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2353,13 +2357,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2809,13 +2815,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3146,13 +3154,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3436,13 +3446,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3656,13 +3668,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3759,13 +3773,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3917,13 +3933,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4171,13 +4189,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4287,13 +4307,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4477,13 +4499,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4636,13 +4660,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4739,13 +4765,15 @@ SUMMARY:[Claude] Snapshot: Copy the Drive backup's inventory and small priv
  ate data into the Claude project
 DESCRIPTION:Responsible: Claude\n\nAuthor's request of 27 Oct: what is kept
   privately in Drive is also backed up in Claude. Through the Google Drive 
- connector: list the folder Internet-Security-Snapshot-2027 (files\, sizes\
- , dates\, IDs) into the project doc claude/private-backup-inventory.md\, a
- nd copy the small private data in private/ (aggregate tables\, as text) in
- to claude/private-data-copy.md. Large bundles (runs/\, repository/) stay i
- n Drive and GitHub only\; the inventory records their checksums. Never cop
- y into the repository.\n\nSource: https://github.com/pagagne/internet-secu
- rity-snapshot/blob/main/docs/schedule/schedule.yaml
+ connector: list the folder Snapshot-backup (where rclone writes since 18 N
+ ov 2026) and the archive folder Internet-Security-Snapshot-2027 (earlier b
+ ackups\, correspondence) (files\, sizes\, dates\, IDs) into the project do
+ c claude/private-backup-inventory.md\, and copy the small private data in 
+ private/ (aggregate tables\, as text) into claude/private-data-copy.md. La
+ rge bundles (runs/\, repository/) stay in Drive and GitHub only\; the inve
+ ntory records their checksums. Never copy into the repository.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

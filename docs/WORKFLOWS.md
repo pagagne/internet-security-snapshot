@@ -117,7 +117,7 @@ with the author (repository admin) able to bypass it.
 **When:** the 3rd of every month, and by hand (Run button).
 
 **What it does:** saves a complete copy of the repository (every branch and all history) as one
-file in the author's Drive folder "Internet-Security-Snapshot-2027", under `repository/`. Started
+file in the author's Drive folder "Snapshot-backup" (since 18 Nov 2026; earlier copies stay in the archive folder "Internet-Security-Snapshot-2027"), under `repository/`. Started
 by hand, it also writes a small test file under `tests/` to prove the connection works. Each
 quarterly pull backs up its own data separately, as its last step. It also copies The Snapshot
 manual, as Markdown, to `manual/`, replacing the previous copy (no PDFs since 31 Oct 2026,

@@ -214,6 +214,7 @@ estimation.
 | 11 Nov 2026 | VulnCheck permission for derived statistics from VulnCheck KEV (attribution only) |
 | 17 Nov 2026 | GreyNoise Research Community Access granted (X28; credit "Data provided by GreyNoise") |
 | 17 Nov 2026 | Validation passed, 4 of 5 reference cases (review/VALIDATION_RESULT.md) |
+| 18 Nov 2026 | Backup sign-in narrowed to its own Drive folder (risk safeguard R27); weekly backup with rebuild test (R26) |
 | 23 Nov 2026 | Cutover - the repository's schedule runs the study (docs/OPERATIONS.md) |
 | 1 Dec 2026 | Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow) |
 | 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |

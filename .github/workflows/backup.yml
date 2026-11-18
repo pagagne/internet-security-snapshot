@@ -1,7 +1,8 @@
 name: Backup to Google Drive
 
-# Private backup in the author's Google Drive folder Internet-Security-Snapshot-2027
-# (exploratory/docs/BACKUP.md; the rclone remote's root_folder_id points at it): a monthly copy of the whole
+# Private backup in the author's Google Drive folder Snapshot-backup (since 18 Nov 2026; before that
+# Internet-Security-Snapshot-2027, kept as the archive). rclone may touch only files it created there
+# (drive.file permission, risk safeguard R27; exploratory/docs/BACKUP.md): a monthly copy of the whole
 # repository, and a connection test when run by hand. Each quarterly pull backs up its own full
 # bundle (including private data) in its last step. Needs the RCLONE_CONF secret (set up by the author);
 # without it the job only reports that the backup is not configured.
@@ -12,7 +13,7 @@ on:
   workflow_dispatch:
     inputs:
       about:
-        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history), of your private repository snapshot-manual, and The Snapshot manual (Markdown) to your Google Drive folder Internet-Security-Snapshot-2027, plus a small test file proving the connection works. Contacts only your own Drive."
+        description: "What this does (information only, leave ticked): Saves a complete copy of the repository (all branches and history), of your private repository snapshot-manual, and The Snapshot manual (Markdown) to your Google Drive folder Snapshot-backup, plus a small test file proving the connection works. Contacts only your own Drive."
         type: boolean
         default: true
 
