@@ -117,7 +117,7 @@ so. Each manual start is recorded in that day's session log with the reason.
 | Quarterly pull | Dry runs (1 and 15 Dec 2026); re-running a failed official pull, with the author's yes, the same day, once (the author can also do this with the Re-run button, section 7) | More than one re-run per quarter without a written reason; any change to its sources or settings after the <!-- date:freeze -->29 Dec<!-- /date --> freeze except by the change policy |
 | Research probe | Testing a new or changed source the author asked about | More than once a day per source; any probe that scans hosts or collects personal data |
 | Honeypot capture | Its monthly run was missed | More than once a month (to keep the load on SANS low) |
-| GreyNoise collection | Its quarterly run was missed or failed; a test of the collector the author asked about | The weekly sweep before GreyNoise agrees to it; more than one weekly sweep a week |
+| GreyNoise collection | Its quarterly run was missed or failed; a test of the collector the author asked about | More than one weekly sweep a week (agreed by GreyNoise 18 Nov 2026; switched on with the variable GREYNOISE_WEEKLY) |
 | BigQuery check | After a change to the Google Cloud setup; before the HTTP Archive work | Queries above the 10 MB cap; anything outside the free tier |
 | Feed screen | Its monthly run failed or was missed; a feed list change needs testing | More than once a week |
 | Source watch | Its weekly run failed or was missed; after an address in `config/source_watch.yaml` was fixed | More than once a day; on a pull day |

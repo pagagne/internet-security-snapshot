@@ -6,8 +6,8 @@ name: GreyNoise collection
 # flaw CISA added to its known-exploited list in the quarter, about 100 requests. Weekly: one CVE
 # lookup for every CVE with a GreyNoise tag (about 3,300, one a second), kept in a private rolling
 # window of six months plus a permanent record of the first week activity was seen. The weekly
-# sweep runs only when the repository variable GREYNOISE_WEEKLY is "on": off until GreyNoise
-# agrees to it (asked 18 Nov 2026). Counts only, never IP addresses; results go to the private
+# sweep runs only when the repository variable GREYNOISE_WEEKLY is "on" (GreyNoise agreed
+# 18 Nov 2026; the author switches it on). Counts only, never IP addresses; results go to the private
 # repository (exploratory/greynoise/); this public log carries counts only.
 on:
   schedule:

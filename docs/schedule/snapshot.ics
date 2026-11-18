@@ -831,19 +831,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nAdded 16 Nov 2026 (author's reque
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:gsu-contact@2026-11-18@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261118
-DTEND;VALUE=DATE:20261119
-TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Ask Georgia State Career Services about the review
- er posting
-DESCRIPTION:Responsible: Paul (author)\n\nSame question as UGA\; the Handsh
- ake account carries over.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:crypto-category-proposal@2026-11-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261118
@@ -969,6 +956,25 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:greynoise-90-day-test@2026-11-19@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Test whether GreyNoise's API gives 90 days of ta
+ g activity\, as its website does
+DESCRIPTION:Responsible: Claude\n\nGreyNoise (18 Nov 2026): tags go back 90
+  days\; the website's tag page has a 90-day selector. The API tag-activity
+  call returned only 24 hours on 17-18 Nov. Run the greynoise_probe researc
+ h task once (one run per source per day) trying the documented day-range o
+ ptions on two tags\; never read the website automatically. If 90 days come
+  back\, the quarterly pull can read first-seen attack dates per tag direct
+ ly and the weekly sweep becomes a back-up\; tell the author either way.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-r10-key-register@2026-11-19@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
@@ -1080,8 +1086,10 @@ DESCRIPTION:Responsible: Claude\n\nA week after the 13 Nov follow-ups: look
   for replies in the author's Gmail\; record any in https://github.com/paga
  gne/internet-security-snapshot/blob/main/docs/PERMISSIONS.md and the corre
  spondence index\; if none\, note it for the 21 Dec cutoff (decision item 1
- 6).\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
- main/docs/schedule/schedule.yaml
+ 6). GreyNoise answered 18 Nov (weekly sweep and rolling window agreed)\, s
+ o this check is now for CrowdSec (and Shadowserver).\n\nSource: https://gi
+ thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
+ le.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1236,6 +1244,19 @@ DESCRIPTION:Responsible: Paul (author)\n\nMain board (CareerBuzz) does not
  ether an unpaid remote research internship for course credit qualifies. If
   no\, drop Georgia Tech.\n\nSource: https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:gsu-contact@2026-11-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Ask Georgia State Career Services about the review
+ er posting
+DESCRIPTION:Responsible: Paul (author)\n\nSame question as UGA\; the Handsh
+ ake account carries over.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT

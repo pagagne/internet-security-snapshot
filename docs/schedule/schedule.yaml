@@ -267,7 +267,7 @@ items:
 - id: gsu-contact
   owner: author
   title: Ask Georgia State Career Services about the reviewer posting
-  date: 2026-11-18
+  date: 2026-11-25  # moved from 18 Nov to sit with the Georgia Tech ask (author, 18 Nov 2026)
   details: Same question as UGA; the Handshake account carries over.
 
 - id: permission-follow-ups
@@ -304,7 +304,20 @@ items:
   details: >
     A week after the 13 Nov follow-ups: look for replies in the author's Gmail; record any in
     docs/PERMISSIONS.md and the correspondence index; if none, note it for the 21 Dec cutoff
-    (decision item 16).
+    (decision item 16). GreyNoise answered 18 Nov (weekly sweep and rolling window agreed), so
+    this check is now for CrowdSec (and Shadowserver).
+
+- id: greynoise-90-day-test
+  owner: claude
+  title: Test whether GreyNoise's API gives 90 days of tag activity, as its website does
+  date: 2026-11-19
+  details: >
+    GreyNoise (18 Nov 2026): tags go back 90 days; the website's tag page has a 90-day selector.
+    The API tag-activity call returned only 24 hours on 17-18 Nov. Run the greynoise_probe
+    research task once (one run per source per day) trying the documented day-range options on
+    two tags; never read the website automatically. If 90 days come back, the quarterly pull can
+    read first-seen attack dates per tag directly and the weekly sweep becomes a back-up; tell
+    the author either way.
 
 - id: shadowserver-follow-up-2
   owner: author
@@ -2096,6 +2109,9 @@ milestones:
 - when: 17 Nov 2026
   text: Validation passed, 4 of 5 reference cases (review/VALIDATION_RESULT.md)
   news: "Validation check passed, 4 of 5 reference cases"
+- when: 18 Nov 2026
+  text: GreyNoise agrees to a weekly collection and a private six-month history of daily counts
+  news: "GreyNoise agrees to weekly collection of attack counts"
 - when: 18 Nov 2026
   text: Backup sign-in narrowed to its own Drive folder (risk safeguard R27); weekly backup with rebuild test (R26)
   news: "Private backup locked down to its own folder and now runs weekly"

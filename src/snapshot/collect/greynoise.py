@@ -11,7 +11,7 @@ Two modes, both writing only to the private repository (exploratory/greynoise/):
 - quarterly: one call listing every tag (each CVE's earliest tag creation date = "GreyNoise
   detection date", not proof of first attack) plus one CVE lookup for each flaw CISA added to
   its known-exploited list in the quarter (about 75-100). About 100 requests a quarter.
-- weekly (off until GreyNoise agrees to it; asked 18 Nov 2026): one CVE lookup for every CVE
+- weekly (agreed by GreyNoise 18 Nov 2026; runs when GREYNOISE_WEEKLY is "on"): one CVE lookup for every CVE
   with a GreyNoise tag (about 3,300), one a second. Keeps the counts in a private rolling window
   of at most six months (older weekly files are deleted) and a permanent per-CVE record of the
   first week activity was seen.
