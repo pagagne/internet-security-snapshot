@@ -365,7 +365,7 @@ Managed at: openrouter.ai, Keys. Expiry: 12 May 2027 (author, 17 Nov 2026); rene
 **Private-repository token (`MANUAL_REPO_TOKEN`).** Used by: Manual publish, Backup, Research,
 Honeypot capture and Feed screen. A GitHub fine-grained personal access token with Contents read
 and write on `pagagne/snapshot-manual` only. Managed at: GitHub, Settings, Developer settings,
-Personal access tokens, Fine-grained tokens, where its expiry date is shown. If it stops working:
+Personal access tokens, Fine-grained tokens, where its expiry date is shown. It is the token named "snapshot-manual publish", expiring 29 Jan 2027 (checked 18 Nov 2026; renewal reminder 30 Dec 2026); GitHub lists it as "Never used" although the workflows use it daily, so ignore that label. If it stops working:
 those five workflows fail (the private manual, backups and private sweeps stop). To renew:
 Regenerate the token with the same settings, update the secret, then press Run on Manual publish
 once (section 4).

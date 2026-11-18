@@ -978,15 +978,17 @@ DESCRIPTION:Responsible: Claude\n\nPrivate\, no key values: RANSOMWARE_LIVE
  _KEY\, NVD_API_KEY\, VULNCHECK_TOKEN\, CLOUDFLARE_TOKEN\, SEC_USER_AGENT\,
   OPENROUTER_API_KEY (expires 12 May 2027\, author 17 Nov 2026\; spending l
  imit 0)\, GREYNOISE_API_KEY (made 17 Nov 2026\, Researcher plan\; no expir
- y shown\, author 17 Nov)\, VULNCHECK_TOKEN (replaced 17 Nov 2026: the 20 O
- ct token was unused for 28 days and about to lapse\; the new token is kept
-  alive twice a month)\, RANSOMWARE_LIVE_KEY (portal shows no expiry\, auth
- or 17 Nov 2026: "none stated"\; 60 requests a minute\, 500\,000 a month pe
- r key)\, the Google Cloud and Drive backup credentials\, and any GreyNoise
-  or CrowdSec key when granted. For each: who issued it\, where it is kept 
- (GitHub secret name)\, expiry or "none stated"\, and how to renew. Expirie
- s become schedule items 30 days ahead.\n\nSource: https://github.com/pagag
- ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ y shown\, author 17 Nov)\, MANUAL_REPO_TOKEN (fine-grained "snapshot-manua
+ l publish"\, expires 29 Jan 2027\; reminder 30 Dec 2026)\, VULNCHECK_TOKEN
+  (replaced 17 Nov 2026: the 20 Oct token was unused for 28 days and about 
+ to lapse\; the new token is kept alive twice a month)\, RANSOMWARE_LIVE_KE
+ Y (portal shows no expiry\, author 17 Nov 2026: "none stated"\; 60 request
+ s a minute\, 500\,000 a month per key)\, the Google Cloud and Drive backup
+  credentials\, and any GreyNoise or CrowdSec key when granted. For each: w
+ ho issued it\, where it is kept (GitHub secret name)\, expiry or "none sta
+ ted"\, and how to renew. Expiries become schedule items 30 days ahead.\n\n
+ Source: https://github.com/pagagne/internet-security-snapshot/blob/main/do
+ cs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1407,17 +1409,16 @@ DESCRIPTION:Responsible: Paul (author)\n\nLook up each key's expiry on its
   not). Look in your Google Account's security page\, third-party connectio
  ns\, that the rclone access is still listed. BigQuery uses no stored key (
  GitHub proves its identity to Google each run)\, so there is nothing to ch
- eck there. (6) GitHub private-repository token (MANUAL_REPO_TOKEN): GitHub
- \, Settings\, Developer settings\, Personal access tokens\, Fine-grained t
- okens\; note its expiry date. If it lapses\, the private manual\, backups 
- and private sweeps stop\, so this date matters. (7) OpenRouter: done 17 No
- v (expires 12 May 2027\; reminder 12 Apr 2027). (8) GreyNoise (GREYNOISE_A
- PI_KEY): done 17 Nov\, no expiry shown ("none stated"). Full requirements 
- per key: https://github.com/pagagne/internet-security-snapshot/blob/main/d
- ocs/SOP_MANUAL_RUNS.md\, section 10. Tell Claude the results\; Claude reco
- rds them in the key register and schedules any renewal 30 days ahead.\n\nS
- ource: https://github.com/pagagne/internet-security-snapshot/blob/main/doc
- s/schedule/schedule.yaml
+ eck there. (6) GitHub private-repository token (MANUAL_REPO_TOKEN): done 1
+ 8 Nov\, the only token is the fine-grained "snapshot-manual publish"\, exp
+ iring Fri 29 Jan 2027 (no classic tokens)\; renewal reminder 30 Dec 2026. 
+ (7) OpenRouter: done 17 Nov (expires 12 May 2027\; reminder 12 Apr 2027). 
+ (8) GreyNoise (GREYNOISE_API_KEY): done 17 Nov\, no expiry shown ("none st
+ ated"). Full requirements per key: https://github.com/pagagne/internet-sec
+ urity-snapshot/blob/main/docs/SOP_MANUAL_RUNS.md\, section 10. Tell Claude
+  the results\; Claude records them in the key register and schedules any r
+ enewal 30 days ahead.\n\nSource: https://github.com/pagagne/internet-secur
+ ity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2171,6 +2172,28 @@ DESCRIPTION:Responsible: Claude\n\nEach quarter report the count from the s
  s://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/
  schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:manual-repo-token-renewal@2026-12-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261230T150000Z
+DTEND:20261230T151000Z
+SUMMARY:[Paul] Snapshot: Renew the GitHub private-repository token (expires
+  29 Jan 2027)
+DESCRIPTION:Responsible: Paul (author)\n\nAdded 18 Nov 2026 (author's key c
+ heck: the fine-grained token "snapshot-manual publish" expires Fri 29 Jan 
+ 2027)\, 30 days ahead as the key register rule says. If it lapses\, the pr
+ ivate manual\, the backups\, the private sweeps and the GreyNoise collecti
+ on stop. On GitHub: Settings\, Developer settings\, Personal access tokens
+ \, Fine-grained tokens\, open "snapshot-manual publish"\, Regenerate token
+  (same settings: Contents read and write on pagagne/snapshot-manual only\;
+  choose a one-year expiry)\, paste the new value straight into the public 
+ repository's secret MANUAL_REPO_TOKEN\, then press Run on Manual publish o
+ nce (SOP section 4) and tell Claude. Note: GitHub shows "Never used" for t
+ his token even though the workflows use it every day (seen 18 Nov 2026)\; 
+ ignore that.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:draft-provisional@2027-01-01@internet-security-snapshot

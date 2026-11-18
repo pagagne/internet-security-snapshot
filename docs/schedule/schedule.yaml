@@ -1877,7 +1877,7 @@ items:
   details: >
     Private, no key values: RANSOMWARE_LIVE_KEY, NVD_API_KEY, VULNCHECK_TOKEN, CLOUDFLARE_TOKEN,
     SEC_USER_AGENT, OPENROUTER_API_KEY (expires 12 May 2027, author 17 Nov 2026; spending limit
-    0), GREYNOISE_API_KEY (made 17 Nov 2026, Researcher plan; no expiry shown, author 17 Nov), VULNCHECK_TOKEN (replaced 17 Nov 2026: the 20 Oct token was unused for 28 days and
+    0), GREYNOISE_API_KEY (made 17 Nov 2026, Researcher plan; no expiry shown, author 17 Nov), MANUAL_REPO_TOKEN (fine-grained "snapshot-manual publish", expires 29 Jan 2027; reminder 30 Dec 2026), VULNCHECK_TOKEN (replaced 17 Nov 2026: the 20 Oct token was unused for 28 days and
     about to lapse; the new token is kept alive twice a month), RANSOMWARE_LIVE_KEY (portal shows no expiry, author 17 Nov 2026: "none stated"; 60 requests
     a minute, 500,000 a month per key), the Google Cloud and Drive backup credentials, and any GreyNoise or CrowdSec key when
     granted. For each: who issued it, where it is kept (GitHub secret name), expiry or
@@ -1913,14 +1913,31 @@ items:
     your Google Account's security page, third-party connections, that the rclone access is
     still listed. BigQuery uses no stored key (GitHub proves its identity to Google each run),
     so there is nothing to check there.
-    (6) GitHub private-repository token (MANUAL_REPO_TOKEN): GitHub, Settings, Developer
-    settings, Personal access tokens, Fine-grained tokens; note its expiry date. If it lapses,
-    the private manual, backups and private sweeps stop, so this date matters.
+    (6) GitHub private-repository token (MANUAL_REPO_TOKEN): done 18 Nov, the only token is the
+    fine-grained "snapshot-manual publish", expiring Fri 29 Jan 2027 (no classic tokens);
+    renewal reminder 30 Dec 2026.
     (7) OpenRouter: done 17 Nov (expires 12 May 2027; reminder 12 Apr 2027).
     (8) GreyNoise (GREYNOISE_API_KEY): done 17 Nov, no expiry shown ("none stated").
     Full requirements per key: docs/SOP_MANUAL_RUNS.md, section 10.
     Tell Claude the results; Claude records them in the key register and schedules any renewal
     30 days ahead.
+
+- id: manual-repo-token-renewal
+  owner: author
+  title: Renew the GitHub private-repository token (expires 29 Jan 2027)
+  date: 2026-12-30
+  time: "10:00"
+  minutes: 10
+  details: >
+    Added 18 Nov 2026 (author's key check: the fine-grained token "snapshot-manual publish" expires
+    Fri 29 Jan 2027), 30 days ahead as the key register rule says. If it lapses, the private
+    manual, the backups, the private sweeps and the GreyNoise collection stop. On GitHub:
+    Settings, Developer settings, Personal access tokens, Fine-grained tokens, open "snapshot-manual
+    publish", Regenerate token (same settings: Contents read and write on pagagne/snapshot-manual
+    only; choose a one-year expiry), paste the new value straight into the public repository's
+    secret MANUAL_REPO_TOKEN, then press Run on Manual publish once (SOP section 4) and tell Claude.
+    Note: GitHub shows "Never used" for this token even though the workflows use it every day
+    (seen 18 Nov 2026); ignore that.
 
 - id: openrouter-key-renewal
   owner: author
