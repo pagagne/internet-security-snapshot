@@ -164,7 +164,7 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 | FIRST EPSS | Daily exploitation-likelihood scores | Context |
 | SEC EDGAR | Breach filings, 8-K Item 1.05 (T6b) | Core |
 | Cloudflare Radar | Internet-wide attack and traffic trends | Context |
-| Vendor advisories and GitHub/OSV (Microsoft, Cisco, Palo Alto, GitHub advisories) | Fix dates for the race | Core |
+| Vendor advisories: about a dozen read automatically (Microsoft, Cisco, Palo Alto, Red Hat, Siemens, Linux kernel, GitHub and OSV, deps.dev); every other vendor's advisory checked by hand | Fix dates for the race | Core |
 | Exploit-DB, Metasploit, Nuclei, GitHub | Dates public exploit code appeared | Core (cohort), exploratory (X7) |
 | Linux kernel commits | Fix dates for Linux flaws (being added, Nov 2026) | Core (fix-date pre-fill) |
 | Google Project Zero "0day In the Wild" | Independent check of the zero-day share | Exploratory (X15) |
