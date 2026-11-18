@@ -48,6 +48,31 @@ out and reported as pending.
    vendors with no machine-readable advisories (Fortinet, Ivanti, Check Point and others) get
    their fix dates. Proposal item 29 (aim the check by how close the call is) is decided at the
    21 Dec 2026 session.
+
+   **Where to look when the links don't settle it (added 18 Nov 2026, author's request).** The
+   Hand Check app already gives each item its own links: the CVE record, the NVD page, a
+   product search, and the advisory or patch links in the CVE record (see the app's guide).
+   When those do not show a dated fix, try these, in order:
+   1. The vendor's own advisory list. For the vendors that most often need a hand check
+      (addresses checked 18 Nov 2026):
+      - Fortinet: https://www.fortiguard.com/psirt (advisories are usually published on the
+        second Tuesday of the month)
+      - Ivanti: https://www.ivanti.com/blog/topics/security-advisory (monthly posts linking
+        each advisory)
+      - Check Point: https://support.checkpoint.com/security-advisories
+      - Oracle: https://www.oracle.com/security-alerts/ (Critical Patch Updates and Security
+        Alerts)
+      - JFrog: https://docs.jfrog.com/releases/docs/jfrog-security-advisories
+      - SonicWall: https://psirt.global.sonicwall.com/vuln-list
+      - Citrix and NetScaler: https://support.citrix.com/securitybulletins/
+      - Apple: https://support.apple.com/100100
+   2. The product's release notes, or its GitHub releases page: the release date of the first
+      version the vendor says is fixed.
+   3. The Wayback Machine (https://web.archive.org): the first saved copy of the advisory or
+      release page showing the fix. That date is the latest the fix can have appeared, not the
+      fix date itself; note it on the card.
+   If none settles it, mark the date "unknown" with a note (rule 3 above). Add any vendor that
+   keeps coming up to this list.
 4. **Ground-truth reference dates** for the validation cases (done once, before the run).
 5. **HHS breach list download** (X17, since 29 Oct 2026): once a quarter, download the public
    CSV from the HHS OCR breach portal (ocrportal.hhs.gov/ocr/breach) and give it to Claude,
