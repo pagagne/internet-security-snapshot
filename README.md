@@ -148,7 +148,7 @@ workflow; the rings come from `config/coverage.yaml` (`docs/WORKFLOWS.md`, secti
 
 ## Data sources
 
-Status as of 26 Oct 2026. Terms, requests and replies are logged in
+Status as of 19 Nov 2026. Terms, requests and replies are logged in
 [`docs/PERMISSIONS.md`](docs/PERMISSIONS.md); this table is updated with it. "Core" sources feed
 the pre-registered measures; "exploratory" ones are reported separately and never decide a label
 ([`config/exploratory.yaml`](config/exploratory.yaml)).
@@ -165,13 +165,13 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 | SEC EDGAR | Breach filings, 8-K Item 1.05 (T6b) | Core |
 | Cloudflare Radar | Internet-wide attack and traffic trends | Context |
 | Vendor advisories: about a dozen read automatically (Microsoft, Cisco, Palo Alto, Red Hat, Siemens, Linux kernel, GitHub and OSV, deps.dev); every other vendor's advisory checked by hand | Fix dates for the race | Core |
-| Exploit-DB, Metasploit, Nuclei, GitHub | Dates public exploit code appeared | Core (cohort), exploratory (X7) |
-| Linux kernel commits | Fix dates for Linux flaws (being added, Nov 2026) | Core (fix-date pre-fill) |
-| Google Project Zero "0day In the Wild" | Independent check of the zero-day share | Exploratory (X15) |
+| Exploit-DB, Metasploit, Nuclei, GitHub | Dates public exploit code appeared (not yet collected) | Core (cohort), exploratory (X7, planned) |
+| Linux kernel commits | Fix dates for Linux flaws (in use since 29 Oct 2026) | Core (fix-date pre-fill) |
+| Google Project Zero "0day In the Wild" | Independent check of the zero-day share (not yet collected) | Exploratory (X15, planned) |
 | SANS Internet Storm Center web honeypot | Attack activity by category, monthly, aggregates only | Exploratory, context (X14) |
-| deps.dev and OSV | Patch adoption for open-source packages (in testing) | Exploratory (X16) |
-| HTTP Archive and WordPress.org statistics | Patch adoption on websites (in testing) | Exploratory |
-| HHS OCR breach register | Health-sector hacking breaches (in testing) | Exploratory (X17) |
+| deps.dev and OSV | Fix dates for the race (in use since 1 Nov 2026); patch adoption for open-source packages (planned) | Core (fix dates), exploratory (X16) |
+| HTTP Archive and WordPress.org statistics | Patch adoption on websites (planned) | Exploratory (X27) |
+| HHS OCR breach register | Health-sector hacking breaches, quarterly counts | Exploratory (X17) |
 | [ransomware.live](https://www.ransomware.live) (with permission, 27 Oct 2026) | Ransomware leak-site postings, aggregate counts only, credited (T6a) | Core |
 
 ### Sources that need permission or access
@@ -187,12 +187,12 @@ the pre-registered measures; "exploratory" ones are reported separately and neve
 Each source above has an on/off switch in [`config/sources.yaml`](config/sources.yaml); nothing derived
 from one is published until its permission is granted.
 
-### Being tested: views beyond the US (added 26 Oct 2026)
+### Views beyond the US (added 26 Oct 2026; exploratory)
 
 | Source | What it would give the study | Role |
 |---|---|---|
 | CERT-FR, JPCERT/CC, BSI, KrCERT/CC alerts | Other countries' active-exploitation alerts, compared with CISA KEV | Exploratory (X19) |
-| APNIC Labs (written permission 1 Nov 2026; RIPE NCC not used, its terms forbid redistribution) | DNSSEC validation and RPKI route checking by country | Exploratory (X20), collector to build by <!-- date:x20-collector -->25 Nov<!-- /date --> |
+| APNIC Labs (written permission 1 Nov 2026; RIPE NCC not used, its terms forbid redistribution) | DNSSEC validation and RPKI route checking by country | Exploratory (X20); collector built 19 Nov 2026, first collection on the 1 Dec dry run |
 | Cloudflare Radar and ransomware.live by region | Attack, bot and ransomware trends by world region | Exploratory (X21) |
 | UK ICO, OAIC, PDPC, ENISA | Data-breach notifications outside the US | Exploratory (X22) |
 | Quarterly web sweep, nine languages | AI-run attack reports outside the usual channels | Exploratory (X3) |
