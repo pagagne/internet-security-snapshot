@@ -47,6 +47,9 @@ jobs:
         # One credits block on every output (19 Nov 2026): every collected source credited, and
         # docs/CREDITS.md and the README block match config/credits.yaml.
         run: python -m snapshot.credits check
+      - name: Website home page current?
+        # site/index.html is built from the README's Mission section and the credits (19 Nov 2026).
+        run: python -m snapshot.site check
       - name: Cross-references land?
         # Every link between study documents must reach an existing file and section (author,
         # 11 Nov 2026). Links into the private repository are checked where it is checked out.

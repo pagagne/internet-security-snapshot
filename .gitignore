@@ -19,3 +19,6 @@ docs/manual/parts/
 # Exploratory work is private (author, 31 Oct 2026): it lives in pagagne/snapshot-manual. A local
 # working copy, or the link the workflows make (tools/private.sh), sits here and is never committed.
 /exploratory
+
+# run-health page, built at publish time by the Website workflow
+site/health/

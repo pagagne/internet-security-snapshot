@@ -1,0 +1,63 @@
+name: Website
+
+# The project website (schedule item pages-build; docs/WEBSITE.md). Publishes the site/ folder to
+# GitHub Pages: the home page (site/index.html, built by snapshot.site and checked in Checks),
+# the Reviewer's Desk (site/reviewer/) and the run-health page, built here from the public
+# run-reports branch so it is current after every run. Health only: no findings or counts.
+#
+# Switched off until the author turns it on (4 Dec 2026): Settings > Pages > Source: GitHub
+# Actions, and the repository variable PAGES_ON set to "on". Until then every run is skipped.
+# Rebuilt when the site changes, after each listed workflow finishes (Publish results included
+# once it exists: one approval refreshes the README page and the website together), and by hand.
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "src/snapshot/site.py", "config/credits.yaml", "README.md"]
+  workflow_run:
+    workflows: [Quarterly pull, Source status, Privacy scan, Rebuild check, Schedule, Publish results]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      about:
+        description: "What this does (information only, leave ticked): Rebuilds the run-health page and publishes the website (site/ folder). Reads only public files."
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: vars.PAGES_ON == 'on'
+    runs-on: ubuntu-24.04   # pinned; upgrades are deliberate and logged
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6
+        with:
+          python-version: "3.12.15"   # pinned; upgrades are deliberate and logged
+      - run: pip install --require-hashes -r requirements.lock && pip install --no-deps -e .
+      - name: Home page current?
+        run: python -m snapshot.site check
+      - name: Run-health page from the public run reports
+        run: |
+          git fetch -q --depth 1 origin run-reports
+          git worktree add -q /tmp/rr FETCH_HEAD
+          python -m snapshot.site health --reports /tmp/rr --out site/health/index.html
+      - name: Privacy scan of what will be published
+        run: python -m snapshot.privacy
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d  # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9  # v5.0.0
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346  # v5.0.1

@@ -824,8 +824,10 @@ items:
 
 - id: pages-build
   owner: claude
+  primary: true   # primary chat only (author, 19 Nov 2026): the post-cutover work queue leaves it
   title: Build the project website and its publishing workflow (ready for 4 Dec)
   date: 2026-11-27
+  done: "19 Nov 2026 (moved up): snapshot.site builds the home page (README Mission, links, credits) and, at each publish, the run-health page from the public run reports (pilot section in draft until the 23 Nov mock-up approval); Website workflow pages.yml, pinned, skipped until PAGES_ON is on; guide docs/WEBSITE.md"
   details: >
     site/index.html (landing page: what the study is, links to the plan, reports and the
     Reviewer's Desk at site/reviewer/) and .github/workflows/pages.yml (publishes the site/
@@ -863,9 +865,10 @@ items:
   time: "10:00"
   minutes: 60
   details: >
-    Claude has built the landing page, the publishing workflow (27 Nov) and the Discussions
-    welcome post. You: Settings > Pages > Source: GitHub Actions, then run the Pages workflow
-    once from the Actions tab; switch on Discussions; and Zenodo archiving (zenodo.org, sign in with GitHub). Project
+    Claude has built the website, its publishing workflow (19 Nov) and the Discussions
+    welcome post. You: Settings > Pages > Source: GitHub Actions; add the repository variable
+    PAGES_ON = on; run the Website workflow once from the Actions tab (steps in
+    docs/WEBSITE.md); switch on Discussions; and Zenodo archiving (zenodo.org, sign in with GitHub). Project
     links may be shared publicly from today.
 
 - id: handshake-register
@@ -2004,6 +2007,7 @@ items:
 
 - id: landing-flip-workflow
   owner: claude
+  primary: true   # primary chat only (author, 19 Nov 2026): the post-cutover work queue leaves it
   title: Build the "Publish results" workflow (the 2 Jan switch and every later results update)
   date: 2026-12-10
   details: >
@@ -2018,7 +2022,7 @@ items:
     and records his answer, dated, in a public approvals file the workflow reads. After the
     switch the page layout stays fixed; only the results line, scorecard and results page
     change. One-page checklist in docs/SOP_MANUAL_RUNS.md. Rehearsed on the 15 Dec dry run with
-    the simulated results (nothing published). Refuses to publish while a release-hold issue is open (R9, W1; author, 19 Nov 2026).
+    the simulated results (nothing published). Refuses to publish while a release-hold issue is open (R9, W1; author, 19 Nov 2026). Its completion also republishes the website (the Website workflow runs after it), so one approval refreshes the README page and the site together (author, 19 Nov 2026).
 
 - id: landing-clear-sections
   owner: author

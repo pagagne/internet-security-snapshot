@@ -1508,8 +1508,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build the project website and its publishing wor
- kflow (ready for 4 Dec)
+SUMMARY:✅ DONE [Claude] Snapshot: Build the project website and its publi
+ shing workflow (ready for 4 Dec)
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/site/index.html (landing page: what the study is\,
   links to the plan\, reports and the Reviewer's Desk at https://github.com
@@ -1842,13 +1842,15 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261204T150000Z
 DTEND:20261204T160000Z
 SUMMARY:[Paul] Snapshot: Landing page\, Discussions\, Zenodo
-DESCRIPTION:Responsible: Paul (author)\n\nClaude has built the landing page
- \, the publishing workflow (27 Nov) and the Discussions welcome post. You:
-  Settings > Pages > Source: GitHub Actions\, then run the Pages workflow o
- nce from the Actions tab\; switch on Discussions\; and Zenodo archiving (z
- enodo.org\, sign in with GitHub). Project links may be shared publicly fro
- m today.\n\nSource: https://github.com/pagagne/internet-security-snapshot/
- blob/main/docs/schedule/schedule.yaml
+DESCRIPTION:Responsible: Paul (author)\n\nClaude has built the website\, it
+ s publishing workflow (19 Nov) and the Discussions welcome post. You: Sett
+ ings > Pages > Source: GitHub Actions\; add the repository variable PAGES_
+ ON = on\; run the Website workflow once from the Actions tab (steps in htt
+ ps://github.com/pagagne/internet-security-snapshot/blob/main/docs/WEBSITE.
+ md)\; switch on Discussions\; and Zenodo archiving (zenodo.org\, sign in w
+ ith GitHub). Project links may be shared publicly from today.\n\nSource: h
+ ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
+ le/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1995,8 +1997,11 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions\, 1 Nov 2026 (guarded
  //github.com/pagagne/internet-security-snapshot/blob/main/docs/SOP_MANUAL_
  RUNS.md. Rehearsed on the 15 Dec dry run with the simulated results (nothi
  ng published). Refuses to publish while a release-hold issue is open (R9\,
-  W1\; author\, 19 Nov 2026).\n\nSource: https://github.com/pagagne/interne
- t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+  W1\; author\, 19 Nov 2026). Its completion also republishes the website (
+ the Website workflow runs after it)\, so one approval refreshes the README
+  page and the site together (author\, 19 Nov 2026).\n\nSource: https://git
+ hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
+ e.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

@@ -1,4 +1,4 @@
-# The study's workflows (updated 18 Nov 2026)
+# The study's workflows (updated 19 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The <!-- date:workflows-doc -->14 Dec<!-- /date --> workflow review
@@ -18,7 +18,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 
 | With a Run button | API only (no button) |
 |---|---|
-| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup, Manual publish | Quarterly pull, Research probe, Honeypot capture, GreyNoise collection, BigQuery check, Feed screen, Source watch |
+| Checks, Privacy scan, Schedule, Rebuild check, Diagrams, Backup, Manual publish, Website | Quarterly pull, Research probe, Honeypot capture, GreyNoise collection, BigQuery check, Feed screen, Source watch |
 
 ## At a glance
 
@@ -40,6 +40,7 @@ be run by hand after the pilot: `docs/SOP_MANUAL_RUNS.md`.
 | Source status | `source-status.yml` | 21:47 UTC daily; no button | run-reports (`landing/`) | `SEC_USER_AGENT`, `VULNCHECK_TOKEN` (keep-alive only, from 17 Nov 2026) | 31 Oct |
 | Diagrams | `diagrams.yml` | when a diagram source changes; Run button | nothing (read only) | none | 27 Oct |
 | BigQuery check | `bigquery-check.yml` | started by Claude through the API; no button | nothing (read only); signs in to Google Cloud without a key | none (keyless sign-in) | 29 Oct |
+| Website | `pages.yml` | changes to the site; after Quarterly pull, Source status, Privacy scan, Rebuild check, Schedule and Publish results; Run button. Skipped until the author switches it on (variable `PAGES_ON` = `on`, 4 Dec 2026) | publishes the site/ folder to GitHub Pages (nothing in the repository) | none | built 19 Nov 2026; first run 4 Dec |
 
 ## 1. Quarterly pull: the heart of the study
 

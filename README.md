@@ -286,6 +286,7 @@ The study runs on GitHub workflows: automatic jobs that collect, check, back up 
 | Honeypot capture | the 2nd of each month at 09:43 UTC | started by the Schedule workflow or Claude |
 | Landing snapshot | no timer | started by the Schedule workflow or Claude, Run button |
 | Manual publish (private) | no timer | after changes to main, started by the Schedule workflow or Claude, Run button |
+| Website | no timer | after changes to main, Run button |
 | Privacy scan | daily at 21:13 UTC; daily at 23:51 UTC | Run button |
 | Quarterly pull | 1st Jan/Apr/Jul/Oct at 06:00 UTC; 1st Feb/May/Aug/Nov at 06:00 UTC | started by the Schedule workflow or Claude |
 | Rebuild check | the 10th of each month at 07:17 UTC | Run button |
