@@ -351,6 +351,7 @@ items:
     first; if he raises any concern, do not run and report to the author. Otherwise start the
     GreyNoise collection once (repository_dispatch, mode quarterly, quarter 2026Q4), confirm it
     ran, and report calls, errors and what the private files show. Figures stay private.
+  done: "19 Nov 2026, 12:49 ET (brought forward: GreyNoise agreed at 10:53): the run worked (185 calls, no errors, no IP addresses kept), but showed the 90-day view lists every day whether active or not; the collector was corrected to record 90-day totals (public dd673f1). A second run to confirm the correction awaits the author's word"
 
 - id: x3-human-approval-column
   owner: claude

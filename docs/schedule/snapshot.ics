@@ -1034,8 +1034,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: One test run of the GreyNoise collector (90-day 
- tag view\, AI-product tags)\, if Martin has no concern
+SUMMARY:✅ DONE [Claude] Snapshot: One test run of the GreyNoise collector
+  (90-day tag view\, AI-product tags)\, if Martin has no concern
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026: one hand-
  started quarterly run for 2026Q4 so far\, a day after the note to GreyNois
  e about AI-product tags\, giving Martin a day to answer. Check his thread 
