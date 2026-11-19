@@ -360,3 +360,15 @@ Started 25 Oct 2026 at the author's request.
   (docs/CHANGE_POLICY.md; schedule item `freeze`). The March 2028 option of OSF Preprints is also
   unaffected. Note: OSF's details page gives "February 19, 2026" once for the API, a likely typo
   for 2027.
+
+- **19 Nov 2026: joint advisory on SafePay ransomware (AA26-293A, FBI, CISA, US Secret Service,
+  German and UK police; dated 20 Oct 2026; author's find).** SafePay, active since August 2024,
+  has hit at least 600 victims and is called one of 2026's most active groups. Entry is by
+  stolen or guessed passwords, phishing and exploited flaws, using automated scripts against
+  internet-facing systems; AI is not mentioned. It names five flaws (CVE-2020-3259,
+  CVE-2023-20269, CVE-2023-27532, CVE-2024-40711, CVE-2024-40766: Cisco firewalls, Veeam backup,
+  SonicWall), all already in KEV and marked as used by ransomware, added between 2023 and 2024.
+  **Handled:** context only. Nothing new for the core (all five predate the baseline year and
+  the current quarter), not an AI-attack case, and not a ransomware.live input (aggregates only).
+  It supports the report's point that old edge-device and backup flaws stay in use for years.
+
