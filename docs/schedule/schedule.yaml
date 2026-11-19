@@ -442,22 +442,58 @@ items:
     app artifact before republishing; HAND_CHECK.md rules of 16 Nov apply). Tell the author the
     number of items and the time estimate; if it will not fit two 75-minute sessions, say so by
     20 Nov with a proposal.
+  done: "19 Nov 2026 (early): research task baseline_list built the four lists with the frozen draw (CVE List and KEV commits recorded); loaded into the Hand Check app as list \"Baseline year\" (cohort, credits and 230 flagged race dates); estimate about 4.5-5 hours, so the author added three December sessions (parts 3-5)"
 
 - id: baseline-hand-check-1
   owner: author
-  title: Baseline-year hand check, part 1 of 2
+  title: Baseline-year hand check, part 1 of 5
   date: 2026-11-23
   time: "10:00"
   minutes: 75
-  details: AI-credit spot checks and edge cases, then cohort fix dates. docs/HAND_CHECK.md.
+  details: >
+    In the Hand Check app, list "Baseline year". AI-credit spot checks and edge cases, then the
+    cohort fix dates and internet-facing checks, month by month. docs/HAND_CHECK.md. Five parts
+    since 19 Nov 2026 (author's decision): the list holds about 50 minutes of cohort and credit
+    items and 230 race-list fix dates (about 4 hours); every flagged date is checked (12 Nov
+    decision), with the race dates finished in three December sessions.
 
 - id: baseline-hand-check-2
   owner: author
-  title: Baseline-year hand check, part 2 of 2
+  title: Baseline-year hand check, part 2 of 5
   date: 2026-11-24
   time: "13:00"   # moved from 10:00 (author, 17 Nov 2026): the handover test is at 10:00
   minutes: 75
-  details: Slot (c) internet-facing checks and fix dates for the 12 baseline months.
+  details: >
+    Finish the cohort and credit items, then start the race-list fix dates (the first 60 or so,
+    oldest first). The app keeps your place.
+
+- id: baseline-hand-check-3
+  owner: author
+  title: Baseline-year hand check, part 3 of 5 (race-list fix dates)
+  date: 2026-12-09
+  time: "10:00"
+  minutes: 75
+  details: >
+    Added 19 Nov 2026 (author's decision: every flagged race date, finished in December). List
+    "Baseline year" in the Hand Check app, race-list items, continuing where you stopped.
+
+- id: baseline-hand-check-4
+  owner: author
+  title: Baseline-year hand check, part 4 of 5 (race-list fix dates)
+  date: 2026-12-14
+  time: "10:00"
+  minutes: 75
+  details: Continue the race-list fix dates in the "Baseline year" list.
+
+- id: baseline-hand-check-5
+  owner: author
+  title: Baseline-year hand check, part 5 of 5 (race-list fix dates)
+  date: 2026-12-18
+  time: "10:00"
+  minutes: 75
+  details: >
+    Finish the race-list fix dates; then tell Claude, who reads the answers from the app and
+    records them, so the baseline is complete before the 21 Dec session.
 
 - id: race-list-ready
   owner: claude

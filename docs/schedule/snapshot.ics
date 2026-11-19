@@ -1127,8 +1127,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build the baseline-year review list and load it 
- into the Hand Check app
+SUMMARY:✅ DONE [Claude] Snapshot: Build the baseline-year review list and
+  load it into the Hand Check app
 DESCRIPTION:Responsible: Claude\n\nAdded 17 Nov 2026 (author): the 23-24 No
  v baseline hand check had no step that prepares its list. Apply the frozen
   selection rule to the retrospective cohort\, Q4 2025 to Q3 2026 (pre-regi
@@ -1267,11 +1267,16 @@ UID:baseline-hand-check-1@2026-11-23@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261123T150000Z
 DTEND:20261123T161500Z
-SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 1 of 2
-DESCRIPTION:Responsible: Paul (author)\n\nAI-credit spot checks and edge ca
- ses\, then cohort fix dates. https://github.com/pagagne/internet-security-
- snapshot/blob/main/docs/HAND_CHECK.md.\n\nSource: https://github.com/pagag
- ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 1 of 5
+DESCRIPTION:Responsible: Paul (author)\n\nIn the Hand Check app\, list "Bas
+ eline year". AI-credit spot checks and edge cases\, then the cohort fix da
+ tes and internet-facing checks\, month by month. https://github.com/pagagn
+ e/internet-security-snapshot/blob/main/docs/HAND_CHECK.md. Five parts sinc
+ e 19 Nov 2026 (author's decision): the list holds about 50 minutes of coho
+ rt and credit items and 230 race-list fix dates (about 4 hours)\; every fl
+ agged date is checked (12 Nov decision)\, with the race dates finished in 
+ three December sessions.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1334,10 +1339,11 @@ UID:baseline-hand-check-2@2026-11-24@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261124T180000Z
 DTEND:20261124T191500Z
-SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 2 of 2
-DESCRIPTION:Responsible: Paul (author)\n\nSlot (c) internet-facing checks a
- nd fix dates for the 12 baseline months.\n\nSource: https://github.com/pag
- agne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 2 of 5
+DESCRIPTION:Responsible: Paul (author)\n\nFinish the cohort and credit item
+ s\, then start the race-list fix dates (the first 60 or so\, oldest first)
+ . The app keeps your place.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -1947,6 +1953,20 @@ DESCRIPTION:Responsible: Paul (author)\n\nDuring the RV trip (7-19 Dec\; au
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:baseline-hand-check-3@2026-12-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261209T150000Z
+DTEND:20261209T161500Z
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 3 of 5 (race-list 
+ fix dates)
+DESCRIPTION:Responsible: Paul (author)\n\nAdded 19 Nov 2026 (author's decis
+ ion: every flagged race date\, finished in December). List "Baseline year"
+  in the Hand Check app\, race-list items\, continuing where you stopped.\n
+ \nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/
+ docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:landing-flip-workflow@2026-12-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261210
@@ -2164,6 +2184,18 @@ DESCRIPTION:Responsible: Claude\n\n12 Nov research review\, decisions 7 and
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:baseline-hand-check-4@2026-12-14@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261214T150000Z
+DTEND:20261214T161500Z
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 4 of 5 (race-list 
+ fix dates)
+DESCRIPTION:Responsible: Paul (author)\n\nContinue the race-list fix dates 
+ in the "Baseline year" list.\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:dry-run-full-review@2026-12-15@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261215
@@ -2242,6 +2274,20 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026: all the
  .\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/ma
  in/docs/schedule/schedule.yaml
 CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:baseline-hand-check-5@2026-12-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261218T150000Z
+DTEND:20261218T161500Z
+SUMMARY:[Paul] Snapshot: Baseline-year hand check\, part 5 of 5 (race-list 
+ fix dates)
+DESCRIPTION:Responsible: Paul (author)\n\nFinish the race-list fix dates\; 
+ then tell Claude\, who reads the answers from the app and records them\, s
+ o the baseline is complete before the 21 Dec session.\n\nSource: https://g
+ ithub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sched
+ ule.yaml
+CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:i5-baseline-read@2026-12-20@internet-security-snapshot

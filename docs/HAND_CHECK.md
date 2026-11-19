@@ -1,4 +1,4 @@
-# Hand-check procedure (updated 18 Nov 2026)
+# Hand-check procedure (updated 19 Nov 2026)
 
 Some items are flagged by code but need a person to confirm them before they count.
 Nothing unverified is ever estimated or filled in: an item that is not confirmed is left
@@ -250,4 +250,9 @@ From the practice round (about 30-60 seconds per item) and the rules as of 24 Oc
 Whether every flagged race fix date is checked or a sample is decided on 12 Nov 2026. The
 same choice applies to the baseline year (four quarters of newly attacked flaws, roughly
 200-250 flagged dates if all are checked), which the race labels compare against.
+
+Baseline year, as built on 19 Nov 2026: 230 flagged race dates plus about 50 minutes of cohort
+and AI-credit items, about 4½-5 hours in all. Every flagged date is checked (12 Nov decision);
+the author's decision of 19 Nov spreads the work over five sessions, two in November and three
+in December (9, 14 and 18 Dec), all in the Hand Check app's "Baseline year" list.
 

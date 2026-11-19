@@ -35,7 +35,7 @@ def items(frames: list[pd.DataFrame]) -> tuple[list[dict], dict]:
             base = {"month": r["month"], "cve_id": r["cve_id"], "product": r["product"], "cvss": r["cvss"],
                     "published": r["published"], "credit": r["credit"], "links": _split(r["links"])[:3],
                     "prefill_date": r["patch_date"], "prefill_source": r["patch_source"]}
-            if task == "ai_credit":
+            if task in ("ai_credit", "auto_accept"):
                 if r["credit"] in seen_credit:      # the same text in two quarters is asked once
                     continue
                 seen_credit.add(r["credit"])
