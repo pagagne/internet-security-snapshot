@@ -1141,6 +1141,25 @@ DESCRIPTION:Responsible: Claude\n\nAdded 17 Nov 2026 (author): the 23-24 No
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:greynoise-ai-tags-test@2026-11-20@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: One test run of the GreyNoise collector (90-day 
+ tag view\, AI-product tags)\, if Martin has no concern
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026: one hand-
+ started quarterly run for 2026Q4 so far\, a day after the note to GreyNois
+ e about AI-product tags\, giving Martin a day to answer. Check his thread 
+ first\; if he raises any concern\, do not run and report to the author. Ot
+ herwise start the GreyNoise collection once (repository_dispatch\, mode qu
+ arterly\, quarter 2026Q4)\, confirm it ran\, and report calls\, errors and
+  what the private files show. Figures stay private.\n\nSource: https://git
+ hub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedul
+ e.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:permission-replies-check@2026-11-20@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120

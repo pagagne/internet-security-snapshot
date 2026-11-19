@@ -338,6 +338,17 @@ items:
     the first day of attacks within the last 90 days for each tag. Next: the collector uses
     days=90 (greynoise-collector-90-days).
 
+- id: greynoise-ai-tags-test
+  owner: claude
+  title: One test run of the GreyNoise collector (90-day tag view, AI-product tags), if Martin has no concern
+  date: 2026-11-20
+  details: >
+    Author's decision 19 Nov 2026: one hand-started quarterly run for 2026Q4 so far, a day after
+    the note to GreyNoise about AI-product tags, giving Martin a day to answer. Check his thread
+    first; if he raises any concern, do not run and report to the author. Otherwise start the
+    GreyNoise collection once (repository_dispatch, mode quarterly, quarter 2026Q4), confirm it
+    ran, and report calls, errors and what the private files show. Figures stay private.
+
 - id: censys-reapply
   owner: author
   title: Write the revised Censys research-access request (narrow ask)
