@@ -324,7 +324,7 @@ items:
   owner: claude
   title: Test whether GreyNoise's API gives 90 days of tag activity, as its website does
   date: 2026-11-19
-  status: done 2026-11-18  # run early at the author's request: yes, with days=90 (91 daily windows)
+  done: "18 Nov 2026 (run early at the author's request): yes, with days=90 (91 daily windows)"
   details: >
     GreyNoise (18 Nov 2026): tags go back 90 days; the website's tag page has a 90-day selector.
     The API tag-activity call returned only 24 hours on 17-18 Nov. Run the greynoise_probe
@@ -355,7 +355,7 @@ items:
   owner: claude
   title: One-time check of two outside AI-hacking trackers against the AI-attack log and the tool sweep
   date: 2026-11-19
-  status: done 2026-11-18  # run early at the author's request; results private (exploratory), for the 23 Nov review
+  done: "18 Nov 2026 (run early at the author's request); results private (exploratory), for the 19 Nov decisions"
   details: >
     Author's decisions 18 Nov 2026 (cards). (1) hackingincidents.ai (MIT licence, incidents.json):
     one-time coverage check of the AI-attack log, leads graded confirmed or strong only; each

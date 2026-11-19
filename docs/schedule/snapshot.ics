@@ -984,8 +984,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: One-time check of two outside AI-hacking tracker
- s against the AI-attack log and the tool sweep
+SUMMARY:✅ DONE [Claude] Snapshot: One-time check of two outside AI-hackin
+ g trackers against the AI-attack log and the tool sweep
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 18 Nov 2026 (cards). 
  (1) hackingincidents.ai (MIT licence\, incidents.json): one-time coverage 
  check of the AI-attack log\, leads graded confirmed or strong only\; each 
@@ -1005,8 +1005,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Test whether GreyNoise's API gives 90 days of ta
- g activity\, as its website does
+SUMMARY:✅ DONE [Claude] Snapshot: Test whether GreyNoise's API gives 90 d
+ ays of tag activity\, as its website does
 DESCRIPTION:Responsible: Claude\n\nGreyNoise (18 Nov 2026): tags go back 90
   days\; the website's tag page has a 90-day selector. The API tag-activity
   call returned only 24 hours on 17-18 Nov. Run the greynoise_probe researc
