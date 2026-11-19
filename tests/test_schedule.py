@@ -135,14 +135,14 @@ def test_primary_chat_label():
     import datetime as dt
     from snapshot import schedule as S
     occ = {o["id"]: o for o in S.expand(S.load())}
-    assert occ["race-list-ready"]["primary"] and not occ["terms-summaries"]["primary"]
+    assert occ["landing-flip-workflow"]["primary"] and not occ["terms-summaries"]["primary"]
     assert not occ["dry-run"]["primary"]            # github items are never primary-chat
     calls = []
     def gh(a):
         calls.append(a)
         return "[]" if a[:2] == ["issue", "list"] else ""
-    S.act(dt.date(2026, 11, 24), gh=gh)
+    S.act(dt.date(2026, 12, 9), gh=gh)   # race-list-ready (the old example) was done 19 Nov
     made = [c for c in calls if c[:2] == ["issue", "create"]]
-    race = [c for c in made if "Race fix-date list" in " ".join(c)]
+    race = [c for c in made if "Publish results" in " ".join(c)]
     assert race and "primary-chat" in race[0]
     assert "Primary chat only" in " ".join(race[0])

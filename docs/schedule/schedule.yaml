@@ -505,6 +505,7 @@ items:
   owner: claude
   title: Race fix-date list ready in the Hand Check app
   date: 2026-11-25
+  done: "19 Nov 2026: proven end to end on the baseline year (snapshot.review race rows in the quarterly review file, snapshot.handcheck turns them into app items, loaded with a time estimate); the 1 Dec dry run uses the same path (dry-run-review)"
   details: >
     List builder in snapshot.review, report table and time estimate, alongside
     snapshot.race.t1_kev_race and X10; read the app artifact before republishing. Tell the

@@ -1384,7 +1384,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Race fix-date list ready in the Hand Check app
+SUMMARY:✅ DONE [Claude] Snapshot: Race fix-date list ready in the Hand Ch
+ eck app
 DESCRIPTION:Responsible: Claude\n\nList builder in snapshot.review\, report
   table and time estimate\, alongside snapshot.race.t1_kev_race and X10\; r
  ead the app artifact before republishing. Tell the author only if somethin
