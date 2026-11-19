@@ -43,6 +43,7 @@ def _inline(s: str, base: Path) -> str:
     s = html.escape(s, quote=False).replace("&lt;sub&gt;", "<sub>").replace("&lt;/sub&gt;", "</sub>")
     s = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", lambda m: _img(m[2], m[1], base), s)
     s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', s)
+    s = re.sub(r"&lt;(https?://[^\s&]+)&gt;", r'<a href="\1">\1</a>', s)   # autolinks (credits block)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", s)
     s = re.sub(r"(?<![\w*])\*([^*]+)\*(?![\w*])", r"<i>\1</i>", s)
     s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)

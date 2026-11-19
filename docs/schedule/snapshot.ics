@@ -1486,8 +1486,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: One credits block on every output (data sources\
- , their notices and links)
+SUMMARY:✅ DONE [Claude] Snapshot: One credits block on every output (data
+  sources\, their notices and links)
 DESCRIPTION:Responsible: Claude\n\nFound 18 Nov 2026 while summarising the 
  terms pages: several sources ask for a credit or a notice on what the stud
  y publishes (NVD's "not endorsed" notice\, MITRE's CVE copyright notice\, 

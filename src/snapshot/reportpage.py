@@ -460,7 +460,8 @@ def report_md(key: str, R: dict, series: list[tuple[str, dict]], simulation: boo
           "- Whole calendar years of published records: " + ", ".join(
               f"{y} {v:,}" for y, v in (R.get("I5_calendar_years") or {}).items()), "",
           "### Not available yet", ""] + [f"- {k}: {v}" for k, v in (R.get("not_computable") or {}).items()]
-    L += [""] + (extra or []) + ["", "## About this report", "",
+    from .credits import block_md
+    L += [""] + (extra or []) + ["", block_md().rstrip(), "", "## About this report", "",
           f"Run: {q}, {run}. Source: {R.get('_source')}. Method: the pre-registration (OSF DOI 10.17605/OSF.IO/3XT82) "
           "and docs/EVALUATION_FLOW.md. This page is frozen once published; corrections are added as dated notes.", ""]
     return "\n".join(L)

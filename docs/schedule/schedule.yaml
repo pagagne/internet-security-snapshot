@@ -311,6 +311,7 @@ items:
   owner: claude
   title: One credits block on every output (data sources, their notices and links)
   date: 2026-11-27
+  done: "19 Nov 2026 (moved up): config/credits.yaml (17 sources) printed by snapshot.credits on every report page and its PDF, in docs/CREDITS.md and in the README; the Checks workflow fails if a collected source has no credit or a copy is stale. The website (27 Nov) takes the same block"
   details: >
     Found 18 Nov 2026 while summarising the terms pages: several sources ask for a credit or a
     notice on what the study publishes (NVD's "not endorsed" notice, MITRE's CVE copyright

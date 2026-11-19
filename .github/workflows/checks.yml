@@ -43,6 +43,10 @@ jobs:
         # Dates and permission statuses marked in the documents must match docs/schedule/schedule.yaml
         # and config/sources.yaml (author, 11 Nov 2026: update one place, every copy follows).
         run: python -m snapshot.refs check
+      - name: Credits block current?
+        # One credits block on every output (19 Nov 2026): every collected source credited, and
+        # docs/CREDITS.md and the README block match config/credits.yaml.
+        run: python -m snapshot.credits check
       - name: Cross-references land?
         # Every link between study documents must reach an existing file and section (author,
         # 11 Nov 2026). Links into the private repository are checked where it is checked out.

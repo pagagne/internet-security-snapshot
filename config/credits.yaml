@@ -1,0 +1,121 @@
+# One credits block for every output (schedule item credits-block; found 18 Nov 2026).
+# Each source the study publishes figures from, with the credit or notice its terms or its
+# written permission ask for, and a link. Printed by snapshot.credits on every report page (and
+# its PDF), in docs/CREDITS.md, on the landing page, and on the website from 4 Dec. Wording comes
+# from docs/TERMS_OF_USE.md and docs/PERMISSIONS.md; change it only with those rows.
+#
+#   key:     short id (matches config/sources.yaml where the source is permissioned)
+#   credit:  the line printed (the source's own wording where it gives one)
+#   notice:  an extra notice the terms require (optional)
+#   link:    where readers can find the source
+#   basis:   why the credit is printed (terms or permission, with date)
+#   part:    core | exploratory | context (which part of the report uses it)
+#   from:    first date figures from it can appear (sources still awaiting data say so)
+
+sources:
+  - key: cve_program
+    name: CVE Program
+    credit: "CVE records: the CVE Program (cve.org), via the CVE List repository."
+    notice: "CVE® is a registered trademark of The MITRE Corporation. CVE content © The MITRE Corporation, used under the CVE Program terms of use; CVE records are not altered."
+    link: https://www.cve.org/Legal/TermsOfUse
+    basis: CVE Program terms of use (MITRE licence), read 18 Nov 2026
+    part: core
+  - key: nvd
+    name: NVD (NIST)
+    credit: "Vulnerability details: the National Vulnerability Database (NIST)."
+    notice: "This product uses the NVD API but is not endorsed or certified by the NVD."
+    link: https://nvd.nist.gov/
+    basis: NVD terms of use (notice required on products using the API)
+    part: core
+  - key: cisa_kev
+    name: CISA KEV
+    credit: "Known exploited vulnerabilities: CISA's Known Exploited Vulnerabilities Catalog."
+    link: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+    basis: US government work; repository licence
+    part: core
+  - key: vulncheck_kev
+    name: VulnCheck KEV
+    credit: "Second exploited list: VulnCheck KEV (community edition)."
+    link: https://vulncheck.com/kev
+    basis: Written permission 11 Nov 2026 (attribution of the source data)
+    part: core
+    from: 2026-12-01
+  - key: epss
+    name: FIRST EPSS
+    credit: "Exploit likelihood scores: FIRST EPSS (Exploit Prediction Scoring System)."
+    link: https://www.first.org/epss/
+    basis: EPSS usage agreement, read 18 Nov 2026 (attribution asked)
+    part: core
+  - key: red_hat
+    name: Red Hat security data
+    credit: "Fix dates in part from Red Hat security data, licensed CC BY 4.0."
+    link: https://access.redhat.com/security/data
+    basis: CC BY 4.0 (credit and link required), read 18 Nov 2026
+    part: core
+  - key: osv
+    name: OSV and deps.dev
+    credit: "Fix dates and version data in part from OSV.dev and deps.dev (each record under its source database's licence)."
+    link: https://osv.dev/
+    basis: OSV and deps.dev data licences, read 18 Nov 2026
+    part: core
+  - key: sec_edgar
+    name: SEC EDGAR
+    credit: "Company breach filings: US Securities and Exchange Commission, EDGAR."
+    link: https://www.sec.gov/edgar/search/
+    basis: Public US government records; fair-access rules
+    part: core
+  - key: ransomware_live
+    name: ransomware.live
+    credit: "Source: Ransomware.live"
+    link: https://www.ransomware.live/
+    basis: Written permission 27 Oct 2026 (ticket 3425); terms section 6 (named source with a link back)
+    part: core
+  - key: cloudflare_radar
+    name: Cloudflare Radar
+    credit: "Bot, AI and attack traffic: Cloudflare Radar, data under CC BY-NC 4.0."
+    link: https://radar.cloudflare.com/
+    basis: Radar data licence CC BY-NC 4.0, read 12 Nov 2026
+    part: exploratory
+  - key: sans_isc
+    name: SANS Internet Storm Center
+    credit: "Honeypot activity: SANS Technology Institute, Internet Storm Center, https://isc.sans.edu"
+    link: https://isc.sans.edu/
+    basis: ISC data-feed terms (use permitted with attribution; not resold)
+    part: exploratory
+  - key: greynoise
+    name: GreyNoise
+    credit: "Data provided by GreyNoise."
+    link: https://www.greynoise.io/
+    basis: Research access granted 17 Nov 2026; uses agreed 18 and 19 Nov 2026 (credit as worded by GreyNoise)
+    part: exploratory
+  - key: apnic_labs
+    name: APNIC Labs
+    credit: "DNSSEC and RPKI measurements: APNIC Labs (stats.labs.apnic.net), used with permission; figures as published."
+    link: https://stats.labs.apnic.net/
+    basis: Written leave 1 Nov 2026 (ticket 00177078)
+    part: exploratory
+    from: 2026-12-01
+  - key: cert_fr
+    name: CERT-FR (ANSSI)
+    credit: "Alerts: CERT-FR (ANSSI), under Licence Ouverte 2.0."
+    link: https://www.cert.ssi.gouv.fr/
+    basis: Licence Ouverte / Etalab 2.0
+    part: exploratory
+  - key: jpcert
+    name: JPCERT/CC
+    credit: "Alerts: JPCERT/CC (www.jpcert.or.jp)."
+    link: https://www.jpcert.or.jp/
+    basis: JPCERT/CC site terms (quoting with source, document and URL); courtesy notice sent 29 Oct 2026
+    part: exploratory
+  - key: uk_ico
+    name: UK ICO
+    credit: "Data breach trends: Information Commissioner's Office, under the Open Government Licence v3.0."
+    link: https://ico.org.uk/
+    basis: Open Government Licence v3.0
+    part: context
+  - key: oaic
+    name: OAIC
+    credit: "Office of the Australian Information Commissioner website - www.oaic.gov.au (CC BY 4.0)."
+    link: https://www.oaic.gov.au/
+    basis: CC BY 4.0, credit as worded by the OAIC
+    part: context
