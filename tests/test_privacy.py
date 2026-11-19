@@ -48,8 +48,12 @@ def test_day_first_dates_are_not_counts():
 
 def test_scan_sees_new_files_not_yet_added(tmp_path, monkeypatch):
     """19 Nov 2026: a new file must be scanned before `git add`, not only after."""
+    import shutil
     import subprocess
+    import pytest
     from snapshot import privacy
+    if not shutil.which("git"):
+        pytest.skip("no git in the analysis container (the scan then walks every file)")
     subprocess.run(["git", "init", "-q"], cwd=tmp_path, check=True)
     (tmp_path / "new.md").write_text("contact: someone.private@gmail.com\n")
     monkeypatch.chdir(tmp_path)
