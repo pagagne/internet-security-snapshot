@@ -349,6 +349,27 @@ items:
     GreyNoise collection once (repository_dispatch, mode quarterly, quarter 2026Q4), confirm it
     ran, and report calls, errors and what the private files show. Figures stay private.
 
+- id: x3-human-approval-column
+  owner: claude
+  title: Add the human-approval column to the AI-attack log (X3) and back-fill it
+  date: 2026-11-25
+  details: >
+    Author's decision 19 Nov 2026 (X26 cards). New column human_approval_step (yes, no, not
+    stated) in exploratory/ai_attack_campaigns.csv, read from each row's primary report, with a
+    test of allowed values; the news log already has it. About an hour.
+
+- id: x26-build
+  owner: claude
+  title: Build the quarterly X26 reading (agent pull requests, Radar user action, OpenRouter agent share)
+  date: 2026-12-11
+  details: >
+    Author's decisions 19 Nov 2026 (cards). Turn the x26_probe task into a quarterly collector
+    run with the pull: GitHub counts per agent (exact accounts as the main figure, branch
+    prefixes as a marked estimate) with a sample of up to 100 merged pull requests per exact
+    agent; Radar crawl-purpose summary and daily series for the quarter, dated; OpenRouter task
+    classification saved each quarter. Private outputs, tests, credits (Cloudflare CC BY-NC,
+    OpenRouter CC BY). First reading with the Q1 2027 report.
+
 - id: censys-reapply
   owner: author
   title: Write the revised Censys research-access request (narrow ask)
@@ -1642,6 +1663,8 @@ items:
     OPENROUTER_API_KEY. Tested early, 14 Nov (research task openrouter_probe): the free key reaches
     every Data API endpoint with no credit. Left for the probe: which app categories and task shares
     show agents, how stable the series are, and a recommendation.
+  done: "19 Nov 2026: research task x26_probe run (all signals reachable and free with credit); findings private in exploratory/docs/x26-probe-2026-11-19.md; author's decisions the same day (cards): four signals kept, Economic Index as context only, no separate AI-browser signal, human-approval column in the X3 log and the news log"
+
 
 - id: skill-registry-probe
   owner: claude

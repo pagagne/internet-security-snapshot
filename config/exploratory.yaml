@@ -483,7 +483,7 @@ measures:
   - id: X26
     name: How much people hand over to AI (autonomy given to AI models and apps)
     question: How many everyday internet tasks are people handing from themselves to AI, in which kinds of task, and how much control do they keep; does handing over more control, or holding some back, go with better or worse security? (Author, 6 Nov 2026; no view taken on whether handing over is good or bad.)
-    sources: [github_search, cloudflare_radar, anthropic_econ_index, curated]
+    sources: [github_search, cloudflare_radar, openrouter, anthropic_econ_index, curated]
     added: 2026-11-06
     feeds_labels: false
     status: planned   # author's decision 6 Nov 2026: for the final 2027 report, even if partly from news reports; probe 19 Nov
@@ -505,6 +505,20 @@ measures:
       mentions a human approval step (yes, no, not stated), so the final report can show
       whether incidents with agents acting on their own differ from those where people kept a
       check. Data terms, access and a first test count are checked in the 19 Nov probe.
+      Author's decisions 19 Nov 2026 (cards, after the probe; findings private in
+      exploratory/docs/x26-probe-2026-11-19.md): four signals kept, read quarterly with the
+      pull from the Q1 2027 report and reported together in the final 2027 report: (1) GitHub
+      pull requests by AI coding agents, the exact count from agents' own app accounts as the
+      main figure and the count from agents' default branch names as a marked estimate, with a
+      sample of up to 100 merged pull requests per exact agent checked for commits by anyone
+      else; (2) Cloudflare Radar's "user action" share of AI-bot traffic (each reading dated,
+      because Cloudflare relabels purpose history); (3) OpenRouter's task classification
+      (agent share), a reading saved each quarter because it is a rolling window, one
+      platform's customers only; (4) the news log. The Anthropic Economic Index is dated context
+      only, never a figure on its own (conflict of interest). AI browsers get no separate signal
+      (no free reliable count; their web fetches fall in Radar's user-action share; cases go in
+      the news log). The human-approval column goes in the X3 log (back-filled) and the news log,
+      not X5, which is a tag on CVEs with no case reports.
 
   - id: X27
     name: Web patch adoption (HTTP Archive server versions)

@@ -1070,7 +1070,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Probe the 'autonomy handed to AI' sources (X26)
+SUMMARY:✅ DONE [Claude] Snapshot: Probe the 'autonomy handed to AI' sourc
+ es (X26)
 DESCRIPTION:Responsible: Claude\n\nAuthor's idea\, 6 Nov 2026 (https://gith
  ub.com/pagagne/internet-security-snapshot/blob/main/docs/INQUIRIES.md\; ht
  tps://github.com/pagagne/internet-security-snapshot/blob/main/config/explo
@@ -1435,6 +1436,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request 30 Oct 2026: a full reh
  TERMS_OF_USE.md\; fix anything that fails and note it in the session log. 
  Nothing from this run is published.\n\nSource: https://github.com/pagagne/
  internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:x3-human-approval-column@2026-11-25@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Add the human-approval column to the AI-attack l
+ og (X3) and back-fill it
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026 (X26 cards
+ ). New column human_approval_step (yes\, no\, not stated) in https://githu
+ b.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns.cs
+ v\, read from each row's primary report\, with a test of allowed values\; 
+ the news log already has it. About an hour.\n\nSource: https://github.com/
+ pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2010,6 +2027,25 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request of 26 Oct: a second dry
  s reported both with and without it in its first quarter.\n\nSource: https
  ://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/s
  chedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:x26-build@2026-12-11@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the quarterly X26 reading (agent pull requ
+ ests\, Radar user action\, OpenRouter agent share)
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026 (cards). 
+ Turn the x26_probe task into a quarterly collector run with the pull: GitH
+ ub counts per agent (exact accounts as the main figure\, branch prefixes a
+ s a marked estimate) with a sample of up to 100 merged pull requests per e
+ xact agent\; Radar crawl-purpose summary and daily series for the quarter\
+ , dated\; OpenRouter task classification saved each quarter. Private outpu
+ ts\, tests\, credits (Cloudflare CC BY-NC\, OpenRouter CC BY). First readi
+ ng with the Q1 2027 report.\n\nSource: https://github.com/pagagne/internet
+ -security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
