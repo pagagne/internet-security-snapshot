@@ -31,8 +31,8 @@ UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted t
 BASE = "https://stats.labs.apnic.net"
 INDEX: list[str] = []   # 19 Nov 2026: pages already probed
 # 19 Nov 2026 (author: whole quarter, 90 days): do the world maps accept a date and a window?
-VARIANTS = ["/dnssec?d=2026-09-30&w=90", "/dnssec?d=30/09/2026&w=90", "/rpki?d=2026-09-30&w=90",
-            "/rpki?d=30/09/2026&w=90", "/rpki?w=90"]
+VARIANTS = ["/dnssec?d=20260930&w=90", "/dnssec?d=09/30/2026&w=90", "/dnssec?d=2026/09/30&w=90", "/dnssec?d=30/08/2026&w=90",
+            "/dnssec?d=2026-09-30"]
 COUNTRIES: list[str] = []
 DATA_HINT = re.compile(r"json-table\.pl|\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
 DATE_RX = re.compile(r"\b(20\d\d-\d\d-\d\d|\d{1,2} [A-Z][a-z]{2,8} 20\d\d|[A-Z][a-z]{2,8} \d{1,2},? 20\d\d)\b")
