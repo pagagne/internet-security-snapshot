@@ -362,8 +362,8 @@ items:
     missing case is entered only from its own primary report, never from the site; nothing
     counted from the site. (2) offsecharnesses.ai: read its pages and terms; only if the terms
     allow, compare its harness list with the GitHub tool sweep's labels and left-out list. Results
-    privately in exploratory/x25-checks.md and the AI-attack log notes, ready for the 23 Nov
-    sync review.
+    privately in exploratory/x25-checks.md and the AI-attack log notes, for the decisions on
+    19 Nov (moved up from the 23 Nov sync review, author).
 
 - id: greynoise-collector-90-days
   owner: claude
@@ -1677,6 +1677,20 @@ items:
   details: >
     Read Claude's proposal of 18 Nov and keep or reject each change. After this, the searches and
     word lists are fixed from the 6 Jan 2027 pilot sweep on, so the 2027 sweeps compare.
+
+- id: x25-ailog-decisions
+  owner: author
+  title: Decide the tool-sweep label and search rules and the AI-attack log leads (moved up from the 23 Nov review)
+  date: 2026-11-19
+  minutes: 30
+  details: >
+    Moved from the 23 Nov sync review to 19 Nov at the author's request (18 Nov 2026). Claude puts
+    the questions in the morning report, plain message first, then cards: tool sweep problems 1-4
+    (attack tools labelled dual-use or defensive; a general app let in by "SOC 2"; real tools left
+    out by the relevance filter; tools no search returns), and the AI-attack log (counting per
+    report or per named actor; how many of the outside leads to work). Details privately in
+    exploratory/x25-checks.md and exploratory/ai-trackers-check-2026-11.md. Claude then changes
+    the rules, re-runs the sweep once and reports what moved, before the 25 Nov test run.
 
 - id: x25-test-run
   owner: claude

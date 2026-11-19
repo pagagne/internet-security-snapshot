@@ -956,6 +956,29 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:x25-ailog-decisions@2026-11-19@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Decide the tool-sweep label and search rules and t
+ he AI-attack log leads (moved up from the 23 Nov review)
+DESCRIPTION:Responsible: Paul (author)\n\nMoved from the 23 Nov sync review
+  to 19 Nov at the author's request (18 Nov 2026). Claude puts the question
+ s in the morning report\, plain message first\, then cards: tool sweep pro
+ blems 1-4 (attack tools labelled dual-use or defensive\; a general app let
+  in by "SOC 2"\; real tools left out by the relevance filter\; tools no se
+ arch returns)\, and the AI-attack log (counting per report or per named ac
+ tor\; how many of the outside leads to work). Details privately in https:/
+ /github.com/pagagne/snapshot-manual/blob/main/exploratory/x25-checks.md an
+ d https://github.com/pagagne/snapshot-manual/blob/main/exploratory/ai-trac
+ kers-check-2026-11.md. Claude then changes the rules\, re-runs the sweep o
+ nce and reports what moved\, before the 25 Nov test run.\n\nSource: https:
+ //github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/sc
+ hedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:ai-trackers-check@2026-11-19@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
@@ -971,9 +994,9 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 18 Nov 2026 (cards).
  es and terms\; only if the terms allow\, compare its harness list with the
   GitHub tool sweep's labels and left-out list. Results privately in https:
  //github.com/pagagne/snapshot-manual/blob/main/exploratory/x25-checks.md a
- nd the AI-attack log notes\, ready for the 23 Nov sync review.\n\nSource: 
- https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
- ule/schedule.yaml
+ nd the AI-attack log notes\, for the decisions on 19 Nov (moved up from th
+ e 23 Nov sync review\, author).\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
