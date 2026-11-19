@@ -1,0 +1,35 @@
+# Exploratory X30 (author's decision, 19 Nov 2026): terms that mark a malicious package as aimed at
+# AI developers or AI libraries. Matched against the package name's parts (split on - _ . /) and the
+# record's one-line summary, whole word, case-insensitive. Dated list: additions are dated here and
+# never applied to past counts silently (each quarter's reading records the list version).
+version: 1.0   # 2026-11-19
+terms:
+  # providers and model families
+  - openai
+  - anthropic
+  - claude
+  - gpt
+  - chatgpt
+  - gemini
+  - deepseek
+  - mistral
+  - llama
+  - qwen
+  - grok
+  - copilot
+  # libraries and frameworks
+  - langchain
+  - langgraph
+  - llamaindex
+  - transformers
+  - huggingface
+  - diffusers
+  - ollama
+  - vllm
+  - litellm
+  - autogen
+  - crewai
+  # agent tooling
+  - mcp
+  - llm
+  - ai
