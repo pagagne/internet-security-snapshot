@@ -1,0 +1,10 @@
+# Backfilled row counts for the row-count check (risk R9, watch-list W1; snapshot.quality
+# section 12). Only for quarters with no quarterly-pull run in the run reports: the check
+# otherwise uses the latest run per quarter. Same keys as quality.json "counts" (file path
+# inside the bundle: rows). Counts here are full-quarter figures. Add a quarter only with a
+# note of how its counts were produced (a backfill pull run, its run id and date).
+#
+# quarters:
+#   2026Q2:   # backfill pull, run <id>, <date>
+#     nvd/nvd_cves.parquet: 0
+quarters: {}

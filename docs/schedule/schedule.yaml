@@ -2202,6 +2202,7 @@ items:
   queue: true
   title: Add a row-count check against history to the quality report (R9)
   date: 2026-11-25
+  done: "19 Nov 2026 (moved up): snapshot.quality section 12 compares each source with the latest run of each of the last four quarters (backfill in config/row_history.yaml), prorating window-based sources; zero, or below half when the average is 20 or more, sets hold_release; the quarterly pull passes every earlier quality file. First real use: the 1 Dec dry run"
   details: >
     snapshot.quality: for each source, compare this run's rows with the average of the last four
     quarters (backfilled where no run exists); flag below half or zero as "hold the release"

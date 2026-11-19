@@ -84,8 +84,13 @@ jobs:
           # Previous run's metrics, for the drift checks
           git fetch -q origin run-reports 2>/dev/null && prev=$(git ls-tree -r --name-only FETCH_HEAD | grep 'quality-.*\.json$' | sort | tail -1)
           if [ -n "$prev" ]; then git show "FETCH_HEAD:$prev" > /tmp/prev-quality.json; fi
+          # Every earlier run's metrics, for the row-count check against history (R9, W1)
+          mkdir -p /tmp/quality-history
+          git ls-tree -r --name-only FETCH_HEAD 2>/dev/null | grep 'quality-.*\.json$' | while read -r f; do
+            git show "FETCH_HEAD:$f" > "/tmp/quality-history/$(echo "$f" | tr '/' '_')"
+          done || true
           for b in data/raw/*/*/; do
-            python -m snapshot.quality "$b" --previous /tmp/prev-quality.json > /dev/null || true
+            python -m snapshot.quality "$b" --previous /tmp/prev-quality.json --history /tmp/quality-history > /dev/null || true
             cat "$b/quality.md" >> "$GITHUB_STEP_SUMMARY"
             python -c "import sys; t=open(sys.argv[1]).read()[:60000]; print('::notice title=Data quality ' + sys.argv[1] + '::' + t.replace('%','%25').replace('\r','%0D').replace('\n','%0A'))" "$b/quality.md"
           done

@@ -274,6 +274,7 @@ def build(bundle: Path) -> tuple[str, dict]:
             L.append(f"- {p.stem}: {'ok' if ok else 'error'}")
         L.append("")
     M["counts"], M["fields"] = source_counts(bundle)
+    M["window_fraction"] = window_fraction(q, man)
     return "\n".join(L), M
 
 
@@ -335,16 +336,115 @@ def drift_section(metrics: dict, previous: dict | None) -> list[str]:
     return L
 
 
+# Row counts against history (risk R9, watch-list W1; schedule item risk-r9-row-check).
+# Each source's rows are compared with the average of the last four quarters before this one:
+# the latest run per quarter (final, then provisional, then dry run) from the run reports, plus
+# backfilled counts in config/row_history.yaml for quarters without a run. Window-based sources
+# are prorated to the share of the quarter this run covers. Zero rows, or below half the average
+# (when the average is at least HOLD_FLOOR), means "hold the release": check the source by hand,
+# and the author decides a rerun or a gap note.
+HISTORY_QUARTERS = 4
+HOLD_FLOOR = 20
+WINDOW_BASED = ("nvd/", "epss/", "sec/", "ransomware/")
+RUN_RANK = {"final": 3, "provisional": 2, "dry-run": 1}
+BACKFILL = Path(__file__).resolve().parents[2] / "config" / "row_history.yaml"
+
+
+def window_fraction(q, man: dict) -> float:
+    """Share of the quarter covered by this run (1.0 once the quarter is over)."""
+    stamps = [e.get("retrieved_at") for e in man.get("files", []) if e.get("retrieved_at")]
+    if not stamps:
+        return 1.0
+    got = pd.Timestamp(max(stamps)).date() - dt.timedelta(days=1)
+    total = (q.end - q.start).days + 1
+    return round(max(0.0, min(1.0, ((got - q.start).days + 1) / total)), 3)
+
+
+def load_history(folder: Path | None, backfill: Path = BACKFILL) -> list[dict]:
+    runs = []
+    if folder and folder.exists():
+        for f in sorted(folder.glob("*.json")):
+            try:
+                d = json.loads(f.read_text())
+            except ValueError:
+                continue
+            if d.get("quarter") and d.get("counts"):
+                runs.append(d)
+    if backfill.exists():
+        import yaml
+        for qtr, counts in ((yaml.safe_load(backfill.read_text()) or {}).get("quarters") or {}).items():
+            if counts:
+                runs.append({"quarter": str(qtr), "run": "backfill", "counts": counts, "window_fraction": 1.0})
+    return runs
+
+
+def history_section(metrics: dict, history: list[dict]) -> list[str]:
+    L = ["## 12. Row counts against history (W1)", ""]
+    cur_q = metrics.get("quarter") or ""
+    best: dict[str, dict] = {}
+    for h in history:
+        hq = h.get("quarter") or ""
+        if not hq or hq >= cur_q:
+            continue
+        rank = RUN_RANK.get(h.get("run"), 2)   # backfill sits with provisional
+        if hq not in best or rank > RUN_RANK.get(best[hq].get("run"), 2):
+            best[hq] = h
+    quarters = sorted(best)[-HISTORY_QUARTERS:]
+    frac = metrics.get("window_fraction") or 1.0
+    flags = []
+    if not quarters:
+        L.append("No earlier quarter to compare with yet (no run and no backfilled counts).")
+    else:
+        L.append(f"Compared with {len(quarters)} earlier quarter(s): {', '.join(quarters)}"
+                 + (f"; window-based sources prorated to {frac:.0%} of the quarter." if frac < 1 else "."))
+        L += ["", "| Rows | This run | History average | Expected | Status |", "|---|---|---|---|---|"]
+        for rel, n in sorted((metrics.get("counts") or {}).items()):
+            vals = []
+            for qq in quarters:
+                h = best[qq]
+                v = (h.get("counts") or {}).get(rel)
+                if v is None:
+                    continue
+                hf = h.get("window_fraction") or 1.0
+                vals.append(v / hf if rel.startswith(WINDOW_BASED) and hf > 0 else v)
+            if not vals:
+                L.append(f"| {rel} | {n:,} | none | - | no history |")
+                continue
+            avg = sum(vals) / len(vals)
+            exp = avg * frac if rel.startswith(WINDOW_BASED) else avg
+            if exp > 0 and n == 0:
+                status = "**hold: zero rows**"
+            elif exp >= HOLD_FLOOR and n < 0.5 * exp:
+                status = "**hold: below half**"
+            else:
+                status = "ok"
+            if status != "ok":
+                flags.append(f"{rel}: {n:,} rows, expected about {exp:,.0f}")
+            L.append(f"| {rel} | {n:,} | {avg:,.0f} | {exp:,.0f} | {status} |")
+    L.append("")
+    if flags:
+        L += ["**Hold the release:** check each flagged source by hand; the author decides a rerun or "
+              "a gap note (risk R9, watch-list W1).", ""] + [f"- {f}" for f in flags] + [""]
+    else:
+        L += ["- No source below half its history.", ""]
+    metrics["history_quarters"] = quarters
+    metrics["history_flags"] = flags
+    metrics["hold_release"] = bool(flags)
+    return L
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("bundles", nargs="+", type=Path)
     ap.add_argument("--previous", type=Path, help="quality.json from the previous run (drift checks)")
+    ap.add_argument("--history", type=Path, help="folder of earlier quality-*.json files (row-count check, W1)")
     args = ap.parse_args(argv)
     for b in args.bundles:
         try:
             md, metrics = build(b)
             prev = json.loads(args.previous.read_text()) if args.previous and args.previous.exists() else None
             md += "\n" + "\n".join(drift_section(metrics, prev))
+            md += "\n" + "\n".join(history_section(metrics, load_history(args.history)))
         except Exception as exc:  # the report must never hide a failed run
             md, metrics = f"# Data quality: {b}\n\nReport failed: {type(exc).__name__}: {exc}\n", {"error": str(exc)}
         (b / "quality.md").write_text(md)

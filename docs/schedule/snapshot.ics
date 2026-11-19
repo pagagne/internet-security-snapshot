@@ -1398,8 +1398,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Add a row-count check against history to the qua
- lity report (R9)
+SUMMARY:✅ DONE [Claude] Snapshot: Add a row-count check against history t
+ o the quality report (R9)
 DESCRIPTION:Responsible: Claude\n\nsnapshot.quality: for each source\, comp
  are this run's rows with the average of the last four quarters (backfilled
   where no run exists)\; flag below half or zero as "hold the release" (wat
