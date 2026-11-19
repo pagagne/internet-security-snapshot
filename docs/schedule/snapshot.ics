@@ -961,8 +961,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Decide the tool-sweep label and search rules and t
- he AI-attack log leads (moved up from the 23 Nov review)
+SUMMARY:✅ DONE [Paul] Snapshot: Decide the tool-sweep label and search ru
+ les and the AI-attack log leads (moved up from the 23 Nov review)
 DESCRIPTION:Responsible: Paul (author)\n\nMoved from the 23 Nov sync review
   to 19 Nov at the author's request (18 Nov 2026). Claude puts the question
  s in the morning report\, plain message first\, then cards: tool sweep pro
@@ -1155,6 +1155,30 @@ DESCRIPTION:Responsible: Claude\n\nA week after the 13 Nov follow-ups: look
  o this check is now for CrowdSec (and Shadowserver).\n\nSource: https://gi
  thub.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedu
  le.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:x25-rules-2026-11@2026-11-21@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Apply the 19 Nov tool-sweep rules\, re-run the s
+ weep once\, list every change and hand-check 50
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026. Labels p
+ urpose first (offensive when the name or description states attacking as t
+ he purpose\, unless a defensive purpose is also stated\; also stops attack
+  tools being labelled defensive)\; "SOC 1/2/3" counts as a security term o
+ nly with another one\; new relevance terms (Kali Linux written to avoid lo
+ ok-alikes\, bug bounty\, password cracking\, nmap\, wazuh\, security alert
+  triage without fraud or AML)\; HexStrike and PentAGI copies counted once 
+ each as one line with the number of copies\; new searches (offensive skill
+ s\, Claude Code plugins\, bug hunter\, red team agent)\; the outside harne
+ ss index (MIT\, credited) as a quarterly coverage check\, never as counts.
+  Tests first\; one re-run\; private list of every tool whose label or incl
+ usion changed\; hand check of 50\; result to the author before the 25 Nov 
+ test run.\n\nSource: https://github.com/pagagne/internet-security-snapshot
+ /blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -2081,6 +2105,26 @@ DESCRIPTION:Responsible: Paul (author)\n\nA shorter pass than 2 Dec (only i
  Source: https://github.com/pagagne/internet-security-snapshot/blob/main/do
  cs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-log-leads-2026-11@2026-12-18@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Work all 76 outside leads into the AI-attack log
+  from their primary reports
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026: all 76 c
+ onfirmed or strong leads from the outside incidents ledger (https://github
+ .com/pagagne/snapshot-manual/blob/main/exploratory/ai-trackers-leads-2026-
+ 11.csv) worked before the pilot\; each entered only from its own primary r
+ eport\, never from the ledger\; a report that names several groups gets on
+ e entry per named group only when it describes that group's own activity\,
+  each linked to the shared report (a new field). Roughly 10-15 hours\; new
+ est months first\; progress in the session logs. Before the 29 Dec freeze.
+ \n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:i5-baseline-read@2026-12-20@internet-security-snapshot

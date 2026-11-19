@@ -1682,6 +1682,7 @@ items:
   owner: author
   title: Decide the tool-sweep label and search rules and the AI-attack log leads (moved up from the 23 Nov review)
   date: 2026-11-19
+  done: "19 Nov 2026 (morning report, cards): labels purpose first; SOC 2 needs a second security word; new relevance terms with HexStrike and PentAGI copies counted once; new searches plus the outside index as a quarterly coverage check; AI-attack log counted per named group when the report describes its own activity; all 76 leads worked before the pilot"
   minutes: 30
   details: >
     Moved from the 23 Nov sync review to 19 Nov at the author's request (18 Nov 2026). Claude puts
@@ -1691,6 +1692,33 @@ items:
     report or per named actor; how many of the outside leads to work). Details privately in
     exploratory/x25-checks.md and exploratory/ai-trackers-check-2026-11.md. Claude then changes
     the rules, re-runs the sweep once and reports what moved, before the 25 Nov test run.
+
+- id: x25-rules-2026-11
+  owner: claude
+  title: Apply the 19 Nov tool-sweep rules, re-run the sweep once, list every change and hand-check 50
+  date: 2026-11-21
+  details: >
+    Author's decisions 19 Nov 2026. Labels purpose first (offensive when the name or description
+    states attacking as the purpose, unless a defensive purpose is also stated; also stops attack
+    tools being labelled defensive); "SOC 1/2/3" counts as a security term only with another one;
+    new relevance terms (Kali Linux written to avoid look-alikes, bug bounty, password cracking,
+    nmap, wazuh, security alert triage without fraud or AML); HexStrike and PentAGI copies counted
+    once each as one line with the number of copies; new searches (offensive skills, Claude Code
+    plugins, bug hunter, red team agent); the outside harness index (MIT, credited) as a quarterly
+    coverage check, never as counts. Tests first; one re-run; private list of every tool whose
+    label or inclusion changed; hand check of 50; result to the author before the 25 Nov test run.
+
+- id: ai-log-leads-2026-11
+  owner: claude
+  title: Work all 76 outside leads into the AI-attack log from their primary reports
+  date: 2026-12-18
+  details: >
+    Author's decisions 19 Nov 2026: all 76 confirmed or strong leads from the outside incidents
+    ledger (exploratory/ai-trackers-leads-2026-11.csv) worked before the pilot; each entered only
+    from its own primary report, never from the ledger; a report that names several groups gets
+    one entry per named group only when it describes that group's own activity, each linked to
+    the shared report (a new field). Roughly 10-15 hours; newest months first; progress in the
+    session logs. Before the 29 Dec freeze.
 
 - id: x25-test-run
   owner: claude
