@@ -114,7 +114,7 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261027
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Continue the research window
+SUMMARY:✅ DONE [Claude] Snapshot: Continue the research window
 DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
  rity-snapshot/blob/main/docs/RESEARCH_PLAN.md: item 5 (an on/off switch pe
  r permissioned source in config)\, then item 4 (remaining evaluation code:

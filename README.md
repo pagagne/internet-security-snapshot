@@ -29,7 +29,8 @@ At its core, it answers using only free, public data, under a plan pre-registere
 Science Framework (OSF, DOI [10.17605/OSF.IO/3XT82](https://doi.org/10.17605/OSF.IO/3XT82),
 20 October 2026), so the findings cannot be shaped to fit a conclusion.
 
-The study tracks ten core datasets. Seven are collected now:
+The study tracks ten core datasets. Seven are collected now, and an eighth from the 1 December
+2026 test run:
 
 1. **Flaw records:** public records of software flaws, from CVE.org and NVD, plus CISA's
    Vulnrichment analysis.
@@ -43,24 +44,28 @@ The study tracks ten core datasets. Seven are collected now:
    filings.
 7. **AI credits:** AI tools credited in flaw records.
 
-Three are pending permission:
+8. **Exploited flaws, second source:** independent exploitation evidence, from VulnCheck (with
+   written permission, 11 November 2026).
 
-8. **Exploited flaws, second source:** independent exploitation evidence, from VulnCheck.
+Two are pending permission:
+
 9. **Exposure scans:** how many internet systems are still exposed to a flaw, from Shadowserver.
 10. **Honeypot hits:** real-world attack observations, from Shadowserver's honeypots.
 
 **Yearly cross-check:** internet scan data for the exposure reference. Censys declined research access on 10 Nov 2026; the author decides at the 15 March 2027 review whether to reapply, license it, or drop it.
 
-**International views, being tested:** national alerts on actively exploited flaws from France
-(CERT-FR) and Japan (JPCERT/CC); routing security by country from APNIC Labs (with written
-permission, 1 November 2026); regional splits of web traffic and ransomware postings; and
-data-breach notifications from the UK (ICO) and Australia (OAIC).
+**International views (exploratory):** national alerts on actively exploited flaws from France
+(CERT-FR), Japan (JPCERT/CC), Germany (BSI) and Korea (KrCERT/CC); routing security by country
+from APNIC Labs (with written permission, 1 November 2026); regional splits of web traffic and
+ransomware postings; and data-breach notifications from the UK (ICO), Australia (OAIC),
+Singapore (PDPC) and the EU (ENISA).
 
 Each quarter, an automatic GitHub job freezes an exact copy of the data, the author checks by
 hand what automation cannot judge, and the seven pre-registered questions are reported: a
 provisional evaluation on the 1st of January, April, July and October, and a final one a month
 later. Q4 2026 is a labelled pilot; Q1 2027 is the first scored quarter. Additional context comes
-from news reporting, internet traffic data from Cloudflare Radar, and open repositories of
+from news reporting, internet traffic data from Cloudflare Radar, attack sightings from GreyNoise
+(with permission, 17 November 2026) and the SANS Internet Storm Center, and open repositories of
 software code and AI models and datasets.
 
 ## How the study works: four tracks

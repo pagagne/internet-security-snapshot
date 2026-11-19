@@ -37,6 +37,7 @@ items:
   owner: claude
   title: Continue the research window
   date: 2026-10-26
+  done: "15 Nov 2026 (research window ended; closed 19 Nov at the author's decision)"
   details: >
     docs/RESEARCH_PLAN.md: item 5 (an on/off switch per permissioned source in config), then
     item 4 (remaining evaluation code: labels T2, T4-T6; X6-X12; NVD root-cause fill; draft

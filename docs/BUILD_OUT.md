@@ -161,3 +161,21 @@ the inquiry log (`docs/INQUIRIES.md`).
     statistics, and a privacy reading of every public document for anything from private
     conversations or correspondence. The author decides what to act on; changes to the
     registered core wait for the 15 Mar 2027 review.
+
+### Evening
+
+33. **The README's Mission section, shown word for word on the website, was out of date.**
+    Claude drafted an update. Agreed: as drafted. VulnCheck is listed with the collected data
+    (from the 1 December test run), two sources are still pending (Shadowserver), the
+    international views are marked exploratory with every agency the study uses, and GreyNoise
+    and the SANS Internet Storm Center are named as context.
+
+34. **An old open task, "Continue the research window".** The window ended on 15 Nov.
+    Agreed: closed as done.
+
+35. **When to approve the pilot-timeline layout on the run-health page.** Agreed: on 23 Nov,
+    as planned; the draft label stays until then.
+
+36. **A step-by-step guide for the website.** Agreed: `docs/WEBSITE.md` covers switching the site
+    on (4 Dec), approving the draft sections, and how a results publish flows from January.
+
