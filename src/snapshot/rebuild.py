@@ -30,7 +30,7 @@ from pathlib import Path
 from .util import sha256_file
 
 DECIMALS = 6               # reporting precision for comparisons
-SKIP_KEYS = {"drift_flags"}
+SKIP_KEYS = {"drift_flags", "history_quarters", "history_flags", "hold_release"}   # depend on earlier runs, not this bundle
 
 
 def verify_files(bundle: Path) -> list[str]:
