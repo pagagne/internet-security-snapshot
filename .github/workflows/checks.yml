@@ -47,6 +47,9 @@ jobs:
         # One credits block on every output (19 Nov 2026): every collected source credited, and
         # docs/CREDITS.md and the README block match config/credits.yaml.
         run: python -m snapshot.credits check
+      - name: Exploratory measures document current?
+        # docs/EXPLORATORY_MEASURES.md is built from config/exploratory.yaml (author, 19 Nov 2026).
+        run: python -m snapshot.explodoc check
       - name: Website home page current?
         # site/index.html is built from the README's Mission section and the credits (19 Nov 2026).
         run: python -m snapshot.site check

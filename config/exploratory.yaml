@@ -392,7 +392,7 @@ measures:
     sources: [apnic_labs]
     added: 2026-10-26
     feeds_labels: false
-    status: active   # 19 Nov 2026: collector built and tested (snapshot.collect.apnic, two world-map pages a pull; raw kept private). 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution); written leave 1 Nov 2026 (ticket 00177078: credit APNIC Labs, figures as published)
+    status: active   # 19 Nov 2026: collector built and tested (snapshot.collect.apnic: the DNSSEC world map for the quarter and APNIC's per-country RPKI series; raw kept private). 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution); written leave 1 Nov 2026 (ticket 00177078: credit APNIC Labs, figures as published)
     method: >
       Quarterly, for the whole quarter (author, 19 Nov 2026), APNIC Labs' public per-country
       figures as published: share of users behind resolvers that validate DNSSEC (the 90 days

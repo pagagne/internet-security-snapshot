@@ -186,3 +186,9 @@ the inquiry log (`docs/INQUIRIES.md`).
 38. **When to name the successor and grant access.** Agreed: at the 28 Nov account check,
     together with two-factor sign-in and recovery codes.
 
+39. **The details written today for each exploratory measure belong in the manual.** Agreed:
+    `docs/EXPLORATORY_MEASURES.md`, built from `config/exploratory.yaml` (one section per
+    measure: question, status with its dated note, sources and method), kept in Appendix A for
+    now, beside this record, and checked so it can never fall behind the file. The manual's main
+    parts are then built up from the build-out records.
+
