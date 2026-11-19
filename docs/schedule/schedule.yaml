@@ -1682,7 +1682,7 @@ items:
   owner: author
   title: Decide the tool-sweep label and search rules and the AI-attack log leads (moved up from the 23 Nov review)
   date: 2026-11-19
-  done: "19 Nov 2026 (morning report, cards): labels purpose first; SOC 2 needs a second security word; new relevance terms with HexStrike and PentAGI copies counted once; new searches plus the outside index as a quarterly coverage check; AI-attack log counted per named group when the report describes its own activity; all 76 leads worked before the pilot"
+  done: "19 Nov 2026 (morning report, cards): labels purpose first; SOC 2 needs a second security word; new relevance terms with HexStrike and PentAGI copies counted once; new searches plus the outside index as a quarterly coverage check; AI-attack log counted per named group when the report describes its own activity; all the outside leads worked before the pilot"
   minutes: 30
   details: >
     Moved from the 23 Nov sync review to 19 Nov at the author's request (18 Nov 2026). Claude puts
@@ -1710,10 +1710,10 @@ items:
 
 - id: ai-log-leads-2026-11
   owner: claude
-  title: Work all 76 outside leads into the AI-attack log from their primary reports
+  title: Work all the outside leads into the AI-attack log from their primary reports
   date: 2026-12-18
   details: >
-    Author's decisions 19 Nov 2026: all 76 confirmed or strong leads from the outside incidents
+    Author's decisions 19 Nov 2026: all the confirmed or strong leads from the outside incidents
     ledger (exploratory/ai-trackers-leads-2026-11.csv) worked before the pilot; each entered only
     from its own primary report, never from the ledger; a report that names several groups gets
     one entry per named group only when it describes that group's own activity, each linked to

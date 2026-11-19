@@ -2112,18 +2112,18 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Work all 76 outside leads into the AI-attack log
-  from their primary reports
-DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026: all 76 c
- onfirmed or strong leads from the outside incidents ledger (https://github
- .com/pagagne/snapshot-manual/blob/main/exploratory/ai-trackers-leads-2026-
- 11.csv) worked before the pilot\; each entered only from its own primary r
- eport\, never from the ledger\; a report that names several groups gets on
- e entry per named group only when it describes that group's own activity\,
-  each linked to the shared report (a new field). Roughly 10-15 hours\; new
- est months first\; progress in the session logs. Before the 29 Dec freeze.
- \n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/docs/schedule/schedule.yaml
+SUMMARY:[Claude] Snapshot: Work all the outside leads into the AI-attack lo
+ g from their primary reports
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026: all the 
+ confirmed or strong leads from the outside incidents ledger (https://githu
+ b.com/pagagne/snapshot-manual/blob/main/exploratory/ai-trackers-leads-2026
+ -11.csv) worked before the pilot\; each entered only from its own primary 
+ report\, never from the ledger\; a report that names several groups gets o
+ ne entry per named group only when it describes that group's own activity\
+ , each linked to the shared report (a new field). Roughly 10-15 hours\; ne
+ west months first\; progress in the session logs. Before the 29 Dec freeze
+ .\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/ma
+ in/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
