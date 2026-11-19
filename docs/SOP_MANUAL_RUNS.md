@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 18 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 19 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -326,7 +326,7 @@ the date and reason, noted in the session log, and raised at the next review.
 Added 17 Nov 2026 (author's request). Every key lives only as a GitHub secret (repository
 Settings, Secrets and variables, Actions). Never paste or read out a key, in chat, a file or an
 email. Claude cannot see the values or the expiry dates; the author looks them up on each
-service's own page. The private key register (risk R10) holds the dates, and every expiry gets a
+service's own page. The private key register (risk R10; private repository, `exploratory/docs/KEY_REGISTER.md`) holds the dates, and every expiry gets a
 reminder 30 days ahead in the schedule. Keys are checked at least once a year, and whenever a run
 fails with an "unauthorised" or "forbidden" error. To replace a key: make the new one on the
 service's page, paste it straight into the GitHub secret of the same name (Update secret), tell

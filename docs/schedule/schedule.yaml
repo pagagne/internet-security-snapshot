@@ -2044,6 +2044,7 @@ items:
     a minute, 500,000 a month per key), the Google Cloud and Drive backup credentials, and any GreyNoise or CrowdSec key when
     granted. For each: who issued it, where it is kept (GitHub secret name), expiry or
     "none stated", and how to renew. Expiries become schedule items 30 days ahead.
+  done: "19 Nov 2026: private register exploratory/docs/KEY_REGISTER.md (nine secrets, issuer, expiry, renewal, no values); the two dated expiries already have reminders (30 Dec 2026, 12 Apr 2027)"
 
 - id: risk-r10-expiry-check
   owner: author
