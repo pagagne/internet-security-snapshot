@@ -179,3 +179,10 @@ the inquiry log (`docs/INQUIRIES.md`).
 36. **A step-by-step guide for the website.** Agreed: `docs/WEBSITE.md` covers switching the site
     on (4 Dec), approving the draft sections, and how a results publish flows from January.
 
+37. **May a successor approve reports if the author cannot?** Claude recommended a limited,
+    written delegation. Agreed: no delegation; results wait for the author, while the runs
+    and frozen data continue.
+
+38. **When to name the successor and grant access.** Agreed: at the 28 Nov account check,
+    together with two-factor sign-in and recovery codes.
+
