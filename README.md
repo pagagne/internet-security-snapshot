@@ -204,17 +204,20 @@ estimation.
 <!-- credits:start -->
 ### Credits
 
-The study uses public and permissioned data. Each source is credited as its terms or its written permission ask; none of them endorses the study or its findings.
+The study uses public and permissioned data. Every source whose data it uses is listed here, credited as its terms or its written permission ask; none of them endorses the study or its findings.
 
 **Core data (scored)**
 
-- CVE records: the CVE Program (cve.org), via the CVE List repository. <https://www.cve.org/Legal/TermsOfUse> CVE® is a registered trademark of The MITRE Corporation. CVE content © The MITRE Corporation, used under the CVE Program terms of use; CVE records are not altered.
+- CVE records: the CVE Program (cve.org), via the CVE List repository. <https://www.cve.org/Legal/TermsOfUse> Copyright © 1999-2026, The MITRE Corporation. CVE and the CVE logo are registered trademarks of The MITRE Corporation. Used under the CVE Program terms of use; CVE records are not altered.
 - Vulnerability details: the National Vulnerability Database (NIST). <https://nvd.nist.gov/> This product uses the NVD API but is not endorsed or certified by the NVD.
 - Known exploited vulnerabilities: CISA's Known Exploited Vulnerabilities Catalog. <https://www.cisa.gov/known-exploited-vulnerabilities-catalog>
+- Exploitation flags and added analysis: CISA Vulnrichment (published in the CVE records). <https://github.com/cisagov/vulnrichment>
 - Second exploited list: VulnCheck KEV (community edition). <https://vulncheck.com/kev> (figures from 2026-12-01)
 - Exploit likelihood scores: FIRST EPSS (Exploit Prediction Scoring System). <https://www.first.org/epss/>
 - Fix dates in part from Red Hat security data, licensed CC BY 4.0. <https://access.redhat.com/security/data>
 - Fix dates and version data in part from OSV.dev and deps.dev (each record under its source database's licence). <https://osv.dev/>
+- Fix dates in part from the GitHub Advisory Database (reviewed advisories, CC BY 4.0). <https://github.com/advisories>
+- Fix dates in part from vendors' own security advisories (Microsoft, Cisco, Palo Alto Networks, Siemens) and Linux kernel fixing commits (git.kernel.org). <https://git.kernel.org/>
 - Company breach filings: US Securities and Exchange Commission, EDGAR. <https://www.sec.gov/edgar/search/>
 - Source: Ransomware.live <https://www.ransomware.live/>
 
@@ -223,14 +226,16 @@ The study uses public and permissioned data. Each source is credited as its term
 - Bot, AI and attack traffic: Cloudflare Radar, data under CC BY-NC 4.0. <https://radar.cloudflare.com/>
 - Honeypot activity: SANS Technology Institute, Internet Storm Center, https://isc.sans.edu <https://isc.sans.edu/>
 - Data provided by GreyNoise. <https://www.greynoise.io/>
+- AI tool and model counts: public data from GitHub and Hugging Face, read through their official APIs; individuals' projects are never named. <https://huggingface.co/>
+- AI attack log: every case cites the published report it comes from (security firms, government agencies, platforms); titles and links only. <https://github.com/pagagne/internet-security-snapshot/blob/main/config/feeds.yaml>
 - DNSSEC and RPKI measurements: APNIC Labs (stats.labs.apnic.net), used with permission; figures as published. <https://stats.labs.apnic.net/> (figures from 2026-12-01)
 - Alerts: CERT-FR (ANSSI), under Licence Ouverte 2.0. <https://www.cert.ssi.gouv.fr/>
 - Alerts: JPCERT/CC (www.jpcert.or.jp). <https://www.jpcert.or.jp/>
-
-**Context**
-
+- Alerts: BSI (Germany) and KrCERT/CC (Korea), each alert cited by title, date and link. <https://www.bsi.bund.de/>
+- Health-sector breaches: US Department of Health and Human Services, Office for Civil Rights breach portal (counts only). <https://ocrportal.hhs.gov/ocr/breach/>
 - Data breach trends: Information Commissioner's Office, under the Open Government Licence v3.0. <https://ico.org.uk/>
 - Office of the Australian Information Commissioner website - www.oaic.gov.au (CC BY 4.0). <https://www.oaic.gov.au/>
+- Breach notification counts: Singapore's Personal Data Protection Commission and ENISA (EU Agency for Cybersecurity) published reports, each cited by title and link. <https://www.enisa.europa.eu/>
 <!-- credits:end -->
 
 ## Schedule

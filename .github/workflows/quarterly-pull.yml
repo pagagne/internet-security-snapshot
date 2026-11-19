@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write   # to tag each provisional/final run
+  issues: write     # a release hold opens an issue for the author (R9, W1; author, 19 Nov 2026)
 
 concurrency:
   group: quarterly-pull   # one pull at a time; a second waits rather than racing on tags or reports
@@ -90,9 +91,29 @@ jobs:
             git show "FETCH_HEAD:$f" > "/tmp/quality-history/$(echo "$f" | tr '/' '_')"
           done || true
           for b in data/raw/*/*/; do
-            python -m snapshot.quality "$b" --previous /tmp/prev-quality.json --history /tmp/quality-history > /dev/null || true
+            n=$(echo "$b" | cut -d/ -f3,4 | tr / -)
+            RUN_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+              python -m snapshot.quality "$b" --previous /tmp/prev-quality.json --history /tmp/quality-history \
+              --hold-issue "/tmp/hold-$n.json" > /dev/null || true
             cat "$b/quality.md" >> "$GITHUB_STEP_SUMMARY"
             python -c "import sys; t=open(sys.argv[1]).read()[:60000]; print('::notice title=Data quality ' + sys.argv[1] + '::' + t.replace('%','%25').replace('\r','%0D').replace('\n','%0A'))" "$b/quality.md"
+          done
+
+      - name: Release hold
+        # Row-count check against history (R9, W1; author, 19 Nov 2026): a source with zero rows, or
+        # below half the last four quarters' average, opens an issue assigned to the author, and
+        # publishing waits until it is closed (the Publish results workflow checks for an open
+        # release-hold issue). The run itself carries on, so the hand check can start.
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          for f in /tmp/hold-*.json; do
+            gh label create release-hold --color B60205 --description "Publishing waits (R9, W1)" 2>/dev/null || true
+            gh issue create --title "$(jq -r .title "$f")" --body "$(jq -r .body "$f")" \
+              --label release-hold --label owner:author --label schedule || echo "::error::could not open the release-hold issue"
+            echo "::warning title=Release hold::$(jq -r .title "$f")"
           done
 
       - name: Review list

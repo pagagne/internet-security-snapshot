@@ -74,3 +74,26 @@ def test_row_count_history_check(tmp_path):
     bf.write_text("quarters:\n  2026Q1:\n    x: 5\n")
     runs = load_history(tmp_path / "h", bf)
     assert {(r["quarter"], r["run"]) for r in runs} == {("2026Q3", "final"), ("2026Q1", "backfill")}
+
+
+def test_hold_issue_text():
+    from snapshot.quality import hold_issue
+    assert hold_issue({"hold_release": False}) is None
+    t, b = hold_issue({"hold_release": True, "quarter": "2026Q4", "run": "final",
+                       "history_flags": ["nvd/nvd_cves.parquet: 90 rows, expected about 200"]}, "https://x/run")
+    assert t.startswith("[Author] Release hold: 2026Q4 final")
+    assert "nvd/nvd_cves.parquet: 90 rows" in b and "Publishing waits" in b and "https://x/run" in b
+
+
+def test_private_sources_leave_row_counts(tmp_path, monkeypatch):
+    import pandas as pd
+    from snapshot import private
+    from snapshot.quality import source_counts
+    b = tmp_path / "raw/2026Q4/dry-run"
+    (b / "apnic").mkdir(parents=True)
+    pd.DataFrame({"cc": ["ZZ", "YY"]}).to_parquet(b / "apnic/apnic_dnssec_by_country.parquet")
+    monkeypatch.setattr(private, "private_pulls", lambda: {"apnic"})
+    private.split(tmp_path / "raw", tmp_path / "private")
+    assert not (b / "apnic").exists()
+    counts, _ = source_counts(b)
+    assert counts["apnic/apnic_dnssec_by_country.parquet"] == 2

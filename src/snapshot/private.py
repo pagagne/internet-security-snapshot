@@ -29,12 +29,27 @@ def split(raw: Path, private: Path) -> list[Path]:
     for name in sorted(private_pulls()):
         for src in sorted(raw.glob(f"*/*/{name}")):
             if src.is_dir():
+                _count(src.parent, name, src)
                 dest = private / src.relative_to(raw)
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 shutil.move(str(src), str(dest))
                 moved.append(dest)
                 _mark(src.parent, name)
     return moved
+
+
+def _count(bundle: Path, name: str, folder: Path) -> None:
+    """Row counts only (no data) of the files kept privately, so the quality report's row-count
+    check against history (R9, W1) still sees these sources (19 Nov 2026)."""
+    import pandas as pd
+    p = bundle / "private_counts.json"
+    counts = json.loads(p.read_text()) if p.exists() else {}
+    for f in sorted(folder.glob("*.parquet")):
+        try:
+            counts[f"{name}/{f.name}"] = int(len(pd.read_parquet(f)))
+        except Exception:  # a count is never worth failing the split
+            continue
+    p.write_text(json.dumps(counts, indent=2, sort_keys=True) + "\n")
 
 
 def _mark(bundle: Path, name: str) -> None:

@@ -1994,8 +1994,9 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions\, 1 Nov 2026 (guarded
  lts line\, scorecard and results page change. One-page checklist in https:
  //github.com/pagagne/internet-security-snapshot/blob/main/docs/SOP_MANUAL_
  RUNS.md. Rehearsed on the 15 Dec dry run with the simulated results (nothi
- ng published).\n\nSource: https://github.com/pagagne/internet-security-sna
- pshot/blob/main/docs/schedule/schedule.yaml
+ ng published). Refuses to publish while a release-hold issue is open (R9\,
+  W1\; author\, 19 Nov 2026).\n\nSource: https://github.com/pagagne/interne
+ t-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

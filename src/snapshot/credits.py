@@ -47,8 +47,8 @@ def load(path: Path = CONFIG) -> list[dict]:
 def block_md(items: list[dict] | None = None, heading: str = "## Data sources and credits") -> str:
     items = items if items is not None else load()
     L = [heading, "",
-         "The study uses public and permissioned data. Each source is credited as its terms or its "
-         "written permission ask; none of them endorses the study or its findings.", ""]
+         "The study uses public and permissioned data. Every source whose data it uses is listed here, "
+         "credited as its terms or its written permission ask; none of them endorses the study or its findings.", ""]
     for part, title in PARTS.items():
         rows = [s for s in items if s["part"] == part]
         if not rows:
@@ -77,6 +77,19 @@ def doc_md(items: list[dict] | None = None) -> str:
     return "\n".join(L) + "\n"
 
 
+def _plain(text: str) -> str:
+    """The doc without the title's "(updated ...)" stamp, which snapshot.docdates owns."""
+    import re
+    return re.sub(r"^(# [^\n]*?) \(updated [^)]*\)", r"\1", text, count=1)
+
+
+def write_doc(items: list[dict] | None = None) -> None:
+    new = doc_md(items)
+    if DOC.exists() and _plain(DOC.read_text()) == new:
+        return                                   # unchanged: keep the stamped title
+    DOC.write_text(new)
+
+
 def readme_with_block(text: str, items: list[dict] | None = None) -> str:
     if START not in text or END not in text:
         return text
@@ -96,7 +109,7 @@ def problems(items: list[dict] | None = None) -> list[str]:
             out.append(f"{name}: collected but not mapped to a credit (snapshot.credits.REQUIRED)")
         elif key and key not in have:
             out.append(f"{name}: no credit line ({key}) in config/credits.yaml")
-    if not DOC.exists() or DOC.read_text() != doc_md(items):
+    if not DOC.exists() or _plain(DOC.read_text()) != doc_md(items):
         out.append("docs/CREDITS.md is out of date (run: python -m snapshot.credits build)")
     if README.exists():
         t = README.read_text()
@@ -113,7 +126,7 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     items = load()
     if a.cmd == "build":
-        DOC.write_text(doc_md(items))
+        write_doc(items)
         if README.exists():
             README.write_text(readme_with_block(README.read_text(), items))
         print(f"credits: {len(items)} sources written")

@@ -2018,7 +2018,7 @@ items:
     and records his answer, dated, in a public approvals file the workflow reads. After the
     switch the page layout stays fixed; only the results line, scorecard and results page
     change. One-page checklist in docs/SOP_MANUAL_RUNS.md. Rehearsed on the 15 Dec dry run with
-    the simulated results (nothing published).
+    the simulated results (nothing published). Refuses to publish while a release-hold issue is open (R9, W1; author, 19 Nov 2026).
 
 - id: landing-clear-sections
   owner: author

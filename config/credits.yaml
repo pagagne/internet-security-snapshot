@@ -16,7 +16,7 @@ sources:
   - key: cve_program
     name: CVE Program
     credit: "CVE records: the CVE Program (cve.org), via the CVE List repository."
-    notice: "CVE® is a registered trademark of The MITRE Corporation. CVE content © The MITRE Corporation, used under the CVE Program terms of use; CVE records are not altered."
+    notice: "Copyright © 1999-2026, The MITRE Corporation. CVE and the CVE logo are registered trademarks of The MITRE Corporation. Used under the CVE Program terms of use; CVE records are not altered."
     link: https://www.cve.org/Legal/TermsOfUse
     basis: CVE Program terms of use (MITRE licence), read 18 Nov 2026
     part: core
@@ -32,6 +32,12 @@ sources:
     credit: "Known exploited vulnerabilities: CISA's Known Exploited Vulnerabilities Catalog."
     link: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
     basis: US government work; repository licence
+    part: core
+  - key: cisa_vulnrichment
+    name: CISA Vulnrichment
+    credit: "Exploitation flags and added analysis: CISA Vulnrichment (published in the CVE records)."
+    link: https://github.com/cisagov/vulnrichment
+    basis: US government work; repository licence (credited because the study uses it, 19 Nov 2026)
     part: core
   - key: vulncheck_kev
     name: VulnCheck KEV
@@ -57,6 +63,18 @@ sources:
     credit: "Fix dates and version data in part from OSV.dev and deps.dev (each record under its source database's licence)."
     link: https://osv.dev/
     basis: OSV and deps.dev data licences, read 18 Nov 2026
+    part: core
+  - key: github_advisories
+    name: GitHub Advisory Database
+    credit: "Fix dates in part from the GitHub Advisory Database (reviewed advisories, CC BY 4.0)."
+    link: https://github.com/advisories
+    basis: GitHub Advisory Database licence (CC BY 4.0); used for first patched versions since 1 Nov 2026
+    part: core
+  - key: vendor_advisories
+    name: Vendor advisories and the Linux kernel
+    credit: "Fix dates in part from vendors' own security advisories (Microsoft, Cisco, Palo Alto Networks, Siemens) and Linux kernel fixing commits (git.kernel.org)."
+    link: https://git.kernel.org/
+    basis: Each vendor's site terms (fix dates only, cited per flaw); credited because the study uses them (19 Nov 2026)
     part: core
   - key: sec_edgar
     name: SEC EDGAR
@@ -88,6 +106,18 @@ sources:
     link: https://www.greynoise.io/
     basis: Research access granted 17 Nov 2026; uses agreed 18 and 19 Nov 2026 (credit as worded by GreyNoise)
     part: exploratory
+  - key: github_hf
+    name: GitHub and Hugging Face
+    credit: "AI tool and model counts: public data from GitHub and Hugging Face, read through their official APIs; individuals' projects are never named."
+    link: https://huggingface.co/
+    basis: GitHub and Hugging Face terms (research use of public, non-personal information); credited because the study uses them (19 Nov 2026)
+    part: exploratory
+  - key: news_reports
+    name: Published reports in the AI attack log
+    credit: "AI attack log: every case cites the published report it comes from (security firms, government agencies, platforms); titles and links only."
+    link: https://github.com/pagagne/internet-security-snapshot/blob/main/config/feeds.yaml
+    basis: Each publisher's terms; titles and links only (docs/TERMS_OF_USE.md, Other services)
+    part: exploratory
   - key: apnic_labs
     name: APNIC Labs
     credit: "DNSSEC and RPKI measurements: APNIC Labs (stats.labs.apnic.net), used with permission; figures as published."
@@ -107,15 +137,33 @@ sources:
     link: https://www.jpcert.or.jp/
     basis: JPCERT/CC site terms (quoting with source, document and URL); courtesy notice sent 29 Oct 2026
     part: exploratory
+  - key: national_alerts_more
+    name: BSI and KrCERT/CC
+    credit: "Alerts: BSI (Germany) and KrCERT/CC (Korea), each alert cited by title, date and link."
+    link: https://www.bsi.bund.de/
+    basis: Public alerts, cited per alert (titles, CVE IDs and dates only); credited because the study uses them (19 Nov 2026)
+    part: exploratory
+  - key: hhs_ocr
+    name: HHS OCR breach portal
+    credit: "Health-sector breaches: US Department of Health and Human Services, Office for Civil Rights breach portal (counts only)."
+    link: https://ocrportal.hhs.gov/ocr/breach/
+    basis: US government records; counts only, no entity names
+    part: exploratory
   - key: uk_ico
     name: UK ICO
     credit: "Data breach trends: Information Commissioner's Office, under the Open Government Licence v3.0."
     link: https://ico.org.uk/
     basis: Open Government Licence v3.0
-    part: context
+    part: exploratory
   - key: oaic
     name: OAIC
     credit: "Office of the Australian Information Commissioner website - www.oaic.gov.au (CC BY 4.0)."
     link: https://www.oaic.gov.au/
     basis: CC BY 4.0, credit as worded by the OAIC
-    part: context
+    part: exploratory
+  - key: pdpc_enisa
+    name: Singapore PDPC and ENISA
+    credit: "Breach notification counts: Singapore's Personal Data Protection Commission and ENISA (EU Agency for Cybersecurity) published reports, each cited by title and link."
+    link: https://www.enisa.europa.eu/
+    basis: Published reports, counts cited per report; credited because the study uses them (19 Nov 2026)
+    part: exploratory

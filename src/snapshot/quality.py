@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -300,6 +301,11 @@ def source_counts(bundle: Path) -> tuple[dict, dict]:
         df = pd.read_parquet(p)
         counts[rel] = len(df)
         fields[rel] = {c: ("missing" if c not in df.columns else "empty" if df[c].isna().all() else "ok") for c in cols}
+    # Sources kept privately leave their row counts behind (snapshot.private, 19 Nov 2026)
+    pc = bundle / "private_counts.json"
+    if pc.exists():
+        for rel, n in json.loads(pc.read_text()).items():
+            counts.setdefault(rel, int(n))
     radar = bundle / "radar"
     if radar.exists():
         counts["radar/series_ok"] = sum(1 for f in radar.glob("*.json") if json.loads(f.read_text()).get("success"))
@@ -433,11 +439,32 @@ def history_section(metrics: dict, history: list[dict]) -> list[str]:
     return L
 
 
+HOLD_LABEL = "release-hold"
+
+
+def hold_issue(metrics: dict, run_url: str = "") -> tuple[str, str] | None:
+    """Title and body of the GitHub issue a hold opens (author, 19 Nov 2026: an issue assigned
+    to the author, and publishing waits until it is closed). None when nothing is held."""
+    if not metrics.get("hold_release"):
+        return None
+    q, run = metrics.get("quarter"), metrics.get("run")
+    title = f"[Author] Release hold: {q} {run} - a source returned too few rows"
+    body = "\n".join([
+        f"The {q} {run} pull returned fewer rows than its history allows (risk R9, watch-list W1: "
+        "zero rows, or below half the average of the last four quarters).", "",
+        *[f"- {f}" for f in metrics.get("history_flags", [])], "",
+        "Publishing waits while this issue is open. Claude checks each flagged source by hand and "
+        "reports here; the author decides a rerun or a gap note, then closes the issue.",
+        "", f"Run: {run_url}" if run_url else ""]).strip() + "\n"
+    return title, body
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("bundles", nargs="+", type=Path)
     ap.add_argument("--previous", type=Path, help="quality.json from the previous run (drift checks)")
     ap.add_argument("--history", type=Path, help="folder of earlier quality-*.json files (row-count check, W1)")
+    ap.add_argument("--hold-issue", type=Path, help="write the hold issue's title and body here (JSON) if held")
     args = ap.parse_args(argv)
     for b in args.bundles:
         try:
@@ -449,6 +476,10 @@ def main(argv=None) -> int:
             md, metrics = f"# Data quality: {b}\n\nReport failed: {type(exc).__name__}: {exc}\n", {"error": str(exc)}
         (b / "quality.md").write_text(md)
         (b / "quality.json").write_text(json.dumps(metrics, indent=2, default=str))
+        if args.hold_issue:
+            issue = hold_issue(metrics, os.environ.get("RUN_URL", ""))
+            if issue:
+                args.hold_issue.write_text(json.dumps({"title": issue[0], "body": issue[1]}))
         print(md)
     return 0
 
