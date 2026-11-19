@@ -192,3 +192,10 @@ the inquiry log (`docs/INQUIRIES.md`).
     now, beside this record, and checked so it can never fall behind the file. The manual's main
     parts are then built up from the build-out records.
 
+40. **The privacy scan flagged three lines in the new exploratory measures document.** They were
+    method text already public in `config/exploratory.yaml` (source names such as "Unit 42", the
+    fixed list of 57 protocols, a 100-star checking threshold, a sample of up to 100), not study
+    results; the push had gone out because the scan did not yet read files before they were
+    added. Agreed: mark those three lines as reviewed, tied to their exact wording, so any change
+    is checked again. The scan now also reads new files before they are added.
+
