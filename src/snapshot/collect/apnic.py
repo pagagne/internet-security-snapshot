@@ -5,10 +5,15 @@ the figures an accurate representation of the source data. APNIC's own data file
 "re-use with attribution permitted". Every chart and table built from these figures carries
 the line in CREDIT.
 
-Two public pages are read once per pull, the DNSSEC and the RPKI world maps; each holds the full
-per-country table that APNIC publishes for its current window (DNSSEC: a 30-day average; RPKI:
-a 7-day span), with region, rates, samples and weights. The figures are stored exactly as
-published, with the window dates printed on the page. Tested 19 Nov 2026 (research task
+Period (author, 19 Nov 2026: the whole quarter, 90 days). DNSSEC: the world-map table for the
+90-day window ending on the quarter's last day (one page). The page reads its date setting with
+the month one too high (asking for 30/08 returns the window ending 30/09; found 19 Nov 2026), so
+the collector asks both ways and keeps only a table whose printed window ends on the quarter's
+last day; otherwise it records a gap. RPKI: the world map takes no date or window, so the
+per-country time series is read instead (one small file per country, two seconds apart) and the
+row dated the quarter's last day kept, with APNIC's 112-day window, the published window nearest
+to 90 days (noted with every figure). A quarter not yet over (a dry run) takes the latest data.
+Figures are stored exactly as published, with their window dates. Tested 19 Nov 2026 (research task
 apnic_probe): no robots.txt, no blocking, both pages served to an identified client. If a page
 answers with a block or a challenge, the pull records a gap; it is not worked around.
 """
@@ -80,12 +85,74 @@ def parse(measure: str, html: str) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def fetch() -> dict[str, pd.DataFrame]:
-    out = {}
-    for measure, path in PAGES.items():
-        r = get(BASE + path, headers={"Accept": "text/html"}, pause=2.0)
-        r.encoding = r.encoding or "iso-8859-1"
-        df = parse(measure, r.text)
-        df["retrieved"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
-        out[measure] = df
-    return out
+DNSSEC_DAYS = 90
+RPKI_WINDOW = "112"   # APNIC's RPKI series offers 7, 14, 28 and 112 days; 112 is nearest to 90
+RPKI_JSON = BASE + "/cgi-bin/rpki-json-table.pl"
+
+
+def _page(path: str, params: dict | None = None) -> str:
+    r = get(BASE + path, params=params, headers={"Accept": "text/html"}, pause=2.0)
+    r.encoding = r.encoding or "iso-8859-1"
+    return r.text
+
+
+def dnssec(end: dt.date | None) -> pd.DataFrame:
+    """The DNSSEC table for the 90 days ending on END (None: the latest 90 days)."""
+    if end is None:
+        return parse("dnssec", _page(PAGES["dnssec"], {"w": DNSSEC_DAYS}))
+    quirk = f"{end.day:02d}/{end.month - 1:02d}/{end.year}" if end.month > 1 else None
+    plain = f"{end.day:02d}/{end.month:02d}/{end.year}"
+    tried = []
+    for d in [x for x in (quirk, plain) if x]:
+        df = parse("dnssec", _page(PAGES["dnssec"], {"d": d, "w": DNSSEC_DAYS}))
+        got = df.iloc[0]["window_end"]
+        tried.append(f"d={d} -> {got}")
+        if got == end.isoformat() and int(df.iloc[0]["window_days"]) == DNSSEC_DAYS:
+            return df
+    raise ValueError(f"APNIC dnssec: no table for the 90 days ending {end} ({'; '.join(tried)})")
+
+
+def rpki(end: dt.date | None, codes: list[str]) -> pd.DataFrame:
+    """Per country, the published 112-day RPKI filtering rate on END (or the latest day)."""
+    import requests
+    rows, missing = [], []
+    for cc in codes:
+        try:
+            r = get(RPKI_JSON, params={"x": cc}, pause=2.0, tries=2)
+            data = r.json().get("data") or []
+        except (requests.RequestException, ValueError):
+            missing.append(cc)
+            continue
+        pick = [x for x in data if end is None or x.get("date", "") <= end.isoformat()]
+        if not pick:
+            missing.append(cc)
+            continue
+        x = pick[-1]
+        w = x.get(RPKI_WINDOW) or {}
+        if "filter_rate" not in w:
+            missing.append(cc)
+            continue
+        rows.append({"measure": "rpki", "cc": cc, "rpki_irov_filtering_pct": round(float(w["filter_rate"]), 2),
+                     "samples": int(w.get("seen") or 0), "window_days": int(RPKI_WINDOW), "window_kind": "sliding",
+                     "window_end": x["date"],
+                     "window_start": (dt.date.fromisoformat(x["date"]) - dt.timedelta(days=int(RPKI_WINDOW) - 1)).isoformat(),
+                     "note": "APNIC's 112-day window, the published window nearest to 90 days"})
+    if not rows:
+        raise ValueError("APNIC rpki: no country series read")
+    df = pd.DataFrame(rows)
+    df.attrs["missing"] = missing
+    return df
+
+
+def fetch(end: dt.date | None = None) -> dict[str, pd.DataFrame]:
+    """END: the quarter's last day, or None while the quarter is not over (latest data)."""
+    stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+    d = dnssec(end)
+    world = parse("rpki", _page(PAGES["rpki"]))       # the country list, with names and regions
+    names = world.set_index("cc")[["country", "region", "continent"]]
+    r = rpki(end, list(world["cc"]) + ["XA"])
+    r = r.join(names, on="cc")
+    r.loc[r["cc"] == "XA", ["country", "region", "continent"]] = ["World", "", ""]
+    for df in (d, r):
+        df["retrieved"] = stamp
+    return {"dnssec": d, "rpki": r}

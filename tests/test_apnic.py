@@ -47,3 +47,50 @@ def test_missing_table_or_window_fails_loudly():
 
 def test_credit_line_names_apnic_labs():
     assert "APNIC Labs" in apnic.CREDIT
+
+
+class _R:
+    def __init__(self, text="", data=None):
+        self.text, self._data, self.encoding = text, data, "utf-8"
+
+    def json(self):
+        return self._data
+
+
+def _dnssec_page(end):
+    return DNSSEC.replace("(01/10/2026 - 30/10/2026)", f"(03/07/2026 - {end})").replace("30 day", "90 day")
+
+
+def test_dnssec_quarter_window_handles_the_month_quirk(monkeypatch):
+    seen = []
+
+    def fake(url, params=None, **kw):
+        seen.append(params["d"])
+        return _R(_dnssec_page("30/09/2026" if params["d"] == "30/08/2026" else "30/10/2026"))
+    monkeypatch.setattr(apnic, "get", fake)
+    import datetime as dt
+    df = apnic.dnssec(dt.date(2026, 9, 30))
+    assert seen == ["30/08/2026"] and df.iloc[0].window_end == "2026-09-30" and df.iloc[0].window_days == 90
+
+
+def test_dnssec_quirk_fixed_upstream_and_wrong_window_is_a_gap(monkeypatch):
+    import datetime as dt
+    monkeypatch.setattr(apnic, "get", lambda url, params=None, **kw: _R(_dnssec_page(
+        "30/09/2026" if params["d"] == "30/09/2026" else "30/10/2026")))
+    assert apnic.dnssec(dt.date(2026, 9, 30)).iloc[0].window_end == "2026-09-30"
+    monkeypatch.setattr(apnic, "get", lambda url, params=None, **kw: _R(_dnssec_page("17/11/2026")))
+    with pytest.raises(ValueError, match="no table for the 90 days ending 2026-09-30"):
+        apnic.dnssec(dt.date(2026, 9, 30))
+
+
+def test_rpki_takes_the_112_day_value_on_the_quarter_end(monkeypatch):
+    import datetime as dt
+    series = {"data": [
+        {"112": {"seen": 10, "filter_rate": 11.0}, "date": "2026-09-29"},
+        {"112": {"seen": 20, "filter_rate": 22.0}, "date": "2026-09-30"},
+        {"112": {"seen": 30, "filter_rate": 33.0}, "date": "2026-10-01"}]}
+    monkeypatch.setattr(apnic, "get", lambda url, params=None, **kw: _R(data=series))
+    df = apnic.rpki(dt.date(2026, 9, 30), ["ZZ"])
+    r = df.iloc[0]
+    assert (r.rpki_irov_filtering_pct, r.window_end, r.window_days, r.window_start) == (22.0, "2026-09-30", 112, "2026-06-11")
+    assert apnic.rpki(None, ["ZZ"]).iloc[0].window_end == "2026-10-01"

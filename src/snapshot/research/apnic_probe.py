@@ -31,7 +31,8 @@ UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted t
 BASE = "https://stats.labs.apnic.net"
 INDEX: list[str] = []   # 19 Nov 2026: pages already probed
 # 19 Nov 2026 (author: whole quarter, 90 days): do the world maps accept a date and a window?
-VARIANTS = ["/dnssec?d=20260930&w=90", "/dnssec?d=09/30/2026&w=90", "/dnssec?d=2026/09/30&w=90", "/dnssec?d=30/08/2026&w=90",
+VARIANTS: list[str] = []  # tested 19 Nov 2026
+_OLD_VARIANTS = ["/dnssec?d=20260930&w=90", "/dnssec?d=09/30/2026&w=90", "/dnssec?d=2026/09/30&w=90", "/dnssec?d=30/08/2026&w=90",
             "/dnssec?d=2026-09-30"]
 COUNTRIES: list[str] = []
 DATA_HINT = re.compile(r"json-table\.pl|\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
@@ -163,12 +164,14 @@ def main(argv=None):
     except Stopped as e:
         lines.append(f"Stopped: {e}")
     lines.append("")
-    if False:   # collector check done 19 Nov 2026
+    if True:   # 19 Nov 2026: the quarter-aligned collector, once, for 2026Q3
+        import datetime as _dt
         from snapshot.collect import apnic
         try:
-            for m, t in apnic.fetch().items():
+            for m, t in apnic.fetch(_dt.date(2026, 9, 30)).items():
                 t.to_csv(out / f"collector_{m}.csv", index=False)
-                lines.append(f"Collector check, {m}: {len(t)} countries, window {t.iloc[0]['window_start']}..{t.iloc[0]['window_end']}")
+                lines.append(f"Collector check, {m}: {len(t)} countries, window {t.iloc[0]['window_start']}..{t.iloc[0]['window_end']}"
+                             f" ({t.iloc[0]['window_days']} days); ends {sorted(t['window_end'].unique())}; series missing {t.attrs.get('missing', [])}")
         except Exception as e:  # recorded, not worked around
             lines.append(f"Collector check failed: {type(e).__name__}: {e}")
         lines.append("")

@@ -185,13 +185,20 @@ def pull_apnic(out: Path, manifest: Manifest, work: Path) -> None:
     (config/sources.yaml raw_public: false) because X20 is exploratory; no figures in the note."""
     dest = out / "apnic"
     dest.mkdir(parents=True, exist_ok=True)
-    for measure, table in apnic.fetch().items():
+    q: Quarter = CTX["quarter"]
+    # The whole quarter (author, 19 Nov 2026). APNIC publishes about two days behind, so the
+    # quarter is complete from the second day after it ends (the provisional run).
+    end = q.end if CTX["yesterday"] - dt.timedelta(days=1) >= q.end else None
+    for measure, table in apnic.fetch(end).items():
         pq = dest / f"apnic_{measure}_by_country.parquet"
         table.to_parquet(pq, index=False)
         w = table.iloc[0]
         manifest.add_file("apnic_labs", pq, f"stats.labs.apnic.net/{measure} world-map table, retrieved {utcnow()}",
                           note=f"{len(table)} countries; {w['window_days']}-day {w['window_kind']} "
-                               f"{w['window_start']}..{w['window_end']}; {apnic.CREDIT}")
+                               f"{w['window_start']}..{w['window_end']}"
+                               + ("" if end else " (quarter not over: latest data)")
+                               + (f"; series not read for {len(table.attrs.get('missing', []))}" if table.attrs.get("missing") else "")
+                               + f"; {apnic.CREDIT}")
 
 
 PULLERS = {"kev": pull_kev, "cve": pull_cve, "nvd": pull_nvd, "epss": pull_epss,
