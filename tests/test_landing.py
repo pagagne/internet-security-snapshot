@@ -50,3 +50,17 @@ def test_go_live_copy_points_at_the_public_repository():
     assert 'src="https://raw.githubusercontent.com/pagagne/internet-security-snapshot/main/docs/landing/coverage-light.svg"' in t
     assert "(https://github.com/pagagne/internet-security-snapshot/blob/main/docs/SOP_MANUAL_RUNS.md)" in t
     assert "(https://a.org)" in t
+
+
+def test_rollup_shows_when_each_snapshot_was_taken(tmp_path):
+    """Author, 19 Nov 2026: CHANGES.md shows each snapshot's timestamp."""
+    import json
+    from snapshot import landing
+    s = tmp_path / "snapshots" / "2026-11-23-cutover"
+    s.mkdir(parents=True)
+    (s / "captured.txt").write_text("2026-11-23 12:41 UTC\n")
+    assert landing.captured_at(s) == "2026-11-23 12:41 UTC"
+    old = tmp_path / "snapshots" / "2026-10-31-baseline"
+    old.mkdir()
+    (old / "status.json").write_text(json.dumps({"checked": "2026-10-31 19:35 UTC", "results": {}}))
+    assert landing.captured_at(old) == "2026-10-31 19:35 UTC (banner check)"
