@@ -1444,8 +1444,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Add the human-approval column to the AI-attack l
- og (X3) and back-fill it
+SUMMARY:✅ DONE [Claude] Snapshot: Add the human-approval column to the AI
+ -attack log (X3) and back-fill it
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026 (X26 cards
  ). New column human_approval_step (yes\, no\, not stated) in https://githu
  b.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns.cs

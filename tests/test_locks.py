@@ -61,6 +61,8 @@ def test_ai_attack_campaign_log_is_well_formed():
         assert r["conflict_of_interest"] in {"yes", "no"}
         # added 2026-10-29 (author): how strong the evidence of AI use is
         assert r["ai_evidence"] in {"confirmed", "assessed", "unrated"}, r["campaign"]
+        # added 2026-11-19 (author, X26 cards): does the report mention a human approval step
+        assert r.get("human_approval_step") in {"yes", "no", "not stated"}, r["campaign"]
         # added 2026-10-29 (author, review item 13 option B): attack method and how it reached us
         from snapshot.x3catalogue import FOUND_VIA, METHODS
         assert r["attack_method"] in METHODS, r["campaign"]

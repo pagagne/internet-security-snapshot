@@ -357,6 +357,7 @@ items:
     Author's decision 19 Nov 2026 (X26 cards). New column human_approval_step (yes, no, not
     stated) in exploratory/ai_attack_campaigns.csv, read from each row's primary report, with a
     test of allowed values; the news log already has it. About an hour.
+  done: "19 Nov 2026 (early): column added and filled for every row (first pass from the reports and their cue tags, research task x3_read; reasons in each row's notes), with a test; most rows read \"not stated\"; the author confirms the values in his hand check"
 
 - id: x26-build
   owner: claude
