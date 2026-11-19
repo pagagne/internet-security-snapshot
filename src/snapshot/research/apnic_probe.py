@@ -29,8 +29,8 @@ import requests
 
 UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted ticket 00177078; contact via github.com/pagagne)"
 BASE = "https://stats.labs.apnic.net"
-INDEX = ["/dnssec", "/dnssec/XA", "/rpki", "/rpki/XA", "/v6"]
-COUNTRIES = ["AU", "US", "DE", "IN", "BR", "NG", "JP"]
+INDEX = ["/dnssec/XA", "/rpki/XA"]
+COUNTRIES = ["AU"]
 DATA_HINT = re.compile(r"\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
 DATE_RX = re.compile(r"\b(20\d\d-\d\d-\d\d|\d{1,2} [A-Z][a-z]{2,8} 20\d\d|[A-Z][a-z]{2,8} \d{1,2},? 20\d\d)\b")
 PCT_RX = re.compile(r"\b\d{1,3}(?:\.\d+)?%")
@@ -107,7 +107,9 @@ def main(argv=None):
     pages, seen_data = [], []
     try:
         targets = [BASE + p for p in INDEX]
-        targets += [f"{BASE}/dnssec/{c}" for c in COUNTRIES[:4]] + [f"{BASE}/rpki/{c}" for c in COUNTRIES[:4]]
+        targets += [f"{BASE}/dnssec/{c}" for c in COUNTRIES] + [f"{BASE}/rpki/{c}" for c in COUNTRIES]
+        for u in list(targets):
+            pass
         for u in targets:
             if not rp.can_fetch(UA, u):
                 lines.append(f"- skipped (robots): {u}")
@@ -138,6 +140,9 @@ def main(argv=None):
         lines.append(f"- dates seen: {', '.join(dates) or 'none'}")
         lines.append(f"- percentages seen (first 8): {', '.join(pcts) or 'none'}")
         lines.append(f"- sample: {txt[:600]!r}")
+        if not pg.get("is_data"):
+            for m in list(re.finditer(r"json|csv|download", pg["body"], re.I))[:6]:
+                lines.append(f"- near '{m.group(0)}': {pg['body'][max(0, m.start()-250):m.end()+250]!r}")
         lines.append("")
     lines += ["## Data-like links found", ""] + [f"- {l}" for l in seen_data[:60]] + [""]
     lines.append(f"Requests: about {len(pages) + 1}; links recorded {len(rows)}.")
