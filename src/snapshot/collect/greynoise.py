@@ -16,6 +16,15 @@ Two modes, both writing only to the private repository (exploratory/greynoise/):
   of at most six months (older weekly files are deleted) and a permanent per-CVE record of the
   first week activity was seen.
 
+Tag history (added 19 Nov 2026, schedule item greynoise-collector-90-days): the tag activity
+call with days=90 returns one window for every day a tag was active in the last 90 days (tested
+18 Nov; no daily counts, and no other range parameter works). The quarterly run reads it for the
+tags on the quarter's KEV flaws (first and last active day and number of active days per CVE)
+and for the tags on AI products and the shared planes AI stacks use (X5 and X11, author's
+decisions 19 Nov 2026; note sent to GreyNoise the same day). Quarterly only, as told to
+GreyNoise: a 90-day view read once a quarter covers all but the first day or two of a 92-day
+quarter, which is stated with the figures. Not added to the weekly sweep.
+
 IP addresses and host data are never requested or kept; the key is never printed.
 
     python -m snapshot.collect.greynoise quarterly --quarter 2026Q4 --out DIR
@@ -27,6 +36,7 @@ import argparse
 import csv
 import datetime as dt
 import os
+import re
 import time
 from pathlib import Path
 
@@ -41,6 +51,60 @@ WINDOW_DAYS = 183           # the private rolling window (about six months)
 COUNT_FIELDS = ("threat_ip_count_1d", "threat_ip_count_10d", "threat_ip_count_30d",
                 "benign_ip_count_30d")
 CVE_COLUMNS = ["cve", "activity_seen", *COUNT_FIELDS, "last_seen", "status"]
+PUBLIC_KEYS = ("quarter", "date", "calls", "errors", "history_errors", "pruned_files")
+HISTORY_DAYS = 90           # the longest view the tag activity call gives (tested 18 Nov 2026)
+HISTORY_COLUMNS = ["tag_first_active", "tag_last_active", "tag_active_days"]
+
+# AI-stack products and the shared control and data planes AI stacks rely on (X5 and X11; from the
+# retired X29 proposal, author's decisions 19 Nov 2026). Matched against tag names and slugs only.
+# Categories starting "shared:" are reported on their own line, never added to the AI figures.
+AI_PRODUCTS = {
+    "cluster/compute": r"\bray\b|anyscale|kubeflow|kuberay",
+    "workflow/agent builders": r"langflow|\bn8n\b|flowise|\bdify\b|airflow|prefect|langchain|llamaindex",
+    "ML ops/notebooks": r"mlflow|jupyter|clearml|h2o",
+    "model servers/UIs": r"ollama|vllm|triton|torchserve|comfyui|open.?webui|litellm|anythingllm|gradio|llama.cpp|localai|bentoml",
+    "vector DBs": r"qdrant|milvus|weaviate|chroma|pgvector",
+    "AI gateways/MCP": r"\bmcp\b|model context protocol|\bllm\b|openai|ai gateway",
+    "shared: Kubernetes/containers": r"kubernetes|\bk8s\b|kubelet|ingress-nginx|rancher|\bargo|docker api|containerd",
+    "shared: object storage": r"minio|\bceph\b",
+    "shared: remote support": r"screenconnect|connectwise|beyondtrust|anydesk|teamviewer|simplehelp|kaseya",
+}
+AI_COLUMNS = ["tag", "line", "categories", "created", "intention", "cves", *HISTORY_COLUMNS,
+              "malicious_days", "suspicious_days", "benign_days", "status"]
+
+
+def ai_tags(tags: list[dict]) -> list[dict]:
+    """Tags whose name or slug names an AI-stack or shared-plane product (metadata only)."""
+    out = []
+    for t in tags:
+        text = f"{t.get('name', '')} {t.get('slug', '')}".lower()
+        cats = [c for c, pat in AI_PRODUCTS.items() if re.search(pat, text)]
+        if cats:
+            out.append({"id": t.get("id"), "name": t.get("name"), "created_at": (t.get("created_at") or "")[:10],
+                        "intention": t.get("intention"), "cves": t.get("cves") or [], "categories": cats})
+    return sorted(out, key=lambda x: (x["categories"][0], x["created_at"]))
+
+
+def active_days(body) -> dict:
+    """Days with activity in a tag activity reply: {"activity": {classification: [{"start", "end"}]}}.
+    Returns the first and last active day, the number of distinct active days, and active days per
+    classification. Nothing else from the reply is kept."""
+    acts = (body or {}).get("activity") if isinstance(body, dict) else None
+    per, days = {}, set()
+    if isinstance(acts, dict):
+        for cls, lst in acts.items():
+            d = {w["start"][:10] for w in (lst or []) if isinstance(w, dict) and isinstance(w.get("start"), str)}
+            per[cls] = len(d)
+            days |= d
+    return {"tag_first_active": min(days) if days else "", "tag_last_active": max(days) if days else "",
+            "tag_active_days": len(days), "per_class": per, "days": days}
+
+
+def tag_history(tag_id: str, key: str, get=None) -> tuple[dict, str]:
+    """One call: the tag's active days over the last 90 days."""
+    get = get or _get
+    body, status = get(f"/v3/tags/{tag_id}/activity", key, {"days": HISTORY_DAYS})
+    return active_days(body if status == "ok" else None), status
 
 
 def _key() -> str:
@@ -65,15 +129,22 @@ def _get(path: str, key: str, params: dict | None = None, pause: float = PAUSE):
         return None, "not JSON"
 
 
-def tag_dates(key: str, get=_get) -> dict[str, dict]:
-    """CVE -> earliest tag creation date and number of tags (one call)."""
+def all_tags(key: str, get=_get) -> list[dict]:
     body, _ = get("/v3/tags", key)
+    return (body or {}).get("tags", [])
+
+
+def tag_dates(key: str, get=_get, tags: list[dict] | None = None) -> dict[str, dict]:
+    """CVE -> earliest tag creation date, number of tags and tag ids (one call)."""
+    tags = all_tags(key, get) if tags is None else tags
     out: dict[str, dict] = {}
-    for t in (body or {}).get("tags", []):
+    for t in tags:
         for c in t.get("cves") or []:
             d = (t.get("created_at") or "")[:10]
-            e = out.setdefault(c, {"tag_first_created": d, "tags": 0})
+            e = out.setdefault(c, {"tag_first_created": d, "tags": 0, "tag_ids": []})
             e["tags"] += 1
+            if t.get("id"):
+                e["tag_ids"].append(t["id"])
             if d and (not e["tag_first_created"] or d < e["tag_first_created"]):
                 e["tag_first_created"] = d
     return out
@@ -108,22 +179,58 @@ def kev_added(start: dt.date, end: dt.date) -> list[dict]:
 def quarterly(q: str, out: Path, key: str, get=_get, flaws: list[dict] | None = None) -> dict:
     start, end = quarter_bounds(q)
     flaws = flaws if flaws is not None else kev_added(start, end)
-    tags = tag_dates(key, get)
+    tag_list = all_tags(key, get)
+    tags = tag_dates(key, get, tag_list)
+    calls = 1
+    history: dict[str, tuple[dict, str]] = {}
+
+    def hist(tid):
+        nonlocal calls
+        if tid not in history:
+            history[tid] = tag_history(tid, key, get); calls += 1
+        return history[tid]
+
     rows = []
     for f in flaws:
+        t = tags.get(f["cve"], {})
         r = {"cve": f["cve"], "kev_date": f["kev_date"],
-             "tag_first_created": tags.get(f["cve"], {}).get("tag_first_created", ""),
-             "tags": tags.get(f["cve"], {}).get("tags", 0)}
-        r.update(cve_row(f["cve"], key, get))
+             "tag_first_created": t.get("tag_first_created", ""), "tags": t.get("tags", 0)}
+        r.update(cve_row(f["cve"], key, get)); calls += 1
+        days = set()
+        for tid in t.get("tag_ids", []):
+            days |= hist(tid)[0]["days"]
+        r.update(tag_first_active=min(days) if days else "", tag_last_active=max(days) if days else "",
+                 tag_active_days=len(days))
         rows.append(r)
     out.mkdir(parents=True, exist_ok=True)
-    cols = ["cve", "kev_date", "tag_first_created", "tags", *CVE_COLUMNS[1:]]
+    cols = ["cve", "kev_date", "tag_first_created", "tags", *CVE_COLUMNS[1:], *HISTORY_COLUMNS]
     with (out / f"quarter-{q}.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=cols); w.writeheader(); w.writerows(rows)
+
+    ai_rows = []
+    for t in ai_tags(tag_list):
+        h, status = hist(t["id"]) if t.get("id") else (active_days(None), "no id")
+        shared = all(c.startswith("shared:") for c in t["categories"])
+        ai_rows.append({"tag": t["name"], "line": "shared planes" if shared else "AI stack",
+                        "categories": "; ".join(t["categories"]), "created": t["created_at"],
+                        "intention": t.get("intention") or "", "cves": " ".join(t["cves"]),
+                        **{k: h[k] for k in HISTORY_COLUMNS},
+                        **{f"{c}_days": h["per_class"].get(c, 0) for c in ("malicious", "suspicious", "benign")},
+                        "status": status})
+    with (out / f"ai-tags-{q}.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=AI_COLUMNS); w.writeheader(); w.writerows(ai_rows)
+
     tagged = [r for r in rows if r["tags"]]
     before = [r for r in tagged if r["tag_first_created"] and r["tag_first_created"] < r["kev_date"]]
+    active_before = [r for r in tagged if r["tag_first_active"] and r["tag_first_active"] < r["kev_date"]]
+    ai = [r for r in ai_rows if r["line"] == "AI stack"]
     return {"quarter": q, "flaws": len(rows), "tagged": len(tagged), "tag_before_kev": len(before),
-            "activity_seen": sum(1 for r in rows if r["activity_seen"] is True), "calls": len(rows) + 1}
+            "activity_seen": sum(1 for r in rows if r["activity_seen"] is True),
+            "active_before_kev": len(active_before),
+            "ai_tags": len(ai), "ai_tags_active": sum(1 for r in ai if r["tag_active_days"]),
+            "shared_tags": len(ai_rows) - len(ai),
+            "shared_tags_active": sum(1 for r in ai_rows if r["line"] == "shared planes" and r["tag_active_days"]),
+            "history_errors": sum(1 for _, st in history.values() if st != "ok"), "calls": calls}
 
 
 def update_first_seen(first: dict[str, dict], rows: list[dict], day: str) -> int:
@@ -194,7 +301,14 @@ def main(argv=None) -> int:
         s = quarterly(a.quarter, a.out, key)
     else:
         s = weekly(a.out, key)
-    print("GreyNoise", a.mode + ":", ", ".join(f"{k} {v}" for k, v in s.items()))
+    # The run log is public, and exploratory figures never go in public files (19 Nov 2026): the full
+    # summary is saved privately beside the data; the log shows only how the run went.
+    a.out.mkdir(parents=True, exist_ok=True)
+    with (a.out / "last-run.txt").open("w") as fh:
+        fh.write(", ".join(f"{k} {v}" for k, v in s.items()) + "\n")
+    shown = {k: v for k, v in s.items() if k in PUBLIC_KEYS}
+    print("GreyNoise", a.mode + ":", ", ".join(f"{k} {v}" for k, v in shown.items()),
+          "(figures kept privately)")
     return 0
 
 

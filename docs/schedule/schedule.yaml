@@ -373,6 +373,7 @@ items:
     Follows the 18 Nov test. The quarterly and weekly runs add, per CVE tag, the first and last
     active day and the number of active days in the last 90 days (days=90). Counts and dates
     only; tests first; private outputs as before.
+  done: "19 Nov 2026: the quarterly run now reads the 90-day view for the tags on the quarter's KEV flaws and on AI products and shared planes (X5, X11), after the author's note to GreyNoise; quarterly only, as told to GreyNoise, not weekly; the public run log now shows only calls and errors, figures kept privately; tests added"
 
 - id: shadowserver-follow-up-2
   owner: author

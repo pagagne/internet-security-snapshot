@@ -1030,8 +1030,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
 DTEND;VALUE=DATE:20261120
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: GreyNoise collector reads 90 days of tag activit
- y (first active day per tag)
+SUMMARY:✅ DONE [Claude] Snapshot: GreyNoise collector reads 90 days of ta
+ g activity (first active day per tag)
 DESCRIPTION:Responsible: Claude\n\nFollows the 18 Nov test. The quarterly a
  nd weekly runs add\, per CVE tag\, the first and last active day and the n
  umber of active days in the last 90 days (days=90). Counts and dates only\

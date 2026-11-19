@@ -40,30 +40,8 @@ MAX_CVES = 25
 EXAMPLE_TAG = "214d5217-0870-41f5-891e-f5edb255c3e9"
 
 
-# AI-stack and shared control-plane products (for X5 and X11; from the retired X29 proposal, 19 Nov 2026): which GreyNoise tags cover them
-AI_PRODUCTS = {
-    "cluster/compute": r"\bray\b|anyscale|kubeflow|kuberay",
-    "workflow/agent builders": r"langflow|\bn8n\b|flowise|\bdify\b|airflow|prefect|langchain|llamaindex",
-    "ML ops/notebooks": r"mlflow|jupyter|clearml|h2o",
-    "model servers/UIs": r"ollama|vllm|triton|torchserve|comfyui|open.?webui|litellm|anythingllm|gradio|llama.cpp|localai|bentoml",
-    "vector DBs": r"qdrant|milvus|weaviate|chroma|pgvector",
-    "AI gateways/MCP": r"\bmcp\b|model context protocol|\bllm\b|openai|ai gateway",
-    "shared: Kubernetes/containers": r"kubernetes|\bk8s\b|kubelet|ingress-nginx|rancher|\bargo|docker api|containerd",
-    "shared: object storage": r"minio|\bceph\b",
-    "shared: remote support": r"screenconnect|connectwise|beyondtrust|anydesk|teamviewer|simplehelp|kaseya",
-}
-
-
-def ai_tags(tags: list[dict]) -> list[dict]:
-    """Tags whose name or slug names an AI-stack or shared control-plane product (metadata only)."""
-    out = []
-    for t in tags:
-        text = f"{t.get('name', '')} {t.get('slug', '')}".lower()
-        cats = [c for c, pat in AI_PRODUCTS.items() if re.search(pat, text)]
-        if cats:
-            out.append({"name": t.get("name"), "created_at": (t.get("created_at") or "")[:10],
-                        "intention": t.get("intention"), "cves": t.get("cves") or [], "categories": cats})
-    return sorted(out, key=lambda x: (x["categories"][0], x["created_at"]))
+# AI-stack and shared-plane products: defined once in the collector (19 Nov 2026)
+from snapshot.collect.greynoise import AI_PRODUCTS, ai_tags  # noqa: E402,F401
 
 
 def range_variants(today: dt.date) -> list[dict]:
