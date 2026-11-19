@@ -29,7 +29,10 @@ import requests
 
 UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted ticket 00177078; contact via github.com/pagagne)"
 BASE = "https://stats.labs.apnic.net"
-INDEX: list[str] = []   # 19 Nov 2026: pages already probed; now only the collector check
+INDEX: list[str] = []   # 19 Nov 2026: pages already probed
+# 19 Nov 2026 (author: whole quarter, 90 days): do the world maps accept a date and a window?
+VARIANTS = ["/dnssec?d=2026-09-30&w=90", "/dnssec?d=30/09/2026&w=90", "/rpki?d=2026-09-30&w=90",
+            "/rpki?d=30/09/2026&w=90", "/rpki?w=90"]
 COUNTRIES: list[str] = []
 DATA_HINT = re.compile(r"json-table\.pl|\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
 DATE_RX = re.compile(r"\b(20\d\d-\d\d-\d\d|\d{1,2} [A-Z][a-z]{2,8} 20\d\d|[A-Z][a-z]{2,8} \d{1,2},? 20\d\d)\b")
@@ -148,7 +151,19 @@ def main(argv=None):
             for m in list(re.finditer(r"json|csv|download", pg["body"], re.I))[:6]:
                 lines.append(f"- near '{m.group(0)}': {pg['body'][max(0, m.start()-250):m.end()+250]!r}")
         lines.append("")
-    if True:   # 19 Nov 2026: run the collector once (the workflow passes no extra flags)
+    lines += ["## Date and window variants", ""]
+    try:
+        for v in VARIANTS:
+            pg = fetch(sess, BASE + v)
+            txt = visible(pg["body"])
+            m = re.search(r"\d+ day (average|span)[^)]*\)", txt)
+            first = re.search(r'\["<a href=\\"/(?:dnssec|rpki)/([A-Z]{2})\\">.*?\{v: ([\d.]+)', pg["body"])
+            lines.append(f"- {v}: HTTP {pg['status']}; window: {m.group(0) if m else 'not found'}; "
+                         f"first row: {first.groups() if first else 'none'}")
+    except Stopped as e:
+        lines.append(f"Stopped: {e}")
+    lines.append("")
+    if False:   # collector check done 19 Nov 2026
         from snapshot.collect import apnic
         try:
             for m, t in apnic.fetch().items():
