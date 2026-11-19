@@ -154,3 +154,23 @@ def test_fixdate_fallback_is_marked(monkeypatch):
     monkeypatch.setattr(fixdates, "_get", lambda path: None)
     d, src = fixdates.prefill(["https://vendor.example/advisory/1"], "2026-07-14T10:00:00+00:00")
     assert d == "2026-07-14" and src.startswith("ASSUMED")
+
+
+def test_x5_widened_lists():
+    """19 Nov 2026 (author): AI infrastructure added to X5; shared planes and disputed flaws apart."""
+    from snapshot.classify import disputed_ai_flaws, is_ai_software, is_shared_plane
+    assert is_ai_software(["qdrant|qdrant"]) and is_ai_software(["anyscale|kuberay"])
+    assert not is_ai_software(["Acme|Chromatic"])          # chromadb, not chroma
+    assert is_shared_plane(["ConnectWise|ScreenConnect"]) and is_shared_plane(["MinIO|minio"])
+    assert not is_shared_plane(["Ollama|ollama"])
+    assert "CVE-2023-48022" in disputed_ai_flaws()
+
+
+def test_x5_block_separates_lines():
+    import pandas as pd
+    from snapshot.research.practice_eval import x5_block
+    cve = pd.DataFrame({"cve_id": ["C1", "C2", "C3"], "affected": [["ollama|ollama"], ["minio|minio"], ["acme|thing"]]})
+    kq = pd.DataFrame({"cve_id": ["C1", "C2", "C3"], "vendor": ["", "", "Acme"], "product": ["", "", "Thing"]})
+    ev = pd.DataFrame({"cve_id": [], "t_kev": [], "t_exploit": [], "t_patch": [], "fix_lo": [], "fix_hi": [], "exploit_hi": []})
+    x = x5_block(cve, kq, cve, ev, pd.Timestamp("2026-10-01"), pd.Timestamp("2026-12-31"))
+    assert x["kev_ai"] == ["C1"] and x["kev_shared"] == ["C2"] and x["published_ai"] == 1 and x["published_shared"] == 1

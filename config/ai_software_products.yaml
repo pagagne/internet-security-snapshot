@@ -1,6 +1,6 @@
 # Products counted as "AI software" for exploratory measure X5. Matched whole-word,
 # case-insensitive, against CVE affected vendor|product strings. Additions are dated.
-version: 1.1   # 2026-10-22; 1.1 on 2026-11-12 (AI browsers, author)
+version: 1.2   # 2026-10-22; 1.1 on 2026-11-12 (AI browsers, author); 1.2 on 2026-11-19 (AI infrastructure, author)
 products:
   # model servers and runtimes
   - ollama
@@ -50,3 +50,48 @@ products:
   - browser company dia
   - dia browser
   - genspark
+  # AI orchestration, serving and data planes (added 2026-11-19, author's decisions folding the
+  # retired X29 into X5). Names chosen to avoid collisions: "chroma" alone matches colour tools,
+  # so "chromadb"; "triton" alone matches unrelated products, so the full server name above.
+  - kuberay
+  - anyscale
+  - bentoml
+  - clearml
+  - open-webui
+  - qdrant
+  - milvus
+  - weaviate
+  - chromadb
+  - pgvector
+  - langsmith
+  - ragflow
+
+# The shared control and data planes AI stacks are often reached through (added 2026-11-19,
+# author: reported on a separate line, never added to the AI-software figures). Kubernetes and
+# container tools, object storage, remote support.
+shared_planes:
+  - kubernetes
+  - kubelet
+  - ingress-nginx
+  - rancher
+  - argo cd
+  - argo workflows
+  - containerd
+  - docker engine
+  - docker desktop
+  - minio
+  - ceph
+  - screenconnect
+  - beyondtrust
+  - anydesk
+  - teamviewer
+  - simplehelp
+  - kaseya
+
+# Flaws in AI software that the vendor disputes or never patches (added 2026-11-19, author: their
+# own line in X5, because there is no fix date to measure a race from). Each entry is dated and
+# cites a public source; see docs/cases/ray-shadowray.md.
+disputed:
+  - cve: CVE-2023-48022
+    product: Anyscale Ray (job submission API)
+    note: Disputed by the vendor as by design; never patched; exploited (ShadowRay 2024, ShadowRay 2.0 Nov 2025). Added 2026-11-19.

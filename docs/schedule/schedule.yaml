@@ -1806,6 +1806,7 @@ items:
     new "way in" value for leaked AI-provider keys, with a back-fill of existing rows.
     Proposal privately in exploratory/docs/x29-ai-infrastructure-proposal.md. Ready for the
     1-2 Dec dry run.
+  done: "19 Nov 2026 (early): X5 product list 1.2 (AI orchestration, serving and vector databases), a shared-planes list and a disputed-flaws list, with tests; the private quarterly evaluation reports X5 counts and the race for AI-stack KEV entries, shared planes and disputed flaws on separate lines; X11 GreyNoise AI-tag history in the quarterly collector (same day); X3 way-in value ai_key_leaked added; back-fill: no existing row's report gives a leaked AI key as the way in, so no row changed"
 
 - id: x30-x31-build
   owner: claude

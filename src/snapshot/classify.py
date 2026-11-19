@@ -143,3 +143,21 @@ def is_ai_software(affected) -> bool:
     """Exploratory X5: does any affected vendor|product name an AI software product?"""
     text = " ; ".join(str(a).lower().replace("|", " ") for a in affected)
     return any(p.search(text) for p in _ai_software_patterns())
+
+
+@lru_cache(maxsize=1)
+def _shared_plane_patterns():
+    words = load_config("ai_software_products.yaml").get("shared_planes") or []
+    return [re.compile(rf"(?<![a-z0-9]){re.escape(w.lower())}(?![a-z0-9])") for w in words]
+
+
+def is_shared_plane(affected) -> bool:
+    """Exploratory X5 (19 Nov 2026): a shared control or data plane AI stacks rely on
+    (Kubernetes and containers, object storage, remote support). Reported on its own line."""
+    text = " ; ".join(str(a).lower().replace("|", " ") for a in affected)
+    return any(p.search(text) for p in _shared_plane_patterns())
+
+
+def disputed_ai_flaws() -> dict[str, dict]:
+    """Exploratory X5 (19 Nov 2026): AI-software flaws the vendor disputes or never patches."""
+    return {d["cve"]: d for d in load_config("ai_software_products.yaml").get("disputed") or []}

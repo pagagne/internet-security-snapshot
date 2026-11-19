@@ -182,6 +182,7 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None, private: Path | None = 
     R["prefill_sources"] = dict(pd.Series(list(sources.values()), dtype=str).value_counts().items())
     R["I3"] = t1_kev_race(ev, qs, qe)
     R["I2"] = t3_time_to_exploit(ev, qs, qe)
+    R["X5"] = x5_block(qc, kq, cve, ev, qs, qe)
 
     # I7: ransomware postings and SEC 8-K Item 1.05 filings
     rw_path = bundle / "ransomware/ransomware_counts.parquet"
@@ -207,6 +208,40 @@ def evaluate(bundle: Path, pause: float = 0.3, nvd=None, private: Path | None = 
         R["I6_part_vulncheck_cisa"] = i6_agreement(kev, vc, qs, qe)
         R["exploit_sources"] = "CISA KEV and VulnCheck KEV"
     return R, ev
+
+
+def x5_block(qc: pd.DataFrame, kq: pd.DataFrame, cve: pd.DataFrame, ev: pd.DataFrame, qs, qe) -> dict:
+    """Exploratory X5 (never scored; widened 19 Nov 2026, author's decisions folding the retired X29):
+    flaws in AI software among the quarter's published CVEs and its new KEV entries, the race for
+    the AI-stack KEV entries, the shared control and data planes on a separate line, and AI flaws
+    the vendor disputes or never patches on a third line. Private until the author's review."""
+    from ..classify import disputed_ai_flaws, is_ai_software, is_shared_plane
+    if "affected" not in cve.columns:   # small test bundles carry no product names
+        return {"not_available": "no affected-product field in this bundle"}
+    aff = dict(zip(cve["cve_id"], cve["affected"]))
+    def names(cid, vendor="", product=""):
+        a = aff.get(cid)
+        a = list(a) if a is not None and len(a) else []
+        return a + ([f"{vendor}|{product}"] if vendor or product else [])
+    kev_ai, kev_shared = set(), set()
+    for r in kq.itertuples():
+        n = names(r.cve_id, getattr(r, "vendor", ""), getattr(r, "product", ""))
+        if is_ai_software(n):
+            kev_ai.add(r.cve_id)
+        elif is_shared_plane(n):
+            kev_shared.add(r.cve_id)
+    def race(ids):
+        sub = ev[ev["cve_id"].isin(ids)] if len(ev) else ev
+        return t1_kev_race(sub, qs, qe) if len(sub) else {"n": 0}
+    q_ai = qc["affected"].map(is_ai_software)
+    q_sh = qc["affected"].map(is_shared_plane) & ~q_ai
+    disputed = disputed_ai_flaws()
+    out = {"published_ai": int(q_ai.sum()), "published_shared": int(q_sh.sum()), "published_all": int(len(qc)),
+           "kev_ai": sorted(kev_ai), "kev_shared": sorted(kev_shared), "kev_all": int(len(kq)),
+           "race_ai": race(kev_ai), "race_shared": race(kev_shared),
+           "disputed_in_kev": sorted(set(kq["cve_id"]) & set(disputed)),
+           "disputed_listed": sorted(disputed)}
+    return out
 
 
 PLAIN = {
@@ -296,6 +331,15 @@ def report(R: dict) -> str:
               f"- Median days VulnCheck KEV listed a shared flaw before CISA: {_fmt(i6.get('median_days_vulncheck_before_cisa'))}",
               f"- Share listed first by VulnCheck KEV: {_pct(i6['share_vulncheck_first']) if i6.get('share_vulncheck_first') is not None else '-'}",
               "", "Source: VulnCheck KEV (community data), with CISA KEV; Shadowserver pending."]
+    if R.get("X5") and "not_available" not in R["X5"]:
+        x = R["X5"]
+        L += ["", "## X5 (exploratory, never scored): flaws in AI software", "",
+              f"- Published in the quarter: AI software {_fmt(x['published_ai'])}, shared planes {_fmt(x['published_shared'])}, of {_fmt(x['published_all'])}",
+              f"- New in CISA KEV: AI software {len(x['kev_ai'])}, shared planes {len(x['kev_shared'])}, of {x['kev_all']}"
+              + (f" ({', '.join(x['kev_ai'])})" if x["kev_ai"] else ""),
+              "- Race for the AI-software KEV entries:"] + _block(x["race_ai"], skip=("bounds",)) + [
+              "- Race for the shared-plane KEV entries (separate line):"] + _block(x["race_shared"], skip=("bounds",)) + [
+              f"- Disputed or never-patched AI flaws newly in KEV: {', '.join(x['disputed_in_kev']) or 'none'} (listed: {', '.join(x['disputed_listed'])})"]
     L += ["", "## Not computable yet", ""] + [f"- {k}: {v}" for k, v in R["not_computable"].items()]
     L += ["", "No Improving or Worsening labels: this is a practice quarter outside the study.", "",
           "Files: `practice_eval.json` (all figures) and `events.csv` (one row per flaw first added to "

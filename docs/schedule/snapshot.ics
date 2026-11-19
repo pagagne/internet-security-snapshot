@@ -1604,8 +1604,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build the AI-infrastructure additions to X5\, X1
- 1 and X3 before the dry run
+SUMMARY:✅ DONE [Claude] Snapshot: Build the AI-infrastructure additions t
+ o X5\, X11 and X3 before the dry run
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026 (cards): 
  the proposed X29 is folded into existing measures\, because X5 and X11 alr
  eady covered most of it. X5: AI orchestration and serving products added t
