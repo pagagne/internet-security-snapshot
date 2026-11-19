@@ -336,12 +336,15 @@ items:
     example tag); other parameters return only the last day, and granularity=1d fails. The
     windows mark active days only (no daily counts; one total for the period). So the API gives
     the first day of attacks within the last 90 days for each tag. Next: the collector uses
-    days=90 (greynoise-collector-90-days).
+    days=90 (greynoise-collector-90-days). Corrected 19 Nov 2026 after the first collector test: the
+    windows are listed for every day of the 90 whether or not the tag was active (tags with a
+    zero total have all 91), so the 90-day view gives one total per tag, not active days or a
+    first-attack day; first-seen dates come from the weekly sweep.
 
 - id: greynoise-ai-tags-test
   owner: claude
   title: One test run of the GreyNoise collector (90-day tag view, AI-product tags), if Martin has no concern
-  date: 2026-11-20
+  date: 2026-11-19   # brought forward: GreyNoise agreed at 10:53 ET the same day (author, 12:39 ET)
   details: >
     Author's decision 19 Nov 2026: one hand-started quarterly run for 2026Q4 so far, a day after
     the note to GreyNoise about AI-product tags, giving Martin a day to answer. Check his thread
@@ -400,13 +403,13 @@ items:
 
 - id: greynoise-collector-90-days
   owner: claude
-  title: GreyNoise collector reads 90 days of tag activity (first active day per tag)
+  title: GreyNoise collector reads 90 days of tag activity (90-day totals per tag; corrected 19 Nov)
   date: 2026-11-19
   details: >
     Follows the 18 Nov test. The quarterly and weekly runs add, per CVE tag, the first and last
     active day and the number of active days in the last 90 days (days=90). Counts and dates
     only; tests first; private outputs as before.
-  done: "19 Nov 2026: the quarterly run now reads the 90-day view for the tags on the quarter's KEV flaws and on AI products and shared planes (X5, X11), after the author's note to GreyNoise; quarterly only, as told to GreyNoise, not weekly; the public run log now shows only calls and errors, figures kept privately; tests added"
+  done: "19 Nov 2026: the quarterly run now reads the 90-day view for the tags on the quarter's KEV flaws and on AI products and shared planes (X5, X11), after the author's note to GreyNoise; quarterly only, as told to GreyNoise, not weekly; the public run log now shows only calls and errors, figures kept privately; tests added. Corrected the same day after the test run: the view gives a 90-day total per tag and classification, not active days, so the collector records those totals; first-seen dates stay with the weekly sweep"
 
 - id: shadowserver-follow-up-2
   owner: author

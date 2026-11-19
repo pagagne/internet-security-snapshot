@@ -557,9 +557,10 @@ measures:
       activity is recorded beside the KEV and VulnCheck dates as a cross-check. With 90 days of
       history this covers the age measure (author's rule, 16 Nov 2026: under four months, age
       only); GreyNoise agreed on 18 Nov 2026 to a private six-month rolling copy of daily tag
-      counts and the weekly sweep, and its API gives 90 days of tag activity (days=90, tested
-      18 Nov), so first-attack dates within that window are usable. Sensors see automated
-      scanning only.
+      counts and the weekly sweep. Corrected 19 Nov 2026 after the first test run: the API's
+      90-day view (days=90) gives one total per tag for the period, not the days a tag was
+      active, so first-attack dates come from the weekly sweep (the first sweep showing activity
+      in the previous ten days), not from the 90-day view. Sensors see automated scanning only.
       Exploratory, never scored. Credit: "Data provided by GreyNoise".
   - id: X29
     name: AI infrastructure as a target (merged into X5, X11 and X3 the same day)

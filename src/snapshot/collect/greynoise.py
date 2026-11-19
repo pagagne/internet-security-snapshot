@@ -16,12 +16,14 @@ Two modes, both writing only to the private repository (exploratory/greynoise/):
   of at most six months (older weekly files are deleted) and a permanent per-CVE record of the
   first week activity was seen.
 
-Tag history (added 19 Nov 2026, schedule item greynoise-collector-90-days): the tag activity
-call with days=90 returns one window for every day a tag was active in the last 90 days (tested
-18 Nov; no daily counts, and no other range parameter works). The quarterly run reads it for the
-tags on the quarter's KEV flaws (first and last active day and number of active days per CVE)
-and for the tags on AI products and the shared planes AI stacks use (X5 and X11, author's
-decisions 19 Nov 2026; note sent to GreyNoise the same day). Quarterly only, as told to
+Tag history (added 19 Nov 2026, schedule item greynoise-collector-90-days; corrected the same
+day after the first test run): the tag activity call with days=90 returns one daily window for
+every day of the 90, whether or not the tag saw activity, plus one total per classification over
+the whole period ("aggregations"). So it gives a 90-day total per tag, not the days a tag was
+active or its first active day (the 18 Nov reading of the windows as active days was wrong). The
+quarterly run records those totals for the tags on the quarter's KEV flaws and on AI products and
+the shared planes AI stacks use (X5 and X11, author's decisions 19 Nov 2026; agreed by GreyNoise
+the same day). Quarterly only, as told to
 GreyNoise: a 90-day view read once a quarter covers all but the first day or two of a 92-day
 quarter, which is stated with the figures. Not added to the weekly sweep.
 
@@ -53,7 +55,7 @@ COUNT_FIELDS = ("threat_ip_count_1d", "threat_ip_count_10d", "threat_ip_count_30
 CVE_COLUMNS = ["cve", "activity_seen", *COUNT_FIELDS, "last_seen", "status"]
 PUBLIC_KEYS = ("quarter", "date", "calls", "errors", "history_errors", "pruned_files")
 HISTORY_DAYS = 90           # the longest view the tag activity call gives (tested 18 Nov 2026)
-HISTORY_COLUMNS = ["tag_first_active", "tag_last_active", "tag_active_days"]
+HISTORY_COLUMNS = ["tag_90d_malicious", "tag_90d_suspicious", "tag_90d_benign", "tag_90d_total"]
 
 # AI-stack products and the shared control and data planes AI stacks rely on (X5 and X11; from the
 # retired X29 proposal, author's decisions 19 Nov 2026). Matched against tag names and slugs only.
@@ -69,8 +71,7 @@ AI_PRODUCTS = {
     "shared: object storage": r"minio|\bceph\b",
     "shared: remote support": r"screenconnect|connectwise|beyondtrust|anydesk|teamviewer|simplehelp|kaseya",
 }
-AI_COLUMNS = ["tag", "line", "categories", "created", "intention", "cves", *HISTORY_COLUMNS,
-              "malicious_days", "suspicious_days", "benign_days", "status"]
+AI_COLUMNS = ["tag", "line", "categories", "created", "intention", "cves", *HISTORY_COLUMNS, "status"]
 
 
 def ai_tags(tags: list[dict]) -> list[dict]:
@@ -85,26 +86,21 @@ def ai_tags(tags: list[dict]) -> list[dict]:
     return sorted(out, key=lambda x: (x["categories"][0], x["created_at"]))
 
 
-def active_days(body) -> dict:
-    """Days with activity in a tag activity reply: {"activity": {classification: [{"start", "end"}]}}.
-    Returns the first and last active day, the number of distinct active days, and active days per
-    classification. Nothing else from the reply is kept."""
-    acts = (body or {}).get("activity") if isinstance(body, dict) else None
-    per, days = {}, set()
-    if isinstance(acts, dict):
-        for cls, lst in acts.items():
-            d = {w["start"][:10] for w in (lst or []) if isinstance(w, dict) and isinstance(w.get("start"), str)}
-            per[cls] = len(d)
-            days |= d
-    return {"tag_first_active": min(days) if days else "", "tag_last_active": max(days) if days else "",
-            "tag_active_days": len(days), "per_class": per, "days": days}
+def totals(body) -> dict:
+    """The 90-day totals per classification from a tag activity reply's "aggregations" block.
+    The daily windows carry no counts and are listed for every day, so they are ignored."""
+    agg = ((body or {}).get("aggregations") or {}).get("classification") if isinstance(body, dict) else None
+    agg = agg if isinstance(agg, dict) else {}
+    out = {f"tag_90d_{c}": int(agg.get(c) or 0) for c in ("malicious", "suspicious", "benign")}
+    out["tag_90d_total"] = sum(out.values())
+    return out
 
 
 def tag_history(tag_id: str, key: str, get=None) -> tuple[dict, str]:
-    """One call: the tag's active days over the last 90 days."""
+    """One call: the tag's totals per classification over the last 90 days."""
     get = get or _get
     body, status = get(f"/v3/tags/{tag_id}/activity", key, {"days": HISTORY_DAYS})
-    return active_days(body if status == "ok" else None), status
+    return totals(body if status == "ok" else None), status
 
 
 def _key() -> str:
@@ -196,11 +192,9 @@ def quarterly(q: str, out: Path, key: str, get=_get, flaws: list[dict] | None = 
         r = {"cve": f["cve"], "kev_date": f["kev_date"],
              "tag_first_created": t.get("tag_first_created", ""), "tags": t.get("tags", 0)}
         r.update(cve_row(f["cve"], key, get)); calls += 1
-        days = set()
-        for tid in t.get("tag_ids", []):
-            days |= hist(tid)[0]["days"]
-        r.update(tag_first_active=min(days) if days else "", tag_last_active=max(days) if days else "",
-                 tag_active_days=len(days))
+        # per CVE, the largest 90-day total among its tags (tags can overlap, so totals are not added)
+        hs = [hist(tid)[0] for tid in t.get("tag_ids", [])]
+        r.update({c: max((h[c] for h in hs), default=0) for c in HISTORY_COLUMNS})
         rows.append(r)
     out.mkdir(parents=True, exist_ok=True)
     cols = ["cve", "kev_date", "tag_first_created", "tags", *CVE_COLUMNS[1:], *HISTORY_COLUMNS]
@@ -209,27 +203,25 @@ def quarterly(q: str, out: Path, key: str, get=_get, flaws: list[dict] | None = 
 
     ai_rows = []
     for t in ai_tags(tag_list):
-        h, status = hist(t["id"]) if t.get("id") else (active_days(None), "no id")
+        h, status = hist(t["id"]) if t.get("id") else (totals(None), "no id")
         shared = all(c.startswith("shared:") for c in t["categories"])
         ai_rows.append({"tag": t["name"], "line": "shared planes" if shared else "AI stack",
                         "categories": "; ".join(t["categories"]), "created": t["created_at"],
                         "intention": t.get("intention") or "", "cves": " ".join(t["cves"]),
                         **{k: h[k] for k in HISTORY_COLUMNS},
-                        **{f"{c}_days": h["per_class"].get(c, 0) for c in ("malicious", "suspicious", "benign")},
                         "status": status})
     with (out / f"ai-tags-{q}.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=AI_COLUMNS); w.writeheader(); w.writerows(ai_rows)
 
     tagged = [r for r in rows if r["tags"]]
     before = [r for r in tagged if r["tag_first_created"] and r["tag_first_created"] < r["kev_date"]]
-    active_before = [r for r in tagged if r["tag_first_active"] and r["tag_first_active"] < r["kev_date"]]
     ai = [r for r in ai_rows if r["line"] == "AI stack"]
     return {"quarter": q, "flaws": len(rows), "tagged": len(tagged), "tag_before_kev": len(before),
             "activity_seen": sum(1 for r in rows if r["activity_seen"] is True),
-            "active_before_kev": len(active_before),
-            "ai_tags": len(ai), "ai_tags_active": sum(1 for r in ai if r["tag_active_days"]),
+            "tagged_with_90d_activity": sum(1 for r in tagged if r["tag_90d_total"]),
+            "ai_tags": len(ai), "ai_tags_active": sum(1 for r in ai if r["tag_90d_total"]),
             "shared_tags": len(ai_rows) - len(ai),
-            "shared_tags_active": sum(1 for r in ai_rows if r["line"] == "shared planes" and r["tag_active_days"]),
+            "shared_tags_active": sum(1 for r in ai_rows if r["line"] == "shared planes" and r["tag_90d_total"]),
             "history_errors": sum(1 for _, st in history.values() if st != "ok"), "calls": calls}
 
 

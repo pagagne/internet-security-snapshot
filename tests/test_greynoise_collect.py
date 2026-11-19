@@ -9,10 +9,9 @@ TAGS = {"tags": [{"id": "1", "cves": ["CVE-1"], "created_at": "2026-10-21T00:00:
                  {"id": "4", "name": "Ray Dashboard RCE Attempt", "cves": [], "created_at": "2024-03-27T00:00:00Z"},
                  {"id": "5", "name": "MinIO Information Disclosure", "cves": ["CVE-3"], "created_at": "2023-03-27T00:00:00Z"}]}
 
-# tag activity with days=90: one window per active day, per classification (layout seen 18 Nov 2026)
-ACTIVITY = {"1": {"malicious": ["2026-10-10", "2026-10-11"], "benign": ["2026-10-11"]},
-            "2": {"malicious": ["2026-10-30"]},
-            "4": {"malicious": ["2026-11-01", "2026-11-02", "2026-11-03"]}}
+# tag activity with days=90 (layout seen 18-19 Nov 2026): a window for every day whether active or
+# not, and the totals per classification in "aggregations"
+TOTALS = {"1": {"malicious": 5, "benign": 1}, "2": {"malicious": 2}, "4": {"malicious": 7}, "5": {}}
 
 
 def fake(counts):
@@ -22,8 +21,8 @@ def fake(counts):
         if path.endswith("/activity"):
             assert params == {"days": 90}
             tid = path.split("/")[3]
-            return {"activity": {c: [{"start": d + "T00:00:00Z", "end": d + "T23:59:59Z", "ips": ["1.2.3.4"]}
-                                     for d in ds] for c, ds in ACTIVITY.get(tid, {}).items()}}, "ok"
+            days = [{"start": f"2026-10-{d:02d}T00:00:00Z", "end": "x", "ips": ["1.2.3.4"]} for d in range(1, 31)]
+            return {"activity": {"malicious": days}, "aggregations": {"classification": TOTALS.get(tid, {})}}, "ok"
         cve = path.rsplit("/", 1)[-1]
         c = counts.get(cve, 0)
         return {"exploitation_activity": {"activity_seen": c > 0, "threat_ip_count_1d": c,
@@ -42,25 +41,26 @@ def test_quarterly_counts_and_never_keeps_ips(tmp_path):
     s = G.quarterly("2026Q4", tmp_path, "k", fake({"CVE-1": 5}),
                     flaws=[{"cve": "CVE-1", "kev_date": "2026-10-26"}, {"cve": "CVE-9", "kev_date": "2026-11-01"}])
     assert s == {"quarter": "2026Q4", "flaws": 2, "tagged": 1, "tag_before_kev": 1, "activity_seen": 1,
-                 "active_before_kev": 1, "ai_tags": 1, "ai_tags_active": 1, "shared_tags": 1,
+                 "tagged_with_90d_activity": 1, "ai_tags": 1, "ai_tags_active": 1, "shared_tags": 1,
                  "shared_tags_active": 0, "history_errors": 0, "calls": 7}
     text = (tmp_path / "quarter-2026Q4.csv").read_text()
     assert "1.2.3.4" not in text and "2026-10-21" in text
-    # CVE-1's two tags combined: first 10 Oct, last 30 Oct, three distinct active days
-    assert "2026-10-10,2026-10-30,3" in text
+    # CVE-1's two tags: the larger 90-day total per classification (5 malicious, 1 benign), not a sum
+    assert ",5,0,1,6" in text
 
 
 def test_quarterly_ai_tags_on_two_lines_counts_only(tmp_path):
     G.quarterly("2026Q4", tmp_path, "k", fake({}), flaws=[])
     text = (tmp_path / "ai-tags-2026Q4.csv").read_text()
     assert "1.2.3.4" not in text
-    assert "Ray Dashboard RCE Attempt,AI stack,cluster/compute,2024-03-27,,,2026-11-01,2026-11-03,3,3,0,0,ok" in text
+    assert "Ray Dashboard RCE Attempt,AI stack,cluster/compute,2024-03-27,,,7,0,0,7,ok" in text
     assert "MinIO Information Disclosure,shared planes,shared: object storage" in text
 
 
-def test_active_days_handles_empty_and_odd_replies():
-    assert G.active_days(None)["tag_active_days"] == 0
-    assert G.active_days({"activity": {"malicious": [{"start": None}, "x"]}})["tag_first_active"] == ""
+def test_totals_ignore_windows_and_odd_replies():
+    assert G.totals(None)["tag_90d_total"] == 0
+    assert G.totals({"activity": {"malicious": [{"start": "2026-10-01"}] * 91}})["tag_90d_total"] == 0
+    assert G.totals({"aggregations": {"classification": {"malicious": 3, "suspicious": None}}})["tag_90d_total"] == 3
 
 
 def test_quarter_bounds():
