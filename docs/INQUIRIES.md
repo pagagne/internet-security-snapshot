@@ -372,3 +372,12 @@ Started 25 Oct 2026 at the author's request.
   the current quarter), not an AI-attack case, and not a ransomware.live input (aggregates only).
   It supports the report's point that old edge-device and backup flaws stay in use for years.
 
+- **19 Nov 2026: FBI Flash on North Korea's "FaceStealer" scheme (AC-111226-MS, 12 Nov 2026;
+  author's find).** North Korean state actors used fake video-meeting sessions and hijacked
+  accounts to install malware, stealing over $400 million in crypto and recording webcam video
+  of more than 900 tech workers; open-source package maintainers were also targeted. The FBI says
+  the actors have begun using AI-generated deepfake videos, though the scheme still relies mainly
+  on genuine stolen videos. No CVEs. **Handled:** already among the tracker leads of 18 Nov; by
+  the author's decision (19 Nov) it waits for the 18 Dec lead review rather than entering the
+  AI-attack log now.
+
