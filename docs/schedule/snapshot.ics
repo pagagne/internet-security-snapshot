@@ -1413,8 +1413,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build the APNIC Labs collector for X20 (DNSSEC a
- nd RPKI by country)
+SUMMARY:✅ DONE [Claude] Snapshot: Build the APNIC Labs collector for X20 
+ (DNSSEC and RPKI by country)
 DESCRIPTION:Responsible: Claude\n\nAPNIC granted written leave on 1 Nov 202
  6 (ticket 00177078): credit APNIC Labs and keep the figures an accurate re
  presentation of the source data. Build the quarterly snapshot of the publi

@@ -387,16 +387,18 @@ measures:
       exploitation alerts with an attack date. Collector to build before the 14 Dec review.
 
   - id: X20
-    name: Internet routing and naming hygiene by country (APNIC Labs, RIPE NCC)
+    name: Internet routing and naming hygiene by country (APNIC Labs)
     question: Are the internet's basic protections (DNSSEC validation, RPKI route checking) spreading, country by country and region by region?
-    sources: [apnic_labs, ripe_ncc]
+    sources: [apnic_labs]
     added: 2026-10-26
     feeds_labels: false
-    status: planned   # 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution). APNIC granted written leave 1 Nov 2026 (ticket 00177078; credit, accurate representation); collector to build
+    status: active   # 19 Nov 2026: collector built and tested (snapshot.collect.apnic, two world-map pages a pull; raw kept private). 29 Oct: APNIC Labs only (RIPEstat terms forbid redistribution); written leave 1 Nov 2026 (ticket 00177078: credit APNIC Labs, figures as published)
     method: >
-      Quarterly snapshot of the public per-country measurements: share of users behind
-      resolvers that validate DNSSEC, and share of routes covered by RPKI and of networks
-      that drop invalid routes. Reported by region with a world figure weighted by users. A
+      Quarterly snapshot of APNIC Labs' public per-country tables, as published: share of users
+      behind resolvers that validate DNSSEC (30-day average; full and partial), and share of
+      users whose networks drop RPKI-invalid routes (I-ROV filtering, 7-day span), with
+      samples and APNIC's weights. RPKI route coverage (ROAs) is not in APNIC's tables and is
+      not measured (RIPE NCC dropped 29 Oct). Reported by region with a world figure weighted by users. A
       measure of the internet's own health, independent of any government's list.
 
   - id: X21

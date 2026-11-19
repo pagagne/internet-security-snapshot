@@ -1993,6 +1993,7 @@ items:
   owner: claude
   title: Build the APNIC Labs collector for X20 (DNSSEC and RPKI by country)
   date: 2026-11-25
+  done: "19 Nov 2026 (moved up): readability tested (no robots.txt, no blocking; APNIC's files say re-use with attribution permitted); snapshot.collect.apnic reads the DNSSEC and RPKI world-map tables (235 and 230 countries), checked against APNIC's own JSON; in the quarterly pull from the 1 Dec dry run, raw kept private; coverage slice coloured after that run"
   details: >
     APNIC granted written leave on 1 Nov 2026 (ticket 00177078): credit APNIC Labs and keep the
     figures an accurate representation of the source data. Build the quarterly snapshot of the
