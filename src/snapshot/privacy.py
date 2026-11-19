@@ -101,8 +101,10 @@ def _files(ref: str | None) -> list[tuple[str, str]]:
                                         text=True, errors="replace").stdout
     else:
         try:
-            names = subprocess.run(["git", "ls-files"], capture_output=True, text=True,
-                                   check=True).stdout.split("\n")
+            # tracked files and new files not yet added (19 Nov 2026: a new file scanned before
+            # `git add` was missed); ignored files stay out
+            names = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard"],
+                                   capture_output=True, text=True, check=True).stdout.split("\n")
         except (OSError, subprocess.CalledProcessError):
             # no git (e.g. inside the analysis container): every file under the current folder
             names = [p.as_posix() for p in Path(".").rglob("*")

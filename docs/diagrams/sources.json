@@ -148,7 +148,7 @@
    ],
    "fingerprints": {
     "docs/WORKFLOWS.md": "681c2918e8db3010",
-    ".github/workflows/checks.yml": "a3b2eb3d58b67d28",
+    ".github/workflows/checks.yml": "4ad1d78b796c485d",
     "docs/diagrams/workflow_runs.dot": "c3edf1d46efaff4e"
    },
    "reviewed_on": "2026-11-19"

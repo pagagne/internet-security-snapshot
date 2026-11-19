@@ -9,6 +9,7 @@ written beside it in the file. Never contains figures: the file holds methods an
 """
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 
@@ -20,6 +21,24 @@ ROOT = _repo_root()
 CONFIG = ROOT / "config" / "exploratory.yaml"
 DOC = ROOT / "docs" / "EXPLORATORY_MEASURES.md"
 SKIP = {"id", "name", "question", "sources", "added", "feeds_labels", "status", "method"}
+MARK = "<!-- public-figure -->"
+# Lines the privacy scan flags as possible exploratory figures, reviewed by the author on 19 Nov 2026
+# and found to be method text only (source names such as "Unit 42", the fixed X25 list of 57
+# protocols, a 100-star checking threshold, a sample of up to 100). Each exemption is tied to the
+# exact text: if the field changes by one character, the mark falls away and the scan rechecks it.
+REVIEWED = {
+    ("X3", "sweep"): "4897457e3f85",
+    ("X25", "method"): "e22cd2ccd8f5",
+    ("X26", "method"): "bccbe4ebf59a",
+}
+
+
+def _fp(text: str) -> str:
+    return hashlib.sha256(text.encode()).hexdigest()[:12]
+
+
+def _mark(mid: str, field: str, text: str) -> str:
+    return f" {MARK}" if REVIEWED.get((mid, field)) == _fp(text) else ""
 
 
 def _status_notes(raw: str) -> dict[str, str]:
@@ -61,10 +80,12 @@ def doc_md() -> str:
               "", f"*Added* {m['added']}. *Sources:* {_text(m['sources'])}. "
               f"*Decides a label:* {'yes' if m.get('feeds_labels') else 'no'}."]
         if m.get("method"):
-            L += ["", f"*Method.* {_text(m['method'])}"]
+            t = _text(m["method"])
+            L += ["", f"*Method.* {t}{_mark(m['id'], 'method', t)}"]
         for k, v in m.items():
             if k not in SKIP:
-                L += ["", f"*{k.replace('_', ' ').capitalize()}.* {_text(v)}"]
+                t = _text(v)
+                L += ["", f"*{k.replace('_', ' ').capitalize()}.* {t}{_mark(m['id'], k, t)}"]
     return "\n".join(L) + "\n"
 
 

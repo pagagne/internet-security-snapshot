@@ -44,3 +44,14 @@ def test_day_first_dates_are_not_counts():
     from snapshot import privacy as P
     assert P.exploratory_lines("docs/x.md", "| Wed 18 Nov 2026 | Review the GitHub sweep |") == []
     assert P.exploratory_lines("docs/x.md", "The GitHub sweep found 1,234 tools") != []
+
+
+def test_scan_sees_new_files_not_yet_added(tmp_path, monkeypatch):
+    """19 Nov 2026: a new file must be scanned before `git add`, not only after."""
+    import subprocess
+    from snapshot import privacy
+    subprocess.run(["git", "init", "-q"], cwd=tmp_path, check=True)
+    (tmp_path / "new.md").write_text("contact: someone.private@gmail.com\n")
+    monkeypatch.chdir(tmp_path)
+    names = [n for n, _ in privacy._files(None)]
+    assert "new.md" in names
