@@ -41,3 +41,14 @@ def test_range_variants_include_days_and_dates():
     v = range_variants(dt.date(2026, 11, 18))
     assert {} in v and {"days": 90} in v
     assert {"start_date": "2026-08-20", "end_date": "2026-11-18"} in v
+
+
+def test_ai_tags_match_products_only():
+    from snapshot.research.greynoise_probe import ai_tags
+    tags = [{"name": "Ray Dashboard RCE Attempt", "slug": "ray-rce", "created_at": "2024-03-27T00:00:00Z",
+             "intention": "malicious", "cves": ["CVE-2023-48022"]},
+            {"name": "Apache Struts RCE", "slug": "struts", "cves": []},
+            {"name": "Langflow Code Injection", "slug": "langflow", "created_at": "2025-04-10"}]
+    out = ai_tags(tags)
+    assert [t["name"] for t in out] == ["Ray Dashboard RCE Attempt", "Langflow Code Injection"]
+    assert out[0]["categories"] == ["cluster/compute"]

@@ -40,6 +40,32 @@ MAX_CVES = 25
 EXAMPLE_TAG = "214d5217-0870-41f5-891e-f5edb255c3e9"
 
 
+# AI-stack and shared control-plane products (X29 proposal, 19 Nov 2026): which GreyNoise tags cover them
+AI_PRODUCTS = {
+    "cluster/compute": r"\bray\b|anyscale|kubeflow|kuberay",
+    "workflow/agent builders": r"langflow|\bn8n\b|flowise|\bdify\b|airflow|prefect|langchain|llamaindex",
+    "ML ops/notebooks": r"mlflow|jupyter|clearml|h2o",
+    "model servers/UIs": r"ollama|vllm|triton|torchserve|comfyui|open.?webui|litellm|anythingllm|gradio|llama.cpp|localai|bentoml",
+    "vector DBs": r"qdrant|milvus|weaviate|chroma|pgvector",
+    "AI gateways/MCP": r"\bmcp\b|model context protocol|\bllm\b|openai|ai gateway",
+    "shared: Kubernetes/containers": r"kubernetes|\bk8s\b|kubelet|ingress-nginx|rancher|\bargo|docker api|containerd",
+    "shared: object storage": r"minio|\bceph\b",
+    "shared: remote support": r"screenconnect|connectwise|beyondtrust|anydesk|teamviewer|simplehelp|kaseya",
+}
+
+
+def ai_tags(tags: list[dict]) -> list[dict]:
+    """Tags whose name or slug names an AI-stack or shared control-plane product (metadata only)."""
+    out = []
+    for t in tags:
+        text = f"{t.get('name', '')} {t.get('slug', '')}".lower()
+        cats = [c for c, pat in AI_PRODUCTS.items() if re.search(pat, text)]
+        if cats:
+            out.append({"name": t.get("name"), "created_at": (t.get("created_at") or "")[:10],
+                        "intention": t.get("intention"), "cves": t.get("cves") or [], "categories": cats})
+    return sorted(out, key=lambda x: (x["categories"][0], x["created_at"]))
+
+
 def range_variants(today: dt.date) -> list[dict]:
     """Parameter sets to try on the tag activity call, to find the 90-day history the website shows
     (18 Nov 2026: plain calls and start/end gave only the last day or two)."""
@@ -203,6 +229,7 @@ def main(argv=None) -> int:
                        "cves_covered": len({c for t in tags for c in (t.get("cves") or [])}),
                        "fields": sorted({k for t in tags[:50] for k in t}),
                        "error": body.get("error") if isinstance(body, dict) else None}
+    res["ai_tags"] = ai_tags(tags)
     by_cve: dict[str, list] = {}
     for t in tags:
         for c in t.get("cves") or []:
@@ -264,6 +291,11 @@ def main(argv=None) -> int:
          f"{res['all_tags']['with_cve']} with a CVE, covering {res['all_tags']['cves_covered']} CVEs.",
          f"Flaws added to CISA's list in the last 90 days (up to {MAX_CVES}): {len(rows)}; "
          f"with a GreyNoise tag: {len(seen)}; GreyNoise activity seen: {len(active)}.", ""]
+    at = res.get("ai_tags", [])
+    L.append(f"Tags on AI-stack and shared control-plane products: {len(at)}")
+    for t in at:
+        L.append(f"- {', '.join(t['categories'])}: {t['name']} (created {t['created_at']}, {t['intention']}, CVEs {len(t['cves'])})")
+    L.append("")
     L.append(f"History depth, tag {EXAMPLE_TAG} (GreyNoise's own 90-day example):")
     for r0 in res.get("range_tests", []):
         md = r0.get("metadata") or {}
