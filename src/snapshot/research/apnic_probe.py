@@ -29,8 +29,8 @@ import requests
 
 UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted ticket 00177078; contact via github.com/pagagne)"
 BASE = "https://stats.labs.apnic.net"
-INDEX = ["/dnssec/XA", "/rpki/XA"]
-COUNTRIES = ["AU"]
+INDEX = ["/dnssec", "/rpki"]
+COUNTRIES: list[str] = []
 DATA_HINT = re.compile(r"json-table\.pl|\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
 DATE_RX = re.compile(r"\b(20\d\d-\d\d-\d\d|\d{1,2} [A-Z][a-z]{2,8} 20\d\d|[A-Z][a-z]{2,8} \d{1,2},? 20\d\d)\b")
 PCT_RX = re.compile(r"\b\d{1,3}(?:\.\d+)?%")
@@ -116,6 +116,7 @@ def main(argv=None):
                 continue
             pg = fetch(sess, u)
             pages.append(pg)
+            (out / (re.sub(r"[^A-Za-z0-9]+", "_", urlparse(u).path).strip("_") + ".html")).write_text(pg["body"])
             for l in links(pg):
                 kind = "data" if DATA_HINT.search(l) else "page"
                 rows.append({"from": u, "link": l, "kind": kind})
