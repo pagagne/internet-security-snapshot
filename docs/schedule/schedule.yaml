@@ -1443,6 +1443,45 @@ items:
     2026, mark hits and surprises in one short table, and add it to the pilot report's notes
     for the author. Nothing in the comparison changes a rule.
 
+- id: independent-review-brief
+  owner: claude
+  primary: true   # primary chat only
+  title: Prepare the brief for the independent adversarial review
+  date: 2027-01-29
+  details: >
+    Author's decisions, 19 Nov 2026 (cards): an independent, adversarial review of the whole
+    study after the pilot. Write the one-page brief the author pastes into the reviewing chat:
+    read only the public repository pagagne/internet-security-snapshot; criticise constructively
+    the method, the race measure, hand-check reliability, dependence on particular sources and
+    the statistics; read every public document, manual part and guide for any trace of private
+    conversations or correspondence; report findings ranked by severity, each with the file and
+    a suggested fix. No project documents, private repository, Drive or mail.
+
+- id: independent-review
+  owner: author
+  title: Independent adversarial review of the study (new chat, Claude Fable 5.1)
+  date: 2027-02-03
+  time: "10:00"
+  minutes: 90
+  details: >
+    Author's decisions, 19 Nov 2026: 1) In Claude settings, turn off "search and reference past
+    chats" and memory. 2) Open a NEW chat outside the project, choose Claude Fable 5.1, and
+    paste the brief (independent-review-brief). 3) Let it read the public repository and write
+    its report. 4) Save the report and bring it to the primary chat. 5) Turn the two settings
+    back on. You decide what to act on; changes to the registered core wait for the 15 Mar
+    review. Feeds the 10 Feb plan evaluation and the 17 Feb document lock.
+
+- id: independent-review-record
+  owner: claude
+  primary: true   # primary chat only
+  title: Record the independent review's findings and sort them for the author
+  date: 2027-02-05
+  details: >
+    Record the report (private session log; a public summary only of what the author accepts),
+    sort each finding into: fix now (before the 17 Feb lock), the 10 Feb plan evaluation, the
+    15 Mar annual review (registered core), or declined with a reason; and fix at once any
+    privacy finding in a public file, with the author's approval.
+
 - id: final-summary
   owner: claude
   title: Summarize provisional-to-final changes; prepare the release
