@@ -147,7 +147,7 @@
     ".github/workflows/checks.yml"
    ],
    "fingerprints": {
-    "docs/WORKFLOWS.md": "176e7dfd4d504e45",
+    "docs/WORKFLOWS.md": "485d7447af05b2b8",
     ".github/workflows/checks.yml": "cff8c18606a657f6",
     "docs/diagrams/workflow_runs.dot": "a8315e4b673ca8a7"
    },
