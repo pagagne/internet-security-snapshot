@@ -1504,6 +1504,27 @@ DESCRIPTION:Responsible: Paul (author)\n\nGitHub\, both Gmail accounts\, Go
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:censys-reapply@2026-11-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Write the revised Censys research-access request (
+ narrow ask)
+DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 18 Nov 2026 to 
+ revisit the declined request (ticket RS-536) sooner than the 15 Mar 2027 r
+ eview. In your own words (Censys rejects AI-written requests). Claude's br
+ ief\, with the likely reasons for the first no\, the options and a ten-poi
+ nt checklist\, is in the private repository at https://github.com/pagagne/
+ snapshot-manual/blob/main/exploratory/docs/censys-reapply-brief.md. Recomm
+ ended: ask for aggregate counts of affected and fixed versions for each qu
+ arter's named flaws\, delayed data acceptable\, and state non-commercial u
+ se and citing Censys (both missing last time). Tell Claude when it is sent
+  so it is logged.\n\nSource: https://github.com/pagagne/internet-security-
+ snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-30@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261130

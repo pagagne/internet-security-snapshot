@@ -338,6 +338,19 @@ items:
     the first day of attacks within the last 90 days for each tag. Next: the collector uses
     days=90 (greynoise-collector-90-days).
 
+- id: censys-reapply
+  owner: author
+  title: Write the revised Censys research-access request (narrow ask)
+  date: 2026-11-30  # proposed by Claude 18 Nov; move freely
+  details: >
+    Author's decision 18 Nov 2026 to revisit the declined request (ticket RS-536) sooner than
+    the 15 Mar 2027 review. In your own words (Censys rejects AI-written requests). Claude's
+    brief, with the likely reasons for the first no, the options and a ten-point checklist, is
+    in the private repository at exploratory/docs/censys-reapply-brief.md. Recommended: ask for
+    aggregate counts of affected and fixed versions for each quarter's named flaws, delayed data
+    acceptable, and state non-commercial use and citing Censys (both missing last time). Tell
+    Claude when it is sent so it is logged.
+
 - id: greynoise-collector-90-days
   owner: claude
   title: GreyNoise collector reads 90 days of tag activity (first active day per tag)

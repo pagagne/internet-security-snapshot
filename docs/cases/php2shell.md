@@ -1,4 +1,4 @@
-# Case note: PHP2Shell (CVE-2026-109618, CVE-2026-109619) (updated 28 Oct 2026)
+# Case note: PHP2Shell (CVE-2026-109618, CVE-2026-109619) (updated 18 Nov 2026)
 
 Pilot watch case (`docs/RESEARCH_PLAN.md`, "Pilot watch cases"). The full note is due
 3 Feb 2027 and reviewed with the author on 8 Feb 2027 (AI-credit rule evaluation session).
@@ -120,3 +120,27 @@ end-of-life software, so its framing of unsupported versions is not neutral. Few
   access would let the study make itself (T1b, T2; Censys application 28 Oct).
 
 **Source:** [HeroDevs, 23 Oct 2026](https://www.herodevs.com/blog-posts/the-php2shell-story-the-manwho-keeps-php-running)
+
+## Patch uptake after the fix (added 18 Nov 2026, from Censys ARC, 2 Nov 2026, at the author's request)
+
+The first defender-side figures for this case, from internet-wide scans:
+- Patches 21 Oct. By 29 Oct over 11 million internet-facing PHP services had moved from
+  affected to fixed versions; more than 4 million were first seen on fixed versions on each of
+  22 and 23 Oct.
+- Over 30 million services still reported affected versions; about 23 million ran PHP 8.1 or
+  older, which have no official fix (only CloudLinux, Plesk and similar backports).
+- After nine days about 83% of PHP 8.5 services were fixed, against about 57% on PHP 8.3.
+- No time-to-exploit figure in the post.
+
+**What it means for the study (points for 8 Feb; no rule change)**
+- The race has a measurable defender side here: half or more of current-version servers fixed
+  within nine days, while the oldest versions, a large majority of the exposed total, cannot be
+  fixed by patching at all. The study's race (fix date to first attack) says nothing about this
+  tail; T1b/T2 exposure would, with scan data.
+- Censys counts "services reporting a version", which misses servers that hide their version
+  and counts backported fixes as affected: a caveat for any figure taken from it.
+- Supports revisiting the Censys request with a narrow ask (aggregate version shares for named
+  products), author 18 Nov 2026.
+
+**Source:** [Censys, 2 Nov 2026](https://censys.com/blog/thoughts-on-the-vulnpocalypse-php2shell/)
+
