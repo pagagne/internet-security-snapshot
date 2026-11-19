@@ -1548,8 +1548,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261128
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Draft the hand-on note (R18) - how the study con
- tinues if the author cannot
+SUMMARY:✅ DONE [Claude] Snapshot: Draft the hand-on note (R18) - how the 
+ study continues if the author cannot
 DESCRIPTION:Responsible: Claude\n\nPrivate: which accounts the study needs 
  (GitHub\, the project Gmail\, Google Cloud\, Drive\, OSF\, Zenodo\, Handsh
  ake)\, what each holds\, and what a named successor would need\; no passwo

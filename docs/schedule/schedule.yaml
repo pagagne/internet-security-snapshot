@@ -2258,6 +2258,7 @@ items:
   owner: claude
   title: Draft the hand-on note (R18) - how the study continues if the author cannot
   date: 2026-11-27
+  done: "19 Nov 2026 (moved up): drafted privately (exploratory/docs/HAND_ON_NOTE.md); the author completes the marked gaps, with the 28 Nov account check"
   details: >
     Private: which accounts the study needs (GitHub, the project Gmail, Google Cloud, Drive, OSF,
     Zenodo, Handshake), what each holds, and what a named successor would need; no passwords or
