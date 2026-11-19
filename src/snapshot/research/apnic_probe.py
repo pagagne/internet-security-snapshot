@@ -31,7 +31,7 @@ UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted t
 BASE = "https://stats.labs.apnic.net"
 INDEX = ["/dnssec/XA", "/rpki/XA"]
 COUNTRIES = ["AU"]
-DATA_HINT = re.compile(r"\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
+DATA_HINT = re.compile(r"json-table\.pl|\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
 DATE_RX = re.compile(r"\b(20\d\d-\d\d-\d\d|\d{1,2} [A-Z][a-z]{2,8} 20\d\d|[A-Z][a-z]{2,8} \d{1,2},? 20\d\d)\b")
 PCT_RX = re.compile(r"\b\d{1,3}(?:\.\d+)?%")
 STOP_CODES = {401, 403, 429, 503}
@@ -123,8 +123,10 @@ def main(argv=None):
                     seen_data.append(l)
         for l in seen_data[:15]:
             if rp.can_fetch(UA, l):
-                pg = fetch(sess, l, nbytes=3000)
+                pg = fetch(sess, l)
                 pg["is_data"] = True
+                name = re.sub(r"[^A-Za-z0-9]+", "_", urlparse(l).path.split("/")[-1] + "_" + urlparse(l).query)
+                (out / f"{name}.json").write_text(pg["body"])
                 pages.append(pg)
     except Stopped as e:
         lines += ["", f"**Stopped: {e}. Not worked around.**"]
