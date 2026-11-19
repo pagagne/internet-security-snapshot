@@ -355,6 +355,7 @@ items:
   owner: claude
   title: One-time check of two outside AI-hacking trackers against the AI-attack log and the tool sweep
   date: 2026-11-19
+  status: done 2026-11-18  # run early at the author's request; results private (exploratory), for the 23 Nov review
   details: >
     Author's decisions 18 Nov 2026 (cards). (1) hackingincidents.ai (MIT licence, incidents.json):
     one-time coverage check of the AI-attack log, leads graded confirmed or strong only; each
