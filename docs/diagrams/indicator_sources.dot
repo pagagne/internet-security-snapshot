@@ -3,7 +3,7 @@
 // Render: dot -Tpng -Gdpi=150 docs/diagrams/indicator_sources.dot -o docs/diagrams/indicator_sources.png
 digraph indicators {
   graph [rankdir=LR, fontname="Helvetica", fontsize=12, nodesep=0.18, ranksep=1.1, pad=0.3, newrank=true,
-         label="Solid line = registered source (pre-registration, 20 Oct 2026). Dashed grey = exploratory companion, shown beside the indicator, never replacing it.\nGreen = free and public. Blue = permission granted (ransomware.live 27 Oct, VulnCheck 11 Nov). Orange = permission requested, assumed granted here. Grey = declined (Censys, 10 Nov).",
+         label="Solid line = registered source (pre-registration, 20 Oct 2026). Dashed grey = exploratory companion, shown beside the indicator, never replacing it.\nGreen = free and public. Blue = permission granted (ransomware.live 27 Oct, VulnCheck 11 Nov, GreyNoise 17 Nov). Orange = permission requested, assumed granted here. Grey = declined (Censys, 10 Nov).",
          labelloc=b];
   node  [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", width=2.6];
   edge  [color="#4a4a4a", arrowsize=0.6];
@@ -15,16 +15,17 @@ digraph indicators {
     vrich [label="CISA Vulnrichment\n(CWE, CVSS; 'active' date*)", fillcolor="#e3f4e1", color="#2e7d32"];
     nvd   [label="NVD\n(severity, product)", fillcolor="#e3f4e1", color="#2e7d32"];
     epss  [label="FIRST EPSS\n(cohort draw)", fillcolor="#e3f4e1", color="#2e7d32"];
-    vend  [label="Vendor advisories\n(CSAF, MSRC, PSIRT): fix dates", fillcolor="#e3f4e1", color="#2e7d32"];
+    vend  [label="Vendor advisories (CSAF,\nMSRC, PSIRT), kernel commits,\nOSV, GitHub advisories: fix dates", fillcolor="#e3f4e1", color="#2e7d32"];
     sec   [label="SEC EDGAR\n(8-K Item 1.05)", fillcolor="#e3f4e1", color="#2e7d32"];
     rlive [label="ransomware.live\n(leak-site postings)", fillcolor="#dcebfa", color="#1f4e79"];
     vchk  [label="VulnCheck KEV\n(earlier attack dates)", fillcolor="#dcebfa", color="#1f4e79"];
     ssexp [label="Shadowserver\nexposure counts", fillcolor="#fde9d6", color="#b85c1e"];
     sshp  [label="Shadowserver\nhoneypot statistics", fillcolor="#fde9d6", color="#b85c1e"];
     cens  [label="Censys\n(internet scans; declined)", fillcolor="#eeeeee", color="#888888"];
-    gncs  [label="GreyNoise, CrowdSec\n(attack sightings)", fillcolor="#fde9d6", color="#b85c1e"];
+    gn    [label="GreyNoise\n(attack sightings, X28)", fillcolor="#dcebfa", color="#1f4e79"];
+    crowd [label="CrowdSec\n(attack sightings)", fillcolor="#fde9d6", color="#b85c1e"];
     isc   [label="SANS ISC honeypot\n(X14)", fillcolor="#e3f4e1", color="#2e7d32"];
-    natl  [label="National alerts\nCERT-FR, JPCERT/CC (X19)", fillcolor="#e3f4e1", color="#2e7d32"];
+    natl  [label="National alerts: CERT-FR,\nJPCERT/CC, BSI, KrCERT/CC (X19)", fillcolor="#e3f4e1", color="#2e7d32"];
   }
 
   subgraph cluster_ind {
@@ -65,7 +66,7 @@ digraph indicators {
   rlive -> I7; sec -> I7;
   // exploratory companions
   edge [style=dashed, color="#9a9a9a"];
-  cens -> I1; gncs -> {I2 I4}; isc -> I4; natl -> {I2 I6};
+  cens -> I1; gn -> {I2 I4}; crowd -> {I2 I4}; isc -> I4; natl -> {I2 I6};
   edge [style=solid, color="#1f4e79"];
   I1 -> {T2 T1}; I2 -> T3; I3 -> T1; I4 -> T4; I5 -> T5; I6 -> M; I7 -> T6; I8 -> T7;
 }

@@ -1,4 +1,4 @@
-# How the quarterly report is built (updated 12 Nov 2026)
+# How the quarterly report is built (updated 19 Nov 2026)
 
 Every quarter the study collects public data about software flaws and answers a small set
 of questions about them. The work runs on four separate tracks. This page explains each
@@ -47,13 +47,18 @@ flowchart LR
 
 Each quarter an automatic job on GitHub pulls the data from free public sources, freezes an
 exact copy (so every number can be recomputed later), checks it, and applies the rules for
-picking flaws. The author's hand checks are added, Claude drafts the analysis, and the
-author approves it before anything is published.
+picking flaws. The check includes each source's row count against its last four quarters: a
+source with no rows, or fewer than half its usual number, holds the release until the author
+decides (risk R9). The author's hand checks are added, Claude drafts the analysis, and the
+author approves it before anything is published. Every report page carries the credits each
+source asks for (`docs/CREDITS.md`). GreyNoise and the SANS honeypot data come in through their
+own scheduled runs rather than the quarterly pull, and stay private until reported.
 
-**Sources still awaiting permission** (dashed boxes) are shown as placeholders. Requests went
-out on 20 October 2026, follow-ups are due on 20 November, and replies are hoped for by
-1 January 2027, before the first (pilot) report. A source that says no is dropped and the
-change is logged publicly; until a source says yes, nothing derived from it is published.
+**Sources still awaiting permission** (dashed box) are shown as placeholders: Shadowserver,
+asked on 20 October 2026, followed up on 10 November, with a second follow-up due on
+25 November; a reply is hoped for by the 21 December decision session, before the first
+(pilot) report. A source that says no is dropped and the change is logged publicly; until a
+source says yes, nothing derived from it is published.
 
 ## Track A: a fair sample of new serious flaws
 

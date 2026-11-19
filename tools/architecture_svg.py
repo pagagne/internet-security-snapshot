@@ -5,7 +5,7 @@ Edit the spec below, then run: python tools/architecture_svg.py
 """
 import sys
 
-W, H = 760, 536
+W, H = 760, 590
 TITLE = "Every number follows one path from free sources to publication"
 COLS = {"src": (16, 164), "pull": (198, 112), "store": (326, 112), "proc": (456, 124), "pub": (598, 146)}
 HEAD_Y = 62
@@ -16,23 +16,25 @@ BOXES = [
     ("git", "src", 76, 44, "box", [("git-1", "Git histories: CVE,", 0), ("git-2", "KEV, Vulnrichment", 0)]),
     ("epss", "src", 130, 44, "box", [("epss-1", "EPSS daily archive,", 0), ("epss-2", "NVD, vendor advisories", 0)]),
     ("sec", "src", 184, 44, "box", [("sec-1", "Harm: SEC 8-K", 0), ("sec-2", "breach filings", 0)]),
-    ("radar", "src", 238, 30, "box", [("radar-1", "Cloudflare Radar", 0)]),
-    ("shadow", "src", 300, 58, "pending", [("shadow-1", "Shadowserver: exposure", 0), ("shadow-2", "series, honeypot stats", 0), ("shadow-3", "hoped for by 21 Dec 2026", 0)]),
-    ("vulncheck", "src", 368, 58, "box", [("vc-1", "VulnCheck KEV", 0), ("vc-2", "(community tier)", 0), ("vc-3", "granted 11 Nov 2026", 0)]),
-    ("ransom", "src", 436, 58, "box", [("rl-1", "Harm: ransomware.live", 0), ("rl-2", "leak-site post counts", 0), ("rl-3", "granted 27 Oct 2026", 0)]),
-    ("pull", "pull", 76, 418, "box", [("pull-1", "Quarterly pull", 1), ("pull-2", "GitHub Actions,", 0), ("pull-3", "1 Jan, Apr,", 0), ("pull-4", "Jul, Oct", 0), ("pull-5", "", 0), ("pull-6", "final re-run", 0), ("pull-7", "one month later", 0)]),
+    ("radar", "src", 238, 44, "box", [("radar-1", "Cloudflare Radar; APNIC", 0), ("radar-2", "Labs (granted 1 Nov)", 0)]),
+    ("shadow", "src", 310, 58, "pending", [("shadow-1", "Shadowserver: exposure", 0), ("shadow-2", "series, honeypot stats", 0), ("shadow-3", "hoped for by 21 Dec 2026", 0)]),
+    ("vulncheck", "src", 376, 58, "box", [("vc-1", "VulnCheck KEV", 0), ("vc-2", "(community tier)", 0), ("vc-3", "granted 11 Nov 2026", 0)]),
+    ("ransom", "src", 442, 58, "box", [("rl-1", "Harm: ransomware.live", 0), ("rl-2", "leak-site post counts", 0), ("rl-3", "granted 27 Oct 2026", 0)]),
+    ("greynoise", "src", 508, 44, "box", [("gn-1", "GreyNoise (granted 17 Nov),", 0), ("gn-2", "SANS ISC: own runs", 0)]),
+    ("pull", "pull", 76, 476, "box", [("pull-1", "Quarterly pull", 1), ("pull-2", "GitHub Actions,", 0), ("pull-3", "1 Jan, Apr,", 0), ("pull-4", "Jul, Oct", 0), ("pull-5", "", 0), ("pull-6", "final re-run", 0), ("pull-7", "one month later", 0)]),
     ("store", "store", 76, 296, "box", [("store-1", "Frozen bundles", 1), ("store-2", "repo releases", 0), ("store-3", "+ Zenodo;", 0), ("store-4", "git pinned", 0), ("store-5", "by commit", 0)]),
-    ("private", "store", 382, 112, "box", [("pv-1", "Private backup", 1), ("pv-2", "author's Drive:", 0), ("pv-3", "full data, incl.", 0), ("pv-4", "not yet", 0), ("pv-5", "publishable", 0)]),
-    ("normalize", "proc", 76, 96, "box", [("norm-1", "Normalize", 1), ("norm-2", "data checks,", 0), ("norm-3", "cohort rule", 0)]),
+    ("private", "store", 382, 170, "box", [("pv-1", "Private backup", 1), ("pv-2", "author's Drive:", 0), ("pv-3", "full data, incl.", 0), ("pv-4", "not yet", 0), ("pv-5", "publishable", 0)]),
+    ("normalize", "proc", 76, 96, "box", [("norm-1", "Normalize", 1), ("norm-2", "data checks; row", 0), ("norm-3", "counts vs history", 0), ("norm-4", "(hold if short);", 0), ("norm-5", "cohort rule", 0)]),
     ("analysis", "proc", 196, 160, "box", [("ana-1", "Analysis", 1), ("ana-2", "timing, baselines,", 0), ("ana-3", "uncertainty ranges", 0), ("ana-4", "", 0), ("ana-5", "Claude drafts,", 0), ("ana-6", "author approves", 0)]),
-    ("hand", "proc", 380, 114, "hand", [("hand-1", "Hand Check app", 1), ("hand-2", "author's checks:", 0), ("hand-3", "fix dates,", 0), ("hand-4", "AI credits", 0)]),
-    ("evalpage", "pub", 76, 92, "box", [("ev-1", "Evaluation page", 1), ("ev-2", "provisional,", 0), ("ev-3", "then final", 0)]),
+    ("hand", "proc", 380, 172, "hand", [("hand-1", "Hand Check app", 1), ("hand-2", "author's checks:", 0), ("hand-3", "fix dates,", 0), ("hand-4", "AI credits", 0)]),
+    ("evalpage", "pub", 76, 92, "box", [("ev-1", "Report pages", 1), ("ev-2", "provisional, then", 0), ("ev-3", "final; PDF copy;", 0), ("ev-4", "credits on each", 0)]),
     ("archive", "pub", 184, 92, "box", [("ar-1", "Quarter archive", 1), ("ar-2", "quarter-by-quarter", 0), ("ar-3", "index", 0)]),
     ("timelines", "pub", 292, 92, "box", [("tl-1", "Cohort timelines", 1), ("tl-2", "up to 12 flaws", 0), ("tl-3", "a quarter", 0)]),
     ("zenodo", "pub", 400, 94, "box", [("zb-1", "Zenodo bundle", 1), ("zb-2", "data + code, DOI", 0)]),
+    ("site", "pub", 508, 44, "box", [("site-1", "Website + run health", 1), ("site-2", "from 4 Dec 2026", 0)]),
 ]
-NOTES = [("await", 16, 291, "Awaiting permission"),
-         ("key", 16, 522, "Dashed: sources awaiting permission (asked 20 Oct 2026, followed up 10 Nov). Highlighted: the author's hand checks.")]
+NOTES = [("await", 16, 302, "Awaiting permission"),
+         ("key", 16, 578, "Dashed: sources awaiting permission (asked 20 Oct 2026, followed up 10 Nov). Highlighted: the author's hand checks.")]
 
 
 def geom(col, y, h):

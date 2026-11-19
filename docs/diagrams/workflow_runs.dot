@@ -15,7 +15,7 @@ digraph workflows {
   subgraph cluster_int {
     label="INTERNAL: repository only, Run button"; style="rounded,filled"; fillcolor="#f4f8fd"; color="#1f4e79"; fontcolor="#1f4e79";
     node [fillcolor="#e1ecf8", color="#1f4e79"];
-    checks  [label="Checks\nevery change"];
+    checks  [label="Checks\nevery change\n(incl. credits block)"];
     privacy [label="Privacy scan\ntwice daily"];
     sched   [label="Schedule\n5x daily (evening)"];
     rebuild [label="Rebuild check\n10th monthly\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
@@ -28,10 +28,10 @@ digraph workflows {
   subgraph cluster_ext {
     label="EXTERNAL: contacts outside sources, no Run button"; style="rounded,filled"; fillcolor="#fdf6f0"; color="#b85c1e"; fontcolor="#b85c1e";
     node [fillcolor="#fbe7d6", color="#b85c1e"];
-    pull  [label="Quarterly pull\n1st of Jan/Apr/Jul/Oct\nand a month later\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
+    pull  [label="Quarterly pull\n1st of Jan/Apr/Jul/Oct\nand a month later\n(a short source opens\na release-hold issue)\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
     honey [label="Honeypot capture\n2nd monthly, 2 files\nan hour apart\nLOCKED", fillcolor="#fbe0e0", color="#a11d1d", penwidth=3];
     probe [label="Research probe\nwhen asked"];
-    gn    [label="GreyNoise collection\nquarterly; weekly once agreed"];
+    gn    [label="GreyNoise collection\nquarterly (2nd) and\nweekly, Sundays from 22 Nov"];
     bq    [label="BigQuery check\nwhen asked"];
     feeds [label="Feed screen\n5th monthly"];
     watch [label="Source watch\nWednesdays"];
@@ -41,7 +41,7 @@ digraph workflows {
   subgraph cluster_out {
     label="Outside the repository"; style="rounded,filled"; fillcolor="#f5f5f5"; color="#888888"; fontcolor="#555555";
     node [shape=cylinder, fillcolor="#ececec", color="#888888", style=filled];
-    sources [label="Data sources\nCVE, KEV, NVD, EPSS,\nSEC, Cloudflare,\nransomware.live"];
+    sources [label="Data sources\nCVE, KEV, NVD, EPSS,\nSEC, Cloudflare,\nransomware.live,\nVulnCheck, APNIC Labs"];
     sans    [label="SANS Internet\nStorm Center"];
     gcp     [label="Your Google Cloud\n(BigQuery)"];
     drive   [label="Your Google Drive\n(private copies)"];
