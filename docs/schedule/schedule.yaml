@@ -351,6 +351,19 @@ items:
     acceptable, and state non-commercial use and citing Censys (both missing last time). Tell
     Claude when it is sent so it is logged.
 
+- id: ai-trackers-check
+  owner: claude
+  title: One-time check of two outside AI-hacking trackers against the AI-attack log and the tool sweep
+  date: 2026-11-19
+  details: >
+    Author's decisions 18 Nov 2026 (cards). (1) hackingincidents.ai (MIT licence, incidents.json):
+    one-time coverage check of the AI-attack log, leads graded confirmed or strong only; each
+    missing case is entered only from its own primary report, never from the site; nothing
+    counted from the site. (2) offsecharnesses.ai: read its pages and terms; only if the terms
+    allow, compare its harness list with the GitHub tool sweep's labels and left-out list. Results
+    privately in exploratory/x25-checks.md and the AI-attack log notes, ready for the 23 Nov
+    sync review.
+
 - id: greynoise-collector-90-days
   owner: claude
   title: GreyNoise collector reads 90 days of tag activity (first active day per tag)

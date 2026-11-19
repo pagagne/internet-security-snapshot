@@ -956,6 +956,27 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 30 Oct 2026: use the 3
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:ai-trackers-check@2026-11-19@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: One-time check of two outside AI-hacking tracker
+ s against the AI-attack log and the tool sweep
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 18 Nov 2026 (cards). 
+ (1) hackingincidents.ai (MIT licence\, incidents.json): one-time coverage 
+ check of the AI-attack log\, leads graded confirmed or strong only\; each 
+ missing case is entered only from its own primary report\, never from the 
+ site\; nothing counted from the site. (2) offsecharnesses.ai: read its pag
+ es and terms\; only if the terms allow\, compare its harness list with the
+  GitHub tool sweep's labels and left-out list. Results privately in https:
+ //github.com/pagagne/snapshot-manual/blob/main/exploratory/x25-checks.md a
+ nd the AI-attack log notes\, ready for the 23 Nov sync review.\n\nSource: 
+ https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sched
+ ule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:greynoise-90-day-test@2026-11-19@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261119
