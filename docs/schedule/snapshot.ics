@@ -1688,8 +1688,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Probe whether AI-written security fixes can be t
- old apart (decide before building)
+SUMMARY:✅ DONE [Claude] Snapshot: Probe whether AI-written security fixes
+  can be told apart (decide before building)
 DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026 (cards): p
  robe first. Check\, on a sample of open-source fix commits for flaws in th
  e study's lists\, whether AI authorship can be seen reliably (commit trail
@@ -4390,6 +4390,23 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-fix-probe-2027@2027-07-12@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270712
+DTEND;VALUE=DATE:20270713
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Repeat the AI-written fixes probe on a 2027 H1 s
+ ample (context beside X26)
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026: run resea
+ rch task ai_fix_probe once a year with a 2027 H1 window added (same method
+ \, same sample size\, new seed recorded) to see whether visible AI marks o
+ n open-source fix commits become common\; report it as context beside X26'
+ s agent pull-request counts\, never as a measure.\n\nSource: https://githu
+ b.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.
+ yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:conference-scan@2027-07-15@internet-security-snapshot

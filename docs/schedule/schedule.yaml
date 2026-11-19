@@ -1838,6 +1838,17 @@ items:
     trailers such as co-authored-by lines, bot accounts, tool labels on pull requests) and how
     often, without contacting anyone. Report what is visible and what is not, with a
     recommendation on whether a measure is worth building; the author decides.
+  done: "19 Nov 2026 (early): research task ai_fix_probe checked a fixed random sample of open-source fix commits from 2025 H1 and 2026 H1 for visible AI marks; very few carry one, so marks measure disclosure, not AI use (findings private). Author's decision the same day: no measure; context only, repeated once a year beside X26"
+
+- id: ai-fix-probe-2027
+  owner: claude
+  title: Repeat the AI-written fixes probe on a 2027 H1 sample (context beside X26)
+  date: 2027-07-12
+  details: >
+    Author's decision 19 Nov 2026: run research task ai_fix_probe once a year with a 2027 H1
+    window added (same method, same sample size, new seed recorded) to see whether visible AI
+    marks on open-source fix commits become common; report it as context beside X26's agent
+    pull-request counts, never as a measure.
 
 - id: x25-test-run
   owner: claude
