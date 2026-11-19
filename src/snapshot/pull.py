@@ -25,10 +25,10 @@ import json
 import os
 
 from . import sources as switches
-from .collect import cve, epss, http, kev, nvd, radar, ransomware, sec, vulncheck
+from .collect import apnic, cve, epss, http, kev, nvd, radar, ransomware, sec, vulncheck
 from .util import Manifest, Quarter, utcnow
 
-SOURCES = ("kev", "cve", "nvd", "epss", "sec", "radar", "ransomware", "vulncheck")
+SOURCES = ("kev", "cve", "nvd", "epss", "sec", "radar", "ransomware", "vulncheck", "apnic")
 # Set by main(): the quarter being pulled, the last day with complete data, EPSS step.
 CTX: dict = {}
 
@@ -179,8 +179,24 @@ def pull_vulncheck(out: Path, manifest: Manifest, work: Path) -> None:
                       f"retrieved {utcnow()}", note="kept privately; derived statistics only are published, credited VulnCheck KEV")
 
 
+def pull_apnic(out: Path, manifest: Manifest, work: Path) -> None:
+    """APNIC Labs per-country DNSSEC and RPKI figures (exploratory X20; leave granted 1 Nov 2026,
+    ticket 00177078: credit APNIC Labs, figures as published). Kept out of the public run download
+    (config/sources.yaml raw_public: false) because X20 is exploratory; no figures in the note."""
+    dest = out / "apnic"
+    dest.mkdir(parents=True, exist_ok=True)
+    for measure, table in apnic.fetch().items():
+        pq = dest / f"apnic_{measure}_by_country.parquet"
+        table.to_parquet(pq, index=False)
+        w = table.iloc[0]
+        manifest.add_file("apnic_labs", pq, f"stats.labs.apnic.net/{measure} world-map table, retrieved {utcnow()}",
+                          note=f"{len(table)} countries; {w['window_days']}-day {w['window_kind']} "
+                               f"{w['window_start']}..{w['window_end']}; {apnic.CREDIT}")
+
+
 PULLERS = {"kev": pull_kev, "cve": pull_cve, "nvd": pull_nvd, "epss": pull_epss,
-           "sec": pull_sec, "radar": pull_radar, "ransomware": pull_ransomware, "vulncheck": pull_vulncheck}
+           "sec": pull_sec, "radar": pull_radar, "ransomware": pull_ransomware, "vulncheck": pull_vulncheck,
+           "apnic": pull_apnic}
 
 
 def _annotate(level: str, source: str, text: str) -> None:

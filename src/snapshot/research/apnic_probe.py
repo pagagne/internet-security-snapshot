@@ -29,7 +29,7 @@ import requests
 
 UA = "internet-security-snapshot research (APNIC Labs X20 probe, leave granted ticket 00177078; contact via github.com/pagagne)"
 BASE = "https://stats.labs.apnic.net"
-INDEX = ["/dnssec", "/rpki"]
+INDEX: list[str] = []   # 19 Nov 2026: pages already probed; now only the collector check
 COUNTRIES: list[str] = []
 DATA_HINT = re.compile(r"json-table\.pl|\.(csv|json|txt|tsv|dat|gz)(\?|$)|download|export|data=|[?&](d|f)=", re.I)
 DATE_RX = re.compile(r"\b(20\d\d-\d\d-\d\d|\d{1,2} [A-Z][a-z]{2,8} 20\d\d|[A-Z][a-z]{2,8} \d{1,2},? 20\d\d)\b")
@@ -77,6 +77,7 @@ def main(argv=None):
     ap.add_argument("--out", required=True)
     ap.add_argument("--start")   # accepted for the research workflow; unused
     ap.add_argument("--end")
+    ap.add_argument("--collector", action="store_true", help="also run snapshot.collect.apnic once")
     a = ap.parse_args(argv)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -146,6 +147,15 @@ def main(argv=None):
         if not pg.get("is_data"):
             for m in list(re.finditer(r"json|csv|download", pg["body"], re.I))[:6]:
                 lines.append(f"- near '{m.group(0)}': {pg['body'][max(0, m.start()-250):m.end()+250]!r}")
+        lines.append("")
+    if True:   # 19 Nov 2026: run the collector once (the workflow passes no extra flags)
+        from snapshot.collect import apnic
+        try:
+            for m, t in apnic.fetch().items():
+                t.to_csv(out / f"collector_{m}.csv", index=False)
+                lines.append(f"Collector check, {m}: {len(t)} countries, window {t.iloc[0]['window_start']}..{t.iloc[0]['window_end']}")
+        except Exception as e:  # recorded, not worked around
+            lines.append(f"Collector check failed: {type(e).__name__}: {e}")
         lines.append("")
     lines += ["## Data-like links found", ""] + [f"- {l}" for l in seen_data[:60]] + [""]
     lines.append(f"Requests: about {len(pages) + 1}; links recorded {len(rows)}.")

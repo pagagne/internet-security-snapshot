@@ -26,6 +26,13 @@ permissioned:
     publish: true         # derived statistics only, labelled "VulnCheck KEV"
     raw_public: false     # entries never republished: the per-CVE table stays in the private part
     pull: vulncheck       # feeds T_exploit (snapshot.events other_exploit) and I6
+  apnic_labs:
+    name: APNIC Labs
+    permission: granted   # written leave 1 Nov 2026, helpdesk ticket 00177078 (docs/PERMISSIONS.md)
+    collect: true         # 19 Nov 2026: per-country DNSSEC and RPKI world-map tables, two pages a pull
+    publish: true         # credited "APNIC Labs", figures as published (the two conditions)
+    raw_public: false     # X20 is exploratory: the tables stay in the private part until X20 is reported
+    pull: apnic
   shadowserver:
     name: Shadowserver
     permission: awaiting

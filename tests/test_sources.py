@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_config_loads_and_matches_pullers():
     cfg = sources.load()
-    assert set(cfg) == {"ransomware_live", "vulncheck", "shadowserver"}
+    assert set(cfg) == {"ransomware_live", "vulncheck", "apnic_labs", "shadowserver"}
     for s in cfg.values():
         assert s["pull"] is None or s["pull"] in pull.PULLERS
 
@@ -56,7 +56,7 @@ def test_pull_skips_switched_off_source_and_records_switches(tmp_path, monkeypat
     rc = pull.main(["--quarter", "2026Q3", "--run", "dry-run", "--sources", "kev,ransomware", "--out", str(tmp_path)])
     assert rc == 0 and called == ["kev"]
     m = json.loads((tmp_path / "2026Q3/dry-run/manifest.json").read_text())
-    assert set(m["source_switches"]) == {"ransomware_live", "vulncheck", "shadowserver"}
+    assert set(m["source_switches"]) == {"ransomware_live", "vulncheck", "apnic_labs", "shadowserver"}
     assert not any(e["status"] == "gap" for e in m["files"])
 
 
