@@ -513,7 +513,7 @@ measures:
     sources: [greynoise, cve, kev]   # Research Community Access granted 17 Nov 2026; credit "Data provided by GreyNoise"
     added: 2026-11-17
     feeds_labels: false
-    status: planned   # collector built 18 Nov 2026 (greynoise.yml); first quarterly run 2 Jan 2027; weekly sweep off until GreyNoise agrees
+    status: planned   # collector built 18 Nov 2026 (greynoise.yml); first quarterly run 2 Jan 2027; weekly sweep agreed by GreyNoise and switched on 18 Nov 2026
     method: >
       Quarterly (author's decision, 18 Nov 2026, option B): each CVE's earliest GreyNoise tag
       creation date (the "GreyNoise detection date", not proof of first attack) and, for the
@@ -526,6 +526,31 @@ measures:
       with them. For the quarter's newly exploited flaws (Track B), the first day GreyNoise saw
       activity is recorded beside the KEV and VulnCheck dates as a cross-check. With 90 days of
       history this covers the age measure (author's rule, 16 Nov 2026: under four months, age
-      only); first-attack dates become usable only if GreyNoise agrees to a private six-month
-      rolling copy of daily tag counts (asked 17 Nov). Sensors see automated scanning only.
+      only); GreyNoise agreed on 18 Nov 2026 to a private six-month rolling copy of daily tag
+      counts and the weekly sweep, and its API gives 90 days of tag activity (days=90, tested
+      18 Nov), so first-attack dates within that window are usable. Sensors see automated
+      scanning only.
       Exploratory, never scored. Credit: "Data provided by GreyNoise".
+  - id: X29
+    name: AI infrastructure as a target (exploited flaws, attacker interest, way in)
+    question: How often are AI stacks attacked and exploited through their exposed control planes (cluster dashboards, workflow and agent builders, notebooks) and data planes (model servers and APIs, vector databases), how fast once a flaw is known, and is it growing faster than for other software?
+    sources: [kev, cve, greynoise, ai_attack_log]   # VulnCheck KEV privately; exposure totals only if Censys or Shadowserver agree
+    added: 2026-11-19
+    feeds_labels: false
+    status: planned   # author's decision 19 Nov 2026 (parts 1-3 now); built before the 1-2 Dec dry run
+    method: >
+      Author's decisions, 19 Nov 2026. One dated product list (config, reviewed each quarter) in
+      two groups reported separately: the AI stack (cluster and compute, workflow and agent
+      builders, ML ops and notebooks, model servers and UIs, vector databases, AI gateways and
+      MCP servers) and shared control and data planes found in AI stacks (Kubernetes and
+      container APIs, object storage, remote-support tools). Part 1: each new KEV entry tagged
+      by the list; per quarter the count, the share of new entries and race times by the core
+      method, beside a line for exploited but disputed or unpatched AI-stack flaws, which have
+      no fix date. Part 2: GreyNoise tags on listed products, both exploit attempts on named
+      flaws and scanning for exposed AI services without a CVE; per quarter the tags active,
+      active days in the last 90 and first active day (days=90), counts only, never IP
+      addresses, credited "Data provided by GreyNoise". Part 3: a "way in" field in the
+      AI-attack log with a value for an exposed AI control or data plane or an AI-provider
+      key, "not stated" when unreported. Part 4, only if granted: aggregate exposure totals
+      for listed products from Censys or Shadowserver. The study never scans and never holds
+      host-level data. Exploratory, never scored; nothing published before the report.

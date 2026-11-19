@@ -109,7 +109,7 @@ company breach filings and AI credits. Gray slices are mostly sources still wait
   <img alt="Exploratory data: coloured slices are collected, gray slices are still missing" src="docs/landing/coverage-exploratory-light.svg">
 </picture>
 
-**Reading the exploratory ring.** The exploratory work is the companion measures (X1-X28) that
+**Reading the exploratory ring.** The exploratory work is the companion measures (X1-X29) that
 add context but never decide a label: AI attack campaigns, AI tools on GitHub and Hugging Face,
 bot traffic, honeypot activity, views from other countries and more. Data used by both rings,
 such as flaw records, appears in both. Gray slices are collectors not yet built or sources not yet
@@ -216,6 +216,7 @@ estimation.
 | 17 Nov 2026 | Validation passed, 4 of 5 reference cases (review/VALIDATION_RESULT.md) |
 | 18 Nov 2026 | GreyNoise agrees to a weekly collection and a private six-month history of daily counts |
 | 18 Nov 2026 | Backup sign-in narrowed to its own Drive folder (risk safeguard R27); weekly backup with rebuild test (R26) |
+| 19 Nov 2026 | New exploratory measure X29, AI infrastructure as a target (author's decision) |
 | 23 Nov 2026 | Cutover - the repository's schedule runs the study (docs/OPERATIONS.md) |
 | 1 Dec 2026 | Dry run on Oct-Nov 2026 data (unscored; started by the Schedule workflow) |
 | 4 Dec 2026 | Public landing page (GitHub Pages) and Discussions opened; project links shared from here on |

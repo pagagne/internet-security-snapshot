@@ -1720,6 +1720,19 @@ items:
     the shared report (a new field). Roughly 10-15 hours; newest months first; progress in the
     session logs. Before the 29 Dec freeze.
 
+- id: x29-build
+  owner: claude
+  title: Build X29 parts 1-3 (AI infrastructure as a target) before the dry run
+  date: 2026-11-28
+  details: >
+    Author's decisions 19 Nov 2026 (cards): parts 1-3 now, exposure totals (part 4) only if
+    Censys or Shadowserver agree; shared control and data planes reported on a separate line.
+    Product list in config with tests; KEV tagging and race times in the quarterly run;
+    GreyNoise AI-product tag activity (the 90-day view) in the quarterly collector, counts only, after
+    the author's note to GreyNoise; the "way in" field in the AI-attack log with a back-fill.
+    Proposal and feasibility checks privately in exploratory/docs/x29-ai-infrastructure-proposal.md.
+    Ready for the 1-2 Dec dry run.
+
 - id: x25-test-run
   owner: claude
   title: Test run of every X25 piece before the pilot (GitHub and Hugging Face sweeps, charts, privacy, terms)
@@ -2209,6 +2222,9 @@ milestones:
 - when: 18 Nov 2026
   text: GreyNoise agrees to a weekly collection and a private six-month history of daily counts
   news: "GreyNoise agrees to weekly collection of attack counts"
+- when: 19 Nov 2026
+  text: New exploratory measure X29, AI infrastructure as a target (author's decision)
+  news: "Study adds a measure of attacks on AI infrastructure"
 - when: 18 Nov 2026
   text: Backup sign-in narrowed to its own Drive folder (risk safeguard R27); weekly backup with rebuild test (R26)
   news: "Private backup locked down to its own folder and now runs weekly"
