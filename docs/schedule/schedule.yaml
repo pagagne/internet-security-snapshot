@@ -1820,6 +1820,7 @@ items:
     records per quarter from the CVE List already pulled; a dated log of disclosure channels
     closed or paused because of report volume, from primary statements; the open-source
     fix-time comparison. Tests for both; exploratory, never scored. Ready for the 1-2 Dec dry run.
+  done: "19 Nov 2026 (early): research task x30_x31 reads the OpenSSF malicious-packages records (npm, PyPI) with a dated AI-terms list, and rejected and disputed CVE records (with a flag for rejection reasons mentioning AI), per quarter, privately; first reading run the same day; private logs for hub incidents and closed intake channels started empty (primary reports only); the open-source fix-time comparison is made at the first quarterly report from the race data; run x30_x31 each quarter on the sweep day (2 Jan, 2 Apr, 2 Jul, 2 Oct)"
 
 - id: ai-fix-probe
   owner: claude

@@ -1627,8 +1627,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build X30 (AI software supply chain) and X31 (AI
- -generated reports) before the dry run
+SUMMARY:✅ DONE [Claude] Snapshot: Build X30 (AI software supply chain) an
+ d X31 (AI-generated reports) before the dry run
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026 (cards). 
  X30: read the OpenSSF malicious-packages records through OSV for npm and P
  yPI\, match them to a dated list of AI libraries and providers\, count per
