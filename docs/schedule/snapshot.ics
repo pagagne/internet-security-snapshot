@@ -1562,19 +1562,42 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261129
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build X29 parts 1-3 (AI infrastructure as a targ
- et) before the dry run
+SUMMARY:[Claude] Snapshot: Build the AI-infrastructure additions to X5\, X1
+ 1 and X3 before the dry run
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026 (cards): 
- parts 1-3 now\, exposure totals (part 4) only if Censys or Shadowserver ag
- ree\; shared control and data planes reported on a separate line. Product 
- list in config with tests\; KEV tagging and race times in the quarterly ru
- n\; GreyNoise AI-product tag activity (the 90-day view) in the quarterly c
- ollector\, counts only\, after the author's note to GreyNoise\; the "way i
- n" field in the AI-attack log with a back-fill. Proposal and feasibility c
- hecks privately in https://github.com/pagagne/snapshot-manual/blob/main/ex
- ploratory/docs/x29-ai-infrastructure-proposal.md. Ready for the 1-2 Dec dr
- y run.\n\nSource: https://github.com/pagagne/internet-security-snapshot/bl
- ob/main/docs/schedule/schedule.yaml
+ the proposed X29 is folded into existing measures\, because X5 and X11 alr
+ eady covered most of it. X5: AI orchestration and serving products added t
+ o the product list with tests\, race times in the quarterly run\, shared c
+ ontrol and data planes on a separate line\, disputed or never-patched flaw
+ s on a third. X11: GreyNoise AI-product tag activity (the 90-day view) in 
+ the quarterly collector\, counts only\, after the author's note to GreyNoi
+ se\; exposure totals only if Censys or Shadowserver agree. X3: the new "wa
+ y in" value for leaked AI-provider keys\, with a back-fill of existing row
+ s. Proposal privately in https://github.com/pagagne/snapshot-manual/blob/m
+ ain/exploratory/docs/x29-ai-infrastructure-proposal.md. Ready for the 1-2 
+ Dec dry run.\n\nSource: https://github.com/pagagne/internet-security-snaps
+ hot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:x30-x31-build@2026-11-28@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261129
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build X30 (AI software supply chain) and X31 (AI
+ -generated reports) before the dry run
+DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026 (cards). 
+ X30: read the OpenSSF malicious-packages records through OSV for npm and P
+ yPI\, match them to a dated list of AI libraries and providers\, count per
+  quarter beside all malicious records\; start a dated log of poisoned mode
+ ls\, datasets and agent skills on AI hubs from primary reports. X31: rejec
+ ted and disputed CVE records per quarter from the CVE List already pulled\
+ ; a dated log of disclosure channels closed or paused because of report vo
+ lume\, from primary statements\; the open-source fix-time comparison. Test
+ s for both\; exploratory\, never scored. Ready for the 1-2 Dec dry run.\n\
+ nSource: https://github.com/pagagne/internet-security-snapshot/blob/main/d
+ ocs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -1612,6 +1635,24 @@ DESCRIPTION:Responsible: Paul (author)\n\nAuthor's decision 18 Nov 2026 to
   so it is logged.\n\nSource: https://github.com/pagagne/internet-security-
  snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:ai-fix-probe@2026-11-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Probe whether AI-written security fixes can be t
+ old apart (decide before building)
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026 (cards): p
+ robe first. Check\, on a sample of open-source fix commits for flaws in th
+ e study's lists\, whether AI authorship can be seen reliably (commit trail
+ ers such as co-authored-by lines\, bot accounts\, tool labels on pull requ
+ ests) and how often\, without contacting anyone. Report what is visible an
+ d what is not\, with a recommendation on whether a measure is worth buildi
+ ng\; the author decides.\n\nSource: https://github.com/pagagne/internet-se
+ curity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2026-11-30@internet-security-snapshot

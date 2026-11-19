@@ -1722,16 +1722,42 @@ items:
 
 - id: x29-build
   owner: claude
-  title: Build X29 parts 1-3 (AI infrastructure as a target) before the dry run
+  title: Build the AI-infrastructure additions to X5, X11 and X3 before the dry run
   date: 2026-11-28
   details: >
-    Author's decisions 19 Nov 2026 (cards): parts 1-3 now, exposure totals (part 4) only if
-    Censys or Shadowserver agree; shared control and data planes reported on a separate line.
-    Product list in config with tests; KEV tagging and race times in the quarterly run;
-    GreyNoise AI-product tag activity (the 90-day view) in the quarterly collector, counts only, after
-    the author's note to GreyNoise; the "way in" field in the AI-attack log with a back-fill.
-    Proposal and feasibility checks privately in exploratory/docs/x29-ai-infrastructure-proposal.md.
-    Ready for the 1-2 Dec dry run.
+    Author's decisions 19 Nov 2026 (cards): the proposed X29 is folded into existing measures,
+    because X5 and X11 already covered most of it. X5: AI orchestration and serving products
+    added to the product list with tests, race times in the quarterly run, shared control and
+    data planes on a separate line, disputed or never-patched flaws on a third. X11: GreyNoise
+    AI-product tag activity (the 90-day view) in the quarterly collector, counts only, after the
+    author's note to GreyNoise; exposure totals only if Censys or Shadowserver agree. X3: the
+    new "way in" value for leaked AI-provider keys, with a back-fill of existing rows.
+    Proposal privately in exploratory/docs/x29-ai-infrastructure-proposal.md. Ready for the
+    1-2 Dec dry run.
+
+- id: x30-x31-build
+  owner: claude
+  title: Build X30 (AI software supply chain) and X31 (AI-generated reports) before the dry run
+  date: 2026-11-28
+  details: >
+    Author's decisions 19 Nov 2026 (cards). X30: read the OpenSSF malicious-packages records
+    through OSV for npm and PyPI, match them to a dated list of AI libraries and providers,
+    count per quarter beside all malicious records; start a dated log of poisoned models,
+    datasets and agent skills on AI hubs from primary reports. X31: rejected and disputed CVE
+    records per quarter from the CVE List already pulled; a dated log of disclosure channels
+    closed or paused because of report volume, from primary statements; the open-source
+    fix-time comparison. Tests for both; exploratory, never scored. Ready for the 1-2 Dec dry run.
+
+- id: ai-fix-probe
+  owner: claude
+  title: Probe whether AI-written security fixes can be told apart (decide before building)
+  date: 2026-11-30
+  details: >
+    Author's decision 19 Nov 2026 (cards): probe first. Check, on a sample of open-source fix
+    commits for flaws in the study's lists, whether AI authorship can be seen reliably (commit
+    trailers such as co-authored-by lines, bot accounts, tool labels on pull requests) and how
+    often, without contacting anyone. Report what is visible and what is not, with a
+    recommendation on whether a measure is worth building; the author decides.
 
 - id: x25-test-run
   owner: claude
@@ -2223,8 +2249,8 @@ milestones:
   text: GreyNoise agrees to a weekly collection and a private six-month history of daily counts
   news: "GreyNoise agrees to weekly collection of attack counts"
 - when: 19 Nov 2026
-  text: New exploratory measure X29, AI infrastructure as a target (author's decision)
-  news: "Study adds a measure of attacks on AI infrastructure"
+  text: Attacks on AI infrastructure folded into X5, X11 and X3; new exploratory measures X30 (AI software supply chain) and X31 (AI-generated reports) (author's decisions)
+  news: "Study adds measures of attacks on AI infrastructure and the AI software supply chain"
 - when: 18 Nov 2026
   text: Backup sign-in narrowed to its own Drive folder (risk safeguard R27); weekly backup with rebuild test (R26)
   news: "Private backup locked down to its own folder and now runs weekly"

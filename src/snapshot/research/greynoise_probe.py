@@ -40,7 +40,7 @@ MAX_CVES = 25
 EXAMPLE_TAG = "214d5217-0870-41f5-891e-f5edb255c3e9"
 
 
-# AI-stack and shared control-plane products (X29 proposal, 19 Nov 2026): which GreyNoise tags cover them
+# AI-stack and shared control-plane products (for X5 and X11; from the retired X29 proposal, 19 Nov 2026): which GreyNoise tags cover them
 AI_PRODUCTS = {
     "cluster/compute": r"\bray\b|anyscale|kubeflow|kuberay",
     "workflow/agent builders": r"langflow|\bn8n\b|flowise|\bdify\b|airflow|prefect|langchain|llamaindex",

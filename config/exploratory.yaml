@@ -129,6 +129,10 @@ measures:
         Two more columns (author, 30 Oct 2026): model_weights (open-weight, closed, both, not
         named) for the AI the attackers used, and protocols (from the X25 list of 57, e.g.
         HTTP/HTTPS, SSH, SMB, RDP, LDAP, MCP; or not named), both from the primary report.
+        One more entry_vector value (author, 19 Nov 2026, cards): ai_key_leaked, when the
+        attackers got in or ran the attack with a stolen or exposed key for an AI service.
+        GitGuardian's yearly secrets report is cited as context for how common such leaks are;
+        its figures are never added to the log.
 
   - id: X4
     name: Automated and AI traffic against websites (Cloudflare Radar)
@@ -153,6 +157,12 @@ measures:
       vendor/product matches config/ai_software_products.yaml (whole-word, case-insensitive).
       Reported per quarter as a share of eligible CVEs, of KEV additions, and within each
       cohort slot. The tag never affects the draw or any label.
+      Widened 19 Nov 2026 (author, cards; from the retired X29): the race is also reported
+      for AI orchestration and serving tools (cluster dashboards, workflow and agent builders,
+      model servers, vector databases, AI gateways); the shared control and data planes AI
+      stacks rely on (Kubernetes and container tools, object storage, remote support) on a
+      separate line; and flaws the vendor disputes or never patches (for example Ray's job
+      API) on a third line. Reference case docs/cases/ray-shadowray.md.
 
   # X6-X12 added 2026-10-22: fingerprints of AI-accelerated attacks that show up
   # whatever model the attacker used, including self-hosted ones. Candidates for the
@@ -210,7 +220,13 @@ measures:
     added: 2026-10-22
     feeds_labels: false
     status: planned
-    method: Logged from public honeypot reports and, if available, Shadowserver exposure series for AI services. Context only.
+    method: >
+      Logged from public honeypot reports and, if available, Shadowserver exposure series for
+      AI services. Context only. Widened 19 Nov 2026 (author, cards; from the retired X29): the
+      weekly GreyNoise sweep's AI-product tags (cluster, workflow, model-serving,
+      vector-database and gateway products, shared planes kept separate) give a probing
+      series; exposure totals for the same products come from Censys or Shadowserver only if
+      access is granted. Aggregates only, no host-level data.
 
   - id: X12
     name: Open-weight model release log
@@ -532,25 +548,45 @@ measures:
       scanning only.
       Exploratory, never scored. Credit: "Data provided by GreyNoise".
   - id: X29
-    name: AI infrastructure as a target (exploited flaws, attacker interest, way in)
-    question: How often are AI stacks attacked and exploited through their exposed control planes (cluster dashboards, workflow and agent builders, notebooks) and data planes (model servers and APIs, vector databases), how fast once a flaw is known, and is it growing faster than for other software?
-    sources: [kev, cve, greynoise, ai_attack_log]   # VulnCheck KEV privately; exposure totals only if Censys or Shadowserver agree
+    name: AI infrastructure as a target (merged into X5, X11 and X3 the same day)
+    question: Retired number. Adopted 19 Nov 2026 and folded the same morning into X5, X11 and the X3 log, which already covered most of it (author, cards); kept so the number is never reused.
+    sources: []
     added: 2026-11-19
     feeds_labels: false
-    status: planned   # author's decision 19 Nov 2026 (parts 1-3 now); built before the 1-2 Dec dry run
+    status: merged
     method: >
-      Author's decisions, 19 Nov 2026. One dated product list (config, reviewed each quarter) in
-      two groups reported separately: the AI stack (cluster and compute, workflow and agent
-      builders, ML ops and notebooks, model servers and UIs, vector databases, AI gateways and
-      MCP servers) and shared control and data planes found in AI stacks (Kubernetes and
-      container APIs, object storage, remote-support tools). Part 1: each new KEV entry tagged
-      by the list; per quarter the count, the share of new entries and race times by the core
-      method, beside a line for exploited but disputed or unpatched AI-stack flaws, which have
-      no fix date. Part 2: GreyNoise tags on listed products, both exploit attempts on named
-      flaws and scanning for exposed AI services without a CVE; per quarter the tags active,
-      active days in the last 90 and first active day (days=90), counts only, never IP
-      addresses, credited "Data provided by GreyNoise". Part 3: a "way in" field in the
-      AI-attack log with a value for an exposed AI control or data plane or an AI-provider
-      key, "not stated" when unreported. Part 4, only if granted: aggregate exposure totals
-      for listed products from Censys or Shadowserver. The study never scans and never holds
-      host-level data. Exploratory, never scored; nothing published before the report.
+      See X5 (exploited AI-stack flaws, race times, shared control and data planes, disputed
+      flaws), X11 (GreyNoise AI-product tags; exposure totals from Censys or Shadowserver if
+      granted) and X3 (the "way in" field). Proposal privately in
+      exploratory/docs/x29-ai-infrastructure-proposal.md.
+  - id: X30
+    name: AI software supply chain (malicious packages, models and agent skills)
+    question: How many malicious packages aimed at AI developers and AI libraries reach public registries each quarter, and how often are poisoned models or agent skills found on AI hubs?
+    sources: [osv_malicious, curated]   # OpenSSF malicious-packages data via OSV (free); model-hub incidents from primary reports
+    added: 2026-11-19
+    feeds_labels: false
+    status: planned   # author's decision 19 Nov 2026 (cards); built by 28 Nov
+    method: >
+      Author's decision, 19 Nov 2026. Per quarter, the malicious-package records (OSV MAL-)
+      published for npm and PyPI whose package name, description or dependencies name an AI
+      library, provider or brand on a dated list (for example openai, anthropic, langchain,
+      llama, transformers, huggingface, mcp), including names that imitate them and names AI
+      coding assistants are known to invent ("slopsquatting"), counted beside all malicious
+      records so the AI share is visible. A dated log of poisoned models, datasets and agent
+      skills on AI hubs, entered only from primary reports. Only what has been caught and
+      reported is counted, which is stated with every figure. Exploratory, never scored.
+  - id: X31
+    name: AI-generated reports and the defenders' capacity to fix
+    question: Are AI-generated vulnerability reports overwhelming the people who fix flaws, and does that go with slower fixes for open-source flaws?
+    sources: [cve, osv, curated]
+    added: 2026-11-19
+    feeds_labels: false
+    status: planned   # author's decision 19 Nov 2026 (cards); built by 28 Nov
+    method: >
+      Author's decision, 19 Nov 2026. Per quarter: CVE records rejected or disputed (from the
+      CVE List already pulled), as a count and a share; a dated log of disclosure channels
+      closed, paused or restructured because of report volume (bug bounties, vendor and
+      open-source programmes), from primary statements; and a test of whether time from
+      disclosure to fix for open-source flaws lengthens as the log grows (descriptive, no
+      causal claim). Rejected CVEs have other causes too, so the count is read as a signal,
+      never proof. Exploratory, never scored.
