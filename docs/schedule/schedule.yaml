@@ -1375,7 +1375,9 @@ items:
   repeat: {months: [1, 4, 7, 10], day: 2, from: 2027-01, until: 2028-01}
   details: >
     Run the fixed searches and pages in the X3 entry of config/exploratory.yaml for reports
-    dated in the quarter just ended. Log every candidate in exploratory/ai_attack_sweeps.csv
+    dated in the quarter just ended. Same day (added 19 Nov 2026): run research task x30_x31 for the
+    X30 and X31 counts, and check the quarter's leads for the X30 hub-incident and X31
+    intake-channel logs (primary reports only). Log every candidate in exploratory/ai_attack_sweeps.csv
     (kept or excluded, with the reason) and add the kept ones to
     exploratory/ai_attack_campaigns.csv marked for the author's check. Finds incidents reported
     outside the AI-lab and vendor channels; it cannot find what nobody reports.

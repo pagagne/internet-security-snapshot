@@ -2598,16 +2598,18 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
  3)
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
- dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
- cidents reported outside the AI-lab and vendor channels\; it cannot find w
- hat nobody reports. Then start the Research task cve_check: every CVE ID i
- n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Sam
+ e day (added 19 Nov 2026): run research task x30_x31 for the X30 and X31 c
+ ounts\, and check the quarter's leads for the X30 hub-incident and X31 int
+ ake-channel logs (primary reports only). Log every candidate in https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_sweeps.cs
+ v (kept or excluded\, with the reason) and add the kept ones to https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns
+ .csv marked for the author's check. Finds incidents reported outside the A
+ I-lab and vendor channels\; it cannot find what nobody reports. Then start
+  the Research task cve_check: every CVE ID in the campaign and sweep logs 
+ must exist (added 29 Oct 2026).\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3688,16 +3690,18 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
  3)
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
- dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
- cidents reported outside the AI-lab and vendor channels\; it cannot find w
- hat nobody reports. Then start the Research task cve_check: every CVE ID i
- n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Sam
+ e day (added 19 Nov 2026): run research task x30_x31 for the X30 and X31 c
+ ounts\, and check the quarter's leads for the X30 hub-incident and X31 int
+ ake-channel logs (primary reports only). Log every candidate in https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_sweeps.cs
+ v (kept or excluded\, with the reason) and add the kept ones to https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns
+ .csv marked for the author's check. Finds incidents reported outside the A
+ I-lab and vendor channels\; it cannot find what nobody reports. Then start
+  the Research task cve_check: every CVE ID in the campaign and sweep logs 
+ must exist (added 29 Oct 2026).\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4220,16 +4224,18 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
  3)
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
- dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
- cidents reported outside the AI-lab and vendor channels\; it cannot find w
- hat nobody reports. Then start the Research task cve_check: every CVE ID i
- n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Sam
+ e day (added 19 Nov 2026): run research task x30_x31 for the X30 and X31 c
+ ounts\, and check the quarter's leads for the X30 hub-incident and X31 int
+ ake-channel logs (primary reports only). Log every candidate in https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_sweeps.cs
+ v (kept or excluded\, with the reason) and add the kept ones to https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns
+ .csv marked for the author's check. Finds incidents reported outside the A
+ I-lab and vendor channels\; it cannot find what nobody reports. Then start
+  the Research task cve_check: every CVE ID in the campaign and sweep logs 
+ must exist (added 29 Oct 2026).\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -4786,16 +4792,18 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
  3)
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
- dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
- cidents reported outside the AI-lab and vendor channels\; it cannot find w
- hat nobody reports. Then start the Research task cve_check: every CVE ID i
- n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Sam
+ e day (added 19 Nov 2026): run research task x30_x31 for the X30 and X31 c
+ ounts\, and check the quarter's leads for the X30 hub-incident and X31 int
+ ake-channel logs (primary reports only). Log every candidate in https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_sweeps.cs
+ v (kept or excluded\, with the reason) and add the kept ones to https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns
+ .csv marked for the author's check. Finds incidents reported outside the A
+ I-lab and vendor channels\; it cannot find what nobody reports. Then start
+  the Research task cve_check: every CVE ID in the campaign and sweep logs 
+ must exist (added 29 Oct 2026).\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -5258,16 +5266,18 @@ SUMMARY:[Claude] Snapshot: Quarterly web sweep for AI-run attack reports (X
  3)
 DESCRIPTION:Responsible: Claude\n\nRun the fixed searches and pages in the 
  X3 entry of https://github.com/pagagne/internet-security-snapshot/blob/mai
- n/config/exploratory.yaml for reports dated in the quarter just ended. Log
-  every candidate in https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_sweeps.csv (kept or excluded\, with the reason) and a
- dd the kept ones to https://github.com/pagagne/snapshot-manual/blob/main/e
- xploratory/ai_attack_campaigns.csv marked for the author's check. Finds in
- cidents reported outside the AI-lab and vendor channels\; it cannot find w
- hat nobody reports. Then start the Research task cve_check: every CVE ID i
- n the campaign and sweep logs must exist (added 29 Oct 2026).\n\nSource: h
- ttps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedu
- le/schedule.yaml
+ n/config/exploratory.yaml for reports dated in the quarter just ended. Sam
+ e day (added 19 Nov 2026): run research task x30_x31 for the X30 and X31 c
+ ounts\, and check the quarter's leads for the X30 hub-incident and X31 int
+ ake-channel logs (primary reports only). Log every candidate in https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_sweeps.cs
+ v (kept or excluded\, with the reason) and add the kept ones to https://gi
+ thub.com/pagagne/snapshot-manual/blob/main/exploratory/ai_attack_campaigns
+ .csv marked for the author's check. Finds incidents reported outside the A
+ I-lab and vendor channels\; it cannot find what nobody reports. Then start
+  the Research task cve_check: every CVE ID in the campaign and sweep logs 
+ must exist (added 29 Oct 2026).\n\nSource: https://github.com/pagagne/inte
+ rnet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
