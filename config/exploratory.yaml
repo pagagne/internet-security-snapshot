@@ -491,6 +491,13 @@ measures:
       PentAGI copy counted once, as one line with its number of copies; new searches for agent
       skills, Claude Code plugins, bug hunters and red-team agents; an outside index of offensive
       AI agent harnesses (MIT, credited) as a quarterly coverage check, never as counts.
+    decided_2026-11-20: >
+      Author's decisions after Claude's hand check of the re-run (20 Nov 2026): red-teaming of AI
+      agents, RAG systems and agent security evaluations counts as AI model testing (dual-use);
+      defensive words in a name (shield, armour, immune) count as a defensive purpose; a project
+      found in an earlier sweep that search did not return this time is re-checked by its address
+      and kept if still public, marked "not found by search this time"; projects found only by
+      the skills searches need a security word in the name or description, not only in topics.
 
   - id: X26
     name: How much people hand over to AI (autonomy given to AI models and apps)

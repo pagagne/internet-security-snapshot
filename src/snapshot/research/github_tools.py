@@ -54,6 +54,7 @@ CONFIG = "config/github_tool_queries.yaml"
 PER_PAGE, MAX_PAGES = 100, 10      # GitHub returns at most 1,000 results per search
 README_TOP = 800                   # READMEs read for the most-starred originals (API allowance)
 REGISTRY_IN = os.environ.get("X25_REGISTRY", "research-private-in/registry.csv")
+PREVIOUS_IN = os.environ.get("X25_PREVIOUS", "research-private-in/previous_tools_full.csv")
 PRIVATE_OUT = Path(os.environ.get("X25_PRIVATE_OUT", "research-private"))
 
 LABS = {   # AI named in a description or README, grouped by the lab that makes it
@@ -149,6 +150,11 @@ TYPES = {   # what a tool does (author, 31 Oct 2026); a tool can have several
     "hardening and compliance": r"harden|compliance|posture|vulnerability management|patch management|blue.?team|"
                                 r"cyber.?defen[cs]e|defensive security|防御|защит",
     "AI model testing": r"prompt.?injection|jailbreak|guardrail|llm (vulnerabilit|red.?team|security test|fuzz)|"
+                        # 20 Nov 2026 (author): red-teaming of AI agents and RAG is model testing
+                        r"red.?teaming (of |for )?(ai |llm |autonomous )?(agents?|agentic|rag)\b|"
+                        r"red.?team(ing)? (for|of|against) (ai |llm )?(agents?|agentic|rag)\b|"
+                        r"\b(agent|agentic|rag)[ -]red.?team|(ai )?agent (security|safety) (test|eval)\w*|"
+                        r"agent evaluation|model safety eval|"
                         r"red.?team(ing)? (for |of )?(llms?|ai models?|language models?|chatbots?|ai apps?)|model (safety|evaluation|robustness)|"
                         r"adversarial (robustness|machine learning|ml\b|examples?|attacks? (on|against) (ml|ai|models?|neural))",
 }
@@ -168,9 +174,9 @@ NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
 
 PUBLIC = ["name", "ref", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
           "ai_use", "types", "group", "purpose", "labs", "weights", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard",
-          "crypto", "topics", "description"]
+          "crypto", "found", "topics", "description"]
 COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "ai_use", "types", "group", "purpose", "labs", "weights", "toolkits", "targets",
-           "protocols", "readme_read", "readme_safeguard", "crypto"]
+           "protocols", "readme_read", "readme_safeguard", "crypto", "found"]
 
 
 def tool_types(text: str) -> list[str]:
@@ -229,9 +235,13 @@ DEF_PURPOSE = re.compile(r"\b(defen[cs]e|defensive|blue.?team|protect(s|ion|ing)
                          r"fix(es|ing)? (\w+ )?vulnerabilit)", re.I)   # EDR, find-and-fix: Claude's hand check, 19 Nov 2026
 
 
+DEF_NAME = re.compile(r"shield|armou?r|immun", re.I)   # 20 Nov 2026 (author): defensive words in a name
+
+
 def purpose(r: dict) -> str:
-    text = (r.get("full_name", "").split("/")[-1].replace("-", " ").replace("_", " ") + " " + r.get("description", ""))
-    off, deff = bool(OFF_PURPOSE.search(text)), bool(DEF_PURPOSE.search(text))
+    name = r.get("full_name", "").split("/")[-1].replace("-", " ").replace("_", " ")
+    text = name + " " + r.get("description", "")
+    off, deff = bool(OFF_PURPOSE.search(text)), bool(DEF_PURPOSE.search(text) or DEF_NAME.search(name))
     return "offensive" if off and not deff else "both" if off and deff else ""
 
 
@@ -239,6 +249,8 @@ def finish(r: dict) -> None:
     r["types"] = ";".join(_model_testing_first([x for x in r["types"].split(";") if x]))
     g = group(r["types"])
     p = purpose(r)
+    if g == "offensive" and DEF_NAME.search(r.get("full_name", "").split("/")[-1]) and p != "offensive":
+        g = "dual_use"   # a defensive word in the name softens a types-only offensive label (20 Nov 2026)
     if p == "offensive" and "AI model testing" not in r["types"].split(";"):
         g = "offensive"
     elif p == "both" and g in ("offensive", "defensive"):
@@ -284,8 +296,12 @@ def _strip(text: str) -> str:
 
 
 def relevant(r: dict) -> bool:
+    name = _strip(r.get("full_name", "").replace("-", " ").replace("_", " "))
     name_topics = _strip(r.get("full_name", "").replace("-", " ").replace("_", " ") + " " + r.get("topics", ""))
     desc = _strip(r.get("description", ""))
+    qs = [q for q in r.get("queries", "").split(";") if q]
+    if qs and all("skill" in q.lower() for q in qs):   # 20 Nov 2026 (author): topics alone are not enough
+        return bool(RELEVANT.search(name) or DESC_RELEVANT.search(desc))
     if ALERT_TRIAGE.search(desc) and not FRAUD_AML.search(r.get("description", "")):
         return True
     return bool(RELEVANT.search(name_topics) or DESC_RELEVANT.search(desc))
@@ -398,7 +414,7 @@ def row(it: dict) -> dict:
         "license": ((it.get("license") or {}).get("spdx_id") or ""), "language": it.get("language") or "",
         "topics": ";".join(topics), "description": desc[:240],
         "queries": "", "types": "", "group": "", "purpose": "", "ai_use": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
-        "readme_read": "no", "readme_safeguard": "",
+        "readme_read": "no", "readme_safeguard": "", "found": "search",
         "size_kb": it.get("size", 0) or 0, "red_flags": "",
     }
     _label(r, it.get("name", "") + " " + desc + " " + " ".join(topics))
@@ -408,7 +424,18 @@ def row(it: dict) -> dict:
     return r
 
 
-def sweep(queries, pause: float = 2.5, search_fn=None, readme_fn=None, readme_top: int = README_TOP):
+def repo(full_name: str) -> dict | None:
+    """One light request for a project found in an earlier sweep; None if gone or private."""
+    time.sleep(0.5)
+    try:
+        r = gh(f"/repos/{full_name}")
+    except requests.RequestException:
+        return None
+    return r.json() if r.status_code == 200 else None
+
+
+def sweep(queries, pause: float = 2.5, search_fn=None, readme_fn=None, readme_top: int = README_TOP,
+          previous: list[str] | None = None, repo_fn=None):
     """queries: {"offensive": [...], "defensive": [...]} (search lists; a plain list is one list)."""
     if isinstance(queries, list):
         queries = {"offensive": queries}
@@ -421,6 +448,14 @@ def sweep(queries, pause: float = 2.5, search_fn=None, readme_fn=None, readme_to
             for it in items:
                 r = found.setdefault(it["full_name"], row(it))
                 r["queries"] = ";".join(filter(None, [r["queries"], q]))
+    for name in (previous or []):   # 20 Nov 2026 (author): earlier finds that search missed this time
+        if name in found:
+            continue
+        it = repo_fn(name) if repo_fn else None
+        if it:
+            r = found.setdefault(it["full_name"], row(it))
+            r["found"] = "earlier sweep (not found by search this time)"
+            r["queries"] = r["queries"] or "earlier sweep"
     dropped = [r for r in found.values() if not relevant(r)]
     LEFT_OUT[:] = [r["full_name"] for r in dropped]   # counted in the summary, never in a chart
     rows = sorted((r for r in found.values() if relevant(r)), key=lambda r: -r["stars"])
@@ -541,7 +576,10 @@ def main(argv=None) -> int:
     a.out.mkdir(parents=True, exist_ok=True)
     PRIVATE_OUT.mkdir(parents=True, exist_ok=True)
     cfg = yaml.safe_load((_repo_root() / CONFIG).read_text())
-    rows, hits = sweep({"offensive": cfg["offensive"], "defensive": cfg["defensive"]})
+    prev_path = Path(PREVIOUS_IN)
+    previous = [r["full_name"] for r in csv.DictReader(prev_path.open())] if prev_path.exists() else []
+    rows, hits = sweep({"offensive": cfg["offensive"], "defensive": cfg["defensive"]}, previous=previous, repo_fn=repo)
+    hits["earlier sweep, re-checked"] = sum(r["found"] != "search" for r in rows)
     reg_path = Path(REGISTRY_IN)
     registry = {r["full_name"]: r["code"] for r in csv.DictReader(reg_path.open())} if reg_path.exists() else {}
     registry = pseudonymise(rows, registry)

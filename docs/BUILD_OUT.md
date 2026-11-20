@@ -217,3 +217,19 @@ the inquiry log (`docs/INQUIRIES.md`).
     correspondence, the study mail, the calendar and the scheduled tasks. The critic's clean
     project never gets them and is never promoted. Added to the review guide.
 
+44. **What to do next tonight.** Claude recommended applying the morning's tool-sweep rules.
+    Agreed: applied with tests, the sweep re-run once, every change listed privately, and 50
+    changes hand-checked (two rule errors found on the way were fixed before the re-run).
+
+45. **Red-teaming of AI agents found by the new "red team agent" search.** Agreed: counted as AI
+    model testing (dual-use); the search stays.
+
+46. **Defensive words in tool names (shield, armour, immune).** Agreed: they count as a
+    defensive purpose.
+
+47. **Projects missing only because GitHub's search did not return them.** Agreed: re-checked by
+    their address and kept if still public, marked "not found by search this time".
+
+48. **Skills searches picking up unrelated projects.** Agreed: projects found only by those
+    searches need a security word in the name or description.
+

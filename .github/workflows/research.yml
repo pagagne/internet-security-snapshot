@@ -69,6 +69,12 @@ jobs:
           printf '%s\n' "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
           chmod 600 ~/.config/rclone/rclone.conf
           rclone copy gdrive:x25-private/registry.csv research-private-in/ || true
+          # the previous GitHub sweep's full list, so projects search missed are re-checked (20 Nov 2026)
+          if [ "${{ github.event.client_payload.task }}" = github_tools ]; then
+            last=$(rclone lsf --dirs-only gdrive:x25-private/ | grep '^github_tools-' | sort | tail -1)
+            [ -n "$last" ] && rclone copyto "gdrive:x25-private/${last}tools_full.csv" research-private-in/previous_tools_full.csv || true
+            echo "previous list: $( [ -f research-private-in/previous_tools_full.csv ] && tail -n +2 research-private-in/previous_tools_full.csv | wc -l || echo none)"
+          fi
           echo "register entries: $( [ -f research-private-in/registry.csv ] && tail -n +2 research-private-in/registry.csv | wc -l || echo 0)"
       - name: Probe
         env:

@@ -170,3 +170,33 @@ def test_purpose_hand_check_corrections():
         return G.row(_item("o/x", 1, desc=desc))
     assert it("We build autonomous penetration testing solutions and proprietary EDR products")["purpose"] == "both"
     assert it("Open-source AI penetration testing tool to find and fix your app's vulnerabilities")["purpose"] == "both"
+
+
+def test_author_fixes_of_20_nov_2026():
+    def it(name, desc="", topics=()):
+        x = _item(name, 1, desc=desc)
+        x["topics"] = list(topics)
+        return x
+    # red-teaming of AI agents and RAG is model testing (dual-use)
+    r = G.row(it("o/x", "Framework for red-teaming AI agents and RAG pipelines"))
+    assert "AI model testing" in r["types"] and r["group"] == "dual_use"
+    # an AI agent that red-teams networks stays offensive
+    assert G.row(it("o/x", "Autonomous red team agent that attacks corporate networks"))["group"] == "offensive"
+    # defensive words in a name soften a types-only offensive label
+    assert G.row(it("o/shield-claude-skill", "pentest checks"))["group"] == "dual_use"
+    # skills searches need a security word in the name or description
+    assert not G.relevant({"full_name": "o/kiro-skill-icons", "topics": "security", "description": "icons",
+                           "queries": "offensive security skills in:name,description"})
+    assert G.relevant({"full_name": "o/pentest-skills", "topics": "", "description": "",
+                       "queries": "offensive security skills in:name,description"})
+
+
+def test_earlier_finds_are_rechecked():
+    found = [_item("o/new", 5)]
+    rows, hits = G.sweep({"offensive": ["q"]}, search_fn=lambda q, p: found, readme_fn=lambda n: "",
+                         previous=["o/new", "o/old", "o/gone"],
+                         repo_fn=lambda n: _item("o/old", 3) if n == "o/old" else None)
+    by = {r["full_name"]: r for r in rows}
+    assert by["o/new"]["found"] == "search"
+    assert by["o/old"]["found"].startswith("earlier sweep")
+    assert "o/gone" not in by
