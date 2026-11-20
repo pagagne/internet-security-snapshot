@@ -199,3 +199,8 @@ the inquiry log (`docs/INQUIRIES.md`).
     added. Agreed: mark those three lines as reviewed, tied to their exact wording, so any change
     is checked again. The scan now also reads new files before they are added.
 
+41. **Where is the step-by-step guide for the independent review?** It existed only in three
+    schedule entries. Agreed: a guide, `docs/INDEPENDENT_REVIEW.md`, in Part VI of the manual:
+    the choices made, the author's eight steps on 3 Feb 2027, what Claude does after, and what
+    the brief asks the critic to do.
+
