@@ -1,4 +1,4 @@
-# Exploratory measures X1 to X31 (updated 19 Nov 2026)
+# Exploratory measures X1 to X31 (updated 20 Nov 2026)
 
 Built from `config/exploratory.yaml` by `python -m snapshot.explodoc build`; do not edit by hand. Exploratory measures are reported beside the registered core and never decide a label (docs/RESEARCH_PLAN.md). Each section gives the question, its status with the dated note beside it, the sources and the method as decided; no figures appear here.
 
@@ -348,7 +348,7 @@ Built from `config/exploratory.yaml` by `python -m snapshot.explodoc build`; do 
 
 *Decided 2026-11-19.* Author's decisions, applied by Claude on 19 Nov 2026: labels purpose first (offensive when a tool's own name or description states attacking as its purpose, unless a defensive purpose is stated too, which makes it dual-use); "SOC 1/2/3" counts as a security term only beside another one; new relevance terms (Kali Linux, bug bounty, password cracking, nmap, Wazuh, security alert triage unless about fraud or anti-money laundering); every HexStrike and PentAGI copy counted once, as one line with its number of copies; new searches for agent skills, Claude Code plugins, bug hunters and red-team agents; an outside index of offensive AI agent harnesses (MIT, credited) as a quarterly coverage check, never as counts.
 
-*Decided 2026-11-20.* Author's decisions after Claude's hand check of the re-run (20 Nov 2026): red-teaming of AI agents, RAG systems and agent security evaluations counts as AI model testing (dual-use); defensive words in a name (shield, armour, immune) count as a defensive purpose; a project found in an earlier sweep that search did not return this time is re-checked by its address and kept if still public, marked "not found by search this time"; projects found only by the skills searches need a security word in the name or description, not only in topics.
+*Decided 2026-11-20.* Author's decisions after Claude's hand check of the re-run (20 Nov 2026): red-teaming of AI agents, RAG systems and agent security evaluations counts as AI model testing (dual-use); defensive words in a name (shield, armour, immune) count as a defensive purpose; a project found in an earlier sweep that search did not return this time is re-checked by its address and kept if still public, marked "not found by search this time"; projects found only by the skills searches need a security word in the name or description, not only in topics. Also 20 Nov (author, from the newsletter review): Cairn, the fifth framework in Elastic Security Labs' analysis of AI attack frameworks, added to the searches as a dated addition.
 
 ## X26
 

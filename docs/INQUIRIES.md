@@ -401,7 +401,9 @@ Started 25 Oct 2026 at the author's request.
   force asked regulators to go easy on victims of AI-driven attacks for at least 12 months, to
   encourage voluntary reporting. **Handled:** nothing enters a report or the AI-attack log from a
   newsletter (rule of 1 Nov); the Barracuda case reaches the log only if the sweep finds the
-  primary post-mortem itself. Java4Shell is a watch item for a KEV listing. For the author: whether
-  the Project Zero change becomes a note on decision item 28 (the patchless window) for 21 Dec,
-  whether Cairn joins the X25 searches as a dated addition, and whether the two tracking sites may
-  serve as a private coverage check (they are one individual's work).
+  primary post-mortem itself. Java4Shell is a watch item for a KEV listing. The author decided the same
+  day: the Project Zero change is a note on decision item 28 (the patchless window) for 21 Dec;
+  Cairn joins the X25 searches as a dated addition before the 25 Nov test run; the two tracking
+  sites stay a private coverage check only, as already set on 19 Nov (the incidents list feeds the
+  private leads ledger worked from primary reports; the harness index is a quarterly coverage
+  check, never counts).

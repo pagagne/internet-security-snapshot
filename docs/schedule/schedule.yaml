@@ -1923,7 +1923,8 @@ items:
     individual's username appears in any public file (tests and privacy scan); rebuild
     exploratory/ai_tool_landscape.md (Part III of the manual) and look at every chart; confirm
     the Source watch has dated copies of every terms page in docs/TERMS_OF_USE.md; fix anything
-    that fails and note it in the session log. Nothing from this run is published.
+    that fails and note it in the session log. Nothing from this run is published. Includes the
+    two Cairn searches added 20 Nov (author).
 
 - id: github-tool-sweep
   owner: claude

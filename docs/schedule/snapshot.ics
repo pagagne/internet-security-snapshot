@@ -1446,8 +1446,9 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's request 30 Oct 2026: a full reh
  every chart\; confirm the Source watch has dated copies of every terms pag
  e in https://github.com/pagagne/internet-security-snapshot/blob/main/docs/
  TERMS_OF_USE.md\; fix anything that fails and note it in the session log. 
- Nothing from this run is published.\n\nSource: https://github.com/pagagne/
- internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+ Nothing from this run is published. Includes the two Cairn searches added 
+ 20 Nov (author).\n\nSource: https://github.com/pagagne/internet-security-s
+ napshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

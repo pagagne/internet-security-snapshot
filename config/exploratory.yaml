@@ -498,6 +498,8 @@ measures:
       found in an earlier sweep that search did not return this time is re-checked by its address
       and kept if still public, marked "not found by search this time"; projects found only by
       the skills searches need a security word in the name or description, not only in topics.
+      Also 20 Nov (author, from the newsletter review): Cairn, the fifth framework in Elastic
+      Security Labs' analysis of AI attack frameworks, added to the searches as a dated addition.
 
   - id: X26
     name: How much people hand over to AI (autonomy given to AI models and apps)

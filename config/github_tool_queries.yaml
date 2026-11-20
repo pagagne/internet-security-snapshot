@@ -50,6 +50,10 @@ offensive:
   - "Claude Code plugin security in:name,description"
   - "AI bug hunter in:name,description"
   - "red team agent in:name,description"
+  # added 2026-11-20 (author): Cairn, the fifth framework in Elastic Security Labs' analysis of
+  # AI attack frameworks (newsletter review 20 Nov); before the 6 Jan 2027 fix of this list
+  - "Cairn pentest in:name,description"
+  - "Cairn offensive in:name,description"
 defensive:
   - "topic:ai-soc"
   - "topic:blue-team ai"
