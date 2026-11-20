@@ -248,3 +248,13 @@ the inquiry log (`docs/INQUIRIES.md`).
     automatic runs and the frozen data carry on until their keys expire. Zenodo is left out of
     the account check until it is created on 4 Dec (it signs in with GitHub).
 
+
+52. **Google Project Zero's shorter disclosure deadlines** (90 days to 60 by February 2027, then
+    30). Agreed: a note on decision item 28 (where the race clock starts) for the 21 Dec session;
+    nothing changes before then.
+
+53. **Cairn, a fifth AI attack framework.** Agreed: added to the tool searches as a dated
+    addition, in time for the 25 Nov test run.
+
+54. **Two outside tracking sites built by one researcher.** Agreed: a private coverage check
+    only, as set on 19 Nov; nothing from them is published or entered as a case.
