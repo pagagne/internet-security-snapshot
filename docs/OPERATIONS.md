@@ -342,12 +342,12 @@ private path, `exploratory/docs/...`, and do not link to them.
   `apps/hand-check.html`.
 
 ## Cutover checklist (<!-- date:cutover -->23 Nov 2026<!-- /date -->; issue opens that day)
-- [ ] Schedule workflow green for 7 days in a row.
-- [x] Author subscribed to the calendar feed (24 Oct 2026).
-- [ ] Claude work-queue task live and has confirmed it can see the queue.
+- [ ] Schedule workflow green for 7 days in a row (pre-checked 19 Nov 2026: every run green since 13 Nov).
+- [x] Author subscribed to the calendar feed (24 Oct 2026; confirmed again 19 Nov 2026).
+- [ ] Claude work-queue task live and has confirmed it can see the queue (pre-checked 19 Nov: live, last run succeeded).
 - [x] Private Google Drive backup configured and tested (`exploratory/docs/BACKUP.md`; 27 Oct 2026).
 - [ ] This file current.
-- [ ] Remaining one-off check-ins in the original chat retired.
+- [ ] Remaining one-off check-ins in the original chat retired (19 Nov: the race-list check retired; reply check and morning report updated).
 
 ## Standing rules
 See `docs/HANDOVER.md`. In short: no keys or tokens in chat or issues (GitHub secrets only);
