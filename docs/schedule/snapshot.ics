@@ -1170,7 +1170,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Check for GreyNoise and CrowdSec replies
+SUMMARY:✅ DONE [Claude] Snapshot: Check for GreyNoise and CrowdSec replie
+ s
 DESCRIPTION:Responsible: Claude\n\nA week after the 13 Nov follow-ups: look
   for replies in the author's Gmail\; record any in https://github.com/paga
  gne/internet-security-snapshot/blob/main/docs/PERMISSIONS.md and the corre

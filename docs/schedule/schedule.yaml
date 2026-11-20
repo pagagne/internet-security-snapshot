@@ -302,6 +302,7 @@ items:
   owner: claude
   title: Check for GreyNoise and CrowdSec replies
   date: 2026-11-20
+  done: "20 Nov 2026: GreyNoise had answered (granted 17 Nov); nothing from CrowdSec or Shadowserver (checked 19 and 20 Nov). Shadowserver second follow-up 25 Nov; CrowdSec carried to the 21 Dec cutoff"
   details: >
     A week after the 13 Nov follow-ups: look for replies in the author's Gmail; record any in
     docs/PERMISSIONS.md and the correspondence index; if none, note it for the 21 Dec cutoff
