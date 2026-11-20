@@ -168,7 +168,10 @@ items:
     reporting only what helps the study and leaving out the rest. Run as a weekly check-in in the
     author's chat, each one setting the next; replaces the reads on the 8th and 22nd. Research only
     (author, 1 Nov 2026): nothing from the newsletters is shown in a report or on the landing page,
-    and a case first spotted there is not entered in the AI attack log.
+    and a case first spotted there is not entered in the AI attack log. Tracking (author, 20 Nov
+    2026): every email reviewed is listed in a private ledger (thread, sender, subject, date,
+    outcome); each review reads the ledger first, takes every page of results (never only the
+    first page) and covers every email not yet listed, however old.
 
 - id: conference-scan
   owner: claude

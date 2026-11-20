@@ -684,9 +684,12 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 9 Nov 2026: every Satu
   check-in in the author's chat\, each one setting the next\; replaces the 
  reads on the 8th and 22nd. Research only (author\, 1 Nov 2026): nothing fr
  om the newsletters is shown in a report or on the landing page\, and a cas
- e first spotted there is not entered in the AI attack log.\n\nSource: http
- s://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedule/
- schedule.yaml
+ e first spotted there is not entered in the AI attack log. Tracking (autho
+ r\, 20 Nov 2026): every email reviewed is listed in a private ledger (thre
+ ad\, sender\, subject\, date\, outcome)\; each review reads the ledger fir
+ st\, takes every page of results (never only the first page) and covers ev
+ ery email not yet listed\, however old.\n\nSource: https://github.com/paga
+ gne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT

@@ -1,4 +1,4 @@
-# Operations: how the study runs without depending on one Claude chat (updated 19 Nov 2026)
+# Operations: how the study runs without depending on one Claude chat (updated 20 Nov 2026)
 
 From the **cutover on Mon <!-- date:cutover -->23 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
@@ -169,7 +169,8 @@ glance at the monthly review. Measured cost of the November sort (9 Nov 2026; 20
 four full reads, plus small side tasks in the same stretch): about 1 point of the author's weekly
 Claude allowance and about 8 points of one session; no cap on full reads is needed.
 The newsletters in the author's Gmail label "Snapshot newsletters" (reviewed every Saturday
-morning since 9 Nov 2026, reporting only what helps the study)
+morning since 9 Nov 2026, reporting only what helps the study; each email reviewed is listed in a private ledger, and
+every review covers all emails not yet listed, page by page; author, 20 Nov 2026)
 are research only since 1 Nov 2026 (author): never shown in a report or on the landing page,
 and a case first spotted in a newsletter is not entered in the AI attack log. What they show
 may inform an optional trends summary written in our own words.

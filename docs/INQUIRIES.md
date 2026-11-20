@@ -403,7 +403,8 @@ Started 25 Oct 2026 at the author's request.
   Nov (the first pass read only the newest 50 of about 73 threads): SecurityWeek reports a zero-day
   in N-able N-central exploited within hours of a public proof of concept, the race at its
   shortest; and a supply-chain attack on the Cursor code editor that began at the AI provider
-  Fireworks AI (AI as the target). **Handled:** nothing enters a report or the AI-attack log from a
+  Fireworks AI (AI as the target); and releases of Microsoft's Agent Framework, a toolkit for
+  building AI agents, shipped with a credential stealer inside (AI software as the target). **Handled:** nothing enters a report or the AI-attack log from a
   newsletter (rule of 1 Nov); the Barracuda case reaches the log only if the sweep finds the
   primary post-mortem itself. Java4Shell is a watch item for a KEV listing. The author decided the same
   day: the Project Zero change is a note on decision item 28 (the patchless window) for 21 Dec;
