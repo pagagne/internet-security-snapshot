@@ -2287,9 +2287,10 @@ items:
   time: "10:00"
   minutes: 30
   details: >
-    GitHub, both Gmail accounts, Google Cloud, OSF, Zenodo: two-factor on, recovery codes printed
-    or stored offline, recovery email and phone current. Read Claude's hand-on note and name a
-    successor if you wish. Tell Claude only "done"; never the codes.
+    GitHub, both Gmail accounts, Google Cloud and OSF: two-factor on, recovery codes printed or
+    stored offline, recovery email and phone current (Zenodo signs in with GitHub once created on
+    4 Dec). Read Claude's hand-on note. No successor (author, 20 Nov 2026: the study ends in 2028
+    and stops if he cannot continue). Tell Claude only "done"; never the codes.
 
 - id: risk-freeze-proposals
   owner: claude

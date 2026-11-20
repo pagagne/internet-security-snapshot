@@ -1,4 +1,4 @@
-# Build-out record (updated 19 Nov 2026)
+# Build-out record (updated 20 Nov 2026)
 
 The author's request of 19 Nov 2026: a record, in the manual, of every question or prompt put to
 the author while the study is being built, with Claude's answer or recommendation and the
@@ -183,8 +183,8 @@ the inquiry log (`docs/INQUIRIES.md`).
     written delegation. Agreed: no delegation; results wait for the author, while the runs
     and frozen data continue.
 
-38. **When to name the successor and grant access.** Agreed: at the 28 Nov account check,
-    together with two-factor sign-in and recovery codes.
+38. **When to name the successor and grant access.** Agreed at first: at the 28 Nov account
+    check. Changed on 20 Nov (item 51): no successor.
 
 39. **The details written today for each exploratory measure belong in the manual.** Agreed:
     `docs/EXPLORATORY_MEASURES.md`, built from `config/exploratory.yaml` (one section per
@@ -240,4 +240,11 @@ the inquiry log (`docs/INQUIRIES.md`).
     Schedule workflow green on every run since 13 Nov, the work queue live and leaving
     primary-chat tasks alone, the finished race-list check retired and two task messages brought
     up to date.
+
+## 20 November 2026
+
+51. **A successor.** The author decided not to name a successor or grant anyone access: the
+    study ends in 2028, and if he cannot continue it stops. Nothing is published without him; the
+    automatic runs and the frozen data carry on until their keys expire. Zenodo is left out of
+    the account check until it is created on 4 Dec (it signs in with GitHub).
 
