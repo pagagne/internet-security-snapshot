@@ -858,7 +858,7 @@ items:
 - id: pilot-timeline-mockup
   owner: claude
   title: Mock-up of the pilot timeline section of the run-health page, for the author's approval
-  date: 2026-11-23
+  date: 2026-11-30  # moved from 23 Nov to save Claude usage until 26 Nov (author, 20 Nov 2026)
   details: >
     Update the run-health mock-up with the "Pilot, start to finish" section (author, 15 Nov 2026)
     and show it to the author; his changes go into the 27 Nov build (pages-build). Live from the

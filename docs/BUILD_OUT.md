@@ -258,3 +258,9 @@ the inquiry log (`docs/INQUIRIES.md`).
 
 54. **Two outside tracking sites built by one researcher.** Agreed: a private coverage check
     only, as set on 19 Nov; nothing from them is published or entered as a case.
+
+55. **Keeping Claude usage low until Thursday 26 Nov.** Agreed: the cutover check, the hand
+    checks, the handover test and the 25 Nov tool-sweep test run go ahead; morning reports are
+    short (due items, replies, failures) and Sunday's is skipped; Saturday's newsletter review
+    covers only new mail; the 23 Nov sync review is one pass over what changed that week (three
+    passes again on 30 Nov); the pilot-timeline mock-up moves to 30 Nov.

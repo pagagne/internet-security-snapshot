@@ -1232,22 +1232,6 @@ DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:pilot-timeline-mockup@2026-11-23@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261123
-DTEND;VALUE=DATE:20261124
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Mock-up of the pilot timeline section of the run
- -health page\, for the author's approval
-DESCRIPTION:Responsible: Claude\n\nUpdate the run-health mock-up with the "
- Pilot\, start to finish" section (author\, 15 Nov 2026) and show it to the
-  author\; his changes go into the 27 Nov build (pages-build). Live from th
- e 1 Dec practice run\, before the pilot witness starts on 9 Dec.\n\nSource
- : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
- edule/schedule.yaml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:sync-review@2026-11-23@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261123
@@ -1705,6 +1689,22 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decision 19 Nov 2026 (cards): p
  d what is not\, with a recommendation on whether a measure is worth buildi
  ng\; the author decides.\n\nSource: https://github.com/pagagne/internet-se
  curity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
+UID:pilot-timeline-mockup@2026-11-30@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Mock-up of the pilot timeline section of the run
+ -health page\, for the author's approval
+DESCRIPTION:Responsible: Claude\n\nUpdate the run-health mock-up with the "
+ Pilot\, start to finish" section (author\, 15 Nov 2026) and show it to the
+  author\; his changes go into the 27 Nov build (pages-build). Live from th
+ e 1 Dec practice run\, before the pilot witness starts on 9 Dec.\n\nSource
+ : https://github.com/pagagne/internet-security-snapshot/blob/main/docs/sch
+ edule/schedule.yaml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
