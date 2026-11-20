@@ -420,3 +420,16 @@ Started 25 Oct 2026 at the author's request.
   lets routine actions be set to "Always allow". Each task runs in its own isolated virtual
   machine with prompt-injection filtering. **Handled:** an X26 news row (how much people hand
   over to AI); the "Always allow" setting is the kind of control the measure asks about.
+
+- **20 Nov 2026: three outside datasets looked at (author's finds).** (1) SecRepo
+  (secrepo.com), one person's collection of links to security data samples (network, malware,
+  system, threat intelligence), its own data under CC BY 4.0. (2) A structured threat-intelligence
+  dataset (arXiv 2607.23312, 25 Jul 2026): 150 reports mapped to MITRE ATT&CK as STIX graphs;
+  four open-source AI models tested as judges helped spot annotation errors but could not replace
+  expert review. (3) SOREL-20M (Sophos and ReversingLabs, Dec 2020): about 8 TB of disarmed
+  Windows malware with features and labels, frozen since its 2020 release. **Handled:** none
+  adopted. They are fixed collections for training and testing tools, without the dated fix and
+  attack events the race measures need; SecRepo and SOREL-20M hold host-level data or malware,
+  which the standing rules keep out, and SecRepo is one individual's work. The arXiv paper is kept
+  as a methods reference: independent support for keeping the author's hand checks on
+  Claude-coded cases rather than relying on the AI alone.
