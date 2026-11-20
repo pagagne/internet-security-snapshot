@@ -233,3 +233,11 @@ the inquiry log (`docs/INQUIRIES.md`).
 48. **Skills searches picking up unrelated projects.** Agreed: projects found only by those
     searches need a security word in the name or description.
 
+49. **When to build up the manual's main parts from the build-out records.** Agreed: after the
+    pilot, on 9 Feb 2027, before the 10 Feb document clean-up and the 17 Feb lock.
+
+50. **Focus for the rest of the evening.** Agreed: the cutover. Claude pre-checked it: the
+    Schedule workflow green on every run since 13 Nov, the work queue live and leaving
+    primary-chat tasks alone, the finished race-list check retired and two task messages brought
+    up to date.
+

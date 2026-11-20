@@ -1156,6 +1156,17 @@ items:
     docs/SOP_MANUAL_RUNS.md (drafted 29 Oct 2026, reviewed 18 Dec): adjust it from what the pilot
     taught (quiet periods, re-run rules), then adopt it; it governs manual runs from 9 Feb 2027.
 
+- id: manual-buildout
+  owner: claude
+  primary: true   # primary chat only
+  title: Build up the manual's main parts from the build-out records
+  date: 2027-02-09
+  details: >
+    Author's decision, 19 Nov 2026: after the pilot, fold the decisions in docs/BUILD_OUT.md and
+    the exploratory measures document (both in Appendix A for now) into the manual's main parts
+    (methods, operations, sources and publication), then show the author the changed chapters.
+    Before the 10 Feb document clean-up and the 17 Feb document lock.
+
 - id: document-cleanup
   owner: claude
   title: Clean up the critical-documents register and check every cross-reference (before the lock)

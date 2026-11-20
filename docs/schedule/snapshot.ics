@@ -3330,6 +3330,24 @@ DESCRIPTION:Responsible: Paul (author)\n\nOutcome goes to the 15 March revi
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:manual-buildout@2027-02-09@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270209
+DTEND;VALUE=DATE:20270210
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build up the manual's main parts from the build-
+ out records
+DESCRIPTION:Responsible: Claude\n\nAuthor's decision\, 19 Nov 2026: after t
+ he pilot\, fold the decisions in https://github.com/pagagne/internet-secur
+ ity-snapshot/blob/main/docs/BUILD_OUT.md and the exploratory measures docu
+ ment (both in Appendix A for now) into the manual's main parts (methods\, 
+ operations\, sources and publication)\, then show the author the changed c
+ hapters. Before the 10 Feb document clean-up and the 17 Feb document lock.
+ \n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/mai
+ n/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:document-cleanup@2027-02-10@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270210

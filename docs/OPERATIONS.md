@@ -1,4 +1,4 @@
-# Operations: how the study runs without depending on one Claude chat (updated 17 Nov 2026)
+# Operations: how the study runs without depending on one Claude chat (updated 19 Nov 2026)
 
 From the **cutover on Mon <!-- date:cutover -->23 Nov 2026<!-- /date -->**, everything the annual study needs lives in this
 repository. A Claude chat is a convenience, not a dependency: any new Claude session, or a
@@ -305,13 +305,12 @@ check-ins are retired once they have run.
 | Daily, 07:00 | Morning report: the previous day's session log, overnight runs, replies awaited, today's list; refreshes the project doc `claude/WHATS-DUE.md`; each run schedules the next | The primary chat |
 | Saturdays, 08:00 | Weekly newsletter review, reporting only what helps the study; each run schedules the next | The primary chat |
 | Mondays, 09:00, 23 Nov 2026 to 15 Feb 2027 | Weekly sync review and due `primary-chat` issues; each run schedules the next | The primary chat |
-| Fri 20 Nov, 09:00 | Reply check: GreyNoise, CrowdSec, Shadowserver | The primary chat |
-| Wed <!-- date:race-list-ready -->25 Nov<!-- /date -->, 09:00 | Race fix-date list ready for the dry run | The primary chat |
+| Fri 20 Nov, 09:00 | Reply check: CrowdSec and Shadowserver (GreyNoise answered 17-19 Nov) | The primary chat |
 
 The full message of each chat-bound task is in START HERE, section 6 (finished one-off tasks are
 in this file's history).
 
-Refreshed 11 Nov 2026. Every task above except the work queue delivers into one chat and stops
+Refreshed 19 Nov 2026 (the race-list check retired: done early). Every task above except the work queue delivers into one chat and stops
 if that chat is lost: a new chat recreates them from section 6 of `START_HERE_NEW_CHAT.md`
 (private repository, root; the full message of each task is there).
 
