@@ -399,7 +399,11 @@ Started 25 Oct 2026 at the author's request.
   of open-source attack harnesses. (6) Barracuda's own post-mortem: an attacker used a cloud key
   left with a former AI service provider, then ran ARTEX to spread inside. (7) The US AI task
   force asked regulators to go easy on victims of AI-driven attacks for at least 12 months, to
-  encourage voluntary reporting. **Handled:** nothing enters a report or the AI-attack log from a
+  encourage voluntary reporting. (8) Added after a second pass over the older mail of 15 and 16
+  Nov (the first pass read only the newest 50 of about 73 threads): SecurityWeek reports a zero-day
+  in N-able N-central exploited within hours of a public proof of concept, the race at its
+  shortest; and a supply-chain attack on the Cursor code editor that began at the AI provider
+  Fireworks AI (AI as the target). **Handled:** nothing enters a report or the AI-attack log from a
   newsletter (rule of 1 Nov); the Barracuda case reaches the log only if the sweep finds the
   primary post-mortem itself. Java4Shell is a watch item for a KEV listing. The author decided the same
   day: the Project Zero change is a note on decision item 28 (the patchless window) for 21 Dec;
