@@ -211,3 +211,9 @@ the inquiry log (`docs/INQUIRIES.md`).
     critic instructions; the brief forbids mail and Drive, and the author disconnects both for
     the review. The guide was updated.
 
+43. **A chat promoted to primary should gain the private side.** Claude confirmed that this is
+    how promotion already works: only a chat in the study's own project can be promoted, and on
+    "you are now primary" it takes over the private repository, the Drive backup and
+    correspondence, the study mail, the calendar and the scheduled tasks. The critic's clean
+    project never gets them and is never promoted. Added to the review guide.
+

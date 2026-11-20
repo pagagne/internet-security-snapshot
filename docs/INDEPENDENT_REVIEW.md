@@ -54,6 +54,16 @@ the public can read, looks hard for weaknesses, and reports to the author. Sched
 8. **Bring the report to the primary chat** (attach it or paste it) and say "independent review
    is in".
 
+## The critic is never made primary
+
+The review chat lives in the clean review project, so it never has the private side: the
+private repository, the Drive backups, the correspondence or the study mail. It is never
+promoted to primary. Promotion is a separate step that happens only in the study's own
+project: a new chat opened there is read-only until the author says "you are now primary".
+It then takes over everything the primary chat uses: the private repository, the Drive
+backup and correspondence folders, the study mail, the calendar and the scheduled tasks, as
+set out in the project's start-here guide and `docs/SOP_MANUAL_RUNS.md` section 7 (C, promoting a new chat).
+
 ## What happens next (Claude, by 5 Feb 2027)
 
 1. The report is recorded in the private session log.
