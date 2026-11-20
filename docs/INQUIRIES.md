@@ -1,4 +1,4 @@
-# Inquiry log (updated 19 Nov 2026)
+# Inquiry log (updated 20 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles
@@ -381,3 +381,27 @@ Started 25 Oct 2026 at the author's request.
   the author's decision (19 Nov) it waits for the 18 Dec lead review rather than entering the
   AI-attack log now.
 
+
+- **20 Nov 2026: weekly newsletter review, run a day early on the author's request (research
+  only).** (1) Google Project Zero changed its disclosure policy (Project Zero blog, Nov 2026): no
+  more grace periods; the deadline falls from 90 days now to 60 days by February 2027 and 30 days
+  by January 2028, because AI lets attackers reverse-engineer a patch almost at once and finds
+  many more bugs. The 60-day step lands inside the study window, so the gap between a fix and its
+  public details may shorten mid-study. (2) CISA's exploited list gained the LiteLLM flaw
+  CVE-2026-40217 on 18 Nov, closing the X5 watch item of 8 Nov (reported exploited, now listed),
+  with Puppet Enterprise (17 Nov), Synology DSM, Apache Axis and REDCap (18 Nov); the KEV collector
+  takes these in on its own. (3) "Java4Shell", CVE-2026-114938: a memory flaw in the Java Base64
+  decoder allowing remote code execution without sign-in in Jira, Confluence, Jenkins, Keycloak
+  and Artifactory; CISA urged immediate patching on 17 Nov but has not listed it as exploited.
+  (4) Elastic Security Labs analysed five AI attack frameworks: ARTEX, CyberStrikeAI, PentAGI,
+  HexStrike and a fifth, Cairn, which the X25 tool searches do not yet name. (5) Two tracking
+  sites by one researcher: a list of AI-assisted attacks drawn from published reports and an index
+  of open-source attack harnesses. (6) Barracuda's own post-mortem: an attacker used a cloud key
+  left with a former AI service provider, then ran ARTEX to spread inside. (7) The US AI task
+  force asked regulators to go easy on victims of AI-driven attacks for at least 12 months, to
+  encourage voluntary reporting. **Handled:** nothing enters a report or the AI-attack log from a
+  newsletter (rule of 1 Nov); the Barracuda case reaches the log only if the sweep finds the
+  primary post-mortem itself. Java4Shell is a watch item for a KEV listing. For the author: whether
+  the Project Zero change becomes a note on decision item 28 (the patchless window) for 21 Dec,
+  whether Cairn joins the X25 searches as a dated addition, and whether the two tracking sites may
+  serve as a private coverage check (they are one individual's work).
