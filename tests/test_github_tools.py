@@ -127,3 +127,38 @@ def test_tightening_of_1_nov_2026():
     assert "AI model testing" in ts and "penetration testing" not in ts and G.group(ts) == "dual_use"
     assert not G.relevant({"full_name": "x/baserow", "description": "Secure open-source no-code database", "topics": "database"})
     assert G.relevant({"full_name": "x/tool", "description": "An AI security testing agent", "topics": ""})
+
+
+def test_rules_of_19_nov_2026():
+    """Author's decisions, 19 Nov 2026: purpose first; SOC 1/2/3 needs a second term; new terms."""
+    def it(name, desc, topics=()):
+        x = _item(name, 1, desc=desc)
+        x["topics"] = list(topics)
+        return x
+    # purpose first: an attack tool is not made defensive by "detect" or "harden" words
+    r = G.row(it("o/strike", "AI hacking agent that finds and exploits targets, evades detection of malware scanners"))
+    assert r["group"] == "offensive" and r["purpose"] == "offensive"
+    # both purposes stated: dual-use
+    r = G.row(it("o/purple", "Red team agent for attack simulation that also helps defenders harden their systems"))
+    assert r["purpose"] == "both" and r["group"] == "dual_use"
+    # SOC 2 alone is not security; with another term it is
+    assert not G.relevant({"full_name": "o/compliance-docs", "topics": "", "description": "SOC 2 policy templates for startups"})
+    assert G.relevant({"full_name": "o/soc2-scan", "topics": "", "description": "SOC 2 evidence plus vulnerability scanning"})
+    # new terms
+    for d in ("Kali Linux helper with an LLM", "Bug bounty recon assistant", "Password cracking with AI",
+              "nmap wrapper driven by Claude", "Wazuh rules written by an LLM"):
+        assert G.relevant({"full_name": "o/x", "topics": "", "description": d}), d
+    assert not G.relevant({"full_name": "o/kalinda", "topics": "", "description": "Kalinda photo app"})
+    # security alert triage counts, but not for fraud or anti-money laundering
+    assert G.relevant({"full_name": "o/x", "topics": "", "description": "LLM security alert triage"})
+    assert not G.relevant({"full_name": "o/x", "topics": "", "description": "AML fraud alert triage with an LLM"})
+
+
+def test_hexstrike_and_pentagi_copies_count_once():
+    from snapshot import x25report
+    rows = [{"name": n, "created": c, "ref": n.split("/")[0]} for n, c in [
+        ("a/hexstrike-ai", "2025-07-01"), ("b/HexStrike-AI-fork", "2025-09-02"), ("c/my-hexstrike", "2026-01-05"),
+        ("d/pentagi", "2025-03-01"), ("e/pentagi-copy", "2026-02-01"), ("f/other", "2026-02-01")]]
+    copies = x25report.mark_copies(rows)
+    assert copies == {"HexStrike": 2, "PentAGI": 1}
+    assert [r["name"] for r in rows if r["copy"] != "yes"] == ["a/hexstrike-ai", "d/pentagi", "f/other"]

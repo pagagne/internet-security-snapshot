@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
+import re
 import sys
 from pathlib import Path
 
@@ -52,6 +53,7 @@ def _type_group(t: str) -> str:
 
 
 COPY_MIN = 5   # author, 31 Oct 2026: a name uploaded 5+ times in a month by different makers is one tool plus copies
+FAMILIES = {"HexStrike": r"hexstrike", "PentAGI": r"pentagi"}   # author, 19 Nov 2026
 
 
 def load(path: Path) -> list[dict]:
@@ -67,7 +69,19 @@ def mark_copies(rows: list[dict]) -> dict[str, int]:
         r["copy"] = ""
         groups[(r["name"].split("/")[-1].lower(), r["created"][:7])].append(r)
     copies: dict[str, int] = collections.Counter()
+    # Named families (author, 19 Nov 2026): every copy of HexStrike or PentAGI, whatever its name or
+    # month, is counted once, as one line with the number of copies; the earliest stays.
+    fam_rows: dict[str, list[dict]] = collections.defaultdict(list)
+    for r in rows:
+        for fam, rx in FAMILIES.items():
+            if re.search(rx, r["name"].split("/")[-1], re.I):
+                fam_rows[fam].append(r)
+    for fam, rs in fam_rows.items():
+        for r in sorted(rs, key=lambda r: (r["created"], r["name"]))[1:]:
+            r["copy"] = "yes"
+            copies[fam] += 1
     for (name, _), rs in groups.items():
+        rs = [r for r in rs if r["copy"] != "yes"]
         makers = {r.get("ref") or r["name"].split("/")[0] for r in rs}
         if len(rs) >= COPY_MIN and len(makers) >= COPY_MIN:
             for r in sorted(rs, key=lambda r: (r["created"], r["name"]))[1:]:

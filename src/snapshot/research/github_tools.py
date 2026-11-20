@@ -167,9 +167,9 @@ NO_SAFEGUARD = re.compile(r"\bno (scope|authori[sz]ation|consent|guard)", re.I)
 
 
 PUBLIC = ["name", "ref", "owner_type", "created", "pushed", "stars", "forks", "archived", "license", "language",
-          "ai_use", "types", "group", "labs", "weights", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard",
+          "ai_use", "types", "group", "purpose", "labs", "weights", "toolkits", "targets", "protocols", "readme_read", "readme_safeguard",
           "crypto", "topics", "description"]
-COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "ai_use", "types", "group", "labs", "weights", "toolkits", "targets",
+COMPACT = ["name", "ref", "owner_type", "created", "stars", "forks", "ai_use", "types", "group", "purpose", "labs", "weights", "toolkits", "targets",
            "protocols", "readme_read", "readme_safeguard", "crypto"]
 
 
@@ -177,7 +177,7 @@ def tool_types(text: str) -> list[str]:
     """What a tool does, from its own words (first guesses; checked by Claude, confirmed by the author).
     A tool that tests AI models is "AI model testing", not penetration testing or scanning: its
     red-teaming and scanning words are about the model (author, 1 Nov 2026)."""
-    ts = tags(text, TYPES)
+    ts = tags(_strip(text), TYPES)
     return _model_testing_first(ts)
 
 
@@ -216,9 +216,34 @@ def ai_use(weights: str) -> str:
     return "both" if op and cl else "closed" if cl else "open_local" if op else "none"
 
 
+# Purpose first (author, 19 Nov 2026): when a tool's own name or description states attacking as
+# its purpose, it is offensive, unless a defensive purpose is stated too; this also stops attack
+# tools being labelled defensive by passing words such as "detect" or "harden".
+OFF_PURPOSE = re.compile(r"offensive security|\b(for|to) (attack|hack|exploit|compromise|breach)\b|"
+                         r"\b(attack|hacking|exploitation|exploit|pentest(ing)?|penetration testing|red.?team(ing)?|c2|"
+                         r"post.?exploitation) (agent|tool|toolkit|framework|platform|automation|assistant|copilot|bot)s?\b|"
+                         r"autonomous (pentest\w*|penetration testing|hacking|red.?team\w*|exploit\w*)|\bai (hacker|hacking)\b", re.I)
+DEF_PURPOSE = re.compile(r"\b(defen[cs]e|defensive|blue.?team|protect(s|ion|ing)?|detect(s|ion|ing)? (threats?|attacks?|"
+                         r"intrusions?|malware)|incident response|\bsoc (agent|analyst|automation)|\bsiem\b|harden(s|ing)?|"
+                         r"remediat\w*|secure (your|the) )", re.I)
+
+
+def purpose(r: dict) -> str:
+    text = (r.get("full_name", "").split("/")[-1].replace("-", " ").replace("_", " ") + " " + r.get("description", ""))
+    off, deff = bool(OFF_PURPOSE.search(text)), bool(DEF_PURPOSE.search(text))
+    return "offensive" if off and not deff else "both" if off and deff else ""
+
+
 def finish(r: dict) -> None:
     r["types"] = ";".join(_model_testing_first([x for x in r["types"].split(";") if x]))
-    r["group"] = group(r["types"])
+    g = group(r["types"])
+    p = purpose(r)
+    if p == "offensive" and "AI model testing" not in r["types"].split(";"):
+        g = "offensive"
+    elif p == "both" and g in ("offensive", "defensive"):
+        g = "dual_use"
+    r["group"] = g
+    r["purpose"] = p
     r["ai_use"] = ai_use(r["weights"])
 
 
@@ -226,6 +251,7 @@ def finish(r: dict) -> None:
 # description or topics; book lists, political repositories and general apps found through a
 # search's AI words are left out and counted as "not security" in the summary.
 RELEVANT = re.compile(r"secur|pen.?test|penetration|exploit|vulnerab|\bcve\b|malware|phish|threat|red.?team|blue.?team|"
+                      r"\bkali[ -]?linux\b|bug.?bount|password.?crack|\bnmap\b|\bwazuh\b|"   # 19 Nov 2026 (author)
                       r"\bsoc\b|siem|intrusion|forensic|incident|hack|offensive|defen[cs]|ctf|osint|recon|fuzz|"
                       r"jailbreak|prompt.?injection|guardrail|attack|scanner|audit|cyber|渗透|安全|漏洞|пентест|безопасн|взлом", re.I)
 # Tightened 1 Nov 2026 (author): in the description a passing word such as "secure" is not enough;
@@ -234,15 +260,34 @@ DESC_RELEVANT = re.compile(r"security (tool|testing|test|research|scanner|scan|a
                            r"automation|copilot|assistant|framework|platform|monitoring)|cyber.?security|infosec|pen.?test|"
                            r"penetration|exploit|vulnerab|\bcve\b|malware|phishing|intrusion|threat|red.?team|blue.?team|"
                            r"\bsoc\b|siem|forensic|incident response|hacking|offensive security|\bctf\b|osint|fuzz|"
+                           r"\bkali[ -]?linux\b|bug.?bount|password.?crack|\bnmap\b|\bwazuh\b|"   # 19 Nov 2026 (author)
                            r"jailbreak|prompt.?injection|guardrail|attack surface|cyber.?attack|渗透|漏洞|网络安全|пентест|взлом", re.I)
 
 
 LEFT_OUT: list[str] = []
 
 
+# 19 Nov 2026 (author): "SOC 1/2/3" (the audit reports) counts as a security term only beside
+# another one; "security alert triage" counts unless the text is about fraud or anti-money
+# laundering.
+SOC_REPORT = re.compile(r"\bsoc[ -]?(?:1|2|3|ii|iii)\b(?:\s*type\s*(?:1|2|i|ii))?", re.I)
+ALERT_TRIAGE = re.compile(r"(security )?alert triage", re.I)
+FRAUD_AML = re.compile(r"\bfraud|\baml\b|anti.?money.?laundering", re.I)
+
+
+def _strip(text: str) -> str:
+    text = SOC_REPORT.sub(" ", text)
+    if FRAUD_AML.search(text):
+        text = ALERT_TRIAGE.sub(" ", text)
+    return text
+
+
 def relevant(r: dict) -> bool:
-    name_topics = r.get("full_name", "").replace("-", " ").replace("_", " ") + " " + r.get("topics", "")
-    return bool(RELEVANT.search(name_topics) or DESC_RELEVANT.search(r.get("description", "")))
+    name_topics = _strip(r.get("full_name", "").replace("-", " ").replace("_", " ") + " " + r.get("topics", ""))
+    desc = _strip(r.get("description", ""))
+    if ALERT_TRIAGE.search(desc) and not FRAUD_AML.search(r.get("description", "")):
+        return True
+    return bool(RELEVANT.search(name_topics) or DESC_RELEVANT.search(desc))
 
 
 def tags(text: str, table: dict) -> list[str]:
@@ -333,6 +378,7 @@ def _readme(full_name: str) -> str:
 
 
 def _label(r: dict, text: str) -> None:
+    text = _strip(text)   # SOC 1/2/3 reports and fraud alert triage are not security types (19 Nov 2026)
     for field, table in (("types", TYPES), ("labs", LABS), ("weights", WEIGHTS), ("toolkits", TOOLKITS), ("targets", TARGETS),
                          ("protocols", PROTOCOLS)):
         r[field] = ";".join(sorted(set(filter(None, r[field].split(";"))) | set(tags(text, table)),
@@ -350,7 +396,7 @@ def row(it: dict) -> dict:
         "is_fork": it.get("fork", False), "archived": it.get("archived", False),
         "license": ((it.get("license") or {}).get("spdx_id") or ""), "language": it.get("language") or "",
         "topics": ";".join(topics), "description": desc[:240],
-        "queries": "", "types": "", "group": "", "ai_use": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
+        "queries": "", "types": "", "group": "", "purpose": "", "ai_use": "", "labs": "", "weights": "", "toolkits": "", "targets": "", "protocols": "",
         "readme_read": "no", "readme_safeguard": "",
         "size_kb": it.get("size", 0) or 0, "red_flags": "",
     }

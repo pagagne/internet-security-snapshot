@@ -5,6 +5,10 @@
 # (author's decision, 30 Oct 2026; proposal 18 Nov, author's approval 20 Nov); then fixed from
 # the 6 Jan 2027 sweep, so later sweeps compare. Any change is dated here and in the session log. Topics are GitHub's own tags; "in:name,description"
 # searches only names and descriptions, never code.
+# Coverage check (author, 19 Nov 2026): an outside index of open-source offensive AI agent
+# harnesses (MIT licence, credited) is compared with this sweep once a quarter, to find tools the
+# searches miss; it never supplies counts. Its site did not answer Claude's tools on 18 Nov 2026
+# (not worked around), so the author reads it and Claude compares by hand until it can be read.
 # Which list found a repository does not decide its label (31 Oct 2026): every repository is
 # labelled by how it uses AI (ai_use) and by what it does (tool types, from which its group:
 # offensive security, defensive security, dual-use or unclassified;
@@ -38,6 +42,14 @@ offensive:
   - "渗透测试 AI in:description"
   - "渗透 智能体 in:description"
   - "пентест ИИ in:description"
+  # added 2026-11-19 (author's decisions of 19 Nov 2026): agent skills and plugins, bug hunters,
+  # red-team agents; before the 6 Jan 2027 fix of this list
+  - "offensive security skills in:name,description"
+  - "pentest skill Claude in:description"
+  - "Claude Code plugin pentest in:name,description"
+  - "Claude Code plugin security in:name,description"
+  - "AI bug hunter in:name,description"
+  - "red team agent in:name,description"
 defensive:
   - "topic:ai-soc"
   - "topic:blue-team ai"
