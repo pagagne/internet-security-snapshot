@@ -146,3 +146,10 @@ def test_primary_chat_label():
     race = [c for c in made if "Publish results" in " ".join(c)]
     assert race and "primary-chat" in race[0]
     assert "Primary chat only" in " ".join(race[0])
+
+
+def test_annual_plan_shows_when_the_schedule_last_changed():
+    """Author, 19 Nov 2026: the generated plan says which schedule it was built from."""
+    from snapshot import schedule as S
+    assert S.STAMP.read_text().split(" ")[0] == S.schedule_hash()
+    assert f"Built from the schedule as of" in S.PLAN.read_text().splitlines()[2]

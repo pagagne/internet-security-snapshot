@@ -29,6 +29,9 @@ ICS = REPO_ROOT / "docs/schedule/snapshot.ics"
 REVIEWER_ICS = REPO_ROOT / "docs/schedule/reviewer.ics"   # the external reviewer's own feed
 REVIEWER_JSON = REPO_ROOT / "site/reviewer/tasks.json"   # read by the reviewer's desk page
 PLAN = REPO_ROOT / "docs/ANNUAL_PLAN.md"
+# When the schedule last changed (author, 19 Nov 2026: the annual plan shows the date it was built
+# from): "<sha256 of schedule.yaml> <YYYY-MM-DD>", rewritten by `build` only when the file changes.
+STAMP = REPO_ROOT / "docs/schedule/schedule.stamp"
 README = REPO_ROOT / "README.md"
 BEGIN, END = "<!-- schedule:begin -->", "<!-- schedule:end -->"
 OWNERS = ("author", "reviewer", "claude", "github")
@@ -243,8 +246,24 @@ def workflow_timers(root: Path = WORKFLOWS_DIR) -> list[tuple[str, str, list[str
     return out
 
 
+def schedule_hash() -> str:
+    import hashlib
+    return hashlib.sha256((REPO_ROOT / "docs/schedule/schedule.yaml").read_bytes()).hexdigest()
+
+
+def schedule_changed_on() -> str:
+    """Date of the schedule's last change, from the stamp (today if the stamp is missing or stale)."""
+    if STAMP.exists():
+        h, _, d = STAMP.read_text().strip().partition(" ")
+        if h == schedule_hash():
+            return d
+    return dt.date.today().isoformat()
+
+
 def plan(items: list[dict], occ: list[dict]) -> str:
+    changed = dt.date.fromisoformat(schedule_changed_on())
     L = ["# Annual plan: every action item, by who does it", "",
+         f"Built from the schedule as of {changed.day} {changed:%b %Y} (the date of its last change).", "",
          "Generated from `docs/schedule/schedule.yaml` by `python -m snapshot.schedule build`; do not edit by hand.",
          "The same items are in the calendar feeds `docs/schedule/snapshot.ics` (everything) and",
          "`docs/schedule/reviewer.ics` (the external reviewer's items), and each author or Claude item",
@@ -513,6 +532,10 @@ def main(argv=None) -> int:
         return 0
     md, cal = build()
     if a.cmd == "build":
+        h = schedule_hash()
+        if not STAMP.exists() or STAMP.read_text().split(" ")[0] != h:
+            STAMP.write_text(f"{h} {dt.date.today().isoformat()}\n")
+            md, cal = build()
         PLAN.write_text(md + "\n")
         ICS.write_bytes(cal.encode())
         REVIEWER_ICS.write_bytes(build_reviewer_ics().encode())
@@ -524,6 +547,9 @@ def main(argv=None) -> int:
         print(f"wrote {PLAN.relative_to(REPO_ROOT)}, {ICS.relative_to(REPO_ROOT)} and the reviewer feed and the README schedule table"
               + (f"; updated {len(moved)} marked dates in the documents" if moved else ""))
         return 0
+    if not STAMP.exists() or STAMP.read_text().split(" ")[0] != schedule_hash():
+        print("out of date: docs/schedule/schedule.stamp (run: python -m snapshot.schedule build)")
+        return 1
     stale = [p for p, want in ((PLAN, (md + "\n").encode()), (ICS, cal.encode()), (REVIEWER_ICS, build_reviewer_ics().encode()), (REVIEWER_JSON, build_reviewer_json().encode()), (README, build_readme().encode()))
              if not p.exists() or p.read_bytes() != want]
     if stale:
