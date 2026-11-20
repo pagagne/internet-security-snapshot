@@ -1187,8 +1187,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261122
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Apply the 19 Nov tool-sweep rules\, re-run the s
- weep once\, list every change and hand-check 50
+SUMMARY:✅ DONE [Claude] Snapshot: Apply the 19 Nov tool-sweep rules\, re-
+ run the sweep once\, list every change and hand-check 50
 DESCRIPTION:Responsible: Claude\n\nAuthor's decisions 19 Nov 2026. Labels p
  urpose first (offensive when the name or description states attacking as t
  he purpose\, unless a defensive purpose is also stated\; also stops attack

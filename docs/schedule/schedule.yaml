@@ -1824,6 +1824,7 @@ items:
   owner: claude
   title: Apply the 19 Nov tool-sweep rules, re-run the sweep once, list every change and hand-check 50
   date: 2026-11-21
+  done: "19-20 Nov 2026 (moved up): rules in the code with tests; one re-run (research run 2026-11-20T0105Z); private change list and hand check of 50 (exploratory/docs/x25-rules-2026-11-19-check.md); four proposed fixes put to the author"
   details: >
     Author's decisions 19 Nov 2026. Labels purpose first (offensive when the name or description
     states attacking as the purpose, unless a defensive purpose is also stated; also stops attack
