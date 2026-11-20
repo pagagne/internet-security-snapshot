@@ -162,3 +162,11 @@ def test_hexstrike_and_pentagi_copies_count_once():
     copies = x25report.mark_copies(rows)
     assert copies == {"HexStrike": 2, "PentAGI": 1}
     assert [r["name"] for r in rows if r["copy"] != "yes"] == ["a/hexstrike-ai", "d/pentagi", "f/other"]
+
+
+def test_purpose_hand_check_corrections():
+    """Claude's hand check of 19 Nov 2026: EDR products and find-and-fix tools state a defensive purpose."""
+    def it(desc):
+        return G.row(_item("o/x", 1, desc=desc))
+    assert it("We build autonomous penetration testing solutions and proprietary EDR products")["purpose"] == "both"
+    assert it("Open-source AI penetration testing tool to find and fix your app's vulnerabilities")["purpose"] == "both"

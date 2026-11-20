@@ -225,7 +225,8 @@ OFF_PURPOSE = re.compile(r"offensive security|\b(for|to) (attack|hack|exploit|co
                          r"autonomous (pentest\w*|penetration testing|hacking|red.?team\w*|exploit\w*)|\bai (hacker|hacking)\b", re.I)
 DEF_PURPOSE = re.compile(r"\b(defen[cs]e|defensive|blue.?team|protect(s|ion|ing)?|detect(s|ion|ing)? (threats?|attacks?|"
                          r"intrusions?|malware)|incident response|\bsoc (agent|analyst|automation)|\bsiem\b|harden(s|ing)?|"
-                         r"remediat\w*|secure (your|the) )", re.I)
+                         r"remediat\w*|secure (your|the) |\bedr\b|\bxdr\b|find(s|ing)? and fix(es|ing)?|"
+                         r"fix(es|ing)? (\w+ )?vulnerabilit)", re.I)   # EDR, find-and-fix: Claude's hand check, 19 Nov 2026
 
 
 def purpose(r: dict) -> str:
