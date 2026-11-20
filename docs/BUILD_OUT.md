@@ -204,3 +204,10 @@ the inquiry log (`docs/INQUIRIES.md`).
     the choices made, the author's eight steps on 3 Feb 2027, what Claude does after, and what
     the brief asks the critic to do.
 
+42. **The critic should see project documentation, but not the private repository, Drive or
+    mail.** Claude pointed out that the study project also holds private records (correspondence,
+    session logs) and carries primary-chat rules, and that mail and Drive belong to the account.
+    Agreed: a separate, clean review project with copies of the working documents only and
+    critic instructions; the brief forbids mail and Drive, and the author disconnects both for
+    the review. The guide was updated.
+

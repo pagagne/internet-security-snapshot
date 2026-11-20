@@ -3058,14 +3058,17 @@ DESCRIPTION:Responsible: Claude\n\nAuthor's decisions\, 19 Nov 2026 (cards\
  ; guide https://github.com/pagagne/internet-security-snapshot/blob/main/do
  cs/INDEPENDENT_REVIEW.md): an independent\, adversarial review of the whol
  e study after the pilot. Write the one-page brief the author pastes into t
- he reviewing chat: read only the public repository pagagne/internet-securi
- ty-snapshot\; criticise constructively the method\, the race measure\, han
- d-check reliability\, dependence on particular sources and the statistics\
- ; read every public document\, manual part and guide for any trace of priv
- ate conversations or correspondence\; report findings ranked by severity\,
-  each with the file and a suggested fix. No project documents\, private re
- pository\, Drive or mail.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+ he reviewing chat\, and export copies of the working project documents wit
+ h the clean review project's instructions (author\, 19 Nov 2026: a separat
+ e clean project\, not the study project): read only the public repository 
+ pagagne/internet-security-snapshot\; criticise constructively the method\,
+  the race measure\, hand-check reliability\, dependence on particular sour
+ ces and the statistics\; read every public document\, manual part and guid
+ e for any trace of private conversations or correspondence\; report findin
+ gs ranked by severity\, each with the file and a suggested fix. No project
+  documents\, private repository\, Drive or mail.\n\nSource: https://github
+ .com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.y
+ aml
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
@@ -3185,15 +3188,16 @@ SUMMARY:[Paul] Snapshot: Independent adversarial review of the study (new c
  hat\, Claude Fable 5.1)
 DESCRIPTION:Responsible: Paul (author)\n\nStep-by-step guide: https://githu
  b.com/pagagne/internet-security-snapshot/blob/main/docs/INDEPENDENT_REVIEW
- .md. Author's decisions\, 19 Nov 2026: 1) In Claude settings\, turn off "s
- earch and reference past chats" and memory. 2) Open a NEW chat outside the
-  project\, choose Claude Fable 5.1\, and paste the brief (independent-revi
- ew-brief). 3) Let it read the public repository and write its report. 4) S
- ave the report and bring it to the primary chat. 5) Turn the two settings 
- back on. You decide what to act on\; changes to the registered core wait f
- or the 15 Mar review. Feeds the 10 Feb plan evaluation and the 17 Feb docu
- ment lock.\n\nSource: https://github.com/pagagne/internet-security-snapsho
- t/blob/main/docs/schedule/schedule.yaml
+ .md. Author's decisions\, 19 Nov 2026: create a separate\, clean Claude pr
+ oject with the working documents Claude prepared (no correspondence\, sess
+ ion logs\, backup inventory or handover notes)\; turn off past-chat search
+  and memory\; disconnect Gmail and Google Drive for the review\; open a ne
+ w chat there on Claude Fable 5.1 and paste the brief\; save its report and
+  bring it to the primary chat\; then reconnect and switch the settings bac
+ k on. You decide what to act on\; changes to the registered core wait for 
+ the 15 Mar review. Feeds the 10 Feb plan evaluation and the 17 Feb documen
+ t lock.\n\nSource: https://github.com/pagagne/internet-security-snapshot/b
+ lob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
