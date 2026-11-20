@@ -411,3 +411,11 @@ Started 25 Oct 2026 at the author's request.
   sites stay a private coverage check only, as already set on 19 Nov (the incidents list feeds the
   private leads ledger worked from primary reports; the harness index is a quarterly coverage
   check, never counts).
+
+- **20 Nov 2026: Tasks in Gemini (Google blog, 17 Nov; author's find).** Google made its Gemini
+  agent free in six countries for hundreds of millions of people: it calls businesses, signs in to
+  utility portals through the password manager, reads bills, shops and pays with Google Pay, and
+  works with more than 60 apps. It stops for confirmation before buying, allows a spending cap, and
+  lets routine actions be set to "Always allow". Each task runs in its own isolated virtual
+  machine with prompt-injection filtering. **Handled:** an X26 news row (how much people hand
+  over to AI); the "Always allow" setting is the kind of control the measure asks about.
