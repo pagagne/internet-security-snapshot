@@ -1653,8 +1653,8 @@ UID:risk-r18-accounts@2026-11-28@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261128T150000Z
 DTEND:20261128T153000Z
-SUMMARY:[Paul] Snapshot: Confirm two-factor sign-in and offline recovery co
- des on every study account (R18)
+SUMMARY:✅ DONE [Paul] Snapshot: Confirm two-factor sign-in and offline re
+ covery codes on every study account (R18)
 DESCRIPTION:Responsible: Paul (author)\n\nGitHub\, both Gmail accounts\, Go
  ogle Cloud and OSF: two-factor on\, recovery codes printed or stored offli
  ne\, recovery email and phone current (Zenodo signs in with GitHub once cr

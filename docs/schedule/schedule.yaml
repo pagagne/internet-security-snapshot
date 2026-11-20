@@ -2287,6 +2287,7 @@ items:
   date: 2026-11-28
   time: "10:00"
   minutes: 30
+  done: "20 Nov 2026 (author): two-factor, recovery codes and recovery details confirmed on all study accounts, eight days early"
   details: >
     GitHub, both Gmail accounts, Google Cloud and OSF: two-factor on, recovery codes printed or
     stored offline, recovery email and phone current (Zenodo signs in with GitHub once created on
