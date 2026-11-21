@@ -442,4 +442,5 @@ Started 25 Oct 2026 at the author's request.
   (2) SecurityWeek reports the European Commission confirmed an AI-assisted cyberattack that
   disrupted its services. **Handled:** the KEV collector takes in the four flaws on its own;
   Java4Shell stays a watch item; the Commission case is not entered from a newsletter (rule of 1
-  Nov) and reaches the AI-attack log only if the sweep finds the Commission's own statement.
+  Nov) and reaches the AI-attack log only if the sweep finds the Commission's own statement or
+  CERT-EU's report (CERT-EU's threat-intelligence feed is already in the feed list; author's note, 21 Nov).
