@@ -1,4 +1,4 @@
-# Inquiry log (updated 20 Nov 2026)
+# Inquiry log (updated 21 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles
@@ -433,3 +433,13 @@ Started 25 Oct 2026 at the author's request.
   which the standing rules keep out, and SecRepo is one individual's work. The arXiv paper is kept
   as a methods reference: independent support for keeping the author's hand checks on
   Claude-coded cases rather than relying on the AI alone.
+
+- **21 Nov 2026: weekly newsletter review (new mail since the early run of 20 Nov).** (1) CISA
+  added four flaws to its exploited list on 20 Nov, among them the VMware vCenter flaw
+  CVE-2026-123890, which SecurityWeek reports a Chinese state group exploited before the patch
+  existed: an attacked-before-fix case of the kind the race measures count; the others are SAP
+  NetWeaver, Cisco Expressway and Apache Roller. Java4Shell (CVE-2026-114938) is still not listed.
+  (2) SecurityWeek reports the European Commission confirmed an AI-assisted cyberattack that
+  disrupted its services. **Handled:** the KEV collector takes in the four flaws on its own;
+  Java4Shell stays a watch item; the Commission case is not entered from a newsletter (rule of 1
+  Nov) and reaches the AI-attack log only if the sweep finds the Commission's own statement.
