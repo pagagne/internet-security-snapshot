@@ -1,13 +1,13 @@
 {
- "checked": "2026-11-21 02:51 UTC",
+ "checked": "2026-11-22 01:36 UTC",
  "results": {
   "CVE List": {
-   "state": "error",
-   "code": 403
+   "state": "ok",
+   "code": 200
   },
   "CISA KEV": {
-   "state": "error",
-   "code": 403
+   "state": "ok",
+   "code": 200
   },
   "NVD": {
    "state": "ok",
