@@ -1215,8 +1215,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261124
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Cutover check (study no longer depends on one Cl
- aude chat)
+SUMMARY:✅ DONE [Claude] Snapshot: Cutover check (study no longer depends 
+ on one Claude chat)
 DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
  reen for 7 days\; the author has subscribed to the calendar feed\; the Cla
  ude work-queue scheduled task is live\; https://github.com/pagagne/interne

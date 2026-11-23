@@ -713,6 +713,7 @@ items:
 - id: cutover
   owner: claude
   title: Cutover check (study no longer depends on one Claude chat)
+  done: "23 Nov 2026: Schedule green every day since 13 Nov; calendar subscribed; work queue live and leaving primary-chat issues alone; OPERATIONS current; one-off check-ins retired; cutover landing snapshot green"
   date: 2026-11-23
   details: >
     Confirm: the Schedule workflow has run green for 7 days; the author has subscribed to the

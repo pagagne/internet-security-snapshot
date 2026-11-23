@@ -1,4 +1,4 @@
-# Critical documents register (updated 16 Nov 2026)
+# Critical documents register (updated 23 Nov 2026)
 
 The documents the study depends on: what each is for, who keeps it, where every copy lives,
 whether it is a **reference** document (rules and procedures, changed rarely and deliberately) or
@@ -63,6 +63,8 @@ the private repository `pagagne/snapshot-manual`; everything else is in this pub
 | `docs/CORE_FREEZE_DECISIONS.md` | The 21 Dec decisions | Claude, author decides | - | Record | Closed after 21 Dec 2026 |
 | `docs/decisions/*.md` | Decision sheets | Claude | - | Record | Each closes when decided |
 | `docs/PILOT_EXPECTATIONS.md` | Expectations written before the pilot | Author | P `pilot-expectations.md` | Reference | Fixed record of 26 Oct 2026 |
+| `docs/EXPLORATORY_MEASURES.md` | Every exploratory measure (X records) in plain words; generated from `config/exploratory.yaml` | Generated | - | Living | Never (generated) |
+| `docs/INDEPENDENT_REVIEW.md` | Plan for the adversarial review by a separate clean chat (about 3 Feb 2027) | Claude, author approves | - | Reference | 17 Feb 2027 |
 
 ## 4a. Volunteer roles
 
@@ -79,6 +81,7 @@ the private repository `pagagne/snapshot-manual`; everything else is in this pub
 |---|---|---|---|---|---|
 | `docs/PERMISSIONS.md` | Every data permission asked for and given | Claude | - | Living | Never (permissions change) |
 | `docs/TERMS_OF_USE.md` | Each source's terms and request limits | Claude | - | Living | Never (terms change; watched weekly) |
+| `docs/CREDITS.md` | Credit line and basis for every source; generated from `config/credits.yaml` | Generated | README, website | Living | Never (generated) |
 | `config/sources.yaml` | Source switches (publish on or off) | Claude, author approves | - | Reference | With the core, 29 Dec 2026 |
 
 ## 6. Living records (never locked)
@@ -91,6 +94,19 @@ the private repository `pagagne/snapshot-manual`; everything else is in this pub
 | Private `exploratory/docs/RISK_REVIEW.md` | Safeguards and the watch list | Claude | - |
 | Private `exploratory/docs/artifacts/README.md` | Map of files to their Claude copies | Claude | - |
 | `docs/cases/*.md` | Case notes | Claude | - |
+| `docs/BUILD_OUT.md` | Questions put to the author and the answers agreed, by date | Primary chat | - |
+| `docs/WEBSITE.md` | How the project website is built and switched on (`PAGES_ON`, 4 Dec) | Claude | - |
+
+## 6a. Historical reviews (closed; kept as dated snapshots)
+
+Accurate as of their dates; not current rules. Later decisions live in the deviations log, the
+core-freeze decisions and the schedule.
+
+| Document | What it was | Date |
+|---|---|---|
+| `docs/STATISTICAL_REVIEW_2026-10-24.md` | Response to an outside statistical evaluation | 24 Oct 2026 (last touched 5 Nov) |
+| `docs/INDICATOR_REVIEW_2026-10-29.md` | Review of the eight registered indicators | 29 Oct 2026 |
+| `docs/RECONCILIATION_2026-10.md` | Reconciliation with the October "Is AI Cleaning Up the Internet?" assessment | 23 Oct 2026 |
 
 ## 7. The manual
 
