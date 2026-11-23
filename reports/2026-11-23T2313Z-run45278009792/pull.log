@@ -1,0 +1,34 @@
+[pull] kev -> data/raw/2026Q4/dry-run
+::notice title=pull kev::ok in 8s
+[pull] cve -> data/raw/2026Q4/dry-run
+::notice title=pull cve::ok in 183s
+[pull] nvd -> data/raw/2026Q4/dry-run
+::notice title=pull nvd::ok in 109s
+[pull] epss -> data/raw/2026Q4/dry-run
+::notice title=pull epss::ok in 107s
+[pull] sec -> data/raw/2026Q4/dry-run
+[pull] sec search diagnostics: {"\"Item 1.05\" [8-K]": {"total_hits": 4, "hits_read": 4, "forms": {"8-K": 4}, "with_item_1_05": 1}, "\"Item 1.05\" [8-K/A]": {"total_hits": 0, "hits_read": 0, "forms": {}, "with_item_1_05": 0}, "\"Material Cybersecurity Incidents\" [8-K]": {"total_hits": 3, "hits_read": 3, "forms": {"8-K": 3}, "with_item_1_05": 1}, "\"Material Cybersecurity Incidents\" [8-K/A]": {"total_hits": 0, "hits_read": 0, "forms": {}, "with_item_1_05": 0}}
+::notice title=pull sec::ok in 3s
+[pull] radar -> data/raw/2026Q4/dry-run
+::notice title=pull radar::ok in 10s
+[pull] ransomware -> data/raw/2026Q4/dry-run
+::notice title=pull ransomware::ok in 1803s
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+/home/runner/work/internet-security-snapshot/internet-security-snapshot/src/snapshot/collect/vulncheck.py:72: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
+[pull] vulncheck -> data/raw/2026Q4/dry-run
+::notice title=pull vulncheck::ok in 9s
+[pull] apnic -> data/raw/2026Q4/dry-run
+::notice title=pull apnic::ok in 874s
+[pull] manifest: data/raw/2026Q4/dry-run/manifest.json (0 gap(s))

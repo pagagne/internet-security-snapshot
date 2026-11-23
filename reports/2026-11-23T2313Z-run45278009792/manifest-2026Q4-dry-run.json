@@ -1,0 +1,211 @@
+{
+  "quarter": "2026Q4",
+  "run": "dry-run",
+  "started_at": "2026-11-23T22:17:21Z",
+  "finished_at": "2026-11-23T23:10:19Z",
+  "environment": {
+    "python": "3.12.15",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "requirements_lock_sha256": "0e71de9205abf1674abb255055869c65537ca2fd4c5b700b360e414006f56dd0",
+    "packages": {
+      "duckdb": "2.0.0",
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "pyarrow": "26.0.0",
+      "scipy": "1.18.1",
+      "lifelines": "0.30.0",
+      "statsmodels": "0.15.0",
+      "ruptures": "1.1.10"
+    },
+    "git_commit": "dd6a8fc4ad7defdc6727c84b4eacc999fbeab816",
+    "runner_image": "ubuntu24 20261116.376.1"
+  },
+  "files": [
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/known_exploited_vulnerabilities.json",
+      "sha256": "12c9ca4c5350ecacdf22bdce91b4ffcf06b8c8dc9c69b8bfb4c1a21be7a5fe50",
+      "bytes": 1871127,
+      "source_version": "cisagov/kev-data@9c564f4dfa6dab393748a3b37038cde6a11b3585",
+      "retrieved_at": "2026-11-23T22:17:24Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cisa_kev",
+      "file_path": "kev/kev_entries.parquet",
+      "sha256": "2dbad645a11fcd17c705d1af485b3170749d9dd242bbbc45451fe34dec881dc7",
+      "bytes": 55137,
+      "source_version": "cisagov/kev-data@9c564f4dfa6dab393748a3b37038cde6a11b3585",
+      "retrieved_at": "2026-11-23T22:17:29Z",
+      "status": "ok",
+      "note": "1790 entries"
+    },
+    {
+      "source": "cve_org",
+      "file_path": "cve/cve_records.parquet",
+      "sha256": "3304a386ab5eab596b89a50b1cd82c6e720694c1716eaf0a3d2f40c1a5a017fa",
+      "bytes": 39859660,
+      "source_version": "CVEProject/cvelistV5@63980bd7abfa1f64008b7bfd71051ff0687ed8a1",
+      "retrieved_at": "2026-11-23T22:20:32Z",
+      "status": "ok",
+      "note": "430914 records; raw JSON pinned by commit, not copied"
+    },
+    {
+      "source": "nvd",
+      "file_path": "nvd/nvd_cves.parquet",
+      "sha256": "a8265533c1e71c1e7239ad6e953fd110bc9b10e3f664d2c847582ca34bea5758",
+      "bytes": 924962,
+      "source_version": "fkie-cad/nvd-json-data-feeds@baf3b30e1d0c4584744ff45dcecd28a7a1932899",
+      "retrieved_at": "2026-11-23T22:22:21Z",
+      "status": "ok",
+      "note": "30073 CVEs published 2026-10-01..2026-11-22; key=yes"
+    },
+    {
+      "source": "epss",
+      "file_path": "epss/epss_scores.parquet",
+      "sha256": "778e0981fe932259f1bc0b62b8e7d4fc81250f601f1be26dad5f8c2cb9339e1d",
+      "bytes": 45877121,
+      "source_version": "FIRST EPSS model v2026.06.15",
+      "retrieved_at": "2026-11-23T22:24:08Z",
+      "status": "ok",
+      "note": "53 days 2026-10-01..2026-11-22, step 1d; CVE IDs from 2025 on; 0 day(s) missing"
+    },
+    {
+      "source": "sec_edgar",
+      "file_path": "sec/sec_8k_item105.parquet",
+      "sha256": "9802961552d376cf1a05bf6731a8e3e74d8e99ea2f74e733597422377b252807",
+      "bytes": 3385,
+      "source_version": "EDGAR full-text search, retrieved 2026-11-23T22:24:12Z",
+      "retrieved_at": "2026-11-23T22:24:12Z",
+      "status": "ok",
+      "note": "1 filings"
+    },
+    {
+      "source": "sec_edgar",
+      "file_path": "sec/sec_summary.json",
+      "sha256": "dd8e4e781a45b7c659adc1783ebeb00769307716f8e31401ea6bc7e050e01752",
+      "bytes": 806,
+      "source_version": "company_tickers.json, retrieved 2026-11-23T22:24:12Z",
+      "retrieved_at": "2026-11-23T22:24:12Z",
+      "status": "ok",
+      "note": "7992 registrants"
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer7_timeseries.json",
+      "sha256": "31fe4a1cc7412afc3cd557fba9a88cb10f590641c8454770ace8bf2b30557bb3",
+      "bytes": 843,
+      "source_version": "Radar API, retrieved 2026-11-23T22:24:22Z",
+      "retrieved_at": "2026-11-23T22:24:22Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer3_timeseries.json",
+      "sha256": "47afcebee9a3dd2eb3c09e9507f576fd0decdd0f5878047d5f51428031a6edc8",
+      "bytes": 840,
+      "source_version": "Radar API, retrieved 2026-11-23T22:24:22Z",
+      "retrieved_at": "2026-11-23T22:24:22Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/attacks_layer7_by_vertical.json",
+      "sha256": "12a32c76021ea0ee3c7a15f9f5b4a065b640787936a2fe547e31f50a54eac095",
+      "bytes": 801,
+      "source_version": "Radar API, retrieved 2026-11-23T22:24:22Z",
+      "retrieved_at": "2026-11-23T22:24:22Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/http_bot_class_timeseries.json",
+      "sha256": "eba686bad1d2ecd0058bd3989976eaa694669cf3a4e36144a66ffb5f899974c8",
+      "bytes": 1070,
+      "source_version": "Radar API, retrieved 2026-11-23T22:24:22Z",
+      "retrieved_at": "2026-11-23T22:24:22Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "cloudflare_radar",
+      "file_path": "radar/ai_bots_by_user_agent_timeseries.json",
+      "sha256": "87895755d0cd3d0a67dc27dae956ec902527224e293bbf68566d9ff7fcce4e82",
+      "bytes": 2419,
+      "source_version": "Radar API, retrieved 2026-11-23T22:24:22Z",
+      "retrieved_at": "2026-11-23T22:24:22Z",
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "source": "ransomware_live",
+      "file_path": "ransomware/ransomware_counts.parquet",
+      "sha256": "d1063dbb6e3ae40daee731f9e1c549e55c61528bb29d3705ae088f14e887f47a",
+      "bytes": 5456,
+      "source_version": "ransomware.live API, retrieved 2026-11-23T22:54:25Z",
+      "retrieved_at": "2026-11-23T22:54:25Z",
+      "status": "ok",
+      "note": "aggregate counts only, no victim names; 353 rows"
+    },
+    {
+      "source": "vulncheck_kev",
+      "file_path": "vulncheck/vulncheck_kev.parquet",
+      "sha256": "de02f533b3e4eb53d92dbe2821d313b4ad8e712768f07d98a19df1608a4d923b",
+      "bytes": 127317,
+      "source_version": "VulnCheck backup vulncheck-kev-1795473580675892161.zip (sha256 8aba092a817aa242226835ee78828c8dda4a9c9ea8f335a3822bddd08157af20), retrieved 2026-11-23T22:54:33Z",
+      "retrieved_at": "2026-11-23T22:54:33Z",
+      "status": "ok",
+      "note": "kept privately; derived statistics only are published, credited VulnCheck KEV",
+      "kept_privately": true
+    },
+    {
+      "source": "apnic_labs",
+      "file_path": "apnic/apnic_dnssec_by_country.parquet",
+      "sha256": "0866e829c56bdaf2ed379ca7d167404b235b5583cdb982e354c6133af3bdf2ce",
+      "bytes": 22632,
+      "source_version": "stats.labs.apnic.net/dnssec world-map table, retrieved 2026-11-23T23:09:07Z",
+      "retrieved_at": "2026-11-23T23:09:07Z",
+      "status": "ok",
+      "note": "240 countries; 90-day average 2026-08-24..2026-11-21 (quarter not over: latest data); Source: APNIC Labs (stats.labs.apnic.net), used with permission; figures as published.",
+      "kept_privately": true
+    },
+    {
+      "source": "apnic_labs",
+      "file_path": "apnic/apnic_rpki_by_country.parquet",
+      "sha256": "9433fec63969aa15723d69e6bd5d5288bf26ffd1c1a239bdb30dfbc7398cfb9e",
+      "bytes": 15393,
+      "source_version": "stats.labs.apnic.net/rpki world-map table, retrieved 2026-11-23T23:09:07Z",
+      "retrieved_at": "2026-11-23T23:09:07Z",
+      "status": "ok",
+      "note": "232 countries; 112-day sliding 2026-08-03..2026-11-22 (quarter not over: latest data); Source: APNIC Labs (stats.labs.apnic.net), used with permission; figures as published.",
+      "kept_privately": true
+    }
+  ],
+  "source_switches": {
+    "ransomware_live": {
+      "permission": "granted",
+      "collect": true,
+      "publish": true
+    },
+    "vulncheck": {
+      "permission": "granted",
+      "collect": true,
+      "publish": true
+    },
+    "apnic_labs": {
+      "permission": "granted",
+      "collect": true,
+      "publish": true
+    },
+    "shadowserver": {
+      "permission": "awaiting",
+      "collect": false,
+      "publish": false
+    }
+  },
+  "server_pushback": {}
+}
