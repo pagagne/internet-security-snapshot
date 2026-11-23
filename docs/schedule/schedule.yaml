@@ -479,18 +479,6 @@ items:
     pull pieces (APNIC collector, row-count check and release hold, private row counts,
     credits) and the documents for the run and the 2 Dec hand check. No run started by hand.
 
-- id: dry-run-keys-check
-  owner: author
-  title: Check the seven keys the dry run needs are in GitHub
-  date: 2026-11-25
-  time: "10:00"
-  minutes: 5
-  details: >
-    Before the 1 Dec dry run (pre-flight, 23 Nov 2026). Repository Settings > Secrets and
-    variables > Actions > Repository secrets: CLOUDFLARE_TOKEN, MANUAL_REPO_TOKEN, NVD_API_KEY,
-    RANSOMWARE_LIVE_KEY, RCLONE_CONF, SEC_USER_AGENT, VULNCHECK_TOKEN. Names only; GitHub never
-    shows the values. Tell Claude which, if any, is missing (never paste a key into the chat).
-
 - id: baseline-hand-check-2
   owner: author
   title: Baseline-year hand check, part 2 of 5

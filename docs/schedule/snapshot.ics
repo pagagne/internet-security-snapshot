@@ -1486,22 +1486,6 @@ DESCRIPTION:Responsible: Paul (author)\n\nDraft C in the private https://gi
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
-UID:dry-run-keys-check@2026-11-25@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261125T150000Z
-DTEND:20261125T150500Z
-SUMMARY:[Paul] Snapshot: Check the seven keys the dry run needs are in GitH
- ub
-DESCRIPTION:Responsible: Paul (author)\n\nBefore the 1 Dec dry run (pre-fli
- ght\, 23 Nov 2026). Repository Settings > Secrets and variables > Actions 
- > Repository secrets: CLOUDFLARE_TOKEN\, MANUAL_REPO_TOKEN\, NVD_API_KEY\,
-  RANSOMWARE_LIVE_KEY\, RCLONE_CONF\, SEC_USER_AGENT\, VULNCHECK_TOKEN. Nam
- es only\; GitHub never shows the values. Tell Claude which\, if any\, is m
- issing (never paste a key into the chat).\n\nSource: https://github.com/pa
- gagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:credits-block@2026-11-27@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261127
