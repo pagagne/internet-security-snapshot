@@ -352,6 +352,32 @@ private path, `exploratory/docs/...`, and do not link to them.
 
 **Cutover done 23 Nov 2026**, and the cutover landing-page snapshot ran green the same day.
 
+### Why the cutover was needed, and what it does for the study
+
+**Why.** Until the cutover the study leaned on one Claude chat: it held dates in reminders, kept
+track of what was due and did the dated work. Had that chat been lost, closed or hit its limits
+at a bad moment, much of the study's running memory would have gone with it. For a study that
+runs through 2027, that was the largest single point of failure.
+
+**What changed.** The study now runs on things that do not depend on any one conversation: the
+schedule file holds every date; GitHub issues say what is due and who owns it; the Schedule
+workflow opens those issues each day; the daily work queue, a fresh Claude session each morning,
+does the routine tasks that need only the public repository; the author's calendar feed shows
+everything coming; and the written guides (this file and the start-here guide) let any new chat
+pick up from the documents alone.
+
+**What it does for the study.**
+- *Resilience.* If the primary chat is lost, nothing stops: the automatic jobs keep running, the
+  issues keep opening, and a new chat can be made primary and catch up from the records (proved
+  by the handover test of 24 Nov 2026).
+- *Less load on one chat.* Routine work goes to the work queue, so the primary chat keeps to the
+  work that needs judgment, the author's approvals, mail and the private records.
+- *A clear record.* Every task has an issue that opens and closes with a note, so anyone can see
+  what was done and when, which matters for a pre-registered study a reviewer will examine.
+
+In short: before the cutover the study depended on one chat remembering; from the cutover it
+depends on the records, and every chat works from them.
+
 ## Standing rules
 See `docs/HANDOVER.md`. In short: no keys or tokens in chat or issues (GitHub secrets only);
 VulnCheck-derived data private until written permission; ransomware.live aggregates only;
