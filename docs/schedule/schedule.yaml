@@ -479,6 +479,16 @@ items:
     pull pieces (APNIC collector, row-count check and release hold, private row counts,
     credits) and the documents for the run and the 2 Dec hand check. No run started by hand.
 
+- id: run-zero
+  owner: github
+  title: Run zero - early dry run of the quarterly pull (1 Oct to 22 Nov data)
+  date: 2026-11-23
+  done: "23 Nov 2026: started at 22:16 UTC through the API on the author's word (run 45278009792); unscored; the 1 Dec and 15 Dec dry runs stay"
+  details: >
+    Author, 23 Nov 2026: "let's find out what's broken now." An extra, unscored dry run a week
+    before the 1 Dec one, to exercise the new pieces (APNIC latest figures, the row-count check
+    and release hold, VulnCheck) early. Not tagged.
+
 - id: baseline-hand-check-2
   owner: author
   title: Baseline-year hand check, part 2 of 5

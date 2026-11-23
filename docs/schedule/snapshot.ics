@@ -1270,6 +1270,22 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:run-zero@2026-11-23@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+TRANSP:TRANSPARENT
+SUMMARY:✅ DONE [GitHub] Snapshot: Run zero - early dry run of the quarter
+ ly pull (1 Oct to 22 Nov data)
+DESCRIPTION:Responsible: GitHub\n\nAuthor\, 23 Nov 2026: "let's find out wh
+ at's broken now." An extra\, unscored dry run a week before the 1 Dec one\
+ , to exercise the new pieces (APNIC latest figures\, the row-count check a
+ nd release hold\, VulnCheck) early. Not tagged.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
+CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
 UID:baseline-hand-check-1@2026-11-23@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261123T150000Z

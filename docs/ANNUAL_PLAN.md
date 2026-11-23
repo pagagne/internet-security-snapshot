@@ -118,6 +118,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 | Mon 23 Nov 2026 | Claude | Cutover check (study no longer depends on one Claude chat) |
 | Mon 23 Nov 2026 | Claude | Pre-flight check for the 1 Dec dry run |
 | Mon 23 Nov 2026 | Claude | Sync review (three passes; findings to the author) |
+| Mon 23 Nov 2026 | GitHub | Run zero - early dry run of the quarterly pull (1 Oct to 22 Nov data) |
 | Mon 23 Nov 2026, 10:00 ET | Paul | Baseline-year hand check, part 1 of 5 |
 | Mon 23 Nov 2026, 12:41 UTC | GitHub | Landing-page snapshot (cutover) |
 | Tue 24 Nov 2026 | Claude | Wire the race list and the quarterly evaluation into the pull, before the 1 Dec dry run |
@@ -595,6 +596,7 @@ The same list as the calendar feeds, one row per occurrence (repeating items inc
 
 | When | What | Details |
 |---|---|---|
+| Mon 23 Nov 2026 | Run zero - early dry run of the quarterly pull (1 Oct to 22 Nov data) | Author, 23 Nov 2026: "let's find out what's broken now." An extra, unscored dry run a week before the 1 Dec one, to exercise the new pieces (APNIC latest figures, the row-count check and release hold, VulnCheck) early. Not tagged. |
 | Mon 23 Nov 2026, 12:41 UTC | Landing-page snapshot (cutover) |  |
 | Tue 01 Dec 2026, 11:00 UTC | Dry run of the quarterly pull (Oct-Nov data) | Started by the Schedule workflow (December has no cron). Unscored. |
 | Tue 15 Dec 2026, 11:00 UTC | Full dry run with all available sources (1 Oct-14 Dec data) | Started by the Schedule workflow. Second dry run, the closest test of the 1 Jan pilot: every source switched on in config/sources.yaml, in the container if container-pull is done. Unscored; nothing published. |
