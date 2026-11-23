@@ -271,6 +271,7 @@ items:
 - id: gsu-contact
   owner: author
   title: Ask Georgia State Career Services about the reviewer posting
+  done: "23 Nov 2026 (author): Georgia State requested on Handshake; pending the school's approval"
   date: 2026-11-25  # moved from 18 Nov to sit with the Georgia Tech ask (author, 18 Nov 2026)
   details: Same question as UGA; the Handshake account carries over.
 

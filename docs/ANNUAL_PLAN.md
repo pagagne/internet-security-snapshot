@@ -1,6 +1,6 @@
 # Annual plan: every action item, by who does it
 
-Built from the schedule as of 20 Nov 2026 (the date of its last change).
+Built from the schedule as of 23 Nov 2026 (the date of its last change).
 
 Generated from `docs/schedule/schedule.yaml` by `python -m snapshot.schedule build`; do not edit by hand.
 The same items are in the calendar feeds `docs/schedule/snapshot.ics` (everything) and

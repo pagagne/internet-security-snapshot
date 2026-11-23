@@ -1359,8 +1359,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Ask Georgia State Career Services about the review
- er posting
+SUMMARY:✅ DONE [Paul] Snapshot: Ask Georgia State Career Services about t
+ he reviewer posting
 DESCRIPTION:Responsible: Paul (author)\n\nSame question as UGA\; the Handsh
  ake account carries over.\n\nSource: https://github.com/pagagne/internet-s
  ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
