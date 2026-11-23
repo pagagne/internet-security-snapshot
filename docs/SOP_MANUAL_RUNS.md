@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 19 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 23 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -135,6 +135,10 @@ minutes; no scanning or host-level data; no keys in chat.
 5. **If it fails:** run it once more only if the log points to GitHub itself (a timeout or
    "runner" error). Otherwise leave it red and tell Claude; never delete the run (its log is
    evidence).
+6. **If a quarterly pull opens a "Release hold" issue** (a source came back with zero rows, or
+   far fewer than usual): the run is not lost and the hand check can go ahead. Tell Claude,
+   who finds the cause; publishing waits until the author closes the issue, with a note saying
+   why the count is right or what was re-run.
 
 ## 7. If Claude is unavailable
 

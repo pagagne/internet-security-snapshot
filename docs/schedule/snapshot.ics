@@ -1232,6 +1232,21 @@ DESCRIPTION:Responsible: Claude\n\nConfirm: the Schedule workflow has run g
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:dry-run-preflight@2026-11-23@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+TRANSP:TRANSPARENT
+SUMMARY:✅ DONE [Claude] Snapshot: Pre-flight check for the 1 Dec dry run
+DESCRIPTION:Responsible: Claude\n\nAsked by the author on 23 Nov 2026. Sour
+ ce status history\, keys the pull needs\, the new pull pieces (APNIC colle
+ ctor\, row-count check and release hold\, private row counts\, credits) an
+ d the documents for the run and the 2 Dec hand check. No run started by ha
+ nd.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
+ main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2026-11-23@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261123

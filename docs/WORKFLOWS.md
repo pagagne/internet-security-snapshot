@@ -1,4 +1,4 @@
-# The study's workflows (updated 19 Nov 2026)
+# The study's workflows (updated 23 Nov 2026)
 
 Written 27 Oct 2026 at the author's request, from the explanation given that day; every workflow
 was tested the same evening (`exploratory/docs/WORKFLOW_REVIEW_2026-10-27.md`). The <!-- date:workflows-doc -->14 Dec<!-- /date --> workflow review
@@ -52,7 +52,10 @@ GitHub's API. No Run button: it contacts every data source.
 
 1. Downloads every switched-on free source for the quarter (`config/sources.yaml`): CVE
    records, CISA's exploited list (KEV), Vulnrichment, NVD, EPSS, SEC breach filings,
-   Cloudflare Radar, and ransomware.live (permission granted 27 Oct; counts only).
+   Cloudflare Radar, ransomware.live (permission granted 27 Oct; counts only), VulnCheck KEV
+   (permission granted 11 Nov; from the 1 Dec dry run) and, for exploratory X20, APNIC Labs
+   DNSSEC and RPKI by country (leave granted 1 Nov; raw kept private; the whole quarter once it
+   is over, the latest figures before that).
 2. Freezes an exact copy with checksums.
 3. Moves anything not yet allowed to be published (VulnCheck, once added, until it gives written
    permission) out of the public copy.
@@ -61,6 +64,11 @@ GitHub's API. No Run button: it contacts every data source.
 5. Writes a data-quality report (with the published-count check against NVD) and the list for
    the author's hand check, including, since 1 Nov 2026, the race list: every flaw first added
    to CISA KEV in the quarter, with its fix date pre-filled.
+   Since 19 Nov 2026 the report also checks each source's row count against its history (R9):
+   a source with zero rows, or below half its last four quarters' average (scaled by how much
+   of the quarter a window-based source covers), opens a **Release hold** issue assigned to the
+   author. The run carries on so the hand check can start, but publishing waits until the
+   author closes the issue. Until four quarters of history exist only the zero-row rule bites.
 6. Since 1 Nov 2026: evaluates the frozen bundle (the registered measures the free sources
    allow) and saves the result to the private repository until the author's review; the private
    rebuild then makes the report page, its charts and its PDF.

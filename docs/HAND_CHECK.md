@@ -1,4 +1,4 @@
-# Hand-check procedure (updated 19 Nov 2026)
+# Hand-check procedure (updated 23 Nov 2026)
 
 Some items are flagged by code but need a person to confirm them before they count.
 Nothing unverified is ever estimated or filled in: an item that is not confirmed is left
@@ -89,6 +89,9 @@ out and reported as pending.
    app (below).
 5. Only rows marked yes are used. Unreviewed rows are excluded and reported as pending.
 6. The review file, decisions, reviewer and date are published in the quarter's bundle.
+7. If the pull opened a **Release hold** issue (a source with zero or unusually few rows), the
+   hand check still goes ahead on the list as delivered; the hold only stops publishing until
+   the author closes the issue (docs/WORKFLOWS.md, section 1).
 
 ## The Hand Check app
 

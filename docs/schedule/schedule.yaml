@@ -468,6 +468,17 @@ items:
     items and 230 race-list fix dates (about 4 hours); every flagged date is checked (12 Nov
     decision), with the race dates finished in three December sessions.
 
+- id: dry-run-preflight
+  owner: claude
+  primary: true
+  title: Pre-flight check for the 1 Dec dry run
+  date: 2026-11-23
+  done: "23 Nov 2026 (moved up from 27 Nov by the author): sources, keys, new code and documents checked; release hold documented in WORKFLOWS, SOP_MANUAL_RUNS and HAND_CHECK"
+  details: >
+    Asked by the author on 23 Nov 2026. Source status history, keys the pull needs, the new
+    pull pieces (APNIC collector, row-count check and release hold, private row counts,
+    credits) and the documents for the run and the 2 Dec hand check. No run started by hand.
+
 - id: baseline-hand-check-2
   owner: author
   title: Baseline-year hand check, part 2 of 5
