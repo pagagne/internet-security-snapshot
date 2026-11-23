@@ -95,8 +95,14 @@ def count_check(cve: pd.DataFrame, q, years: int = 4, nvd=None) -> tuple[list[st
          "| Year | Our count | NVD count | Difference |", "|---|---|---|---|"]
     L += [f"| {r['year']} | {r['ours']:,} | {r['nvd'] if r['nvd'] is None else format(r['nvd'], ',')} | "
           f"{'-' if r['diff'] is None else format(r['diff'], '+.1%')} |" for r in rows]
-    L += ["", ("- **Flagged:** " + "; ".join(flags)) if flags else "- Counts agree within tolerance.", ""]
-    return L, {"rows": rows, "flags": flags}
+    if all(r["nvd"] is None for r in rows):
+        verdict = "- **Not checked:** NVD's counts were not fetched (offline rebuild, or the lookup failed)."
+    elif flags:
+        verdict = "- **Flagged:** " + "; ".join(flags)
+    else:
+        verdict = "- Counts agree within tolerance" + ("" if all(r["nvd"] is not None for r in rows) else " where NVD gave a count") + "."
+    L += ["", verdict, ""]
+    return L, {"rows": rows, "flags": flags, "checked": any(r["nvd"] is not None for r in rows)}
 
 
 def build(bundle: Path) -> tuple[str, dict]:

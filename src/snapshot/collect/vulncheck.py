@@ -69,8 +69,12 @@ def records(blob: bytes) -> list[dict]:
 
 
 def _min_date(items, key="date_added"):
-    ds = pd.to_datetime([i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)],
-                        utc=True, errors="coerce")
+    raw = [i.get(key) for i in (items or []) if isinstance(i, dict) and i.get(key)]
+    # ISO 8601 first (VulnCheck's own format, with or without fractions and zone); anything else
+    # falls back to element-wise parsing rather than being dropped (run zero, 23 Nov 2026).
+    ds = pd.to_datetime(pd.Series(raw, dtype="object"), utc=True, errors="coerce", format="ISO8601")
+    if ds.isna().any():
+        ds = ds.fillna(pd.to_datetime(pd.Series(raw, dtype="object")[ds.isna()], utc=True, errors="coerce", format="mixed"))
     ds = ds[~ds.isna()]
     return ds.min() if len(ds) else pd.NaT
 
