@@ -1790,6 +1790,24 @@ DESCRIPTION:Responsible: GitHub\n\nStarted by the Schedule workflow (Decemb
 CATEGORIES:GitHub (automatic)
 END:VEVENT
 BEGIN:VEVENT
+UID:revisions-run0-dec1@2026-12-02@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Revision drift - run zero against the 1 Dec dry 
+ run
+DESCRIPTION:Responsible: Claude\n\nAuthor\, 23 Nov 2026. Research task revi
+ sions (client_payload old_run_id = run zero\, 45278009792\; run_id = the 1
+  Dec dry run): how many shared records changed between the two pulls (CISA
+  KEV dates\, CVE and NVD dates and statuses\, EPSS scores for past days) a
+ nd how many disappeared. Results private\; report to the author in plain w
+ ords. If dates are being rewritten\, prepare a "which date counts" questio
+ n for the 21 Dec session.\n\nSource: https://github.com/pagagne/internet-s
+ ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:validation-rerun@2026-12-02@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261202
@@ -2289,6 +2307,20 @@ DESCRIPTION:Responsible: GitHub\n\nStarted by the Schedule workflow. Second
  ng published.\n\nSource: https://github.com/pagagne/internet-security-snap
  shot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
+END:VEVENT
+BEGIN:VEVENT
+UID:revisions-dec1-dec15@2026-12-16@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Revision drift - 1 Dec against 15 Dec dry run
+DESCRIPTION:Responsible: Claude\n\nSame research task (old_run_id = the 1 D
+ ec dry run\, run_id = the 15 Dec dry run). With the 2 Dec result\, gives t
+ wo windows of how much the sources rewrite in a fortnight\; feeds the 21 D
+ ec decision session.\n\nSource: https://github.com/pagagne/internet-securi
+ ty-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:dry-run-full-hand-check@2026-12-16@internet-security-snapshot

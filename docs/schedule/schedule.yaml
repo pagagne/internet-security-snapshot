@@ -489,6 +489,28 @@ items:
     before the 1 Dec one, to exercise the new pieces (APNIC latest figures, the row-count check
     and release hold, VulnCheck) early. Not tagged.
 
+- id: revisions-run0-dec1
+  owner: claude
+  primary: true
+  title: Revision drift - run zero against the 1 Dec dry run
+  date: 2026-12-02
+  details: >
+    Author, 23 Nov 2026. Research task revisions (client_payload old_run_id = run zero,
+    45278009792; run_id = the 1 Dec dry run): how many shared records changed between the two
+    pulls (CISA KEV dates, CVE and NVD dates and statuses, EPSS scores for past days) and how
+    many disappeared. Results private; report to the author in plain words. If dates are being
+    rewritten, prepare a "which date counts" question for the 21 Dec session.
+
+- id: revisions-dec1-dec15
+  owner: claude
+  primary: true
+  title: Revision drift - 1 Dec against 15 Dec dry run
+  date: 2026-12-16
+  details: >
+    Same research task (old_run_id = the 1 Dec dry run, run_id = the 15 Dec dry run). With the
+    2 Dec result, gives two windows of how much the sources rewrite in a fortnight; feeds the
+    21 Dec decision session.
+
 - id: baseline-hand-check-2
   owner: author
   title: Baseline-year hand check, part 2 of 5
