@@ -97,3 +97,24 @@ def test_private_sources_leave_row_counts(tmp_path, monkeypatch):
     assert not (b / "apnic").exists()
     counts, _ = source_counts(b)
     assert counts["apnic/apnic_dnssec_by_country.parquet"] == 2
+
+
+def test_failed_report_holds_release():
+    from snapshot import quality
+    t = quality.hold_issue({"error": "AttributeError: boom"}, "https://example/run")
+    assert t and "report failed" in t[0] and "boom" in t[1]
+    assert quality.hold_issue({"quarter": "2026Q4", "run": "dry-run"}) is None
+
+
+def test_sec_search_diagnostics_do_not_shadow_quarter(tmp_path):
+    import json
+    from snapshot import quality
+    b = tmp_path / "b"
+    (b / "sec").mkdir(parents=True)
+    (b / "manifest.json").write_text(json.dumps({"quarter": "2026Q4", "run": "dry-run", "files": [
+        {"source": "sec_edgar", "status": "ok", "retrieved_at": "2026-11-23T22:30:00Z"}]}))
+    (b / "sec/sec_summary.json").write_text(json.dumps({
+        "filings_item_1_05": 1, "original_8k": 1, "registrants_company_tickers": 7992,
+        "per_1000_registrants": 0.13, "search_diagnostics": {"q1": {"total_hits": 3}}}))
+    md, m = quality.build(b)
+    assert m["window_fraction"] < 1.0 and "Search q1" in md

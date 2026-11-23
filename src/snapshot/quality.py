@@ -264,8 +264,8 @@ def build(bundle: Path) -> tuple[str, dict]:
     if sec.exists():
         s = json.loads(sec.read_text())
         L += ["## 9. SEC 8-K Item 1.05", "", f"- {s['filings_item_1_05']} filings ({s['original_8k']} original 8-Ks) against {s['registrants_company_tickers']:,} registrants: {s['per_1000_registrants']} per 1,000"]
-        for q, d in (s.get("search_diagnostics") or {}).items():
-            L.append(f"- Search {q}: {d.get('total_hits')} hits, {d.get('hits_read')} read, forms {d.get('forms')}, with Item 1.05: {d.get('with_item_1_05')}")
+        for sq, d in (s.get("search_diagnostics") or {}).items():
+            L.append(f"- Search {sq}: {d.get('total_hits')} hits, {d.get('hits_read')} read, forms {d.get('forms')}, with Item 1.05: {d.get('with_item_1_05')}")
         L.append("")
     radar = sorted((bundle / "radar").glob("*.json")) if (bundle / "radar").exists() else []
     if radar:
@@ -445,9 +445,17 @@ HOLD_LABEL = "release-hold"
 def hold_issue(metrics: dict, run_url: str = "") -> tuple[str, str] | None:
     """Title and body of the GitHub issue a hold opens (author, 19 Nov 2026: an issue assigned
     to the author, and publishing waits until it is closed). None when nothing is held."""
+    q, run = metrics.get("quarter"), metrics.get("run")
+    if metrics.get("error"):
+        # A report that failed checked nothing, so it must not let publishing through (run zero,
+        # 23 Nov 2026: the report crashed and the run still looked green).
+        return (f"[Author] Release hold: the data-quality report failed",
+                "The data-quality report crashed, so the row-count, drift and completeness checks "
+                f"did not run.\n\nError: {metrics['error']}\n\nPublishing waits while this issue "
+                "is open. Claude fixes the report and reruns it on the frozen bundle; the author "
+                "closes the issue.\n" + (f"\nRun: {run_url}\n" if run_url else ""))
     if not metrics.get("hold_release"):
         return None
-    q, run = metrics.get("quarter"), metrics.get("run")
     title = f"[Author] Release hold: {q} {run} - a source returned too few rows"
     body = "\n".join([
         f"The {q} {run} pull returned fewer rows than its history allows (risk R9, watch-list W1: "
@@ -473,7 +481,8 @@ def main(argv=None) -> int:
             md += "\n" + "\n".join(drift_section(metrics, prev))
             md += "\n" + "\n".join(history_section(metrics, load_history(args.history)))
         except Exception as exc:  # the report must never hide a failed run
-            md, metrics = f"# Data quality: {b}\n\nReport failed: {type(exc).__name__}: {exc}\n", {"error": str(exc)}
+            md, metrics = f"# Data quality: {b}\n\nReport failed: {type(exc).__name__}: {exc}\n", {"error": f"{type(exc).__name__}: {exc}"}
+            print(f"::error title=Data-quality report failed::{type(exc).__name__}: {exc}")
         (b / "quality.md").write_text(md)
         (b / "quality.json").write_text(json.dumps(metrics, indent=2, default=str))
         if args.hold_issue:
