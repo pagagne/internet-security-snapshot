@@ -538,10 +538,20 @@ items:
   title: Set up the monthly local backup on your computer
   date: 2026-12-03
   details: >
-    Decided 24 Nov 2026: both local routes, folder Documents/Snapshot-backup. (1) In Google
-    Drive for desktop, add the Drive "Snapshot-backup" folder set to "Mirror files", not
-    "Stream files". (2) Create Documents/Snapshot-backup, open the primary chat in the Claude
-    desktop app and connect that folder, so Claude can create the monthly scheduled task.
+    Decided 24 Nov 2026: both local routes, into the folder Documents/Snapshot-backup, run on
+    the 4th of each month in the early evening (the day after the monthly Drive copy on the
+    3rd). Step 1, Google Drive for desktop (the automatic copy): add the Drive
+    "Snapshot-backup" folder and set it to "Mirror files", not "Stream files"; with "Stream
+    files" no real copy is kept on the disk. It stops if Google blocks the Drive backup after
+    1 Feb 2027, and it mirrors deletions, which is why the second route is kept beside it.
+    Step 2, the Claude route: create a folder named Snapshot-backup inside Documents; open the
+    primary chat in the Claude desktop app and connect that folder; send Claude a message from
+    there, and Claude creates the monthly scheduled task straight away. What the task does on
+    the 4th of each month: it saves a complete copy of both repositories with full history, the
+    latest backup files, and a checksum list (SHA256SUMS) so a damaged file can be spotted. It
+    never deletes anything; older copies stay until you remove them yourself. It runs only if
+    the desktop app is open and the computer is awake at that time. First run Fri 4 Dec 2026,
+    checked by Claude the same evening. Details in the private exploratory/docs/BACKUP.md.
 
 - id: local-backup-first-run
   owner: claude
