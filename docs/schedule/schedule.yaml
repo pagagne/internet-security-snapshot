@@ -511,6 +511,28 @@ items:
     2 Dec result, gives two windows of how much the sources rewrite in a fortnight; feeds the
     21 Dec decision session.
 
+- id: google-workspace-addendum-check
+  owner: claude
+  primary: true
+  title: Read Google's Workspace AI Tools Addendum and the API usage dashboard before 1 Feb
+  date: 2027-01-15
+  details: >
+    Google's notice of 24 Nov 2026: from 1 Feb 2027 AI agents must use MCP for Workspace data,
+    and a new AI Tools Addendum applies. Confirm the Drive backup (rclone on GitHub Actions, not
+    an AI agent; scope drive.file) is outside the MCP rule and within the Standard tier; the
+    author checks the usage dashboard for project internet-security-snapshot. Fallback plan:
+    private exploratory/docs/BACKUP.md.
+
+- id: backup-after-google-enforcement
+  owner: claude
+  primary: true
+  title: Check the first weekly backup after Google's 1 Feb enforcement
+  date: 2027-02-08
+  details: >
+    The weekly Backup run of Sun 7 Feb 2027 is the first after Google's 1 Feb 2027 Workspace
+    enforcement. Confirm it reached Drive; if not, switch to the fallback in the private
+    exploratory/docs/BACKUP.md (GitHub artifact plus the monthly local copy) and tell the author.
+
 - id: baseline-hand-check-2
   owner: author
   title: Baseline-year hand check, part 2 of 5

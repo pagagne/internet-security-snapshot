@@ -2987,6 +2987,24 @@ DESCRIPTION:Responsible: Claude\n\nTalk lists of the conferences in the X3
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:google-workspace-addendum-check@2027-01-15@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Read Google's Workspace AI Tools Addendum and th
+ e API usage dashboard before 1 Feb
+DESCRIPTION:Responsible: Claude\n\nGoogle's notice of 24 Nov 2026: from 1 F
+ eb 2027 AI agents must use MCP for Workspace data\, and a new AI Tools Add
+ endum applies. Confirm the Drive backup (rclone on GitHub Actions\, not an
+  AI agent\; scope drive.file) is outside the MCP rule and within the Stand
+ ard tier\; the author checks the usage dashboard for project internet-secu
+ rity-snapshot. Fallback plan: private https://github.com/pagagne/snapshot-
+ manual/blob/main/exploratory/docs/BACKUP.md.\n\nSource: https://github.com
+ /pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:sync-review@2027-01-18@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20270118
@@ -3362,6 +3380,23 @@ DESCRIPTION:Responsible: Paul (author)\n\nhttps://github.com/pagagne/intern
  n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/main
  /docs/schedule/schedule.yaml
 CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:backup-after-google-enforcement@2027-02-08@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Check the first weekly backup after Google's 1 F
+ eb enforcement
+DESCRIPTION:Responsible: Claude\n\nThe weekly Backup run of Sun 7 Feb 2027 
+ is the first after Google's 1 Feb 2027 Workspace enforcement. Confirm it r
+ eached Drive\; if not\, switch to the fallback in the private https://gith
+ ub.com/pagagne/snapshot-manual/blob/main/exploratory/docs/BACKUP.md (GitHu
+ b artifact plus the monthly local copy) and tell the author.\n\nSource: ht
+ tps://github.com/pagagne/internet-security-snapshot/blob/main/docs/schedul
+ e/schedule.yaml
+CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
 UID:sync-review@2027-02-08@internet-security-snapshot

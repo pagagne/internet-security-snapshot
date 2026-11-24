@@ -1,4 +1,4 @@
-# Inquiry log (updated 21 Nov 2026)
+# Inquiry log (updated 24 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles
@@ -444,3 +444,13 @@ Started 25 Oct 2026 at the author's request.
   Java4Shell stays a watch item; the Commission case is not entered from a newsletter (rule of 1
   Nov) and reaches the AI-attack log only if the sweep finds the Commission's own statement or
   CERT-EU's report (CERT-EU's threat-intelligence feed is already in the feed list; author's note, 21 Nov).
+
+- **24 Nov 2026: Google Cloud notice on Workspace API usage limits and AI policies (author's
+  account).** Google lists the study's Cloud project (used for the Drive backup) as using
+  Workspace APIs. Two usage tiers from 24 Nov 2026 (Standard, free; Scaled, paid above free
+  allowances from 1 Apr 2027); from 1 Feb 2027 AI agents must reach Workspace data through MCP;
+  a new Workspace AI Tools Addendum. **Handled:** checked the same day: the backup's usage is
+  tiny (Standard tier, no cost) and it is an ordinary copying program, not an AI agent; BigQuery
+  is not affected. A fallback plan (GitHub as the primary copy, a monthly local copy on the
+  author's computer, a GitHub artifact if Drive uploads fail) is in the private backup notes;
+  checks scheduled 15 Jan and 8 Feb 2027.
