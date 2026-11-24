@@ -801,6 +801,7 @@ items:
 - id: handover-test
   owner: author
   title: Handover test - a new chat in the Claude project, read-only
+  done: "24 Nov 2026: both parts passed (ordinary chat: accurate due list, read-only; Claude Code session: both repositories reached, 295 tests and every check pass, nothing changed). Gaps fixed: START HERE section 5 refreshed; four diagram review stamps renewed; read-only chats noted as unable to list issues"
   date: 2026-11-24
   time: "10:00"
   minutes: 15
