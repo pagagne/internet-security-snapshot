@@ -1,4 +1,4 @@
-# Standard operating procedure: running workflows by hand (updated 23 Nov 2026)
+# Standard operating procedure: running workflows by hand (updated 24 Nov 2026)
 
 **Status:** draft, written 29 Oct 2026 at the author's request. Reviewed by the author with the
 workflow lock list on <!-- date:workflows-review -->20 Dec 2026<!-- /date -->; adopted at the 8 Feb 2027 pilot session; **in force from
@@ -335,6 +335,25 @@ reminder 30 days ahead in the schedule. Keys are checked at least once a year, a
 fails with an "unauthorised" or "forbidden" error. To replace a key: make the new one on the
 service's page, paste it straight into the GitHub secret of the same name (Update secret), tell
 Claude, and let the next scheduled run confirm it. Only the author handles keys.
+
+**The secrets list, checked 24 Nov 2026** (author, from the repository's Settings page; names and
+"last updated" only, never values). Nine repository secrets, all current:
+
+| Secret | Used by | Needed for the quarterly pull | Last updated (as GitHub showed it) |
+|---|---|---|---|
+| `CLOUDFLARE_TOKEN` | Quarterly pull (Cloudflare Radar) | Yes | last month |
+| `MANUAL_REPO_TOKEN` | Quarterly pull and other workflows (saves private results to the private repository) | Yes | 3 weeks ago |
+| `NVD_API_KEY` | Quarterly pull (National Vulnerability Database) | Yes | last month |
+| `RANSOMWARE_LIVE_KEY` | Quarterly pull (ransomware.live) | Yes | last month |
+| `RCLONE_CONF` | Quarterly pull and the Backup (Google Drive) | Yes | last week |
+| `SEC_USER_AGENT` | Quarterly pull (SEC filings: the contact the SEC asks for) | Yes | last month |
+| `VULNCHECK_TOKEN` | Quarterly pull (VulnCheck KEV) | Yes | last week |
+| `GREYNOISE_API_KEY` | Weekly GreyNoise sweep and some research tasks | No | last week |
+| `OPENROUTER_API_KEY` | OpenRouter probe (research task) only | No | last week |
+
+`GITHUB_TOKEN` is supplied by GitHub on every run and does not appear in the list. Every key the
+pull needs was used successfully by run zero on 23 Nov 2026. When a key is added, renamed or
+removed, update this table and the private key register the same day.
 
 **ransomware.live (`RANSOMWARE_LIVE_KEY`).** Used by: the quarterly pull. Managed at: the
 ransomware.live portal (the green "Get your free API Key" button on the API page; sign-in by a
