@@ -533,6 +533,27 @@ items:
     enforcement. Confirm it reached Drive; if not, switch to the fallback in the private
     exploratory/docs/BACKUP.md (GitHub artifact plus the monthly local copy) and tell the author.
 
+- id: local-backup-setup
+  owner: author
+  title: Set up the monthly local backup on your computer
+  date: 2026-12-03
+  details: >
+    Decided 24 Nov 2026: both local routes, folder Documents/Snapshot-backup. (1) In Google
+    Drive for desktop, add the Drive "Snapshot-backup" folder set to "Mirror files", not
+    "Stream files". (2) Create Documents/Snapshot-backup, open the primary chat in the Claude
+    desktop app and connect that folder, so Claude can create the monthly scheduled task.
+
+- id: local-backup-first-run
+  owner: claude
+  primary: true
+  title: First monthly local backup copy (4th of each month, early evening)
+  date: 2026-12-04
+  details: >
+    The monthly scheduled task writes git bundles of both repositories (full history) and the
+    latest backup files into Documents/Snapshot-backup on the author's computer, with
+    SHA256SUMS. Needs the Claude desktop app open. Check that the files arrived and the sums
+    match; see the private exploratory/docs/BACKUP.md.
+
 - id: baseline-hand-check-2
   owner: author
   title: Baseline-year hand check, part 2 of 5
