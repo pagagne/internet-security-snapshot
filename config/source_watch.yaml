@@ -57,6 +57,14 @@ sources:
   - {name: TLDR terms of service, kind: terms, used_by: exploratory X3 newsletters, url: "https://tldr.tech/terms"}
   - {name: beehiiv terms of use (tl;dr sec, Unsupervised Learning), kind: terms, used_by: exploratory X3 newsletters, url: "https://www.beehiiv.com/tou"}
 
+  # ---- added 25 Nov 2026 (X25 test run): terms pages in docs/TERMS_OF_USE.md not yet watched ----
+  - {name: GreyNoise terms, kind: terms, used_by: exploratory X28, url: "https://greynoise.io/terms"}
+  - {name: OSV data page, kind: terms, used_by: core fix dates, url: "https://google.github.io/osv.dev/data"}
+  - {name: Microsoft terms of use (advisories), kind: terms, used_by: core fix dates, url: "https://www.microsoft.com/legal/terms-of-use"}
+  - {name: Cisco terms and conditions (advisories), kind: terms, used_by: core fix dates, url: "https://www.cisco.com/c/en/us/about/legal/terms-conditions.html"}
+  - {name: Palo Alto Networks terms of use (advisories), kind: terms, used_by: core fix dates, url: "https://www.paloaltonetworks.com/legal/terms-of-use.html"}
+  - {name: Siemens ProductCERT terms of use, kind: terms, used_by: core fix dates, url: "https://www.siemens.com/productcert/terms-of-use"}
+
 # Not watched automatically (removed 5 Nov 2026): Substack's terms (https://substack.com/tos) and
 # CISA's terms of use (https://www.cisa.gov/terms-use) answer automated readers with 403, which is
 # not worked around. Both were read by hand on 1 Nov (docs/TERMS_OF_USE.md); Claude re-reads them
