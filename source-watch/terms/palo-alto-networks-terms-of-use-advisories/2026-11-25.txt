@@ -1,0 +1,186 @@
+# Palo Alto Networks terms of use (advisories)
+# https://www.paloaltonetworks.com/legal/terms-of-use.html
+# copied 2026-11-25
+
+Terms of Use - Palo Alto Networks
+Build what's next with Claude. Secure it with Palo Alto Networks. Discover how.
+PHP attacks stopped before Day 1 with Frontier Virtual Patching. Start today.
+Products
+Solutions
+Services
+Industries
+Partners
+Resources
+us
+Accounts & Support
+Demos and Trials
+Search
+All
+Tech Docs
+Palo Alto Networks Terms of Use
+These Website Terms of Use (“Terms”) constitute an agreement between you and Palo Alto Networks, Inc. and its affiliates (“Palo Alto Networks”) and apply to all visitors and users of this website (“Site”). By accessing, visiting or using this Site, you agree to be bound by these Terms. YOU MUST BE AT LEAST 18 YEARS OLD TO USE THIS WEBSITE.
+User Accounts and Profiles
+In order to access certain services or features on our Site, you may be required to create an account or profile. In those situations, and when using or accessing Palo Alto Networks products as part of the Site, additional terms or requirements may apply and those additional terms will become part of your agreement with us. In the event of any conflict between such additional terms and these Terms, the additional terms will control. Any notices or communications sent by Palo Alto Networks will be sent to the contact information you provided during the account registration process unless you have notified us of any change.
+User accounts, profiles, usernames, and passwords must be associated with only one person unless otherwise agreed to by Palo Alto Networks. If you create an account or profile, the information you provide must be truthful and accurate. You may not allow by another person or entity to use your profile nor use the account of another person or entity. You agree to take all reasonable precautions to protect your account information. Palo Alto Networks will not be liable to you or any third party for your failure to prevent unauthorized access to your account. You must notify us immediately of any unauthorized use of your account or associated breach in security that you are aware of.
+We may, in our sole discretion (i) restrict, suspend, or terminate your access to any or all of the Site or (ii) cease to provide and maintain the Site, in whole or in part, at any time, for any or no reason, with or without prior notice, and without liability. Upon doing so, we may retain or delete any information or content that you provided, subject to applicable law.
+Our Site Content
+Our Site contains content owned, operated, licensed, and/or controlled by Palo Alto Networks, which we own copyright, trademark, trade secret, or other proprietary rights in and we retain all such rights to ("Site Content"). Site Content includes, but is not limited to, icons, photographs, white papers, product documentation, as well as, technology overviews, software in both source and binary forms, sample code, scripts, APIs, SDKs, which may be available for download on certain parts of the Site.
+Palo Alto Networks grants you a limited, revocable, non-transferable license under its and other applicable copyrights to (1) download or use one copy of Site Content to a single computer, if applicable, solely for your personal and non-commercial internal use, except as otherwise may be indicated on this Site or (2) if you have an existing business relationship with Palo Alto Networks, you may download Site Content for use in furtherance of, and subject to the terms and conditions of, the provisions of your separate written agreement with Palo Alto Networks. If software, executable files or programs are not accompanied by their own terms and conditions, our End User Agreement shall govern their use.
+This is a license, not a transfer of title, and your use of Site Content is subject to the following restrictions: You may not: (a) modify the Site Content or use them for any commercial purpose, or any public display, performance comparison, sale or rental; (b) decompile, reverse engineer, or disassemble Site Content except and only to the extent permitted by applicable law; (c) remove any copyright or other proprietary notices from the Site Content; (d) transfer the Site Content to another person. Further, you agree to prevent any unauthorized copying of Site Content and you agree that any copy which you make shall retain all copyright and other proprietary notices in the same form and manner as on the original.
+ALL SITE CONTENT, AND THE COMPILATION AND ARRANGEMENT OF THE SITE CONTENT, ARE PROTECTED BY COPYRIGHT AND, WHERE APPLICABLE, OTHER INTELLECTUAL PROPERTY RIGHTS. EXCEPT AS EXPRESSLY SPECIFIED, NO PORTION OF THE INFORMATION ON THIS SITE MAY BE REPRODUCED, MODIFIED, PUBLISHED, UPLOADED, POSTED, TRANSMITTED, OR DISTRIBUTED IN ANY FORM, OR BY ANY MEANS, WITHOUT THE PRIOR WRITTEN PERMISSION OF PALO ALTO NETWORKS, AND NOTHING CONTAINED HEREIN SHALL BE CONSTRUED AS CONFERRING BY IMPLICATION, ESTOPPEL OR OTHERWISE ANY LICENSE OR RIGHT UNDER ANY PATENT, TRADEMARK OR COPYRIGHT OF PALO ALTO NETWORKS OR ANY THIRD PARTY.
+All trademarks , logos, and service marks displayed on our Site are the property of Palo Alto Networks or other third parties.
+User Content
+This Site provides opportunities for you to become a member of different communities (“Community”) and actively participate by creating, providing, sharing and uploading information to the Community such as comments, ideas or suggestions for new or improved software products, technologies, marketing/advertising campaigns or product names, data, articles, documents, discussion forum threads, blog entries, computer code, such as software sample code, source code, scripts, patches, bug fixes, binaries or executables, or other information (collectively "Contributions"). Palo Alto Networks assumes no responsibility or liability over the sharing of user Contributions. Contributions are considered non-confidential and non-proprietary unless expressly agreed otherwise, in writing, by Palo Alto Networks.
+Palo Alto Networks shall have no obligations to you with regard to its use or disclosure of Contributions, and shall have a worldwide, perpetual, irrevocable and fully-paid right to use, reproduce, prepare derivative works of, perform, display, and distribute the Contributions, including any ideas, concepts, know-how or techniques contained in such Contributions, for any and all purposes without limitation, and to authorize others to do so as well, without attribution. Palo Alto Networks may, in its sole discretion, remove or delete any Contribution, for any reason, without prior notice.
+No right or license in connection with any Contribution is granted to any other user unless the contributing user explicitly agrees in writing to grant such right, license or permission to a user or users. You represent and warrant that you either own or have all the necessary intellectual property rights in the Contributions you upload or share to the Community and that your Contributions do not infringe on the patent, copyright or other intellectual property rights of others.
+Rules of Conduct
+In addition to these Terms and our Privacy Statement, which also apply to the Community, you must abide by the following rules of conduct:
+Do not advertise, promote, endorse, or market, directly or indirectly, any third-party commercial products, services, solutions, or other technologies. While you may use the Community to provide supplemental information about your own business that might be of interest to other users (without spamming them), you may do so only after you receive the appropriate consents from other relevant users. If it doesn’t naturally arise from a conversation and need, you cannot mention your own business. Any use of the Community for commercial purposes is solely at your own risk and we assume no liability for such use.
+Do not engage in any unlawful conduct. In particular, do not post, publish, or distribute any defamatory, inappropriate, obscene, infringing or other unlawful material or information.
+Do not engage in personal attacks or any type of "flaming" of other users, i.e. say mean things online to deliberately hurt someone else. Do not "troll," i.e. post topics or opinions that are designed to provoke a negative response from one or more specific users and do not threaten, harass, stalk, defame, or defraud any person or entity.
+Do not use offensive language.
+Do not engage in disruptive, such as persistent off-topic contributions or comments, or statements that might incite other users to violate these Terms or participate in illegal activities.
+Do not contribute content that contains photos, software or other material protected by intellectual property laws, rights of privacy or publicity, or any other applicable law unless you own or have rights to these materials.
+If you don’t have to, do not post any instructions, software or other materials that would allow participants or third parties to harm other users' computers or to inappropriately access software or websites.
+Do not attack, abuse, interfere with, intercept, disrupt, or exploit any users, systems, or services, regardless of how accomplished and notwithstanding anything to the contrary in these Terms, including but not limited to Denial of Service (DoS), monitoring, crawling, spamming, using bots or scripts, or distributing malware (such as viruses, Trojan horses, worms, spyware, or adware).
+Do not falsely impersonate any other person in the forum, including Palo Alto Networks employees or agents.
+Do not distribute unwanted, unsolicited, or harassing mass email or other messages, promotions, advertising, or solicitations (“spam”) or send deceptive or false source-identifying information, including “spoofing” or “phishing.”
+Do not misrepresent the source of anything you contribute.
+Do not, under any circumstances, attempt to collect, store, or publish personally identifiable information (a) without the owner’s knowledge and consent, or (b) of a minor under the age of thirteen.
+Do not disable, disrupt, circumvent, interfere with, or otherwise violate the security of the Site or access any application, system, service, tool, data, account, network, or content without authorization or for unintended purposes.
+Do not engage in or promote any illegal or criminal activity such as child pornography, gambling, or piracy.
+Some participants may post Internet website links as part of their Contribution. Palo Alto Networks is not responsible for the content on the websites associated with these links and reminds you that some content and links on the Internet contain malware or inappropriate material that is not suitable for children or may be offensive to some users.
+You are responsible for all actions you take based on information or advice you receive while online. Use your good judgment when evaluating information provided through the Community or any other communication service. The decision to share information or conduct transactions with anyone is your own; therefore, conduct your own research prior to making any decisions.
+You acknowledge that you may compete with other users in various lines of business. It is therefore imperative that you act in a manner which does not violate any applicable state, federal or international antitrust laws, regulations or applicable orders. Accordingly, you are responsible for obtaining appropriate legal counsel while acting under these Terms. The Community shall not be used for the purpose of bringing about or attempting to bring about any understanding or agreement, written or oral, formal or informal, express or implied, between and among competitors with regard to their prices, terms or conditions of sale, distribution, volume of production, territories, customers, credit terms or marketing practices. Therefore, there shall be no contribution, discussion, communication, agreement or disclosure among users that are actual or potential competitors regarding their prices, discounts or terms or conditions of sale or licensing of products or services, pricing methods, profits, profit margins or cost data, production plans, market shares, sales territories or markets, allocation of territories or customers, or any limitation on the timing, cost or volume of their research, production or sales.
+If you violate these Terms, your access will be terminated immediately and without notice, so be considerate and use the Site for its intended purpose.
+Indemnification
+You agree to defend, indemnify and hold Palo Alto Networks and anyone on its behalf, including but not limited to, all of its owners, managers, officers and employees, harmless against any losses, expenses, costs, claims, damages (including reasonable attorneys’ fees, expert fees and other reasonable costs of litigation) arising from, incurred as a result of, or in any manner related to your breach of these Terms.
+DMCA Notice and Trademark Infringement
+If you believe something on this Site has infringed your intellectual property rights, please provide us with the following information in writing:
+An electronic or physical signature of the intellectual property owner or of a person authorized to act on behalf of the owner;
+Identification of the work that you claim has been infringed;
+Identification of the material that is claimed to be infringing and provide a link (where available) to where it is located;
+Information reasonably sufficient to allow us to contact you, such as your address, telephone number, and email address;
+A statement that you have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or law; and
+A statement made under penalty of perjury, that the above information is accurate, and that you are the owner or are authorized to act on behalf of the owner.
+The above information must be submitted to our DMCA agent at the following:
+Office of the General Counsel
+Palo Alto Networks, Inc.
+3000 Tannery Way
+Santa Clara, CA95054
+Attn: Copyright Agent
+Email: [email address removed]
+Disclaimers and Limitation of Liability
+Although Palo Alto Networks has attempted to provide accurate information on the Site, we assume no responsibility for the accuracy of any such information, nor do we endorse or assume responsibility for any user conduct or content submitted on our Site. Nothing in these Terms requires us to monitor the Site or to modify or remove any materials or information.
+This Site may contain links to third-party sites. Palo Alto Networks provides these links merely as a convenience to you; the inclusion of such links in no way implies an endorsement of the linked site or the products and services referenced on that site. The linked sites are not under the control of Palo Alto Networks, and we are not responsible for the accuracy or reliability of any information, opinions, advice or statements made on these linked sites. Access to any of these linked sites is at the user's own risk.
+You are solely responsible for maintaining the confidentiality of your account, registration, and password information. Palo Alto Networks will not be liable for any harm caused by, or related to, the theft or misappropriation of your user name or password, disclosure of your user name or password, or your authorization of anyone else to use your user name or password.
+We may change the programs or products mentioned at any time without notice. Any mention of third-party products or services is for informational purposes only and does not constitute an endorsement or recommendation.
+The Site and Site Content are subject to applicable federal, state, and local laws, and U.S. export control laws, and may also be subject to the laws of the country where you reside. We reserve the right to investigate and take appropriate action against anyone who, in our sole discretion, is suspected of violating any applicable law, including, without limitation, reporting you to law enforcement authorities.
+UNLESS OTHERWISE SPECIFIED, ALL PRODUCTS, SERVICES, FEATURES AND OTHER SITE CONTENT ON THIS SITE ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING WITHOUT LIMITATION ANY WARRANTY OF MERCHANTABILITY, NONINFRINGEMENT OR FITNESS FOR ANY PARTICULAR PURPOSE.
+IN NO EVENT SHALL PALO ALTO NETWORKS BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING WITHOUT LIMITATION ANY LOST PROFITS, LOST DATA, LOSS OF USE OR COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES) INCLUDING WITHOUT LIMITATION ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF OR INABILITY TO USE OR ACCESS THE SITE OR SITE CONTENT, UNDER ANY CAUSE OF ACTION OR THEORY OF LIABILITY, AND IRRESPECTIVE OF WHETHER SUCH PALO ALTO NETWORKS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OF THE POSSIBILITY OF SUCH DAMAGES.
+Government Use
+All Palo Alto Networks products and publications are commercial in nature. Use, duplication or disclosure by the United States Government is subject to the restrictions set forth in DFARS 252.227 7015 and FAR 52.227 19 or successor provisions regarding government use of commercial software.
+Applicable Law
+This Site is controlled by Palo Alto Networks from its offices within the State of California, United States of America. Palo Alto Networks makes no representation that Site Content, products, or services available via the Site are appropriate or available for use in other locations, and access to them from territories where their content is illegal is prohibited. Those who choose to access this Site from other locations do so on their own initiative and are responsible for compliance with applicable local laws. You may not use or export Site Content in violation of U.S. export laws and regulations. Not all products or programs mentioned may be available in your country. Please contact your local sales representative for information as to products and services available in your country.
+General
+We reserve the right to change these Terms at any time, without notice, at our sole discretion. Please check this page periodically for any updates. These Terms are governed by the laws of the State of California, U.S.A., excluding any conflict of laws rules or principles. If there is any dispute relating to the Site or these Terms, you and Palo Alto Networks agree to the exclusive personal jurisdiction and venue in the state and federal courts of Santa Clara County, State of California, U.S.A. If any provision of these Terms is found to be invalid or unenforceable, that provision will be struck and the remaining provisions will remain in full effect. If you or others violate these Terms and we take no immediate action, this in no way limits or waives our rights, such as our right to take action in the future or in similar situations.
+Get the latest news, invites to events, and threat alerts
+Enter your business email now to subscribe!
+Sign up
+By submitting this form, I understand my personal data will be processed in accordance with
+Palo Alto Networks Privacy Statement and Terms of Use.
+Sign up
+Products and Services
+AI-Powered Network Security Platform
+Secure AI by Design
+Prisma AIRS
+AI Access Security
+Cloud Delivered Security Services
+Advanced Threat Prevention
+Advanced URL Filtering
+Advanced WildFire
+Advanced DNS Security
+Enterprise Data Loss Prevention
+Enterprise IoT Security
+Medical IoT Security
+Industrial OT Security
+SaaS Security
+Next-Generation Firewalls
+Hardware Firewalls
+Software Firewalls
+Strata Cloud Manager
+SD-WAN for NGFW
+PAN-OS
+Panorama
+Secure Access Service Edge
+Prisma SASE
+Application Acceleration
+Autonomous Digital Experience Management
+Enterprise DLP
+Prisma Access
+Prisma Browser
+Prisma SD-WAN
+Remote Browser Isolation
+SaaS Security
+AI-Driven Security Operations Platform
+Cloud Security
+Cortex Cloud
+Application Security
+Cloud Posture Security
+Cloud Runtime Security
+Prisma Cloud
+AI-Driven SOC
+Cortex XSIAM
+Cortex XDR
+Cortex XSOAR
+Cortex Xpanse
+Unit 42 Managed Detection & Response
+Managed XSIAM
+Observability
+Cortex XCOR
+Next-Generation Identity Security
+Privileged Access Management
+Identity and Access Management
+Endpoint Privilege Manager
+Identity Governance
+Workforce Password Management
+Agentic Identities
+Secrets Management
+Unified Secrets Governance
+Application Credentials Delivery
+Vendor Privileged Access
+Threat Intel and Incident Response Services
+Prepare for Emerging Risks
+Strengthen Your Defenses
+Build Your Security Strategy
+Understand the Adversary
+Respond to a Cyber Attack
+Company
+About Us
+Careers
+Contact Us
+Corporate Responsibility
+Customers
+Investor Relations
+Location
+Newsroom
+Popular Links
+Blog
+Communities
+Content Library
+Cyberpedia
+Event Center
+Manage Email Preferences
+Products A-Z
+Product Certifications
+Report a Vulnerability
+Sitemap
+Tech Docs
+Unit 42
+Do Not Sell or Share My Personal Information
+Privacy
+Trust Center
+Terms of Use
+Documents
+Copyright © 2026 Palo Alto Networks. All Rights Reserved
+EN Select your language

@@ -1,0 +1,134 @@
+# OSV data page
+# https://google.github.io/osv.dev/data
+# copied 2026-11-25
+
+Data sources | OSV Skip to main content Menu Expand (external link) Document Search Copy Copied
+Introduction to OSV
+API API Quickstart
+POST /v1/query
+POST /v1/querybatch
+GET /v1/vulns/{id}
+GET /v1experimental/importfindings
+POST /v1experimental/ determineversion
+POST /v1experimental/ubuntu/binary-to-source
+Data sources New Data Source via REST API
+FAQ
+Third Party Tools
+Contributing Architecture
+Properties of a High Quality OSV Record
+OSV Schema
+OSV-Scanner
+OSV-Linter
+This site uses Just the Docs , a documentation theme for Jekyll.
+Search OSV
+OSV.dev on GitHub
+Data sources
+Table of contents Current data sources
+Converted data
+Covered Ecosystems
+Data Quality
+Data dumps Full database download
+Per-ecosystem downloads
+Downloading recent changes
+Ecosystem naming
+Contributing Data
+Current data sources
+This is an ongoing project. We encourage open source ecosystems to adopt the Open Source Vulnerability format to enable open source users to easily aggregate and consume vulnerabilities across all ecosystems. See our blog post for more details.
+The following ecosystems have vulnerabilities encoded in this format:
+GitHub Advisory Database ( CC-BY 4.0 )
+PyPI Advisory Database ( CC-BY 4.0 )
+Go Vulnerability Database ( CC-BY 4.0 )
+Rust Advisory Database ( CC0 1.0 )
+Drupal Advisory Database ( MIT )
+Global Security Database ( CC0 1.0 )
+OSS-Fuzz ( CC-BY 4.0 )
+Rocky Linux ( BSD )
+AlmaLinux ( MIT )
+Haskell Security Advisories ( CC0 1.0 )
+RConsortium Advisory Database ( Apache 2.0 )
+OpenSSF Malicious Packages ( Apache 2.0 )
+Python Software Foundation Database ( CC-BY 4.0 )
+Bitnami Vulnerability Database ( Apache 2.0 )
+Ubuntu ( CC-BY-SA 4.0 )
+opam (OCaml package manager) ( CC0 1.0 )
+Erlang Ecosystem Foundation CNA ( CC-BY 4.0 )
+Android ( CC-BY 4.0 )
+Azure Linux ( MIT )
+BellSoft ( MIT )
+Chainguard / Wolfi ( CC-BY-NC-ND 4.0 / Chainguard License for Commercial Scanners )
+CleanStart ( Apache 2.0 )
+Curl ( MIT )
+Docker Hardened Images ( Apache 2.0 )
+Julia Security Advisories ( CC-BY 4.0 )
+Red Hat Security Data ( CC-BY 4.0 )
+Red Hat Lightwell ( CC-BY 4.0 )
+V8 / Chromium ( Apache 2.0 )
+Converted data
+Additionally, the OSV.dev team maintains a conversion pipeline for:
+Debian Security Advisories , using the conversion tools here .
+Alpine SecDB ( CC-BY-SA 4.0 ), using the conversion tools here ,
+NVD CVEs for open source software using the conversion tools here
+Covered Ecosystems
+Between the data served in OSV and the data converted to OSV the following ecosystems are covered.
+AlmaLinux
+Alpine
+Android
+Bitnami
+crates.io
+Curl
+Debian GNU/Linux
+Git ( including C/C++ )
+GitHub Actions
+Go
+Haskell
+Hex
+Julia
+Linux kernel
+Maven
+npm
+NuGet
+opam (OCaml package manager)
+OSS-Fuzz
+Packagist
+Pub
+PyPI
+Python
+R (CRAN and Bioconductor)
+Rocky Linux
+Root
+RubyGems
+SwiftURL
+Ubuntu OS
+Data Quality
+The quality of the data in OSV.dev is very important to us . The minimum quality bar for OSV records acceptable for import is documented here
+Data dumps
+For convenience, these sources are aggregated and continuously exported to a GCS bucket maintained by OSV: gs://osv-vulnerabilities
+Full database download
+This bucket contains a zip file with all vulnerabilities across all ecosystems (including withdrawn records) at gs://osv-vulnerabilities/all.zip . This is the easiest way to download the entire OSV database.
+Per-ecosystem downloads
+Individual vulnerability records can be found at gs://osv-vulnerabilities/<ECOSYSTEM>/<ID>.json . A zip containing all vulnerabilities for each ecosystem is available at gs://osv-vulnerabilities/<ECOSYSTEM>/all.zip . Vulnerabilities without an ecosystem (typically withdrawn ones) are exported to the gs://osv-vulnerabilities/[EMPTY]/ directory.
+E.g. for PyPI vulnerabilities:
+# Or download over HTTP via https://storage.googleapis.com/osv-vulnerabilities/PyPI/all.zip
+gcloud storage cp gs://osv-vulnerabilities/PyPI/all.zip .
+Downloading recent changes
+To efficiently download only new or updated records, you can use the modified_id.csv files. These files list vulnerabilities by their last modified time.
+Two types of CSV files are provided:
+A top-level file: Located at gs://osv-vulnerabilities/modified_id.csv , this file contains a list of all modified vulnerabilities across all ecosystems.
+Per-ecosystem files: Each ecosystem directory (e.g., gs://osv-vulnerabilities/PyPI/ ) contains its own modified_id.csv file, listing only the vulnerabilities for that specific ecosystem.
+Format and Usage
+The format of the top-level CSV is <iso modified date>,<ecosystem_dir>/<id> . The per-ecosystem files omit the <ecosystem_dir>/ prefix.
+For example (from the top-level file):
+2024-08-15T00:05:00Z,PyPI/PYSEC-2021-123
+2024-08-15T00:01:00Z,Go/GO-2022-0123
+2024-08-14T12:00:00Z,npm/1234
+The CSV files are sorted in reverse chronological order. This allows you to stream the file and stop processing when you encounter a timestamp that you have already seen, avoiding the need to parse the entire file.
+Ecosystem naming
+Some ecosystems contain a : separator in the name (e.g. Alpine:v3.17 ). For these ecosystems, the data dump will always contain an ecosystem directory without the :.* suffix (e.g. Alpine ). This will contain all the advisories of the ecosystem with the same prefix (e.g. All Alpine:.* ).
+A list of all current ecosystems is available at gs://osv-vulnerabilities/ecosystems.txt
+Note: OSV.dev has stopped exporting entries for ecosystems with prefixes (e.g. All Alpine:.* ). Please refer only to the main ecosystem, the one without the :.* suffix, for all vulnerabilities of that ecosystem.
+Contributing Data
+If you work with a project such as a Linux distribution and would like to contribute your security advisories, please follow the steps and data licensing requirements outlined in the New Data Source page.
+Data can be supplied either through a public Git repository, to REST API endpoints , or through a public GCS bucket.
+Table of contents
+New Data Source
+This site uses Just the Docs , a documentation theme for Jekyll.

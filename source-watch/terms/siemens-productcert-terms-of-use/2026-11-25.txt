@@ -1,0 +1,77 @@
+# Siemens ProductCERT terms of use
+# https://www.siemens.com/productcert/terms-of-use
+# copied 2026-11-25
+
+Advisories Terms of Use - Siemens ProductCERT
+Skip to content
+Advisories Terms of Use
+Home
+News
+Hall of Thanks
+Vulnerability Handling and Disclosure Process
+Advisories Terms of Use
+Advisory Policy
+Initializing search
+Home
+News
+News
+News
+Archive
+Archive
+2026
+2025
+2024
+2023
+2022
+2021
+2020
+2019
+2018
+Hall of Thanks
+Vulnerability Handling and Disclosure Process
+Advisories Terms of Use
+Advisories Terms of Use
+Table of contents
+Permission for Use
+Modification and Redistribution
+Purpose of Use
+Mandatory Link to Original
+Revocation Clause
+Intellectual Property and Other Terms
+Mailing List
+Advisory Policy
+Table of contents
+Permission for Use
+Modification and Redistribution
+Purpose of Use
+Mandatory Link to Original
+Revocation Clause
+Intellectual Property and Other Terms
+Mailing List
+Special Provisions for Use of Siemens Security Advisory
+The following special provisions for the use of Siemens Security Advisories and Security Bulletins (the "Special Provisions") apply in addition to and partially amend the Siemens Terms of Use :
+Permission for Use
+Siemens grants third parties the right to use, redistribute, and modify the Siemens Security Advisories and Security Bulletins published by Siemens’ ProductCERT services , in accordance with these Special Provisions. This includes permission for commercial use.
+Modification and Redistribution
+Third parties are allowed to modify the text of the Siemens Security Advisories as well as of the Security Bulletins and redistribute the modified content. However, the following conditions must be met:
+Any modifications must be technically correct.
+Modifications must be in line with Siemens' recommendations given in the respective Security Advisory or Security Bulletin.
+Purpose of Use
+The right to use, redistribute, and modify the Siemens Security Advisories and Security Bulletins is limited to the purpose of informing the third parties' own organization, its affiliates, or its customers about specific Siemens Security Advisories or Security Bulletins.
+Mandatory Link to Original
+Regardless of any modifications made, all redistributed versions of the Security Advisories and Security Bulletins must include a link to the original text on the Siemens website, as a reference to the authoritative and most up-to-date source of the information.
+Revocation Clause
+Siemens reserves the right to revoke the permission granted under these Special Provisions at any time in case of violations of these Special Provisions or any other provisions of the Siemens Terms of Use.
+Intellectual Property and Other Terms
+All other provisions of the Siemens Terms of Use, including those related to Intellectual Property and to Export Control Regulations, shall remain in effect and applicable.
+Mailing List
+If delivery to your mail address permanently fails, we may unsubscribe you without further notice.
+Previous
+Vulnerability Handling and Disclosure Process
+Next
+Advisory Policy
+© Siemens 1996 - 2026
+Corporate Information
+Privacy Policy
+Terms of Use
+Third-party Software
