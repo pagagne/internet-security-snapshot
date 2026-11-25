@@ -454,3 +454,19 @@ Started 25 Oct 2026 at the author's request.
   is not affected. A fallback plan (GitHub as the primary copy, a monthly local copy on the
   author's computer, a GitHub artifact if Drive uploads fail) is in the private backup notes;
   checks scheduled 15 Jan and 8 Feb 2027.
+
+- **24 Nov 2026: BabidiGhost, a jailbroken AI agent used against European organisations
+  (author, via the hackingincidents.ai entry).** Fact-checked the same day. The primary report
+  exists: SOCRadar Threat Research, "BabidiGhost: An AI-Augmented Cybercrime Operation", 20 Nov
+  2026. A French-speaking, low-skill operator ran an agent from the BlackHatSect0r toolchain
+  (documented by SOCRadar on 16 Sep 2026) for nine days, 6 to 14 Nov 2026, against more than 50
+  organisations and datasets, mostly in Belgium, France and Switzerland. No zero-day was used:
+  the agent got in through an exposed analytics tool (Metabase), readable secrets, a weak storage
+  password and an endpoint without authentication. The tracker's entry is accurate in outline but
+  weaker than the primary report: it cites only a secondary blog, grades the case "suspected",
+  and leaves out the municipalities. **Would the study pick it up?** Not in the core measures: no
+  CVE is named, there is no ransomware, and the victims are European organisations that do not
+  file with the SEC. If the Metabase flaw turns out to be a listed, exploited CVE, the core would
+  count the flaw but would not know an AI agent was involved. It does fit the exploratory AI-attack
+  log, entered from SOCRadar's primary report only. A case for the claim that AI mostly speeds up
+  known, unpatched weaknesses rather than finding new ones. Nothing goes in a report.
