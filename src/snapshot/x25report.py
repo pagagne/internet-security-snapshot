@@ -19,6 +19,7 @@ import collections
 import csv
 import re
 import sys
+import textwrap
 from pathlib import Path
 
 from .research.github_tools import AI_USE, AI_USE_NAMES, GROUP_NAMES, GROUPS, OFFENSIVE, DUAL
@@ -134,14 +135,23 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    from matplotlib.ticker import MaxNLocator
     import matplotlib.ticker
     out = root / FIGS
     out.mkdir(parents=True, exist_ok=True)
     names = []
 
     def save(fig, n):
-        fig.text(0.5, 0.005, NOTE, ha="center", va="bottom", fontsize=8, color="#555555")
-        fig.tight_layout(rect=(0, 0.03, 1, 1)); fig.savefig(out / n); plt.close(fig); names.append(n)
+        # The note is wrapped to the figure's width (it was cut off at both edges; X25 test run, 25 Nov 2026).
+        width = max(60, int(fig.get_figwidth() * 15))
+        note = textwrap.fill(NOTE, width)
+        lines = note.count("\n") + 1
+        fig.text(0.5, 0.005, note, ha="center", va="bottom", fontsize=8, color="#555555")
+        for ax in fig.axes:   # whole projects only: no 0.5 or 2.5 gridlines on small counts
+            if not hasattr(ax, "get_zlim"):
+                ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+        fig.tight_layout(rect=(0, 0.012 + 0.03 * lines * 4.8 / fig.get_figheight(), 1, 1))
+        fig.savefig(out / n); plt.close(fig); names.append(n)
 
     # 1. How the tools use AI (the author's question)
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.8), dpi=130, gridspec_kw={"width_ratios": [1, 1.3]})
@@ -242,9 +252,13 @@ def charts(date: str, s: dict, root: Path) -> list[str]:
     a1.set_xticks(list(x), ["Open-weight model", "Closed model", "Runs models locally"])
     a1.set_xlabel("Kind of AI the project names"); a1.set_ylabel("Projects naming it")
     a1.set_title("Open-weight or closed, by group"); a1.legend(frameon=False); a1.grid(axis="y", alpha=.3)
+    # One shared, sorted quarter axis (categories in first-seen order put 2025 Q1 last when the first
+    # group had too few projects that quarter; fixed in the X25 test run, 25 Nov 2026).
+    allq = sorted({q for k in SIDES for q in s["open_share"][k][0]})
     for k in SIDES:
         q, vals = s["open_share"][k]
-        a2.plot(q, vals, marker="o", lw=2, color=COLOURS[k], label=GROUP_NAMES[k])
+        a2.plot([allq.index(x) for x in q], vals, marker="o", lw=2, color=COLOURS[k], label=GROUP_NAMES[k])
+    a2.set_xticks(range(len(allq)), allq)
     a2.set_ylim(0, 100); a2.set_xlabel("Quarter the project was created")
     a2.set_ylabel("% naming an open-weight or local model"); a2.set_title("Share using open-weight AI, by quarter")
     a2.tick_params(axis="x", labelrotation=45, labelsize=8); a2.legend(frameon=False); a2.grid(axis="y", alpha=.3)
