@@ -1452,8 +1452,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261125
 DTEND;VALUE=DATE:20261126
 TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Test run of every X25 piece before the pilot (Gi
- tHub and Hugging Face sweeps\, charts\, privacy\, terms)
+SUMMARY:✅ DONE [Claude] Snapshot: Test run of every X25 piece before the 
+ pilot (GitHub and Hugging Face sweeps\, charts\, privacy\, terms)
 DESCRIPTION:Responsible: Claude\n\nAuthor's request 30 Oct 2026: a full reh
  earsal before the pilot\, after the refined searches were approved (early\
  , 1 Nov) and before the 1 Dec dry run. Run the Research tasks github_tools

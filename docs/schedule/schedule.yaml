@@ -2018,6 +2018,7 @@ items:
   owner: claude
   title: Test run of every X25 piece before the pilot (GitHub and Hugging Face sweeps, charts, privacy, terms)
   date: 2026-11-25
+  done: "25 Nov 2026: both sweeps green, lists in Drive, no usernames public; three chart faults fixed; six terms pages added to the watch (issue 94 closed)"
   details: >
     Author's request 30 Oct 2026: a full rehearsal before the pilot, after the refined searches
     were approved (early, 1 Nov) and before the 1 Dec dry run. Run the Research tasks github_tools and
