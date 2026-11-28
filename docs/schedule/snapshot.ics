@@ -1887,6 +1887,52 @@ DESCRIPTION:Responsible: Paul (author)\n\nDecided 24 Nov 2026: both local r
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
+UID:witness-select@2026-12-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+TRANSP:TRANSPARENT
+SUMMARY:[Paul] Snapshot: Choose and confirm the pilot witness (applications
+  closed 2 Dec)
+DESCRIPTION:Responsible: Paul (author)\n\nBrought forward (author\, 28 Nov 
+ 2026): applications close Wed 2 Dec (end of day ET)\, choose Thu 3 Dec\, c
+ onfirm by Fri 4 Dec\, getting-started call Sat 5 or Sun 6 Dec\, all before
+  the author's travel with patchy internet (7-18 Dec). Announced on the rol
+ e page and the README (28 Nov)\, on the Handshake posting (author changes 
+ the close date) and by email to the three applicants so far. Claude sorts 
+ the applications on 2 Dec evening by the posting's criteria\, without judg
+ ing people. Choose one\, and confirm by 4 Dec. The witness must not be the
+  person later chosen as the independent reviewer\, and the two never work 
+ together. Tell Claude\, who logs it (role only in public files) and sends 
+ the getting-started notes. Every applicant is answered either way by 4 Dec
+ . If nobody suitable applied (author\, 13 Nov 2026): open a late window to
+  about 20 Dec (repost on Handshake after it closes\; also students who wri
+ te directly). A late witness starts with the 1 Jan pilot and reviews the 1
+ 5 Dec dry run afterwards from its public logs.\n\nSource: https://github.c
+ om/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yam
+ l
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:pilot-witness-guide@2026-12-03@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the pilot witness guide (ready for the 5-6
+  Dec getting-started call)
+DESCRIPTION:Responsible: Claude\n\nDecided 28 Nov 2026 (BUILD_OUT item 56).
+  One self-contained page: each run's steps in the registered plan's own wo
+ rds with links to the public evidence\; a checksum check in the browser\; 
+ notes saved in the witness's browser and exported as a file\; an "anything
+  else" box on every step\; nothing stored on the study's side. Optional fo
+ r the witness. Shown to the author by 4 Dec\, offered in the 5-6 Dec getti
+ ng-started call\, first used at the 15 Dec test run. Public material only:
+  no private data\, no exploratory figures.\n\nSource: https://github.com/p
+ agagne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:container-pull@2026-12-03@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261203T150000Z
@@ -1939,26 +1985,6 @@ DESCRIPTION:Responsible: Claude\n\nThe monthly scheduled task writes git bu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:pilot-witness-guide@2026-12-04@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261204
-DTEND;VALUE=DATE:20261205
-TRANSP:TRANSPARENT
-SUMMARY:[Claude] Snapshot: Build the pilot witness guide (for the 6 Dec go-
- live review)
-DESCRIPTION:Responsible: Claude\n\nDecided 28 Nov 2026 (BUILD_OUT item 56).
-  One self-contained page: each run's steps in the registered plan's own wo
- rds with links to the public evidence\; a checksum check in the browser\; 
- notes saved in the witness's browser and exported as a file\; an "anything
-  else" box on every step\; nothing stored on the study's side. Optional fo
- r the witness. Shown to the author at the 6 Dec review\, offered in the 10
-  Dec onboarding call\, first used at the 15 Dec test run. Public material 
- only: no private data\, no exploratory figures.\n\nSource: https://github.
- com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
- ml
-CATEGORIES:Claude
-END:VEVENT
-BEGIN:VEVENT
 UID:landing-page@2026-12-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261204T150000Z
@@ -1992,6 +2018,27 @@ DESCRIPTION:Responsible: Paul (author)\n\nOrganization: "Internet Security
  n/exploratory/docs/reviewer/HANDSHAKE_POSTING.md)\, live 4 Jan - 15 Feb 20
  27.\n\nSource: https://github.com/pagagne/internet-security-snapshot/blob/
  main/docs/schedule/schedule.yaml
+CATEGORIES:Author
+END:VEVENT
+BEGIN:VEVENT
+UID:witness-onboarding@2026-12-05@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART:20261205T150000Z
+DTEND:20261205T160000Z
+SUMMARY:[Paul] Snapshot: Pilot witness getting started (one video call\; Cl
+ aude prepares the notes)
+DESCRIPTION:Responsible: Paul (author)\n\nBefore the author's travel (7-18 
+ Dec\, internet some days only): hold the call on Sat 5 or Sun 6 Dec at a t
+ ime that suits the witness's time zone\; 5 Dec 10:00 ET is a placeholder. 
+ 2 to 3 hours for the witness in all. Claude prepares a short guide and the
+  pilot witness guide page (BUILD_OUT item 56): where the run logs\, the fr
+ ozen data copies and the quality reports are\; what the dry run and the pi
+ lot do and when\; what the note by 5 Feb should cover (problems seen\; the
+  timing of locking the procedures). The witness gets read access to what a
+ ny member of the public can see\, plus the hand-check sample the author ch
+ ooses to show\; never private data\, keys or the private repository.\n\nSo
+ urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
+ /schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
@@ -2058,29 +2105,6 @@ DESCRIPTION:Responsible: Claude\n\nhttps://github.com/pagagne/internet-secu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
-UID:witness-select@2026-12-08@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART;VALUE=DATE:20261208
-DTEND;VALUE=DATE:20261209
-TRANSP:TRANSPARENT
-SUMMARY:[Paul] Snapshot: Choose and confirm the pilot witness (applications
-  closed 7 Dec)
-DESCRIPTION:Responsible: Paul (author)\n\nDuring the RV trip (7-19 Dec\; au
- thor\, 12 Nov 2026: internet some days only): a reading task that can be d
- one from the road. Claude sorts the applications on 7 Dec. Read the applic
- ations (Claude can sort them by the posting's criteria\, without judging p
- eople)\, choose one\, and confirm by 9 Dec. The witness must not be the pe
- rson later chosen as the independent reviewer\, and the two never work tog
- ether. Tell Claude\, who logs it (role only in public files) and sends the
-  getting-started notes. If nobody suitable applied (author\, 13 Nov 2026):
-  open a late window to about 20 Dec (repost on Handshake after it closes\;
-  also students who write directly). A late witness starts with the 1 Jan p
- ilot and reviews the 15 Dec dry run afterwards from its public logs.\n\nSo
- urce: https://github.com/pagagne/internet-security-snapshot/blob/main/docs
- /schedule/schedule.yaml
-CATEGORIES:Author
-END:VEVENT
-BEGIN:VEVENT
 UID:baseline-hand-check-3@2026-12-09@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261209T150000Z
@@ -2137,25 +2161,6 @@ DESCRIPTION:Responsible: GitHub\n\nCron in https://github.com/pagagne/inter
  s visibly if a file or figure differs.\n\nSource: https://github.com/pagag
  ne/internet-security-snapshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:GitHub (automatic)
-END:VEVENT
-BEGIN:VEVENT
-UID:witness-onboarding@2026-12-10@internet-security-snapshot
-DTSTAMP:20261024T000000Z
-DTSTART:20261210T150000Z
-DTEND:20261210T160000Z
-SUMMARY:[Paul] Snapshot: Pilot witness getting started (one video call\; Cl
- aude prepares the notes)
-DESCRIPTION:Responsible: Paul (author)\n\nDuring the RV trip: hold the call
-  on any day from 9 to 14 Dec with good signal\; 10 Dec is a placeholder. W
- indow 9-14 Dec (2 to 3 hours for the witness). Claude prepares a short gui
- de: where the run logs\, the frozen data copies and the quality reports ar
- e\; what the dry run and the pilot do and when\; what the note by 5 Feb sh
- ould cover (problems seen\; the timing of locking the procedures). The wit
- ness gets read access to what any member of the public can see\, plus the 
- hand-check sample the author chooses to show\; never private data\, keys o
- r the private repository.\n\nSource: https://github.com/pagagne/internet-s
- ecurity-snapshot/blob/main/docs/schedule/schedule.yaml
-CATEGORIES:Author
 END:VEVENT
 BEGIN:VEVENT
 UID:dry-run-full-prep@2026-12-11@internet-security-snapshot
@@ -2487,12 +2492,12 @@ DTSTAMP:20261024T000000Z
 DTSTART:20261220T190000Z
 DTEND:20261220T193000Z
 SUMMARY:[Paul] Snapshot: Choose a late pilot witness - only if none was cho
- sen on 8 Dec
+ sen on 3 Dec
 DESCRIPTION:Responsible: Paul (author)\n\nLate window (author\, 13 Nov 2026
  ): applications to about 20 Dec. Choose one\, confirm\, and hold the start
  -up call before 1 Jan\; the witness reviews the 15 Dec dry run from its lo
  gs and watches the pilot (1 Jan - 5 Feb). Skip this item if a witness was 
- chosen on 8 Dec.\n\nSource: https://github.com/pagagne/internet-security-s
+ chosen on 3 Dec.\n\nSource: https://github.com/pagagne/internet-security-s
  napshot/blob/main/docs/schedule/schedule.yaml
 CATEGORIES:Author
 END:VEVENT

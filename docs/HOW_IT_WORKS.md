@@ -1,4 +1,4 @@
-# The Internet Security Snapshot: How It Works and What It Will Show (updated 16 Nov 2026)
+# The Internet Security Snapshot: How It Works and What It Will Show (updated 28 Nov 2026)
 
 23 October 2026, updated 7 November 2026 · Paul Gagne
 
@@ -52,7 +52,7 @@ A few questions need a person reading a vendor's page or a credit line, not a pr
 | **When was the fix released?** Confirm or correct a pre-filled date from the vendor's own announcement; mark "No fix yet" or "Can't find". | Vendors often announce a flaw before the fix ships, or fix it quietly weeks earlier. That date decides whether an attack came before or after the fix. |
 | **AI-credit edge cases** (Yes / No). Any mention of an AI tool or AI lab is counted automatically, with 1 in 10 re-checked. | Name collisions (a person named Claude) and credits where the AI product is the thing that had the flaw need a reader. |
 
-Three safeguards keep the hand checks honest. Each quarter, 20 earlier answers are shown again unmarked, and the share answered the same way is reported. A second checker (in research terms, a second coder) answers 20 of the quarter's items without seeing the author's answers, and the agreement is reported. During the pilot, an outside pilot witness (7 December 2026 to 5 February 2027) watches the full practice run and the pilot quarter and publishes a short note before the procedures are locked. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
+Three safeguards keep the hand checks honest. Each quarter, 20 earlier answers are shown again unmarked, and the share answered the same way is reported. A second checker (in research terms, a second coder) answers 20 of the quarter's items without seeing the author's answers, and the agreement is reported. During the pilot, an outside pilot witness (5 December 2026 to 5 February 2027) watches the full practice run and the pilot quarter and publishes a short note before the procedures are locked. The random draw decides which flaws are studied; a hand check can only skip a pick that does not qualify, never choose one.
 
 ## The race, and the decision on how to measure it
 
@@ -100,7 +100,7 @@ AI now works on both sides of the race. Defenders and researchers use it to find
 
 ## The 2027 calendar
 
-**Before the pilot (2026).** From <!-- date:cutover -->23 Nov<!-- /date --> the repository's own schedule runs the study. A practice run on October and November data follows on 1 December, the project website opens on 4 December, the pilot witness starts by 9 December, and a full practice run with every available source runs on 15 December. The core methods are decided on 21 December and locked on 29 December, and the pages switch to the pilot results on 2 January 2027.
+**Before the pilot (2026).** From <!-- date:cutover -->23 Nov<!-- /date --> the repository's own schedule runs the study. A practice run on October and November data follows on 1 December, the project website opens on 4 December, the pilot witness starts by 6 December, and a full practice run with every available source runs on 15 December. The core methods are decided on 21 December and locked on 29 December, and the pages switch to the pilot results on 2 January 2027.
 
 The year runs on a fixed rhythm: each quarter gets a provisional draft on the 1st, published after the author's review within two days, a hand-check window from the 4th to the 28th, and a final report a month later.
 

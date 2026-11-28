@@ -536,14 +536,14 @@ items:
 - id: pilot-witness-guide
   owner: claude
   primary: true
-  title: Build the pilot witness guide (for the 6 Dec go-live review)
-  date: 2026-12-04
+  title: Build the pilot witness guide (ready for the 5-6 Dec getting-started call)
+  date: 2026-12-03  # was 4 Dec; the call moved to 5-6 Dec (author, 28 Nov 2026)
   details: >
     Decided 28 Nov 2026 (BUILD_OUT item 56). One self-contained page: each run's steps in the
     registered plan's own words with links to the public evidence; a checksum check in the
     browser; notes saved in the witness's browser and exported as a file; an "anything else"
     box on every step; nothing stored on the study's side. Optional for the witness. Shown to
-    the author at the 6 Dec review, offered in the 10 Dec onboarding call, first used at the
+    the author by 4 Dec, offered in the 5-6 Dec getting-started call, first used at the
     15 Dec test run. Public material only: no private data, no exploratory figures.
 
 - id: local-backup-setup
@@ -1163,44 +1163,49 @@ items:
 
 - id: witness-select
   owner: author
-  title: Choose and confirm the pilot witness (applications closed 7 Dec)
-  date: 2026-12-08  # Handshake's free tier fixes a 30-day window, so applications close 7 Dec (author, 7 Nov 2026)
+  title: Choose and confirm the pilot witness (applications closed 2 Dec)
+  date: 2026-12-03  # brought forward from 8 Dec (author, 28 Nov 2026): intermittent connectivity 7-18 Dec
   minutes: 45
   details: >
-    During the RV trip (7-19 Dec; author, 12 Nov 2026: internet some days only): a reading task
-    that can be done from the road. Claude sorts the applications on 7 Dec. Read the applications (Claude can sort them by the posting's criteria, without judging
-    people), choose one, and confirm by 9 Dec. The witness must not be the person later chosen as
-    the independent reviewer, and the two never work together. Tell Claude, who logs it (role
-    only in public files) and sends the getting-started notes.
+    Brought forward (author, 28 Nov 2026): applications close Wed 2 Dec (end of day ET), choose
+    Thu 3 Dec, confirm by Fri 4 Dec, getting-started call Sat 5 or Sun 6 Dec, all before the
+    author's travel with patchy internet (7-18 Dec). Announced on the role page and the README
+    (28 Nov), on the Handshake posting (author changes the close date) and by email to the three
+    applicants so far. Claude sorts the applications on 2 Dec evening by the posting's criteria,
+    without judging people. Choose one, and confirm by 4 Dec. The witness must not be the person
+    later chosen as the independent reviewer, and the two never work together. Tell Claude, who
+    logs it (role only in public files) and sends the getting-started notes. Every applicant is
+    answered either way by 4 Dec.
     If nobody suitable applied (author, 13 Nov 2026): open a late window to about 20 Dec (repost on
     Handshake after it closes; also students who write directly). A late witness starts with the
     1 Jan pilot and reviews the 15 Dec dry run afterwards from its public logs.
 
 - id: witness-late-choice
   owner: author
-  title: Choose a late pilot witness - only if none was chosen on 8 Dec
+  title: Choose a late pilot witness - only if none was chosen on 3 Dec
   date: 2026-12-20
   time: "14:00"
   minutes: 30
   details: >
     Late window (author, 13 Nov 2026): applications to about 20 Dec. Choose one, confirm, and hold
     the start-up call before 1 Jan; the witness reviews the 15 Dec dry run from its logs and watches
-    the pilot (1 Jan - 5 Feb). Skip this item if a witness was chosen on 8 Dec.
+    the pilot (1 Jan - 5 Feb). Skip this item if a witness was chosen on 3 Dec.
 
 - id: witness-onboarding
   owner: author
   title: Pilot witness getting started (one video call; Claude prepares the notes)
-  date: 2026-12-10  # was 8 Dec (author, 7 Nov 2026); any day 9-14 Dec with good signal (RV trip, 12 Nov)
+  date: 2026-12-05  # was 10 Dec; brought forward with the choice (author, 28 Nov 2026); 5 or 6 Dec
   time: "10:00"
   minutes: 60
   details: >
-    During the RV trip: hold the call on any day from 9 to 14 Dec with good signal; 10 Dec is a
-    placeholder. Window 9-14 Dec (2 to 3 hours for the witness). Claude prepares a short guide: where the run
-    logs, the frozen data copies and the quality reports are; what the dry run and the pilot do
-    and when; what the note by 5 Feb should cover (problems seen; the timing of locking the
-    procedures). The witness gets read access to what any member of the public can see, plus
-    the hand-check sample the author chooses to show; never private data, keys or the private
-    repository.
+    Before the author's travel (7-18 Dec, internet some days only): hold the call on Sat 5 or
+    Sun 6 Dec at a time that suits the witness's time zone; 5 Dec 10:00 ET is a placeholder.
+    2 to 3 hours for the witness in all. Claude prepares a short guide and the pilot witness guide
+    page (BUILD_OUT item 56): where the run logs, the frozen data copies and the quality reports
+    are; what the dry run and the pilot do and when; what the note by 5 Feb should cover (problems
+    seen; the timing of locking the procedures). The witness gets read access to what any member
+    of the public can see, plus the hand-check sample the author chooses to show; never private
+    data, keys or the private repository.
 
 - id: witness-dry-run
   owner: claude

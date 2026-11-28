@@ -1,4 +1,4 @@
-# Pilot witness: role summary (updated 16 Nov 2026)
+# Pilot witness: role summary (updated 28 Nov 2026)
 
 **Internet Security Snapshot** - an independent, self-funded, non-commercial study that asks
 every quarter through 2027 whether defenders are fixing exploitable software flaws faster than
@@ -6,8 +6,8 @@ attackers start using them, and how AI is changing that race. It uses only free 
 its plan was registered publicly before any data was collected (OSF, DOI
 10.17605/OSF.IO/3XT82), so the results can't be bent to fit a story.
 
-**Open now. Apply by 7 December 2026.** About **9 to 12 hours** in all, spread over
-**7 December 2026 to 5 February 2027**. Fully remote. One person.
+**Open now. Apply by 2 December 2026** (brought forward from 7 December on 28 November 2026).
+About **9 to 12 hours** in all, spread over **5 December 2026 to 5 February 2027**. Fully remote. One person.
 
 ## What the role is
 
@@ -50,8 +50,8 @@ By email, open to everyone: write to
 with the subject "Pilot witness" and a few lines on why the role interests you and any relevant
 coursework or experience. A resume is welcome but not required. If your school's Handshake shows
 the posting "Pilot Witness for the Internet Security Snapshot", you can apply there instead; both
-routes are treated the same. Applications close **7 December 2026**; the witness is confirmed by
-9 December.
+routes are treated the same. Applications close **2 December 2026** (end of day, US Eastern time); the witness is chosen on
+3 December and confirmed by 4 December, with the getting-started call on 5 or 6 December.
 
 The witness and the independent reviewer ([`INVITATION.md`](INVITATION.md)) are always two
 different people, and they never work together, so the reviewer starts fresh. The third role,

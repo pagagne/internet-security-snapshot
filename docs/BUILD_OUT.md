@@ -272,5 +272,15 @@ the inquiry log (`docs/INQUIRIES.md`).
     checksum check that runs in the witness's browser; notes kept in the witness's own browser
     and exported as a file for the 5 Feb note, with nothing stored on the study's side; an
     "anything else" box on every step. The guide is optional and never limits what the witness
-    looks at or reports (said again in the onboarding call). Draft for the 6 Dec go-live review;
-    first real use at the 15 Dec test run.
+    looks at or reports (said again in the onboarding call). Draft by 3 Dec for the 5-6 Dec
+    getting-started call (moved 28 Nov with the witness choice, item 57); first real use at the
+    15 Dec test run.
+
+57. **Pilot witness chosen before the author's travel.** Agreed (author, 28 Nov 2026, card):
+    the author has intermittent connectivity from 7 to 18 Dec, so applications close Wed 2 Dec
+    (end of day ET) instead of 7 Dec, the choice is made Thu 3 Dec and confirmed by Fri 4 Dec, and
+    the getting-started call is held Sat 5 or Sun 6 Dec. Announced the same day on the role page
+    and the README; the author changes the Handshake close date; the three applicants so far are
+    told by email. Other items in the 7-18 Dec window (hand check part 3 on 9 Dec, the 15-16 Dec
+    test run) are reviewed at the 30 Nov sync review. The late window (about 20 Dec) stays as the
+    fallback if nobody suitable applied.

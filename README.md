@@ -321,7 +321,7 @@ Three unpaid, fully remote roles check that the work is sound. None needs progra
 email to [internetsecuritysnapshot@gmail.com](mailto:internetsecuritysnapshot@gmail.com) with the
 role's name in the subject line and a few lines about yourself.
 
-- **Pilot witness** (open now, apply by 7 December 2026). An independent observer of the
+- **Pilot witness** (open now, apply by 2 December 2026). An independent observer of the
   study's trial run: watch the full test run in mid-December and the first real quarter in
   January through the public logs and results, and write a short note by 5 February 2027,
   published under your name. About 9 to 12 hours in all. No coding or security background
