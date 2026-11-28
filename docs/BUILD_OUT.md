@@ -1,4 +1,4 @@
-# Build-out record (updated 20 Nov 2026)
+# Build-out record (updated 28 Nov 2026)
 
 The author's request of 19 Nov 2026: a record, in the manual, of every question or prompt put to
 the author while the study is being built, with Claude's answer or recommendation and the
@@ -264,3 +264,13 @@ the inquiry log (`docs/INQUIRIES.md`).
     short (due items, replies, failures) and Sunday's is skipped; Saturday's newsletter review
     covers only new mail; the 23 Nov sync review is one pass over what changed that week (three
     passes again on 30 Nov); the pilot-timeline mock-up moves to 30 Nov.
+
+56. **Guides for the pilot witness.** Agreed (author, 28 Nov 2026): "any way we can create
+    guides that would help the pilot witness would be useful." Claude builds a witness guide
+    page: for each run, what the registered plan says should happen (in the plan's own words),
+    with links to the public evidence (run log, run report, frozen data, checksums); a
+    checksum check that runs in the witness's browser; notes kept in the witness's own browser
+    and exported as a file for the 5 Feb note, with nothing stored on the study's side; an
+    "anything else" box on every step. The guide is optional and never limits what the witness
+    looks at or reports (said again in the onboarding call). Draft for the 6 Dec go-live review;
+    first real use at the 15 Dec test run.

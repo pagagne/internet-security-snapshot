@@ -1939,6 +1939,26 @@ DESCRIPTION:Responsible: Claude\n\nThe monthly scheduled task writes git bu
 CATEGORIES:Claude
 END:VEVENT
 BEGIN:VEVENT
+UID:pilot-witness-guide@2026-12-04@internet-security-snapshot
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+TRANSP:TRANSPARENT
+SUMMARY:[Claude] Snapshot: Build the pilot witness guide (for the 6 Dec go-
+ live review)
+DESCRIPTION:Responsible: Claude\n\nDecided 28 Nov 2026 (BUILD_OUT item 56).
+  One self-contained page: each run's steps in the registered plan's own wo
+ rds with links to the public evidence\; a checksum check in the browser\; 
+ notes saved in the witness's browser and exported as a file\; an "anything
+  else" box on every step\; nothing stored on the study's side. Optional fo
+ r the witness. Shown to the author at the 6 Dec review\, offered in the 10
+  Dec onboarding call\, first used at the 15 Dec test run. Public material 
+ only: no private data\, no exploratory figures.\n\nSource: https://github.
+ com/pagagne/internet-security-snapshot/blob/main/docs/schedule/schedule.ya
+ ml
+CATEGORIES:Claude
+END:VEVENT
+BEGIN:VEVENT
 UID:landing-page@2026-12-04@internet-security-snapshot
 DTSTAMP:20261024T000000Z
 DTSTART:20261204T150000Z

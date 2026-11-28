@@ -533,6 +533,19 @@ items:
     enforcement. Confirm it reached Drive; if not, switch to the fallback in the private
     exploratory/docs/BACKUP.md (GitHub artifact plus the monthly local copy) and tell the author.
 
+- id: pilot-witness-guide
+  owner: claude
+  primary: true
+  title: Build the pilot witness guide (for the 6 Dec go-live review)
+  date: 2026-12-04
+  details: >
+    Decided 28 Nov 2026 (BUILD_OUT item 56). One self-contained page: each run's steps in the
+    registered plan's own words with links to the public evidence; a checksum check in the
+    browser; notes saved in the witness's browser and exported as a file; an "anything else"
+    box on every step; nothing stored on the study's side. Optional for the witness. Shown to
+    the author at the 6 Dec review, offered in the 10 Dec onboarding call, first used at the
+    15 Dec test run. Public material only: no private data, no exploratory figures.
+
 - id: local-backup-setup
   owner: author
   title: Set up the monthly local backup on your computer
