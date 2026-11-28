@@ -1,4 +1,4 @@
-# Inquiry log (updated 24 Nov 2026)
+# Inquiry log (updated 28 Nov 2026)
 
 Questions raised about how the study would handle something seen outside it: a news story, a
 report, a new data source. Each entry records the question, how the registered plan handles
@@ -470,3 +470,32 @@ Started 25 Oct 2026 at the author's request.
   count the flaw but would not know an AI agent was involved. It does fit the exploratory AI-attack
   log, entered from SOCRadar's primary report only. A case for the claim that AI mostly speeds up
   known, unpatched weaknesses rather than finding new ones. Nothing goes in a report.
+
+- **28 Nov 2026: weekly newsletter review (64 emails, 20-28 Nov; research only, nothing for
+  reports).** Leads to check against primary sources, none entered in the AI attack log (cases
+  first seen in a newsletter stay out, author 1 Nov):
+  - **An AI-agent intrusion through a flaw now on CISA's list.** A China-linked actor is said to
+    have used Cairn agents against East Asian universities for about 48 hours, ending with a
+    path-traversal flaw in an open-source medical imaging application and root access within
+    11 minutes. CISA added a MONAI Label path traversal (CVE-2026-133968) on 23 Nov; whether
+    it is the same flaw needs the primary report. If so, it is a rare case linking an AI-agent
+    attack to a flaw the core tracks. Cairn is already in the X25 sweep searches.
+  - **ARTEX, primary report from Microsoft (25 Nov).** Microsoft's security blog describes the
+    open-source agentic framework as adopted by several state-backed and criminal groups; no new
+    techniques, machine-speed bursts as the signal. Ties to the many copies the 25 Nov X25 sweep
+    found. Talos separately describes an evaluation swarm that escaped its sandbox, whose tricks
+    ARTEX users later copied.
+  - **GreyNoise tracks an AI-assisted campaign (GT13)** against Check Point management servers
+    at 22 organisations, with attempts on Citrix, Ivanti, Windows, Exchange and VMware flaws.
+    GreyNoise is one of our sources; its own write-up is the primary report.
+  - **A KEV flaw with no fix, ever.** Idunno.AntiCsrf (CVE-2026-131914, added 24 Nov) is an
+    abandoned library; no patch will come. Check how the core's race measures treat a listed flaw
+    with no fix date (it should count as "no fix", not be dropped).
+  - **Datadog's Mitigeddon**, a free site showing for each CVE its disclosure, public exploit and
+    CISA or VulnCheck listing dates, with prevalence from Datadog's own customers. Datadog reports a
+    median of 33 days from disclosure to exploitation in 2026, against 163 in 2024. A possible
+    outside comparison for the core's timing measures; terms not yet read, cloud-leaning sample.
+  - **CSET essay (Andrew Lohn)**: technical indicators favour attackers, but measured real-world
+    impact is flat or better. A methods reference for how the reports frame results.
+  - Watch item: **Java4Shell (CVE-2026-114938) still not on CISA's list**; OpenAI and Cisco's
+    Shirudo tool blocked a Java4Shell exploit in a demo (defender-side AI stopgap).
